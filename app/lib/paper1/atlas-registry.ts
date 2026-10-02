@@ -3,6 +3,10 @@ import type { Paper1AtlasItem, Paper1AtlasManifest } from "./types";
 
 const atlas = atlasData as Paper1AtlasManifest;
 
+export function getAllPaper1AtlasItems(): readonly Paper1AtlasItem[] {
+  return atlas.items;
+}
+
 export function getPaper1AtlasItems(ids: readonly string[]): readonly Paper1AtlasItem[] {
   const requested = new Set(ids);
   return atlas.items.filter((item) => requested.has(item.id));

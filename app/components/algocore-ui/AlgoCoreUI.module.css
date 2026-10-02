@@ -229,7 +229,7 @@
 .progressGroup { display: grid; gap: var(--alg-space-2); }
 .progressMeta { display: flex; justify-content: space-between; gap: var(--alg-space-4); color: var(--alg-text-muted); font-size: 0.875rem; }
 .progressTrack { width: 100%; height: var(--alg-space-2); overflow: hidden; border-radius: var(--alg-radius-pill); background: var(--alg-state-disabled-surface); }
-.progressTrack span { display: block; height: 100%; border-radius: inherit; background: var(--alg-learning-current-step); transition: width var(--alg-motion-explain); }
+.progressTrack span { display: block; width: var(--progress-percent); height: 100%; border-radius: inherit; background: var(--alg-learning-current-step); transition: width var(--alg-motion-explain); }
 
 .stepper { padding: var(--alg-space-3); overflow-x: auto; }
 .stepper ol { display: flex; min-width: max-content; gap: var(--alg-space-2); margin: 0; padding: 0; list-style: none; }

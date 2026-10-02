@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L03",
   "slug": "signed-arithmetic",
   "sectionId": "1",
@@ -42,84 +42,154 @@
   ],
   "theory": [
     {
-      "id": "P1-L03-theory",
+      "id": "P1-L03-theory-signed-weights",
+      "title": {
+        "en": "The word width fixes the signed range",
+        "vi": "Word width cố định miền có dấu"
+      },
+      "paragraphs": [
+        {
+          "en": "In 8-bit two’s complement, the most significant bit has weight −128 and the remaining weights are 64 to 1. The representable range is −128 to 127.",
+          "vi": "Trong two’s complement 8-bit, bit trọng số cao nhất có trọng số −128 và các trọng số còn lại là 64 đến 1. Miền biểu diễn là −128 đến 127."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Interpret a stored pattern only after declaring its width and representation.",
+          "vi": "Chỉ diễn giải pattern được lưu sau khi nêu độ rộng và cách biểu diễn."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L03-theory-arithmetic",
       "title": {
         "en": "Calculate first, interpret second",
         "vi": "Tính trước, diễn giải sau"
       },
       "paragraphs": [
         {
-          "en": "Add from the least significant column and record each carry. For A − B, add A to the fixed-width two’s complement of B.",
-          "vi": "Cộng từ cột trọng số thấp nhất và ghi từng carry. Với A − B, cộng A với two’s complement độ rộng cố định của B."
+          "en": "Add from the least significant column and record each carry.",
+          "vi": "Cộng từ cột trọng số thấp nhất và ghi từng carry."
         },
         {
-          "en": "Signed overflow occurs when same-sign operands produce an opposite-sign result. Carry out is an unsigned flag.",
-          "vi": "Signed overflow xảy ra khi hai toán hạng cùng dấu tạo kết quả khác dấu. Carry out là cờ unsigned."
-        }
-      ],
-      "bullets": [
-        {
-          "en": "8-bit two’s complement range is −128 to 127.",
-          "vi": "Miền two’s complement 8-bit là −128 đến 127."
-        },
-        {
-          "en": "Discard a carry beyond the fixed width, then check overflow separately.",
-          "vi": "Bỏ carry vượt độ rộng, rồi kiểm tra overflow riêng."
+          "en": "For A − B, form the fixed-width two’s complement of B and add it to A. Discard a carry beyond the declared width.",
+          "vi": "Với A − B, tạo two’s complement độ rộng cố định của B rồi cộng với A. Bỏ carry vượt độ rộng đã nêu."
         }
       ],
       "sourceIds": [
         "SYL-2026",
-        "ALG-P1"
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L03-theory-overflow",
+      "title": {
+        "en": "Signed overflow is separate from carry out",
+        "vi": "Signed overflow tách biệt với carry out"
+      },
+      "paragraphs": [
+        {
+          "en": "Signed overflow occurs when two operands with the same sign produce a stored result with the opposite sign. It means the true result lies outside the representable range.",
+          "vi": "Signed overflow xảy ra khi hai toán hạng cùng dấu tạo kết quả lưu có dấu ngược lại. Điều đó nghĩa là kết quả thật nằm ngoài miền biểu diễn."
+        },
+        {
+          "en": "Carry out is an unsigned fact and is not, by itself, a signed-overflow test.",
+          "vi": "Carry out là dữ kiện unsigned và tự nó không phải phép kiểm signed overflow."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
       ]
     }
   ],
   "workedExample": {
     "title": {
-      "en": "Add 127 and 1 in 8 bits",
-      "vi": "Cộng 127 và 1 trong 8 bit"
+      "en": "Two signed 8-bit models",
+      "vi": "Hai mẫu signed 8-bit"
     },
     "prompt": {
-      "en": "Trace result, carry and overflow.",
-      "vi": "Lần theo kết quả, carry và overflow."
+      "en": "First add 37 + 58 without overflow; then calculate 95 − 68 using two’s complement.",
+      "vi": "Trước tiên cộng 37 + 58 không overflow; sau đó tính 95 − 68 bằng two’s complement."
     },
     "steps": [
       {
-        "id": "s1",
+        "id": "P1-L03-worked-add-operands",
         "action": {
-          "en": "Write the operands.",
-          "vi": "Viết toán hạng."
+          "en": "Encode the two positive operands.",
+          "vi": "Mã hóa hai toán hạng dương."
         },
         "result": {
-          "en": "01111111 + 00000001",
-          "vi": "01111111 + 00000001"
+          "en": "37 = 00100101; 58 = 00111010.",
+          "vi": "37 = 00100101; 58 = 00111010."
         }
       },
       {
-        "id": "s2",
+        "id": "P1-L03-worked-add-trace",
         "action": {
-          "en": "Add each column.",
-          "vi": "Cộng từng cột."
+          "en": "Add from right to left and record carries.",
+          "vi": "Cộng từ phải sang trái và ghi carry."
         },
         "result": {
-          "en": "10000000, carry out 0",
-          "vi": "10000000, carry out 0"
+          "en": "00100101 + 00111010 = 01011111.",
+          "vi": "00100101 + 00111010 = 01011111."
         }
       },
       {
-        "id": "s3",
+        "id": "P1-L03-worked-add-result",
         "action": {
-          "en": "Interpret the sign.",
-          "vi": "Diễn giải dấu."
+          "en": "Interpret the stored result and check overflow.",
+          "vi": "Diễn giải kết quả lưu và kiểm tra overflow."
         },
         "result": {
-          "en": "10000000 represents −128",
-          "vi": "10000000 biểu diễn −128"
+          "en": "01011111 = 95. Positive + positive produced a positive in range, so there is no signed overflow.",
+          "vi": "01011111 = 95. Dương + dương tạo kết quả dương trong miền, nên không có signed overflow."
+        }
+      },
+      {
+        "id": "P1-L03-worked-subtract-encode",
+        "action": {
+          "en": "Encode 95 and 68, then form the two’s complement of 68.",
+          "vi": "Mã hóa 95 và 68, rồi tạo two’s complement của 68."
+        },
+        "result": {
+          "en": "95 = 01011111; 68 = 01000100; −68 = 10111100.",
+          "vi": "95 = 01011111; 68 = 01000100; −68 = 10111100."
+        }
+      },
+      {
+        "id": "P1-L03-worked-subtract-trace",
+        "action": {
+          "en": "Add 95 and −68 at eight-bit width.",
+          "vi": "Cộng 95 và −68 ở độ rộng tám bit."
+        },
+        "result": {
+          "en": "01011111 + 10111100 = 1 00011011; discard the ninth carry.",
+          "vi": "01011111 + 10111100 = 1 00011011; bỏ carry thứ chín."
+        }
+      },
+      {
+        "id": "P1-L03-worked-subtract-result",
+        "action": {
+          "en": "Interpret the stored result and check signed overflow separately.",
+          "vi": "Diễn giải kết quả lưu và kiểm signed overflow riêng."
+        },
+        "result": {
+          "en": "00011011 = 27. The added operands have different signs, so signed overflow cannot occur.",
+          "vi": "00011011 = 27. Hai toán hạng được cộng khác dấu nên signed overflow không thể xảy ra."
         }
       }
     ],
     "result": {
-      "en": "Positive + positive produced a negative result: overflow is true while carry out is 0.",
-      "vi": "Dương + dương tạo kết quả âm: overflow true còn carry out bằng 0."
+      "en": "37 + 58 = 95 and 95 − 68 = 27. The external carry in subtraction was discarded, while signed overflow was checked with the sign rule.",
+      "vi": "37 + 58 = 95 và 95 − 68 = 27. Carry ngoài trong phép trừ được bỏ, còn signed overflow được kiểm bằng quy tắc dấu."
     }
   },
   "recognition": {
@@ -152,6 +222,27 @@
         "correction": {
           "en": "−1 + 1 has carry 1 but no signed overflow; 127 + 1 has overflow but carry 0.",
           "vi": "−1 + 1 có carry 1 nhưng không overflow; 127 + 1 có overflow nhưng carry 0."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L03-recognise-overflow",
+        "title": {
+          "en": "Recognise signed overflow",
+          "vi": "Nhận diện signed overflow"
+        },
+        "setup": {
+          "en": "An 8-bit system adds 82 and 69, both positive values.",
+          "vi": "Hệ thống 8-bit cộng 82 và 69, đều là giá trị dương."
+        },
+        "prompt": {
+          "en": "Predict the result sign, compare the true sum with the signed range, then explain the stored negative pattern.",
+          "vi": "Dự đoán dấu kết quả, so tổng thật với miền signed, rồi giải thích pattern âm được lưu."
+        },
+        "expectedEvidence": {
+          "en": "The true sum is 151, above 127; the stored 8-bit pattern reads as negative, so signed overflow occurred.",
+          "vi": "Tổng thật là 151, lớn hơn 127; pattern 8-bit được lưu đọc thành âm, nên signed overflow đã xảy ra."
         }
       }
     ]
@@ -237,17 +328,21 @@
   ],
   "recall": {
     "prompt": {
-      "en": "Give one case where carry and signed overflow differ.",
-      "vi": "Nêu một trường hợp carry và signed overflow khác nhau."
+      "en": "Contrast 127 + 1 with −1 + 1 in 8-bit two’s complement.",
+      "vi": "Đối chiếu 127 + 1 với −1 + 1 trong two’s complement 8-bit."
     },
     "answerPoints": [
       {
-        "en": "127 + 1: overflow true, carry 0.",
-        "vi": "127 + 1: overflow true, carry 0."
+        "en": "127 + 1 stores 10000000 (−128), has carry out 0 and signed overflow true.",
+        "vi": "127 + 1 lưu 10000000 (−128), có carry out 0 và signed overflow true."
       },
       {
-        "en": "−1 + 1: overflow false, carry 1.",
-        "vi": "−1 + 1: overflow false, carry 1."
+        "en": "−1 + 1 stores 00000000, has carry out 1 and signed overflow false.",
+        "vi": "−1 + 1 lưu 00000000, có carry out 1 và signed overflow false."
+      },
+      {
+        "en": "Carry out and signed overflow answer different questions.",
+        "vi": "Carry out và signed overflow trả lời hai câu hỏi khác nhau."
       }
     ]
   },
@@ -286,8 +381,17 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L03 · release 1.1",
+      "locator": "Paper 1 · P1-L03 · release 1.2",
       "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 3–6: signed weights, addition, overflow and subtraction",
+      "kind": "coursebook"
     }
   ],
   "visualId": "VIS-P1-L03",
@@ -296,16 +400,23 @@
       "P1-L03-objectives"
     ],
     "B02": [
-      "P1-L03-theory"
+      "P1-L03-theory-signed-weights",
+      "P1-L03-theory-arithmetic",
+      "P1-L03-theory-overflow"
     ],
     "B03": [
       "P1-L03-rules"
     ],
     "B04": [
-      "P1-L03-recognise"
+      "P1-L03-recognise-overflow"
     ],
     "B05": [
-      "P1-L03-worked"
+      "P1-L03-worked-add-operands",
+      "P1-L03-worked-add-trace",
+      "P1-L03-worked-add-result",
+      "P1-L03-worked-subtract-encode",
+      "P1-L03-worked-subtract-trace",
+      "P1-L03-worked-subtract-result"
     ],
     "B06": [
       "VIS-P1-L03"
@@ -326,5 +437,6 @@
     "B11": [
       "P1-L03-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

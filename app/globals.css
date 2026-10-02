@@ -13,4 +13,5 @@ html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 .course-label > span { display: block; font-size: 12px; letter-spacing: .12em; color: var(--color-fd-primary); font-weight: 700; }
 .course-label strong { display: block; font-size: 19px; margin-top: 9px; }
 .course-label p { color: var(--color-fd-muted-foreground); font-size: 13px; margin: 5px 0 0; }
+button[aria-controls="nd-sidebar-mobile"] { min-width: 44px; min-height: 44px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -65,7 +65,7 @@
 .prediction label span,
 .presets button {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 44px;
   align-items: center;
   border: 1px solid var(--alg-border-interactive, #8093a4);
   border-radius: 999px;
@@ -118,6 +118,14 @@
 .explanation h4 { margin: 0; font-size: 1.12rem; line-height: 1.4; }
 .textEquivalent { margin-top: 14px; border-left: 4px solid var(--visual-accent); padding: 12px 16px; background: var(--visual-accent-soft); }
 .textEquivalent p { font-size: .92rem; }
+.predictionComparison { margin-top: 14px; padding: 16px; border: 1px solid var(--alg-state-success); border-left-width: 4px; border-radius: var(--alg-radius-md,10px); background: var(--alg-state-success-surface); }
+.predictionComparison[data-match="false"] { border-color: var(--alg-state-warning); background: var(--alg-state-warning-surface); }
+.predictionComparison dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin-top: 10px; }
+.predictionComparison dl > div { padding: 10px 12px; border-radius: var(--alg-radius-sm,6px); background: var(--alg-surface-panel); }
+.predictionComparison dt { color: var(--alg-text-muted); font-size: .78rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.predictionComparison dd { margin-top: 3px; font-weight: 800; }
+.predictionComparison p { margin-top: 10px; line-height: 1.55; }
+.predictionComparison small { display: block; margin-top: 8px; color: var(--alg-text-muted); }
 .navigation { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: 20px; }
 .navigation button { min-width: 112px; }
 
@@ -194,7 +202,7 @@
 .waveform circle[data-active] { fill: var(--alg-learning-exam-tip, #ff9f1c); r: 3px; }
 
 .presets { display: flex; flex-wrap: wrap; align-content: end; gap: 7px; }
-.presets button { min-height: 38px; padding: 7px 11px; font-size: .88rem; }
+.presets button { min-height: 44px; padding: 8px 12px; font-size: .88rem; }
 .symbols { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
 .symbols span { display: grid; width: 36px; height: 42px; place-items: center; border: 1px solid var(--alg-border-strong, #8093a4); border-radius: 5px; background: var(--alg-surface-panel, #fff); font: 800 1.1rem ui-monospace, monospace; }
 .symbols span[data-active] { border: 3px solid var(--visual-accent); background: var(--visual-accent-soft); }
@@ -229,6 +237,7 @@
   .statusPair { grid-template-columns: 1fr; }
   .navigation { justify-content: center; }
   .navigation button { flex: 1 1 30%; }
+  .predictionComparison dl { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

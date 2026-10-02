@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L07",
   "slug": "sound-sampling",
   "sectionId": "1",
@@ -47,6 +47,10 @@
         "vi": "Mẫu thời gian và mức biên độ"
       },
       "paragraphs": [
+        {
+          "en": "A microphone produces an analogue signal. An analogue-to-digital converter samples its amplitude at set time intervals, quantises each measurement to an available level and stores a binary code.",
+          "vi": "Microphone tạo tín hiệu analogue. Analogue-to-digital converter lấy mẫu amplitude ở các khoảng thời gian cố định, lượng tử hóa từng phép đo vào một mức có sẵn rồi lưu mã binary."
+        },
         {
           "en": "Sample rate is measurements per second. Sample resolution is bits per sample, giving 2^b quantisation levels.",
           "vi": "Sampling rate là số phép đo mỗi giây. Sampling resolution là bit mỗi mẫu, cho 2^b mức lượng tử."
@@ -156,6 +160,27 @@
         "correction": {
           "en": "Rate controls time spacing; resolution controls amplitude levels.",
           "vi": "Rate điều khiển khoảng thời gian; resolution điều khiển mức biên độ."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L07-recognise-resolution-tradeoff",
+        "title": {
+          "en": "Sampling-resolution trade-off",
+          "vi": "Đánh đổi của sampling resolution"
+        },
+        "setup": {
+          "en": "A recorder increases bits per sample while keeping sampling rate, duration and channel count fixed.",
+          "vi": "Máy ghi âm tăng số bit mỗi sample trong khi giữ nguyên sampling rate, thời lượng và số kênh."
+        },
+        "prompt": {
+          "en": "Classify the effects on available amplitude levels, accuracy and raw file size.",
+          "vi": "Phân loại tác động lên số mức amplitude, độ chính xác và dung lượng file thô."
+        },
+        "expectedEvidence": {
+          "en": "More bits give more quantisation levels and normally lower quantisation error, while raw size increases in direct proportion to bits per sample.",
+          "vi": "Nhiều bit hơn tạo nhiều mức lượng tử và thường giảm quantisation error, trong khi dung lượng thô tăng tỉ lệ thuận với số bit mỗi sample."
         }
       }
     ]
@@ -356,7 +381,7 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L07 · release 1.1",
+      "locator": "Paper 1 · P1-L07 · release 1.2",
       "kind": "algocore"
     },
     {
@@ -381,7 +406,7 @@
       "P1-L07-rules"
     ],
     "B04": [
-      "P1-L07-recognise"
+      "P1-L07-recognise-resolution-tradeoff"
     ],
     "B05": [
       "P1-L07-worked"
@@ -406,5 +431,6 @@
     "B11": [
       "P1-L07-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

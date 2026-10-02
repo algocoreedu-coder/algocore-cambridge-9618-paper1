@@ -1,0 +1,1491 @@
+{
+  "schemaVersion": 1,
+  "chapterId": "1",
+  "lessons": [
+    {
+      "lessonId": "P1-L01",
+      "visualId": "VIS-P1-L01",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P007-SI-PREFIXES",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L01-theory",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-01"
+          ],
+          "requirementIds": [
+            "REQ-1.1-01-01"
+          ],
+          "teachingClaim": {
+            "en": "SI prefixes k, M, G and T increase by powers of 1000.",
+            "vi": "Các tiền tố SI k, M, G và T tăng theo lũy thừa 1000."
+          },
+          "learnerAction": {
+            "en": "Read one row, predict the byte value, then compare it with the matching IEC row.",
+            "vi": "Đọc một hàng, dự đoán số byte rồi so với hàng IEC cùng bậc."
+          },
+          "teacherPrompt": {
+            "en": "What factor is used at each step for 1 MB, and what does capital B mean?",
+            "vi": "1 MB dùng hệ số mỗi bậc là bao nhiêu; B hoa cho biết gì?"
+          },
+          "expectedObservation": {
+            "en": "Each SI step is ×1000; B means byte; k is different from Ki.",
+            "vi": "Mỗi bậc SI là ×1000; B là byte; k khác Ki."
+          },
+          "misconceptionOrLimit": {
+            "en": "Peta is outside the mapped syllabus target; the table is not evidence that SI and IEC names are interchangeable.",
+            "vi": "Peta nằm ngoài target syllabus đã map; bảng không chứng minh tên SI và IEC có thể dùng thay nhau."
+          },
+          "instructionalCaption": {
+            "en": "SI prefixes: each step ×1000.",
+            "vi": "Tiền tố SI: mỗi bậc ×1000."
+          },
+          "textEquivalent": {
+            "en": "Text table of prefix, power of ten and bytes for k, M, G and T.",
+            "vi": "Bảng text gồm prefix, lũy thừa mười và số byte cho k, M, G và T."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 0,
+          "coDisplayGroup": "p1-l01-prefix-compare",
+          "coDisplayRationale": {
+            "en": "SI and IEC must be compared in the same view.",
+            "vi": "SI và IEC cần được so sánh trong cùng một view."
+          }
+        },
+        {
+          "atlasId": "BOOK-C01-P007-IEC-PREFIXES",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L01-theory",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-01"
+          ],
+          "requirementIds": [
+            "REQ-1.1-01-01"
+          ],
+          "teachingClaim": {
+            "en": "IEC prefixes Ki, Mi, Gi and Ti increase by powers of 1024.",
+            "vi": "Các tiền tố IEC Ki, Mi, Gi và Ti tăng theo lũy thừa 1024."
+          },
+          "learnerAction": {
+            "en": "Pair Ki with k and Mi with M, then state how their factors differ.",
+            "vi": "Ghép Ki với k và Mi với M, rồi nêu hệ số khác nhau."
+          },
+          "teacherPrompt": {
+            "en": "Which factor differs between 1 MiB and 1 MB?",
+            "vi": "1 MiB và 1 MB khác nhau ở hệ số nào?"
+          },
+          "expectedObservation": {
+            "en": "MiB is 2²⁰ bytes; MB is 10⁶ bytes.",
+            "vi": "MiB là 2²⁰ byte; MB là 10⁶ byte."
+          },
+          "misconceptionOrLimit": {
+            "en": "The two conventions have distinct names; do not call one universally more accurate.",
+            "vi": "Hai quy ước có tên khác nhau; không gọi một hệ chính xác hơn trong mọi ngữ cảnh."
+          },
+          "instructionalCaption": {
+            "en": "IEC binary prefixes: each step ×1024.",
+            "vi": "Tiền tố binary IEC: mỗi bậc ×1024."
+          },
+          "textEquivalent": {
+            "en": "Text table of prefix, power of two and bytes for Ki, Mi, Gi and Ti.",
+            "vi": "Bảng text gồm prefix, lũy thừa hai và số byte cho Ki, Mi, Gi và Ti."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 1,
+          "coDisplayGroup": "p1-l01-prefix-compare",
+          "coDisplayRationale": {
+            "en": "SI and IEC must be compared in the same view.",
+            "vi": "SI và IEC cần được so sánh trong cùng một view."
+          }
+        }
+      ],
+      "referencePlacements": []
+    },
+    {
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P008-RADIX-TABLE",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L02-theory-radix",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-02",
+            "AC26-1.1-03"
+          ],
+          "requirementIds": [
+            "REQ-1.1-02-01",
+            "REQ-1.1-03-01"
+          ],
+          "teachingClaim": {
+            "en": "One hexadecimal digit maps exactly to one four-bit nibble.",
+            "vi": "Một chữ số hexadecimal ánh xạ chính xác với một nibble bốn bit."
+          },
+          "learnerAction": {
+            "en": "Find two named rows and explain why 0–F covers all sixteen patterns.",
+            "vi": "Tìm hai hàng được chỉ định và giải thích vì sao 0–F đủ mười sáu pattern."
+          },
+          "teacherPrompt": {
+            "en": "What does 1011₂ map to, and what is its denary value?",
+            "vi": "1011₂ ánh xạ thành gì, và giá trị denary là bao nhiêu?"
+          },
+          "expectedObservation": {
+            "en": "1011₂ = B₁₆ = 11₁₀.",
+            "vi": "1011₂ = B₁₆ = 11₁₀."
+          },
+          "misconceptionOrLimit": {
+            "en": "Use the table to reason; the syllabus does not require isolated memorisation of every row.",
+            "vi": "Dùng bảng để suy luận; syllabus không yêu cầu học thuộc rời rạc mọi hàng."
+          },
+          "instructionalCaption": {
+            "en": "Binary–hex–denary lookup.",
+            "vi": "Bảng tra binary–hex–denary."
+          },
+          "textEquivalent": {
+            "en": "Rows list every nibble 0000–1111 beside its hexadecimal digit 0–F and denary value 0–15.",
+            "vi": "Các hàng liệt kê từng nibble 0000–1111 cạnh chữ số hexadecimal 0–F và giá trị denary 0–15."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P010-BCD-DIGITS",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L02-theory-bcd",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-02"
+          ],
+          "requirementIds": [
+            "REQ-1.1-02-01"
+          ],
+          "teachingClaim": {
+            "en": "BCD encodes each denary digit in four bits; 1010–1111 are invalid BCD digits.",
+            "vi": "BCD mã hóa từng chữ số denary bằng bốn bit; 1010–1111 là chữ số BCD không hợp lệ."
+          },
+          "learnerAction": {
+            "en": "Classify each nibble as valid or invalid before revealing the rule.",
+            "vi": "Phân loại từng nibble là hợp lệ hoặc không hợp lệ trước khi mở quy tắc."
+          },
+          "teacherPrompt": {
+            "en": "Why is 1100 valid binary but not a valid BCD digit?",
+            "vi": "Vì sao 1100 là binary hợp lệ nhưng không phải chữ số BCD hợp lệ?"
+          },
+          "expectedObservation": {
+            "en": "BCD digits are limited to 0000–1001 and do not encode a whole multi-digit value as pure binary.",
+            "vi": "Chữ số BCD chỉ nằm trong 0000–1001 và không mã hóa cả số nhiều chữ số như pure binary."
+          },
+          "misconceptionOrLimit": {
+            "en": "Valid binary patterns 1010–1111 do not represent denary digits in BCD.",
+            "vi": "Các pattern binary hợp lệ 1010–1111 không biểu diễn chữ số denary trong BCD."
+          },
+          "instructionalCaption": {
+            "en": "BCD digit legality.",
+            "vi": "Tính hợp lệ của chữ số BCD."
+          },
+          "textEquivalent": {
+            "en": "The table maps denary digits 0–9 to 0000–1001 and labels 1010–1111 invalid for one BCD digit.",
+            "vi": "Bảng ánh xạ chữ số denary 0–9 với 0000–1001 và ghi 1010–1111 không hợp lệ cho một chữ số BCD."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 1
+        },
+        {
+          "atlasId": "BOOK-C01-P002-BINARY-COLUMNS",
+          "disposition": "INLINE_OBSERVE_SCENE",
+          "stage": "observe",
+          "anchor": {
+            "kind": "visual-scene",
+            "targetId": "P1-L02-scene-binary-place-values",
+            "relation": "within"
+          },
+          "objectiveIds": [
+            "AC26-1.1-02",
+            "AC26-1.1-03"
+          ],
+          "requirementIds": [
+            "REQ-1.1-02-01",
+            "REQ-1.1-03-01"
+          ],
+          "teachingClaim": {
+            "en": "An unsigned binary value is the sum of the place weights whose bits are 1.",
+            "vi": "Giá trị binary không dấu là tổng các trọng số có bit bằng 1."
+          },
+          "learnerAction": {
+            "en": "Predict the bits for 238, then toggle columns to verify the running sum.",
+            "vi": "Dự đoán các bit của 238 rồi bật/tắt cột để kiểm tổng đang chạy."
+          },
+          "teacherPrompt": {
+            "en": "How does the total change if the 32 column is turned off?",
+            "vi": "Tổng thay đổi thế nào nếu tắt cột 32?"
+          },
+          "expectedObservation": {
+            "en": "11101110₂ totals 238; turning off weight 32 changes the total to 206.",
+            "vi": "11101110₂ có tổng 238; tắt trọng số 32 làm tổng thành 206."
+          },
+          "misconceptionOrLimit": {
+            "en": "The unsigned eight-bit width belongs to this fixture and must not silently carry into BCD or signed modes.",
+            "vi": "Độ rộng unsigned tám bit chỉ thuộc fixture này và không được âm thầm truyền sang mode BCD hoặc signed."
+          },
+          "instructionalCaption": {
+            "en": "Unsigned 8-bit place-value fixture for 238.",
+            "vi": "Fixture trọng số unsigned 8-bit cho 238."
+          },
+          "textEquivalent": {
+            "en": "Weights 128,64,32,16,8,4,2,1 with bit row 1,1,1,0,1,1,1,0; active weights sum to 238.",
+            "vi": "Các trọng số 128,64,32,16,8,4,2,1 với hàng bit 1,1,1,0,1,1,1,0; tổng trọng số bật là 238."
+          },
+          "dynamicRelation": "annotates-dynamic-scene",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P008-GROUP-BE1",
+          "disposition": "INLINE_WORKED_EXAMPLE",
+          "stage": "worked-example",
+          "anchor": {
+            "kind": "worked-step",
+            "targetId": "s3",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-03"
+          ],
+          "requirementIds": [
+            "REQ-1.1-03-01"
+          ],
+          "teachingClaim": {
+            "en": "Binary-to-hexadecimal conversion groups four bits from the right.",
+            "vi": "Đổi binary sang hexadecimal bằng cách nhóm bốn bit từ bên phải."
+          },
+          "learnerAction": {
+            "en": "Place the nibble boundaries before revealing the hexadecimal digits.",
+            "vi": "Tự đặt ranh giới nibble trước khi mở các chữ số hexadecimal."
+          },
+          "teacherPrompt": {
+            "en": "Where may zeros be padded without changing the value?",
+            "vi": "Có thể thêm số 0 ở đâu mà không đổi giá trị?"
+          },
+          "expectedObservation": {
+            "en": "The groups map to B, E and 1; padding is allowed only on the far left.",
+            "vi": "Các nhóm ánh xạ thành B, E và 1; chỉ được padding ở ngoài cùng bên trái."
+          },
+          "misconceptionOrLimit": {
+            "en": "Grouping from the left or padding on the right changes place value.",
+            "vi": "Nhóm từ bên trái hoặc padding bên phải làm đổi place value."
+          },
+          "instructionalCaption": {
+            "en": "Worked model: binary to BE1₁₆.",
+            "vi": "Ví dụ mẫu: binary sang BE1₁₆."
+          },
+          "textEquivalent": {
+            "en": "The binary string is split from the right into 1011,1110,0001, which map to B,E,1.",
+            "vi": "Chuỗi binary được nhóm từ phải thành 1011,1110,0001, ánh xạ thành B,E,1."
+          },
+          "dynamicRelation": "transfers-to-worked-example",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P009-MEMORY-NOTATION",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L02-recognise-memory",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-06"
+          ],
+          "requirementIds": [
+            "REQ-1.1-06-01"
+          ],
+          "teachingClaim": {
+            "en": "Hexadecimal shortens human-readable notation while preserving the same stored bits.",
+            "vi": "Hexadecimal rút gọn ký hiệu cho người đọc nhưng giữ nguyên các bit được lưu."
+          },
+          "learnerAction": {
+            "en": "Match each nibble to a hexadecimal digit and compare the written lengths.",
+            "vi": "Ghép từng nibble với một chữ số hexadecimal và so độ dài cách viết."
+          },
+          "teacherPrompt": {
+            "en": "How does hexadecimal help a reader without reducing stored bit count?",
+            "vi": "Hexadecimal giúp người đọc thế nào mà không làm giảm số bit được lưu?"
+          },
+          "expectedObservation": {
+            "en": "One hex digit is an exact shorthand for one nibble; storage is unchanged.",
+            "vi": "Một chữ số hex là ký hiệu rút gọn chính xác của một nibble; dung lượng lưu không đổi."
+          },
+          "misconceptionOrLimit": {
+            "en": "Compact notation is not data compression.",
+            "vi": "Ký hiệu ngắn gọn không phải data compression."
+          },
+          "instructionalCaption": {
+            "en": "Memory notation: shorter to read, bit-exact.",
+            "vi": "Ký hiệu bộ nhớ: ngắn để đọc, bảo toàn bit."
+          },
+          "textEquivalent": {
+            "en": "Each displayed hexadecimal digit is aligned with the corresponding four stored binary bits.",
+            "vi": "Mỗi chữ số hexadecimal được căn với bốn bit binary tương ứng được lưu."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P011-BCD-DISPLAY",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L02-recognise-bcd-display",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-06"
+          ],
+          "requirementIds": [
+            "REQ-1.1-06-01"
+          ],
+          "teachingClaim": {
+            "en": "BCD suits devices that process and display separate denary digits.",
+            "vi": "BCD phù hợp thiết bị xử lý và hiển thị riêng từng chữ số denary."
+          },
+          "learnerAction": {
+            "en": "Match each displayed digit to its nibble and state the storage trade-off.",
+            "vi": "Ghép từng chữ số hiển thị với nibble và nêu đánh đổi về lưu trữ."
+          },
+          "teacherPrompt": {
+            "en": "Why might a clock use BCD, and is BCD always compact?",
+            "vi": "Vì sao đồng hồ có thể dùng BCD, và BCD có luôn tiết kiệm không?"
+          },
+          "expectedObservation": {
+            "en": "BCD maps directly to displayed digits but commonly uses more bits than pure binary.",
+            "vi": "BCD ánh xạ trực tiếp với chữ số hiển thị nhưng thường dùng nhiều bit hơn pure binary."
+          },
+          "misconceptionOrLimit": {
+            "en": "A practical use does not prove BCD is the smallest representation.",
+            "vi": "Một ứng dụng thực tế không chứng minh BCD là cách biểu diễn nhỏ nhất."
+          },
+          "instructionalCaption": {
+            "en": "Digit-by-digit display mapping.",
+            "vi": "Ánh xạ màn hình theo từng chữ số."
+          },
+          "textEquivalent": {
+            "en": "Each denary display digit has its own four-bit BCD group; the groups remain separate.",
+            "vi": "Mỗi chữ số denary trên màn hình có một nhóm BCD bốn bit riêng; các nhóm được giữ tách biệt."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 1
+        }
+      ],
+      "referencePlacements": [
+        {
+          "atlasId": "BOOK-C01-P001-HEX-PRACTICE",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: prerequisite hexadecimal-addition warm-up. Placement: Chapter Atlas only. Action: attempt one sum and diagnose whether the difficulty is place value or addition. Evidence: identify the missing prerequisite. This coursebook activity is not an official past-paper question.",
+            "vi": "Mục đích: Warm-up hex chỉ là kiểm tra kiến thức nền. Vị trí: Chapter Atlas, filter L02. Hành động: Tự mở khi cần ôn phép cộng hex trước bài. Bằng chứng: Học sinh tự xác định đây là prerequisite, không phải outcome mới của flow. Giới hạn: Câu hỏi coursebook không phải past paper chính thức."
+          },
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P002-DECIMAL-COLUMNS",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: bridge from familiar denary place value. Placement: Chapter Atlas only. Action: move a digit one column and predict its value. Evidence: explain that each denary column is ten times the column to its right without generalising the factor to every base.",
+            "vi": "Mục đích: Denary place values là cầu nối nền, không cần hình riêng trong đường học bắt buộc. Vị trí: Chapter Atlas, filter L02. Hành động: Mở nếu chưa giải thích được giá trị theo vị trí. Bằng chứng: Mỗi cột denary gấp 10 lần cột bên phải. Giới hạn: Không dùng bảng denary để suy rằng mọi base đều gấp 10."
+          },
+          "order": 1
+        },
+        {
+          "atlasId": "BOOK-C01-P003-WEIGHT-CONVERSION",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional conversion by selecting binary weights. Placement: end-of-lesson disclosure. Action: trace 107 by choosing the largest remaining weight. Evidence: produce 01101011 and justify each bit; this is one method rather than the only algorithm.",
+            "vi": "Mục đích: Chọn trọng số là một cách đổi denary↔binary. Vị trí: End disclosure: “Cách đổi bổ sung”. Hành động: Tự trace 107 bằng cách chọn trọng số. Bằng chứng: Học sinh tạo 01101011 và giải thích từng bit. Giới hạn: Đây là phương pháp thay thế, không phải thuật toán duy nhất."
+          },
+          "order": 2
+        },
+        {
+          "atlasId": "BOOK-C01-P003-DIVISION-CONVERSION",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: alternative repeated-division conversion. Placement: end-of-lesson disclosure. Action: complete quotient and remainder rows before reading remainders upwards. Evidence: explain why the remainder order yields increasing powers of two.",
+            "vi": "Mục đích: Chia lặp cho 2 tạo các remainder đọc từ dưới lên. Vị trí: End disclosure: “Cách đổi bổ sung”. Hành động: Che đáp án, hoàn thành quotient/remainder rồi đọc ngược. Bằng chứng: Học sinh nối mỗi remainder với lũy thừa 2 tăng dần. Giới hạn: Không trộn thứ tự quotient với thứ tự bit; không bắt buộc nếu lesson chọn phương pháp trọng số."
+          },
+          "order": 3
+        },
+        {
+          "atlasId": "BOOK-C01-P007-HEX-WEIGHTS",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional direct hexadecimal place-value calculation. Placement: end-of-lesson disclosure. Action: expand a hexadecimal value using powers of sixteen. Evidence: calculate 3A as 3×16¹ + 10×16⁰ without treating a long power table as memorisation.",
+            "vi": "Mục đích: Hexadecimal place values dùng lũy thừa 16. Vị trí: End disclosure: reference. Hành động: Đọc giá trị một chuỗi hex bằng tổng trọng số. Bằng chứng: Học sinh nêu A×16^0 và 3×16^1. Giới hạn: Không biến bảng thành yêu cầu học thuộc dãy lũy thừa dài."
+          },
+          "order": 4
+        },
+        {
+          "atlasId": "BOOK-C01-P008-PAD-21FD",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: extra left-padding example. Placement: end-of-lesson disclosure. Action: add only the required leading zeros and convert each nibble. Evidence: obtain 21FD and explain why right-padding changes the value.",
+            "vi": "Mục đích: Padding trái hoàn tất nibble ngoài cùng. Vị trí: End disclosure: extra example. Hành động: Thêm đúng số zero bên trái rồi đổi từng nhóm. Bằng chứng: Học sinh thu được 21FD và không padding bên phải. Giới hạn: Là ví dụ thứ hai của cùng cơ chế, không cần inline."
+          },
+          "order": 5
+        },
+        {
+          "atlasId": "BOOK-C01-P009-HEX-45A",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: extra hexadecimal-to-binary example. Placement: end-of-lesson disclosure. Action: replace 4, 5 and A with full nibbles. Evidence: preserve digit boundaries and the leading zero within each nibble.",
+            "vi": "Mục đích: Hex→binary thay mỗi digit bằng nibble tương ứng. Vị trí: End disclosure: extra example. Hành động: Tự thay 4, 5, A bằng ba nibble. Bằng chứng: Học sinh bảo toàn ranh giới digit và leading zero trong nibble. Giới hạn: Không bỏ zero bên trong chuỗi vì làm mất vị trí."
+          },
+          "order": 6
+        },
+        {
+          "atlasId": "BOOK-C01-P009-HEX-BF08",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: longer hexadecimal-to-binary practice. Placement: end-of-lesson disclosure. Action: convert each digit independently and concatenate in order. Evidence: keep digit 0 as 0000 and produce the expected length.",
+            "vi": "Mục đích: Một ví dụ hex→binary dài hơn dùng cùng quy tắc. Vị trí: End disclosure: extra example. Hành động: Đổi từng digit độc lập rồi ghép theo thứ tự. Bằng chứng: Học sinh giữ `0000` và tạo đúng độ dài. Giới hạn: Không coi zero nibble là có thể bỏ ở giữa số."
+          },
+          "order": 7
+        },
+        {
+          "atlasId": "BOOK-C01-P009-HEX-ACTIVITY",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional binary-to-hexadecimal practice. Placement: end-of-lesson disclosure. Action: choose one item and solve before checking. Evidence: group from the right and justify every digit; the coursebook activity is not official assessment evidence.",
+            "vi": "Mục đích: Activity coursebook cung cấp practice binary→hex. Vị trí: End disclosure: practice. Hành động: Chọn một item và tự làm trước khi mở đáp án riêng của lesson. Bằng chứng: Học sinh dùng đúng procedure, không đoán bằng bảng. Giới hạn: Activity coursebook không phải bằng chứng chấm chính thức."
+          },
+          "order": 8
+        },
+        {
+          "atlasId": "BOOK-C01-P010-BINARY-ACTIVITY",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional hexadecimal-to-binary practice. Placement: end-of-lesson disclosure. Action: replace every hexadecimal digit with four bits. Evidence: preserve all nibbles and their order; the canonical lesson checkpoint remains separate.",
+            "vi": "Mục đích: Activity coursebook cung cấp practice hex→binary. Vị trí: End disclosure: practice. Hành động: Chọn một item, thay từng digit bằng nibble. Bằng chứng: Học sinh giữ đủ nibble và đúng thứ tự. Giới hạn: Không coi đây là assessment chuẩn hóa."
+          },
+          "order": 9
+        },
+        {
+          "atlasId": "BOOK-C01-P010-MEMORY-DUMP",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: additional memory-dump context. Placement: end-of-lesson disclosure. Action: locate a named address and read its stored byte. Evidence: distinguish the address from the contents and avoid treating this layout as a universal dump format.",
+            "vi": "Mục đích: Bảng địa chỉ/byte là ví dụ bổ sung của memory dump. Vị trí: End disclosure: application. Hành động: Tìm address và đọc byte được chỉ định. Bằng chứng: Học sinh phân biệt địa chỉ với nội dung. Giới hạn: Không suy định dạng dump này là chuẩn duy nhất."
+          },
+          "order": 10
+        },
+        {
+          "atlasId": "BOOK-C01-P010-BCD-PACKING",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional packed versus unpacked BCD detail. Placement: end-of-lesson disclosure. Action: count nibbles and bytes in both layouts. Evidence: explain that packing changes container boundaries but preserves separate denary digits; it is not a named core requirement.",
+            "vi": "Mục đích: Packed/unpacked BCD là chi tiết biểu diễn bổ sung. Vị trí: End disclosure: extension within topic. Hành động: Đếm nibble/byte của hai cách lưu cùng dãy digit. Bằng chứng: Học sinh thấy packing thay cách chứa nibble, không đổi digit. Giới hạn: Syllabus 2026 không gọi đích danh packed/unpacked; không dùng làm tiêu chí bắt buộc."
+          },
+          "order": 11
+        },
+        {
+          "atlasId": "BOOK-C01-P011-BCD-CENTS",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: BCD arithmetic extension. Placement: Chapter Atlas only. Action: locate a nibble above nine and trace the correction/carry. Evidence: identify carry between denary digits; BCD arithmetic is outside the 2026 core requirement.",
+            "vi": "Mục đích: BCD arithmetic cents là chi tiết sâu hơn outcome lesson. Vị trí: Chapter Atlas, filter L02. Hành động: Tự khám phá carry/correction sau khi đã vững BCD digit. Bằng chứng: Học sinh nhận biết carry giữa digit denary. Giới hạn: Syllabus không yêu cầu thực hiện BCD arithmetic; không đưa vào Check bắt buộc."
+          },
+          "order": 12
+        },
+        {
+          "atlasId": "BOOK-C01-P012-BCD-CARRY",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: second BCD carry extension. Placement: Chapter Atlas only. Action: compare it with the cents example. Evidence: trace the exact step where carry passes to the next denary digit without treating it as required lesson assessment.",
+            "vi": "Mục đích: Ví dụ carry BCD tiếp tục cùng cơ chế cents. Vị trí: Chapter Atlas, filter L02. Hành động: Đối chiếu với ví dụ cents khi tự học mở rộng. Bằng chứng: Học sinh theo dõi carry digit-by-digit. Giới hạn: Không phải requirement arithmetic của syllabus 2026."
+          },
+          "order": 13
+        },
+        {
+          "atlasId": "BOOK-C01-P025-EXAM-BCD",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional end-of-chapter BCD reading practice. Placement: end-of-lesson disclosure. Action: split the strip into nibbles and decode each digit. Evidence: reject any nibble outside 0000–1001 and avoid reading the whole strip as pure binary. It is not an official Cambridge past paper.",
+            "vi": "Mục đích: End-of-chapter BCD strip là practice đọc nibble. Vị trí: End disclosure: optional practice. Hành động: Chia bit thành nibble và đọc từng decimal digit. Bằng chứng: Học sinh đọc BCD theo digit, không đổi toàn chuỗi như pure binary. Giới hạn: Nhãn “exam” trong asset là end-of-chapter question của sách, không phải Cambridge past paper provenance."
+          },
+          "order": 14
+        },
+        {
+          "atlasId": "BOOK-C01-P026-EXAM-HEX-STRIP",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional end-of-chapter binary-to-hexadecimal practice. Placement: end-of-lesson disclosure. Action: group four bits from the right and write each hexadecimal digit. Evidence: explain grouping and any left padding. It is not an official mark scheme.",
+            "vi": "Mục đích: End-of-chapter strip là practice binary→hex. Vị trí: End disclosure: optional practice. Hành động: Nhóm bốn bit và ghi hex digit tương ứng. Bằng chứng: Học sinh tạo đúng chuỗi hex và giải thích padding nếu có. Giới hạn: Đây là câu cuối chương coursebook, không phải official mark scheme."
+          },
+          "order": 15
+        }
+      ]
+    },
+    {
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P003-SIGNED-WEIGHTS",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L03-theory-signed-weights",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-04",
+            "AC26-1.1-05"
+          ],
+          "requirementIds": [
+            "REQ-1.1-04-01",
+            "REQ-1.1-05-01"
+          ],
+          "teachingClaim": {
+            "en": "Eight-bit two’s complement uses −128 as the most significant weight and has range −128 to 127.",
+            "vi": "Two’s complement 8-bit dùng −128 làm trọng số cao nhất và có miền −128 đến 127."
+          },
+          "learnerAction": {
+            "en": "Evaluate one pattern with MSB 0 and one with MSB 1.",
+            "vi": "Tính một pattern có MSB 0 và một pattern có MSB 1."
+          },
+          "teacherPrompt": {
+            "en": "Why is 10000000 not +128 in eight-bit two’s complement?",
+            "vi": "Vì sao 10000000 không phải +128 trong two’s complement 8-bit?"
+          },
+          "expectedObservation": {
+            "en": "The MSB has weight −128; the range and interpretation depend on word width.",
+            "vi": "MSB có trọng số −128; miền và cách diễn giải phụ thuộc word width."
+          },
+          "misconceptionOrLimit": {
+            "en": "Do not apply unsigned weights to a signed two’s-complement pattern.",
+            "vi": "Không áp dụng trọng số unsigned cho pattern two’s-complement có dấu."
+          },
+          "instructionalCaption": {
+            "en": "Eight-bit signed weights; width is part of the meaning.",
+            "vi": "Trọng số signed 8-bit; width là một phần của ý nghĩa."
+          },
+          "textEquivalent": {
+            "en": "The weights are −128,64,32,16,8,4,2,1; sum the weights whose bits are 1.",
+            "vi": "Các trọng số là −128,64,32,16,8,4,2,1; cộng các trọng số có bit bằng 1."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P004-ADD-37-58",
+          "disposition": "INLINE_WORKED_EXAMPLE",
+          "stage": "worked-example",
+          "anchor": {
+            "kind": "worked-step",
+            "targetId": "P1-L03-worked-add-result",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-04"
+          ],
+          "requirementIds": [
+            "REQ-1.1-04-01"
+          ],
+          "teachingClaim": {
+            "en": "Signed addition without overflow still uses ordinary column addition.",
+            "vi": "Signed addition không overflow vẫn dùng phép cộng theo cột thông thường."
+          },
+          "learnerAction": {
+            "en": "Hide the result, trace carries and then interpret the stored value.",
+            "vi": "Che kết quả, trace carry rồi diễn giải giá trị được lưu."
+          },
+          "teacherPrompt": {
+            "en": "Both operands are positive; what result sign should you expect?",
+            "vi": "Hai toán hạng đều dương; em mong đợi dấu kết quả nào?"
+          },
+          "expectedObservation": {
+            "en": "00100101 + 00111010 = 01011111 = 95 with no signed overflow.",
+            "vi": "00100101 + 00111010 = 01011111 = 95 và không có signed overflow."
+          },
+          "misconceptionOrLimit": {
+            "en": "Carry out is not itself the signed-overflow criterion.",
+            "vi": "Carry out tự nó không phải tiêu chí signed overflow."
+          },
+          "instructionalCaption": {
+            "en": "Model 1: 37 + 58 in signed eight-bit arithmetic.",
+            "vi": "Mẫu 1: 37 + 58 trong số học signed 8-bit."
+          },
+          "textEquivalent": {
+            "en": "37 is 00100101, 58 is 00111010 and their column sum is 01011111, denary 95.",
+            "vi": "37 là 00100101, 58 là 00111010 và tổng theo cột là 01011111, denary 95."
+          },
+          "dynamicRelation": "transfers-to-worked-example",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P005-SUBTRACT-POSITIVE",
+          "disposition": "INLINE_WORKED_EXAMPLE",
+          "stage": "worked-example",
+          "anchor": {
+            "kind": "worked-step",
+            "targetId": "P1-L03-worked-subtract-result",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-04"
+          ],
+          "requirementIds": [
+            "REQ-1.1-04-01"
+          ],
+          "teachingClaim": {
+            "en": "A−B is calculated as A plus the fixed-width two’s complement of B.",
+            "vi": "A−B được tính bằng A cộng two’s complement độ rộng cố định của B."
+          },
+          "learnerAction": {
+            "en": "Complete encode, negate B and add, then explain the ninth carry.",
+            "vi": "Hoàn thành encode, đổi B thành số đối và cộng, rồi giải thích carry thứ chín."
+          },
+          "teacherPrompt": {
+            "en": "After discarding the carry beyond the width, what must still be checked?",
+            "vi": "Sau khi bỏ carry vượt width, còn phải kiểm gì?"
+          },
+          "expectedObservation": {
+            "en": "95 + (−68) stores 00011011 = 27; signed overflow is checked separately and is false.",
+            "vi": "95 + (−68) lưu 00011011 = 27; signed overflow được kiểm riêng và bằng false."
+          },
+          "misconceptionOrLimit": {
+            "en": "Discarding an external carry does not remove the need to test signed overflow.",
+            "vi": "Bỏ carry ngoài không loại bỏ nhu cầu kiểm signed overflow."
+          },
+          "instructionalCaption": {
+            "en": "Model 2: 95 − 68 using two’s complement.",
+            "vi": "Mẫu 2: 95 − 68 bằng two’s complement."
+          },
+          "textEquivalent": {
+            "en": "68 is 01000100, −68 is 10111100; adding 01011111 gives 1 00011011, so the stored eight bits are 27.",
+            "vi": "68 là 01000100, −68 là 10111100; cộng 01011111 được 1 00011011 nên tám bit lưu biểu diễn 27."
+          },
+          "dynamicRelation": "transfers-to-worked-example",
+          "order": 1
+        },
+        {
+          "atlasId": "BOOK-C01-P005-OVERFLOW",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L03-recognise-overflow",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-05"
+          ],
+          "requirementIds": [
+            "REQ-1.1-05-01"
+          ],
+          "teachingClaim": {
+            "en": "Same-sign operands producing an opposite-sign stored result indicate signed overflow.",
+            "vi": "Hai toán hạng cùng dấu tạo kết quả lưu khác dấu cho biết signed overflow."
+          },
+          "learnerAction": {
+            "en": "Predict the sign before revealing the true sum, range and stored bits.",
+            "vi": "Dự đoán dấu trước khi mở tổng thật, miền và các bit được lưu."
+          },
+          "teacherPrompt": {
+            "en": "What sign should 82 + 69 have, and why does the stored pattern decode as negative?",
+            "vi": "82 + 69 phải có dấu nào, và vì sao pattern được lưu lại đọc thành âm?"
+          },
+          "expectedObservation": {
+            "en": "The true sum 151 exceeds 127, so the fixed-width stored pattern wraps into the negative half of the range.",
+            "vi": "Tổng thật 151 vượt 127 nên pattern độ rộng cố định rơi vào nửa âm của miền."
+          },
+          "misconceptionOrLimit": {
+            "en": "The bit addition can be correct while its signed interpretation is outside the available range.",
+            "vi": "Phép cộng bit có thể đúng trong khi diễn giải signed nằm ngoài miền có sẵn."
+          },
+          "instructionalCaption": {
+            "en": "Recognise overflow: true result versus stored eight-bit pattern.",
+            "vi": "Nhận diện overflow: kết quả thật và pattern 8-bit được lưu."
+          },
+          "textEquivalent": {
+            "en": "82 is 01010010 and 69 is 01000101; their stored sum is 10010111, which has negative signed interpretation although the true sum is +151.",
+            "vi": "82 là 01010010 và 69 là 01000101; tổng lưu là 10010111, mang diễn giải signed âm dù tổng thật là +151."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        }
+      ],
+      "referencePlacements": [
+        {
+          "atlasId": "BOOK-C01-P001-BINARY-PRACTICE",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: prerequisite carry fluency. Placement: Chapter Atlas only. Action: attempt one unsigned addition if carry handling is weak. Evidence: distinguish an addition error from a signed-interpretation error; it does not count as signed-arithmetic coverage.",
+            "vi": "Mục đích: Binary addition warm-up kiểm tra fluency không dấu. Vị trí: Chapter Atlas, filter L03. Hành động: Tự chọn một phép cộng nếu carry cơ bản còn yếu. Bằng chứng: Học sinh tách lỗi addition khỏi lỗi signed interpretation. Giới hạn: Không tính warm-up là coverage signed arithmetic."
+          },
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P003-COMPLEMENT-90",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: recap one’s versus two’s complement. Placement: end-of-lesson disclosure. Action: hide the steps and construct −90 at the stated width. Evidence: identify the add-one step and preserve eight bits.",
+            "vi": "Mục đích: Invert rồi add one tạo số đối trong two's complement; one's complement chỉ invert. Vị trí: End disclosure: recap from L02. Hành động: Tự che hai dòng và tạo −90 ở word width đã nêu. Bằng chứng: Học sinh chỉ ra bước +1 và giữ 8 bit. Giới hạn: Đây là recap representation; Observe L03 tập trung arithmetic."
+          },
+          "order": 1
+        },
+        {
+          "atlasId": "BOOK-C01-P004-SIGNED-38",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: signed-representation recap. Placement: end-of-lesson disclosure. Action: compare +38 and −38 using signed weights. Evidence: reject sign-bit flipping as the two’s-complement method.",
+            "vi": "Mục đích: ±38 minh họa cùng magnitude nhưng encoding signed khác. Vị trí: End disclosure: signed representation recap. Hành động: So sánh hai pattern và kiểm bằng signed weights. Bằng chứng: Học sinh bác bỏ sign-and-magnitude cho two's complement. Giới hạn: Coursebook có nhắc nhiều representations; lesson arithmetic dùng two's complement."
+          },
+          "order": 2
+        },
+        {
+          "atlasId": "BOOK-C01-P004-COMPLEMENT-104",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: extra two’s-complement construction. Placement: end-of-lesson disclosure. Action: form −104 and reverse the operation to check it. Evidence: trace the propagated carry while preserving word width.",
+            "vi": "Mục đích: −104 là thêm một ví dụ tạo two's complement. Vị trí: End disclosure: extra example. Hành động: Tạo −104 rồi chuyển ngược để tự kiểm. Bằng chứng: Học sinh theo đúng invert/add-one và giữ width. Giới hạn: Không dùng ví dụ này thay objective subtraction."
+          },
+          "order": 3
+        },
+        {
+          "atlasId": "BOOK-C01-P006-SUBTRACT-NEGATIVE",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: subtraction with a negative result. Placement: end-of-lesson disclosure. Action: trace 49−80 and interpret the stored signed pattern. Evidence: obtain −31 rather than reading the bits as unsigned 225.",
+            "vi": "Mục đích: Subtraction có kết quả âm dùng cùng quy trình. Vị trí: End disclosure: extra subtraction case. Hành động: Tự trace 49−80 rồi đọc signed result. Bằng chứng: Học sinh thu −31 và không đọc như unsigned 225. Giới hạn: Là ví dụ thứ hai, không cần chiếm Worked stage."
+          },
+          "order": 4
+        },
+        {
+          "atlasId": "BOOK-C01-P026-EXAM-ARITHMETIC",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional overflow practice. Placement: end-of-lesson disclosure. Action: predict overflow, trace the calculation and explain the sign result. Evidence: apply the same-sign/opposite-sign rule. This is a coursebook question, not an official Cambridge past paper or mark scheme.",
+            "vi": "Mục đích: End-of-chapter arithmetic cho practice overflow. Vị trí: End disclosure: optional practice. Hành động: Dự đoán overflow, trace rồi giải thích. Bằng chứng: Học sinh áp dụng rule same-sign/opposite-sign. Giới hạn: Đây là câu trong sách, không phải official Cambridge past paper/mark scheme."
+          },
+          "order": 5
+        }
+      ]
+    },
+    {
+      "lessonId": "P1-L04",
+      "visualId": "VIS-P1-L04",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P015-UNICODE",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L04-theory-unicode",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-07"
+          ],
+          "requirementIds": [
+            "REQ-1.1-07-01"
+          ],
+          "teachingClaim": {
+            "en": "Unicode assigns code points; an encoding such as UTF-8 converts code points to bytes.",
+            "vi": "Unicode gán code point; encoding như UTF-8 chuyển code point thành byte."
+          },
+          "learnerAction": {
+            "en": "Choose one entry and name its glyph and code point before encoding bytes.",
+            "vi": "Chọn một entry và gọi tên glyph cùng code point trước khi encode byte."
+          },
+          "teacherPrompt": {
+            "en": "Is U+00E9 a code point or two UTF-8 bytes?",
+            "vi": "U+00E9 là code point hay hai byte UTF-8?"
+          },
+          "expectedObservation": {
+            "en": "U+00E9 is a code point; C3 A9 is its UTF-8 byte sequence.",
+            "vi": "U+00E9 là code point; C3 A9 là chuỗi byte UTF-8 của nó."
+          },
+          "misconceptionOrLimit": {
+            "en": "Unicode does not mean every character is stored in exactly sixteen bits.",
+            "vi": "Unicode không có nghĩa mọi ký tự đều được lưu bằng đúng mười sáu bit."
+          },
+          "instructionalCaption": {
+            "en": "Character to code point; encoding comes next.",
+            "vi": "Ký tự sang code point; encoding là bước kế tiếp."
+          },
+          "textEquivalent": {
+            "en": "The entry identifies character é and code point U+00E9; a separate encoding step gives UTF-8 bytes C3 A9.",
+            "vi": "Entry xác định ký tự é và code point U+00E9; bước encoding riêng tạo byte UTF-8 C3 A9."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P014-EXTENDED-ASCII",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L04-recognise-extended-ascii",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.1-07"
+          ],
+          "requirementIds": [
+            "REQ-1.1-07-01"
+          ],
+          "teachingClaim": {
+            "en": "A value above 127 can be interpreted only after naming the eight-bit encoding; CP437 is one example.",
+            "vi": "Giá trị lớn hơn 127 chỉ được diễn giải sau khi nêu tên encoding 8-bit; CP437 là một ví dụ."
+          },
+          "learnerAction": {
+            "en": "Find a code above 127 and name the table required to interpret it.",
+            "vi": "Tìm một code lớn hơn 127 và nêu tên bảng cần dùng để diễn giải."
+          },
+          "teacherPrompt": {
+            "en": "Is ‘extended ASCII’ alone enough to identify the glyph?",
+            "vi": "Chỉ nói ‘extended ASCII’ đã đủ để biết glyph chưa?"
+          },
+          "expectedObservation": {
+            "en": "A named encoding is required because mappings 128–255 differ; CP437 is not universal.",
+            "vi": "Cần một encoding có tên vì mapping 128–255 khác nhau; CP437 không phổ quát."
+          },
+          "misconceptionOrLimit": {
+            "en": "Do not memorise codes or generalise one extended table to every system.",
+            "vi": "Không học thuộc code hoặc khái quát một bảng extended cho mọi hệ thống."
+          },
+          "instructionalCaption": {
+            "en": "CP437 example, not a universal extended-ASCII table.",
+            "vi": "Ví dụ CP437, không phải bảng extended ASCII duy nhất."
+          },
+          "textEquivalent": {
+            "en": "The named CP437 lookup maps specific byte values above 127 to glyphs; another named eight-bit encoding may map them differently.",
+            "vi": "Bảng CP437 có tên ánh xạ các byte cụ thể trên 127 với glyph; encoding 8-bit có tên khác có thể ánh xạ khác."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        }
+      ],
+      "referencePlacements": [
+        {
+          "atlasId": "BOOK-C01-P013-ASCII",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: on-demand ASCII lookup. Placement: end-of-lesson disclosure. Action: look up one supplied character, then close the table. Evidence: distinguish character from code and use the table rather than memorising codes, as the syllabus requires.",
+            "vi": "Mục đích: ASCII là một character set/encoding quen thuộc; mã cụ thể không phải nội dung phải học thuộc. Vị trí: End disclosure: lookup table. Hành động: Tra một ký tự khi làm ví dụ, rồi đóng bảng. Bằng chứng: Học sinh dùng bảng đúng chức năng và gọi tên character/code. Giới hạn: Syllabus ghi rõ không yêu cầu nhớ character codes; không đặt bảng lớn trong Understand."
+          },
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P013-ASCII-CASE",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional ASCII upper/lower-case pattern. Placement: end-of-lesson disclosure. Action: compare a/A and y/Y. Evidence: describe the observed ASCII pattern without generalising it to every character set or Unicode.",
+            "vi": "Mục đích: Ví dụ upper/lowercase cho thấy mã là mapping, không phải hình dạng glyph. Vị trí: End disclosure: pattern example. Hành động: So sánh a/A và y/Y rồi mô tả điều quan sát. Bằng chứng: Học sinh thấy pattern trong ASCII nhưng không tổng quát hóa. Giới hạn: Không biến khoảng cách code thành yêu cầu ghi nhớ hoặc quy luật Unicode phổ quát."
+          },
+          "order": 1
+        }
+      ]
+    },
+    {
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P016-DIGITAL-PHOTO",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L05-theory-pixel-grid",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.2-01"
+          ],
+          "requirementIds": [
+            "REQ-1.2-01-01"
+          ],
+          "teachingClaim": {
+            "en": "A bitmap is an ordered pixel grid whose decoder needs dimensions and colour-depth metadata.",
+            "vi": "Bitmap là lưới pixel có thứ tự; decoder cần metadata về dimensions và colour depth."
+          },
+          "learnerAction": {
+            "en": "Inspect one enlarged region and describe image to grid to colour values.",
+            "vi": "Quan sát một vùng phóng to và mô tả ảnh sang grid rồi sang colour values."
+          },
+          "teacherPrompt": {
+            "en": "Without the width, where would the decoder start a new row?",
+            "vi": "Thiếu width thì decoder bắt đầu hàng mới ở đâu?"
+          },
+          "expectedObservation": {
+            "en": "Pixel order alone is insufficient; width, height and bit depth tell the decoder how to rebuild the grid.",
+            "vi": "Chỉ thứ tự pixel là chưa đủ; width, height và bit depth cho decoder biết cách dựng lại grid."
+          },
+          "misconceptionOrLimit": {
+            "en": "The figure illustrates a data model and does not prove a particular file format.",
+            "vi": "Hình minh họa mô hình dữ liệu và không chứng minh một file format cụ thể."
+          },
+          "instructionalCaption": {
+            "en": "From visible image to ordered pixel data.",
+            "vi": "Từ ảnh nhìn thấy đến dữ liệu pixel có thứ tự."
+          },
+          "textEquivalent": {
+            "en": "A small region is represented as rows and columns of pixel colour values; dimensions define row boundaries and bit depth defines available values.",
+            "vi": "Một vùng nhỏ được biểu diễn thành các hàng/cột giá trị màu pixel; dimensions xác định ranh giới hàng và bit depth xác định các giá trị có sẵn."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P017-BITMAP-SIZE",
+          "disposition": "INLINE_WORKED_EXAMPLE",
+          "stage": "worked-example",
+          "anchor": {
+            "kind": "worked-step",
+            "targetId": "s3",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.2-02"
+          ],
+          "requirementIds": [
+            "REQ-1.2-02-01"
+          ],
+          "teachingClaim": {
+            "en": "Raw bitmap bits equal width × height × bit depth; unit conversion follows.",
+            "vi": "Số bit bitmap thô bằng width × height × bit depth; đổi đơn vị thực hiện sau."
+          },
+          "learnerAction": {
+            "en": "Hide the result, state factors and assumptions, then calculate.",
+            "vi": "Che kết quả, nêu factors và assumptions rồi tính."
+          },
+          "teacherPrompt": {
+            "en": "What does 2^b calculate, and where is b used?",
+            "vi": "2^b dùng để tính gì, và b được dùng ở đâu?"
+          },
+          "expectedObservation": {
+            "en": "Use b itself for storage and 2^b for colour count; exclude headers and compression when the model says raw payload.",
+            "vi": "Dùng chính b cho dung lượng và 2^b cho số màu; loại header và compression khi mô hình nói raw payload."
+          },
+          "misconceptionOrLimit": {
+            "en": "PPI does not replace stored width and height in this formula.",
+            "vi": "PPI không thay stored width và height trong công thức này."
+          },
+          "instructionalCaption": {
+            "en": "Raw bitmap size under stated assumptions.",
+            "vi": "Dung lượng bitmap thô theo giả định đã nêu."
+          },
+          "textEquivalent": {
+            "en": "Multiply stored width by stored height to get pixel count, multiply by bits per pixel, then divide by eight for bytes.",
+            "vi": "Nhân stored width với stored height để có số pixel, nhân bits per pixel, rồi chia tám để đổi sang byte."
+          },
+          "dynamicRelation": "transfers-to-worked-example",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P017-WHEEL-RESOLUTION",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L05-recognise-resolution-depth",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.2-03"
+          ],
+          "requirementIds": [
+            "REQ-1.2-03-01"
+          ],
+          "teachingClaim": {
+            "en": "Reducing image resolution lowers pixel count and spatial detail.",
+            "vi": "Giảm image resolution làm giảm số pixel và chi tiết không gian."
+          },
+          "learnerAction": {
+            "en": "Order the panels by detail and predict relative pixel count.",
+            "vi": "Sắp các panel theo độ chi tiết và dự đoán số pixel tương đối."
+          },
+          "teacherPrompt": {
+            "en": "Is the blockier result caused by fewer pixels or fewer colour levels?",
+            "vi": "Kết quả khối hơn do ít pixel hay ít colour levels?"
+          },
+          "expectedObservation": {
+            "en": "The shown change is resolution, not colour depth; the comparison is qualitative.",
+            "vi": "Thay đổi được cho là resolution, không phải colour depth; đây là so sánh định tính."
+          },
+          "misconceptionOrLimit": {
+            "en": "Do not infer the same visible quality change for every image or display.",
+            "vi": "Không suy ra cùng mức thay đổi chất lượng cho mọi ảnh hoặc màn hình."
+          },
+          "instructionalCaption": {
+            "en": "Recognise a resolution change.",
+            "vi": "Nhận diện thay đổi resolution."
+          },
+          "textEquivalent": {
+            "en": "Panels A–E show progressively less spatial detail and lower relative pixel counts while colour-level capability is held conceptually fixed.",
+            "vi": "Các panel A–E cho thấy chi tiết không gian và số pixel tương đối giảm dần trong khi khả năng mức màu được giữ cố định về mặt khái niệm."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        }
+      ],
+      "referencePlacements": [
+        {
+          "atlasId": "BOOK-C01-P015-RGB-SUBPIXELS",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: distinguish physical display subpixels from stored bitmap values. Placement: Chapter Atlas only. Action: identify whether the diagram describes a display or file-byte layout. Evidence: state that it is a display example and does not prescribe every bitmap file format.",
+            "vi": "Mục đích: RGB subpixels mô tả cấu tạo display hỗ trợ, không trực tiếp định nghĩa dữ liệu bitmap file. Vị trí: Chapter Atlas, filter L05. Hành động: Mở khi cần phân biệt display pixel và stored pixel value. Bằng chứng: Học sinh nói đây là display arrangement. Giới hạn: Không suy một pixel file luôn lưu ba subpixel theo đúng layout vật lý này."
+          },
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P016-CROP-ROTATE",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: optional bitmap-editing context. Placement: Chapter Atlas only. Action: compare grid dimensions and orientation before and after editing. Evidence: separate geometric change from colour depth; it does not count as bitmap-encoding coverage.",
+            "vi": "Mục đích: Crop/rotate là thao tác chỉnh ảnh, không phải objective cốt lõi của lesson. Vị trí: Chapter Atlas, filter L05. Hành động: Tự quan sát nếu cần bối cảnh thao tác bitmap. Bằng chứng: Học sinh tách geometry edit khỏi colour depth. Giới hạn: Không dùng crop/rotate làm bằng chứng coverage bitmap encoding."
+          },
+          "order": 1
+        },
+        {
+          "atlasId": "BOOK-C01-P017-PIXEL-DENSITY",
+          "disposition": "CHAPTER_ATLAS_ONLY",
+          "rationale": {
+            "en": "Purpose: optional screen-density extension. Placement: Chapter Atlas only. Action: contrast PPI with stored image dimensions. Evidence: explain that PPI alone does not determine file bits and that the syllabus does not require the diagonal formula.",
+            "vi": "Mục đích: Pixel density theo diagonal là mở rộng về display, không phải phép tính file-size cốt lõi. Vị trí: Chapter Atlas, filter L05. Hành động: Mở khi muốn phân biệt PPI với image resolution. Bằng chứng: Học sinh trả lời không; cần dimensions và bit depth. Giới hạn: Syllabus yêu cầu hiểu screen resolution, không yêu cầu công thức diagonal/PPI cụ thể."
+          },
+          "order": 2
+        },
+        {
+          "atlasId": "BOOK-C03-P082-RGB-PIXEL",
+          "disposition": "DUPLICATE_OR_REMOVE",
+          "rationale": {
+            "en": "Purpose: internal duplicate record only. Placement: no learner surface. Action and evidence: none, because Chapter 1 already uses the relevant display-subpixel source. The record remains solely for 56-item audit traceability.",
+            "vi": "Mục đích: RGB pixel Chapter 3 lặp chức năng minh họa subpixel và nằm ngoài cửa sổ coursebook Chapter 1. Vị trí: Bỏ khỏi mapping P1-L05; asset có thể còn trong Atlas nguồn. Hành động: Không có learner action trong lesson. Bằng chứng: Không có evidence học tập riêng so với P015 RGB subpixels. Giới hạn: Trùng chủ đề display hardware và dễ làm lẫn stored pixel với physical subpixel."
+          },
+          "order": 3
+        }
+      ]
+    },
+    {
+      "lessonId": "P1-L06",
+      "visualId": "VIS-P1-L06",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P018-VECTOR-ROBOT",
+          "disposition": "INLINE_UNDERSTAND",
+          "stage": "understand",
+          "anchor": {
+            "kind": "theory-block",
+            "targetId": "P1-L06-theory-objects",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.2-04"
+          ],
+          "requirementIds": [
+            "REQ-1.2-04-01",
+            "REQ-1.2-04-02"
+          ],
+          "teachingClaim": {
+            "en": "A vector image consists of drawing objects with geometry, style and layer order.",
+            "vi": "Vector image gồm các drawing object có geometry, style và layer order."
+          },
+          "learnerAction": {
+            "en": "Choose three robot parts and name each object type and its properties.",
+            "vi": "Chọn ba bộ phận robot và nêu object type cùng property của mỗi bộ phận."
+          },
+          "teacherPrompt": {
+            "en": "What must the file store to redraw a circular eye?",
+            "vi": "Tệp phải lưu gì để vẽ lại mắt tròn?"
+          },
+          "expectedObservation": {
+            "en": "A circle needs centre/radius plus fill, stroke and suitable order.",
+            "vi": "Circle cần tâm/bán kính cùng fill, stroke và thứ tự phù hợp."
+          },
+          "misconceptionOrLimit": {
+            "en": "A simple robot does not prove every vector graphic contains only primitive shapes.",
+            "vi": "Robot đơn giản không chứng minh mọi vector graphic chỉ chứa primitive shape."
+          },
+          "instructionalCaption": {
+            "en": "Decompose one drawing into stored objects.",
+            "vi": "Phân rã một hình thành các object được lưu."
+          },
+          "textEquivalent": {
+            "en": "An ordered layer list describes each robot part by object type, coordinates or dimensions, fill and stroke.",
+            "vi": "Danh sách layer có thứ tự mô tả từng bộ phận robot bằng object type, tọa độ hoặc dimensions, fill và stroke."
+          },
+          "dynamicRelation": "prepares-dynamic-model",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P018-VECTOR-BITMAP",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L06-recognise-representation-choice",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.2-05"
+          ],
+          "requirementIds": [
+            "REQ-1.2-05-01"
+          ],
+          "teachingClaim": {
+            "en": "Bitmap and vector use different models, so the task determines the better choice.",
+            "vi": "Bitmap và vector dùng các mô hình khác nhau nên nhiệm vụ quyết định lựa chọn phù hợp hơn."
+          },
+          "learnerAction": {
+            "en": "Choose a representation for a logo and a photograph, then cite a relevant property.",
+            "vi": "Chọn cách biểu diễn cho logo và ảnh chụp rồi viện dẫn một property liên quan."
+          },
+          "teacherPrompt": {
+            "en": "Which task condition could change the choice?",
+            "vi": "Điều kiện nào của nhiệm vụ có thể làm thay đổi lựa chọn?"
+          },
+          "expectedObservation": {
+            "en": "Vector suits a scalable editable logo and bitmap suits photographic detail, provided those task conditions hold.",
+            "vi": "Vector phù hợp logo có thể scale/chỉnh sửa và bitmap phù hợp chi tiết ảnh chụp, nếu các điều kiện nhiệm vụ đó đúng."
+          },
+          "misconceptionOrLimit": {
+            "en": "Do not claim vector is always smaller or bitmap always lower quality.",
+            "vi": "Không khẳng định vector luôn nhỏ hơn hoặc bitmap luôn kém chất lượng."
+          },
+          "instructionalCaption": {
+            "en": "Choose by task: model, scaling, editability and detail.",
+            "vi": "Chọn theo nhiệm vụ: model, scaling, editability và detail."
+          },
+          "textEquivalent": {
+            "en": "The comparison covers stored model, scaling behaviour, editability and suitable tasks for bitmap and vector.",
+            "vi": "Bảng so sánh gồm mô hình lưu, hành vi scale, khả năng chỉnh sửa và nhiệm vụ phù hợp cho bitmap và vector."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        }
+      ],
+      "referencePlacements": []
+    },
+    {
+      "lessonId": "P1-L07",
+      "visualId": "VIS-P1-L07",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P019-WAVE-SAMPLES",
+          "disposition": "INLINE_OBSERVE_SCENE",
+          "stage": "observe",
+          "anchor": {
+            "kind": "visual-scene",
+            "targetId": "P1-L07-scene-sample-and-quantise",
+            "relation": "within"
+          },
+          "objectiveIds": [
+            "AC26-1.2-06"
+          ],
+          "requirementIds": [
+            "REQ-1.2-06-01",
+            "REQ-1.2-06-02"
+          ],
+          "teachingClaim": {
+            "en": "Digitisation measures amplitude at discrete times, quantises each measurement to a level and encodes it in binary.",
+            "vi": "Digitisation đo amplitude tại các thời điểm rời rạc, lượng tử hóa từng phép đo vào một mức rồi encode thành binary."
+          },
+          "learnerAction": {
+            "en": "Predict three sample values, then change rate and resolution one variable at a time and compare error.",
+            "vi": "Dự đoán ba sample value rồi thay rate và resolution từng biến một và so error."
+          },
+          "teacherPrompt": {
+            "en": "What is stored when a sample lies between two available levels?",
+            "vi": "Điều gì được lưu khi sample nằm giữa hai mức có sẵn?"
+          },
+          "expectedObservation": {
+            "en": "Time spacing and amplitude levels are different parameters; quantisation stores an approximation to an available level.",
+            "vi": "Khoảng thời gian và các mức amplitude là hai tham số khác nhau; quantisation lưu giá trị xấp xỉ tại một mức có sẵn."
+          },
+          "misconceptionOrLimit": {
+            "en": "The diagram is illustrative, not to scale and does not simulate audible quality or an ADC circuit.",
+            "vi": "Sơ đồ chỉ minh họa, không theo tỉ lệ và không mô phỏng chất lượng nghe hoặc mạch ADC."
+          },
+          "instructionalCaption": {
+            "en": "Illustrative sampling fixture, not an audible-quality simulation.",
+            "vi": "Fixture sampling minh họa, không mô phỏng chất lượng nghe."
+          },
+          "textEquivalent": {
+            "en": "A table pairs each sample time with measured amplitude, nearest quantised level and stored binary code; rate changes time spacing and resolution changes available levels.",
+            "vi": "Bảng ghép từng thời điểm sample với amplitude đo, mức lượng tử gần nhất và mã binary được lưu; rate đổi khoảng thời gian còn resolution đổi số mức có sẵn."
+          },
+          "dynamicRelation": "annotates-dynamic-scene",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P020-SAMPLING-TRADEOFF",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L07-recognise-resolution-tradeoff",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.2-07"
+          ],
+          "requirementIds": [
+            "REQ-1.2-07-01"
+          ],
+          "teachingClaim": {
+            "en": "Increasing sampling resolution increases available levels, potential accuracy and bits per sample.",
+            "vi": "Tăng sampling resolution làm tăng số mức có sẵn, độ chính xác tiềm năng và bit mỗi sample."
+          },
+          "learnerAction": {
+            "en": "Classify each effect as accuracy, size, transfer time or processing.",
+            "vi": "Phân loại từng effect thành accuracy, size, transfer time hoặc processing."
+          },
+          "teacherPrompt": {
+            "en": "Does this table concern resolution or rate, and what does it not prove?",
+            "vi": "Bảng này nói về resolution hay rate, và điều gì chưa được chứng minh?"
+          },
+          "expectedObservation": {
+            "en": "The table concerns larger resolution; it does not establish a universal numeric quality gain or codec result.",
+            "vi": "Bảng nói về resolution lớn hơn; không chứng minh mức tăng chất lượng định lượng phổ quát hoặc kết quả của codec."
+          },
+          "misconceptionOrLimit": {
+            "en": "Do not assign every listed effect to sampling rate.",
+            "vi": "Không gán mọi effect trong bảng cho sampling rate."
+          },
+          "instructionalCaption": {
+            "en": "Trade-off of larger sampling resolution.",
+            "vi": "Đánh đổi khi tăng sampling resolution."
+          },
+          "textEquivalent": {
+            "en": "More resolution means more amplitude levels and potentially lower quantisation error, but more bits per sample increase raw storage and transfer demand.",
+            "vi": "Resolution cao hơn nghĩa là nhiều mức amplitude và có thể giảm quantisation error, nhưng nhiều bit mỗi sample làm tăng dung lượng thô và yêu cầu truyền."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        }
+      ],
+      "referencePlacements": [
+        {
+          "atlasId": "BOOK-C01-P019-WAVE-FREQUENCY",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: prerequisite waveform background. Placement: end-of-lesson disclosure. Action: compare cycle counts within the same time window. Evidence: distinguish signal frequency from sampling rate and avoid inferring sampling quality from a not-to-scale diagram.",
+            "vi": "Mục đích: Frequency cung cấp bối cảnh analogue waveform nhưng không thay objective sampling. Vị trí: End disclosure: waveform background. Hành động: So sánh số cycle trong cùng time window. Bằng chứng: Học sinh nêu frequency thuộc signal; sampling rate thuộc phép đo. Giới hạn: Không suy chất lượng sampling chỉ từ hình high/low frequency; hình không theo tỉ lệ."
+          },
+          "order": 0
+        }
+      ]
+    },
+    {
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "placementContractVersion": 1,
+      "instructionalPlacements": [
+        {
+          "atlasId": "BOOK-C01-P023-RLE-MONO",
+          "disposition": "INLINE_OBSERVE_SCENE",
+          "stage": "observe",
+          "anchor": {
+            "kind": "visual-scene",
+            "targetId": "P1-L08-scene-bitmap-runs",
+            "relation": "within"
+          },
+          "objectiveIds": [
+            "AC26-1.3-03"
+          ],
+          "requirementIds": [
+            "REQ-1.3-03-01"
+          ],
+          "teachingClaim": {
+            "en": "Bitmap RLE needs a consistent scan order and combines only adjacent identical symbols.",
+            "vi": "RLE bitmap cần scan order nhất quán và chỉ gộp các symbol giống nhau liền kề."
+          },
+          "learnerAction": {
+            "en": "Predict two rows, choose scan order, then encode and decode the complete grid.",
+            "vi": "Dự đoán hai hàng, chọn scan order rồi encode và decode toàn bộ grid."
+          },
+          "teacherPrompt": {
+            "en": "Can changing scan order change the runs and encoded size?",
+            "vi": "Đổi scan order có thể làm thay đổi run và dung lượng encode không?"
+          },
+          "expectedObservation": {
+            "en": "The grid becomes a linear sequence, then runs, and decodes exactly with the same order; row-major gives fifteen runs in the approved fixture.",
+            "vi": "Grid trở thành chuỗi tuyến tính rồi thành run và decode chính xác bằng cùng order; row-major tạo mười lăm run trong fixture đã duyệt."
+          },
+          "misconceptionOrLimit": {
+            "en": "The classroom model assumes one byte per source cell, two bytes per run, permits runs across rows and excludes headers; it does not prove every bitmap compresses well.",
+            "vi": "Mô hình lớp học giả định một byte mỗi ô nguồn, hai byte mỗi run, cho phép run vượt ranh giới hàng và loại header; mô hình không chứng minh mọi bitmap đều nén tốt."
+          },
+          "instructionalCaption": {
+            "en": "Monochrome bitmap preset with explicit scan order and byte model.",
+            "vi": "Preset bitmap đơn sắc với scan order và mô hình byte rõ ràng."
+          },
+          "textEquivalent": {
+            "en": "An 8×8 W/B grid is scanned left-to-right and top-to-bottom; the sequence starts with 9W, has fifteen runs and compares 64 source bytes with 30 encoded bytes.",
+            "vi": "Grid W/B 8×8 được quét trái sang phải và trên xuống dưới; chuỗi bắt đầu bằng 9W, có mười lăm run và so 64 byte nguồn với 30 byte encode."
+          },
+          "dynamicRelation": "annotates-dynamic-scene",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P023-RLE-TEXT",
+          "disposition": "INLINE_WORKED_EXAMPLE",
+          "stage": "worked-example",
+          "anchor": {
+            "kind": "worked-step",
+            "targetId": "s3",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.3-03"
+          ],
+          "requirementIds": [
+            "REQ-1.3-03-01"
+          ],
+          "teachingClaim": {
+            "en": "RLE stores each adjacent run using a declared count–symbol convention and can decode it exactly.",
+            "vi": "RLE lưu từng run liền kề bằng quy ước count–symbol đã công bố và có thể decode chính xác."
+          },
+          "learnerAction": {
+            "en": "Split the runs, encode, decode and compare byte counts.",
+            "vi": "Chia run, encode, decode và so số byte."
+          },
+          "teacherPrompt": {
+            "en": "Where does each run end, and how many bytes per run does this model use?",
+            "vi": "Mỗi run kết thúc ở đâu, và mô hình dùng bao nhiêu byte cho mỗi run?"
+          },
+          "expectedObservation": {
+            "en": "The count–symbol pairs preserve the exact string; under this model each run uses two bytes.",
+            "vi": "Các pair count–symbol giữ chính xác chuỗi; theo mô hình này mỗi run dùng hai byte."
+          },
+          "misconceptionOrLimit": {
+            "en": "The two-byte token is a stated assumption, not a universal RLE file format.",
+            "vi": "Token hai byte là giả định đã nêu, không phải file format RLE phổ quát."
+          },
+          "instructionalCaption": {
+            "en": "Worked RLE model with an explicit token convention.",
+            "vi": "Ví dụ RLE với quy ước token được công bố."
+          },
+          "textEquivalent": {
+            "en": "The string is divided at every symbol change; each run is written as count then symbol, and decoding repeats each symbol by its count.",
+            "vi": "Chuỗi được chia tại mỗi lần đổi symbol; mỗi run được viết count rồi symbol, và decoding lặp mỗi symbol theo count."
+          },
+          "dynamicRelation": "transfers-to-worked-example",
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P024-COMPRESSION-METHODS",
+          "disposition": "INLINE_RECOGNISE",
+          "stage": "recognise",
+          "anchor": {
+            "kind": "recognition-item",
+            "targetId": "P1-L08-recognise-method-choice",
+            "relation": "after"
+          },
+          "objectiveIds": [
+            "AC26-1.3-01",
+            "AC26-1.3-02",
+            "AC26-1.3-03"
+          ],
+          "requirementIds": [
+            "REQ-1.3-01-01",
+            "REQ-1.3-02-01",
+            "REQ-1.3-02-02",
+            "REQ-1.3-03-01"
+          ],
+          "teachingClaim": {
+            "en": "Reducing a sampling or image parameter can lose fidelity and differs from lossless RLE.",
+            "vi": "Giảm tham số sampling hoặc image có thể làm mất fidelity và khác với RLE lossless."
+          },
+          "learnerAction": {
+            "en": "Classify each branch by data type, what is reduced and whether exact recovery remains possible.",
+            "vi": "Phân loại từng nhánh theo data type, đại lượng bị giảm và khả năng phục hồi chính xác."
+          },
+          "teacherPrompt": {
+            "en": "Which branch is parameter reduction, and which is lossless encoding?",
+            "vi": "Nhánh nào là giảm parameter, và nhánh nào là lossless encoding?"
+          },
+          "expectedObservation": {
+            "en": "Not every size reduction is the same algorithm; reducing rate, resolution or depth is lossy, while RLE preserves the encoded symbols.",
+            "vi": "Không phải mọi cách giảm dung lượng đều là cùng algorithm; giảm rate, resolution hoặc depth là lossy, còn RLE giữ các symbol được encode."
+          },
+          "misconceptionOrLimit": {
+            "en": "The diagram is not an exhaustive list of text, vector, bitmap and sound compression methods.",
+            "vi": "Sơ đồ không phải danh sách đầy đủ mọi phương pháp nén text, vector, bitmap và sound."
+          },
+          "instructionalCaption": {
+            "en": "Classify method, data type and fidelity consequence.",
+            "vi": "Phân loại phương pháp, loại dữ liệu và hệ quả fidelity."
+          },
+          "textEquivalent": {
+            "en": "The branches distinguish image resolution/colour depth, sound sampling rate/resolution and lossless run encoding by their data and recovery consequences.",
+            "vi": "Các nhánh phân biệt image resolution/colour depth, sound sampling rate/resolution và run encoding lossless theo dữ liệu cùng hệ quả phục hồi."
+          },
+          "dynamicRelation": "contrasts-misconception",
+          "order": 0
+        }
+      ],
+      "referencePlacements": [
+        {
+          "atlasId": "BOOK-C01-P023-RLE-FLAG",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional flag-based RLE variant. Placement: end-of-lesson disclosure. Action: trace one flagged and one literal segment. Evidence: explain how the decoder distinguishes literal data from a run without mixing this format with the lesson’s two-byte count–symbol model.",
+            "vi": "Mục đích: Flag-based RLE là một variant xử lý vùng không lặp, không phải contract bắt buộc của lesson. Vị trí: End disclosure: RLE variant. Hành động: Trace một đoạn flagged/unflagged khi muốn học mở rộng. Bằng chứng: Học sinh thấy format cần convention/flag biết trước. Giới hạn: Không trộn variant flag với lab count-symbol rồi so size như cùng format."
+          },
+          "order": 0
+        },
+        {
+          "atlasId": "BOOK-C01-P024-RLE-COLOUR",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional colour-RLE example. Placement: end-of-lesson disclosure. Action: encode the first runs of one row. Evidence: explain that a colour symbol may contain several values and that byte savings depend on the declared representation and overhead.",
+            "vi": "Mục đích: Colour RLE dùng cùng nguyên lý nhưng symbol có thể là tuple màu. Vị trí: End disclosure: complex image example. Hành động: Đọc một hàng màu và tạo vài run đầu theo convention source. Bằng chứng: Học sinh nhận ra size comparison phụ thuộc representation của colour tuple. Giới hạn: Không chuyển 92 source values thành 92 bytes nếu chưa công bố width/overhead; coursebook itself notes headers reduce saving."
+          },
+          "order": 1
+        },
+        {
+          "atlasId": "BOOK-C01-P026-EXAM-RLE-GRID",
+          "disposition": "LESSON_REFERENCE_DISCLOSURE",
+          "rationale": {
+            "en": "Purpose: optional independent RLE grid practice. Placement: end-of-lesson disclosure. Action: declare scan order, encode runs and decode to verify. Evidence: reconstruct the exact grid. This is an end-of-chapter coursebook question, not an official past paper.",
+            "vi": "Mục đích: End-of-chapter grid là practice tự lập RLE. Vị trí: End disclosure: optional practice. Hành động: Chọn scan order, viết run data rồi tự decode để kiểm. Bằng chứng: Học sinh chứng minh lossless bằng round trip. Giới hạn: Đây là câu cuối chương coursebook, không phải official past paper hay mark scheme."
+          },
+          "order": 2
+        }
+      ]
+    }
+  ]
+}
