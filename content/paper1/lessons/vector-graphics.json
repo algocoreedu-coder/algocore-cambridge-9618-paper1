@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L06",
   "slug": "vector-graphics",
   "sectionId": "1",
@@ -43,7 +43,7 @@
   ],
   "theory": [
     {
-      "id": "P1-L06-theory",
+      "id": "P1-L06-theory-objects",
       "title": {
         "en": "The drawing list is the image model",
         "vi": "Drawing list là mô hình ảnh"
@@ -70,7 +70,8 @@
       ],
       "sourceIds": [
         "SYL-2026",
-        "ALG-P1"
+        "ALG-P1",
+        "BOOK-C01"
       ]
     }
   ],
@@ -153,6 +154,27 @@
         "correction": {
           "en": "Size depends on complexity, metadata and format.",
           "vi": "Dung lượng phụ thuộc độ phức tạp, metadata và định dạng."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L06-recognise-representation-choice",
+        "title": {
+          "en": "Choose the representation",
+          "vi": "Chọn cách biểu diễn"
+        },
+        "setup": {
+          "en": "A scalable editable logo and a detailed photograph are needed for different tasks.",
+          "vi": "Một logo cần scale/chỉnh sửa và một ảnh chụp nhiều chi tiết phục vụ các nhiệm vụ khác nhau."
+        },
+        "prompt": {
+          "en": "Choose bitmap or vector for each and justify the choice from task properties.",
+          "vi": "Chọn bitmap hoặc vector cho từng trường hợp và biện minh theo property của nhiệm vụ."
+        },
+        "expectedEvidence": {
+          "en": "Vector normally suits the logo and bitmap the photograph, but the reasoning must remain conditional on the task.",
+          "vi": "Vector thường hợp với logo và bitmap hợp với ảnh chụp, nhưng lập luận phải phụ thuộc điều kiện nhiệm vụ."
         }
       }
     ]
@@ -342,8 +364,17 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L06 · release 1.1",
+      "locator": "Paper 1 · P1-L06 · release 1.2",
       "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 18–19: drawing objects, drawing lists and bitmap/vector comparison",
+      "kind": "coursebook"
     }
   ],
   "visualId": "VIS-P1-L06",
@@ -352,13 +383,13 @@
       "P1-L06-objectives"
     ],
     "B02": [
-      "P1-L06-theory"
+      "P1-L06-theory-objects"
     ],
     "B03": [
       "P1-L06-rules"
     ],
     "B04": [
-      "P1-L06-recognise"
+      "P1-L06-recognise-representation-choice"
     ],
     "B05": [
       "P1-L06-worked"
@@ -383,5 +414,6 @@
     "B11": [
       "P1-L06-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

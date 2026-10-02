@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, type ReactNode } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import type { Root } from "fumadocs-core/page-tree";
-import { BookOpen, LogOut, Map } from "lucide-react";
+import { BookOpen, Images, LogOut, Map, NotebookPen } from "lucide-react";
 import { localeChangeEvent, useLearningLocale } from "@/app/AppProviders";
 import { Button, SegmentedControl } from "@/app/components/algocore-ui";
 import { paper1Href } from "@/app/lib/paper1/href";
@@ -30,6 +30,8 @@ export function Paper1Shell({ catalog, children }: { readonly catalog: Paper1Cat
     name: "Cambridge 9618",
     children: [
       { $id: "paper1-map", type: "page", name: locale === "vi" ? "Bản đồ học tập" : "Study map", url: paper1Href("/paper-1", locale), icon: <Map /> },
+      { $id: "paper1-atlas", type: "page", name: locale === "vi" ? "Atlas Chapter 1" : "Chapter 1 Atlas", url: paper1Href("/paper-1/atlas", locale), icon: <Images /> },
+      { $id: "paper1-practice", type: "page", name: locale === "vi" ? "Ôn tập Chapter 1" : "Chapter 1 practice", url: paper1Href("/paper-1/practice", locale), icon: <NotebookPen /> },
       { $id: "paper1-sections", type: "separator", name: locale === "vi" ? "8 PHẦN PAPER 1" : "PAPER 1 · 8 SECTIONS" },
       ...catalog.sections.map((section) => ({ $id: `paper1-section-${section.id}`, type: "page" as const, name: `${section.id} · ${section.title[locale]}`, url: paper1Href(`/paper-1/sections/${section.id}`, locale), icon: <BookOpen /> })),
     ],

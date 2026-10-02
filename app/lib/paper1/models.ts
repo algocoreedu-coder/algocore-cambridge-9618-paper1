@@ -12,6 +12,25 @@ export function unitConversion(value: number, prefix: UnitPrefix, convention: Un
 
 export type RepresentationKind = "unsigned" | "hex" | "bcd" | "ones" | "twos";
 
+export const BINARY_PLACE_WEIGHTS = [128, 64, 32, 16, 8, 4, 2, 1] as const;
+export type BinaryPlaceWeight = (typeof BINARY_PLACE_WEIGHTS)[number];
+
+export function binaryPlaceValueFixture(value = 238, toggledWeight?: BinaryPlaceWeight) {
+  if (!Number.isInteger(value) || value < 0 || value > 255) {
+    throw new RangeError("Binary place-value fixture requires an unsigned 8-bit integer.");
+  }
+  if (toggledWeight !== undefined && !BINARY_PLACE_WEIGHTS.includes(toggledWeight)) {
+    throw new RangeError("Binary place-value toggle must be an 8-bit column weight.");
+  }
+
+  const bits: number[] = BINARY_PLACE_WEIGHTS.map((weight) => {
+    const encodedBit = value & weight ? 1 : 0;
+    return toggledWeight === weight ? (encodedBit === 1 ? 0 : 1) : encodedBit;
+  });
+  const sum = bits.reduce<number>((total, bit, index) => total + bit * BINARY_PLACE_WEIGHTS[index], 0);
+  return { value, weights: BINARY_PLACE_WEIGHTS, bits, sum };
+}
+
 function byteBits(value: number) {
   return (value & 0xff).toString(2).padStart(8, "0");
 }
@@ -120,6 +139,43 @@ export function pcmStorage(sampleRate: number, resolution: number, duration: num
   return { samplesPerChannel, totalSamples, levels: 2 ** resolution, bits, bytes: Math.ceil(bits / 8) };
 }
 
+export type SamplingDensity = "baseline" | "higher";
+
+const SAMPLING_WAVEFORM = [
+  { time: 0, measured: 0.12 },
+  { time: 0.25, measured: 0.68 },
+  { time: 0.5, measured: 0.43 },
+  { time: 0.75, measured: 0.9 },
+  { time: 1, measured: 0.28 },
+] as const;
+
+export function sampleAndQuantiseFixture(density: SamplingDensity = "baseline", resolutionBits = 2) {
+  if (!Number.isInteger(resolutionBits) || resolutionBits < 1 || resolutionBits > 8) {
+    throw new RangeError("Sampling resolution must be an integer from 1 to 8 bits.");
+  }
+  const levels = 2 ** resolutionBits;
+  const sourceRows = density === "higher" ? SAMPLING_WAVEFORM : SAMPLING_WAVEFORM.filter((_, index) => index % 2 === 0);
+  const rows = sourceRows.map(({ time, measured }) => {
+    const level = Math.round(measured * (levels - 1));
+    const quantised = level / (levels - 1);
+    return {
+      time,
+      measured,
+      quantised,
+      binary: level.toString(2).padStart(resolutionBits, "0"),
+      error: Math.abs(measured - quantised),
+    };
+  });
+  return {
+    density,
+    resolutionBits,
+    levels,
+    sampleSpacing: density === "higher" ? 0.25 : 0.5,
+    rows,
+    meanQuantisationError: rows.reduce((total, row) => total + row.error, 0) / rows.length,
+  };
+}
+
 export interface Run { readonly character: string; readonly count: number }
 
 export function rleEncode(value: string): Run[] {
@@ -141,4 +197,43 @@ export function rleComparison(value: string) {
   const originalBytes = value.length;
   const encodedBytes = runs.length * 2;
   return { runs, originalBytes, encodedBytes, savesSpace: encodedBytes < originalBytes };
+}
+
+export type BitmapScanOrder = "row-major" | "column-major";
+
+export const RLE_MONO_GRID = [
+  "WWWWWWWW",
+  "WBBBBBBW",
+  "WBWWWWWW",
+  "WBWWWWWW",
+  "WBBBBBWW",
+  "WBWWWWWW",
+  "WBWWWWWW",
+  "WBWWWWWW",
+] as const;
+
+export function bitmapRleFixture(scanOrder: BitmapScanOrder = "row-major") {
+  const width = RLE_MONO_GRID[0].length;
+  const height = RLE_MONO_GRID.length;
+  const sequence = scanOrder === "row-major"
+    ? RLE_MONO_GRID.join("")
+    : Array.from({ length: width }, (_, column) => RLE_MONO_GRID.map((row) => row[column]).join("")).join("");
+  const runs = rleEncode(sequence);
+  const decodedSequence = rleDecode(runs);
+  const decodedGrid = scanOrder === "row-major"
+    ? Array.from({ length: height }, (_, row) => decodedSequence.slice(row * width, (row + 1) * width))
+    : Array.from({ length: height }, (_, row) => Array.from({ length: width }, (_, column) => decodedSequence[column * height + row]).join(""));
+
+  return {
+    scanOrder,
+    width,
+    height,
+    grid: RLE_MONO_GRID,
+    sequence,
+    runs,
+    decodedGrid,
+    rawBytes: width * height,
+    encodedBytes: runs.length * 2,
+    firstRun: runs[0],
+  };
 }

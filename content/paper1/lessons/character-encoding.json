@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L04",
   "slug": "character-encoding",
   "sectionId": "1",
@@ -32,7 +32,7 @@
   "prerequisiteLessonIds": [],
   "theory": [
     {
-      "id": "P1-L04-theory",
+      "id": "P1-L04-theory-unicode",
       "title": {
         "en": "Character, code point and bytes",
         "vi": "Ký tự, code point và byte"
@@ -139,6 +139,27 @@
         "correction": {
           "en": "Unicode defines code points; byte length depends on the encoding.",
           "vi": "Unicode định nghĩa code point; số byte phụ thuộc encoding."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L04-recognise-extended-ascii",
+        "title": {
+          "en": "Named extended encoding",
+          "vi": "Named extended encoding"
+        },
+        "setup": {
+          "en": "A byte above 127 is shown without naming its 8-bit character encoding.",
+          "vi": "Một byte lớn hơn 127 được đưa ra nhưng không nêu tên character encoding 8-bit."
+        },
+        "prompt": {
+          "en": "State why the encoding name is required before assigning a glyph.",
+          "vi": "Nêu vì sao phải có tên encoding trước khi gán glyph."
+        },
+        "expectedEvidence": {
+          "en": "‘Extended ASCII’ is ambiguous; CP437 is one named example, not a universal table.",
+          "vi": "‘Extended ASCII’ là mơ hồ; CP437 là một ví dụ có tên, không phải bảng duy nhất."
         }
       }
     ]
@@ -255,7 +276,7 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L04 · release 1.1",
+      "locator": "Paper 1 · P1-L04 · release 1.2",
       "kind": "algocore"
     },
     {
@@ -274,13 +295,13 @@
       "P1-L04-objectives"
     ],
     "B02": [
-      "P1-L04-theory"
+      "P1-L04-theory-unicode"
     ],
     "B03": [
       "P1-L04-rules"
     ],
     "B04": [
-      "P1-L04-recognise"
+      "P1-L04-recognise-extended-ascii"
     ],
     "B05": [
       "P1-L04-worked"
@@ -303,5 +324,6 @@
     "B11": [
       "P1-L04-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

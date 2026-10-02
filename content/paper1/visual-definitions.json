@@ -2,89 +2,287 @@
   {
     "visualId": "VIS-P1-L01",
     "lessonId": "P1-L01",
-    "title": { "en": "Unit ladder and bit groups", "vi": "Thang đơn vị và nhóm bit" },
-    "learnerAction": { "en": "Choose a value, prefix and decimal or binary convention; predict the conversion, then step through it.", "vi": "Chọn giá trị, tiền tố và quy ước thập phân hoặc nhị phân; dự đoán phép đổi rồi chuyển từng bước." },
-    "observableOutcome": { "en": "Convert units correctly, distinguish kilo from kibi and identify the factor at each step.", "vi": "Đổi đúng đơn vị, phân biệt kilo với kibi và chỉ ra hệ số tại mỗi bước." },
-    "modelScope": { "en": "Converts 1–64 SI/IEC prefixed units at levels 1–4 to bytes and then bits.", "vi": "Đổi 1–64 đơn vị có tiền tố SI/IEC bậc 1–4 về byte rồi bit." },
-    "modelLimitations": { "en": "The model follows prefixed unit → byte → bit; it is not a free converter in every direction.", "vi": "Mô hình đi theo chiều đơn vị có tiền tố → byte → bit; đây không phải bộ đổi tự do ở mọi chiều." },
-    "atlasIds": ["BOOK-C01-P007-SI-PREFIXES", "BOOK-C01-P007-IEC-PREFIXES"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Unit ladder and bit groups",
+      "vi": "Thang đơn vị và nhóm bit"
+    },
+    "learnerAction": {
+      "en": "Choose a value, prefix and decimal or binary convention; predict the conversion, then step through it.",
+      "vi": "Chọn giá trị, tiền tố và quy ước thập phân hoặc nhị phân; dự đoán phép đổi rồi chuyển từng bước."
+    },
+    "observableOutcome": {
+      "en": "Convert units correctly, distinguish kilo from kibi and identify the factor at each step.",
+      "vi": "Đổi đúng đơn vị, phân biệt kilo với kibi và chỉ ra hệ số tại mỗi bước."
+    },
+    "modelScope": {
+      "en": "Converts 1–64 SI/IEC prefixed units at levels 1–4 to bytes and then bits.",
+      "vi": "Đổi 1–64 đơn vị có tiền tố SI/IEC bậc 1–4 về byte rồi bit."
+    },
+    "modelLimitations": {
+      "en": "The model follows prefixed unit → byte → bit; it is not a free converter in every direction.",
+      "vi": "Mô hình đi theo chiều đơn vị có tiền tố → byte → bit; đây không phải bộ đổi tự do ở mọi chiều."
+    },
+    "atlasIds": [
+      "BOOK-C01-P007-SI-PREFIXES",
+      "BOOK-C01-P007-IEC-PREFIXES"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": []
   },
   {
     "visualId": "VIS-P1-L02",
     "lessonId": "P1-L02",
-    "title": { "en": "Digit cells and place values", "vi": "Ô chữ số và giá trị hàng" },
-    "learnerAction": { "en": "Enter an integer and choose a base, BCD or signed representation; inspect the encoding step by step.", "vi": "Nhập số nguyên và chọn cơ số, BCD hoặc biểu diễn có dấu; quan sát mã hóa từng bước." },
-    "observableOutcome": { "en": "Create equivalent representations and explain why BCD differs from pure binary.", "vi": "Tạo được biểu diễn tương đương và giải thích BCD khác pure binary." },
-    "modelScope": { "en": "Shows unsigned binary, hexadecimal, two-digit BCD and 8-bit one's/two's complement for supported values.", "vi": "Hiển thị binary không dấu, hexadecimal, BCD hai chữ số và bù một/bù hai 8-bit cho giá trị được hỗ trợ." },
-    "modelLimitations": { "en": "BCD is limited to 0–99; signed modes use 8 bits. It does not expose one's-complement negative zero as a separate input.", "vi": "BCD giới hạn 0–99; chế độ có dấu dùng 8 bit. Mô hình không có input riêng cho negative zero của bù một." },
-    "atlasIds": ["BOOK-C01-P001-HEX-PRACTICE", "BOOK-C01-P002-DECIMAL-COLUMNS", "BOOK-C01-P002-BINARY-COLUMNS", "BOOK-C01-P003-WEIGHT-CONVERSION", "BOOK-C01-P003-DIVISION-CONVERSION", "BOOK-C01-P007-HEX-WEIGHTS", "BOOK-C01-P008-RADIX-TABLE", "BOOK-C01-P008-GROUP-BE1", "BOOK-C01-P008-PAD-21FD", "BOOK-C01-P009-HEX-45A", "BOOK-C01-P009-HEX-BF08", "BOOK-C01-P009-HEX-ACTIVITY", "BOOK-C01-P010-BINARY-ACTIVITY", "BOOK-C01-P009-MEMORY-NOTATION", "BOOK-C01-P010-MEMORY-DUMP", "BOOK-C01-P010-BCD-DIGITS", "BOOK-C01-P010-BCD-PACKING", "BOOK-C01-P011-BCD-DISPLAY", "BOOK-C01-P011-BCD-CENTS", "BOOK-C01-P012-BCD-CARRY", "BOOK-C01-P025-EXAM-BCD", "BOOK-C01-P026-EXAM-HEX-STRIP"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Digit cells and place values",
+      "vi": "Ô chữ số và giá trị hàng"
+    },
+    "learnerAction": {
+      "en": "Start with unsigned 8-bit 238, predict its active place values, toggle columns to verify the sum, then explore hexadecimal, BCD and signed modes.",
+      "vi": "Bắt đầu với 238 unsigned 8-bit, dự đoán các trọng số được bật, đổi trạng thái cột để kiểm tổng, rồi khám phá hexadecimal, BCD và các mode signed."
+    },
+    "observableOutcome": {
+      "en": "Build 11101110₂ as 238, explain the effect of each bit, then create and distinguish equivalent hexadecimal, BCD and signed representations within their ranges.",
+      "vi": "Tạo 11101110₂ bằng 238, giải thích tác động của từng bit, rồi tạo và phân biệt các biểu diễn hexadecimal, BCD và signed tương đương trong miền của chúng."
+    },
+    "modelScope": {
+      "en": "Begins with an unsigned 8-bit 238 place-value fixture, then supports unsigned binary, hexadecimal, two-digit BCD and 8-bit one’s/two’s complement values.",
+      "vi": "Bắt đầu bằng fixture trọng số 238 unsigned 8-bit, sau đó hỗ trợ binary không dấu, hexadecimal, BCD hai chữ số và one’s/two’s complement 8-bit."
+    },
+    "modelLimitations": {
+      "en": "BCD is limited to 0–99; signed modes use 8 bits. It does not expose one's-complement negative zero as a separate input.",
+      "vi": "BCD giới hạn 0–99; chế độ có dấu dùng 8 bit. Mô hình không có input riêng cho negative zero của bù một."
+    },
+    "atlasIds": [
+      "BOOK-C01-P001-HEX-PRACTICE",
+      "BOOK-C01-P002-DECIMAL-COLUMNS",
+      "BOOK-C01-P002-BINARY-COLUMNS",
+      "BOOK-C01-P003-WEIGHT-CONVERSION",
+      "BOOK-C01-P003-DIVISION-CONVERSION",
+      "BOOK-C01-P007-HEX-WEIGHTS",
+      "BOOK-C01-P008-RADIX-TABLE",
+      "BOOK-C01-P008-GROUP-BE1",
+      "BOOK-C01-P008-PAD-21FD",
+      "BOOK-C01-P009-HEX-45A",
+      "BOOK-C01-P009-HEX-BF08",
+      "BOOK-C01-P009-HEX-ACTIVITY",
+      "BOOK-C01-P010-BINARY-ACTIVITY",
+      "BOOK-C01-P009-MEMORY-NOTATION",
+      "BOOK-C01-P010-MEMORY-DUMP",
+      "BOOK-C01-P010-BCD-DIGITS",
+      "BOOK-C01-P010-BCD-PACKING",
+      "BOOK-C01-P011-BCD-DISPLAY",
+      "BOOK-C01-P011-BCD-CENTS",
+      "BOOK-C01-P012-BCD-CARRY",
+      "BOOK-C01-P025-EXAM-BCD",
+      "BOOK-C01-P026-EXAM-HEX-STRIP"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": [
+      "P1-L02-scene-binary-place-values"
+    ]
   },
   {
     "visualId": "VIS-P1-L03",
     "lessonId": "P1-L03",
-    "title": { "en": "Adder and carry row", "vi": "Bộ cộng và hàng carry" },
-    "learnerAction": { "en": "Choose two signed 8-bit integers and an operation; predict the result, then inspect encoded operands, carries and overflow.", "vi": "Chọn hai số nguyên có dấu 8-bit và phép toán; dự đoán kết quả rồi quan sát toán hạng mã hóa, carry và overflow." },
-    "observableOutcome": { "en": "Perform signed addition or subtraction and detect overflow correctly.", "vi": "Thực hiện phép cộng hoặc trừ có dấu và phát hiện đúng overflow." },
-    "modelScope": { "en": "Adds and subtracts two 8-bit two's-complement values, showing each carry, stored result and signed overflow.", "vi": "Cộng và trừ hai giá trị bù hai 8-bit, hiển thị từng carry, kết quả lưu và signed overflow." },
-    "modelLimitations": { "en": "Word width is fixed at 8 bits; one's-complement arithmetic and other word widths are outside this model.", "vi": "Word width cố định 8 bit; số học bù một và các word width khác nằm ngoài mô hình." },
-    "atlasIds": ["BOOK-C01-P001-BINARY-PRACTICE", "BOOK-C01-P003-COMPLEMENT-90", "BOOK-C01-P003-SIGNED-WEIGHTS", "BOOK-C01-P004-SIGNED-38", "BOOK-C01-P004-COMPLEMENT-104", "BOOK-C01-P004-ADD-37-58", "BOOK-C01-P005-OVERFLOW", "BOOK-C01-P005-SUBTRACT-POSITIVE", "BOOK-C01-P006-SUBTRACT-NEGATIVE", "BOOK-C01-P026-EXAM-ARITHMETIC"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Adder and carry row",
+      "vi": "Bộ cộng và hàng carry"
+    },
+    "learnerAction": {
+      "en": "Choose two signed 8-bit integers and an operation; predict the result, then inspect encoded operands, carries and overflow.",
+      "vi": "Chọn hai số nguyên có dấu 8-bit và phép toán; dự đoán kết quả rồi quan sát toán hạng mã hóa, carry và overflow."
+    },
+    "observableOutcome": {
+      "en": "Perform signed addition or subtraction and detect overflow correctly.",
+      "vi": "Thực hiện phép cộng hoặc trừ có dấu và phát hiện đúng overflow."
+    },
+    "modelScope": {
+      "en": "Adds and subtracts two 8-bit two's-complement values, showing each carry, stored result and signed overflow.",
+      "vi": "Cộng và trừ hai giá trị bù hai 8-bit, hiển thị từng carry, kết quả lưu và signed overflow."
+    },
+    "modelLimitations": {
+      "en": "Word width is fixed at 8 bits; one's-complement arithmetic and other word widths are outside this model.",
+      "vi": "Word width cố định 8 bit; số học bù một và các word width khác nằm ngoài mô hình."
+    },
+    "atlasIds": [
+      "BOOK-C01-P001-BINARY-PRACTICE",
+      "BOOK-C01-P003-COMPLEMENT-90",
+      "BOOK-C01-P003-SIGNED-WEIGHTS",
+      "BOOK-C01-P004-SIGNED-38",
+      "BOOK-C01-P004-COMPLEMENT-104",
+      "BOOK-C01-P004-ADD-37-58",
+      "BOOK-C01-P005-OVERFLOW",
+      "BOOK-C01-P005-SUBTRACT-POSITIVE",
+      "BOOK-C01-P006-SUBTRACT-NEGATIVE",
+      "BOOK-C01-P026-EXAM-ARITHMETIC"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": []
   },
   {
     "visualId": "VIS-P1-L04",
     "lessonId": "P1-L04",
-    "title": { "en": "Character encoding table", "vi": "Bảng mã ký tự" },
-    "learnerAction": { "en": "Choose a supplied character and follow it from glyph to Unicode code point and UTF-8 bytes.", "vi": "Chọn một ký tự được cung cấp rồi theo dõi từ glyph tới Unicode code point và các byte UTF-8." },
-    "observableOutcome": { "en": "Explain why Unicode supports more characters without memorising particular codes.", "vi": "Giải thích vì sao Unicode biểu diễn được nhiều ký tự hơn mà không cần học thuộc mã cụ thể." },
-    "modelScope": { "en": "Uses four representative characters to distinguish a character, code point, ASCII membership and UTF-8 bytes.", "vi": "Dùng bốn ký tự đại diện để phân biệt ký tự, code point, khả năng thuộc ASCII và byte UTF-8." },
-    "modelLimitations": { "en": "The character list is finite and UTF-8 is one encoding of Unicode; the lesson does not require memorising codes.", "vi": "Danh sách ký tự hữu hạn và UTF-8 là một cách mã hóa Unicode; bài không yêu cầu học thuộc code." },
-    "atlasIds": ["BOOK-C01-P013-ASCII", "BOOK-C01-P013-ASCII-CASE", "BOOK-C01-P014-EXTENDED-ASCII", "BOOK-C01-P015-UNICODE"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Character encoding table",
+      "vi": "Bảng mã ký tự"
+    },
+    "learnerAction": {
+      "en": "Choose a supplied character and follow it from glyph to Unicode code point and UTF-8 bytes.",
+      "vi": "Chọn một ký tự được cung cấp rồi theo dõi từ glyph tới Unicode code point và các byte UTF-8."
+    },
+    "observableOutcome": {
+      "en": "Explain why Unicode supports more characters without memorising particular codes.",
+      "vi": "Giải thích vì sao Unicode biểu diễn được nhiều ký tự hơn mà không cần học thuộc mã cụ thể."
+    },
+    "modelScope": {
+      "en": "Uses four representative characters to distinguish a character, code point, ASCII membership and UTF-8 bytes.",
+      "vi": "Dùng bốn ký tự đại diện để phân biệt ký tự, code point, khả năng thuộc ASCII và byte UTF-8."
+    },
+    "modelLimitations": {
+      "en": "The character list is finite and UTF-8 is one encoding of Unicode; the lesson does not require memorising codes.",
+      "vi": "Danh sách ký tự hữu hạn và UTF-8 là một cách mã hóa Unicode; bài không yêu cầu học thuộc code."
+    },
+    "atlasIds": [
+      "BOOK-C01-P013-ASCII",
+      "BOOK-C01-P013-ASCII-CASE",
+      "BOOK-C01-P014-EXTENDED-ASCII",
+      "BOOK-C01-P015-UNICODE"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": []
   },
   {
     "visualId": "VIS-P1-L05",
     "lessonId": "P1-L05",
-    "title": { "en": "Pixel grid and storage counter", "vi": "Lưới pixel và bộ đếm dung lượng" },
-    "learnerAction": { "en": "Change width, height and colour depth; predict storage, then follow pixels to data bits and packed bytes.", "vi": "Đổi width, height và colour depth; dự đoán dung lượng rồi theo dõi từ pixel tới bit dữ liệu và byte đóng gói." },
-    "observableOutcome": { "en": "Calculate storage under stated assumptions and explain how resolution and colour depth affect size and quality.", "vi": "Tính đúng dung lượng theo giả định và giải thích tác động của resolution và colour depth tới kích thước và chất lượng." },
-    "modelScope": { "en": "Parameterized width, height and colour depth with pixel count, colour count, raw bits and minimum whole-byte packing.", "vi": "Tham số hóa width, height và colour depth cùng số pixel, số màu, bit thô và đóng gói tối thiểu thành byte nguyên." },
-    "modelLimitations": { "en": "The calculation excludes file headers, metadata, compression and row padding; final-byte padding is shown separately.", "vi": "Phép tính không gồm file header, metadata, nén và row padding; bit đệm ở byte cuối được hiển thị riêng." },
-    "atlasIds": ["BOOK-C01-P015-RGB-SUBPIXELS", "BOOK-C01-P016-DIGITAL-PHOTO", "BOOK-C01-P016-CROP-ROTATE", "BOOK-C01-P017-WHEEL-RESOLUTION", "BOOK-C01-P017-BITMAP-SIZE", "BOOK-C01-P017-PIXEL-DENSITY", "BOOK-C03-P082-RGB-PIXEL"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Pixel grid and storage counter",
+      "vi": "Lưới pixel và bộ đếm dung lượng"
+    },
+    "learnerAction": {
+      "en": "Change width, height and colour depth; predict storage, then follow pixels to data bits and packed bytes.",
+      "vi": "Đổi width, height và colour depth; dự đoán dung lượng rồi theo dõi từ pixel tới bit dữ liệu và byte đóng gói."
+    },
+    "observableOutcome": {
+      "en": "Calculate storage under stated assumptions and explain how resolution and colour depth affect size and quality.",
+      "vi": "Tính đúng dung lượng theo giả định và giải thích tác động của resolution và colour depth tới kích thước và chất lượng."
+    },
+    "modelScope": {
+      "en": "Parameterized width, height and colour depth with pixel count, colour count, raw bits and minimum whole-byte packing.",
+      "vi": "Tham số hóa width, height và colour depth cùng số pixel, số màu, bit thô và đóng gói tối thiểu thành byte nguyên."
+    },
+    "modelLimitations": {
+      "en": "The calculation excludes file headers, metadata, compression and row padding; final-byte padding is shown separately.",
+      "vi": "Phép tính không gồm file header, metadata, nén và row padding; bit đệm ở byte cuối được hiển thị riêng."
+    },
+    "atlasIds": [
+      "BOOK-C01-P015-RGB-SUBPIXELS",
+      "BOOK-C01-P016-DIGITAL-PHOTO",
+      "BOOK-C01-P016-CROP-ROTATE",
+      "BOOK-C01-P017-WHEEL-RESOLUTION",
+      "BOOK-C01-P017-BITMAP-SIZE",
+      "BOOK-C01-P017-PIXEL-DENSITY",
+      "BOOK-C03-P082-RGB-PIXEL"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": []
   },
   {
     "visualId": "VIS-P1-L06",
     "lessonId": "P1-L06",
-    "title": { "en": "Vector objects beside a bitmap grid", "vi": "Đối tượng vector cạnh lưới bitmap" },
-    "learnerAction": { "en": "Choose a drawing and scale; predict the change, inspect its drawing list and compare representation choices.", "vi": "Chọn hình vẽ và tỉ lệ; dự đoán thay đổi, quan sát drawing list và so sánh lựa chọn biểu diễn." },
-    "observableOutcome": { "en": "Identify drawing objects and properties, then choose bitmap or vector for a task.", "vi": "Chỉ ra drawing object và property, rồi chọn bitmap hoặc vector theo nhiệm vụ." },
-    "modelScope": { "en": "Renders a finite drawing list for three simple vector drawings at selected scales.", "vi": "Render drawing list hữu hạn cho ba hình vector đơn giản ở các tỉ lệ được chọn." },
-    "modelLimitations": { "en": "The renderer does not model anti-aliasing, arbitrary drawing lists or file-size benchmarks; vector is not always smaller.", "vi": "Renderer không mô phỏng anti-aliasing, drawing list tùy ý hoặc benchmark dung lượng; vector không phải lúc nào cũng nhỏ hơn." },
-    "atlasIds": ["BOOK-C01-P018-VECTOR-ROBOT", "BOOK-C01-P018-VECTOR-BITMAP"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Vector objects beside a bitmap grid",
+      "vi": "Đối tượng vector cạnh lưới bitmap"
+    },
+    "learnerAction": {
+      "en": "Choose a drawing and scale; predict the change, inspect its drawing list and compare representation choices.",
+      "vi": "Chọn hình vẽ và tỉ lệ; dự đoán thay đổi, quan sát drawing list và so sánh lựa chọn biểu diễn."
+    },
+    "observableOutcome": {
+      "en": "Identify drawing objects and properties, then choose bitmap or vector for a task.",
+      "vi": "Chỉ ra drawing object và property, rồi chọn bitmap hoặc vector theo nhiệm vụ."
+    },
+    "modelScope": {
+      "en": "Renders a finite drawing list for three simple vector drawings at selected scales.",
+      "vi": "Render drawing list hữu hạn cho ba hình vector đơn giản ở các tỉ lệ được chọn."
+    },
+    "modelLimitations": {
+      "en": "The renderer does not model anti-aliasing, arbitrary drawing lists or file-size benchmarks; vector is not always smaller.",
+      "vi": "Renderer không mô phỏng anti-aliasing, drawing list tùy ý hoặc benchmark dung lượng; vector không phải lúc nào cũng nhỏ hơn."
+    },
+    "atlasIds": [
+      "BOOK-C01-P018-VECTOR-ROBOT",
+      "BOOK-C01-P018-VECTOR-BITMAP"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": []
   },
   {
     "visualId": "VIS-P1-L07",
     "lessonId": "P1-L07",
-    "title": { "en": "Waveform samples and quantisation levels", "vi": "Lấy mẫu sóng và mức lượng tử" },
-    "learnerAction": { "en": "Adjust sampling rate and resolution; predict changes, then inspect normalized sample density, quantisation and data size.", "vi": "Điều chỉnh sampling rate và resolution; dự đoán thay đổi rồi quan sát mật độ mẫu chuẩn hóa, lượng tử hóa và dung lượng." },
-    "observableOutcome": { "en": "Connect each sampling parameter to sound accuracy and data size.", "vi": "Nối từng tham số lấy mẫu với độ chính xác âm thanh và dung lượng dữ liệu." },
-    "modelScope": { "en": "Shows an illustrative wave, normalized visual sample density, quantisation bands and uncompressed PCM storage.", "vi": "Hiển thị sóng minh họa, mật độ mẫu trực quan chuẩn hóa, các dải lượng tử và dung lượng PCM chưa nén." },
-    "modelLimitations": { "en": "The diagram is not to scale and does not simulate audible quality, a codec or headers; visible dots and bands stand for relative change.", "vi": "Sơ đồ không theo tỉ lệ và không mô phỏng chất lượng nghe, codec hay header; các chấm và dải nhìn thấy thể hiện thay đổi tương đối." },
-    "atlasIds": ["BOOK-C01-P019-WAVE-FREQUENCY", "BOOK-C01-P019-WAVE-SAMPLES", "BOOK-C01-P020-SAMPLING-TRADEOFF"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "Waveform samples and quantisation levels",
+      "vi": "Lấy mẫu sóng và mức lượng tử"
+    },
+    "learnerAction": {
+      "en": "Predict sample amplitudes, reveal quantised levels and binary codes, then change sampling rate and resolution one variable at a time.",
+      "vi": "Dự đoán amplitude của sample, mở các mức lượng tử và mã binary, rồi thay sampling rate và resolution từng biến một."
+    },
+    "observableOutcome": {
+      "en": "Distinguish sample timing from quantisation levels and explain separately how rate and resolution affect accuracy and raw size.",
+      "vi": "Phân biệt thời điểm lấy mẫu với mức lượng tử và giải thích riêng tác động của rate và resolution lên độ chính xác và dung lượng thô."
+    },
+    "modelScope": {
+      "en": "Shows an illustrative wave, normalized visual sample density, quantisation bands and uncompressed PCM storage.",
+      "vi": "Hiển thị sóng minh họa, mật độ mẫu trực quan chuẩn hóa, các dải lượng tử và dung lượng PCM chưa nén."
+    },
+    "modelLimitations": {
+      "en": "The diagram is not to scale and does not simulate audible quality, a codec or headers; visible dots and bands stand for relative change.",
+      "vi": "Sơ đồ không theo tỉ lệ và không mô phỏng chất lượng nghe, codec hay header; các chấm và dải nhìn thấy thể hiện thay đổi tương đối."
+    },
+    "atlasIds": [
+      "BOOK-C01-P019-WAVE-FREQUENCY",
+      "BOOK-C01-P019-WAVE-SAMPLES",
+      "BOOK-C01-P020-SAMPLING-TRADEOFF"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": [
+      "P1-L07-scene-sample-and-quantise"
+    ]
   },
   {
     "visualId": "VIS-P1-L08",
     "lessonId": "P1-L08",
-    "title": { "en": "RLE before-and-after comparison", "vi": "RLE và so sánh trước/sau nén" },
-    "learnerAction": { "en": "Enter a sequence or choose a preset; predict whether RLE helps, then encode, decode and compare size.", "vi": "Nhập chuỗi hoặc chọn preset; dự đoán RLE có hiệu quả không rồi encode, decode và so dung lượng." },
-    "observableOutcome": { "en": "Describe RLE, verify a lossless round trip and explain when the stated model saves space.", "vi": "Mô tả RLE, kiểm tra vòng khôi phục lossless và giải thích khi nào mô hình đã nêu tiết kiệm dung lượng." },
-    "modelScope": { "en": "Encodes finite A–Z sequences as count-symbol runs, decodes them and compares a stated two-byte-per-run model.", "vi": "Mã hóa chuỗi A–Z hữu hạn thành các run số lượng–ký hiệu, giải mã và so theo mô hình hai byte mỗi run đã nêu." },
-    "modelLimitations": { "en": "Examples are finite and assume one byte for count plus one for symbol; other text, bitmap, vector and sound methods are taught in prose and assessment.", "vi": "Ví dụ hữu hạn và giả định một byte cho count cùng một byte cho symbol; các cách nén text, bitmap, vector và sound khác được dạy bằng nội dung và assessment." },
-    "atlasIds": ["BOOK-C01-P023-RLE-TEXT", "BOOK-C01-P023-RLE-FLAG", "BOOK-C01-P023-RLE-MONO", "BOOK-C01-P024-RLE-COLOUR", "BOOK-C01-P024-COMPRESSION-METHODS", "BOOK-C01-P026-EXAM-RLE-GRID"],
-    "reviewStatus": "model-reviewed-with-scope-limits"
+    "title": {
+      "en": "RLE before-and-after comparison",
+      "vi": "RLE và so sánh trước/sau nén"
+    },
+    "learnerAction": {
+      "en": "Predict whether RLE helps a text sequence, then scan the monochrome bitmap row-major, form runs, decode them and compare size under the declared byte model.",
+      "vi": "Dự đoán RLE có hiệu quả với chuỗi text không, rồi quét bitmap đơn sắc theo row-major, tạo run, decode và so dung lượng theo mô hình byte đã công bố."
+    },
+    "observableOutcome": {
+      "en": "Encode and decode text and bitmap runs exactly, explain why scan order matters and identify when RLE expands rather than compresses data.",
+      "vi": "Encode và decode chính xác run của text và bitmap, giải thích vì sao scan order quan trọng và nhận diện khi RLE làm dữ liệu lớn hơn thay vì nén."
+    },
+    "modelScope": {
+      "en": "Uses finite count–symbol text and an 8×8 monochrome bitmap preset scanned left-to-right, top-to-bottom; runs may cross row boundaries and size comparison uses one byte per source symbol and two bytes per run.",
+      "vi": "Dùng text count–symbol hữu hạn và preset bitmap đơn sắc 8×8 quét trái sang phải, trên xuống dưới; run có thể vượt ranh giới hàng và phép so dung lượng dùng một byte mỗi symbol nguồn cùng hai byte mỗi run."
+    },
+    "modelLimitations": {
+      "en": "The byte model is a classroom assumption, excludes headers and is not a universal RLE format. Other text, bitmap, vector and sound methods are taught in the lesson theory.",
+      "vi": "Mô hình byte là giả định lớp học, không gồm header và không phải format RLE phổ quát. Các phương pháp khác cho text, bitmap, vector và sound được dạy trong theory của bài."
+    },
+    "atlasIds": [
+      "BOOK-C01-P023-RLE-TEXT",
+      "BOOK-C01-P023-RLE-FLAG",
+      "BOOK-C01-P023-RLE-MONO",
+      "BOOK-C01-P024-RLE-COLOUR",
+      "BOOK-C01-P024-COMPRESSION-METHODS",
+      "BOOK-C01-P026-EXAM-RLE-GRID"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits",
+    "sceneIds": [
+      "P1-L08-scene-bitmap-runs"
+    ]
   }
 ]

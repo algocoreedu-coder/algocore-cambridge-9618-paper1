@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L02",
   "slug": "number-systems",
   "sectionId": "1",
@@ -49,42 +49,101 @@
   "prerequisiteLessonIds": [],
   "theory": [
     {
-      "id": "P1-L02-theory",
+      "id": "P1-L02-theory-radix",
       "title": {
-        "en": "One value, different structures",
-        "vi": "Một giá trị, nhiều cấu trúc"
+        "en": "Binary and hexadecimal place value",
+        "vi": "Trọng số binary và hexadecimal"
       },
       "paragraphs": [
         {
-          "en": "Binary uses powers of two. Each hexadecimal digit maps to one four-bit nibble.",
-          "vi": "Binary dùng lũy thừa hai. Mỗi chữ số hexadecimal ánh xạ với một nibble bốn bit."
+          "en": "Binary uses powers of two. Hexadecimal uses powers of sixteen, and each hexadecimal digit maps exactly to one four-bit nibble.",
+          "vi": "Binary dùng lũy thừa hai. Hexadecimal dùng lũy thừa mười sáu, và mỗi chữ số hexadecimal ánh xạ chính xác với một nibble bốn bit."
         },
         {
-          "en": "BCD encodes each decimal digit separately; 1010–1111 are invalid BCD digits.",
-          "vi": "BCD mã hóa riêng từng chữ số thập phân; 1010–1111 là chữ số BCD không hợp lệ."
-        },
-        {
-          "en": "One’s complement flips each bit. Two’s complement flips then adds one at a declared word width.",
-          "vi": "One’s complement đảo từng bit. Two’s complement đảo rồi cộng một với word width được nêu."
-        },
-        {
-          "en": "BCD is useful when decimal digits must remain separate, such as a digital clock or calculator display. Hexadecimal is a compact, exact way to read grouped binary, such as memory addresses or colour values.",
-          "vi": "BCD hữu ích khi các chữ số thập phân cần giữ riêng, như đồng hồ số hoặc màn hình máy tính cầm tay. Hexadecimal là cách đọc binary theo nhóm ngắn gọn và chính xác, như địa chỉ bộ nhớ hoặc giá trị màu."
+          "en": "For binary-to-hexadecimal conversion, group bits from the right and pad only the leftmost group with leading zeros when needed.",
+          "vi": "Khi đổi binary sang hexadecimal, nhóm bit từ bên phải và chỉ thêm số 0 vào bên trái nhóm ngoài cùng khi cần."
         }
       ],
       "bullets": [
         {
-          "en": "Keep leading zeros required by the word width.",
-          "vi": "Giữ số 0 đầu theo word width."
-        },
-        {
-          "en": "Do not confuse BCD with pure binary.",
-          "vi": "Không nhầm BCD với pure binary."
+          "en": "Keep every four-bit nibble, including internal zeros.",
+          "vi": "Giữ đủ từng nibble bốn bit, kể cả các số 0 ở giữa."
         }
       ],
       "sourceIds": [
         "SYL-2026",
-        "ALG-P1"
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L02-theory-bcd",
+      "title": {
+        "en": "BCD keeps decimal digits separate",
+        "vi": "BCD giữ riêng từng chữ số thập phân"
+      },
+      "paragraphs": [
+        {
+          "en": "BCD encodes each denary digit separately using four bits. Only 0000 to 1001 are valid BCD digit patterns; 1010 to 1111 are not decimal digits.",
+          "vi": "BCD mã hóa riêng từng chữ số denary bằng bốn bit. Chỉ 0000 đến 1001 là các pattern chữ số BCD hợp lệ; 1010 đến 1111 không phải chữ số thập phân."
+        },
+        {
+          "en": "A multi-digit BCD value is not the pure-binary encoding of the whole number. For example, denary 59 is 0101 1001 in BCD but 00111011 in unsigned binary.",
+          "vi": "Giá trị BCD nhiều chữ số không phải mã pure binary của toàn số. Ví dụ, denary 59 là 0101 1001 trong BCD nhưng là 00111011 trong binary không dấu."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Check every nibble independently.",
+          "vi": "Kiểm tra từng nibble độc lập."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L02-theory-complements",
+      "title": {
+        "en": "Fixed-width signed representations",
+        "vi": "Biểu diễn có dấu với độ rộng cố định"
+      },
+      "paragraphs": [
+        {
+          "en": "One’s complement flips every bit. Two’s complement flips every bit and then adds one, while keeping the declared word width.",
+          "vi": "One’s complement đảo mọi bit. Two’s complement đảo mọi bit rồi cộng một, đồng thời giữ word width đã nêu."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "The same bit pattern can mean a different value at a different word width.",
+          "vi": "Cùng một pattern bit có thể mang giá trị khác khi word width thay đổi."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L02-theory-applications",
+      "title": {
+        "en": "Choose a representation for its task",
+        "vi": "Chọn biểu diễn theo nhiệm vụ"
+      },
+      "paragraphs": [
+        {
+          "en": "BCD is useful when denary digits must remain separate, such as in a digital clock or calculator display. Hexadecimal is a compact, exact notation for grouped binary, such as memory addresses, memory dumps and colour values.",
+          "vi": "BCD hữu ích khi các chữ số denary cần giữ riêng, như đồng hồ số hoặc màn hình máy tính cầm tay. Hexadecimal là ký hiệu ngắn gọn và chính xác cho binary đã nhóm, như địa chỉ bộ nhớ, memory dump và giá trị màu."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
       ]
     }
   ],
@@ -177,6 +236,46 @@
         "correction": {
           "en": "The pattern and range depend on word width.",
           "vi": "Mẫu và miền phụ thuộc word width."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L02-recognise-memory",
+        "title": {
+          "en": "Memory notation",
+          "vi": "Ký hiệu bộ nhớ"
+        },
+        "setup": {
+          "en": "The same stored bits are shown once in binary and once in hexadecimal.",
+          "vi": "Cùng các bit được lưu được viết một lần bằng binary và một lần bằng hexadecimal."
+        },
+        "prompt": {
+          "en": "Explain why hexadecimal is easier to read without claiming that it reduces the stored bit count.",
+          "vi": "Giải thích vì sao hexadecimal dễ đọc hơn nhưng không làm giảm số bit được lưu."
+        },
+        "expectedEvidence": {
+          "en": "One hexadecimal digit replaces one four-bit nibble in the notation; the underlying bits are unchanged.",
+          "vi": "Một chữ số hexadecimal thay một nibble bốn bit trong ký hiệu; các bit bên dưới không đổi."
+        }
+      },
+      {
+        "id": "P1-L02-recognise-bcd-display",
+        "title": {
+          "en": "Digit-by-digit display",
+          "vi": "Màn hình theo từng chữ số"
+        },
+        "setup": {
+          "en": "A clock controller sends one four-bit code for each displayed denary digit.",
+          "vi": "Bộ điều khiển đồng hồ gửi một mã bốn bit cho từng chữ số denary được hiển thị."
+        },
+        "prompt": {
+          "en": "Explain why BCD suits this task and state one storage trade-off.",
+          "vi": "Giải thích vì sao BCD phù hợp nhiệm vụ này và nêu một đánh đổi về lưu trữ."
+        },
+        "expectedEvidence": {
+          "en": "BCD maps directly to each denary digit but can use more bits than pure binary for the same numerical value.",
+          "vi": "BCD ánh xạ trực tiếp với từng chữ số denary nhưng có thể dùng nhiều bit hơn pure binary cho cùng giá trị số."
         }
       }
     ]
@@ -384,8 +483,17 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L02 · release 1.1",
+      "locator": "Paper 1 · P1-L02 · release 1.2",
       "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 1–12: number systems, conversions, complements, BCD and applications",
+      "kind": "coursebook"
     }
   ],
   "visualId": "VIS-P1-L02",
@@ -394,13 +502,17 @@
       "P1-L02-objectives"
     ],
     "B02": [
-      "P1-L02-theory"
+      "P1-L02-theory-radix",
+      "P1-L02-theory-bcd",
+      "P1-L02-theory-complements",
+      "P1-L02-theory-applications"
     ],
     "B03": [
       "P1-L02-rules"
     ],
     "B04": [
-      "P1-L02-recognise"
+      "P1-L02-recognise-memory",
+      "P1-L02-recognise-bcd-display"
     ],
     "B05": [
       "P1-L02-worked"
@@ -426,5 +538,6 @@
     "B11": [
       "P1-L02-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

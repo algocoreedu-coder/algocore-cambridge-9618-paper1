@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L01",
   "slug": "units-and-magnitudes",
   "sectionId": "1",
@@ -60,7 +60,8 @@
       ],
       "sourceIds": [
         "SYL-2026",
-        "ALG-P1"
+        "ALG-P1",
+        "BOOK-C01"
       ]
     }
   ],
@@ -144,7 +145,8 @@
           "vi": "Mb là megabit; MB là megabyte."
         }
       }
-    ]
+    ],
+    "items": []
   },
   "assessments": [
     {
@@ -283,8 +285,17 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L01 · release 1.1",
+      "locator": "Paper 1 · P1-L01 · release 1.2",
       "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 6–7: bit/byte magnitudes and SI/IEC prefix tables",
+      "kind": "coursebook"
     }
   ],
   "visualId": "VIS-P1-L01",
@@ -323,5 +334,6 @@
     "B11": [
       "P1-L01-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

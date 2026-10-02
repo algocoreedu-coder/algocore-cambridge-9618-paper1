@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L05",
   "slug": "bitmap-storage",
   "sectionId": "1",
@@ -51,7 +51,7 @@
   ],
   "theory": [
     {
-      "id": "P1-L05-theory",
+      "id": "P1-L05-theory-pixel-grid",
       "title": {
         "en": "Pixels, resolution and bit depth",
         "vi": "Pixel, độ phân giải và bit depth"
@@ -180,6 +180,27 @@
         "correction": {
           "en": "They describe different grids.",
           "vi": "Chúng mô tả hai lưới khác nhau."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L05-recognise-resolution-depth",
+        "title": {
+          "en": "Resolution or colour depth?",
+          "vi": "Resolution hay colour depth?"
+        },
+        "setup": {
+          "en": "Two images differ in spatial detail while the available colour levels stay fixed.",
+          "vi": "Hai ảnh khác nhau về chi tiết không gian trong khi số mức màu giữ nguyên."
+        },
+        "prompt": {
+          "en": "Identify the changed property and explain its effect on pixel count and quality.",
+          "vi": "Xác định property đã đổi và giải thích tác động tới số pixel và chất lượng."
+        },
+        "expectedEvidence": {
+          "en": "The change is image resolution, not colour depth; fewer pixels reduce spatial detail and raw size.",
+          "vi": "Thay đổi là image resolution, không phải colour depth; ít pixel hơn làm giảm chi tiết không gian và dung lượng thô."
         }
       }
     ]
@@ -422,7 +443,7 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L05 · release 1.1",
+      "locator": "Paper 1 · P1-L05 · release 1.2",
       "kind": "algocore"
     },
     {
@@ -441,13 +462,13 @@
       "P1-L05-objectives"
     ],
     "B02": [
-      "P1-L05-theory"
+      "P1-L05-theory-pixel-grid"
     ],
     "B03": [
       "P1-L05-rules"
     ],
     "B04": [
-      "P1-L05-recognise"
+      "P1-L05-recognise-resolution-depth"
     ],
     "B05": [
       "P1-L05-worked"
@@ -473,5 +494,6 @@
     "B11": [
       "P1-L05-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

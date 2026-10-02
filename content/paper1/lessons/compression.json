@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "contentVersion": "1.1.0",
+  "contentVersion": "1.2.0",
   "lessonId": "P1-L08",
   "slug": "compression",
   "sectionId": "1",
@@ -49,33 +49,111 @@
   "prerequisiteLessonIds": [],
   "theory": [
     {
-      "id": "P1-L08-theory",
+      "id": "P1-L08-theory-need-and-choice",
       "title": {
-        "en": "Preserve what the task requires",
-        "vi": "Giữ điều nhiệm vụ yêu cầu"
+        "en": "Why compress, and what may be lost?",
+        "vi": "Vì sao nén, và dữ liệu nào có thể mất?"
       },
       "paragraphs": [
         {
-          "en": "Compression can reduce storage, transmission time and bandwidth. Lossless is needed when exact recovery matters, such as text or source code.",
-          "vi": "Nén có thể giảm lưu trữ, thời gian truyền và băng thông. Lossless cần khi phải khôi phục chính xác như text hoặc mã nguồn."
+          "en": "Compression reduces storage and transmission requirements by representing data with fewer bits.",
+          "vi": "Compression giảm dung lượng lưu trữ và yêu cầu truyền bằng cách biểu diễn dữ liệu với ít bit hơn."
         },
         {
-          "en": "Lossy can suit photographs or sound when size matters more than exact reconstruction; quality depends on method and settings.",
-          "vi": "Lossy có thể hợp ảnh chụp hoặc âm thanh khi dung lượng quan trọng hơn khôi phục chính xác; chất lượng phụ thuộc phương pháp và thiết lập."
+          "en": "Lossless compression permits exact reconstruction. Lossy compression discards or approximates information, so the original cannot be reconstructed exactly.",
+          "vi": "Lossless compression cho phép phục hồi chính xác. Lossy compression loại bỏ hoặc xấp xỉ thông tin nên không thể phục hồi chính xác bản gốc."
         },
         {
-          "en": "RLE stores count-symbol pairs. It is lossless but can expand alternating data. Vector compression is format-dependent.",
-          "vi": "RLE lưu cặp count-symbol. Nó lossless nhưng có thể làm dữ liệu xen kẽ dài hơn. Nén vector phụ thuộc định dạng."
+          "en": "Choose by purpose: exact text, program or archival data needs lossless recovery; many photographs and listening copies may accept controlled loss for a smaller file.",
+          "vi": "Chọn theo mục đích: text, program hoặc dữ liệu lưu trữ cần phục hồi chính xác phải dùng lossless; nhiều ảnh chụp và bản âm thanh để nghe có thể chấp nhận mất mát có kiểm soát để giảm dung lượng."
         }
       ],
-      "bullets": [
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L08-theory-text",
+      "title": {
+        "en": "Text: encode repetition without changing characters",
+        "vi": "Text: mã hóa lặp lại mà không đổi ký tự"
+      },
+      "paragraphs": [
         {
-          "en": "State the RLE token convention before comparing size.",
-          "vi": "Nêu quy ước token RLE trước khi so dung lượng."
+          "en": "Text normally requires lossless compression. A compressor can replace repeated strings or dictionary entries with shorter references; the decoder uses the same dictionary to restore every character.",
+          "vi": "Text thường cần lossless compression. Compressor có thể thay chuỗi lặp hoặc entry trong dictionary bằng reference ngắn hơn; decoder dùng cùng dictionary để phục hồi mọi ký tự."
         },
         {
-          "en": "Lossless does not guarantee a smaller output for every input.",
-          "vi": "Lossless không đảm bảo đầu ra nhỏ hơn với mọi input."
+          "en": "RLE is one lossless method for adjacent repetition: store a run as count–symbol. It works well for long runs but can add overhead to alternating data.",
+          "vi": "RLE là một phương pháp lossless cho dữ liệu lặp liền nhau: lưu run dưới dạng count–symbol. Phương pháp hiệu quả với run dài nhưng có thể tạo overhead cho dữ liệu xen kẽ."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L08-theory-bitmap",
+      "title": {
+        "en": "Bitmap: exploit runs or discard visual detail",
+        "vi": "Bitmap: tận dụng run hoặc loại bớt chi tiết thị giác"
+      },
+      "paragraphs": [
+        {
+          "en": "A bitmap with long adjacent runs of the same pixel value can use lossless RLE when a fixed scan order and token convention are declared.",
+          "vi": "Bitmap có các run dài gồm cùng giá trị pixel có thể dùng RLE lossless khi đã công bố scan order và quy ước token."
+        },
+        {
+          "en": "Photographic images often use lossy compression that removes or approximates less noticeable detail. Reducing image resolution or colour depth also reduces data but is lossy because discarded detail cannot be recovered.",
+          "vi": "Ảnh chụp thường dùng lossy compression để loại bỏ hoặc xấp xỉ chi tiết ít dễ nhận thấy. Giảm image resolution hoặc colour depth cũng làm giảm dữ liệu nhưng là lossy vì chi tiết đã bỏ không thể phục hồi."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L08-theory-vector",
+      "title": {
+        "en": "Vector: compress the drawing instructions",
+        "vi": "Vector: nén các chỉ dẫn vẽ"
+      },
+      "paragraphs": [
+        {
+          "en": "A vector graphic stores a drawing list rather than a pixel grid. Lossless compression can encode repeated text, markup, object properties or instruction patterns more compactly and reconstruct the same drawing list.",
+          "vi": "Vector graphic lưu drawing list thay vì lưới pixel. Lossless compression có thể mã hóa text, markup, object property hoặc instruction pattern lặp lại ngắn gọn hơn rồi phục hồi cùng drawing list."
+        },
+        {
+          "en": "The possible saving depends on the format and repetition; vector files are not automatically small and RLE is not a universal vector method.",
+          "vi": "Mức tiết kiệm phụ thuộc định dạng và sự lặp lại; tệp vector không tự động nhỏ và RLE không phải phương pháp vector phổ quát."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    },
+    {
+      "id": "P1-L08-theory-sound",
+      "title": {
+        "en": "Sound: preserve samples or remove less audible detail",
+        "vi": "Sound: giữ sample hoặc loại chi tiết ít nghe thấy"
+      },
+      "paragraphs": [
+        {
+          "en": "Lossless audio compression stores patterns or prediction differences without discarding samples, so decompression restores the original sample data exactly.",
+          "vi": "Lossless audio compression lưu pattern hoặc sai khác dự đoán mà không bỏ sample, nên decompression phục hồi chính xác dữ liệu sample gốc."
+        },
+        {
+          "en": "Lossy perceptual compression removes or approximates less audible information, such as masked or less perceptible detail. Reducing sampling rate or sampling resolution is also lossy and can reduce accuracy.",
+          "vi": "Lossy perceptual compression loại bỏ hoặc xấp xỉ thông tin ít nghe thấy, như chi tiết bị che hoặc khó cảm nhận. Giảm sampling rate hoặc sampling resolution cũng là lossy và có thể giảm độ chính xác."
         }
       ],
       "sourceIds": [
@@ -178,6 +256,27 @@
         "correction": {
           "en": "Acceptability depends on purpose and settings.",
           "vi": "Mức chấp nhận phụ thuộc mục đích và thiết lập."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L08-recognise-method-choice",
+        "title": {
+          "en": "Choose by data type and recovery need",
+          "vi": "Chọn theo loại dữ liệu và nhu cầu phục hồi"
+        },
+        "setup": {
+          "en": "A school must send an editable text transcript, a flat-colour icon, a scalable logo and a listening copy of a recorded interview.",
+          "vi": "Trường học cần gửi transcript text có thể chỉnh sửa, icon màu phẳng, logo có thể scale và bản ghi phỏng vấn để nghe."
+        },
+        "prompt": {
+          "en": "For each file, identify a suitable lossless or lossy approach and state what the decoder can recover.",
+          "vi": "Với mỗi tệp, xác định cách lossless hoặc lossy phù hợp và nêu decoder có thể phục hồi gì."
+        },
+        "expectedEvidence": {
+          "en": "Text needs exact lossless recovery; the flat bitmap may suit lossless RLE; vector instructions can be compressed losslessly; the listening copy may accept perceptual lossy audio, while an archival master should remain exact.",
+          "vi": "Text cần phục hồi lossless chính xác; bitmap màu phẳng có thể hợp RLE lossless; chỉ dẫn vector có thể nén lossless; bản nghe có thể chấp nhận perceptual lossy audio, còn bản lưu trữ chính nên giữ chính xác."
         }
       }
     ]
@@ -409,7 +508,7 @@
         "en": "AlgoCore original learning material",
         "vi": "Học liệu gốc do AlgoCore biên soạn"
       },
-      "locator": "Paper 1 · P1-L08 · release 1.1",
+      "locator": "Paper 1 · P1-L08 · release 1.2",
       "kind": "algocore"
     },
     {
@@ -428,13 +527,17 @@
       "P1-L08-objectives"
     ],
     "B02": [
-      "P1-L08-theory"
+      "P1-L08-theory-need-and-choice",
+      "P1-L08-theory-text",
+      "P1-L08-theory-bitmap",
+      "P1-L08-theory-vector",
+      "P1-L08-theory-sound"
     ],
     "B03": [
       "P1-L08-rules"
     ],
     "B04": [
-      "P1-L08-recognise"
+      "P1-L08-recognise-method-choice"
     ],
     "B05": [
       "P1-L08-worked"
@@ -460,5 +563,6 @@
     "B11": [
       "P1-L08-sources"
     ]
-  }
+  },
+  "assessmentVersion": "1.0.0"
 }

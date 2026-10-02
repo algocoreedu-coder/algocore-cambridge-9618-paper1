@@ -7,6 +7,8 @@ const catalog = read("content/paper1/catalog.json");
 const manifest = read("content/paper1/release-manifest.json");
 const visualDefinitions = read("content/paper1/visual-definitions.json");
 const atlasManifest = read("content/paper1/atlas-manifest.json");
+const visualPlacements = read("content/paper1/visual-placements.json");
+const chapterPractice = read("content/paper1/practice/chapter-1.json");
 const failures = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const allStrings = (value, visitor) => {
@@ -53,6 +55,7 @@ const slugs = new Set();
 const objectiveIds = new Set();
 const requirementIds = new Set();
 const assessedRequirements = new Map();
+const lessonsById = new Map();
 let assessmentCount = 0;
 for (const topic of catalog.topics) {
   check(topic.topicId === topic.lessonId, `${topic.slug}: topicId must equal lessonId in v1`);
@@ -60,8 +63,11 @@ for (const topic of catalog.topics) {
   check(!slugs.has(topic.slug), `${topic.slug}: duplicate slug`);
   lessonIds.add(topic.lessonId); slugs.add(topic.slug);
   const lesson = read(`content/paper1/lessons/${topic.slug}.json`);
+  lessonsById.set(lesson.lessonId, lesson);
   check(lesson.lessonId === topic.lessonId && lesson.slug === topic.slug, `${topic.slug}: identity mismatch`);
   check(lesson.visualId === `VIS-${lesson.lessonId}`, `${topic.slug}: visual mapping mismatch`);
+  check(/^1\.2\.\d+$/.test(lesson.contentVersion), `${topic.slug}: Chapter 1 completion contentVersion must be 1.2.x`);
+  check(/^1\.\d+\.\d+$/.test(lesson.assessmentVersion), `${topic.slug}: assessmentVersion missing`);
   check(lesson.objectives.map((entry) => entry.id).join("|") === topic.objectiveIds.join("|"), `${topic.slug}: objective catalog mismatch`);
   check(lesson.requirementIds.join("|") === topic.requirementIds.join("|"), `${topic.slug}: requirement catalog mismatch`);
   lesson.objectives.forEach((entry) => objectiveIds.add(entry.id));
@@ -73,6 +79,8 @@ for (const topic of catalog.topics) {
     check(Array.isArray(lesson.contractCoverage[id]) && lesson.contractCoverage[id].length > 0, `${topic.slug}: missing ${id} coverage`);
   }
   check(lesson.assessments.length === lesson.requirementIds.length, `${topic.slug}: assessment/requirement count mismatch`);
+  check(Array.isArray(lesson.recognition?.items), `${topic.slug}: recognition task anchor collection missing`);
+  check(lesson.sources.some((source) => source.id === "BOOK-C01" && source.kind === "coursebook"), `${topic.slug}: Chapter 1 coursebook provenance missing`);
   for (const item of lesson.assessments) {
     assessmentCount += 1;
     assessedRequirements.set(item.requirementId, (assessedRequirements.get(item.requirementId) ?? 0) + 1);
@@ -95,6 +103,7 @@ for (const topic of catalog.topics) {
   const released = manifest.lessons.find((entry) => entry.lessonId === lesson.lessonId);
   check(released?.state === "available", `${topic.slug}: not available in manifest`);
   check(released?.slug === lesson.slug && released?.contentVersion === lesson.contentVersion, `${topic.slug}: manifest version mismatch`);
+  check(released?.assessmentVersion === lesson.assessmentVersion, `${topic.slug}: manifest assessment version mismatch`);
 }
 
 const visualIds = new Set();
@@ -146,6 +155,60 @@ for (const role of validAtlasRoles) {
 }
 allStrings(atlasManifest, (value) => check(!/(?:[A-Z]:\\|file:\/\/|\.\.\/|CONTROLLED_CHECK)/i.test(value), "public Atlas manifest leaks a private/local reference"));
 
+const placementRows = visualPlacements.lessons?.flatMap((lesson) => [
+  ...(lesson.instructionalPlacements ?? []),
+  ...(lesson.referencePlacements ?? []),
+]) ?? [];
+const dispositionCounts = Object.fromEntries([...new Set(placementRows.map((row) => row.disposition))].map((disposition) => [disposition, placementRows.filter((row) => row.disposition === disposition).length]));
+check(visualPlacements.schemaVersion === 1 && visualPlacements.chapterId === "1", "visual placement contract identity mismatch");
+check(visualPlacements.lessons?.length === 8, `expected 8 visual placement lesson contracts, got ${visualPlacements.lessons?.length ?? 0}`);
+check(placementRows.length === 56, `expected 56 classified Atlas placements, got ${placementRows.length}`);
+check(new Set(placementRows.map((row) => row.atlasId)).size === 56, "every Atlas item must have exactly one disposition");
+check(dispositionCounts.INLINE_UNDERSTAND === 8, `expected 8 INLINE_UNDERSTAND, got ${dispositionCounts.INLINE_UNDERSTAND ?? 0}`);
+check(dispositionCounts.INLINE_OBSERVE_SCENE === 3, `expected 3 INLINE_OBSERVE_SCENE, got ${dispositionCounts.INLINE_OBSERVE_SCENE ?? 0}`);
+check(dispositionCounts.INLINE_WORKED_EXAMPLE === 5, `expected 5 INLINE_WORKED_EXAMPLE, got ${dispositionCounts.INLINE_WORKED_EXAMPLE ?? 0}`);
+check(dispositionCounts.INLINE_RECOGNISE === 8, `expected 8 INLINE_RECOGNISE, got ${dispositionCounts.INLINE_RECOGNISE ?? 0}`);
+check(dispositionCounts.LESSON_REFERENCE_DISCLOSURE === 23, `expected 23 lesson disclosures, got ${dispositionCounts.LESSON_REFERENCE_DISCLOSURE ?? 0}`);
+check(dispositionCounts.CHAPTER_ATLAS_ONLY === 8, `expected 8 Chapter Atlas-only items, got ${dispositionCounts.CHAPTER_ATLAS_ONLY ?? 0}`);
+check(dispositionCounts.DUPLICATE_OR_REMOVE === 1, `expected 1 retired item, got ${dispositionCounts.DUPLICATE_OR_REMOVE ?? 0}`);
+check(placementRows.find((row) => row.disposition === "DUPLICATE_OR_REMOVE")?.atlasId === "BOOK-C03-P082-RGB-PIXEL", "retired cross-chapter duplicate mismatch");
+for (const lesson of visualPlacements.lessons ?? []) {
+  const lessonContent = lessonsById.get(lesson.lessonId);
+  const visualDefinition = visualDefinitions.find((entry) => entry.lessonId === lesson.lessonId);
+  check(Boolean(lessonContent), `${lesson.lessonId}: visual placement lesson is not released`);
+  for (const placement of lesson.instructionalPlacements ?? []) {
+    check(placement.teachingClaim?.en && placement.teachingClaim?.vi && placement.learnerAction?.en && placement.learnerAction?.vi, `${placement.atlasId}: instructional purpose/action missing`);
+    check(placement.expectedObservation?.en && placement.expectedObservation?.vi && placement.textEquivalent?.en && placement.textEquivalent?.vi, `${placement.atlasId}: evidence/text equivalent missing`);
+    const targetExists = placement.anchor?.kind === "theory-block"
+      ? lessonContent?.theory?.some((block) => block.id === placement.anchor.targetId)
+      : placement.anchor?.kind === "worked-step"
+        ? lessonContent?.workedExample?.steps?.some((step) => step.id === placement.anchor.targetId)
+        : placement.anchor?.kind === "recognition-item"
+          ? lessonContent?.recognition?.items?.some((item) => item.id === placement.anchor.targetId)
+          : placement.anchor?.kind === "visual-scene"
+            ? visualDefinition?.sceneIds?.includes(placement.anchor.targetId)
+            : false;
+    check(Boolean(targetExists), `${placement.atlasId}: instructional anchor ${placement.anchor?.kind}/${placement.anchor?.targetId} does not exist`);
+  }
+}
+
+const practiceRequirements = new Set(chapterPractice.items?.flatMap((item) => item.requirementIds) ?? []);
+const practicePointMarks = chapterPractice.items?.reduce((total, item) => total + item.solution.markingPoints.reduce((subtotal, point) => subtotal + point.marks, 0), 0) ?? 0;
+const highRisk = new Set(["REQ-1.1-01-02","REQ-1.1-02-02","REQ-1.1-04-01","REQ-1.1-05-01","REQ-1.2-02-01","REQ-1.2-03-01","REQ-1.2-07-01","REQ-1.3-03-01"]);
+const novelRequirements = new Set(chapterPractice.items?.filter((item) => item.novelContext).flatMap((item) => item.requirementIds) ?? []);
+check(chapterPractice.practiceId === "P1-CP01" && chapterPractice.items?.length === 17, "Chapter 1 mixed practice must contain the approved 17 items");
+check(chapterPractice.totalMarks === 48 && practicePointMarks === 48, `Chapter 1 practice mark contract mismatch (${chapterPractice.totalMarks}/${practicePointMarks})`);
+check(practiceRequirements.size === 23 && [...requirementIds].every((id) => practiceRequirements.has(id)), "Chapter 1 practice must cover 23/23 requirements");
+check(new Set(chapterPractice.items.map((item) => item.ao)).size === 2, "Chapter 1 practice must include AO1 and AO2");
+check([...highRisk].every((id) => novelRequirements.has(id)), "high-risk requirements need novel-context evidence");
+check(chapterPractice.items.every((item) => item.origin === "original" && item.claim_kind === "algocore_guidance"), "Chapter 1 practice provenance must be AlgoCore-original");
+check(JSON.stringify(chapterPractice.items.find((item) => item.requirementIds.includes("REQ-1.3-03-01")))?.match(/text.*bitmap.*vector.*sound/is), "compression transfer item must cover text, bitmap, vector and sound");
+
+const l03Text = JSON.stringify(read("content/paper1/lessons/signed-arithmetic.json"));
+const l08Text = JSON.stringify(read("content/paper1/lessons/compression.json"));
+check(["37 + 58", "95 − 68", "127 + 1", "−1 + 1"].every((needle) => l03Text.includes(needle)), "P1-L03 approved Worked/Recall sequence is incomplete");
+check(["theory-text", "theory-bitmap", "theory-vector", "theory-sound"].every((needle) => l08Text.includes(needle)), "P1-L08 must teach four media types before assessment");
+
 check(objectiveIds.size === 17, `expected 17 objective IDs, got ${objectiveIds.size}`);
 check(requirementIds.size === 23, `expected 23 requirement IDs, got ${requirementIds.size}`);
 check(assessmentCount === 23, `expected 23 assessments, got ${assessmentCount}`);
@@ -157,4 +220,4 @@ if (failures.length) {
   process.exit(1);
 }
 console.log("Paper 1 Chapter 1 contract: PASS");
-console.log("8 sections · 8 lessons · 17 objectives · 23 requirements · 23 semantic assessment oracles · 8 visuals · 56 Atlas cards / 112 localized SVG previews · B01–B11 complete");
+console.log("8 sections · 8 lessons · 17 objectives · 23 requirements · 23 semantic assessment oracles · 24 inline + 23 disclosure + 8 Chapter Atlas + 1 retired · 17-item/48-mark mixed practice · B01–B11 complete");

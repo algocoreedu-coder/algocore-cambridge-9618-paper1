@@ -1,0 +1,1407 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP01",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "1",
+  "title": {
+    "en": "Chapter 1 mixed revision",
+    "vi": "Ôn tập tổng hợp Chapter 1"
+  },
+  "intro": {
+    "en": "AlgoCore-original practice across data representation, multimedia and compression. Attempt before revealing hints or solutions.",
+    "vi": "Bài luyện gốc do AlgoCore biên soạn, kết hợp biểu diễn dữ liệu, multimedia và compression. Hãy làm trước khi mở hint hoặc solution."
+  },
+  "timing": {
+    "timedMinutes": 60,
+    "untimedAvailable": true
+  },
+  "totalMarks": 48,
+  "aoBlueprint": {
+    "AO1": 26,
+    "AO2": 22,
+    "note": {
+      "en": "This chapter set contains both AO1 and AO2 practice; its split is an AlgoCore blueprint, not an official component weighting claim.",
+      "vi": "Bộ luyện chương này có cả AO1 và AO2; tỉ lệ là blueprint của AlgoCore, không phải tuyên bố trọng số chính thức của component."
+    }
+  },
+  "revealPolicy": "attempt-before-hint-or-solution; written responses use explicit rubric self-review",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "kind": "syllabus",
+      "locator": "Cambridge 9618 syllabus for 2026 v2, pp. 13–15"
+    },
+    {
+      "id": "BOOK-C01",
+      "kind": "coursebook",
+      "locator": "A Level Computer Science coursebook, Chapter 1, printed pp. 1–26"
+    },
+    {
+      "id": "ALG-P1",
+      "kind": "algocore",
+      "locator": "AlgoCore-original P1-CP01; not an official Cambridge paper or mark scheme"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP01-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-1.1-01-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-01"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-short-answer",
+      "novelContext": false,
+      "marks": 3,
+      "prompt": {
+        "en": "Compare bit with byte, then compare MB with MiB. State the factor used by each prefix.",
+        "vi": "So sánh bit với byte, rồi so sánh MB với MiB. Nêu hệ số của từng prefix."
+      },
+      "hint": {
+        "en": "Use b/B and the two named prefix conventions precisely.",
+        "vi": "Dùng chính xác b/B và hai quy ước prefix có tên."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A bit is one binary digit; a byte is eight bits. MB is a decimal SI unit using 1000 per prefix step, so 1 MB = 10⁶ B. MiB is a binary IEC unit using 1024 per step, so 1 MiB = 2²⁰ B.",
+          "vi": "Bit là một binary digit; byte gồm tám bit. MB là đơn vị SI thập phân dùng hệ số 1000 mỗi bậc, nên 1 MB = 10⁶ B. MiB là đơn vị IEC binary dùng hệ số 1024 mỗi bậc, nên 1 MiB = 2²⁰ B."
+        },
+        "markingPoints": [
+          {
+            "id": "Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-01-01"
+            ],
+            "point": {
+              "en": "Distinguishes bit from byte and states 1 B = 8 b.",
+              "vi": "Phân biệt bit với byte và nêu 1 B = 8 b."
+            }
+          },
+          {
+            "id": "Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-01-01"
+            ],
+            "point": {
+              "en": "States MB uses decimal/SI factor 1000 per step.",
+              "vi": "Nêu MB dùng hệ số thập phân/SI 1000 mỗi bậc."
+            }
+          },
+          {
+            "id": "Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-01-01"
+            ],
+            "point": {
+              "en": "States MiB uses binary/IEC factor 1024 per step.",
+              "vi": "Nêu MiB dùng hệ số binary/IEC 1024 mỗi bậc."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "units-and-magnitudes",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q02",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.1-01-02"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-01"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "calculation",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "A wildlife sensor stores a 3.5 MiB uncompressed log. Calculate its size in bits. Show the bytes-to-bits step.",
+        "vi": "Một wildlife sensor lưu log chưa nén 3.5 MiB. Tính dung lượng theo bit. Trình bày bước đổi byte sang bit."
+      },
+      "hint": {
+        "en": "Use 1 MiB = 1024² bytes and 1 byte = 8 bits.",
+        "vi": "Dùng 1 MiB = 1024² byte và 1 byte = 8 bit."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "3.5 × 1024² = 3,670,016 bytes; 3,670,016 × 8 = 29,360,128 bits.",
+          "vi": "3.5 × 1024² = 3.670.016 byte; 3.670.016 × 8 = 29.360.128 bit."
+        },
+        "markingPoints": [
+          {
+            "id": "Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-01-02"
+            ],
+            "point": {
+              "en": "Calculates 3,670,016 bytes.",
+              "vi": "Tính được 3.670.016 byte."
+            }
+          },
+          {
+            "id": "Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-01-02"
+            ],
+            "point": {
+              "en": "Calculates 29,360,128 bits using ×8.",
+              "vi": "Tính được 29.360.128 bit bằng ×8."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "units-and-magnitudes",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q03",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-1.1-02-01",
+        "REQ-1.1-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-02",
+        "AC26-1.1-03"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "calculate",
+      "responseProduct": "multi-representation-conversion",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Represent denary 173 as unsigned 8-bit binary, two-digit hexadecimal and three-digit BCD. Explain one structural difference between pure binary and BCD.",
+        "vi": "Biểu diễn denary 173 thành binary không dấu 8-bit, hexadecimal hai chữ số và BCD ba chữ số. Giải thích một khác biệt cấu trúc giữa pure binary và BCD."
+      },
+      "hint": {
+        "en": "For BCD, encode 1, 7 and 3 separately.",
+        "vi": "Với BCD, mã hóa riêng 1, 7 và 3."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "173 = 10101101₂ = AD₁₆. BCD 173 is 0001 0111 0011 because each denary digit is encoded separately; pure binary encodes the whole value.",
+          "vi": "173 = 10101101₂ = AD₁₆. BCD 173 là 0001 0111 0011 vì từng chữ số denary được mã hóa riêng; pure binary mã hóa toàn giá trị."
+        },
+        "markingPoints": [
+          {
+            "id": "Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-02-01",
+              "REQ-1.1-03-01"
+            ],
+            "point": {
+              "en": "Gives 10101101₂.",
+              "vi": "Nêu 10101101₂."
+            }
+          },
+          {
+            "id": "Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-02-01",
+              "REQ-1.1-03-01"
+            ],
+            "point": {
+              "en": "Gives AD₁₆.",
+              "vi": "Nêu AD₁₆."
+            }
+          },
+          {
+            "id": "Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-02-01"
+            ],
+            "point": {
+              "en": "Gives BCD 0001 0111 0011.",
+              "vi": "Nêu BCD 0001 0111 0011."
+            }
+          },
+          {
+            "id": "Q03-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-02-01"
+            ],
+            "point": {
+              "en": "Explains digit-by-digit BCD versus whole-value binary.",
+              "vi": "Giải thích BCD theo từng chữ số so với binary của toàn giá trị."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "number-systems",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q04",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.1-02-02"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-02"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "fixed-width-encoding",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "A controller must store −18 at 8-bit width. Give its one’s-complement and two’s-complement patterns.",
+        "vi": "Bộ điều khiển cần lưu −18 ở độ rộng 8-bit. Nêu pattern one’s complement và two’s complement."
+      },
+      "hint": {
+        "en": "Start with +18 = 00010010.",
+        "vi": "Bắt đầu với +18 = 00010010."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Invert 00010010 to obtain one’s complement 11101101; add one to obtain two’s complement 11101110.",
+          "vi": "Đảo 00010010 được one’s complement 11101101; cộng một được two’s complement 11101110."
+        },
+        "markingPoints": [
+          {
+            "id": "Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-02-02"
+            ],
+            "point": {
+              "en": "Gives one’s complement 11101101.",
+              "vi": "Nêu one’s complement 11101101."
+            }
+          },
+          {
+            "id": "Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-02-02"
+            ],
+            "point": {
+              "en": "Gives two’s complement 11101110.",
+              "vi": "Nêu two’s complement 11101110."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "number-systems",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q05",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-1.1-06-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-06"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "paired-application-explanation",
+      "novelContext": false,
+      "marks": 2,
+      "prompt": {
+        "en": "Explain why BCD suits a baggage-counter display and why hexadecimal suits a memory dump.",
+        "vi": "Giải thích vì sao BCD phù hợp màn hình bộ đếm hành lý và vì sao hexadecimal phù hợp memory dump."
+      },
+      "hint": {
+        "en": "Link each representation structure to its task.",
+        "vi": "Liên hệ cấu trúc mỗi cách biểu diễn với nhiệm vụ."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "BCD keeps each denary digit separate, making digit-by-digit display direct. Hexadecimal maps one digit to each nibble, shortening long binary patterns while preserving their exact bits for inspection.",
+          "vi": "BCD giữ riêng từng chữ số denary nên thuận tiện cho hiển thị theo từng chữ số. Hexadecimal ánh xạ một chữ số với mỗi nibble, rút ngắn pattern binary dài trong khi giữ chính xác bit để kiểm tra."
+        },
+        "markingPoints": [
+          {
+            "id": "Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-06-01"
+            ],
+            "point": {
+              "en": "Links BCD to separate displayed denary digits.",
+              "vi": "Liên hệ BCD với các chữ số denary hiển thị riêng."
+            }
+          },
+          {
+            "id": "Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-06-01"
+            ],
+            "point": {
+              "en": "Links hexadecimal to exact compact nibble notation for a dump.",
+              "vi": "Liên hệ hexadecimal với ký hiệu nibble ngắn gọn, chính xác cho memory dump."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "number-systems",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q06",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.1-04-01",
+        "REQ-1.1-05-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-04",
+        "AC26-1.1-05"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "signed-arithmetic-trace",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "An 8-bit drone controller calculates 74 + 61 and 74 − 61 using two’s complement. Give the stored bits and denary interpretation for both, and identify signed overflow.",
+        "vi": "Bộ điều khiển drone 8-bit tính 74 + 61 và 74 − 61 bằng two’s complement. Nêu các bit lưu cùng diễn giải denary cho cả hai, rồi xác định signed overflow."
+      },
+      "hint": {
+        "en": "The signed range is −128 to 127; test signs separately from carry out.",
+        "vi": "Miền signed là −128 đến 127; kiểm dấu riêng với carry out."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "74 + 61 gives 10000111, stored interpretation −121; the true result 135 is outside range, so signed overflow is true. For 74 − 61, −61 is 11000011; the sum stores 00001101 = 13 with no signed overflow.",
+          "vi": "74 + 61 cho 10000111, diễn giải lưu là −121; kết quả thật 135 nằm ngoài miền nên signed overflow là true. Với 74 − 61, −61 là 11000011; tổng lưu 00001101 = 13 và không signed overflow."
+        },
+        "markingPoints": [
+          {
+            "id": "Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-04-01"
+            ],
+            "point": {
+              "en": "Gives 10000111 for 74 + 61.",
+              "vi": "Nêu 10000111 cho 74 + 61."
+            }
+          },
+          {
+            "id": "Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-05-01"
+            ],
+            "point": {
+              "en": "Explains true sum 135 is out of range and signed overflow occurs.",
+              "vi": "Giải thích tổng thật 135 ngoài miền và signed overflow xảy ra."
+            }
+          },
+          {
+            "id": "Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-04-01"
+            ],
+            "point": {
+              "en": "Forms −61 as 11000011 and stores subtraction result 00001101.",
+              "vi": "Tạo −61 là 11000011 và lưu kết quả phép trừ 00001101."
+            }
+          },
+          {
+            "id": "Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-04-01",
+              "REQ-1.1-05-01"
+            ],
+            "point": {
+              "en": "Interprets 00001101 as 13 and states no signed overflow for subtraction.",
+              "vi": "Diễn giải 00001101 là 13 và nêu phép trừ không signed overflow."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "signed-arithmetic",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-1.1-07-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.1-07"
+      ],
+      "strandIds": [
+        "1.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "encoding-layer-explanation",
+      "novelContext": false,
+      "marks": 3,
+      "prompt": {
+        "en": "A supplied table gives character Ł, Unicode code point U+0141 and UTF-8 bytes C5 81. Explain the three layers and why a character code table must name its encoding.",
+        "vi": "Bảng cho sẵn ký tự Ł, Unicode code point U+0141 và byte UTF-8 C5 81. Giải thích ba tầng và vì sao bảng mã ký tự phải nêu tên encoding."
+      },
+      "hint": {
+        "en": "Separate character, code point and encoded bytes.",
+        "vi": "Tách character, code point và các byte đã encode."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Ł is the character; U+0141 is its Unicode code point; C5 81 is the byte sequence produced by UTF-8. A different named encoding may map values differently, especially outside standard ASCII, so the encoding must be identified.",
+          "vi": "Ł là character; U+0141 là Unicode code point; C5 81 là chuỗi byte do UTF-8 tạo. Encoding có tên khác có thể ánh xạ giá trị khác, đặc biệt ngoài standard ASCII, nên phải xác định encoding."
+        },
+        "markingPoints": [
+          {
+            "id": "Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-07-01"
+            ],
+            "point": {
+              "en": "Identifies Ł as the character and U+0141 as the code point.",
+              "vi": "Xác định Ł là character và U+0141 là code point."
+            }
+          },
+          {
+            "id": "Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-07-01"
+            ],
+            "point": {
+              "en": "Identifies C5 81 as UTF-8 encoded bytes.",
+              "vi": "Xác định C5 81 là các byte encode bằng UTF-8."
+            }
+          },
+          {
+            "id": "Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.1-07-01"
+            ],
+            "point": {
+              "en": "Explains that byte-to-glyph mapping depends on the named encoding.",
+              "vi": "Giải thích mapping byte–glyph phụ thuộc encoding có tên."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "character-encoding",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q08",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-1.2-01-01",
+        "REQ-1.2-01-02"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-01"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "data-model-explanation",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain how a bitmap file can reconstruct a 320×200 image with 8-bit colour. Include pixel data, image resolution, colour depth and file-header information, and distinguish image resolution from screen resolution.",
+        "vi": "Giải thích cách tệp bitmap dựng lại ảnh 320×200 với colour 8-bit. Đề cập pixel data, image resolution, colour depth và thông tin file header, đồng thời phân biệt image resolution với screen resolution."
+      },
+      "hint": {
+        "en": "State what the decoder needs to know before it reads the ordered pixel values.",
+        "vi": "Nêu decoder cần biết gì trước khi đọc các giá trị pixel có thứ tự."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The payload stores ordered pixel values. Image resolution 320×200 states the stored pixel grid, while 8-bit colour depth gives 256 possible values per pixel. A header can store dimensions, depth and format metadata so rows and values are decoded correctly. Screen resolution describes the display’s pixel grid, not the stored image grid.",
+          "vi": "Payload lưu các giá trị pixel có thứ tự. Image resolution 320×200 nêu lưới pixel được lưu, còn colour depth 8-bit cho 256 giá trị có thể mỗi pixel. Header có thể lưu dimensions, depth và format metadata để decode đúng hàng và giá trị. Screen resolution mô tả lưới pixel của màn hình, không phải lưới ảnh được lưu."
+        },
+        "markingPoints": [
+          {
+            "id": "Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-01-01"
+            ],
+            "point": {
+              "en": "Describes ordered pixel values.",
+              "vi": "Mô tả các giá trị pixel có thứ tự."
+            }
+          },
+          {
+            "id": "Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-01-01"
+            ],
+            "point": {
+              "en": "Explains image resolution 320×200 as stored pixel dimensions.",
+              "vi": "Giải thích image resolution 320×200 là dimensions pixel được lưu."
+            }
+          },
+          {
+            "id": "Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-01-01"
+            ],
+            "point": {
+              "en": "Explains eight-bit depth and valid header metadata.",
+              "vi": "Giải thích depth 8-bit và metadata header hợp lệ."
+            }
+          },
+          {
+            "id": "Q08-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-01-02"
+            ],
+            "point": {
+              "en": "Distinguishes screen resolution from image resolution.",
+              "vi": "Phân biệt screen resolution với image resolution."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "bitmap-storage",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q09",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.2-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-02"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "bitmap-size-calculation",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "A field camera stores a raw 640×360 bitmap at 12 bits per pixel. Ignore headers, padding and compression. Calculate the minimum payload in bytes.",
+        "vi": "Camera ngoài hiện trường lưu bitmap thô 640×360 ở 12 bit mỗi pixel. Bỏ qua header, padding và compression. Tính payload tối thiểu theo byte."
+      },
+      "hint": {
+        "en": "Calculate pixels × bits per pixel, then divide by eight.",
+        "vi": "Tính số pixel × bit mỗi pixel, rồi chia tám."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "640 × 360 × 12 = 2,764,800 bits; ÷8 = 345,600 bytes.",
+          "vi": "640 × 360 × 12 = 2.764.800 bit; ÷8 = 345.600 byte."
+        },
+        "markingPoints": [
+          {
+            "id": "Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-02-01"
+            ],
+            "point": {
+              "en": "Calculates 2,764,800 bits from all three factors.",
+              "vi": "Tính được 2.764.800 bit từ đủ ba factor."
+            }
+          },
+          {
+            "id": "Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-02-01"
+            ],
+            "point": {
+              "en": "Converts to 345,600 bytes.",
+              "vi": "Đổi được 345.600 byte."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "bitmap-storage",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q10",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.2-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-03"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "explain",
+      "responseProduct": "trade-off-analysis",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "An image editor doubles both stored dimensions but reduces colour depth from 24 to 8 bits per pixel. Explain the effect on raw size and on image quality, assuming the new pixels contain real captured detail.",
+        "vi": "Trình chỉnh sửa ảnh tăng gấp đôi cả hai stored dimension nhưng giảm colour depth từ 24 xuống 8 bit mỗi pixel. Giải thích tác động tới dung lượng thô và chất lượng ảnh, giả sử các pixel mới chứa chi tiết được thu thật."
+      },
+      "hint": {
+        "en": "Pixel count changes by 2×2; then apply the depth ratio 8/24.",
+        "vi": "Số pixel thay đổi 2×2; sau đó áp dụng tỉ lệ depth 8/24."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Pixel count becomes four times larger, while bits per pixel become one third, so raw size becomes 4/3 of the original. Spatial detail can increase, but fewer colour levels can cause banding or loss of colour accuracy.",
+          "vi": "Số pixel tăng bốn lần, còn bit mỗi pixel còn một phần ba, nên dung lượng thô bằng 4/3 ban đầu. Chi tiết không gian có thể tăng, nhưng ít mức màu hơn có thể gây banding hoặc giảm độ chính xác màu."
+        },
+        "markingPoints": [
+          {
+            "id": "Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-03-01"
+            ],
+            "point": {
+              "en": "Derives raw-size factor 4×(8/24)=4/3.",
+              "vi": "Suy ra hệ số dung lượng thô 4×(8/24)=4/3."
+            }
+          },
+          {
+            "id": "Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-03-01"
+            ],
+            "point": {
+              "en": "Explains the spatial-detail benefit and colour-depth cost.",
+              "vi": "Giải thích lợi ích chi tiết không gian và chi phí do giảm colour depth."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "bitmap-storage",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q11",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-1.2-04-01",
+        "REQ-1.2-04-02"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-04"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "drawing-list-explanation",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "A vector icon contains a blue circle behind a white line. Explain how drawing objects, properties and drawing-list order encode the icon and how it becomes pixels on screen.",
+        "vi": "Icon vector gồm circle xanh nằm sau line trắng. Giải thích cách drawing object, property và thứ tự drawing list mã hóa icon và cách nó trở thành pixel trên màn hình."
+      },
+      "hint": {
+        "en": "Name the objects, give properties, state why order matters and describe rendering.",
+        "vi": "Nêu object, property, lý do thứ tự quan trọng và mô tả rendering."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The list stores a circle object with centre/radius/fill and a line object with endpoints/stroke. Their order places the circle behind the line. A renderer interprets the object instructions at the chosen size and calculates display pixels.",
+          "vi": "Danh sách lưu circle object với tâm/bán kính/fill và line object với endpoints/stroke. Thứ tự đặt circle phía sau line. Renderer diễn giải các chỉ dẫn object ở kích thước được chọn và tính pixel hiển thị."
+        },
+        "markingPoints": [
+          {
+            "id": "Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-04-01",
+              "REQ-1.2-04-02"
+            ],
+            "point": {
+              "en": "Identifies circle and line as drawing objects.",
+              "vi": "Xác định circle và line là drawing object."
+            }
+          },
+          {
+            "id": "Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-04-01",
+              "REQ-1.2-04-02"
+            ],
+            "point": {
+              "en": "Gives valid geometry/style properties.",
+              "vi": "Nêu property geometry/style hợp lệ."
+            }
+          },
+          {
+            "id": "Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-04-02"
+            ],
+            "point": {
+              "en": "Explains the effect of drawing-list order.",
+              "vi": "Giải thích tác động của thứ tự drawing list."
+            }
+          },
+          {
+            "id": "Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-04-01"
+            ],
+            "point": {
+              "en": "Explains rendering instructions into display pixels.",
+              "vi": "Giải thích render chỉ dẫn thành pixel hiển thị."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "vector-graphics",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q12",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.2-05-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-05"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "task-choice-justification",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "Choose bitmap or vector for (a) an editable railway symbol printed at many sizes and (b) a detailed satellite photograph. Justify each choice.",
+        "vi": "Chọn bitmap hoặc vector cho (a) ký hiệu đường sắt cần chỉnh sửa và in ở nhiều kích thước, và (b) ảnh vệ tinh nhiều chi tiết. Biện minh từng lựa chọn."
+      },
+      "hint": {
+        "en": "Link each choice to scaling/editability or photographic detail.",
+        "vi": "Liên hệ từng lựa chọn với scaling/editability hoặc chi tiết ảnh chụp."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use vector for the railway symbol because independent objects are editable and geometry scales without enlarging a fixed pixel grid. Use bitmap for the satellite photograph because it represents detailed sampled pixel variation.",
+          "vi": "Dùng vector cho ký hiệu đường sắt vì các object độc lập có thể chỉnh sửa và geometry scale mà không phóng lưới pixel cố định. Dùng bitmap cho ảnh vệ tinh vì nó biểu diễn biến đổi pixel được lấy mẫu với nhiều chi tiết."
+        },
+        "markingPoints": [
+          {
+            "id": "Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-05-01"
+            ],
+            "point": {
+              "en": "Selects and justifies vector for the scalable editable symbol.",
+              "vi": "Chọn và biện minh vector cho ký hiệu có thể scale/chỉnh sửa."
+            }
+          },
+          {
+            "id": "Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-05-01"
+            ],
+            "point": {
+              "en": "Selects and justifies bitmap for photographic detail.",
+              "vi": "Chọn và biện minh bitmap cho chi tiết ảnh chụp."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "vector-graphics",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q13",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-1.2-06-01",
+        "REQ-1.2-06-02"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-06"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "process-sequence",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain how an analogue microphone signal becomes stored digital sound. Use sampling, sampling rate, sampling resolution, quantisation and binary encoding precisely.",
+        "vi": "Giải thích cách tín hiệu microphone analogue trở thành âm thanh digital được lưu. Dùng chính xác sampling, sampling rate, sampling resolution, quantisation và binary encoding."
+      },
+      "hint": {
+        "en": "Separate when measurements are taken from which amplitude levels are available.",
+        "vi": "Tách thời điểm lấy phép đo khỏi các mức amplitude có sẵn."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "An ADC measures the analogue amplitude at regular intervals. Sampling rate is the number of measurements per second. Each measurement is quantised to one of the levels allowed by the sampling resolution, which is the number of bits per sample, then stored as a binary code.",
+          "vi": "ADC đo amplitude analogue ở các khoảng đều nhau. Sampling rate là số phép đo mỗi giây. Mỗi phép đo được quantise vào một mức do sampling resolution cho phép; sampling resolution là số bit mỗi sample; sau đó mức được lưu thành mã binary."
+        },
+        "markingPoints": [
+          {
+            "id": "Q13-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-06-01"
+            ],
+            "point": {
+              "en": "States regular amplitude sampling of analogue data.",
+              "vi": "Nêu lấy mẫu amplitude đều đặn từ dữ liệu analogue."
+            }
+          },
+          {
+            "id": "Q13-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-06-01"
+            ],
+            "point": {
+              "en": "Defines sampling rate as samples per second.",
+              "vi": "Định nghĩa sampling rate là số sample mỗi giây."
+            }
+          },
+          {
+            "id": "Q13-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-06-02"
+            ],
+            "point": {
+              "en": "Links sampling resolution to bits/available quantisation levels.",
+              "vi": "Liên hệ sampling resolution với bit/số mức lượng tử có sẵn."
+            }
+          },
+          {
+            "id": "Q13-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-06-01",
+              "REQ-1.2-06-02"
+            ],
+            "point": {
+              "en": "Explains quantisation and binary storage.",
+              "vi": "Giải thích quantisation và lưu binary."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sound-sampling",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q14",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.2-07-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.2-07"
+      ],
+      "strandIds": [
+        "1.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "parameter-impact-analysis",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "A mono recorder changes from 22,050 Hz at 8 bits per sample to 44,100 Hz at 16 bits per sample for the same duration. State the raw-size factor and explain the expected accuracy effect.",
+        "vi": "Máy ghi mono đổi từ 22.050 Hz ở 8 bit mỗi sample sang 44.100 Hz ở 16 bit mỗi sample với cùng thời lượng. Nêu hệ số dung lượng thô và giải thích tác động dự kiến lên độ chính xác."
+      },
+      "hint": {
+        "en": "Rate doubles and bits per sample double.",
+        "vi": "Rate tăng gấp đôi và bit mỗi sample tăng gấp đôi."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Raw size increases by 2×2 = 4. More sample times can follow temporal change more closely, and more quantisation levels can reduce amplitude approximation error; neither statement guarantees a particular audible improvement.",
+          "vi": "Dung lượng thô tăng 2×2 = 4 lần. Nhiều thời điểm sample hơn có thể theo biến đổi theo thời gian sát hơn, và nhiều mức lượng tử hơn có thể giảm sai số xấp xỉ amplitude; không ý nào bảo đảm một mức cải thiện nghe cụ thể."
+        },
+        "markingPoints": [
+          {
+            "id": "Q14-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-07-01"
+            ],
+            "point": {
+              "en": "Gives raw-size factor four.",
+              "vi": "Nêu hệ số dung lượng thô bằng bốn."
+            }
+          },
+          {
+            "id": "Q14-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.2-07-01"
+            ],
+            "point": {
+              "en": "Explains separate rate and resolution accuracy effects with an appropriate limit.",
+              "vi": "Giải thích riêng tác động độ chính xác của rate và resolution cùng giới hạn phù hợp."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sound-sampling",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q15",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-1.3-01-01",
+        "REQ-1.3-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.3-01",
+        "AC26-1.3-02"
+      ],
+      "strandIds": [
+        "1.3"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "definition-and-purpose",
+      "novelContext": false,
+      "marks": 2,
+      "prompt": {
+        "en": "State two reasons for compression and compare lossless with lossy compression.",
+        "vi": "Nêu hai lý do cần compression và so sánh lossless với lossy compression."
+      },
+      "hint": {
+        "en": "Think about storage/transmission and exact reconstruction.",
+        "vi": "Nghĩ về storage/transmission và khả năng phục hồi chính xác."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Compression reduces storage space and transmission time or bandwidth demand. Lossless compression reconstructs the original exactly; lossy compression discards or approximates information so exact reconstruction is impossible.",
+          "vi": "Compression giảm không gian lưu trữ và thời gian truyền hoặc nhu cầu bandwidth. Lossless compression phục hồi chính xác bản gốc; lossy compression loại bỏ hoặc xấp xỉ thông tin nên không thể phục hồi chính xác."
+        },
+        "markingPoints": [
+          {
+            "id": "Q15-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-01-01"
+            ],
+            "point": {
+              "en": "Gives two valid needs such as storage and transmission.",
+              "vi": "Nêu hai nhu cầu hợp lệ như lưu trữ và truyền."
+            }
+          },
+          {
+            "id": "Q15-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-02-01"
+            ],
+            "point": {
+              "en": "Compares exact lossless recovery with irreversible lossy change.",
+              "vi": "So sánh phục hồi lossless chính xác với thay đổi lossy không thể đảo ngược."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "compression",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q16",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.3-02-02"
+      ],
+      "objectiveIds": [
+        "AC26-1.3-02"
+      ],
+      "strandIds": [
+        "1.3"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "method-choice-justification",
+      "novelContext": true,
+      "marks": 2,
+      "prompt": {
+        "en": "A hospital must archive the original diagnostic scan before any viewing copies are made. Choose lossy or lossless compression for the archive and justify the choice.",
+        "vi": "Bệnh viện phải lưu trữ bản scan chẩn đoán gốc trước khi tạo các bản xem. Chọn lossy hoặc lossless compression cho bản lưu trữ và biện minh."
+      },
+      "hint": {
+        "en": "Base the choice on exact recovery and the cost of lost diagnostic detail.",
+        "vi": "Dựa lựa chọn trên phục hồi chính xác và hậu quả mất chi tiết chẩn đoán."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use lossless compression so decompression restores every original value. Lossy compression could remove or alter diagnostic detail and cannot recreate the original exactly.",
+          "vi": "Dùng lossless compression để decompression phục hồi mọi giá trị gốc. Lossy compression có thể loại bỏ hoặc thay đổi chi tiết chẩn đoán và không thể tái tạo chính xác bản gốc."
+        },
+        "markingPoints": [
+          {
+            "id": "Q16-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-02-02"
+            ],
+            "point": {
+              "en": "Chooses lossless compression.",
+              "vi": "Chọn lossless compression."
+            }
+          },
+          {
+            "id": "Q16-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-02-02"
+            ],
+            "point": {
+              "en": "Justifies exact recovery and the risk of irreversible diagnostic-detail loss.",
+              "vi": "Biện minh bằng phục hồi chính xác và rủi ro mất chi tiết chẩn đoán không thể đảo ngược."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "compression",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP01-Q17",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-1.3-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-1.3-03"
+      ],
+      "strandIds": [
+        "1.3"
+      ],
+      "ao": "AO2",
+      "commandWord": "explain",
+      "responseProduct": "four-data-type-transfer",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A museum sends four files: an editable text catalogue, a flat-colour bitmap icon with long runs, an SVG logo and a listening copy of an oral-history recording. Explain one suitable compression mechanism for each and whether exact recovery is possible.",
+        "vi": "Bảo tàng gửi bốn tệp: catalogue text có thể chỉnh sửa, icon bitmap màu phẳng có run dài, logo SVG và bản nghe của ghi âm lịch sử. Giải thích một cơ chế compression phù hợp cho từng tệp và khả năng phục hồi chính xác."
+      },
+      "hint": {
+        "en": "Treat text, bitmap, vector and sound separately; do not call every method RLE.",
+        "vi": "Xử lý riêng text, bitmap, vector và sound; không gọi mọi phương pháp là RLE."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use lossless dictionary or repeated-string references for text so all characters return. Use lossless RLE for the flat bitmap with a declared scan order so the pixel grid returns exactly. Compress repeated SVG/XML drawing markup or instruction patterns losslessly so the same drawing list returns. A listening copy may use lossy perceptual audio compression that removes or approximates less audible information, so exact sample recovery is not possible; keep a lossless master when exact recovery is required.",
+          "vi": "Dùng dictionary hoặc reference chuỗi lặp lossless cho text để mọi ký tự trở lại. Dùng RLE lossless cho bitmap phẳng với scan order đã công bố để phục hồi chính xác lưới pixel. Nén lossless markup SVG/XML hoặc instruction pattern lặp để phục hồi cùng drawing list. Bản nghe có thể dùng perceptual audio compression lossy để loại bỏ hoặc xấp xỉ thông tin ít nghe thấy nên không thể phục hồi chính xác sample; giữ bản master lossless khi cần phục hồi chính xác."
+        },
+        "markingPoints": [
+          {
+            "id": "Q17-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-03-01"
+            ],
+            "point": {
+              "en": "Explains a lossless repeated-string/dictionary mechanism for text and exact recovery.",
+              "vi": "Giải thích cơ chế chuỗi lặp/dictionary lossless cho text và phục hồi chính xác."
+            }
+          },
+          {
+            "id": "Q17-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-03-01"
+            ],
+            "point": {
+              "en": "Explains lossless bitmap RLE with scan order and exact recovery.",
+              "vi": "Giải thích RLE bitmap lossless với scan order và phục hồi chính xác."
+            }
+          },
+          {
+            "id": "Q17-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-03-01"
+            ],
+            "point": {
+              "en": "Explains lossless compression of repeated vector markup/instructions and preservation of the drawing list.",
+              "vi": "Giải thích nén lossless markup/instruction vector lặp và bảo toàn drawing list."
+            }
+          },
+          {
+            "id": "Q17-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-1.3-03-01"
+            ],
+            "point": {
+              "en": "Explains perceptual lossy sound compression and loss of exact sample recovery, with a lossless-master boundary.",
+              "vi": "Giải thích perceptual sound compression lossy và mất khả năng phục hồi chính xác sample, cùng ranh giới bản master lossless."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; do not award the same statement twice.",
+            "vi": "Chấm từng marking point độc lập; không chấm cùng một ý hai lần."
+          },
+          {
+            "en": "For written responses, accept an equivalent technically correct explanation.",
+            "vi": "Với câu viết, chấp nhận cách giải thích tương đương và đúng kỹ thuật."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "compression",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

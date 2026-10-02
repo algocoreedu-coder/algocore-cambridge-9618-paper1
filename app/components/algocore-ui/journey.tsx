@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import styles from "./AlgoCoreUI.module.css";
 
@@ -7,7 +7,7 @@ export function Progress({ label, value, max, detail }: ProgressProps) {
   const safeMax = Math.max(1, max);
   const safeValue = Math.min(safeMax, Math.max(0, value));
   const percent = Math.round((safeValue / safeMax) * 100);
-  return <div className={styles.progressGroup}><div className={styles.progressMeta}><strong>{label}</strong><span>{detail ?? `${safeValue} / ${safeMax}`}</span></div><div className={styles.progressTrack} role="progressbar" aria-label={label} aria-valuemin={0} aria-valuemax={safeMax} aria-valuenow={safeValue}><span style={{ width: `${percent}%` }} /></div></div>;
+  return <div className={styles.progressGroup}><div className={styles.progressMeta}><strong>{label}</strong><span>{detail ?? `${safeValue} / ${safeMax}`}</span></div><div className={styles.progressTrack} role="progressbar" aria-label={label} aria-valuemin={0} aria-valuemax={safeMax} aria-valuenow={safeValue}><span style={{ "--progress-percent": `${percent}%` } as CSSProperties} /></div></div>;
 }
 
 export type StepState = "complete" | "current" | "locked";
