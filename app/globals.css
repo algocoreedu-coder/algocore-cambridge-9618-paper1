@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+@import '../styles/algocore-theme.css';
+
+body { font-family: 'Segoe UI', Arial, sans-serif; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+.brand-logo { display: inline-flex; padding: 7px 12px; background: white; border-radius: 9px; }
+.brand-logo img { width: 146px; height: auto; }
+#nd-subnav .brand-logo { padding: 4px 8px; }
+#nd-subnav .brand-logo img { width: 105px; }
+.course-label { padding: 12px 6px 21px; border-bottom: 1px solid var(--color-fd-border); margin-bottom: 10px; }
+.course-label > span { display: block; font-size: 12px; letter-spacing: .12em; color: var(--color-fd-primary); font-weight: 700; }
+.course-label strong { display: block; font-size: 19px; margin-top: 9px; }
+.course-label p { color: var(--color-fd-muted-foreground); font-size: 13px; margin: 5px 0 0; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

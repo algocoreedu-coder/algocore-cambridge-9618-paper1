@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L05",
+  "slug": "bitmap-storage",
+  "sectionId": "1",
+  "strandId": "1.2",
+  "title": {
+    "en": "Bitmap images and storage",
+    "vi": "Ảnh bitmap và dung lượng lưu trữ"
+  },
+  "question": {
+    "en": "How do dimensions and colour depth become a storage calculation?",
+    "vi": "Kích thước và colour depth thành phép tính dung lượng như thế nào?"
+  },
+  "opening": {
+    "en": "A bitmap is a pixel grid plus metadata; raw pixel data follows a simple model with explicit assumptions.",
+    "vi": "Bitmap là lưới pixel cộng metadata; dữ liệu pixel thô theo mô hình đơn giản với giả định rõ ràng."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.2-01",
+      "text": {
+        "en": "Explain bitmap representation.",
+        "vi": "Giải thích biểu diễn bitmap."
+      }
+    },
+    {
+      "id": "AC26-1.2-02",
+      "text": {
+        "en": "Perform calculations to estimate the file size for a bitmap image.",
+        "vi": "Thực hiện phép tính để ước lượng dung lượng tệp của ảnh bitmap."
+      }
+    },
+    {
+      "id": "AC26-1.2-03",
+      "text": {
+        "en": "Explain how changing image resolution and colour depth / bit depth affects image quality and file size.",
+        "vi": "Giải thích việc thay đổi image resolution và colour depth / bit depth ảnh hưởng tới chất lượng ảnh và dung lượng tệp."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.2-01-01",
+    "REQ-1.2-01-02",
+    "REQ-1.2-02-01",
+    "REQ-1.2-03-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L01"
+  ],
+  "theory": [
+    {
+      "id": "P1-L05-theory",
+      "title": {
+        "en": "Pixels, resolution and bit depth",
+        "vi": "Pixel, độ phân giải và bit depth"
+      },
+      "paragraphs": [
+        {
+          "en": "Image resolution is the stored width × height in pixels; screen resolution is the display pixel grid.",
+          "vi": "Image resolution là rộng × cao của ảnh lưu theo pixel; screen resolution là lưới pixel của màn hình."
+        },
+        {
+          "en": "A bitmap stores an ordered grid of fixed-width pixel colour values. A file header or metadata tells the decoder facts such as width, height and bit depth so it can rebuild the grid.",
+          "vi": "Bitmap lưu một lưới có thứ tự gồm các giá trị màu pixel với độ rộng bit cố định. File header hoặc metadata cho bộ giải mã biết width, height và bit depth để dựng lại lưới."
+        },
+        {
+          "en": "A bit depth of b gives 2^b values per pixel. Raw bits = width × height × b.",
+          "vi": "Bit depth b cho 2^b giá trị mỗi pixel. Số bit thô = rộng × cao × b."
+        },
+        {
+          "en": "Real files can add headers, palettes, metadata and compression; state what is excluded.",
+          "vi": "Tệp thật có thể thêm header, palette, metadata và nén; hãy nêu phần bị loại trừ."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Use 2^b for colour count, but multiply by b for size.",
+          "vi": "Dùng 2^b cho số màu, nhưng nhân b cho dung lượng."
+        },
+        {
+          "en": "Doubling width and height gives four times as many pixels.",
+          "vi": "Tăng gấp đôi rộng và cao tạo số pixel gấp bốn."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Calculate a small raw bitmap",
+      "vi": "Tính bitmap thô nhỏ"
+    },
+    "prompt": {
+      "en": "32 × 16 pixels, 4 bits/pixel; ignore header and compression.",
+      "vi": "32 × 16 pixel, 4 bit/pixel; bỏ qua header và nén."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Count pixels.",
+          "vi": "Đếm pixel."
+        },
+        "result": {
+          "en": "32 × 16 = 512 pixels",
+          "vi": "32 × 16 = 512 pixel"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Multiply by bit depth.",
+          "vi": "Nhân bit depth."
+        },
+        "result": {
+          "en": "512 × 4 = 2048 bits",
+          "vi": "512 × 4 = 2048 bit"
+        }
+      },
+      {
+        "id": "s3",
+        "action": {
+          "en": "Convert to bytes.",
+          "vi": "Đổi sang byte."
+        },
+        "result": {
+          "en": "2048 ÷ 8 = 256 bytes",
+          "vi": "2048 ÷ 8 = 256 byte"
+        }
+      }
+    ],
+    "result": {
+      "en": "Raw pixel data is 2048 bits = 256 bytes.",
+      "vi": "Dữ liệu pixel thô là 2048 bit = 256 byte."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Extract width, height, bit depth and assumptions.",
+        "vi": "Lấy rộng, cao, bit depth và giả định."
+      }
+    ],
+    "method": [
+      {
+        "en": "Multiply dimensions.",
+        "vi": "Nhân kích thước."
+      },
+      {
+        "en": "Apply bit depth.",
+        "vi": "Áp dụng bit depth."
+      },
+      {
+        "en": "Convert units last.",
+        "vi": "Đổi đơn vị ở cuối."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Use the number of colours in the size formula.",
+          "vi": "Dùng số màu trong công thức dung lượng."
+        },
+        "correction": {
+          "en": "Multiply by bits per pixel; 2^b gives the colour count.",
+          "vi": "Nhân bit mỗi pixel; 2^b cho số màu."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Screen resolution is the stored image size.",
+          "vi": "Screen resolution là kích thước ảnh lưu."
+        },
+        "correction": {
+          "en": "They describe different grids.",
+          "vi": "Chúng mô tả hai lưới khác nhau."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L05-CHECK-REQ-1.2-01-01",
+      "requirementId": "REQ-1.2-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a 3 × 2 bitmap image is encoded so that a decoder can reconstruct the pixel grid.",
+        "vi": "Giải thích cách mã hóa ảnh bitmap 3 × 2 để bộ giải mã dựng lại được lưới pixel."
+      },
+      "hint": {
+        "en": "Account for dimensions, pixel order and fixed-width colour values.",
+        "vi": "Nêu kích thước, thứ tự pixel và giá trị màu có độ rộng cố định."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The header or metadata supplies dimensions and bit depth. Six pixel values are stored in an agreed order, with each colour encoded as a fixed-width binary value. The decoder uses the metadata and order to place each value back in the 3 × 2 grid.",
+          "vi": "Header hoặc metadata cung cấp kích thước và bit depth. Sáu giá trị pixel được lưu theo thứ tự đã thống nhất, mỗi màu là một giá trị binary có độ rộng cố định. Bộ giải mã dùng metadata và thứ tự để đặt từng giá trị lại vào lưới 3 × 2."
+        },
+        "rubric": [
+          {
+            "en": "Includes dimensions/header metadata.",
+            "vi": "Nêu kích thước/header metadata."
+          },
+          {
+            "en": "Includes ordered pixel values.",
+            "vi": "Nêu các giá trị pixel có thứ tự."
+          },
+          {
+            "en": "Includes fixed bits per pixel/colour code.",
+            "vi": "Nêu số bit cố định mỗi pixel/mã màu."
+          },
+          {
+            "en": "Explains reconstruction of grid positions.",
+            "vi": "Giải thích dựng lại vị trí trên lưới."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bitmap-encoding",
+        "pixel-grid",
+        "metadata"
+      ]
+    },
+    {
+      "id": "P1-L05-CHECK-REQ-1.2-01-02",
+      "requirementId": "REQ-1.2-01-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "For an 800 × 600 image shown on a 1920 × 1080 display at 24-bit colour, explain the terms pixel, file header, image resolution, screen resolution and colour depth.",
+        "vi": "Với ảnh 800 × 600 hiển thị trên màn hình 1920 × 1080 ở colour depth 24-bit, giải thích pixel, file header, image resolution, screen resolution và colour depth."
+      },
+      "hint": {
+        "en": "Keep the stored image grid separate from the display grid.",
+        "vi": "Phân biệt lưới ảnh được lưu với lưới của màn hình."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A pixel is one picture element. The file header stores information needed to interpret the data, such as dimensions and bit depth. Image resolution is the stored 800 × 600 grid; screen resolution is the display's 1920 × 1080 grid. Colour depth is 24 bits used to select each pixel colour.",
+          "vi": "Pixel là một phần tử ảnh. File header lưu thông tin cần để diễn giải dữ liệu như kích thước và bit depth. Image resolution là lưới 800 × 600 được lưu; screen resolution là lưới 1920 × 1080 của màn hình. Colour depth là 24 bit dùng để chọn màu mỗi pixel."
+        },
+        "rubric": [
+          {
+            "en": "Defines pixel.",
+            "vi": "Định nghĩa pixel."
+          },
+          {
+            "en": "Explains file header.",
+            "vi": "Giải thích file header."
+          },
+          {
+            "en": "Distinguishes image and screen resolution.",
+            "vi": "Phân biệt image resolution và screen resolution."
+          },
+          {
+            "en": "Explains colour depth.",
+            "vi": "Giải thích colour depth."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "pixel",
+        "file-header",
+        "image-resolution",
+        "screen-resolution",
+        "colour-depth"
+      ]
+    },
+    {
+      "id": "P1-L05-CHECK-REQ-1.2-02-01",
+      "requirementId": "REQ-1.2-02-01",
+      "kind": "numeric",
+      "level": "independent",
+      "prompt": {
+        "en": "Calculate the raw pixel-data size in bytes for a 32 × 16 bitmap at 4 bits per pixel. Assume continuous packing; ignore header, metadata, row padding and compression.",
+        "vi": "Tính dung lượng dữ liệu pixel thô theo byte cho bitmap 32 × 16 ở 4 bit mỗi pixel. Giả sử đóng gói liên tục; bỏ qua header, metadata, row padding và compression."
+      },
+      "hint": {
+        "en": "Multiply pixel count by bits per pixel, then divide by eight.",
+        "vi": "Nhân số pixel với số bit mỗi pixel, rồi chia tám."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "32 × 16 × 4 = 2048 bits; 2048 ÷ 8 = 256 bytes.",
+          "vi": "32 × 16 × 4 = 2048 bit; 2048 ÷ 8 = 256 byte."
+        },
+        "rubric": [],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "256"
+      ],
+      "semanticTags": [
+        "bitmap-file-size",
+        "bits-to-bytes",
+        "stated-assumptions"
+      ]
+    },
+    {
+      "id": "P1-L05-CHECK-REQ-1.2-03-01",
+      "requirementId": "REQ-1.2-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "The same bitmap doubles both width and height and changes from 4-bit to 8-bit colour. Explain the effects on possible image quality and raw file size.",
+        "vi": "Cùng một bitmap được tăng gấp đôi cả width và height, đồng thời đổi colour depth từ 4-bit sang 8-bit. Giải thích ảnh hưởng tới chất lượng ảnh có thể đạt và dung lượng thô."
+      },
+      "hint": {
+        "en": "Treat width × height and bits per pixel as separate factors.",
+        "vi": "Xét width × height và số bit mỗi pixel là hai hệ số riêng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Doubling both dimensions gives four times as many pixels and can preserve more spatial detail; it multiplies size by four. Moving from 4 to 8 bits gives 16 to 256 possible colours and can improve colour gradation; it doubles size. Together raw size is multiplied by eight. Quality improvement is possible, not guaranteed to invent missing detail.",
+          "vi": "Tăng gấp đôi cả hai chiều tạo số pixel gấp bốn và có thể giữ nhiều chi tiết không gian hơn; dung lượng nhân bốn. Đổi 4 lên 8 bit tăng từ 16 lên 256 màu có thể có và có thể cải thiện chuyển sắc; dung lượng nhân hai. Kết hợp lại, dung lượng thô nhân tám. Chất lượng chỉ có khả năng tăng, không tự tạo chi tiết đã thiếu."
+        },
+        "rubric": [
+          {
+            "en": "Links resolution to possible spatial detail.",
+            "vi": "Liên hệ resolution với chi tiết không gian có thể đạt."
+          },
+          {
+            "en": "States pixel count/size ×4.",
+            "vi": "Nêu số pixel/dung lượng ×4."
+          },
+          {
+            "en": "Links depth to possible colours/gradation.",
+            "vi": "Liên hệ depth với số màu/chuyển sắc có thể đạt."
+          },
+          {
+            "en": "States depth size ×2 and combined size ×8.",
+            "vi": "Nêu dung lượng do depth ×2 và tổng hợp ×8."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "resolution-quality",
+        "resolution-size",
+        "bit-depth-quality",
+        "bit-depth-size"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Recall the raw-size formula and the effect of doubling both dimensions.",
+      "vi": "Nhớ công thức dung lượng thô và ảnh hưởng khi tăng gấp đôi hai kích thước."
+    },
+    "answerPoints": [
+      {
+        "en": "bits = width × height × colour depth.",
+        "vi": "bit = rộng × cao × colour depth."
+      },
+      {
+        "en": "Doubling both dimensions gives four times the pixels.",
+        "vi": "Tăng gấp đôi cả hai chiều cho số pixel gấp bốn."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "pixel",
+      "meaning": {
+        "en": "One addressable picture element.",
+        "vi": "Một phần tử ảnh có địa chỉ."
+      }
+    },
+    {
+      "term": "colour depth",
+      "meaning": {
+        "en": "Bits used per pixel.",
+        "vi": "Số bit mỗi pixel."
+      }
+    },
+    {
+      "term": "image resolution",
+      "meaning": {
+        "en": "Pixel dimensions of an image.",
+        "vi": "Kích thước pixel của ảnh."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "units-and-magnitudes",
+    "vector-graphics"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.2, p. 15",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L05 · release 1.1",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 15–18: RGB subpixels; Figs. 1.1–1.3; bitmap-size and pixel-density examples",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L05",
+  "contractCoverage": {
+    "B01": [
+      "P1-L05-objectives"
+    ],
+    "B02": [
+      "P1-L05-theory"
+    ],
+    "B03": [
+      "P1-L05-rules"
+    ],
+    "B04": [
+      "P1-L05-recognise"
+    ],
+    "B05": [
+      "P1-L05-worked"
+    ],
+    "B06": [
+      "VIS-P1-L05"
+    ],
+    "B07": [
+      "P1-L05-CHECK-REQ-1.2-01-01",
+      "P1-L05-CHECK-REQ-1.2-01-02",
+      "P1-L05-CHECK-REQ-1.2-02-01",
+      "P1-L05-CHECK-REQ-1.2-03-01"
+    ],
+    "B08": [
+      "P1-L05-misconceptions"
+    ],
+    "B09": [
+      "P1-L05-recall"
+    ],
+    "B10": [
+      "P1-L05-glossary"
+    ],
+    "B11": [
+      "P1-L05-sources"
+    ]
+  }
+}

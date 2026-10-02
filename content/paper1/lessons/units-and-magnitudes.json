@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L01",
+  "slug": "units-and-magnitudes",
+  "sectionId": "1",
+  "strandId": "1.1",
+  "title": {
+    "en": "Bits, bytes and unit prefixes",
+    "vi": "Bit, byte và tiền tố đơn vị"
+  },
+  "question": {
+    "en": "When does a familiar prefix change the number of bytes?",
+    "vi": "Khi nào một tiền tố quen thuộc làm thay đổi số byte?"
+  },
+  "opening": {
+    "en": "A size is meaningful only when its unit and prefix system are explicit.",
+    "vi": "Dung lượng chỉ có ý nghĩa khi đơn vị và hệ tiền tố được nêu rõ."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.1-01",
+      "text": {
+        "en": "Use binary and decimal magnitudes and convert bits and bytes.",
+        "vi": "Dùng độ lớn nhị phân, thập phân và đổi bit với byte."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.1-01-01",
+    "REQ-1.1-01-02"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L01-theory",
+      "title": {
+        "en": "Name the scale before calculating",
+        "vi": "Xác định thang đo trước khi tính"
+      },
+      "paragraphs": [
+        {
+          "en": "A bit is one binary digit; a byte is eight bits. Lower-case b means bit and upper-case B means byte.",
+          "vi": "Bit là một chữ số nhị phân; một byte bằng tám bit. b thường là bit và B hoa là byte."
+        },
+        {
+          "en": "SI prefixes k, M, G, T use powers of 1000. IEC prefixes Ki, Mi, Gi, Ti use powers of 1024.",
+          "vi": "Tiền tố SI k, M, G, T dùng lũy thừa 1000. Tiền tố IEC Ki, Mi, Gi, Ti dùng lũy thừa 1024."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Multiply bytes by 8 to get bits; divide bits by 8 to get bytes.",
+          "vi": "Nhân byte với 8 để có bit; chia bit cho 8 để có byte."
+        },
+        {
+          "en": "Do not silently replace SI with IEC.",
+          "vi": "Không âm thầm thay SI bằng IEC."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Convert 2 KiB",
+      "vi": "Đổi 2 KiB"
+    },
+    "prompt": {
+      "en": "Convert 2 KiB to bytes and bits.",
+      "vi": "Đổi 2 KiB sang byte và bit."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Expand Ki as 1024.",
+          "vi": "Khai triển Ki thành 1024."
+        },
+        "result": {
+          "en": "2 × 1024 = 2048 B",
+          "vi": "2 × 1024 = 2048 B"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Convert bytes to bits.",
+          "vi": "Đổi byte sang bit."
+        },
+        "result": {
+          "en": "2048 × 8 = 16 384 b",
+          "vi": "2048 × 8 = 16 384 b"
+        }
+      }
+    ],
+    "result": {
+      "en": "2 KiB = 2048 B = 16 384 b.",
+      "vi": "2 KiB = 2048 B = 16 384 b."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Check b/B and whether the prefix contains i.",
+        "vi": "Kiểm tra b/B và tiền tố có chữ i hay không."
+      }
+    ],
+    "method": [
+      {
+        "en": "Identify unit and prefix system.",
+        "vi": "Xác định đơn vị và hệ tiền tố."
+      },
+      {
+        "en": "Move through bytes, then bits if needed.",
+        "vi": "Đổi qua byte, rồi bit nếu cần."
+      },
+      {
+        "en": "Check whether the result should grow or shrink.",
+        "vi": "Kiểm tra kết quả phải tăng hay giảm."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "1 kB is 1024 B.",
+          "vi": "1 kB là 1024 B."
+        },
+        "correction": {
+          "en": "1 kB is 1000 B; 1 KiB is 1024 B.",
+          "vi": "1 kB là 1000 B; 1 KiB là 1024 B."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Mb and MB are the same.",
+          "vi": "Mb và MB giống nhau."
+        },
+        "correction": {
+          "en": "Mb is megabits; MB is megabytes.",
+          "vi": "Mb là megabit; MB là megabyte."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L01-CHECK-REQ-1.1-01-01",
+      "requirementId": "REQ-1.1-01-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare SI decimal prefixes with IEC binary prefixes. State the step multiplier and the symbol pair for kilo/kibi, mega/mebi, giga/gibi and tera/tebi.",
+        "vi": "So sánh tiền tố thập phân SI với tiền tố nhị phân IEC. Nêu hệ số mỗi bậc và cặp ký hiệu cho kilo/kibi, mega/mebi, giga/gibi và tera/tebi."
+      },
+      "hint": {
+        "en": "Keep decimal and binary symbols in separate families.",
+        "vi": "Giữ ký hiệu thập phân và nhị phân thành hai nhóm riêng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "SI uses ×1000 per step: kB, MB, GB, TB. IEC uses ×1024 per step: KiB, MiB, GiB, TiB. Capital B denotes bytes.",
+          "vi": "SI dùng ×1000 mỗi bậc: kB, MB, GB, TB. IEC dùng ×1024 mỗi bậc: KiB, MiB, GiB, TiB. Chữ B viết hoa là byte."
+        },
+        "rubric": [
+          {
+            "en": "States ×1000 and all four SI symbols.",
+            "vi": "Nêu ×1000 và đủ bốn ký hiệu SI."
+          },
+          {
+            "en": "States ×1024 and all four IEC symbols.",
+            "vi": "Nêu ×1024 và đủ bốn ký hiệu IEC."
+          },
+          {
+            "en": "Does not mix kB with KiB.",
+            "vi": "Không trộn kB với KiB."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "decimal-prefix",
+        "binary-prefix",
+        "prefix-symbols"
+      ]
+    },
+    {
+      "id": "P1-L01-CHECK-REQ-1.1-01-02",
+      "requirementId": "REQ-1.1-01-02",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Use 1 B = 8 bits, 1 KiB = 1024 B and 1 MB = 1,000,000 B. Enter (a) 16,384 bits in KiB and (b) 2 MB in bytes as a;b.",
+        "vi": "Dùng 1 B = 8 bit, 1 KiB = 1024 B và 1 MB = 1 000 000 B. Nhập (a) 16 384 bit theo KiB và (b) 2 MB theo byte ở dạng a;b."
+      },
+      "hint": {
+        "en": "Convert bits to bytes before converting bytes to KiB.",
+        "vi": "Đổi bit sang byte trước khi đổi byte sang KiB."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "16,384 ÷ 8 ÷ 1024 = 2 KiB; 2 × 1,000,000 = 2,000,000 B.",
+          "vi": "16 384 ÷ 8 ÷ 1024 = 2 KiB; 2 × 1 000 000 = 2 000 000 B."
+        },
+        "rubric": [],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "2;2000000"
+      ],
+      "semanticTags": [
+        "unit-conversion",
+        "bits-bytes",
+        "decimal-binary-magnitude"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the bit/byte relationship and the kilo/kibi factors.",
+      "vi": "Nêu quan hệ bit/byte và hệ số kilo/kibi."
+    },
+    "answerPoints": [
+      {
+        "en": "1 B = 8 b.",
+        "vi": "1 B = 8 b."
+      },
+      {
+        "en": "kilo = 1000; kibi = 1024.",
+        "vi": "kilo = 1000; kibi = 1024."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "bit (b)",
+      "meaning": {
+        "en": "One binary digit.",
+        "vi": "Một chữ số nhị phân."
+      }
+    },
+    {
+      "term": "byte (B)",
+      "meaning": {
+        "en": "Eight bits.",
+        "vi": "Tám bit."
+      }
+    },
+    {
+      "term": "IEC prefix",
+      "meaning": {
+        "en": "A binary prefix such as Ki = 2^10.",
+        "vi": "Tiền tố nhị phân như Ki = 2^10."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "number-systems",
+    "bitmap-storage"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.1, p. 14",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L01 · release 1.1",
+      "kind": "algocore"
+    }
+  ],
+  "visualId": "VIS-P1-L01",
+  "contractCoverage": {
+    "B01": [
+      "P1-L01-objectives"
+    ],
+    "B02": [
+      "P1-L01-theory"
+    ],
+    "B03": [
+      "P1-L01-rules"
+    ],
+    "B04": [
+      "P1-L01-recognise"
+    ],
+    "B05": [
+      "P1-L01-worked"
+    ],
+    "B06": [
+      "VIS-P1-L01"
+    ],
+    "B07": [
+      "P1-L01-CHECK-REQ-1.1-01-01",
+      "P1-L01-CHECK-REQ-1.1-01-02"
+    ],
+    "B08": [
+      "P1-L01-misconceptions"
+    ],
+    "B09": [
+      "P1-L01-recall"
+    ],
+    "B10": [
+      "P1-L01-glossary"
+    ],
+    "B11": [
+      "P1-L01-sources"
+    ]
+  }
+}

@@ -1,0 +1,262 @@
+/*
+ * AlgoCore colour authority
+ *
+ * This is the only application stylesheet allowed to own raw brand and UI
+ * colours. Feature styles consume semantic --alg-* roles or the mapped
+ * --color-fd-* aliases. Keep the canonical navy / teal / orange primitives
+ * unchanged when tuning a light or dark semantic role.
+ *
+ * Import after fumadocs-ui/css/neutral.css and fumadocs-ui/css/preset.css.
+ */
+
+/* Tailwind v4 and Fumadocs consume the same runtime semantic roles. */
+@theme inline {
+  --color-fd-background: var(--alg-surface-canvas);
+  --color-fd-foreground: var(--alg-text-default);
+  --color-fd-muted: var(--alg-surface-panel-muted);
+  --color-fd-muted-foreground: var(--alg-text-muted);
+  --color-fd-popover: var(--alg-surface-panel);
+  --color-fd-popover-foreground: var(--alg-text-default);
+  --color-fd-card: var(--alg-surface-panel);
+  --color-fd-card-foreground: var(--alg-text-default);
+  --color-fd-border: var(--alg-border-default);
+  --color-fd-primary: var(--alg-action-primary);
+  --color-fd-primary-foreground: var(--alg-action-primary-foreground);
+  --color-fd-secondary: var(--alg-action-secondary);
+  --color-fd-secondary-foreground: var(--alg-action-secondary-foreground);
+  --color-fd-accent: var(--alg-action-primary-soft);
+  --color-fd-accent-foreground: var(--alg-action-primary-soft-foreground);
+  --color-fd-ring: var(--alg-focus-ring);
+
+  --color-alg-canvas: var(--alg-surface-canvas);
+  --color-alg-panel: var(--alg-surface-panel);
+  --color-alg-panel-muted: var(--alg-surface-panel-muted);
+  --color-alg-code: var(--alg-surface-code);
+  --color-alg-text: var(--alg-text-default);
+  --color-alg-text-muted: var(--alg-text-muted);
+  --color-alg-border: var(--alg-border-default);
+  --color-alg-primary: var(--alg-action-primary);
+  --color-alg-primary-soft: var(--alg-action-primary-soft);
+  --color-alg-success: var(--alg-state-success);
+  --color-alg-warning: var(--alg-state-warning);
+  --color-alg-error: var(--alg-state-error);
+}
+
+:root {
+  color-scheme: light;
+
+  /* Immutable AlgoCore identity primitives. */
+  --alg-brand-navy: #0b1f33;
+  --alg-brand-teal: #11b5ae;
+  --alg-brand-orange: #ff9f1c;
+
+  /* Approved accessible derivatives of the identity palette. */
+  --alg-brand-teal-ui: #007c83;
+  --alg-brand-teal-ui-hover: #006c72;
+  --alg-brand-teal-ui-dark: #45d6c9;
+
+  /* Surfaces. */
+  --alg-surface-canvas: #ffffff;
+  --alg-surface-sidebar: var(--alg-brand-navy);
+  --alg-surface-panel: #ffffff;
+  --alg-surface-panel-muted: #f1f6f8;
+  --alg-surface-code: #07111f;
+
+  /* Text and links. */
+  --alg-text-default: #153349;
+  --alg-text-muted: #52697a;
+  --alg-text-inverse: #ffffff;
+  --alg-text-link: var(--alg-brand-teal-ui);
+
+  /* Borders. */
+  --alg-border-default: #d9e5eb;
+  --alg-border-strong: #9fb5c3;
+  --alg-border-interactive: var(--alg-brand-teal-ui);
+
+  /* Actions. */
+  --alg-action-primary: var(--alg-brand-teal-ui);
+  --alg-action-primary-hover: var(--alg-brand-teal-ui-hover);
+  --alg-action-primary-foreground: #ffffff;
+  --alg-action-primary-soft: #e4f5f3;
+  --alg-action-primary-soft-foreground: var(--alg-brand-teal-ui-hover);
+  --alg-action-secondary: #f0f5f8;
+  --alg-action-secondary-foreground: var(--alg-text-default);
+  --alg-action-quiet: transparent;
+  --alg-action-quiet-foreground: var(--alg-brand-teal-ui);
+
+  /* Status colours pair with text, icons or labels; colour is never the only cue. */
+  --alg-state-info: #075985;
+  --alg-state-info-surface: #e7f4fb;
+  --alg-state-success: #166534;
+  --alg-state-success-surface: #eaf7ee;
+  --alg-state-warning: #8b4d00;
+  --alg-state-warning-surface: #fff7eb;
+  --alg-state-error: #b42318;
+  --alg-state-error-surface: #fff0ee;
+  --alg-state-disabled: #6f7f8d;
+  --alg-state-disabled-surface: #edf1f3;
+
+  /* Learning roles. */
+  --alg-learning-current-step: var(--alg-action-primary);
+  --alg-learning-current-step-surface: var(--alg-action-primary-soft);
+  --alg-learning-code-line: #7a4c00;
+  --alg-learning-code-line-surface: #fff2c2;
+  --alg-learning-memory-change: #126343;
+  --alg-learning-memory-change-surface: #dff6ed;
+  --alg-learning-exam-tip: var(--alg-state-warning);
+  --alg-learning-exam-tip-surface: var(--alg-state-warning-surface);
+  --alg-learning-prediction: #2156a5;
+  --alg-learning-prediction-surface: #e8f0ff;
+
+  /* Focus and visualisation roles. */
+  --alg-focus-ring: var(--alg-brand-teal-ui);
+  --alg-visual-active: var(--alg-brand-teal-ui);
+  --alg-visual-visited: #405f73;
+  --alg-visual-candidate: #805900;
+  --alg-visual-eliminated: #667b89;
+  --alg-visual-failure: var(--alg-state-error);
+
+  /* Accessible Python/code palette. */
+  --alg-code-text: #dce9f4;
+  --alg-code-muted: #94adbf;
+  --alg-code-keyword: #80d8ff;
+  --alg-code-string: #a7e89b;
+  --alg-code-number: #ffd180;
+  --alg-code-comment: #9fb3c3;
+  --alg-code-highlight: #3f3214;
+
+  /* Density, shape, elevation and motion contracts. */
+  --alg-space-1: 0.25rem;
+  --alg-space-2: 0.5rem;
+  --alg-space-3: 0.75rem;
+  --alg-space-4: 1rem;
+  --alg-space-6: 1.5rem;
+  --alg-space-8: 2rem;
+  --alg-space-12: 3rem;
+  --alg-prose-width: 70ch;
+  --alg-touch-target: 2.75rem;
+  --alg-radius-sm: 0.375rem;
+  --alg-radius-md: 0.625rem;
+  --alg-radius-lg: 0.75rem;
+  --alg-radius-pill: 999px;
+  --alg-border-width-subtle: 1px;
+  --alg-border-width-strong: 2px;
+  --alg-border-width-focus: 2px;
+  --alg-shadow-flat: none;
+  --alg-shadow-raised: 0 8px 24px rgb(11 31 51 / 10%);
+  --alg-shadow-overlay: 0 18px 48px rgb(11 31 51 / 20%);
+  --alg-motion-instant: 0ms;
+  --alg-motion-quick: 160ms;
+  --alg-motion-explain: 320ms;
+  --alg-layout-page-max: 1440px;
+
+  /* Temporary compatibility aliases for existing, unmigrated consumers. */
+  --alg-navy: var(--alg-brand-navy);
+  --alg-teal: var(--alg-brand-teal);
+  --alg-orange: var(--alg-brand-orange);
+  --alg-learning-bg: var(--alg-learning-current-step-surface);
+  --alg-learning-border: #bcded9;
+  --alg-warning-bg: var(--alg-state-warning-surface);
+  --alg-warning-fg: var(--alg-state-warning);
+  --fd-layout-width: var(--alg-layout-page-max);
+}
+
+.dark {
+  color-scheme: dark;
+
+  /* Dark mode remaps roles; canonical brand primitives do not change. */
+  --alg-surface-canvas: #0b1725;
+  --alg-surface-panel: #102235;
+  --alg-surface-panel-muted: #15283a;
+  --alg-surface-code: #07111f;
+
+  --alg-text-default: #e5eef5;
+  --alg-text-muted: #a2b8ca;
+  --alg-text-inverse: #082628;
+  --alg-text-link: var(--alg-brand-teal-ui-dark);
+
+  --alg-border-default: #2b4154;
+  --alg-border-strong: #567086;
+  --alg-border-interactive: var(--alg-brand-teal-ui-dark);
+
+  --alg-action-primary: var(--alg-brand-teal-ui-dark);
+  --alg-action-primary-hover: #74e7db;
+  --alg-action-primary-foreground: #082628;
+  --alg-action-primary-soft: #173a41;
+  --alg-action-primary-soft-foreground: #74e7db;
+  --alg-action-secondary: #172e42;
+  --alg-action-secondary-foreground: var(--alg-text-default);
+  --alg-action-quiet-foreground: var(--alg-brand-teal-ui-dark);
+  --alg-focus-ring: var(--alg-brand-teal-ui-dark);
+
+  --alg-state-info: #8bd4ff;
+  --alg-state-info-surface: #12364b;
+  --alg-state-success: #8ee3ad;
+  --alg-state-success-surface: #163b2a;
+  --alg-state-warning: #ffc472;
+  --alg-state-warning-surface: #30271c;
+  --alg-state-error: #ffb4ab;
+  --alg-state-error-surface: #4a211f;
+  --alg-state-disabled: #8396a5;
+  --alg-state-disabled-surface: #243442;
+
+  --alg-learning-code-line: #ffd180;
+  --alg-learning-code-line-surface: #3f3214;
+  --alg-learning-memory-change: #8ee3ad;
+  --alg-learning-memory-change-surface: #163b2a;
+  --alg-learning-prediction: #a8c7ff;
+  --alg-learning-prediction-surface: #1d3357;
+
+  --alg-visual-visited: #a2b8ca;
+  --alg-visual-candidate: #ffd180;
+  --alg-visual-eliminated: #8b9dab;
+
+  --alg-learning-border: #265151;
+  --alg-shadow-raised: 0 8px 24px rgb(0 0 0 / 28%);
+  --alg-shadow-overlay: 0 18px 48px rgb(0 0 0 / 46%);
+}
+
+/* The Docs shell shares the semantic contract while keeping its dark anchor. */
+#nd-sidebar,
+#nd-sidebar-mobile {
+  --alg-surface-canvas: var(--alg-brand-navy);
+  --alg-surface-panel: #10283c;
+  --alg-surface-panel-muted: #132f45;
+  --alg-text-default: #e7f0f7;
+  --alg-text-muted: #a7bdce;
+  --alg-border-default: #294357;
+  --alg-action-primary: #51dacf;
+  --alg-action-primary-hover: #74e7db;
+  --alg-action-primary-foreground: #082628;
+  --alg-action-primary-soft: #173d49;
+  --alg-action-primary-soft-foreground: #d6fff6;
+  --alg-action-secondary: #153247;
+  --alg-action-secondary-foreground: #e7f0f7;
+  --alg-focus-ring: #51dacf;
+  color: var(--alg-text-default);
+  background: var(--alg-surface-canvas);
+}
+
+#nd-sidebar a[data-active='true'],
+#nd-sidebar-mobile a[data-active='true'] {
+  background: var(--alg-action-primary-soft);
+  color: #8aeee2;
+  box-shadow: inset 3px 0 0 var(--alg-brand-teal);
+}
+
+::selection {
+  background: #bcebe5;
+  color: var(--alg-brand-navy);
+}
+
+:focus-visible {
+  outline: var(--alg-border-width-focus) solid var(--alg-focus-ring);
+  outline-offset: var(--alg-space-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --alg-motion-quick: var(--alg-motion-instant);
+    --alg-motion-explain: var(--alg-motion-instant);
+  }
+}

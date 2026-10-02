@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L06",
+  "slug": "vector-graphics",
+  "sectionId": "1",
+  "strandId": "1.2",
+  "title": {
+    "en": "Vector graphics",
+    "vi": "Đồ họa vector"
+  },
+  "question": {
+    "en": "When is a list of shapes better than a grid of pixels?",
+    "vi": "Khi nào danh sách hình học tốt hơn lưới pixel?"
+  },
+  "opening": {
+    "en": "A vector graphic stores objects and properties in a drawing list; the task decides whether it is preferable to bitmap.",
+    "vi": "Đồ họa vector lưu đối tượng và thuộc tính trong drawing list; nhiệm vụ quyết định nó có phù hợp hơn bitmap hay không."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.2-04",
+      "text": {
+        "en": "Explain vector objects and properties.",
+        "vi": "Giải thích đối tượng và thuộc tính vector."
+      }
+    },
+    {
+      "id": "AC26-1.2-05",
+      "text": {
+        "en": "Choose bitmap or vector for a task.",
+        "vi": "Chọn bitmap hoặc vector theo nhiệm vụ."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.2-04-01",
+    "REQ-1.2-04-02",
+    "REQ-1.2-05-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L05"
+  ],
+  "theory": [
+    {
+      "id": "P1-L06-theory",
+      "title": {
+        "en": "The drawing list is the image model",
+        "vi": "Drawing list là mô hình ảnh"
+      },
+      "paragraphs": [
+        {
+          "en": "A vector file describes lines, circles and polygons with coordinates, dimensions, fill, stroke and layer order.",
+          "vi": "Tệp vector mô tả đường, hình tròn và đa giác bằng tọa độ, kích thước, fill, stroke và thứ tự lớp."
+        },
+        {
+          "en": "Rendering turns the drawing list into pixels for a display. Scaling changes geometry before rendering.",
+          "vi": "Rendering biến drawing list thành pixel cho màn hình. Scaling thay đổi hình học trước khi render."
+        },
+        {
+          "en": "Vector is not always smaller than bitmap; object complexity and format overhead matter.",
+          "vi": "Vector không phải lúc nào cũng nhỏ hơn bitmap; độ phức tạp đối tượng và overhead định dạng đều quan trọng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Choose representation from the task, not a universal rule.",
+          "vi": "Chọn biểu diễn theo nhiệm vụ, không theo quy tắc tuyệt đối."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Scale a drawing list",
+      "vi": "Đổi tỉ lệ drawing list"
+    },
+    "prompt": {
+      "en": "A circle at (40,40), radius 20 is scaled by two.",
+      "vi": "Hình tròn tại (40,40), bán kính 20 được scale gấp hai."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Read the geometry.",
+          "vi": "Đọc hình học."
+        },
+        "result": {
+          "en": "centre (40,40), radius 20",
+          "vi": "tâm (40,40), bán kính 20"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Scale coordinates and radius.",
+          "vi": "Nhân tọa độ và bán kính."
+        },
+        "result": {
+          "en": "centre (80,80), radius 40",
+          "vi": "tâm (80,80), bán kính 40"
+        }
+      },
+      {
+        "id": "s3",
+        "action": {
+          "en": "Render the new list.",
+          "vi": "Render danh sách mới."
+        },
+        "result": {
+          "en": "The shape remains proportional.",
+          "vi": "Hình giữ đúng tỉ lệ."
+        }
+      }
+    ],
+    "result": {
+      "en": "Stored instructions change; pixels are generated at render time.",
+      "vi": "Chỉ dẫn lưu thay đổi; pixel được tạo khi render."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for objects, coordinates and properties rather than pixels.",
+        "vi": "Tìm đối tượng, tọa độ và thuộc tính thay vì pixel."
+      }
+    ],
+    "method": [
+      {
+        "en": "List each object.",
+        "vi": "Liệt kê từng đối tượng."
+      },
+      {
+        "en": "Read geometry, style and order.",
+        "vi": "Đọc hình học, kiểu và thứ tự."
+      },
+      {
+        "en": "Match representation to task constraints.",
+        "vi": "Ghép biểu diễn với ràng buộc nhiệm vụ."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Vector files are always smaller.",
+          "vi": "Tệp vector luôn nhỏ hơn."
+        },
+        "correction": {
+          "en": "Size depends on complexity, metadata and format.",
+          "vi": "Dung lượng phụ thuộc độ phức tạp, metadata và định dạng."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L06-CHECK-REQ-1.2-04-01",
+      "requirementId": "REQ-1.2-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a vector file can encode a circle and how the stored data become an image on screen.",
+        "vi": "Giải thích cách tệp vector mã hóa một hình tròn và cách dữ liệu lưu trở thành hình trên màn hình."
+      },
+      "hint": {
+        "en": "Describe the stored instruction and what the renderer does.",
+        "vi": "Mô tả chỉ dẫn được lưu và việc renderer thực hiện."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The file stores a circle drawing-object instruction with properties such as centre, radius, fill, stroke and order, rather than every pixel. A renderer interprets the drawing list and calculates output pixels at the chosen size.",
+          "vi": "Tệp lưu chỉ dẫn drawing object hình tròn cùng các property như tâm, bán kính, fill, stroke và thứ tự, thay vì lưu từng pixel. Renderer diễn giải drawing list và tính các pixel đầu ra ở kích thước đã chọn."
+        },
+        "rubric": [
+          {
+            "en": "Identifies an object/instruction.",
+            "vi": "Nêu object/chỉ dẫn."
+          },
+          {
+            "en": "Gives geometry or style properties.",
+            "vi": "Nêu property hình học hoặc kiểu."
+          },
+          {
+            "en": "Explains rendering to pixels.",
+            "vi": "Giải thích render thành pixel."
+          },
+          {
+            "en": "Does not claim a fixed stored pixel grid.",
+            "vi": "Không nói vector lưu lưới pixel cố định."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "vector-encoding",
+        "drawing-instruction",
+        "renderer"
+      ]
+    },
+    {
+      "id": "P1-L06-CHECK-REQ-1.2-04-02",
+      "requirementId": "REQ-1.2-04-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "The drawing list is [circle: centre(50,50), radius20, fill blue] then [line: (10,80) to (90,80), stroke black]. Identify the drawing objects, give two properties of each, and explain the role of the drawing list.",
+        "vi": "Drawing list là [circle: tâm(50,50), bán kính20, fill xanh] rồi [line: (10,80) đến (90,80), stroke đen]. Xác định các drawing object, nêu hai property của mỗi object và giải thích vai trò của drawing list."
+      },
+      "hint": {
+        "en": "Use the terms drawing object, property and drawing list precisely.",
+        "vi": "Dùng chính xác các thuật ngữ drawing object, property và drawing list."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The drawing objects are a circle and a line. Circle properties include centre, radius and fill; line properties include start point, end point and stroke. The drawing list stores these object descriptions in order so the renderer can compose the image.",
+          "vi": "Các drawing object là circle và line. Property của circle gồm tâm, bán kính và fill; property của line gồm điểm đầu, điểm cuối và stroke. Drawing list lưu mô tả các object theo thứ tự để renderer tạo ảnh tổng hợp."
+        },
+        "rubric": [
+          {
+            "en": "Identifies both drawing objects.",
+            "vi": "Xác định cả hai drawing object."
+          },
+          {
+            "en": "Gives two valid properties for each.",
+            "vi": "Nêu hai property hợp lệ cho mỗi object."
+          },
+          {
+            "en": "Explains the ordered-list role.",
+            "vi": "Giải thích vai trò danh sách có thứ tự."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "drawing-object",
+        "property",
+        "drawing-list"
+      ]
+    },
+    {
+      "id": "P1-L06-CHECK-REQ-1.2-05-01",
+      "requirementId": "REQ-1.2-05-01",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "Choose bitmap or vector for an editable company logo that must be printed at many sizes. Justify your choice with two task-linked reasons.",
+        "vi": "Chọn bitmap hoặc vector cho logo công ty cần chỉnh sửa và in ở nhiều kích thước. Biện minh bằng hai lý do gắn với nhiệm vụ."
+      },
+      "hint": {
+        "en": "Connect editability and scaling to the task.",
+        "vi": "Liên hệ khả năng chỉnh sửa và thay đổi tỉ lệ với nhiệm vụ."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Choose vector: its objects and properties can be edited independently, and geometry is recalculated at different print sizes without enlarging a fixed source pixel grid. Do not claim that vector is always smaller.",
+          "vi": "Chọn vector: object và property có thể chỉnh sửa độc lập, và hình học được tính lại ở nhiều kích thước in mà không phóng một lưới pixel nguồn cố định. Không khẳng định vector luôn nhỏ hơn."
+        },
+        "rubric": [
+          {
+            "en": "Selects vector.",
+            "vi": "Chọn vector."
+          },
+          {
+            "en": "Links object editability to the logo task.",
+            "vi": "Liên hệ khả năng chỉnh sửa object với nhiệm vụ logo."
+          },
+          {
+            "en": "Links geometry-based scaling to multiple print sizes.",
+            "vi": "Liên hệ scale theo hình học với nhiều kích thước in."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bitmap-vector-choice",
+        "task-justification"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Recall three drawing-list properties and one task suited to bitmap.",
+      "vi": "Nhớ ba thuộc tính drawing list và một nhiệm vụ hợp bitmap."
+    },
+    "answerPoints": [
+      {
+        "en": "Object type, geometry and style/order.",
+        "vi": "Loại đối tượng, hình học và kiểu/thứ tự."
+      },
+      {
+        "en": "A detailed photograph suits bitmap.",
+        "vi": "Ảnh chụp nhiều chi tiết phù hợp bitmap."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "drawing list",
+      "meaning": {
+        "en": "An ordered description of objects and properties.",
+        "vi": "Mô tả có thứ tự các đối tượng và thuộc tính."
+      }
+    },
+    {
+      "term": "render",
+      "meaning": {
+        "en": "Generate display pixels from a model.",
+        "vi": "Tạo pixel hiển thị từ mô hình."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "bitmap-storage"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.2, p. 15",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L06 · release 1.1",
+      "kind": "algocore"
+    }
+  ],
+  "visualId": "VIS-P1-L06",
+  "contractCoverage": {
+    "B01": [
+      "P1-L06-objectives"
+    ],
+    "B02": [
+      "P1-L06-theory"
+    ],
+    "B03": [
+      "P1-L06-rules"
+    ],
+    "B04": [
+      "P1-L06-recognise"
+    ],
+    "B05": [
+      "P1-L06-worked"
+    ],
+    "B06": [
+      "VIS-P1-L06"
+    ],
+    "B07": [
+      "P1-L06-CHECK-REQ-1.2-04-01",
+      "P1-L06-CHECK-REQ-1.2-04-02",
+      "P1-L06-CHECK-REQ-1.2-05-01"
+    ],
+    "B08": [
+      "P1-L06-misconceptions"
+    ],
+    "B09": [
+      "P1-L06-recall"
+    ],
+    "B10": [
+      "P1-L06-glossary"
+    ],
+    "B11": [
+      "P1-L06-sources"
+    ]
+  }
+}

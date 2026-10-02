@@ -1,0 +1,46 @@
+{
+  "name": "algocore-cambridge-9618-paper1",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive bilingual Cambridge 9618 Paper 1 revision website by AlgoCore Education.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algocoreedu-coder/algocore-cambridge-9618-paper1.git"
+  },
+  "license": "UNLICENSED",
+  "type": "module",
+  "packageManager": "npm@10.9.4",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3018",
+    "build": "next build --webpack",
+    "start": "next start --hostname 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "check:paper1:chapter1": "node scripts/check-paper1-chapter1.mjs",
+    "check:paper1:models": "node --experimental-strip-types scripts/check-paper1-models.mjs",
+    "check:paper1:http": "node scripts/check-paper1-http.mjs",
+    "verify": "npm run check:paper1:chapter1 && npm run check:paper1:models && npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "fumadocs-core": "16.15.11",
+    "fumadocs-ui": "16.15.11",
+    "lucide-react": "^0.577.0",
+    "next": "16.3.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@shadcn/lint": "^0.2.0",
+    "@tailwindcss/postcss": "^4.2.0",
+    "@types/mdx": "^2.0.13",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@typescript-eslint/parser": "^8.70.1",
+    "eslint": "^10.11.0",
+    "tailwindcss": "^4.2.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "courseId": "CAIE-9618-P1-2026",
+  "releaseId": "paper1-chapter1-2026.10.01",
+  "lessons": [
+    {
+      "lessonId": "P1-L01",
+      "slug": "units-and-magnitudes",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L01@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L02",
+      "slug": "number-systems",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L02@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L03",
+      "slug": "signed-arithmetic",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L03@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L04",
+      "slug": "character-encoding",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L04@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L05",
+      "slug": "bitmap-storage",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L05@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L06",
+      "slug": "vector-graphics",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L06@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L07",
+      "slug": "sound-sampling",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L07@1"
+      ]
+    },
+    {
+      "lessonId": "P1-L08",
+      "slug": "compression",
+      "state": "available",
+      "contentVersion": "1.1.0",
+      "modelVersions": [
+        "VIS-P1-L08@1"
+      ]
+    }
+  ]
+}

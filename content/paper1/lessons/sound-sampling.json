@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L07",
+  "slug": "sound-sampling",
+  "sectionId": "1",
+  "strandId": "1.2",
+  "title": {
+    "en": "Sound sampling",
+    "vi": "Lấy mẫu âm thanh"
+  },
+  "question": {
+    "en": "How do sample rate and resolution change different parts of digital sound?",
+    "vi": "Sampling rate và resolution thay đổi các phần khác nhau của âm thanh số ra sao?"
+  },
+  "opening": {
+    "en": "Digitising measures an analogue signal at discrete times, then maps each measurement to a finite amplitude level.",
+    "vi": "Số hóa đo tín hiệu analogue tại các thời điểm rời rạc, rồi ánh xạ mỗi phép đo vào một mức biên độ hữu hạn."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.2-06",
+      "text": {
+        "en": "Explain sampling and quantisation.",
+        "vi": "Giải thích lấy mẫu và lượng tử hóa."
+      }
+    },
+    {
+      "id": "AC26-1.2-07",
+      "text": {
+        "en": "Explain effects on accuracy and file size.",
+        "vi": "Giải thích ảnh hưởng tới độ chính xác và dung lượng."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.2-06-01",
+    "REQ-1.2-06-02",
+    "REQ-1.2-07-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L07-theory",
+      "title": {
+        "en": "Time samples and amplitude levels",
+        "vi": "Mẫu thời gian và mức biên độ"
+      },
+      "paragraphs": [
+        {
+          "en": "Sample rate is measurements per second. Sample resolution is bits per sample, giving 2^b quantisation levels.",
+          "vi": "Sampling rate là số phép đo mỗi giây. Sampling resolution là bit mỗi mẫu, cho 2^b mức lượng tử."
+        },
+        {
+          "en": "To digitise sound, the system measures an analogue waveform at regular times, quantises each amplitude to an available level and stores the level as a binary value for each channel.",
+          "vi": "Để số hóa âm thanh, hệ thống đo waveform analogue tại các thời điểm đều nhau, quantise mỗi biên độ vào một mức khả dụng rồi lưu mức đó thành giá trị binary cho từng kênh."
+        },
+        {
+          "en": "Uncompressed mono bits = sample rate × duration × bits per sample. Multiply by channel count when applicable.",
+          "vi": "Số bit mono không nén = sampling rate × thời lượng × bit mỗi mẫu. Nhân số kênh khi phù hợp."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Rate changes time spacing; resolution changes amplitude levels.",
+          "vi": "Rate đổi khoảng thời gian; resolution đổi mức biên độ."
+        },
+        {
+          "en": "State assumptions about channels, headers and compression.",
+          "vi": "Nêu giả định về kênh, header và nén."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Calculate a short mono recording",
+      "vi": "Tính đoạn ghi mono ngắn"
+    },
+    "prompt": {
+      "en": "8000 Hz, 2 s, 8 bits/sample, mono; ignore header and compression.",
+      "vi": "8000 Hz, 2 s, 8 bit/mẫu, mono; bỏ qua header và nén."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Count samples.",
+          "vi": "Đếm mẫu."
+        },
+        "result": {
+          "en": "8000 × 2 = 16 000 samples",
+          "vi": "8000 × 2 = 16 000 mẫu"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Multiply by bits per sample.",
+          "vi": "Nhân bit mỗi mẫu."
+        },
+        "result": {
+          "en": "16 000 × 8 = 128 000 bits",
+          "vi": "16 000 × 8 = 128 000 bit"
+        }
+      },
+      {
+        "id": "s3",
+        "action": {
+          "en": "Convert to bytes.",
+          "vi": "Đổi sang byte."
+        },
+        "result": {
+          "en": "128 000 ÷ 8 = 16 000 bytes",
+          "vi": "128 000 ÷ 8 = 16 000 byte"
+        }
+      }
+    ],
+    "result": {
+      "en": "Raw size is 128 000 bits = 16 000 bytes.",
+      "vi": "Dung lượng thô là 128 000 bit = 16 000 byte."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Separate rate, duration, resolution and channels.",
+        "vi": "Tách rate, thời lượng, resolution và số kênh."
+      }
+    ],
+    "method": [
+      {
+        "en": "Place samples along time.",
+        "vi": "Đặt mẫu theo thời gian."
+      },
+      {
+        "en": "Quantise each amplitude.",
+        "vi": "Lượng tử hóa từng biên độ."
+      },
+      {
+        "en": "Use explicit storage assumptions.",
+        "vi": "Dùng giả định dung lượng rõ ràng."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Rate and resolution are interchangeable.",
+          "vi": "Rate và resolution có thể thay thế nhau."
+        },
+        "correction": {
+          "en": "Rate controls time spacing; resolution controls amplitude levels.",
+          "vi": "Rate điều khiển khoảng thời gian; resolution điều khiển mức biên độ."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L07-CHECK-REQ-1.2-06-01",
+      "requirementId": "REQ-1.2-06-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how an analogue microphone waveform becomes stored digital sound data.",
+        "vi": "Mô tả cách waveform analogue từ microphone trở thành dữ liệu âm thanh digital được lưu."
+      },
+      "hint": {
+        "en": "Follow time sampling, amplitude quantisation and binary encoding.",
+        "vi": "Theo dõi sampling theo thời gian, quantisation biên độ và mã hóa binary."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Measure analogue amplitude at regular sample times, quantise each measurement to an available level, encode that level in binary using the stated sample resolution, then store the sequence for each channel.",
+          "vi": "Đo biên độ analogue tại các thời điểm lấy mẫu đều nhau, quantise mỗi phép đo vào một mức khả dụng, mã hóa mức đó thành binary theo sampling resolution đã nêu, rồi lưu chuỗi cho từng kênh."
+        },
+        "rubric": [
+          {
+            "en": "Measures amplitude at regular times.",
+            "vi": "Đo biên độ tại các thời điểm đều nhau."
+          },
+          {
+            "en": "Quantises to available levels.",
+            "vi": "Quantise vào các mức khả dụng."
+          },
+          {
+            "en": "Encodes levels with the stated bits and stores the sequence.",
+            "vi": "Mã hóa mức bằng số bit đã nêu và lưu chuỗi."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "analogue-digital",
+        "sampling",
+        "quantisation",
+        "binary-encoding"
+      ]
+    },
+    {
+      "id": "P1-L07-CHECK-REQ-1.2-06-02",
+      "requirementId": "REQ-1.2-06-02",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish sampling, sampling rate and sampling resolution. Include a unit where appropriate.",
+        "vi": "Phân biệt sampling, sampling rate và sampling resolution. Nêu đơn vị khi phù hợp."
+      },
+      "hint": {
+        "en": "One term is the process; the other two describe frequency and bit precision.",
+        "vi": "Một thuật ngữ là quá trình; hai thuật ngữ còn lại mô tả tần suất và độ chính xác theo bit."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Sampling measures analogue amplitude at intervals. Sampling rate is the number of samples per second, measured in hertz. Sampling resolution is the number of bits per sample and therefore controls the number of available amplitude levels.",
+          "vi": "Sampling đo biên độ analogue theo các khoảng thời gian. Sampling rate là số mẫu mỗi giây, đo bằng hertz. Sampling resolution là số bit mỗi mẫu và do đó quyết định số mức biên độ khả dụng."
+        },
+        "rubric": [
+          {
+            "en": "Defines sampling.",
+            "vi": "Định nghĩa sampling."
+          },
+          {
+            "en": "Defines rate with samples/s or Hz.",
+            "vi": "Định nghĩa rate với mẫu/giây hoặc Hz."
+          },
+          {
+            "en": "Defines resolution with bits/sample and levels.",
+            "vi": "Định nghĩa resolution bằng bit/mẫu và số mức."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "sampling",
+        "sampling-rate",
+        "sampling-resolution"
+      ]
+    },
+    {
+      "id": "P1-L07-CHECK-REQ-1.2-07-01",
+      "requirementId": "REQ-1.2-07-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "For the same uncompressed mono duration, explain what happens when (a) sample rate doubles and (b) sample resolution doubles. Link each change to accuracy and file size.",
+        "vi": "Với cùng thời lượng mono chưa nén, giải thích điều xảy ra khi (a) sampling rate tăng gấp đôi và (b) sampling resolution tăng gấp đôi. Liên hệ mỗi thay đổi với độ chính xác và dung lượng."
+      },
+      "hint": {
+        "en": "Treat samples per second and bits per sample as separate factors.",
+        "vi": "Xét số mẫu mỗi giây và số bit mỗi mẫu là hai hệ số riêng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Doubling sample rate gives twice as many samples, can capture finer time detail and doubles raw size. Doubling resolution gives many more quantisation levels, can reduce amplitude error and doubles raw size. If both double, raw size is four times as large for the same duration and channels.",
+          "vi": "Tăng gấp đôi sampling rate tạo số mẫu gấp đôi, có thể giữ chi tiết thời gian mịn hơn và làm dung lượng thô gấp đôi. Tăng gấp đôi resolution tạo nhiều mức lượng tử hơn, có thể giảm sai số biên độ và làm dung lượng thô gấp đôi. Nếu cả hai tăng gấp đôi, dung lượng thô gấp bốn với cùng thời lượng và số kênh."
+        },
+        "rubric": [
+          {
+            "en": "Links rate to time accuracy and size ×2.",
+            "vi": "Liên hệ rate với độ chính xác thời gian và dung lượng ×2."
+          },
+          {
+            "en": "Links resolution to amplitude accuracy and size ×2.",
+            "vi": "Liên hệ resolution với độ chính xác biên độ và dung lượng ×2."
+          },
+          {
+            "en": "Uses conditional language and may state combined ×4.",
+            "vi": "Dùng diễn đạt có điều kiện và có thể nêu kết hợp ×4."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "rate-accuracy",
+        "rate-size",
+        "resolution-accuracy",
+        "resolution-size"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Recall what rate and resolution control and the mono raw-size formula.",
+      "vi": "Nhớ rate, resolution điều khiển gì và công thức dung lượng mono."
+    },
+    "answerPoints": [
+      {
+        "en": "Rate: samples per second.",
+        "vi": "Rate: mẫu mỗi giây."
+      },
+      {
+        "en": "Resolution: bits/levels per sample.",
+        "vi": "Resolution: bit/mức mỗi mẫu."
+      },
+      {
+        "en": "bits = rate × duration × bits/sample.",
+        "vi": "bit = rate × thời lượng × bit/mẫu."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "sample rate",
+      "meaning": {
+        "en": "Measurements per second.",
+        "vi": "Số phép đo mỗi giây."
+      }
+    },
+    {
+      "term": "quantisation",
+      "meaning": {
+        "en": "Mapping amplitude to an available level.",
+        "vi": "Ánh xạ biên độ vào mức có sẵn."
+      }
+    },
+    {
+      "term": "sample resolution",
+      "meaning": {
+        "en": "Bits per sample.",
+        "vi": "Số bit mỗi mẫu."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "units-and-magnitudes",
+    "compression"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.2, p. 15",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L07 · release 1.1",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 19–22",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L07",
+  "contractCoverage": {
+    "B01": [
+      "P1-L07-objectives"
+    ],
+    "B02": [
+      "P1-L07-theory"
+    ],
+    "B03": [
+      "P1-L07-rules"
+    ],
+    "B04": [
+      "P1-L07-recognise"
+    ],
+    "B05": [
+      "P1-L07-worked"
+    ],
+    "B06": [
+      "VIS-P1-L07"
+    ],
+    "B07": [
+      "P1-L07-CHECK-REQ-1.2-06-01",
+      "P1-L07-CHECK-REQ-1.2-06-02",
+      "P1-L07-CHECK-REQ-1.2-07-01"
+    ],
+    "B08": [
+      "P1-L07-misconceptions"
+    ],
+    "B09": [
+      "P1-L07-recall"
+    ],
+    "B10": [
+      "P1-L07-glossary"
+    ],
+    "B11": [
+      "P1-L07-sources"
+    ]
+  }
+}

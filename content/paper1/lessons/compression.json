@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L08",
+  "slug": "compression",
+  "sectionId": "1",
+  "strandId": "1.3",
+  "title": {
+    "en": "Compression and RLE",
+    "vi": "Nén dữ liệu và RLE"
+  },
+  "question": {
+    "en": "When can a file become smaller without breaking its purpose?",
+    "vi": "Khi nào tệp có thể nhỏ hơn mà không phá hỏng mục đích?"
+  },
+  "opening": {
+    "en": "Compression reduces representation size. Lossless preserves exact reconstruction; lossy discards selected information.",
+    "vi": "Nén giảm kích thước biểu diễn. Lossless giữ khả năng khôi phục chính xác; lossy loại thông tin được chọn."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.3-01",
+      "text": {
+        "en": "Explain why compression is used.",
+        "vi": "Giải thích vì sao dùng nén."
+      }
+    },
+    {
+      "id": "AC26-1.3-02",
+      "text": {
+        "en": "Distinguish and select lossless or lossy.",
+        "vi": "Phân biệt và chọn lossless hoặc lossy."
+      }
+    },
+    {
+      "id": "AC26-1.3-03",
+      "text": {
+        "en": "Explain compression of text, bitmap, vector and sound, including RLE.",
+        "vi": "Giải thích nén text, bitmap, vector và sound, gồm RLE."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.3-01-01",
+    "REQ-1.3-02-01",
+    "REQ-1.3-02-02",
+    "REQ-1.3-03-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L08-theory",
+      "title": {
+        "en": "Preserve what the task requires",
+        "vi": "Giữ điều nhiệm vụ yêu cầu"
+      },
+      "paragraphs": [
+        {
+          "en": "Compression can reduce storage, transmission time and bandwidth. Lossless is needed when exact recovery matters, such as text or source code.",
+          "vi": "Nén có thể giảm lưu trữ, thời gian truyền và băng thông. Lossless cần khi phải khôi phục chính xác như text hoặc mã nguồn."
+        },
+        {
+          "en": "Lossy can suit photographs or sound when size matters more than exact reconstruction; quality depends on method and settings.",
+          "vi": "Lossy có thể hợp ảnh chụp hoặc âm thanh khi dung lượng quan trọng hơn khôi phục chính xác; chất lượng phụ thuộc phương pháp và thiết lập."
+        },
+        {
+          "en": "RLE stores count-symbol pairs. It is lossless but can expand alternating data. Vector compression is format-dependent.",
+          "vi": "RLE lưu cặp count-symbol. Nó lossless nhưng có thể làm dữ liệu xen kẽ dài hơn. Nén vector phụ thuộc định dạng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "State the RLE token convention before comparing size.",
+          "vi": "Nêu quy ước token RLE trước khi so dung lượng."
+        },
+        {
+          "en": "Lossless does not guarantee a smaller output for every input.",
+          "vi": "Lossless không đảm bảo đầu ra nhỏ hơn với mọi input."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Encode AAABB with RLE",
+      "vi": "Mã hóa AAABB bằng RLE"
+    },
+    "prompt": {
+      "en": "Use one byte per count and one byte per symbol.",
+      "vi": "Dùng một byte mỗi count và một byte mỗi symbol."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Find the first run.",
+          "vi": "Tìm run đầu."
+        },
+        "result": {
+          "en": "AAA → (3,A)",
+          "vi": "AAA → (3,A)"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Find the next run.",
+          "vi": "Tìm run tiếp."
+        },
+        "result": {
+          "en": "BB → (2,B)",
+          "vi": "BB → (2,B)"
+        }
+      },
+      {
+        "id": "s3",
+        "action": {
+          "en": "Compare sizes.",
+          "vi": "So dung lượng."
+        },
+        "result": {
+          "en": "5 B original → 4 B encoded",
+          "vi": "5 B gốc → 4 B đã mã hóa"
+        }
+      }
+    ],
+    "result": {
+      "en": "AAABB ↔ (3,A),(2,B), saving one byte under this convention.",
+      "vi": "AAABB ↔ (3,A),(2,B), tiết kiệm một byte theo quy ước này."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Identify what must be preserved exactly.",
+        "vi": "Xác định dữ liệu phải giữ chính xác."
+      },
+      {
+        "en": "For RLE, split whenever the symbol changes.",
+        "vi": "Với RLE, chia mỗi khi ký hiệu đổi."
+      }
+    ],
+    "method": [
+      {
+        "en": "Choose lossless/lossy from the task.",
+        "vi": "Chọn lossless/lossy theo nhiệm vụ."
+      },
+      {
+        "en": "Encode each run.",
+        "vi": "Mã hóa từng run."
+      },
+      {
+        "en": "Decode to verify the round trip.",
+        "vi": "Giải mã để kiểm tra round trip."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Lossless always makes data smaller.",
+          "vi": "Lossless luôn làm dữ liệu nhỏ hơn."
+        },
+        "correction": {
+          "en": "Overhead or alternating data can make output larger.",
+          "vi": "Overhead hoặc dữ liệu xen kẽ có thể làm đầu ra lớn hơn."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Lossy always means unusable quality.",
+          "vi": "Lossy luôn nghĩa là chất lượng không dùng được."
+        },
+        "correction": {
+          "en": "Acceptability depends on purpose and settings.",
+          "vi": "Mức chấp nhận phụ thuộc mục đích và thiết lập."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L08-CHECK-REQ-1.3-01-01",
+      "requirementId": "REQ-1.3-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two reasons for compressing data and give one relevant use example for each reason.",
+        "vi": "Giải thích hai lý do cần nén dữ liệu và nêu một ví dụ sử dụng phù hợp cho mỗi lý do."
+      },
+      "hint": {
+        "en": "Link each reason to a concrete storage or transfer situation.",
+        "vi": "Liên hệ mỗi lý do với tình huống lưu trữ hoặc truyền cụ thể."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Compression reduces storage, for example for an image archive on a device. It can also reduce transfer time or bandwidth, for example for streamed audio or a download.",
+          "vi": "Compression giảm dung lượng lưu trữ, ví dụ kho ảnh trên thiết bị. Nó cũng có thể giảm thời gian truyền hoặc băng thông, ví dụ phát trực tuyến âm thanh hoặc tải tệp."
+        },
+        "rubric": [
+          {
+            "en": "Explains a storage reason with a linked example.",
+            "vi": "Giải thích lý do lưu trữ với ví dụ phù hợp."
+          },
+          {
+            "en": "Explains a transfer/bandwidth reason with a linked example.",
+            "vi": "Giải thích lý do truyền/băng thông với ví dụ phù hợp."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "compression-need",
+        "storage",
+        "transmission"
+      ]
+    },
+    {
+      "id": "P1-L08-CHECK-REQ-1.3-02-01",
+      "requirementId": "REQ-1.3-02-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish lossless from lossy compression in terms of reconstruction and give one suitable data example for each.",
+        "vi": "Phân biệt compression lossless và lossy theo khả năng khôi phục, rồi nêu một ví dụ dữ liệu phù hợp cho mỗi loại."
+      },
+      "hint": {
+        "en": "Ask whether the original bit pattern can be reconstructed exactly.",
+        "vi": "Xét xem mẫu bit ban đầu có thể được khôi phục chính xác hay không."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Lossless compression reconstructs the original exactly and suits source code or text. Lossy compression discards selected information, so reconstruction is not exact, and can suit a photo or sound file where controlled quality loss is acceptable.",
+          "vi": "Compression lossless khôi phục chính xác bản gốc và phù hợp mã nguồn hoặc text. Compression lossy loại bỏ một phần thông tin nên không khôi phục chính xác, và có thể phù hợp ảnh hoặc sound khi chấp nhận mất chất lượng có kiểm soát."
+        },
+        "rubric": [
+          {
+            "en": "States exact reconstruction for lossless with a suitable example.",
+            "vi": "Nêu khôi phục chính xác cho lossless cùng ví dụ phù hợp."
+          },
+          {
+            "en": "States discarded information/non-exact reconstruction for lossy with a suitable example.",
+            "vi": "Nêu loại bỏ thông tin/khôi phục không chính xác cho lossy cùng ví dụ phù hợp."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "lossless",
+        "lossy",
+        "reconstruction"
+      ]
+    },
+    {
+      "id": "P1-L08-CHECK-REQ-1.3-02-02",
+      "requirementId": "REQ-1.3-02-02",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "Choose and justify a compression type for (a) program source code and (b) a streamed song on a limited-bandwidth connection.",
+        "vi": "Chọn và biện minh loại compression cho (a) mã nguồn chương trình và (b) bài hát phát trực tuyến trên kết nối băng thông hạn chế."
+      },
+      "hint": {
+        "en": "Match the need for exact reconstruction or acceptable quality loss to each task.",
+        "vi": "Ghép nhu cầu khôi phục chính xác hoặc chấp nhận mất chất lượng với từng nhiệm vụ."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Use lossless for source code because every character must recover exactly. Lossy compression may suit the streamed song because it can reduce required bandwidth when controlled quality loss is acceptable.",
+          "vi": "Dùng lossless cho mã nguồn vì mọi ký tự phải được khôi phục chính xác. Compression lossy có thể phù hợp bài hát phát trực tuyến vì giảm băng thông cần thiết khi chấp nhận mất chất lượng có kiểm soát."
+        },
+        "rubric": [
+          {
+            "en": "Chooses lossless for source code and links it to exact recovery.",
+            "vi": "Chọn lossless cho mã nguồn và liên hệ với khôi phục chính xác."
+          },
+          {
+            "en": "Chooses a defensible type for streamed sound and links it to bandwidth/quality.",
+            "vi": "Chọn loại hợp lý cho sound trực tuyến và liên hệ với băng thông/chất lượng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "compression-choice",
+        "scenario-justification"
+      ]
+    },
+    {
+      "id": "P1-L08-CHECK-REQ-1.3-03-01",
+      "requirementId": "REQ-1.3-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain one suitable way to compress each of: a text file, a bitmap image, a vector graphic and a sound file. Include RLE and state when RLE is effective.",
+        "vi": "Giải thích một cách phù hợp để nén từng loại: tệp text, ảnh bitmap, vector graphic và tệp sound. Phải gồm RLE và nêu khi RLE hiệu quả."
+      },
+      "hint": {
+        "en": "Give a mechanism or boundary for all four media types, not only an RLE encoding.",
+        "vi": "Nêu cơ chế hoặc giới hạn cho đủ bốn loại media, không chỉ một phép mã hóa RLE."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Text can be compressed losslessly by replacing repeated patterns with shorter codes. For a bitmap, RLE stores count–colour pairs for consecutive identical pixels; it works well with long runs but can expand alternating data. Vector files can compress drawing-list/object/property data using a format-defined lossless method. Sound may use lossless compression when exact recovery matters or lossy compression that discards selected less-perceptible information.",
+          "vi": "Text có thể nén lossless bằng cách thay mẫu lặp bằng mã ngắn hơn. Với bitmap, RLE lưu cặp số lượng–màu cho các pixel giống nhau liên tiếp; nó hiệu quả với run dài nhưng có thể làm chuỗi xen kẽ lớn hơn. Tệp vector có thể nén dữ liệu drawing list/object/property bằng phương pháp lossless do định dạng quy định. Sound có thể dùng lossless khi cần khôi phục chính xác hoặc lossy loại bỏ thông tin ít cảm nhận hơn."
+        },
+        "rubric": [
+          {
+            "en": "Explains a suitable text mechanism.",
+            "vi": "Giải thích cơ chế phù hợp cho text."
+          },
+          {
+            "en": "Explains bitmap RLE and its long-run boundary.",
+            "vi": "Giải thích RLE cho bitmap và điều kiện run dài."
+          },
+          {
+            "en": "Explains compression of vector drawing-list data.",
+            "vi": "Giải thích nén dữ liệu drawing list của vector."
+          },
+          {
+            "en": "Explains a sound lossless/lossy option and condition.",
+            "vi": "Giải thích lựa chọn lossless/lossy cho sound và điều kiện."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "text-compression",
+        "bitmap-compression",
+        "vector-compression",
+        "sound-compression",
+        "rle"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Recall when RLE saves and when it expands data under a two-byte token convention.",
+      "vi": "Nhớ khi RLE tiết kiệm và khi làm dữ liệu dài hơn với token hai byte."
+    },
+    "answerPoints": [
+      {
+        "en": "AAABB: 5 B → 4 B.",
+        "vi": "AAABB: 5 B → 4 B."
+      },
+      {
+        "en": "AB: 2 B → 4 B.",
+        "vi": "AB: 2 B → 4 B."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "lossless",
+      "meaning": {
+        "en": "Compression with exact reconstruction.",
+        "vi": "Nén cho phép khôi phục chính xác."
+      }
+    },
+    {
+      "term": "lossy",
+      "meaning": {
+        "en": "Compression that discards selected information.",
+        "vi": "Nén loại thông tin được chọn."
+      }
+    },
+    {
+      "term": "run",
+      "meaning": {
+        "en": "Consecutive copies of one symbol.",
+        "vi": "Chuỗi liên tiếp của một ký hiệu."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "bitmap-storage",
+    "vector-graphics",
+    "sound-sampling"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.3, p. 15",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L08 · release 1.1",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 21–24: need for compression, lossy/lossless and RLE",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L08",
+  "contractCoverage": {
+    "B01": [
+      "P1-L08-objectives"
+    ],
+    "B02": [
+      "P1-L08-theory"
+    ],
+    "B03": [
+      "P1-L08-rules"
+    ],
+    "B04": [
+      "P1-L08-recognise"
+    ],
+    "B05": [
+      "P1-L08-worked"
+    ],
+    "B06": [
+      "VIS-P1-L08"
+    ],
+    "B07": [
+      "P1-L08-CHECK-REQ-1.3-01-01",
+      "P1-L08-CHECK-REQ-1.3-02-01",
+      "P1-L08-CHECK-REQ-1.3-02-02",
+      "P1-L08-CHECK-REQ-1.3-03-01"
+    ],
+    "B08": [
+      "P1-L08-misconceptions"
+    ],
+    "B09": [
+      "P1-L08-recall"
+    ],
+    "B10": [
+      "P1-L08-glossary"
+    ],
+    "B11": [
+      "P1-L08-sources"
+    ]
+  }
+}

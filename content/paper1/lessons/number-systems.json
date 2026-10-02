@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L02",
+  "slug": "number-systems",
+  "sectionId": "1",
+  "strandId": "1.1",
+  "title": {
+    "en": "Binary, hexadecimal and BCD",
+    "vi": "Binary, hexadecimal và BCD"
+  },
+  "question": {
+    "en": "How can one value have several useful bit patterns?",
+    "vi": "Một giá trị có thể có nhiều mẫu bit hữu ích như thế nào?"
+  },
+  "opening": {
+    "en": "Representation gives bits their meaning: pure binary, BCD and signed forms organise them differently.",
+    "vi": "Cách biểu diễn tạo ý nghĩa cho bit: pure binary, BCD và dạng có dấu tổ chức chúng khác nhau."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.1-02",
+      "text": {
+        "en": "Understand binary, denary, hexadecimal, BCD and signed representations.",
+        "vi": "Hiểu binary, denary, hexadecimal, BCD và biểu diễn có dấu."
+      }
+    },
+    {
+      "id": "AC26-1.1-03",
+      "text": {
+        "en": "Convert integers between representations.",
+        "vi": "Đổi số nguyên giữa các cách biểu diễn."
+      }
+    },
+    {
+      "id": "AC26-1.1-06",
+      "text": {
+        "en": "Explain uses of BCD and hexadecimal.",
+        "vi": "Giải thích ứng dụng của BCD và hexadecimal."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.1-02-01",
+    "REQ-1.1-02-02",
+    "REQ-1.1-03-01",
+    "REQ-1.1-06-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L02-theory",
+      "title": {
+        "en": "One value, different structures",
+        "vi": "Một giá trị, nhiều cấu trúc"
+      },
+      "paragraphs": [
+        {
+          "en": "Binary uses powers of two. Each hexadecimal digit maps to one four-bit nibble.",
+          "vi": "Binary dùng lũy thừa hai. Mỗi chữ số hexadecimal ánh xạ với một nibble bốn bit."
+        },
+        {
+          "en": "BCD encodes each decimal digit separately; 1010–1111 are invalid BCD digits.",
+          "vi": "BCD mã hóa riêng từng chữ số thập phân; 1010–1111 là chữ số BCD không hợp lệ."
+        },
+        {
+          "en": "One’s complement flips each bit. Two’s complement flips then adds one at a declared word width.",
+          "vi": "One’s complement đảo từng bit. Two’s complement đảo rồi cộng một với word width được nêu."
+        },
+        {
+          "en": "BCD is useful when decimal digits must remain separate, such as a digital clock or calculator display. Hexadecimal is a compact, exact way to read grouped binary, such as memory addresses or colour values.",
+          "vi": "BCD hữu ích khi các chữ số thập phân cần giữ riêng, như đồng hồ số hoặc màn hình máy tính cầm tay. Hexadecimal là cách đọc binary theo nhóm ngắn gọn và chính xác, như địa chỉ bộ nhớ hoặc giá trị màu."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Keep leading zeros required by the word width.",
+          "vi": "Giữ số 0 đầu theo word width."
+        },
+        {
+          "en": "Do not confuse BCD with pure binary.",
+          "vi": "Không nhầm BCD với pure binary."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Represent denary 59",
+      "vi": "Biểu diễn số thập phân 59"
+    },
+    "prompt": {
+      "en": "Show 8-bit binary, hexadecimal and BCD.",
+      "vi": "Viết binary 8-bit, hexadecimal và BCD."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Use binary place values.",
+          "vi": "Dùng trọng số binary."
+        },
+        "result": {
+          "en": "00111011₂",
+          "vi": "00111011₂"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Group into nibbles.",
+          "vi": "Nhóm thành nibble."
+        },
+        "result": {
+          "en": "0011 1011₂ = 3B₁₆",
+          "vi": "0011 1011₂ = 3B₁₆"
+        }
+      },
+      {
+        "id": "s3",
+        "action": {
+          "en": "Encode digits 5 and 9 separately.",
+          "vi": "Mã hóa riêng chữ số 5 và 9."
+        },
+        "result": {
+          "en": "0101 1001 BCD",
+          "vi": "0101 1001 BCD"
+        }
+      }
+    ],
+    "result": {
+      "en": "Pure binary and BCD differ because they organise value differently.",
+      "vi": "Pure binary và BCD khác nhau vì tổ chức giá trị khác nhau."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for the base, representation and word width.",
+        "vi": "Tìm cơ số, cách biểu diễn và word width."
+      }
+    ],
+    "method": [
+      {
+        "en": "Write place weights or split into nibbles.",
+        "vi": "Viết trọng số hoặc chia nibble."
+      },
+      {
+        "en": "For BCD, keep decimal digits separate.",
+        "vi": "Với BCD, giữ riêng chữ số thập phân."
+      },
+      {
+        "en": "For complements, state width first.",
+        "vi": "Với complement, nêu độ rộng trước."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "BCD 59 is 00111011.",
+          "vi": "BCD 59 là 00111011."
+        },
+        "correction": {
+          "en": "That is pure binary; BCD is 0101 1001.",
+          "vi": "Đó là pure binary; BCD là 0101 1001."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Signed patterns do not need a width.",
+          "vi": "Mẫu có dấu không cần độ rộng."
+        },
+        "correction": {
+          "en": "The pattern and range depend on word width.",
+          "vi": "Mẫu và miền phụ thuộc word width."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L02-CHECK-REQ-1.1-02-01",
+      "requirementId": "REQ-1.1-02-01",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "For denary 59, enter its 8-bit binary, two-digit hexadecimal and 8-bit BCD forms as binary;hex;BCD.",
+        "vi": "Với số thập phân 59, nhập binary 8-bit, hexadecimal hai chữ số và BCD 8-bit theo dạng binary;hex;BCD."
+      },
+      "hint": {
+        "en": "BCD encodes 5 and 9 separately in four-bit groups.",
+        "vi": "BCD mã hóa riêng 5 và 9 thành các nhóm bốn bit."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "59 = 00111011₂ = 3B₁₆. In BCD it is 0101 1001 because each denary digit is encoded separately.",
+          "vi": "59 = 00111011₂ = 3B₁₆. Trong BCD, kết quả là 0101 1001 vì từng chữ số thập phân được mã hóa riêng."
+        },
+        "rubric": [],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "00111011;3b;01011001"
+      ],
+      "semanticTags": [
+        "binary",
+        "denary",
+        "hexadecimal",
+        "bcd"
+      ]
+    },
+    {
+      "id": "P1-L02-CHECK-REQ-1.1-02-02",
+      "requirementId": "REQ-1.1-02-02",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Enter −5 as 8-bit one's complement and 8-bit two's complement as ones;twos.",
+        "vi": "Nhập −5 ở dạng bù một 8-bit và bù hai 8-bit theo dạng bu-mot;bu-hai."
+      },
+      "hint": {
+        "en": "Start with +5, invert all bits, then add one only for two's complement.",
+        "vi": "Bắt đầu với +5, đảo mọi bit, rồi chỉ cộng một cho bù hai."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "+5 is 00000101; invert to get one's complement 11111010; add one to get two's complement 11111011.",
+          "vi": "+5 là 00000101; đảo bit được bù một 11111010; cộng một được bù hai 11111011."
+        },
+        "rubric": [],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "11111010;11111011"
+      ],
+      "semanticTags": [
+        "ones-complement",
+        "twos-complement",
+        "signed-binary"
+      ]
+    },
+    {
+      "id": "P1-L02-CHECK-REQ-1.1-03-01",
+      "requirementId": "REQ-1.1-03-01",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Convert unsigned binary 11010110 to denary and hexadecimal, then convert hexadecimal 3A to 8-bit binary. Enter denary;hex;binary.",
+        "vi": "Đổi binary không dấu 11010110 sang denary và hexadecimal, rồi đổi hexadecimal 3A sang binary 8-bit. Nhập denary;hex;binary."
+      },
+      "hint": {
+        "en": "Group binary into four bits for hexadecimal.",
+        "vi": "Nhóm binary thành từng nhóm bốn bit khi đổi sang hexadecimal."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "11010110₂ = 214₁₀ = D6₁₆; 3A₁₆ = 00111010₂.",
+          "vi": "11010110₂ = 214₁₀ = D6₁₆; 3A₁₆ = 00111010₂."
+        },
+        "rubric": [],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "214;d6;00111010"
+      ],
+      "semanticTags": [
+        "base-conversion",
+        "binary-denary",
+        "binary-hexadecimal"
+      ]
+    },
+    {
+      "id": "P1-L02-CHECK-REQ-1.1-06-01",
+      "requirementId": "REQ-1.1-06-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Give one suitable practical use of BCD and one of hexadecimal. Explain why each representation helps in that use.",
+        "vi": "Nêu một ứng dụng thực tế phù hợp của BCD và một ứng dụng của hexadecimal. Giải thích vì sao mỗi biểu diễn hữu ích trong ứng dụng đó."
+      },
+      "hint": {
+        "en": "Link the structure of each representation to the task.",
+        "vi": "Liên hệ cấu trúc của mỗi biểu diễn với nhiệm vụ."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "BCD suits a digital clock or numeric display because each denary digit is encoded separately. Hexadecimal suits memory addresses, dumps or colour codes because each hex digit maps to four bits and shortens long binary patterns.",
+          "vi": "BCD phù hợp đồng hồ số hoặc màn hình số vì từng chữ số thập phân được mã hóa riêng. Hexadecimal phù hợp địa chỉ bộ nhớ, memory dump hoặc mã màu vì mỗi chữ số hex ánh xạ bốn bit và rút gọn chuỗi binary dài."
+        },
+        "rubric": [
+          {
+            "en": "Gives a valid BCD use and links it to separate decimal digits.",
+            "vi": "Nêu ứng dụng BCD hợp lệ và liên hệ với từng chữ số thập phân."
+          },
+          {
+            "en": "Gives a valid hexadecimal use and links it to four-bit grouping/readability.",
+            "vi": "Nêu ứng dụng hexadecimal hợp lệ và liên hệ với nhóm bốn bit/khả năng đọc."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bcd-application",
+        "hexadecimal-application"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Recall 59 in binary, hex and BCD, then −5 in 8-bit complements.",
+      "vi": "Nhớ lại 59 ở binary, hex, BCD, rồi −5 ở complement 8-bit."
+    },
+    "answerPoints": [
+      {
+        "en": "59 = 00111011₂ = 3B₁₆.",
+        "vi": "59 = 00111011₂ = 3B₁₆."
+      },
+      {
+        "en": "BCD 59 = 0101 1001.",
+        "vi": "BCD 59 = 0101 1001."
+      },
+      {
+        "en": "−5: one’s 11111010; two’s 11111011.",
+        "vi": "−5: one’s 11111010; two’s 11111011."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "nibble",
+      "meaning": {
+        "en": "Four bits.",
+        "vi": "Bốn bit."
+      }
+    },
+    {
+      "term": "BCD",
+      "meaning": {
+        "en": "Four-bit encoding of each decimal digit.",
+        "vi": "Mã bốn bit cho từng chữ số thập phân."
+      }
+    },
+    {
+      "term": "two’s complement",
+      "meaning": {
+        "en": "Fixed-width signed representation formed by invert-and-add-one.",
+        "vi": "Biểu diễn có dấu độ rộng cố định bằng đảo bit rồi cộng một."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "units-and-magnitudes",
+    "signed-arithmetic"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.1, p. 14",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L02 · release 1.1",
+      "kind": "algocore"
+    }
+  ],
+  "visualId": "VIS-P1-L02",
+  "contractCoverage": {
+    "B01": [
+      "P1-L02-objectives"
+    ],
+    "B02": [
+      "P1-L02-theory"
+    ],
+    "B03": [
+      "P1-L02-rules"
+    ],
+    "B04": [
+      "P1-L02-recognise"
+    ],
+    "B05": [
+      "P1-L02-worked"
+    ],
+    "B06": [
+      "VIS-P1-L02"
+    ],
+    "B07": [
+      "P1-L02-CHECK-REQ-1.1-02-01",
+      "P1-L02-CHECK-REQ-1.1-02-02",
+      "P1-L02-CHECK-REQ-1.1-03-01",
+      "P1-L02-CHECK-REQ-1.1-06-01"
+    ],
+    "B08": [
+      "P1-L02-misconceptions"
+    ],
+    "B09": [
+      "P1-L02-recall"
+    ],
+    "B10": [
+      "P1-L02-glossary"
+    ],
+    "B11": [
+      "P1-L02-sources"
+    ]
+  }
+}

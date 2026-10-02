@@ -1,0 +1,1239 @@
+{
+  "schemaVersion": 1,
+  "selection": "representative-final-frame",
+  "itemCount": 56,
+  "items": [
+    {
+      "id": "BOOK-C01-P007-SI-PREFIXES",
+      "lessonId": "P1-L01",
+      "visualId": "VIS-P1-L01",
+      "role": "required",
+      "title": {
+        "en": "Decimal SI prefixes",
+        "vi": "Tiền tố SI"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study decimal si prefixes.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát tiền tố si."
+      },
+      "source": {
+        "printedPage": 7,
+        "label": "Table 1.1"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P007-SI-PREFIXES.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P007-SI-PREFIXES.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P007-IEC-PREFIXES",
+      "lessonId": "P1-L01",
+      "visualId": "VIS-P1-L01",
+      "role": "required",
+      "title": {
+        "en": "Binary IEC prefixes",
+        "vi": "Tiền tố IEC"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study binary iec prefixes.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát tiền tố iec."
+      },
+      "source": {
+        "printedPage": 7,
+        "label": "Table 1.2"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P007-IEC-PREFIXES.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P007-IEC-PREFIXES.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P001-HEX-PRACTICE",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Hexadecimal place-value warm-up",
+        "vi": "Các cột hexadecimal"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study hexadecimal place-value warm-up.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát các cột hexadecimal."
+      },
+      "source": {
+        "printedPage": 1,
+        "label": "What you should already know Q3–4"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P001-HEX-PRACTICE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P001-HEX-PRACTICE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P002-DECIMAL-COLUMNS",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Denary place values",
+        "vi": "Trọng số thập phân"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study denary place values.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát trọng số thập phân."
+      },
+      "source": {
+        "printedPage": 2,
+        "label": "Unnumbered denary place-value table"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P002-DECIMAL-COLUMNS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P002-DECIMAL-COLUMNS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P002-BINARY-COLUMNS",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Binary place values",
+        "vi": "Trọng số nhị phân"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study binary place values.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát trọng số nhị phân."
+      },
+      "source": {
+        "printedPage": 2,
+        "label": "Unnumbered binary weightings and 238 example"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P002-BINARY-COLUMNS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P002-BINARY-COLUMNS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P003-WEIGHT-CONVERSION",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Conversion by weights",
+        "vi": "Đổi số bằng trọng số"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study conversion by weights.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát đổi số bằng trọng số."
+      },
+      "source": {
+        "printedPage": 3,
+        "label": "Method 1; Activity 1A–1B"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P003-WEIGHT-CONVERSION.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P003-WEIGHT-CONVERSION.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P003-DIVISION-CONVERSION",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Repeated division and remainders",
+        "vi": "Chia hai và đọc số dư"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study repeated division and remainders.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát chia hai và đọc số dư."
+      },
+      "source": {
+        "printedPage": 3,
+        "label": "Method 2 division ladder"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P003-DIVISION-CONVERSION.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P003-DIVISION-CONVERSION.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P007-HEX-WEIGHTS",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Hexadecimal weights",
+        "vi": "Trọng số hệ 16"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study hexadecimal weights.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát trọng số hệ 16."
+      },
+      "source": {
+        "printedPage": 7,
+        "label": "Unnumbered hex weights"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P007-HEX-WEIGHTS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P007-HEX-WEIGHTS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P008-RADIX-TABLE",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Binary–hex–denary lookup",
+        "vi": "Bảng binary–hex–denary"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study binary–hex–denary lookup.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bảng binary–hex–denary."
+      },
+      "source": {
+        "printedPage": 8,
+        "label": "Table 1.3"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P008-RADIX-TABLE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P008-RADIX-TABLE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P008-GROUP-BE1",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Four-bit groups ↔ hex",
+        "vi": "Nhóm 4 bit ↔ hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study four-bit groups ↔ hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát nhóm 4 bit ↔ hex."
+      },
+      "source": {
+        "printedPage": 8,
+        "label": "Example 1.5"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P008-GROUP-BE1.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P008-GROUP-BE1.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P008-PAD-21FD",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Four-bit groups ↔ hex",
+        "vi": "Nhóm 4 bit ↔ hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study four-bit groups ↔ hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát nhóm 4 bit ↔ hex."
+      },
+      "source": {
+        "printedPage": 8,
+        "label": "Example 1.6"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P008-PAD-21FD.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P008-PAD-21FD.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P009-HEX-45A",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Four-bit groups ↔ hex",
+        "vi": "Nhóm 4 bit ↔ hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study four-bit groups ↔ hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát nhóm 4 bit ↔ hex."
+      },
+      "source": {
+        "printedPage": 9,
+        "label": "Example 1.7"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P009-HEX-45A.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P009-HEX-45A.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P009-HEX-BF08",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Four-bit groups ↔ hex",
+        "vi": "Nhóm 4 bit ↔ hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study four-bit groups ↔ hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát nhóm 4 bit ↔ hex."
+      },
+      "source": {
+        "printedPage": 9,
+        "label": "Example 1.8"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P009-HEX-BF08.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P009-HEX-BF08.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P009-HEX-ACTIVITY",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Four-bit groups ↔ hex",
+        "vi": "Nhóm 4 bit ↔ hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study four-bit groups ↔ hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát nhóm 4 bit ↔ hex."
+      },
+      "source": {
+        "printedPage": 9,
+        "label": "Activity 1E"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P009-HEX-ACTIVITY.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P009-HEX-ACTIVITY.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P010-BINARY-ACTIVITY",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Four-bit groups ↔ hex",
+        "vi": "Nhóm 4 bit ↔ hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study four-bit groups ↔ hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát nhóm 4 bit ↔ hex."
+      },
+      "source": {
+        "printedPage": 10,
+        "label": "Activity 1F"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P010-BINARY-ACTIVITY.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P010-BINARY-ACTIVITY.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P009-MEMORY-NOTATION",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Why memory dumps use hex",
+        "vi": "Vì sao dùng hex cho memory dump"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study why memory dumps use hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát vì sao dùng hex cho memory dump."
+      },
+      "source": {
+        "printedPage": 9,
+        "label": "Unnumbered memory-dump binary/hex comparison"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P009-MEMORY-NOTATION.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P009-MEMORY-NOTATION.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P010-MEMORY-DUMP",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "Addresses and bytes in a memory dump",
+        "vi": "Địa chỉ và byte trong memory dump"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study addresses and bytes in a memory dump.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát địa chỉ và byte trong memory dump."
+      },
+      "source": {
+        "printedPage": 10,
+        "label": "Table 1.4"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P010-MEMORY-DUMP.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P010-MEMORY-DUMP.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P010-BCD-DIGITS",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "The ten legal BCD digits",
+        "vi": "10 chữ số BCD hợp lệ"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study the ten legal bcd digits.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát 10 chữ số bcd hợp lệ."
+      },
+      "source": {
+        "printedPage": 10,
+        "label": "Unnumbered BCD digit table"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P010-BCD-DIGITS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P010-BCD-DIGITS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P010-BCD-PACKING",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "Packed and unpacked BCD",
+        "vi": "BCD đóng gói và chưa đóng gói"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study packed and unpacked bcd.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bcd đóng gói và chưa đóng gói."
+      },
+      "source": {
+        "printedPage": 10,
+        "label": "Method 1 four bytes; Method 2 two bytes; Activity 1G"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P010-BCD-PACKING.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P010-BCD-PACKING.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P011-BCD-DISPLAY",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "required",
+      "title": {
+        "en": "BCD and seven-segment display",
+        "vi": "BCD và hiển thị bảy đoạn"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study bcd and seven-segment display.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bcd và hiển thị bảy đoạn."
+      },
+      "source": {
+        "printedPage": 11,
+        "label": "Unnumbered calculator/clock display"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P011-BCD-DISPLAY.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P011-BCD-DISPLAY.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P011-BCD-CENTS",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "BCD: hundredths carry",
+        "vi": "BCD: carry ở phần trăm"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study bcd: hundredths carry.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bcd: carry ở phần trăm."
+      },
+      "source": {
+        "printedPage": 11,
+        "label": "Unnumbered $0.37+$0.94 columns and correction"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P011-BCD-CENTS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P011-BCD-CENTS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P012-BCD-CARRY",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "supporting",
+      "title": {
+        "en": "BCD: carry to the next digit",
+        "vi": "BCD: truyền carry sang chữ số kế"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study bcd: carry to the next digit.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bcd: truyền carry sang chữ số kế."
+      },
+      "source": {
+        "printedPage": 12,
+        "label": "Unnumbered tenths carry/final answer; Activity 1H"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P012-BCD-CARRY.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P012-BCD-CARRY.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P025-EXAM-BCD",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "extension",
+      "title": {
+        "en": "Read BCD bit groups",
+        "vi": "Đọc nhóm bit BCD"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study read bcd bit groups.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát đọc nhóm bit bcd."
+      },
+      "source": {
+        "printedPage": 25,
+        "label": "End-of-chapter Q1b BCD strip"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P025-EXAM-BCD.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P025-EXAM-BCD.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P026-EXAM-HEX-STRIP",
+      "lessonId": "P1-L02",
+      "visualId": "VIS-P1-L02",
+      "role": "extension",
+      "title": {
+        "en": "Read a bit strip as hex",
+        "vi": "Đọc dải bit thành hex"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study read a bit strip as hex.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát đọc dải bit thành hex."
+      },
+      "source": {
+        "printedPage": 26,
+        "label": "End-of-chapter Q5b binary strip"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P026-EXAM-HEX-STRIP.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P026-EXAM-HEX-STRIP.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P001-BINARY-PRACTICE",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "supporting",
+      "title": {
+        "en": "Binary addition warm-up",
+        "vi": "Ôn phép cộng nhị phân"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study binary addition warm-up.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát ôn phép cộng nhị phân."
+      },
+      "source": {
+        "printedPage": 1,
+        "label": "What you should already know Q2"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P001-BINARY-PRACTICE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P001-BINARY-PRACTICE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P003-COMPLEMENT-90",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "required",
+      "title": {
+        "en": "Invert and add one",
+        "vi": "Đảo bit rồi cộng một"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study invert and add one.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát đảo bit rồi cộng một."
+      },
+      "source": {
+        "printedPage": 3,
+        "label": "Unnumbered ones/twos-complement 90 example"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P003-COMPLEMENT-90.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P003-COMPLEMENT-90.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P003-SIGNED-WEIGHTS",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "required",
+      "title": {
+        "en": "Negative leading weight",
+        "vi": "Trọng số −128 của bù hai"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study negative leading weight.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát trọng số −128 của bù hai."
+      },
+      "source": {
+        "printedPage": 3,
+        "label": "Unnumbered signed-weight row"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P003-SIGNED-WEIGHTS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P003-SIGNED-WEIGHTS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P004-SIGNED-38",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "supporting",
+      "title": {
+        "en": "Encodings of ±38",
+        "vi": "Hai mẫu bit của ±38"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study encodings of ±38.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát hai mẫu bit của ±38."
+      },
+      "source": {
+        "printedPage": 4,
+        "label": "Unnumbered signed-number columns; Activity 1C"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P004-SIGNED-38.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P004-SIGNED-38.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P004-COMPLEMENT-104",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "supporting",
+      "title": {
+        "en": "Two’s complement of 104",
+        "vi": "Bù hai của 104"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study two’s complement of 104.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bù hai của 104."
+      },
+      "source": {
+        "printedPage": 4,
+        "label": "Unnumbered −104 conversion"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P004-COMPLEMENT-104.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P004-COMPLEMENT-104.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P004-ADD-37-58",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "required",
+      "title": {
+        "en": "Signed addition without overflow",
+        "vi": "Cộng có dấu không tràn"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study signed addition without overflow.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát cộng có dấu không tràn."
+      },
+      "source": {
+        "printedPage": 4,
+        "label": "Example 1.1"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P004-ADD-37-58.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P004-ADD-37-58.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P005-OVERFLOW",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "required",
+      "title": {
+        "en": "Overflow from two positive operands",
+        "vi": "Tràn khi cộng hai số dương"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study overflow from two positive operands.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát tràn khi cộng hai số dương."
+      },
+      "source": {
+        "printedPage": 5,
+        "label": "Example 1.2"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P005-OVERFLOW.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P005-OVERFLOW.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P005-SUBTRACT-POSITIVE",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "required",
+      "title": {
+        "en": "Subtraction using two’s complement",
+        "vi": "Trừ bằng cộng bù hai"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study subtraction using two’s complement.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát trừ bằng cộng bù hai."
+      },
+      "source": {
+        "printedPage": 5,
+        "label": "Example 1.3"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P005-SUBTRACT-POSITIVE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P005-SUBTRACT-POSITIVE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P006-SUBTRACT-NEGATIVE",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "required",
+      "title": {
+        "en": "Negative subtraction result",
+        "vi": "Kết quả phép trừ âm"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study negative subtraction result.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát kết quả phép trừ âm."
+      },
+      "source": {
+        "printedPage": 6,
+        "label": "Example 1.4; Activity 1D"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P006-SUBTRACT-NEGATIVE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P006-SUBTRACT-NEGATIVE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P026-EXAM-ARITHMETIC",
+      "lessonId": "P1-L03",
+      "visualId": "VIS-P1-L03",
+      "role": "extension",
+      "title": {
+        "en": "Trace arithmetic overflow",
+        "vi": "Theo dõi overflow của bài tập"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study trace arithmetic overflow.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát theo dõi overflow của bài tập."
+      },
+      "source": {
+        "printedPage": 26,
+        "label": "End-of-chapter Q4d vertical binary addition"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P026-EXAM-ARITHMETIC.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P026-EXAM-ARITHMETIC.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P013-ASCII",
+      "lessonId": "P1-L04",
+      "visualId": "VIS-P1-L04",
+      "role": "required",
+      "title": {
+        "en": "ASCII reference table",
+        "vi": "Bảng ASCII có thể tra cứu"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study ascii reference table.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bảng ascii có thể tra cứu."
+      },
+      "source": {
+        "printedPage": 13,
+        "label": "Table 1.5"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P013-ASCII.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P013-ASCII.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P013-ASCII-CASE",
+      "lessonId": "P1-L04",
+      "visualId": "VIS-P1-L04",
+      "role": "required",
+      "title": {
+        "en": "ASCII upper/lowercase bit difference",
+        "vi": "Chữ hoa và chữ thường trong ASCII"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study ascii upper/lowercase bit difference.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát chữ hoa và chữ thường trong ascii."
+      },
+      "source": {
+        "printedPage": 13,
+        "label": "Unnumbered a/A/y/Y comparison"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P013-ASCII-CASE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P013-ASCII-CASE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P014-EXTENDED-ASCII",
+      "lessonId": "P1-L04",
+      "visualId": "VIS-P1-L04",
+      "role": "required",
+      "title": {
+        "en": "A named 8-bit extension: CP437",
+        "vi": "Một bảng mở rộng: CP437"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study a named 8-bit extension: cp437.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát một bảng mở rộng: cp437."
+      },
+      "source": {
+        "printedPage": 14,
+        "label": "Table 1.6"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P014-EXTENDED-ASCII.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P014-EXTENDED-ASCII.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P015-UNICODE",
+      "lessonId": "P1-L04",
+      "visualId": "VIS-P1-L04",
+      "role": "required",
+      "title": {
+        "en": "Unicode code-point chart",
+        "vi": "Mẫu Unicode theo code point"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study unicode code-point chart.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát mẫu unicode theo code point."
+      },
+      "source": {
+        "printedPage": 15,
+        "label": "Table 1.7"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P015-UNICODE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P015-UNICODE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P015-RGB-SUBPIXELS",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "required",
+      "title": {
+        "en": "RGB subpixel arrangements",
+        "vi": "Bố trí thành phần RGB"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study rgb subpixel arrangements.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát bố trí thành phần rgb."
+      },
+      "source": {
+        "printedPage": 15,
+        "label": "Unnumbered RGB stripe and dot icons"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P015-RGB-SUBPIXELS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P015-RGB-SUBPIXELS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P016-DIGITAL-PHOTO",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "required",
+      "title": {
+        "en": "A pixel-based image",
+        "vi": "Ảnh tạo từ pixel"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study a pixel-based image.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát ảnh tạo từ pixel."
+      },
+      "source": {
+        "printedPage": 16,
+        "label": "Figure 1.1"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P016-DIGITAL-PHOTO.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P016-DIGITAL-PHOTO.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P016-CROP-ROTATE",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "supporting",
+      "title": {
+        "en": "Crop and rotate by 90°",
+        "vi": "Cắt ảnh và xoay 90°"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study crop and rotate by 90°.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát cắt ảnh và xoay 90°."
+      },
+      "source": {
+        "printedPage": 16,
+        "label": "Figure 1.2"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P016-CROP-ROTATE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P016-CROP-ROTATE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P017-WHEEL-RESOLUTION",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "required",
+      "title": {
+        "en": "Five wheel-detail levels",
+        "vi": "Năm mức chi tiết bánh xe"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study five wheel-detail levels.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát năm mức chi tiết bánh xe."
+      },
+      "source": {
+        "printedPage": 17,
+        "label": "Figure 1.3 panels A–E"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P017-WHEEL-RESOLUTION.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P017-WHEEL-RESOLUTION.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P017-BITMAP-SIZE",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "required",
+      "title": {
+        "en": "Bitmap dimensions and payload",
+        "vi": "Hình học và kích thước bitmap"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study bitmap dimensions and payload.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát hình học và kích thước bitmap."
+      },
+      "source": {
+        "printedPage": 17,
+        "label": "Unnumbered PPI/file-size worked example; Extension 1C"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P017-BITMAP-SIZE.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P017-BITMAP-SIZE.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P017-PIXEL-DENSITY",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "extension",
+      "title": {
+        "en": "Diagonal and pixel density",
+        "vi": "Đường chéo và mật độ pixel"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study diagonal and pixel density.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát đường chéo và mật độ pixel."
+      },
+      "source": {
+        "printedPage": 17,
+        "label": "Unnumbered 1920×1080 / 5.5-inch PPI calculation"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P017-PIXEL-DENSITY.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P017-PIXEL-DENSITY.svg"
+      }
+    },
+    {
+      "id": "BOOK-C03-P082-RGB-PIXEL",
+      "lessonId": "P1-L05",
+      "visualId": "VIS-P1-L05",
+      "role": "extension",
+      "title": {
+        "en": "RGB pixel: three-subpixel mixing",
+        "vi": "Pixel RGB: trộn ba subpixel"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study rgb pixel: three-subpixel mixing.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát pixel rgb: trộn ba subpixel."
+      },
+      "source": {
+        "printedPage": 82,
+        "label": "Figure 3.18"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C03-P082-RGB-PIXEL.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C03-P082-RGB-PIXEL.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P018-VECTOR-ROBOT",
+      "lessonId": "P1-L06",
+      "visualId": "VIS-P1-L06",
+      "role": "required",
+      "title": {
+        "en": "Vector robot from geometric shapes",
+        "vi": "Robot vector từ hình học"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study vector robot from geometric shapes.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát robot vector từ hình học."
+      },
+      "source": {
+        "printedPage": 18,
+        "label": "Figure 1.4"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P018-VECTOR-ROBOT.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P018-VECTOR-ROBOT.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P018-VECTOR-BITMAP",
+      "lessonId": "P1-L06",
+      "visualId": "VIS-P1-L06",
+      "role": "required",
+      "title": {
+        "en": "Vector and bitmap structures",
+        "vi": "So sánh cấu trúc vector và bitmap"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study vector and bitmap structures.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát so sánh cấu trúc vector và bitmap."
+      },
+      "source": {
+        "printedPage": 18,
+        "label": "Table 1.8"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P018-VECTOR-BITMAP.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P018-VECTOR-BITMAP.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P019-WAVE-FREQUENCY",
+      "lessonId": "P1-L07",
+      "visualId": "VIS-P1-L07",
+      "role": "required",
+      "title": {
+        "en": "High and low signal frequency",
+        "vi": "Tần số sóng cao và thấp"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study high and low signal frequency.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát tần số sóng cao và thấp."
+      },
+      "source": {
+        "printedPage": 19,
+        "label": "Figure 1.5 both wave panels"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P019-WAVE-FREQUENCY.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P019-WAVE-FREQUENCY.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P019-WAVE-SAMPLES",
+      "lessonId": "P1-L07",
+      "visualId": "VIS-P1-L07",
+      "role": "required",
+      "title": {
+        "en": "Sampling sound amplitude",
+        "vi": "Lấy mẫu biên độ sóng âm"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study sampling sound amplitude.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát lấy mẫu biên độ sóng âm."
+      },
+      "source": {
+        "printedPage": 19,
+        "label": "Figure 1.6"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P019-WAVE-SAMPLES.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P019-WAVE-SAMPLES.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P020-SAMPLING-TRADEOFF",
+      "lessonId": "P1-L07",
+      "visualId": "VIS-P1-L07",
+      "role": "required",
+      "title": {
+        "en": "Sampling-resolution trade-offs",
+        "vi": "Đánh đổi khi tăng sampling resolution"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study sampling-resolution trade-offs.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát đánh đổi khi tăng sampling resolution."
+      },
+      "source": {
+        "printedPage": 20,
+        "label": "Table 1.9"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P020-SAMPLING-TRADEOFF.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P020-SAMPLING-TRADEOFF.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P023-RLE-TEXT",
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "role": "required",
+      "title": {
+        "en": "Run-length encoding of text",
+        "vi": "RLE cho chuỗi ký tự"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study run-length encoding of text.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát rle cho chuỗi ký tự."
+      },
+      "source": {
+        "printedPage": 23,
+        "label": "Unnumbered character/count-code strip"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P023-RLE-TEXT.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P023-RLE-TEXT.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P023-RLE-FLAG",
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "role": "supporting",
+      "title": {
+        "en": "Flag-based RLE",
+        "vi": "RLE với cờ escape"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study flag-based rle.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát rle với cờ escape."
+      },
+      "source": {
+        "printedPage": 23,
+        "label": "Unnumbered 32-character table and flag stream"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P023-RLE-FLAG.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P023-RLE-FLAG.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P023-RLE-MONO",
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "role": "required",
+      "title": {
+        "en": "RLE for a monochrome image",
+        "vi": "RLE cho hình đen trắng"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study rle for a monochrome image.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát rle cho hình đen trắng."
+      },
+      "source": {
+        "printedPage": 23,
+        "label": "Figure 1.7"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P023-RLE-MONO.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P023-RLE-MONO.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P024-RLE-COLOUR",
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "role": "required",
+      "title": {
+        "en": "RLE for a colour image",
+        "vi": "RLE cho hình nhiều màu"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study rle for a colour image.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát rle cho hình nhiều màu."
+      },
+      "source": {
+        "printedPage": 24,
+        "label": "Figure 1.8"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P024-RLE-COLOUR.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P024-RLE-COLOUR.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P024-COMPRESSION-METHODS",
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "role": "required",
+      "title": {
+        "en": "Data-size reduction diagram",
+        "vi": "Sơ đồ giảm kích thước dữ liệu"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study data-size reduction diagram.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát sơ đồ giảm kích thước dữ liệu."
+      },
+      "source": {
+        "printedPage": 24,
+        "label": "Figure 1.9"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P024-COMPRESSION-METHODS.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P024-COMPRESSION-METHODS.svg"
+      }
+    },
+    {
+      "id": "BOOK-C01-P026-EXAM-RLE-GRID",
+      "lessonId": "P1-L08",
+      "visualId": "VIS-P1-L08",
+      "role": "extension",
+      "title": {
+        "en": "End-of-chapter RLE grid",
+        "vi": "Lưới RLE của bài tập cuối chương"
+      },
+      "description": {
+        "en": "Use this complete representative frame to study end-of-chapter rle grid.",
+        "vi": "Dùng frame đại diện hoàn chỉnh này để quan sát lưới rle của bài tập cuối chương."
+      },
+      "source": {
+        "printedPage": 26,
+        "label": "End-of-chapter Q3c grey/white grid"
+      },
+      "preview": {
+        "en": "/paper1/atlas/en/BOOK-C01-P026-EXAM-RLE-GRID.svg",
+        "vi": "/paper1/atlas/vi/BOOK-C01-P026-EXAM-RLE-GRID.svg"
+      }
+    }
+  ]
+}

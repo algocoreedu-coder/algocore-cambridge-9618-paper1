@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.1.0",
+  "lessonId": "P1-L04",
+  "slug": "character-encoding",
+  "sectionId": "1",
+  "strandId": "1.1",
+  "title": {
+    "en": "Character encoding",
+    "vi": "Mã hóa ký tự"
+  },
+  "question": {
+    "en": "Why is a Unicode character not a fixed number of bytes?",
+    "vi": "Vì sao một ký tự Unicode không có số byte cố định?"
+  },
+  "opening": {
+    "en": "A character set assigns values; an encoding turns those values into bytes.",
+    "vi": "Bộ ký tự gán giá trị; encoding biến các giá trị đó thành byte."
+  },
+  "objectives": [
+    {
+      "id": "AC26-1.1-07",
+      "text": {
+        "en": "Understand character sets and character representation.",
+        "vi": "Hiểu bộ ký tự và cách biểu diễn ký tự."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-1.1-07-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L04-theory",
+      "title": {
+        "en": "Character, code point and bytes",
+        "vi": "Ký tự, code point và byte"
+      },
+      "paragraphs": [
+        {
+          "en": "ASCII includes standard mappings such as A = denary 65. Named extensions differ, so there is no single universal extended ASCII.",
+          "vi": "ASCII có ánh xạ chuẩn như A = số thập phân 65. Các extension có tên khác nhau nên không có một extended ASCII duy nhất."
+        },
+        {
+          "en": "Unicode assigns code points such as U+00E9 to é. UTF-8 encodes U+00E9 as bytes C3 A9; Unicode is not always 16-bit.",
+          "vi": "Unicode gán code point như U+00E9 cho é. UTF-8 mã hóa U+00E9 thành byte C3 A9; Unicode không phải luôn 16-bit."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Name the character set/code point layer separately from the byte encoding.",
+          "vi": "Tách tầng bộ ký tự/code point khỏi encoding thành byte."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C01"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Follow é to bytes",
+      "vi": "Theo dõi é tới byte"
+    },
+    "prompt": {
+      "en": "Name each representation layer.",
+      "vi": "Gọi tên từng tầng biểu diễn."
+    },
+    "steps": [
+      {
+        "id": "s1",
+        "action": {
+          "en": "Identify the character.",
+          "vi": "Xác định ký tự."
+        },
+        "result": {
+          "en": "é",
+          "vi": "é"
+        }
+      },
+      {
+        "id": "s2",
+        "action": {
+          "en": "Find its Unicode code point.",
+          "vi": "Tìm Unicode code point."
+        },
+        "result": {
+          "en": "U+00E9",
+          "vi": "U+00E9"
+        }
+      },
+      {
+        "id": "s3",
+        "action": {
+          "en": "Encode in UTF-8.",
+          "vi": "Mã hóa bằng UTF-8."
+        },
+        "result": {
+          "en": "C3 A9",
+          "vi": "C3 A9"
+        }
+      }
+    ],
+    "result": {
+      "en": "One code point uses two UTF-8 bytes in this example.",
+      "vi": "Trong ví dụ này, một code point dùng hai byte UTF-8."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Character set, code point and encoding name different layers.",
+        "vi": "Character set, code point và encoding gọi tên các tầng khác nhau."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the repertoire.",
+        "vi": "Nêu bộ ký tự."
+      },
+      {
+        "en": "Identify the code point.",
+        "vi": "Xác định code point."
+      },
+      {
+        "en": "Apply the requested encoding.",
+        "vi": "Áp dụng encoding được yêu cầu."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Unicode always uses 16 bits per character.",
+          "vi": "Unicode luôn dùng 16 bit mỗi ký tự."
+        },
+        "correction": {
+          "en": "Unicode defines code points; byte length depends on the encoding.",
+          "vi": "Unicode định nghĩa code point; số byte phụ thuộc encoding."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L04-CHECK-REQ-1.1-07-01",
+      "requirementId": "REQ-1.1-07-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "A supplied table gives A = ASCII decimal 65; é = CP437 decimal 130; é = Unicode U+00E9. Write the 8-bit binary code for A in ASCII and é in CP437, state the Unicode code point for é, and explain why ‘extended ASCII’ must name an encoding.",
+        "vi": "Bảng cho sẵn: A = ASCII thập phân 65; é = CP437 thập phân 130; é = Unicode U+00E9. Viết mã binary 8-bit của A trong ASCII và é trong CP437, nêu Unicode code point của é, rồi giải thích vì sao ‘extended ASCII’ phải nêu tên encoding."
+      },
+      "hint": {
+        "en": "Convert the supplied denary values; do not memorise character codes.",
+        "vi": "Đổi các giá trị denary đã cho; không cần học thuộc mã ký tự."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A is 01000001 in 8-bit ASCII; é is 10000010 in CP437; its Unicode code point is U+00E9. Values 128–255 differ between named 8-bit encodings, so ‘extended ASCII’ alone is ambiguous; a Unicode code point is also distinct from its byte encoding.",
+          "vi": "A là 01000001 trong ASCII 8-bit; é là 10000010 trong CP437; Unicode code point của nó là U+00E9. Các giá trị 128–255 khác nhau giữa các encoding 8-bit có tên, nên chỉ nói ‘extended ASCII’ là mơ hồ; Unicode code point cũng khác byte encoding."
+        },
+        "rubric": [
+          {
+            "en": "Gives 01000001 for A.",
+            "vi": "Nêu 01000001 cho A."
+          },
+          {
+            "en": "Gives 10000010 for é in CP437.",
+            "vi": "Nêu 10000010 cho é trong CP437."
+          },
+          {
+            "en": "Gives U+00E9.",
+            "vi": "Nêu U+00E9."
+          },
+          {
+            "en": "Explains why the named extended encoding matters.",
+            "vi": "Giải thích vì sao phải nêu tên extended encoding."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "ascii",
+        "extended-ascii",
+        "named-encoding",
+        "unicode"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Recall the three layers for é in UTF-8.",
+      "vi": "Nhớ lại ba tầng cho é trong UTF-8."
+    },
+    "answerPoints": [
+      {
+        "en": "Character é.",
+        "vi": "Ký tự é."
+      },
+      {
+        "en": "Code point U+00E9.",
+        "vi": "Code point U+00E9."
+      },
+      {
+        "en": "UTF-8 bytes C3 A9.",
+        "vi": "Byte UTF-8 C3 A9."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "character set",
+      "meaning": {
+        "en": "A defined repertoire and mapping.",
+        "vi": "Một tập hợp và ánh xạ được định nghĩa."
+      }
+    },
+    {
+      "term": "code point",
+      "meaning": {
+        "en": "A number assigned to a Unicode character.",
+        "vi": "Một số được gán cho ký tự Unicode."
+      }
+    },
+    {
+      "term": "encoding",
+      "meaning": {
+        "en": "Rules that turn values into bytes.",
+        "vi": "Quy tắc biến giá trị thành byte."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "number-systems"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §1.1, p. 14",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L04 · release 1.1",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C01",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 1, pp. 13–15: ASCII table, extended ASCII and Unicode figures",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L04",
+  "contractCoverage": {
+    "B01": [
+      "P1-L04-objectives"
+    ],
+    "B02": [
+      "P1-L04-theory"
+    ],
+    "B03": [
+      "P1-L04-rules"
+    ],
+    "B04": [
+      "P1-L04-recognise"
+    ],
+    "B05": [
+      "P1-L04-worked"
+    ],
+    "B06": [
+      "VIS-P1-L04"
+    ],
+    "B07": [
+      "P1-L04-CHECK-REQ-1.1-07-01"
+    ],
+    "B08": [
+      "P1-L04-misconceptions"
+    ],
+    "B09": [
+      "P1-L04-recall"
+    ],
+    "B10": [
+      "P1-L04-glossary"
+    ],
+    "B11": [
+      "P1-L04-sources"
+    ]
+  }
+}

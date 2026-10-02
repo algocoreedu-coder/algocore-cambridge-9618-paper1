@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+*.log
+.env*
+!.env.example
+.codex-runtime/
+.codex_tmp/
+tmp/
+__pycache__/
+*.py[cod]
+.vercel/
