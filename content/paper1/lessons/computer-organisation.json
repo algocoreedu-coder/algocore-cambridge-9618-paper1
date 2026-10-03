@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L19",
+  "slug": "computer-organisation",
+  "sectionId": "3",
+  "strandId": "3.1",
+  "title": {
+    "en": "Input, output, storage and buffers",
+    "vi": "Input, output, lưu trữ và buffer"
+  },
+  "question": {
+    "en": "Where is data held while hardware works at different speeds?",
+    "vi": "Dữ liệu được giữ ở đâu khi các phần cứng làm việc với tốc độ khác nhau?"
+  },
+  "opening": {
+    "en": "A computer moves data between input devices, primary memory, processing, output devices and secondary storage. Buffers keep unequal producer and consumer rates from losing data immediately.",
+    "vi": "Máy tính di chuyển dữ liệu giữa thiết bị input, primary memory, processing, thiết bị output và secondary storage. Buffer giúp hai phía có tốc độ khác nhau không làm mất dữ liệu ngay lập tức."
+  },
+  "objectives": [
+    {
+      "id": "AC26-3.1-01",
+      "text": {
+        "en": "Explain why computer systems need input, output, primary memory and secondary or removable storage.",
+        "vi": "Giải thích vì sao hệ thống cần input, output, primary memory và secondary/removable storage."
+      }
+    },
+    {
+      "id": "AC26-3.1-04",
+      "text": {
+        "en": "Explain how a buffer temporarily holds data between components operating at different rates.",
+        "vi": "Giải thích buffer tạm giữ dữ liệu giữa các thành phần hoạt động ở tốc độ khác nhau."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-3.1-01-01",
+    "REQ-3.1-04-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L19-theory-1",
+      "title": {
+        "en": "A complete data path",
+        "vi": "Một data path hoàn chỉnh"
+      },
+      "paragraphs": [
+        {
+          "en": "Input devices capture data or commands. Primary memory holds instructions and data currently needed by the processor. Output devices present results to a user or another system.",
+          "vi": "Thiết bị input thu nhận dữ liệu hoặc lệnh. Primary memory giữ instruction và data mà processor đang cần. Thiết bị output trình bày kết quả cho người dùng hoặc hệ thống khác."
+        },
+        {
+          "en": "Secondary storage retains programs and data beyond the current processing session. Removable storage is secondary storage that can be moved between systems.",
+          "vi": "Secondary storage giữ chương trình và dữ liệu sau phiên xử lý hiện tại. Removable storage là secondary storage có thể chuyển giữa các hệ thống."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Primary memory supports immediate processing; secondary storage provides longer-term, non-volatile capacity.",
+          "vi": "Primary memory hỗ trợ xử lý tức thời; secondary storage cung cấp dung lượng non-volatile lâu dài."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L19-theory-2",
+      "title": {
+        "en": "Why a buffer is needed",
+        "vi": "Vì sao cần buffer"
+      },
+      "paragraphs": [
+        {
+          "en": "A buffer is a reserved area of memory that temporarily stores data while it waits to be transferred or processed. It separates two components that do not produce and consume data at the same rate.",
+          "vi": "Buffer là vùng memory dành riêng để tạm giữ dữ liệu đang chờ được truyền hoặc xử lý. Nó tách hai thành phần tạo và tiêu thụ dữ liệu ở tốc độ khác nhau."
+        },
+        {
+          "en": "A printer can receive a block of document data quickly, keep it in its buffer, then print at its slower mechanical rate. A buffer absorbs a temporary rate mismatch; a finite buffer can still fill and cause waiting or a stall.",
+          "vi": "Printer có thể nhận nhanh một khối dữ liệu tài liệu, giữ trong buffer rồi in ở tốc độ cơ học chậm hơn. Buffer hấp thụ chênh lệch tốc độ tạm thời; buffer hữu hạn vẫn có thể đầy và làm hệ thống phải chờ hoặc stall."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A buffer is not the same as all primary memory and does not permanently store the file.",
+          "vi": "Buffer không đồng nghĩa với toàn bộ primary memory và không lưu file vĩnh viễn."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L19-theory-3",
+      "title": {
+        "en": "Choose storage by purpose",
+        "vi": "Chọn storage theo mục đích"
+      },
+      "paragraphs": [
+        {
+          "en": "Use primary memory for the active working set, fixed internal secondary storage for persistent local data, and removable storage when portability or offline transfer is required.",
+          "vi": "Dùng primary memory cho working set đang hoạt động, secondary storage bên trong cho dữ liệu local lâu dài và removable storage khi cần tính di động hoặc truyền offline."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace a print job",
+      "vi": "Lần theo một print job"
+    },
+    "prompt": {
+      "en": "A computer sends a large document to a laser printer that prints more slowly than the computer supplies data.",
+      "vi": "Máy tính gửi tài liệu lớn đến laser printer có tốc độ in chậm hơn tốc độ máy tính cấp dữ liệu."
+    },
+    "steps": [
+      {
+        "id": "P1-L19-worked-1",
+        "action": {
+          "en": "Locate the active document.",
+          "vi": "Xác định tài liệu đang hoạt động."
+        },
+        "result": {
+          "en": "The application and current document data are held in primary memory while the processor prepares the job.",
+          "vi": "Application và dữ liệu tài liệu hiện tại nằm trong primary memory khi processor chuẩn bị job."
+        }
+      },
+      {
+        "id": "P1-L19-worked-2",
+        "action": {
+          "en": "Follow the transfer.",
+          "vi": "Theo dõi transfer."
+        },
+        "result": {
+          "en": "Prepared print data moves to the printer and enters its finite buffer.",
+          "vi": "Dữ liệu in đã chuẩn bị đi tới printer và vào buffer hữu hạn của printer."
+        }
+      },
+      {
+        "id": "P1-L19-worked-3",
+        "action": {
+          "en": "Explain the rate mismatch.",
+          "vi": "Giải thích chênh lệch tốc độ."
+        },
+        "result": {
+          "en": "The printer consumes buffered data at its mechanical print rate; if the buffer fills, the sender must wait.",
+          "vi": "Printer tiêu thụ dữ liệu trong buffer theo tốc độ in cơ học; nếu buffer đầy, phía gửi phải chờ."
+        }
+      }
+    ],
+    "result": {
+      "en": "Input, memory, output and storage have distinct roles; the buffer is temporary coordination between unequal rates.",
+      "vi": "Input, memory, output và storage có vai trò khác nhau; buffer phối hợp tạm thời giữa các tốc độ không bằng nhau."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for a fast producer, slow consumer or bursty transfer.",
+        "vi": "Tìm phía tạo nhanh, phía tiêu thụ chậm hoặc transfer theo đợt."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the source and destination.",
+        "vi": "Gọi tên source và destination."
+      },
+      {
+        "en": "Mark where data is current, persistent or waiting.",
+        "vi": "Đánh dấu nơi dữ liệu đang hoạt động, được lưu lâu dài hoặc đang chờ."
+      },
+      {
+        "en": "State what happens when the buffer becomes empty or full.",
+        "vi": "Nêu điều xảy ra khi buffer rỗng hoặc đầy."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A larger buffer always makes the destination process data faster.",
+          "vi": "Buffer lớn hơn luôn làm destination xử lý nhanh hơn."
+        },
+        "correction": {
+          "en": "It can delay a stall by holding more waiting data, but it does not increase the consumer's physical processing rate.",
+          "vi": "Nó có thể trì hoãn stall bằng cách giữ thêm dữ liệu đang chờ nhưng không tăng tốc độ xử lý vật lý của phía tiêu thụ."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L19-recognise-1",
+        "title": {
+          "en": "Recognise the waiting point",
+          "vi": "Nhận diện điểm chờ"
+        },
+        "setup": {
+          "en": "Audio arrives from a network in bursts while playback consumes it steadily.",
+          "vi": "Audio đến từ network theo đợt còn playback tiêu thụ đều."
+        },
+        "prompt": {
+          "en": "Explain the buffer's role and one limit.",
+          "vi": "Giải thích vai trò của buffer và một giới hạn."
+        },
+        "expectedEvidence": {
+          "en": "The buffer stores early-arriving audio for later playback; playback can still stall if consumption drains it before new data arrives.",
+          "vi": "Buffer giữ audio đến sớm để playback dùng sau; playback vẫn có thể stall nếu tiêu thụ hết trước khi dữ liệu mới đến."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L19-CHECK-REQ-3.1-01-01",
+      "requirementId": "REQ-3.1-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the distinct need for input, output, primary memory and secondary storage in a ticket machine.",
+        "vi": "Giải thích nhu cầu riêng của input, output, primary memory và secondary storage trong máy bán vé."
+      },
+      "hint": {
+        "en": "Give each component a different job in the data path.",
+        "vi": "Gán cho mỗi thành phần một nhiệm vụ khác nhau trong data path."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Input captures selections and payment data; primary memory holds the active program and current transaction; output presents instructions and the ticket; secondary storage retains software, fares or transaction records when power is removed.",
+          "vi": "Input thu nhận lựa chọn và dữ liệu thanh toán; primary memory giữ chương trình đang chạy và giao dịch hiện tại; output trình bày hướng dẫn và vé; secondary storage giữ software, giá vé hoặc record giao dịch khi mất điện."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "input",
+        "output",
+        "primary-memory",
+        "secondary-storage"
+      ]
+    },
+    {
+      "id": "P1-L19-CHECK-REQ-3.1-04-01",
+      "requirementId": "REQ-3.1-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "A computer sends data to a printer faster than pages can be produced. Explain how the printer buffer helps and what happens if it fills.",
+        "vi": "Máy tính gửi dữ liệu tới printer nhanh hơn tốc độ in trang. Giải thích buffer giúp thế nào và điều gì xảy ra nếu đầy."
+      },
+      "hint": {
+        "en": "Describe temporary storage and both producer and consumer.",
+        "vi": "Mô tả lưu trữ tạm thời cùng producer và consumer."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The printer buffer temporarily queues print data so the computer can transfer a burst while the printer consumes it more slowly. If the finite buffer fills, the sender must pause or wait until space is available.",
+          "vi": "Printer buffer tạm xếp hàng dữ liệu in để máy tính gửi theo đợt trong khi printer tiêu thụ chậm hơn. Nếu buffer hữu hạn đầy, phía gửi phải tạm dừng hoặc chờ có chỗ trống."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "buffer",
+        "rate-mismatch"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the job of input, output, primary memory, secondary storage and a buffer.",
+      "vi": "Nêu nhiệm vụ của input, output, primary memory, secondary storage và buffer."
+    },
+    "answerPoints": [
+      {
+        "en": "Input captures; output presents; primary memory holds the active working set; secondary storage persists; a buffer temporarily queues a transfer.",
+        "vi": "Input thu nhận; output trình bày; primary memory giữ working set; secondary storage lưu lâu dài; buffer tạm xếp hàng transfer."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "primary memory",
+      "meaning": {
+        "en": "Memory directly used for active instructions and data.",
+        "vi": "Memory được dùng trực tiếp cho instruction và data đang hoạt động."
+      }
+    },
+    {
+      "term": "secondary storage",
+      "meaning": {
+        "en": "Non-volatile storage for programs and data beyond the current session.",
+        "vi": "Storage non-volatile cho chương trình và dữ liệu ngoài phiên hiện tại."
+      }
+    },
+    {
+      "term": "buffer",
+      "meaning": {
+        "en": "Temporary memory that queues data between components or processes.",
+        "vi": "Memory tạm xếp hàng dữ liệu giữa các thành phần hoặc process."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "device-principles",
+    "memory-technologies"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §3.1, p. 17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L19 · Chapter 3 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C03",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 3, pp. 68–77",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L19",
+  "contractCoverage": {
+    "B01": [
+      "P1-L19-objectives"
+    ],
+    "B02": [
+      "P1-L19-theory-1",
+      "P1-L19-theory-2",
+      "P1-L19-theory-3"
+    ],
+    "B03": [
+      "P1-L19-rules"
+    ],
+    "B04": [
+      "P1-L19-recognise-1"
+    ],
+    "B05": [
+      "P1-L19-worked-1",
+      "P1-L19-worked-2",
+      "P1-L19-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L19"
+    ],
+    "B07": [
+      "P1-L19-CHECK-REQ-3.1-01-01",
+      "P1-L19-CHECK-REQ-3.1-04-01"
+    ],
+    "B08": [
+      "P1-L19-misconceptions"
+    ],
+    "B09": [
+      "P1-L19-recall"
+    ],
+    "B10": [
+      "P1-L19-glossary"
+    ],
+    "B11": [
+      "P1-L19-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

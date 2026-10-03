@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L21",
+  "slug": "embedded-control",
+  "sectionId": "3",
+  "strandId": "3.1",
+  "title": {
+    "en": "Embedded monitoring and control",
+    "vi": "Embedded systems, monitoring và control"
+  },
+  "question": {
+    "en": "When should a system report a change, and when should it act on it?",
+    "vi": "Khi nào hệ thống chỉ nên báo thay đổi và khi nào phải tác động lên nó?"
+  },
+  "opening": {
+    "en": "An embedded system performs a dedicated function inside a larger product. Sensors provide readings; a monitoring system records or alerts, while a control system also drives actuators and uses feedback to affect the next reading.",
+    "vi": "Embedded system thực hiện chức năng chuyên dụng bên trong sản phẩm lớn hơn. Sensor cung cấp reading; monitoring system ghi hoặc cảnh báo, còn control system điều khiển actuator và dùng feedback để ảnh hưởng reading tiếp theo."
+  },
+  "objectives": [
+    {
+      "id": "AC26-3.1-02",
+      "text": {
+        "en": "Explain benefits and drawbacks of embedded systems.",
+        "vi": "Giải thích lợi ích và hạn chế của embedded system."
+      }
+    },
+    {
+      "id": "AC26-3.1-08",
+      "text": {
+        "en": "Distinguish monitoring from control and explain sensors, actuators and feedback.",
+        "vi": "Phân biệt monitoring với control và giải thích sensor, actuator, feedback."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-3.1-02-01",
+    "REQ-3.1-08-01",
+    "REQ-3.1-08-02",
+    "REQ-3.1-08-03",
+    "REQ-3.1-08-04"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L19"
+  ],
+  "theory": [
+    {
+      "id": "P1-L21-theory-1",
+      "title": {
+        "en": "Embedded means dedicated",
+        "vi": "Embedded nghĩa là chuyên dụng"
+      },
+      "paragraphs": [
+        {
+          "en": "An embedded system combines hardware and software for a specific function within a larger device, such as controlling a washing cycle or managing anti-lock braking.",
+          "vi": "Embedded system kết hợp hardware và software cho chức năng cụ thể trong thiết bị lớn hơn, như điều khiển chu trình giặt hoặc quản lý anti-lock braking."
+        },
+        {
+          "en": "Benefits include compact size, low power use, automatic repeated operation and optimisation for one task. Drawbacks include limited upgradeability, difficult repair, dependence on the containing product and a failure that may disable a critical function.",
+          "vi": "Lợi ích gồm kích thước nhỏ, ít điện, tự động lặp lại và tối ưu cho một nhiệm vụ. Hạn chế gồm khó upgrade, khó repair, phụ thuộc sản phẩm chứa nó và lỗi có thể làm mất chức năng quan trọng."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L21-theory-2",
+      "title": {
+        "en": "Sensors make physical conditions measurable",
+        "vi": "Sensor biến điều kiện vật lý thành giá trị đo"
+      },
+      "paragraphs": [
+        {
+          "en": "Temperature, pressure, infra-red and sound sensors convert a physical condition into an electrical signal. An ADC is required when an analogue signal must be represented digitally for a processor.",
+          "vi": "Temperature, pressure, infra-red và sound sensor đổi điều kiện vật lý thành electrical signal. Cần ADC khi analogue signal phải được biểu diễn số cho processor."
+        },
+        {
+          "en": "Software samples readings, compares them with rules or set points, stores results and may generate an alert or action.",
+          "vi": "Software lấy mẫu reading, so sánh với rule hoặc set point, lưu kết quả và có thể tạo alert hoặc action."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L21-theory-3",
+      "title": {
+        "en": "Monitoring observes; control changes",
+        "vi": "Monitoring quan sát; control làm thay đổi"
+      },
+      "paragraphs": [
+        {
+          "en": "A monitoring system collects and records readings and may notify a person. It does not itself need to change the measured process.",
+          "vi": "Monitoring system thu thập và ghi reading, có thể thông báo cho người. Nó không nhất thiết tự thay đổi process đang đo."
+        },
+        {
+          "en": "A control system compares a reading with a target, sends an output to an actuator such as a motor, relay or valve, then takes another reading. The new reading is feedback showing the effect of the action.",
+          "vi": "Control system so sánh reading với target, gửi output tới actuator như motor, relay hoặc valve rồi lấy reading mới. Reading mới là feedback cho thấy tác động của action."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "At exactly the threshold, follow the stated comparison rule; do not invent an unspecified tolerance band.",
+          "vi": "Tại đúng threshold, làm theo comparison rule đã nêu; không tự tạo tolerance band chưa được cho."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Control a greenhouse temperature",
+      "vi": "Điều khiển nhiệt độ greenhouse"
+    },
+    "prompt": {
+      "en": "The target is 24 °C. The first temperature reading is 21 °C.",
+      "vi": "Target là 24 °C. Temperature reading đầu tiên là 21 °C."
+    },
+    "steps": [
+      {
+        "id": "P1-L21-worked-1",
+        "action": {
+          "en": "Acquire a reading.",
+          "vi": "Nhận reading."
+        },
+        "result": {
+          "en": "The temperature sensor produces a signal that is converted into a digital value of 21 °C.",
+          "vi": "Temperature sensor tạo signal được đổi thành digital value 21 °C."
+        }
+      },
+      {
+        "id": "P1-L21-worked-2",
+        "action": {
+          "en": "Compare with the set point.",
+          "vi": "So sánh với set point."
+        },
+        "result": {
+          "en": "21 is below 24, so the controller selects heater ON under the stated rule.",
+          "vi": "21 nhỏ hơn 24 nên controller chọn heater ON theo rule đã nêu."
+        }
+      },
+      {
+        "id": "P1-L21-worked-3",
+        "action": {
+          "en": "Act and feed back.",
+          "vi": "Act và feedback."
+        },
+        "result": {
+          "en": "A relay powers the heater; a later sensor reading is returned so the decision can be repeated.",
+          "vi": "Relay cấp điện cho heater; sensor reading sau được trả lại để lặp decision."
+        }
+      }
+    ],
+    "result": {
+      "en": "The loop is sensor → conversion → comparison → actuator → changed process → new sensor reading.",
+      "vi": "Loop là sensor → conversion → comparison → actuator → process thay đổi → sensor reading mới."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for an actuator and a return reading to distinguish closed-loop control from monitoring.",
+        "vi": "Tìm actuator và reading quay lại để phân biệt closed-loop control với monitoring."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the measured variable and sensor.",
+        "vi": "Gọi tên variable được đo và sensor."
+      },
+      {
+        "en": "State the comparison rule.",
+        "vi": "Nêu comparison rule."
+      },
+      {
+        "en": "Name the actuator and explain how feedback closes the loop.",
+        "vi": "Gọi tên actuator và giải thích feedback khép loop."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Any system with sensors is automatically a control system.",
+          "vi": "Mọi hệ thống có sensor đều tự động là control system."
+        },
+        "correction": {
+          "en": "Monitoring may only record or alert. Control requires an output that acts on the process, normally followed by feedback.",
+          "vi": "Monitoring có thể chỉ ghi hoặc cảnh báo. Control cần output tác động lên process và thường có feedback sau đó."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L21-recognise-1",
+        "title": {
+          "en": "Monitoring or control?",
+          "vi": "Monitoring hay control?"
+        },
+        "setup": {
+          "en": "A river station logs pressure-derived water level and sends an alert, but opens no gate.",
+          "vi": "Trạm sông ghi water level suy ra từ pressure và gửi alert nhưng không mở cổng."
+        },
+        "prompt": {
+          "en": "Classify the system and justify your answer.",
+          "vi": "Phân loại hệ thống và biện minh."
+        },
+        "expectedEvidence": {
+          "en": "It is monitoring: it senses, records and alerts but has no actuator changing the river system.",
+          "vi": "Đây là monitoring: hệ thống sense, record và alert nhưng không có actuator làm thay đổi hệ thống sông."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L21-CHECK-REQ-3.1-02-01",
+      "requirementId": "REQ-3.1-02-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two benefits and two drawbacks of using an embedded controller in a washing machine.",
+        "vi": "Giải thích hai lợi ích và hai hạn chế của embedded controller trong washing machine."
+      },
+      "hint": {
+        "en": "Tie every point to the dedicated appliance task.",
+        "vi": "Gắn từng ý với nhiệm vụ chuyên dụng của appliance."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The controller can be compact, low-power and reliable for automatic repeated cycles. It may be difficult to upgrade or repair, and failure of the controller can disable the whole appliance despite its limited general-purpose capability.",
+          "vi": "Controller có thể nhỏ, ít điện và tin cậy cho chu trình tự động lặp lại. Nó có thể khó upgrade hoặc repair; lỗi controller có thể làm appliance ngừng hoàn toàn dù khả năng general-purpose hạn chế."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "embedded-system"
+      ]
+    },
+    {
+      "id": "P1-L21-CHECK-REQ-3.1-08-01",
+      "requirementId": "REQ-3.1-08-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare monitoring and control using a hospital temperature system and a greenhouse heater.",
+        "vi": "So sánh monitoring và control bằng hệ thống temperature bệnh viện và heater greenhouse."
+      },
+      "hint": {
+        "en": "Identify whether the system changes the measured process.",
+        "vi": "Xác định hệ thống có làm thay đổi process được đo hay không."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Hospital monitoring samples, records and alerts staff about a patient's temperature without necessarily changing it. Greenhouse control compares temperature with a set point and operates a heater or vent to change the temperature.",
+          "vi": "Hospital monitoring lấy mẫu, ghi và cảnh báo staff về nhiệt độ bệnh nhân mà không nhất thiết thay đổi nó. Greenhouse control so sánh nhiệt độ với set point và vận hành heater hoặc vent để làm đổi nhiệt độ."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "monitoring",
+        "control"
+      ]
+    },
+    {
+      "id": "P1-L21-CHECK-REQ-3.1-08-02",
+      "requirementId": "REQ-3.1-08-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how temperature, pressure, infra-red and sound sensors could each provide input to an embedded system.",
+        "vi": "Giải thích cách temperature, pressure, infra-red và sound sensor cung cấp input cho embedded system."
+      },
+      "hint": {
+        "en": "Give one appropriate measured condition or event for each.",
+        "vi": "Nêu một điều kiện hoặc sự kiện được đo phù hợp cho mỗi loại."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A temperature sensor measures heat level; a pressure sensor measures force or fluid pressure; an infra-red sensor detects emitted/reflected IR or interruption; a sound sensor detects sound amplitude. Their signals are converted into processor-readable values or events.",
+          "vi": "Temperature sensor đo mức nhiệt; pressure sensor đo lực hoặc pressure chất lưu; infra-red sensor phát hiện IR phát ra/phản xạ hoặc bị chặn; sound sensor phát hiện biên độ âm. Signal của chúng được đổi thành value hoặc event processor đọc được."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "sensor"
+      ]
+    },
+    {
+      "id": "P1-L21-CHECK-REQ-3.1-08-03",
+      "requirementId": "REQ-3.1-08-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of an actuator in an automatic street-light control system.",
+        "vi": "Giải thích vai trò actuator trong hệ thống điều khiển street light tự động."
+      },
+      "hint": {
+        "en": "Link controller output to a physical change.",
+        "vi": "Liên hệ controller output với thay đổi vật lý."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The controller uses the light sensor result to energise or release a relay. The relay switches electrical power to the lamp, converting the controller's low-power output into a physical ON/OFF change.",
+          "vi": "Controller dùng kết quả light sensor để energise hoặc release relay. Relay đóng/cắt nguồn cho lamp, biến low-power output của controller thành thay đổi ON/OFF vật lý."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "actuator"
+      ]
+    },
+    {
+      "id": "P1-L21-CHECK-REQ-3.1-08-04",
+      "requirementId": "REQ-3.1-08-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why feedback is essential in a temperature control loop.",
+        "vi": "Giải thích vì sao feedback thiết yếu trong temperature control loop."
+      },
+      "hint": {
+        "en": "Describe the reading after an actuator action.",
+        "vi": "Mô tả reading sau actuator action."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "After the heater or cooler acts, a new sensor reading reports the resulting temperature. The controller can compare again and stop, continue or reverse the action; without feedback it cannot know whether the target was reached or conditions changed.",
+          "vi": "Sau khi heater hoặc cooler hoạt động, sensor reading mới báo temperature kết quả. Controller có thể so sánh lại để dừng, tiếp tục hoặc đổi action; không có feedback nó không biết target đã đạt hay điều kiện đã đổi."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "feedback"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Give the complete control loop and one sign that a system is only monitoring.",
+      "vi": "Nêu control loop hoàn chỉnh và một dấu hiệu hệ thống chỉ monitoring."
+    },
+    "answerPoints": [
+      {
+        "en": "Sensor → conversion → comparison → actuator → process → feedback; monitoring records or alerts without automatically acting on the process.",
+        "vi": "Sensor → conversion → comparison → actuator → process → feedback; monitoring ghi hoặc alert mà không tự động tác động process."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "embedded system",
+      "meaning": {
+        "en": "A computer system dedicated to a function within a larger product.",
+        "vi": "Computer system chuyên cho một chức năng trong sản phẩm lớn hơn."
+      }
+    },
+    {
+      "term": "actuator",
+      "meaning": {
+        "en": "An output device that causes a physical action.",
+        "vi": "Output device tạo action vật lý."
+      }
+    },
+    {
+      "term": "feedback",
+      "meaning": {
+        "en": "A new measurement returned after an action so the controller can adjust its next decision.",
+        "vi": "Measurement mới quay lại sau action để controller điều chỉnh decision tiếp theo."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "computer-organisation",
+    "device-principles"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §3.1, p. 17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L21 · Chapter 3 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C03",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 3, pp. 72, 84–88",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L21",
+  "contractCoverage": {
+    "B01": [
+      "P1-L21-objectives"
+    ],
+    "B02": [
+      "P1-L21-theory-1",
+      "P1-L21-theory-2",
+      "P1-L21-theory-3"
+    ],
+    "B03": [
+      "P1-L21-rules"
+    ],
+    "B04": [
+      "P1-L21-recognise-1"
+    ],
+    "B05": [
+      "P1-L21-worked-1",
+      "P1-L21-worked-2",
+      "P1-L21-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L21"
+    ],
+    "B07": [
+      "P1-L21-CHECK-REQ-3.1-02-01",
+      "P1-L21-CHECK-REQ-3.1-08-01",
+      "P1-L21-CHECK-REQ-3.1-08-02",
+      "P1-L21-CHECK-REQ-3.1-08-03",
+      "P1-L21-CHECK-REQ-3.1-08-04"
+    ],
+    "B08": [
+      "P1-L21-misconceptions"
+    ],
+    "B09": [
+      "P1-L21-recall"
+    ],
+    "B10": [
+      "P1-L21-glossary"
+    ],
+    "B11": [
+      "P1-L21-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

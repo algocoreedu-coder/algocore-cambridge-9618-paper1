@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { binaryPlaceValueFixture, bitmapRleFixture, bitmapStorage, characterEncoding, numberRepresentation, pcmStorage, rleComparison, rleDecode, sampleAndQuantiseFixture, signedArithmetic, unitConversion, vectorDrawing } from "../app/lib/paper1/models.ts";
+import { bufferOccupancy, circuitRows, controlDecision, evaluateLogicCircuit, logicGateOutput, logicGateRows, memoryEventOutcome, memoryFacts } from "../app/lib/paper1/chapter3-models.ts";
 
 const checks = [];
 const run = (name, test) => { test(); checks.push(name); };
@@ -50,4 +51,24 @@ run("bitmap RLE alternate scan round trip", () => {
   const fixture = bitmapRleFixture("column-major");
   assert.deepEqual(fixture.decodedGrid, fixture.grid);
 });
+run("finite buffer full fixture", () => assert.deepEqual(bufferOccupancy(4, 8, 2), { waiting: 4, overflow: 2, full: true }));
+run("finite buffer absorbs fixture", () => assert.deepEqual(bufferOccupancy(4, 5, 4), { waiting: 1, overflow: 0, full: false }));
+run("control below-target fixture", () => assert.deepEqual(controlDecision("control", 21, 24), { comparison: "below", actuator: "on", nextReading: 22 }));
+run("control equality boundary", () => assert.deepEqual(controlDecision("control", 24, 24), { comparison: "equal", actuator: "off", nextReading: 24 }));
+run("monitoring has no actuator", () => assert.deepEqual(controlDecision("monitor", 21, 24), { comparison: "below", actuator: "none", nextReading: 21 }));
+run("DRAM refresh fact", () => assert.equal(memoryFacts.DRAM.refresh, true));
+run("SRAM remains volatile", () => assert.equal(memoryFacts.SRAM.volatile, true));
+run("EPROM and EEPROM lifecycle", () => { assert.equal(memoryEventOutcome("EPROM", "write"), "uv-erase"); assert.equal(memoryEventOutcome("EEPROM", "write"), "electrical"); });
+run("all six gate truth tables", () => {
+  assert.deepEqual(logicGateRows("NOT").map((row) => row.output), [1, 0]);
+  assert.deepEqual(logicGateRows("AND").map((row) => row.output), [0, 0, 0, 1]);
+  assert.deepEqual(logicGateRows("OR").map((row) => row.output), [0, 1, 1, 1]);
+  assert.deepEqual(logicGateRows("NAND").map((row) => row.output), [1, 1, 1, 0]);
+  assert.deepEqual(logicGateRows("NOR").map((row) => row.output), [1, 0, 0, 0]);
+  assert.deepEqual(logicGateRows("XOR").map((row) => row.output), [0, 1, 1, 0]);
+});
+run("NOT ignores B", () => assert.equal(logicGateOutput("NOT", 0, 1), logicGateOutput("NOT", 0, 0)));
+run("alarm representative row", () => assert.deepEqual(evaluateLogicCircuit("alarm", 1, 0, 0), { p: 0, q: 1, output: 1, expression: "Y = (A AND B) OR (NOT C)" }));
+run("permission representative row", () => assert.deepEqual(evaluateLogicCircuit("permission", 0, 1, 1), { p: 1, q: 1, output: 1, expression: "Y = (A OR B) AND C" }));
+run("three-input circuits have eight rows", () => { assert.equal(circuitRows("alarm").length, 8); assert.equal(circuitRows("permission").length, 8); });
 console.log(`Paper 1 visual model oracles: PASS (${checks.length})`);

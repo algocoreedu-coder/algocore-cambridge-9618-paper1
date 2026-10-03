@@ -1,0 +1,474 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L24",
+  "slug": "logic-design",
+  "sectionId": "3",
+  "strandId": "3.2",
+  "title": {
+    "en": "Designing logic circuits",
+    "vi": "Từ tình huống tới mạch và biểu thức"
+  },
+  "question": {
+    "en": "How can one Boolean rule be shown as words, an expression, a circuit and a truth table?",
+    "vi": "Một Boolean rule được biểu diễn bằng lời, expression, circuit và truth table như thế nào?"
+  },
+  "opening": {
+    "en": "A problem statement, logic expression, circuit and truth table are equivalent representations of the same Boolean rule. Reliable work names intermediate signals and checks each gate before calculating the final output.",
+    "vi": "Problem statement, logic expression, circuit và truth table là các biểu diễn tương đương của cùng Boolean rule. Cách làm tin cậy đặt tên intermediate signal và kiểm tra từng gate trước khi tính final output."
+  },
+  "objectives": [
+    {
+      "id": "AC26-3.2-03",
+      "text": {
+        "en": "Construct a logic circuit from a problem statement, expression or truth table.",
+        "vi": "Dựng logic circuit từ problem statement, expression hoặc truth table."
+      }
+    },
+    {
+      "id": "AC26-3.2-04",
+      "text": {
+        "en": "Construct a truth table from a problem statement, circuit or expression.",
+        "vi": "Dựng truth table từ problem statement, circuit hoặc expression."
+      }
+    },
+    {
+      "id": "AC26-3.2-05",
+      "text": {
+        "en": "Construct a logic expression from a problem statement, circuit or truth table.",
+        "vi": "Dựng logic expression từ problem statement, circuit hoặc truth table."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-3.2-03-01",
+    "REQ-3.2-04-01",
+    "REQ-3.2-05-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L23"
+  ],
+  "theory": [
+    {
+      "id": "P1-L24-theory-1",
+      "title": {
+        "en": "Translate words into sub-expressions",
+        "vi": "Dịch lời thành sub-expression"
+      },
+      "paragraphs": [
+        {
+          "en": "Define every input with its active condition. Translate NOT before AND before OR unless grouping is stated, and use parentheses to preserve each condition.",
+          "vi": "Định nghĩa từng input với active condition. Dịch NOT trước AND trước OR trừ khi grouping được nêu và dùng parenthesis để giữ từng condition."
+        },
+        {
+          "en": "For 'alarm if A and B are on, or C is off', form P = A AND B and Q = NOT C, then Y = P OR Q.",
+          "vi": "Với 'alarm nếu A và B bật, hoặc C tắt', tạo P = A AND B và Q = NOT C, rồi Y = P OR Q."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L24-theory-2",
+      "title": {
+        "en": "Build and label the circuit",
+        "vi": "Dựng và gắn nhãn circuit"
+      },
+      "paragraphs": [
+        {
+          "en": "Draw one gate for each operation. Connect input branches to the correct gates, label intermediate outputs P, Q and so on, then join them at the final gate.",
+          "vi": "Vẽ một gate cho mỗi operation. Nối input branch tới đúng gate, gắn nhãn intermediate output P, Q... rồi nối chúng ở final gate."
+        },
+        {
+          "en": "A connection dot means wires join; crossing wires without a dot are not connected. Keep signal direction clear from inputs to output.",
+          "vi": "Connection dot nghĩa là wire nối; wire cắt nhau không có dot thì không nối. Giữ signal direction rõ từ input tới output."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L24-theory-3",
+      "title": {
+        "en": "Construct and audit the truth table",
+        "vi": "Lập và audit truth table"
+      },
+      "paragraphs": [
+        {
+          "en": "For n inputs, list 2ⁿ binary combinations. Add a column for every intermediate signal and evaluate left to right before the final output.",
+          "vi": "Với n input, liệt kê 2ⁿ binary combination. Thêm column cho từng intermediate signal và tính từ trái sang phải trước final output."
+        },
+        {
+          "en": "Audit the table against the original statement on representative rows, especially boundary cases where a NOT branch or both sides of an OR are active.",
+          "vi": "Audit table với statement gốc trên các row đại diện, đặc biệt boundary case có nhánh NOT hoặc cả hai phía OR cùng active."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L24-theory-4",
+      "title": {
+        "en": "Recover an expression from outputs",
+        "vi": "Khôi phục expression từ output"
+      },
+      "paragraphs": [
+        {
+          "en": "From a circuit, write each gate output as a sub-expression and substitute until the final output is expressed using the original inputs.",
+          "vi": "Từ circuit, viết output của từng gate thành sub-expression rồi substitute đến khi final output được biểu diễn bằng input gốc."
+        },
+        {
+          "en": "From a truth table, one valid method is to write an AND term for every row where output is 1, negating each input that is 0, then OR those terms. Equivalent simplified expressions may exist.",
+          "vi": "Từ truth table, một cách hợp lệ là viết AND term cho mỗi row output 1, phủ định mỗi input bằng 0 rồi OR các term. Có thể tồn tại expression tương đương đã simplify."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Design a three-input alarm",
+      "vi": "Thiết kế alarm ba input"
+    },
+    "prompt": {
+      "en": "Y is 1 when both A and B are 1, or when C is 0.",
+      "vi": "Y bằng 1 khi cả A và B bằng 1, hoặc khi C bằng 0."
+    },
+    "steps": [
+      {
+        "id": "P1-L24-worked-1",
+        "action": {
+          "en": "Write intermediate rules.",
+          "vi": "Viết intermediate rule."
+        },
+        "result": {
+          "en": "P = A AND B; Q = NOT C.",
+          "vi": "P = A AND B; Q = NOT C."
+        }
+      },
+      {
+        "id": "P1-L24-worked-2",
+        "action": {
+          "en": "Join the branches.",
+          "vi": "Nối các branch."
+        },
+        "result": {
+          "en": "Y = P OR Q, so Y = (A AND B) OR (NOT C).",
+          "vi": "Y = P OR Q nên Y = (A AND B) OR (NOT C)."
+        }
+      },
+      {
+        "id": "P1-L24-worked-3",
+        "action": {
+          "en": "Evaluate one row.",
+          "vi": "Tính một row."
+        },
+        "result": {
+          "en": "For A=1, B=0, C=0: P=0, Q=1, therefore Y=1.",
+          "vi": "Với A=1, B=0, C=0: P=0, Q=1 nên Y=1."
+        }
+      },
+      {
+        "id": "P1-L24-worked-4",
+        "action": {
+          "en": "Check all eight rows.",
+          "vi": "Kiểm tra cả tám row."
+        },
+        "result": {
+          "en": "Use columns A, B, C, P, Q, Y so each operation can be audited.",
+          "vi": "Dùng column A, B, C, P, Q, Y để audit từng operation."
+        }
+      }
+    ],
+    "result": {
+      "en": "The words, expression, two branches, circuit and truth table now encode the same rule.",
+      "vi": "Lời, expression, hai branch, circuit và truth table giờ encode cùng rule."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Circle NOT conditions, bracket AND groups and identify the final OR/AND that joins branches.",
+        "vi": "Khoanh condition NOT, đóng bracket group AND và xác định final OR/AND nối các branch."
+      }
+    ],
+    "method": [
+      {
+        "en": "Define active-high meanings for inputs.",
+        "vi": "Định nghĩa ý nghĩa active-high cho input."
+      },
+      {
+        "en": "Name each sub-expression and draw one gate per operation.",
+        "vi": "Đặt tên từng sub-expression và vẽ một gate mỗi operation."
+      },
+      {
+        "en": "Use intermediate truth-table columns to verify the circuit.",
+        "vi": "Dùng intermediate truth-table column để verify circuit."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A truth table can skip intermediate columns if the final answer looks plausible.",
+          "vi": "Truth table có thể bỏ intermediate column nếu final answer có vẻ hợp lý."
+        },
+        "correction": {
+          "en": "Intermediate columns expose which gate or translation step caused an error and make the final output auditable.",
+          "vi": "Intermediate column cho thấy gate hoặc bước dịch nào gây lỗi và giúp audit final output."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L24-recognise-1",
+        "title": {
+          "en": "Find the missing grouping",
+          "vi": "Tìm grouping bị thiếu"
+        },
+        "setup": {
+          "en": "A rule says output 1 if A is 1, or if both B and C are 1.",
+          "vi": "Rule nói output 1 nếu A bằng 1 hoặc cả B và C bằng 1."
+        },
+        "prompt": {
+          "en": "Write the expression and describe the two circuit stages.",
+          "vi": "Viết expression và mô tả hai circuit stage."
+        },
+        "expectedEvidence": {
+          "en": "Y = A OR (B AND C): first AND B and C, then OR that intermediate result with A.",
+          "vi": "Y = A OR (B AND C): đầu tiên AND B và C, sau đó OR intermediate result với A."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L24-CHECK-REQ-3.2-03-01",
+      "requirementId": "REQ-3.2-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Construct and describe a circuit for Y = (A OR B) AND (NOT C).",
+        "vi": "Dựng và mô tả circuit cho Y = (A OR B) AND (NOT C)."
+      },
+      "hint": {
+        "en": "Create two branches, then a final gate.",
+        "vi": "Tạo hai branch rồi final gate."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Feed A and B into an OR gate to form P. Feed C into a NOT gate to form Q. Feed P and Q into an AND gate; its output is Y. Label both intermediate signals and show signal direction.",
+          "vi": "Đưa A và B vào OR gate tạo P. Đưa C vào NOT gate tạo Q. Đưa P và Q vào AND gate; output là Y. Gắn nhãn cả hai intermediate signal và thể hiện signal direction."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "circuit-construction"
+      ]
+    },
+    {
+      "id": "P1-L24-CHECK-REQ-3.2-04-01",
+      "requirementId": "REQ-3.2-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Construct the truth table for Y = (A AND B) OR (NOT C), including P=A AND B and Q=NOT C.",
+        "vi": "Lập truth table cho Y = (A AND B) OR (NOT C), gồm P=A AND B và Q=NOT C."
+      },
+      "hint": {
+        "en": "List 000 through 111 and calculate P, Q before Y.",
+        "vi": "Liệt kê 000 đến 111 và tính P, Q trước Y."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "For ABC rows 000,001,010,011,100,101,110,111: P is 0,0,0,0,0,0,1,1; Q is 1,0,1,0,1,0,1,0; Y is 1,0,1,0,1,0,1,1.",
+          "vi": "Với row ABC 000,001,010,011,100,101,110,111: P là 0,0,0,0,0,0,1,1; Q là 1,0,1,0,1,0,1,0; Y là 1,0,1,0,1,0,1,1."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "truth-table-construction"
+      ]
+    },
+    {
+      "id": "P1-L24-CHECK-REQ-3.2-05-01",
+      "requirementId": "REQ-3.2-05-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "A circuit first ORs A and B, inverts C, then ANDs the two intermediate outputs. Construct its logic expression.",
+        "vi": "Circuit đầu tiên OR A và B, invert C rồi AND hai intermediate output. Hãy lập logic expression."
+      },
+      "hint": {
+        "en": "Write and substitute the intermediate signals.",
+        "vi": "Viết và substitute intermediate signal."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Let P = A OR B and Q = NOT C. The final gate gives Y = P AND Q, therefore Y = (A OR B) AND (NOT C).",
+          "vi": "Đặt P = A OR B và Q = NOT C. Final gate cho Y = P AND Q, do đó Y = (A OR B) AND (NOT C)."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "expression-construction"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State a reliable method for translating among a statement, expression, circuit and truth table.",
+      "vi": "Nêu phương pháp tin cậy để dịch giữa statement, expression, circuit và truth table."
+    },
+    "answerPoints": [
+      {
+        "en": "Define inputs, split into named sub-expressions, draw one gate per operation, enumerate 2ⁿ rows, calculate intermediate columns, and audit outputs against the original rule.",
+        "vi": "Định nghĩa input, chia thành sub-expression có tên, vẽ một gate mỗi operation, liệt kê 2ⁿ row, tính intermediate column và audit output với rule gốc."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "logic expression",
+      "meaning": {
+        "en": "A symbolic statement combining inputs with Boolean operations.",
+        "vi": "Statement ký hiệu kết hợp input bằng Boolean operation."
+      }
+    },
+    {
+      "term": "intermediate signal",
+      "meaning": {
+        "en": "The output of one gate used as an input to a later gate.",
+        "vi": "Output của một gate được dùng làm input cho gate sau."
+      }
+    },
+    {
+      "term": "active high",
+      "meaning": {
+        "en": "A condition represented as true or active by binary 1.",
+        "vi": "Condition được biểu diễn true hoặc active bằng binary 1."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "logic-gates",
+    "embedded-control"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §3.2, p. 18",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L24 · Chapter 3 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C03",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 3, pp. 92–104",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L24",
+  "contractCoverage": {
+    "B01": [
+      "P1-L24-objectives"
+    ],
+    "B02": [
+      "P1-L24-theory-1",
+      "P1-L24-theory-2",
+      "P1-L24-theory-3",
+      "P1-L24-theory-4"
+    ],
+    "B03": [
+      "P1-L24-rules"
+    ],
+    "B04": [
+      "P1-L24-recognise-1"
+    ],
+    "B05": [
+      "P1-L24-worked-1",
+      "P1-L24-worked-2",
+      "P1-L24-worked-3",
+      "P1-L24-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L24"
+    ],
+    "B07": [
+      "P1-L24-CHECK-REQ-3.2-03-01",
+      "P1-L24-CHECK-REQ-3.2-04-01",
+      "P1-L24-CHECK-REQ-3.2-05-01"
+    ],
+    "B08": [
+      "P1-L24-misconceptions"
+    ],
+    "B09": [
+      "P1-L24-recall"
+    ],
+    "B10": [
+      "P1-L24-glossary"
+    ],
+    "B11": [
+      "P1-L24-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

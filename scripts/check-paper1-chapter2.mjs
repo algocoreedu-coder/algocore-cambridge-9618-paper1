@@ -95,7 +95,7 @@ if (catalog) {
   localized(section2?.summary, "catalog Section 2 summary");
   localized(section2?.question, "catalog Section 2 question");
   check(catalog.sections?.find((entry) => entry.id === "1")?.status === "available", "catalog: Section 1 regression; it must remain available");
-  check(catalog.sections?.filter((entry) => ["3", "4", "5", "6", "7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 3–8 must remain planned in the Chapter 2 candidate");
+  check(catalog.sections?.filter((entry) => ["4", "5", "6", "7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 4–8 must remain planned in the cumulative candidate");
 
   const section2Strands = catalog.strands?.filter((entry) => entry.sectionId === "2") ?? [];
   check(section2Strands.length === 1 && section2Strands[0]?.id === "2.1", "catalog: Chapter 2 must expose exactly strand 2.1");
@@ -126,7 +126,7 @@ if (catalog) {
 
 if (manifest) {
   check(manifest.schemaVersion === 1 && manifest.courseId === "CAIE-9618-P1-2026", "release manifest identity mismatch");
-  check(nonEmpty(manifest.releaseId) && /chapter2|chapter-?2/i.test(manifest.releaseId), "release manifest ID must identify the Chapter 2 candidate");
+  check(nonEmpty(manifest.releaseId) && /chapter-?[23]/i.test(manifest.releaseId), "release manifest ID must identify a cumulative candidate containing Chapter 2");
   const chapter2Entries = manifest.lessons?.filter((entry) => expectedLessonIds.has(entry.lessonId)) ?? [];
   check(chapter2Entries.length === 10, `release manifest: expected 10 Chapter 2 entries, got ${chapter2Entries.length}`);
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lessonId");
