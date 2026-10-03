@@ -10,7 +10,16 @@ export function resolvePaper1Locale(query: PageQuery): Paper1Locale {
 }
 
 export function getPaper1Catalog(): Paper1Catalog {
-  return catalogData as Paper1Catalog;
+  const catalog = catalogData as Paper1Catalog;
+  const releaseStates = getPaper1ReleaseStates();
+  return {
+    ...catalog,
+    sections: catalog.sections.map((section) => {
+      const topics = catalog.topics.filter((topic) => topic.sectionId === section.id);
+      const available = topics.length > 0 && topics.every((topic) => releaseStates[topic.slug] === "available");
+      return { ...section, status: available ? "available" : "planned" };
+    }),
+  };
 }
 
 export function getPaper1ReleaseManifest(): Paper1ReleaseManifest {

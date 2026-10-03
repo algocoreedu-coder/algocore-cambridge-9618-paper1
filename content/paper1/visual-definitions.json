@@ -284,5 +284,395 @@
     "sceneIds": [
       "P1-L08-scene-bitmap-runs"
     ]
+  },
+  {
+    "visualId": "VIS-P1-L09",
+    "lessonId": "P1-L09",
+    "title": {
+      "en": "Follow the network boundary",
+      "vi": "Lần theo ranh giới mạng"
+    },
+    "learnerAction": {
+      "en": "Change the scenario, predict LAN or WAN, then trace why the network exists and where its boundary lies.",
+      "vi": "Đổi tình huống, dự đoán LAN hay WAN rồi lần theo mục đích kết nối và ranh giới mạng."
+    },
+    "observableOutcome": {
+      "en": "Classify LAN/WAN from scope and ownership, and explain a concrete network benefit.",
+      "vi": "Phân loại LAN/WAN từ phạm vi và quyền sở hữu, đồng thời giải thích một lợi ích mạng cụ thể."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L09.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L09."
+    },
+    "modelLimitations": {
+      "en": "Finite school/branch scenarios; classification uses scope and management, not a universal distance threshold.",
+      "vi": "Các tình huống trường/chi nhánh hữu hạn; phân loại dùng phạm vi và quản lý, không dùng một ngưỡng khoảng cách tuyệt đối."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L09-classroom-step-1",
+      "P1-L09-classroom-step-2",
+      "P1-L09-classroom-step-3",
+      "P1-L09-branches-step-1",
+      "P1-L09-branches-step-2",
+      "P1-L09-branches-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L10",
+    "lessonId": "P1-L10",
+    "title": {
+      "en": "Locate processing and storage",
+      "vi": "Xác định nơi xử lý và lưu trữ"
+    },
+    "learnerAction": {
+      "en": "Switch among thin-client, thick-client and peer-to-peer cases; trace request, processing, storage and response.",
+      "vi": "Đổi giữa thin client, thick client và peer-to-peer; lần theo request, processing, storage và response."
+    },
+    "observableOutcome": {
+      "en": "Distinguish client–server from peer-to-peer and explain how thin and thick clients divide processing.",
+      "vi": "Phân biệt client–server với peer-to-peer và giải thích thin client, thick client phân chia processing thế nào."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L10.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L10."
+    },
+    "modelLimitations": {
+      "en": "Uses finite login, data and file-sharing cases; actual client/server responsibilities vary by application.",
+      "vi": "Dùng các tình huống hữu hạn về login, data và file sharing; trách nhiệm client/server thực tế thay đổi theo application."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L10-thin-client-step-1",
+      "P1-L10-thin-client-step-2",
+      "P1-L10-thin-client-step-3",
+      "P1-L10-thin-client-step-4",
+      "P1-L10-thick-client-step-1",
+      "P1-L10-thick-client-step-2",
+      "P1-L10-thick-client-step-3",
+      "P1-L10-thick-client-step-4",
+      "P1-L10-peer-step-1",
+      "P1-L10-peer-step-2",
+      "P1-L10-peer-step-3",
+      "P1-L10-peer-step-4"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L11",
+    "lessonId": "P1-L11",
+    "title": {
+      "en": "Trace a topology failure",
+      "vi": "Lần theo sự cố topology"
+    },
+    "learnerAction": {
+      "en": "Switch among bus, star, mesh and hybrid fixtures; predict and trace the scope of a stated link failure.",
+      "vi": "Đổi giữa bus, star, mesh và hybrid; dự đoán và lần theo phạm vi của link failure đã nêu."
+    },
+    "observableOutcome": {
+      "en": "Explain how shared paths, independent access links and redundant routes change failure impact in all four syllabus topologies.",
+      "vi": "Giải thích shared path, access link độc lập và route dự phòng làm thay đổi tác động sự cố trong bốn topology của syllabus."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L11.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L11."
+    },
+    "modelLimitations": {
+      "en": "Uses simplified physical fixtures with stated failure points; it does not simulate routing protocols or every possible hybrid design.",
+      "vi": "Dùng fixture vật lý đơn giản với điểm hỏng được nêu; không mô phỏng routing protocol hay mọi thiết kế hybrid."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L11-star-step-1",
+      "P1-L11-star-step-2",
+      "P1-L11-star-step-3",
+      "P1-L11-bus-step-1",
+      "P1-L11-bus-step-2",
+      "P1-L11-bus-step-3",
+      "P1-L11-mesh-step-1",
+      "P1-L11-mesh-step-2",
+      "P1-L11-mesh-step-3",
+      "P1-L11-hybrid-step-1",
+      "P1-L11-hybrid-step-2",
+      "P1-L11-hybrid-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L12",
+    "lessonId": "P1-L12",
+    "title": {
+      "en": "Choose a cloud deployment",
+      "vi": "Chọn mô hình triển khai cloud"
+    },
+    "learnerAction": {
+      "en": "Compare control, access and cost for public and private cloud scenarios.",
+      "vi": "So sánh quyền kiểm soát, truy cập và chi phí trong tình huống public/private cloud."
+    },
+    "observableOutcome": {
+      "en": "Justify public or private cloud from the organisation's stated priorities and trade-offs.",
+      "vi": "Biện minh public hoặc private cloud từ ưu tiên và trade-off của tổ chức."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L12.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L12."
+    },
+    "modelLimitations": {
+      "en": "Compares deployment choices from stated priorities; cloud security and cost depend on implementation.",
+      "vi": "So sánh lựa chọn triển khai từ ưu tiên đã nêu; bảo mật và chi phí cloud còn phụ thuộc cách triển khai."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L12-startup-step-1",
+      "P1-L12-startup-step-2",
+      "P1-L12-startup-step-3",
+      "P1-L12-hospital-step-1",
+      "P1-L12-hospital-step-2",
+      "P1-L12-hospital-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L13",
+    "lessonId": "P1-L13",
+    "title": {
+      "en": "Match a transmission medium",
+      "vi": "Chọn transmission medium phù hợp"
+    },
+    "learnerAction": {
+      "en": "Compare copper, fibre, radio/Wi-Fi, terrestrial microwave and satellite in one bounded use case each.",
+      "vi": "So sánh copper, fibre, radio/Wi-Fi, terrestrial microwave và satellite qua từng tình huống cụ thể."
+    },
+    "observableOutcome": {
+      "en": "Connect each medium's signal, physical constraint and trade-off to a justified use-case choice.",
+      "vi": "Liên hệ tín hiệu, giới hạn vật lý và trade-off của mỗi medium với lựa chọn có lý do."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L13.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L13."
+    },
+    "modelLimitations": {
+      "en": "Presents representative trade-offs; real bandwidth, range, latency and reliability depend on standards, environment and installation.",
+      "vi": "Trình bày trade-off đại diện; bandwidth, range, latency và reliability thực tế phụ thuộc chuẩn, môi trường và lắp đặt."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L13-copper-lan-step-1",
+      "P1-L13-copper-lan-step-2",
+      "P1-L13-copper-lan-step-3",
+      "P1-L13-backbone-step-1",
+      "P1-L13-backbone-step-2",
+      "P1-L13-backbone-step-3",
+      "P1-L13-mobile-step-1",
+      "P1-L13-mobile-step-2",
+      "P1-L13-mobile-step-3",
+      "P1-L13-microwave-link-step-1",
+      "P1-L13-microwave-link-step-2",
+      "P1-L13-microwave-link-step-3",
+      "P1-L13-satellite-link-step-1",
+      "P1-L13-satellite-link-step-2",
+      "P1-L13-satellite-link-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L14",
+    "lessonId": "P1-L14",
+    "title": {
+      "en": "Build the packet path",
+      "vi": "Dựng đường đi của packet"
+    },
+    "learnerAction": {
+      "en": "Switch among wired LAN, wireless LAN, PSTN, dedicated-line, cellular and LAN-extension paths; identify each device's role.",
+      "vi": "Đổi giữa đường LAN có dây, wireless LAN, PSTN, dedicated line, cellular và mở rộng LAN; xác định vai trò từng thiết bị."
+    },
+    "observableOutcome": {
+      "en": "Place NIC/WNIC, cable, switch, server, WAP, bridge, repeater, router and modem on a justified local or internet path.",
+      "vi": "Đặt NIC/WNIC, cable, switch, server, WAP, bridge, repeater, router và modem vào đường local hoặc internet có giải thích."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L14.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L14."
+    },
+    "modelLimitations": {
+      "en": "Shows functional roles on authored paths; real devices may combine functions and access technologies vary by provider.",
+      "vi": "Minh họa vai trò trên các đường được biên soạn; thiết bị thực có thể gộp chức năng và công nghệ truy cập thay đổi theo provider."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L14-local-step-1",
+      "P1-L14-local-step-2",
+      "P1-L14-local-step-3",
+      "P1-L14-local-step-4",
+      "P1-L14-wireless-lan-step-1",
+      "P1-L14-wireless-lan-step-2",
+      "P1-L14-wireless-lan-step-3",
+      "P1-L14-wireless-lan-step-4",
+      "P1-L14-pstdial-step-1",
+      "P1-L14-pstdial-step-2",
+      "P1-L14-pstdial-step-3",
+      "P1-L14-pstdial-step-4",
+      "P1-L14-dedicated-step-1",
+      "P1-L14-dedicated-step-2",
+      "P1-L14-dedicated-step-3",
+      "P1-L14-cellular-step-1",
+      "P1-L14-cellular-step-2",
+      "P1-L14-cellular-step-3",
+      "P1-L14-lan-extension-step-1",
+      "P1-L14-lan-extension-step-2",
+      "P1-L14-lan-extension-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L15",
+    "lessonId": "P1-L15",
+    "title": {
+      "en": "Step through classic CSMA/CD",
+      "vi": "Đi từng bước CSMA/CD cổ điển"
+    },
+    "learnerAction": {
+      "en": "Change transmit timing and trace sense, transmit, collision, jam, stop, random back-off, re-sense and retransmission.",
+      "vi": "Đổi thời điểm transmit rồi lần theo sense, transmit, collision, jam, stop, random back-off, re-sense và retransmission."
+    },
+    "observableOutcome": {
+      "en": "Explain the complete retry cycle in the stated classic shared half-duplex Ethernet model.",
+      "vi": "Giải thích đầy đủ retry cycle trong mô hình Ethernet shared half-duplex cổ điển đã nêu."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L15.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L15."
+    },
+    "modelLimitations": {
+      "en": "Models classic shared half-duplex Ethernet CSMA/CD; it does not describe switched full-duplex Ethernet or Wi-Fi access control.",
+      "vi": "Mô hình hóa CSMA/CD của Ethernet shared half-duplex cổ điển; không mô tả Ethernet switched full-duplex hoặc access control của Wi-Fi."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L15-same-time-step-1",
+      "P1-L15-same-time-step-2",
+      "P1-L15-same-time-step-3",
+      "P1-L15-same-time-step-4",
+      "P1-L15-same-time-step-5",
+      "P1-L15-staggered-step-1",
+      "P1-L15-staggered-step-2",
+      "P1-L15-staggered-step-3",
+      "P1-L15-staggered-step-4"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L16",
+    "lessonId": "P1-L16",
+    "title": {
+      "en": "Compare streaming mode and buffer",
+      "vi": "So sánh streaming mode và buffer"
+    },
+    "learnerAction": {
+      "en": "Switch between real-time and on-demand streams; compare arrival/playback rates, latency, seeking and buffer state.",
+      "vi": "Đổi giữa real-time và on-demand; so sánh arrival/playback rate, latency, seeking và trạng thái buffer."
+    },
+    "observableOutcome": {
+      "en": "Distinguish real-time from on-demand streaming and use the rate balance to predict smooth playback or a stall.",
+      "vi": "Phân biệt real-time với on-demand và dùng cân bằng tốc độ để dự đoán playback mượt hay stall."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L16.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L16."
+    },
+    "modelLimitations": {
+      "en": "Uses discrete rate fixtures and simplified mode behaviours; protocol overhead, adaptive bitrate, jitter and service-specific seeking are outside the model.",
+      "vi": "Dùng fixture tốc độ rời rạc và hành vi mode đơn giản; protocol overhead, adaptive bitrate, jitter và seeking theo từng service nằm ngoài mô hình."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L16-realtime-low-step-1",
+      "P1-L16-realtime-low-step-2",
+      "P1-L16-realtime-low-step-3",
+      "P1-L16-realtime-low-step-4",
+      "P1-L16-ondemand-fast-step-1",
+      "P1-L16-ondemand-fast-step-2",
+      "P1-L16-ondemand-fast-step-3",
+      "P1-L16-ondemand-fast-step-4",
+      "P1-L16-realtime-healthy-step-1",
+      "P1-L16-realtime-healthy-step-2",
+      "P1-L16-realtime-healthy-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L17",
+    "lessonId": "P1-L17",
+    "title": {
+      "en": "Read an IP assignment",
+      "vi": "Đọc một IP assignment"
+    },
+    "learnerAction": {
+      "en": "Switch among private IPv4, public-scope IPv4 and IPv6 examples; trace format, prefix, scope and static/dynamic assignment.",
+      "vi": "Đổi giữa private IPv4, IPv4 phạm vi public và IPv6; lần theo format, prefix, scope và cách cấp static/dynamic."
+    },
+    "observableOutcome": {
+      "en": "Read IPv4/IPv6 format and distinguish public/private scope plus static/dynamic assignment without treating private as automatically secure.",
+      "vi": "Đọc format IPv4/IPv6 và phân biệt public/private cùng static/dynamic mà không coi private tự động là an toàn."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L17.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L17."
+    },
+    "modelLimitations": {
+      "en": "Uses documentation-only example prefixes and introductory subnet reasoning; live public addresses require valid provider allocation.",
+      "vi": "Dùng prefix ví dụ chỉ dành cho tài liệu và subnet reasoning nhập môn; public address live cần được provider cấp hợp lệ."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L17-private-v4-step-1",
+      "P1-L17-private-v4-step-2",
+      "P1-L17-private-v4-step-3",
+      "P1-L17-public-v4-step-1",
+      "P1-L17-public-v4-step-2",
+      "P1-L17-public-v4-step-3",
+      "P1-L17-v6-step-1",
+      "P1-L17-v6-step-2",
+      "P1-L17-v6-step-3"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L18",
+    "lessonId": "P1-L18",
+    "title": {
+      "en": "Resolve a URL to a resource",
+      "vi": "Phân giải URL tới tài nguyên"
+    },
+    "learnerAction": {
+      "en": "Switch between fresh and cached lookup paths; trace DNS answers back to the browser, then HTTP request and resource response.",
+      "vi": "Đổi giữa lookup mới và cache; lần theo DNS answer về browser, sau đó HTTP request và resource response."
+    },
+    "observableOutcome": {
+      "en": "Separate the internet from the WWW and explain the correct directions of URL parsing, DNS resolution, HTTP request and resource response.",
+      "vi": "Phân biệt internet với WWW và giải thích đúng hướng của URL parsing, DNS resolution, HTTP request và resource response."
+    },
+    "modelScope": {
+      "en": "Teacher-authored finite scenarios with exact step states, prediction choices, Back/Next/Reset and a bilingual text equivalent for P1-L18.",
+      "vi": "Các tình huống hữu hạn do giáo viên biên soạn, có state chính xác từng bước, dự đoán, Back/Next/Reset và mô tả chữ song ngữ cho P1-L18."
+    },
+    "modelLimitations": {
+      "en": "Shows a simplified instructional DNS/HTTP sequence; recursive hierarchy, transport security and cache expiry details are outside the fixture.",
+      "vi": "Minh họa chuỗi DNS/HTTP đơn giản cho học tập; hierarchy đệ quy, transport security và chi tiết cache expiry nằm ngoài fixture."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L18-recursive-step-1",
+      "P1-L18-recursive-step-2",
+      "P1-L18-recursive-step-3",
+      "P1-L18-recursive-step-4",
+      "P1-L18-recursive-step-5",
+      "P1-L18-cached-step-1",
+      "P1-L18-cached-step-2",
+      "P1-L18-cached-step-3",
+      "P1-L18-cached-step-4"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]

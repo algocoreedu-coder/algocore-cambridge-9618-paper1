@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L13",
+  "slug": "transmission-media",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Wired and wireless transmission media",
+    "vi": "Môi trường truyền có dây và không dây"
+  },
+  "question": {
+    "en": "Which medium carries the signal, and what consequence follows?",
+    "vi": "Môi trường nào mang tín hiệu và hệ quả nào phát sinh?"
+  },
+  "opening": {
+    "en": "A transmission choice links a physical medium and signal form to bandwidth, attenuation, interference, mobility, security and cost. No medium is best for every route.",
+    "vi": "Lựa chọn đường truyền liên hệ môi trường vật lý và dạng tín hiệu với bandwidth, attenuation, interference, mobility, security và cost. Không có môi trường tốt nhất cho mọi tuyến."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-07",
+      "text": {
+        "en": "Compare wired/wireless networks and describe required media.",
+        "vi": "So sánh network có dây/không dây và mô tả các môi trường bắt buộc."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-07-01",
+    "REQ-2.1-07-02"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L13-theory-1",
+      "title": {
+        "en": "Wired and wireless have different constraints",
+        "vi": "Có dây và không dây có ràng buộc khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "Wired links guide signals through a cable and usually provide predictable coverage and lower exposure to radio interference, but installation and movement require cabling.",
+          "vi": "Link có dây dẫn tín hiệu qua cable và thường có coverage dự đoán được cùng ít bị radio interference hơn, nhưng lắp đặt và di chuyển cần cabling."
+        },
+        {
+          "en": "Wireless links use electromagnetic waves through space, support mobility and rapid installation, but range, obstacles, shared spectrum, interference and security configuration matter.",
+          "vi": "Link không dây dùng sóng điện từ qua không gian, hỗ trợ mobility và lắp nhanh, nhưng range, vật cản, shared spectrum, interference và cấu hình security rất quan trọng."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L13-theory-2",
+      "title": {
+        "en": "Match medium to signal and route",
+        "vi": "Ghép medium với tín hiệu và tuyến"
+      },
+      "paragraphs": [
+        {
+          "en": "Copper cable carries electrical signals, is relatively inexpensive and is affected by attenuation and electromagnetic interference. Fibre-optic cable carries light, offers high bandwidth and low electromagnetic interference, but equipment and installation can cost more.",
+          "vi": "Copper cable mang tín hiệu điện, tương đối rẻ và bị attenuation cùng electromagnetic interference. Fibre-optic cable mang ánh sáng, có bandwidth cao và ít bị electromagnetic interference, nhưng thiết bị và lắp đặt có thể đắt hơn."
+        },
+        {
+          "en": "Radio including WiFi supports local wireless access; terrestrial microwave often needs line of sight; satellites relay microwave signals over very wide coverage but introduce propagation delay and cost.",
+          "vi": "Radio gồm WiFi hỗ trợ truy cập không dây local; microwave mặt đất thường cần line of sight; satellite chuyển tiếp microwave trên coverage rất rộng nhưng tạo propagation delay và chi phí."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Choose links for a campus",
+      "vi": "Chọn link cho campus"
+    },
+    "prompt": {
+      "en": "A campus needs a high-capacity backbone between buildings and mobile access inside classrooms.",
+      "vi": "Campus cần backbone capacity cao giữa các tòa nhà và mobile access trong lớp."
+    },
+    "steps": [
+      {
+        "id": "P1-L13-worked-1",
+        "action": {
+          "en": "Choose the backbone medium.",
+          "vi": "Chọn medium backbone."
+        },
+        "result": {
+          "en": "Fibre is suitable for high bandwidth over inter-building links and resistance to electromagnetic interference.",
+          "vi": "Fibre phù hợp bandwidth cao trên link giữa tòa nhà và chống electromagnetic interference."
+        }
+      },
+      {
+        "id": "P1-L13-worked-2",
+        "action": {
+          "en": "Choose classroom access.",
+          "vi": "Chọn truy cập lớp học."
+        },
+        "result": {
+          "en": "WiFi supports mobile devices without a cable per device.",
+          "vi": "WiFi hỗ trợ thiết bị di động mà không cần cáp cho từng thiết bị."
+        }
+      },
+      {
+        "id": "P1-L13-worked-3",
+        "action": {
+          "en": "State boundaries.",
+          "vi": "Nêu giới hạn."
+        },
+        "result": {
+          "en": "Fibre installation cost and WiFi range, interference, capacity and security configuration still matter.",
+          "vi": "Chi phí lắp fibre và range, interference, capacity cùng cấu hình security của WiFi vẫn quan trọng."
+        }
+      }
+    ],
+    "result": {
+      "en": "A hybrid media design matches each link to its job.",
+      "vi": "Thiết kế kết hợp medium ghép mỗi link với nhiệm vụ."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Name the signal and route before listing advantages.",
+        "vi": "Gọi tên tín hiệu và tuyến trước khi liệt kê ưu điểm."
+      }
+    ],
+    "method": [
+      {
+        "en": "Identify distance, mobility and capacity.",
+        "vi": "Xác định distance, mobility và capacity."
+      },
+      {
+        "en": "Check obstacles, interference and line of sight.",
+        "vi": "Kiểm tra vật cản, interference và line of sight."
+      },
+      {
+        "en": "Justify a medium and state one limitation.",
+        "vi": "Biện minh một medium và nêu một hạn chế."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Wireless always has lower speed than copper.",
+          "vi": "Wireless luôn chậm hơn copper."
+        },
+        "correction": {
+          "en": "Performance depends on standards, spectrum, distance, interference and link design; do not make an absolute claim.",
+          "vi": "Performance phụ thuộc standard, spectrum, distance, interference và thiết kế link; không kết luận tuyệt đối."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Satellite communication has no delay because it is wireless.",
+          "vi": "Satellite không có delay vì là wireless."
+        },
+        "correction": {
+          "en": "Long propagation distance can create noticeable latency.",
+          "vi": "Khoảng truyền rất dài có thể tạo latency đáng kể."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L13-recognise",
+        "title": {
+          "en": "Recognise a remote-site link",
+          "vi": "Nhận diện link địa điểm xa"
+        },
+        "setup": {
+          "en": "A research station lacks terrestrial cable coverage and needs broad reach, while interactive control is delay-sensitive.",
+          "vi": "Trạm nghiên cứu không có cáp mặt đất và cần coverage rộng, nhưng điều khiển tương tác nhạy delay."
+        },
+        "prompt": {
+          "en": "Evaluate satellite for this link.",
+          "vi": "Đánh giá satellite cho link này."
+        },
+        "expectedEvidence": {
+          "en": "Satellite may provide coverage where cable is unavailable, but propagation delay can harm delay-sensitive control; the answer must weigh both facts.",
+          "vi": "Satellite có thể cung cấp coverage nơi không có cáp, nhưng propagation delay có thể hại điều khiển nhạy delay; câu trả lời phải cân nhắc cả hai dữ kiện."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L13-CHECK-REQ-2.1-07-01",
+      "requirementId": "REQ-2.1-07-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare wired and wireless networks using mobility, installation, interference and security implications.",
+        "vi": "So sánh network có dây và không dây theo mobility, installation, interference và hệ quả security."
+      },
+      "hint": {
+        "en": "Give consequences, not just names.",
+        "vi": "Nêu hệ quả, không chỉ tên."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Wired links constrain movement and require cable installation but usually offer a guided medium with predictable coverage. Wireless supports mobility and easier extension but shares radio space, so range, obstacles, interference and secure authentication/encryption need attention.",
+          "vi": "Link có dây hạn chế di chuyển và cần lắp cable nhưng thường có medium được dẫn với coverage dễ dự đoán. Wireless hỗ trợ mobility và mở rộng dễ hơn nhưng dùng chung không gian radio nên cần chú ý range, vật cản, interference và authentication/encryption an toàn."
+        },
+        "rubric": [
+          {
+            "en": "Makes at least two direct comparisons.",
+            "vi": "Thực hiện ít nhất hai so sánh trực tiếp."
+          },
+          {
+            "en": "Includes a valid implication rather than an absolute claim.",
+            "vi": "Gồm một hệ quả hợp lệ thay vì kết luận tuyệt đối."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "wired",
+        "wireless",
+        "implications"
+      ]
+    },
+    {
+      "id": "P1-L13-CHECK-REQ-2.1-07-02",
+      "requirementId": "REQ-2.1-07-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe copper, fibre optic, radio/WiFi, microwave and satellite media, including the signal or one defining characteristic of each.",
+        "vi": "Mô tả copper, fibre optic, radio/WiFi, microwave và satellite, gồm tín hiệu hoặc một đặc trưng xác định của mỗi loại."
+      },
+      "hint": {
+        "en": "Cover all five media families.",
+        "vi": "Bao phủ đủ năm nhóm medium."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Copper carries electrical signals; fibre carries light and resists electromagnetic interference; radio/WiFi provides local wireless communication; terrestrial microwave is directional and often line-of-sight; satellite relays microwave signals for wide coverage with propagation delay.",
+          "vi": "Copper mang tín hiệu điện; fibre mang ánh sáng và chống electromagnetic interference; radio/WiFi cung cấp liên lạc không dây local; microwave mặt đất có hướng và thường line-of-sight; satellite chuyển tiếp microwave cho coverage rộng nhưng có propagation delay."
+        },
+        "rubric": [
+          {
+            "en": "Accurately describes all five media families.",
+            "vi": "Mô tả đúng cả năm nhóm medium."
+          },
+          {
+            "en": "Uses signal or link characteristics precisely.",
+            "vi": "Dùng đặc trưng tín hiệu hoặc link chính xác."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "copper",
+        "fibre",
+        "radio",
+        "microwave",
+        "satellite"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Match each medium to its signal and one trade-off.",
+      "vi": "Ghép mỗi medium với tín hiệu và một trade-off."
+    },
+    "answerPoints": [
+      {
+        "en": "Copper–electrical; fibre–light; WiFi/radio and microwave/satellite–electromagnetic waves.",
+        "vi": "Copper–điện; fibre–ánh sáng; WiFi/radio và microwave/satellite–sóng điện từ."
+      },
+      {
+        "en": "Choose using capacity, distance, mobility, interference, delay and cost.",
+        "vi": "Chọn theo capacity, distance, mobility, interference, delay và cost."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "attenuation",
+      "meaning": {
+        "en": "Reduction of signal strength as it travels.",
+        "vi": "Sự giảm cường độ tín hiệu khi truyền."
+      }
+    },
+    {
+      "term": "fibre optic",
+      "meaning": {
+        "en": "A cable carrying data as pulses of light.",
+        "vi": "Cable mang dữ liệu dưới dạng xung ánh sáng."
+      }
+    },
+    {
+      "term": "line of sight",
+      "meaning": {
+        "en": "A largely unobstructed path between directional antennas.",
+        "vi": "Đường gần như không bị cản giữa các antenna có hướng."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-hardware",
+    "streaming"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L13 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 43–46: wired/wireless networking and transmission media",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L13",
+  "contractCoverage": {
+    "B01": [
+      "P1-L13-objectives"
+    ],
+    "B02": [
+      "P1-L13-theory-1",
+      "P1-L13-theory-2"
+    ],
+    "B03": [
+      "P1-L13-rules"
+    ],
+    "B04": [
+      "P1-L13-recognise"
+    ],
+    "B05": [
+      "P1-L13-worked-1",
+      "P1-L13-worked-2",
+      "P1-L13-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L13"
+    ],
+    "B07": [
+      "P1-L13-CHECK-REQ-2.1-07-01",
+      "P1-L13-CHECK-REQ-2.1-07-02"
+    ],
+    "B08": [
+      "P1-L13-misconceptions"
+    ],
+    "B09": [
+      "P1-L13-recall"
+    ],
+    "B10": [
+      "P1-L13-glossary"
+    ],
+    "B11": [
+      "P1-L13-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

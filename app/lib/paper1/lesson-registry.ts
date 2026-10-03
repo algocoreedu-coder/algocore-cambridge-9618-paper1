@@ -9,6 +9,16 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "vector-graphics": () => import("@/content/paper1/lessons/vector-graphics.json"),
   "sound-sampling": () => import("@/content/paper1/lessons/sound-sampling.json"),
   "compression": () => import("@/content/paper1/lessons/compression.json"),
+  "network-foundations": () => import("@/content/paper1/lessons/network-foundations.json"),
+  "network-models": () => import("@/content/paper1/lessons/network-models.json"),
+  "network-topologies": () => import("@/content/paper1/lessons/network-topologies.json"),
+  "cloud-computing": () => import("@/content/paper1/lessons/cloud-computing.json"),
+  "transmission-media": () => import("@/content/paper1/lessons/transmission-media.json"),
+  "network-hardware": () => import("@/content/paper1/lessons/network-hardware.json"),
+  "ethernet": () => import("@/content/paper1/lessons/ethernet.json"),
+  "streaming": () => import("@/content/paper1/lessons/streaming.json"),
+  "ip-addressing": () => import("@/content/paper1/lessons/ip-addressing.json"),
+  "web-url-dns": () => import("@/content/paper1/lessons/web-url-dns.json"),
 };
 
 export async function getPaper1Lesson(slug: string): Promise<Paper1Lesson | undefined> {

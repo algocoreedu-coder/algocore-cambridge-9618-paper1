@@ -1,0 +1,5129 @@
+[
+  {
+    "lessonId": "P1-L09",
+    "visualId": "VIS-P1-L09",
+    "title": {
+      "en": "Follow the network boundary",
+      "vi": "Lần theo ranh giới mạng"
+    },
+    "intro": {
+      "en": "Change the scenario, predict LAN or WAN, then trace why the network exists and where its boundary lies.",
+      "vi": "Đổi tình huống, dự đoán LAN hay WAN rồi lần theo mục đích kết nối và ranh giới mạng."
+    },
+    "prompt": {
+      "en": "How should this complete scenario be classified?",
+      "vi": "Toàn bộ tình huống này nên được phân loại thế nào?"
+    },
+    "choices": [
+      {
+        "id": "lan",
+        "label": {
+          "en": "LAN",
+          "vi": "LAN"
+        }
+      },
+      {
+        "id": "wan",
+        "label": {
+          "en": "WAN",
+          "vi": "WAN"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "classroom",
+        "label": {
+          "en": "One school building",
+          "vi": "Một tòa nhà trường học"
+        },
+        "correctChoiceId": "lan",
+        "nodes": [
+          {
+            "id": "laptop",
+            "label": {
+              "en": "Laptop",
+              "vi": "Laptop"
+            },
+            "kind": "client",
+            "x": 80,
+            "y": 128
+          },
+          {
+            "id": "switch",
+            "label": {
+              "en": "Switch",
+              "vi": "Switch"
+            },
+            "kind": "network",
+            "x": 285,
+            "y": 128
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "File server",
+              "vi": "File server"
+            },
+            "kind": "server",
+            "x": 500,
+            "y": 128
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "laptop",
+            "to": "switch",
+            "label": {
+              "en": "Ethernet",
+              "vi": "Ethernet"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "switch",
+            "to": "server",
+            "label": {
+              "en": "Ethernet",
+              "vi": "Ethernet"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Connect local devices",
+              "vi": "Kết nối các thiết bị cục bộ"
+            },
+            "explanation": {
+              "en": "The laptop and server communicate through a switch inside one site.",
+              "vi": "Laptop và server giao tiếp qua switch trong cùng một địa điểm."
+            },
+            "activeNodes": [
+              "laptop",
+              "switch"
+            ],
+            "activeEdges": [
+              "e1"
+            ],
+            "metric": {
+              "label": {
+                "en": "Boundary",
+                "vi": "Ranh giới"
+              },
+              "value": {
+                "en": "one site",
+                "vi": "một địa điểm"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Share a managed resource",
+              "vi": "Chia sẻ tài nguyên được quản lý"
+            },
+            "explanation": {
+              "en": "The connection lets users share files and centrally managed services.",
+              "vi": "Kết nối cho phép người dùng chia sẻ file và dịch vụ được quản lý tập trung."
+            },
+            "activeNodes": [
+              "laptop",
+              "switch",
+              "server"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Classify the scope",
+              "vi": "Phân loại phạm vi"
+            },
+            "explanation": {
+              "en": "A network covering one limited site is a LAN; distance alone is not the only test.",
+              "vi": "Mạng trong một địa điểm giới hạn là LAN; chỉ khoảng cách không phải tiêu chí duy nhất."
+            },
+            "activeNodes": [
+              "laptop",
+              "switch",
+              "server"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Result",
+                "vi": "Kết quả"
+              },
+              "value": {
+                "en": "LAN",
+                "vi": "LAN"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "branches",
+        "label": {
+          "en": "Two city branches",
+          "vi": "Hai chi nhánh khác thành phố"
+        },
+        "correctChoiceId": "wan",
+        "nodes": [
+          {
+            "id": "officeA",
+            "label": {
+              "en": "Branch A LAN",
+              "vi": "LAN chi nhánh A"
+            },
+            "kind": "client",
+            "x": 70,
+            "y": 128
+          },
+          {
+            "id": "routerA",
+            "label": {
+              "en": "Router",
+              "vi": "Router"
+            },
+            "kind": "network",
+            "x": 220,
+            "y": 128
+          },
+          {
+            "id": "carrier",
+            "label": {
+              "en": "Carrier network",
+              "vi": "Mạng nhà cung cấp"
+            },
+            "kind": "cloud",
+            "x": 370,
+            "y": 128
+          },
+          {
+            "id": "officeB",
+            "label": {
+              "en": "Branch B LAN",
+              "vi": "LAN chi nhánh B"
+            },
+            "kind": "server",
+            "x": 535,
+            "y": 128
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "officeA",
+            "to": "routerA",
+            "label": {
+              "en": "LAN",
+              "vi": "LAN"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "routerA",
+            "to": "carrier",
+            "label": {
+              "en": "WAN link",
+              "vi": "đường WAN"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "carrier",
+            "to": "officeB",
+            "label": {
+              "en": "WAN link",
+              "vi": "đường WAN"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Leave the local network",
+              "vi": "Rời mạng cục bộ"
+            },
+            "explanation": {
+              "en": "Traffic for the other branch reaches the local router.",
+              "vi": "Dữ liệu tới chi nhánh kia được chuyển đến router cục bộ."
+            },
+            "activeNodes": [
+              "officeA",
+              "routerA"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Cross a third-party network",
+              "vi": "Đi qua mạng của bên thứ ba"
+            },
+            "explanation": {
+              "en": "The router forwards traffic over a telecommunications provider's infrastructure.",
+              "vi": "Router chuyển tiếp dữ liệu qua hạ tầng của nhà cung cấp viễn thông."
+            },
+            "activeNodes": [
+              "routerA",
+              "carrier"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Ownership",
+                "vi": "Quyền sở hữu"
+              },
+              "value": {
+                "en": "multiple organisations",
+                "vi": "nhiều tổ chức"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Join distant LANs",
+              "vi": "Nối các LAN ở xa"
+            },
+            "explanation": {
+              "en": "A WAN connects networks across a wide geographical area using carrier links.",
+              "vi": "WAN nối các mạng trên vùng địa lý rộng bằng các đường truyền của nhà cung cấp."
+            },
+            "activeNodes": [
+              "officeA",
+              "routerA",
+              "carrier",
+              "officeB"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e3"
+            ],
+            "metric": {
+              "label": {
+                "en": "Result",
+                "vi": "Kết quả"
+              },
+              "value": {
+                "en": "WAN",
+                "vi": "WAN"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L10",
+    "visualId": "VIS-P1-L10",
+    "title": {
+      "en": "Locate processing and storage",
+      "vi": "Xác định nơi xử lý và lưu trữ"
+    },
+    "intro": {
+      "en": "Switch between client–server, thin-client, thick-client and peer-to-peer cases; trace both request and response.",
+      "vi": "Đổi giữa client–server, thin client, thick client và peer-to-peer; lần theo cả request lẫn response."
+    },
+    "prompt": {
+      "en": "Who coordinates the shared service in this scenario?",
+      "vi": "Ai điều phối dịch vụ dùng chung trong tình huống này?"
+    },
+    "choices": [
+      {
+        "id": "server",
+        "label": {
+          "en": "A dedicated server",
+          "vi": "Một server chuyên dụng"
+        }
+      },
+      {
+        "id": "peers",
+        "label": {
+          "en": "The peers themselves",
+          "vi": "Chính các peer"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "thin-client",
+        "label": {
+          "en": "Client–server: thin client",
+          "vi": "Client–server: thin client"
+        },
+        "correctChoiceId": "server",
+        "nodes": [
+          {
+            "id": "client",
+            "label": {
+              "en": "Thin client",
+              "vi": "Thin client"
+            },
+            "kind": "client",
+            "x": 80,
+            "y": 135
+          },
+          {
+            "id": "app",
+            "label": {
+              "en": "Application server",
+              "vi": "Application server"
+            },
+            "kind": "server",
+            "x": 300,
+            "y": 75
+          },
+          {
+            "id": "store",
+            "label": {
+              "en": "Account store",
+              "vi": "Kho account"
+            },
+            "kind": "database",
+            "x": 520,
+            "y": 75
+          },
+          {
+            "id": "result",
+            "label": {
+              "en": "Managed result",
+              "vi": "Kết quả quản lý"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 215
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "client",
+            "to": "app",
+            "label": {
+              "en": "login request",
+              "vi": "login request"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "app",
+            "to": "store",
+            "label": {
+              "en": "account lookup",
+              "vi": "tra account"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "store",
+            "to": "app",
+            "label": {
+              "en": "record",
+              "vi": "record"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "app",
+            "to": "result",
+            "label": {
+              "en": "process centrally",
+              "vi": "xử lý tập trung"
+            }
+          },
+          {
+            "id": "e5",
+            "from": "result",
+            "to": "client",
+            "label": {
+              "en": "response",
+              "vi": "response"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Send the request",
+              "vi": "Gửi request"
+            },
+            "explanation": {
+              "en": "The thin client captures input and sends the login request to the application server.",
+              "vi": "Thin client nhận input rồi gửi login request tới application server."
+            },
+            "activeNodes": [
+              "client",
+              "app"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Read central data",
+              "vi": "Đọc dữ liệu tập trung"
+            },
+            "explanation": {
+              "en": "The server applies the authentication rule and looks up the centrally stored account.",
+              "vi": "Server áp dụng quy tắc xác thực và tra account được lưu tập trung."
+            },
+            "activeNodes": [
+              "app",
+              "store"
+            ],
+            "activeEdges": [
+              "e2",
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Process on the server",
+              "vi": "Xử lý trên server"
+            },
+            "explanation": {
+              "en": "Most application processing happens on the server; the thin client needs fewer local resources.",
+              "vi": "Phần lớn application processing diễn ra trên server; thin client cần ít tài nguyên local hơn."
+            },
+            "activeNodes": [
+              "app",
+              "result"
+            ],
+            "activeEdges": [
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Return the response",
+              "vi": "Trả response"
+            },
+            "explanation": {
+              "en": "The managed result returns to the client. Central control helps updates and backup, but server failure can affect every client.",
+              "vi": "Kết quả được quản lý trả về client. Kiểm soát tập trung hỗ trợ update và backup, nhưng server hỏng có thể ảnh hưởng mọi client."
+            },
+            "activeNodes": [
+              "result",
+              "client"
+            ],
+            "activeEdges": [
+              "e5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "thick-client",
+        "label": {
+          "en": "Client–server: thick client",
+          "vi": "Client–server: thick client"
+        },
+        "correctChoiceId": "server",
+        "nodes": [
+          {
+            "id": "client",
+            "label": {
+              "en": "Thick client",
+              "vi": "Thick client"
+            },
+            "kind": "client",
+            "x": 80,
+            "y": 135
+          },
+          {
+            "id": "local",
+            "label": {
+              "en": "Local processing",
+              "vi": "Xử lý local"
+            },
+            "kind": "document",
+            "x": 280,
+            "y": 65
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "Data server",
+              "vi": "Data server"
+            },
+            "kind": "server",
+            "x": 510,
+            "y": 135
+          },
+          {
+            "id": "result",
+            "label": {
+              "en": "Local result",
+              "vi": "Kết quả local"
+            },
+            "kind": "document",
+            "x": 280,
+            "y": 220
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "client",
+            "to": "local",
+            "label": {
+              "en": "run application",
+              "vi": "chạy application"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "local",
+            "to": "server",
+            "label": {
+              "en": "data request",
+              "vi": "data request"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "server",
+            "to": "local",
+            "label": {
+              "en": "data response",
+              "vi": "data response"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "local",
+            "to": "result",
+            "label": {
+              "en": "process locally",
+              "vi": "xử lý local"
+            }
+          },
+          {
+            "id": "e5",
+            "from": "result",
+            "to": "client",
+            "label": {
+              "en": "display",
+              "vi": "hiển thị"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Run locally",
+              "vi": "Chạy local"
+            },
+            "explanation": {
+              "en": "The thick client runs substantial application code and therefore needs more local processing and storage.",
+              "vi": "Thick client chạy phần lớn application code nên cần nhiều processing và storage local hơn."
+            },
+            "activeNodes": [
+              "client",
+              "local"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Request shared data",
+              "vi": "Yêu cầu dữ liệu dùng chung"
+            },
+            "explanation": {
+              "en": "The local application requests centrally managed data from a server.",
+              "vi": "Application local yêu cầu dữ liệu được quản lý tập trung từ server."
+            },
+            "activeNodes": [
+              "local",
+              "server"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Receive the response",
+              "vi": "Nhận response"
+            },
+            "explanation": {
+              "en": "The server returns data, while the thick client keeps responsibility for much of the processing.",
+              "vi": "Server trả dữ liệu, còn thick client tiếp tục chịu trách nhiệm phần lớn việc xử lý."
+            },
+            "activeNodes": [
+              "server",
+              "local"
+            ],
+            "activeEdges": [
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Finish locally",
+              "vi": "Hoàn tất local"
+            },
+            "explanation": {
+              "en": "The client processes and displays the result. It can offer richer local work but makes client updates and hardware demands greater.",
+              "vi": "Client xử lý và hiển thị kết quả. Nó có thể làm việc local phong phú hơn nhưng tăng yêu cầu update và phần cứng ở client."
+            },
+            "activeNodes": [
+              "local",
+              "result",
+              "client"
+            ],
+            "activeEdges": [
+              "e4",
+              "e5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "peer",
+        "label": {
+          "en": "Peer-to-peer file share",
+          "vi": "Chia sẻ file peer-to-peer"
+        },
+        "correctChoiceId": "peers",
+        "nodes": [
+          {
+            "id": "peerA",
+            "label": {
+              "en": "Peer A",
+              "vi": "Peer A"
+            },
+            "kind": "client",
+            "x": 105,
+            "y": 135
+          },
+          {
+            "id": "peerB",
+            "label": {
+              "en": "Peer B",
+              "vi": "Peer B"
+            },
+            "kind": "client",
+            "x": 495,
+            "y": 135
+          },
+          {
+            "id": "file",
+            "label": {
+              "en": "Shared folder",
+              "vi": "Folder dùng chung"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 215
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "peerB",
+            "to": "file",
+            "label": {
+              "en": "advertise",
+              "vi": "công bố"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "peerA",
+            "to": "peerB",
+            "label": {
+              "en": "direct request",
+              "vi": "request trực tiếp"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "peerB",
+            "to": "peerA",
+            "label": {
+              "en": "file response",
+              "vi": "file response"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Advertise a resource",
+              "vi": "Công bố tài nguyên"
+            },
+            "explanation": {
+              "en": "Peer B makes one folder available without a dedicated central server.",
+              "vi": "Peer B chia sẻ một folder mà không cần server trung tâm chuyên dụng."
+            },
+            "activeNodes": [
+              "peerB",
+              "file"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Request directly",
+              "vi": "Request trực tiếp"
+            },
+            "explanation": {
+              "en": "Peer A requests the resource directly from Peer B.",
+              "vi": "Peer A request tài nguyên trực tiếp từ Peer B."
+            },
+            "activeNodes": [
+              "peerA",
+              "peerB"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Return directly",
+              "vi": "Trả trực tiếp"
+            },
+            "explanation": {
+              "en": "Peer B sends the file response to Peer A; peers can act as both client and server.",
+              "vi": "Peer B gửi file response cho Peer A; mỗi peer có thể vừa là client vừa là server."
+            },
+            "activeNodes": [
+              "peerA",
+              "peerB"
+            ],
+            "activeEdges": [
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Share responsibility",
+              "vi": "Chia sẻ trách nhiệm"
+            },
+            "explanation": {
+              "en": "There is no dedicated coordinating server, so administration, security and backup are less centralised.",
+              "vi": "Không có server chuyên dụng điều phối nên quản trị, bảo mật và backup kém tập trung hơn."
+            },
+            "activeNodes": [
+              "peerA",
+              "peerB",
+              "file"
+            ],
+            "activeEdges": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L11",
+    "visualId": "VIS-P1-L11",
+    "title": {
+      "en": "Trace a topology failure",
+      "vi": "Lần theo sự cố topology"
+    },
+    "intro": {
+      "en": "Switch among bus, star, mesh and hybrid fixtures; predict whether redundancy contains the failure or a shared path spreads its impact.",
+      "vi": "Đổi giữa bus, star, mesh và hybrid; dự đoán redundancy cô lập sự cố hay shared path làm tác động lan rộng."
+    },
+    "prompt": {
+      "en": "What is the failure scope in this scenario?",
+      "vi": "Phạm vi sự cố trong tình huống này là gì?"
+    },
+    "choices": [
+      {
+        "id": "contained",
+        "label": {
+          "en": "Contained by an access link or alternate path",
+          "vi": "Được cô lập nhờ access link hoặc đường thay thế"
+        }
+      },
+      {
+        "id": "shared",
+        "label": {
+          "en": "A shared path affects multiple hosts",
+          "vi": "Shared path ảnh hưởng nhiều host"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "star",
+        "label": {
+          "en": "Star: one access link fails",
+          "vi": "Star: một access link hỏng"
+        },
+        "correctChoiceId": "contained",
+        "nodes": [
+          {
+            "id": "a",
+            "label": {
+              "en": "Host A",
+              "vi": "Host A"
+            },
+            "kind": "client",
+            "x": 80,
+            "y": 55
+          },
+          {
+            "id": "b",
+            "label": {
+              "en": "Host B",
+              "vi": "Host B"
+            },
+            "kind": "client",
+            "x": 80,
+            "y": 215
+          },
+          {
+            "id": "switch",
+            "label": {
+              "en": "Switch",
+              "vi": "Switch"
+            },
+            "kind": "network",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "c",
+            "label": {
+              "en": "Host C",
+              "vi": "Host C"
+            },
+            "kind": "client",
+            "x": 520,
+            "y": 55
+          },
+          {
+            "id": "d",
+            "label": {
+              "en": "Host D",
+              "vi": "Host D"
+            },
+            "kind": "client",
+            "x": 520,
+            "y": 215
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "a",
+            "to": "switch",
+            "label": {
+              "en": "failed access link",
+              "vi": "access link hỏng"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "b",
+            "to": "switch",
+            "label": {
+              "en": "working link",
+              "vi": "link hoạt động"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "switch",
+            "to": "c",
+            "label": {
+              "en": "working link",
+              "vi": "link hoạt động"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "switch",
+            "to": "d",
+            "label": {
+              "en": "working link",
+              "vi": "link hoạt động"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Identify the star centre",
+              "vi": "Xác định tâm star"
+            },
+            "explanation": {
+              "en": "Every host has its own access link to one central switch.",
+              "vi": "Mỗi host có access link riêng tới một switch trung tâm."
+            },
+            "activeNodes": [
+              "switch"
+            ],
+            "activeEdges": [
+              "e2",
+              "e3",
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Break Host A's link",
+              "vi": "Làm hỏng link của Host A"
+            },
+            "explanation": {
+              "en": "Only Host A loses its route to the switch.",
+              "vi": "Chỉ Host A mất đường tới switch."
+            },
+            "activeNodes": [
+              "a",
+              "switch"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Test the remaining hosts",
+              "vi": "Kiểm tra các host còn lại"
+            },
+            "explanation": {
+              "en": "B, C and D still communicate through their independent working links.",
+              "vi": "B, C và D vẫn liên lạc qua các link độc lập còn hoạt động."
+            },
+            "activeNodes": [
+              "b",
+              "switch",
+              "c",
+              "d"
+            ],
+            "activeEdges": [
+              "e2",
+              "e3",
+              "e4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bus",
+        "label": {
+          "en": "Bus: backbone is cut",
+          "vi": "Bus: backbone bị đứt"
+        },
+        "correctChoiceId": "shared",
+        "nodes": [
+          {
+            "id": "a",
+            "label": {
+              "en": "Host A",
+              "vi": "Host A"
+            },
+            "kind": "client",
+            "x": 70,
+            "y": 80
+          },
+          {
+            "id": "b",
+            "label": {
+              "en": "Host B",
+              "vi": "Host B"
+            },
+            "kind": "client",
+            "x": 225,
+            "y": 80
+          },
+          {
+            "id": "break",
+            "label": {
+              "en": "Cable break",
+              "vi": "Điểm đứt cáp"
+            },
+            "kind": "warning",
+            "x": 380,
+            "y": 135
+          },
+          {
+            "id": "c",
+            "label": {
+              "en": "Host C",
+              "vi": "Host C"
+            },
+            "kind": "client",
+            "x": 530,
+            "y": 200
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "a",
+            "to": "b",
+            "label": {
+              "en": "shared backbone",
+              "vi": "backbone dùng chung"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "b",
+            "to": "break",
+            "label": {
+              "en": "cut",
+              "vi": "bị đứt"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "break",
+            "to": "c",
+            "label": {
+              "en": "shared backbone",
+              "vi": "backbone dùng chung"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Share one backbone",
+              "vi": "Dùng chung một backbone"
+            },
+            "explanation": {
+              "en": "Hosts attach to the same main cable.",
+              "vi": "Các host nối vào cùng một cáp chính."
+            },
+            "activeNodes": [
+              "a",
+              "b",
+              "c"
+            ],
+            "activeEdges": [
+              "e1",
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Cut the shared path",
+              "vi": "Cắt shared path"
+            },
+            "explanation": {
+              "en": "The main transmission path is no longer continuous.",
+              "vi": "Đường truyền chính không còn liên tục."
+            },
+            "activeNodes": [
+              "b",
+              "break",
+              "c"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Observe the multi-host impact",
+              "vi": "Quan sát tác động nhiều host"
+            },
+            "explanation": {
+              "en": "Hosts on opposite sides cannot communicate because the failed backbone segment is shared; this does not necessarily disconnect every host from every same-side neighbour.",
+              "vi": "Các host ở hai phía không thể liên lạc vì đoạn backbone hỏng được dùng chung; điều này không nhất thiết ngắt mọi host khỏi mọi hàng xóm cùng phía."
+            },
+            "activeNodes": [
+              "a",
+              "b",
+              "c",
+              "break"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mesh",
+        "label": {
+          "en": "Partial mesh: one link fails",
+          "vi": "Partial mesh: một link hỏng"
+        },
+        "correctChoiceId": "contained",
+        "nodes": [
+          {
+            "id": "a",
+            "label": {
+              "en": "Node A",
+              "vi": "Node A"
+            },
+            "kind": "network",
+            "x": 85,
+            "y": 135
+          },
+          {
+            "id": "b",
+            "label": {
+              "en": "Node B",
+              "vi": "Node B"
+            },
+            "kind": "network",
+            "x": 300,
+            "y": 55
+          },
+          {
+            "id": "c",
+            "label": {
+              "en": "Node C",
+              "vi": "Node C"
+            },
+            "kind": "network",
+            "x": 515,
+            "y": 135
+          },
+          {
+            "id": "d",
+            "label": {
+              "en": "Node D",
+              "vi": "Node D"
+            },
+            "kind": "network",
+            "x": 300,
+            "y": 220
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "b",
+            "to": "a",
+            "label": {
+              "en": "working",
+              "vi": "hoạt động"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "b",
+            "to": "c",
+            "label": {
+              "en": "failed",
+              "vi": "bị hỏng"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "a",
+            "to": "d",
+            "label": {
+              "en": "alternate",
+              "vi": "đường thay thế"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "d",
+            "to": "c",
+            "label": {
+              "en": "alternate",
+              "vi": "đường thay thế"
+            }
+          },
+          {
+            "id": "e5",
+            "from": "b",
+            "to": "d",
+            "label": {
+              "en": "working",
+              "vi": "hoạt động"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Identify redundant links",
+              "vi": "Xác định link dự phòng"
+            },
+            "explanation": {
+              "en": "A partial mesh gives selected nodes more than one route.",
+              "vi": "Partial mesh cho một số node nhiều hơn một route."
+            },
+            "activeNodes": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ],
+            "activeEdges": [
+              "e1",
+              "e3",
+              "e4",
+              "e5"
+            ]
+          },
+          {
+            "title": {
+              "en": "Fail one mesh link",
+              "vi": "Làm hỏng một mesh link"
+            },
+            "explanation": {
+              "en": "The direct B–C link is unavailable.",
+              "vi": "Link trực tiếp B–C không hoạt động."
+            },
+            "activeNodes": [
+              "b",
+              "c"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Use an alternate path",
+              "vi": "Dùng đường thay thế"
+            },
+            "explanation": {
+              "en": "Traffic can travel B–A–D–C or B–D–C in this fixture, so the single link failure is contained.",
+              "vi": "Traffic có thể đi B–A–D–C hoặc B–D–C trong fixture này nên sự cố một link được cô lập."
+            },
+            "activeNodes": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ],
+            "activeEdges": [
+              "e1",
+              "e3",
+              "e4",
+              "e5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hybrid",
+        "label": {
+          "en": "Hybrid: branch uplink fails",
+          "vi": "Hybrid: uplink của nhánh hỏng"
+        },
+        "correctChoiceId": "shared",
+        "nodes": [
+          {
+            "id": "h1",
+            "label": {
+              "en": "Branch host 1",
+              "vi": "Host nhánh 1"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 55
+          },
+          {
+            "id": "h2",
+            "label": {
+              "en": "Branch host 2",
+              "vi": "Host nhánh 2"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 215
+          },
+          {
+            "id": "access",
+            "label": {
+              "en": "Access switch",
+              "vi": "Access switch"
+            },
+            "kind": "network",
+            "x": 250,
+            "y": 135
+          },
+          {
+            "id": "core",
+            "label": {
+              "en": "Core mesh",
+              "vi": "Core mesh"
+            },
+            "kind": "network",
+            "x": 455,
+            "y": 135
+          },
+          {
+            "id": "service",
+            "label": {
+              "en": "Shared service",
+              "vi": "Dịch vụ chung"
+            },
+            "kind": "server",
+            "x": 535,
+            "y": 55
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "h1",
+            "to": "access",
+            "label": {
+              "en": "star link",
+              "vi": "star link"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "h2",
+            "to": "access",
+            "label": {
+              "en": "star link",
+              "vi": "star link"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "access",
+            "to": "core",
+            "label": {
+              "en": "failed uplink",
+              "vi": "uplink hỏng"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "core",
+            "to": "service",
+            "label": {
+              "en": "core path",
+              "vi": "đường core"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Combine topologies",
+              "vi": "Kết hợp topology"
+            },
+            "explanation": {
+              "en": "The branch uses a star access network connected to a more resilient core.",
+              "vi": "Nhánh dùng mạng truy cập star nối với core có redundancy cao hơn."
+            },
+            "activeNodes": [
+              "h1",
+              "h2",
+              "access",
+              "core"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Fail the branch uplink",
+              "vi": "Làm hỏng uplink của nhánh"
+            },
+            "explanation": {
+              "en": "The access switch loses its only path to the core.",
+              "vi": "Access switch mất đường duy nhất tới core."
+            },
+            "activeNodes": [
+              "access",
+              "core"
+            ],
+            "activeEdges": [
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Trace the shared impact",
+              "vi": "Lần theo tác động shared"
+            },
+            "explanation": {
+              "en": "Both branch hosts lose the shared service because their common uplink failed, even though their own star links still work.",
+              "vi": "Cả hai host trong nhánh mất shared service vì uplink chung bị hỏng dù star link riêng vẫn hoạt động."
+            },
+            "activeNodes": [
+              "h1",
+              "h2",
+              "access",
+              "service"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e3",
+              "e4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L12",
+    "visualId": "VIS-P1-L12",
+    "title": {
+      "en": "Choose a cloud deployment",
+      "vi": "Chọn mô hình triển khai cloud"
+    },
+    "intro": {
+      "en": "Compare control, access and cost for public and private cloud scenarios.",
+      "vi": "So sánh quyền kiểm soát, truy cập và chi phí trong tình huống public/private cloud."
+    },
+    "prompt": {
+      "en": "Which deployment best matches the stated priority?",
+      "vi": "Mô hình nào phù hợp nhất với ưu tiên đã nêu?"
+    },
+    "choices": [
+      {
+        "id": "public",
+        "label": {
+          "en": "Public cloud",
+          "vi": "Public cloud"
+        }
+      },
+      {
+        "id": "private",
+        "label": {
+          "en": "Private cloud",
+          "vi": "Private cloud"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "startup",
+        "label": {
+          "en": "Startup: scale quickly",
+          "vi": "Startup: mở rộng nhanh"
+        },
+        "correctChoiceId": "public",
+        "nodes": [
+          {
+            "id": "team",
+            "label": {
+              "en": "Remote team",
+              "vi": "Nhóm làm việc từ xa"
+            },
+            "kind": "client",
+            "x": 90,
+            "y": 128
+          },
+          {
+            "id": "internet",
+            "label": {
+              "en": "Internet",
+              "vi": "Internet"
+            },
+            "kind": "network",
+            "x": 295,
+            "y": 128
+          },
+          {
+            "id": "cloud",
+            "label": {
+              "en": "Provider platform",
+              "vi": "Nền tảng nhà cung cấp"
+            },
+            "kind": "cloud",
+            "x": 500,
+            "y": 128
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "team",
+            "to": "internet",
+            "label": {
+              "en": "secure access",
+              "vi": "truy cập bảo mật"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "internet",
+            "to": "cloud",
+            "label": {
+              "en": "shared provider",
+              "vi": "hạ tầng nhà cung cấp dùng chung"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "State the priority",
+              "vi": "Xác định ưu tiên"
+            },
+            "explanation": {
+              "en": "The startup needs rapid capacity changes and low initial infrastructure cost.",
+              "vi": "Startup cần thay đổi dung lượng nhanh và chi phí hạ tầng ban đầu thấp."
+            },
+            "activeNodes": [
+              "team"
+            ],
+            "activeEdges": []
+          },
+          {
+            "title": {
+              "en": "Use provider capacity",
+              "vi": "Dùng năng lực nhà cung cấp"
+            },
+            "explanation": {
+              "en": "A public provider supplies shared scalable infrastructure over the internet.",
+              "vi": "Nhà cung cấp public cloud cung cấp hạ tầng chia sẻ có thể mở rộng qua internet."
+            },
+            "activeNodes": [
+              "internet",
+              "cloud"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Accept the trade-off",
+              "vi": "Chấp nhận trade-off"
+            },
+            "explanation": {
+              "en": "The organisation gains elasticity but has less direct control over provider infrastructure.",
+              "vi": "Tổ chức có khả năng mở rộng linh hoạt nhưng ít kiểm soát trực tiếp hạ tầng nhà cung cấp hơn."
+            },
+            "activeNodes": [
+              "team",
+              "cloud"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Best fit",
+                "vi": "Phù hợp"
+              },
+              "value": {
+                "en": "public",
+                "vi": "public"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "hospital",
+        "label": {
+          "en": "Hospital: maximum control",
+          "vi": "Bệnh viện: kiểm soát tối đa"
+        },
+        "correctChoiceId": "private",
+        "nodes": [
+          {
+            "id": "staff",
+            "label": {
+              "en": "Clinical staff",
+              "vi": "Nhân viên y tế"
+            },
+            "kind": "client",
+            "x": 90,
+            "y": 128
+          },
+          {
+            "id": "private",
+            "label": {
+              "en": "Private network",
+              "vi": "Mạng riêng"
+            },
+            "kind": "network",
+            "x": 295,
+            "y": 128
+          },
+          {
+            "id": "cloud",
+            "label": {
+              "en": "Dedicated cloud",
+              "vi": "Cloud chuyên dụng"
+            },
+            "kind": "server",
+            "x": 500,
+            "y": 128
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "staff",
+            "to": "private",
+            "label": {
+              "en": "managed access",
+              "vi": "truy cập được quản lý"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "private",
+            "to": "cloud",
+            "label": {
+              "en": "dedicated",
+              "vi": "chuyên dụng"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "State the constraint",
+              "vi": "Xác định ràng buộc"
+            },
+            "explanation": {
+              "en": "The hospital prioritises dedicated control over sensitive systems.",
+              "vi": "Bệnh viện ưu tiên quyền kiểm soát chuyên dụng với hệ thống nhạy cảm."
+            },
+            "activeNodes": [
+              "staff"
+            ],
+            "activeEdges": []
+          },
+          {
+            "title": {
+              "en": "Restrict the deployment",
+              "vi": "Giới hạn phạm vi triển khai"
+            },
+            "explanation": {
+              "en": "Private cloud resources are dedicated to one organisation.",
+              "vi": "Tài nguyên private cloud dành riêng cho một tổ chức."
+            },
+            "activeNodes": [
+              "private",
+              "cloud"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Fund the control",
+              "vi": "Đánh đổi chi phí để kiểm soát"
+            },
+            "explanation": {
+              "en": "Greater control and customisation normally require more management and cost.",
+              "vi": "Kiểm soát và tùy chỉnh cao hơn thường cần nhiều quản lý và chi phí hơn."
+            },
+            "activeNodes": [
+              "staff",
+              "private",
+              "cloud"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Best fit",
+                "vi": "Phù hợp"
+              },
+              "value": {
+                "en": "private",
+                "vi": "private"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L13",
+    "visualId": "VIS-P1-L13",
+    "title": {
+      "en": "Match a transmission medium",
+      "vi": "Chọn transmission medium phù hợp"
+    },
+    "intro": {
+      "en": "Compare copper, optical fibre, radio/Wi-Fi, terrestrial microwave and satellite in bounded use cases.",
+      "vi": "So sánh copper, optical fibre, radio/Wi-Fi, terrestrial microwave và satellite trong các tình huống cụ thể."
+    },
+    "prompt": {
+      "en": "Which medium best matches this scenario?",
+      "vi": "Medium nào phù hợp nhất với tình huống này?"
+    },
+    "choices": [
+      {
+        "id": "copper",
+        "label": {
+          "en": "Copper cable",
+          "vi": "Cáp copper"
+        }
+      },
+      {
+        "id": "fibre",
+        "label": {
+          "en": "Optical fibre",
+          "vi": "Optical fibre"
+        }
+      },
+      {
+        "id": "wireless",
+        "label": {
+          "en": "Radio / Wi-Fi",
+          "vi": "Radio / Wi-Fi"
+        }
+      },
+      {
+        "id": "microwave",
+        "label": {
+          "en": "Terrestrial microwave",
+          "vi": "Terrestrial microwave"
+        }
+      },
+      {
+        "id": "satellite",
+        "label": {
+          "en": "Satellite",
+          "vi": "Satellite"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "copper-lan",
+        "label": {
+          "en": "Short office LAN run",
+          "vi": "Đoạn LAN văn phòng ngắn"
+        },
+        "correctChoiceId": "copper",
+        "nodes": [
+          {
+            "id": "host",
+            "label": {
+              "en": "Desktop",
+              "vi": "Desktop"
+            },
+            "kind": "client",
+            "x": 90,
+            "y": 135
+          },
+          {
+            "id": "medium",
+            "label": {
+              "en": "Electrical signal",
+              "vi": "Tín hiệu điện"
+            },
+            "kind": "network",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "switch",
+            "label": {
+              "en": "Nearby switch",
+              "vi": "Switch gần"
+            },
+            "kind": "network",
+            "x": 510,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "host",
+            "to": "medium",
+            "label": {
+              "en": "encode",
+              "vi": "mã hóa"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "medium",
+            "to": "switch",
+            "label": {
+              "en": "copper pair",
+              "vi": "cặp dây copper"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Encode electrically",
+              "vi": "Mã hóa bằng điện"
+            },
+            "explanation": {
+              "en": "The NIC represents bits as electrical signals.",
+              "vi": "NIC biểu diễn bit bằng tín hiệu điện."
+            },
+            "activeNodes": [
+              "host",
+              "medium"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Travel through copper",
+              "vi": "Truyền qua copper"
+            },
+            "explanation": {
+              "en": "Twisted-pair copper is inexpensive and widely used for short Ethernet LAN runs, but can be affected by interference and distance limits.",
+              "vi": "Cáp copper twisted-pair rẻ và phổ biến cho đoạn Ethernet LAN ngắn, nhưng có giới hạn khoảng cách và có thể bị nhiễu."
+            },
+            "activeNodes": [
+              "medium",
+              "switch"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Match the requirement",
+              "vi": "Khớp yêu cầu"
+            },
+            "explanation": {
+              "en": "A short fixed office connection at moderate cost favours copper in this scenario.",
+              "vi": "Kết nối cố định, ngắn trong văn phòng với chi phí vừa phải phù hợp copper trong tình huống này."
+            },
+            "activeNodes": [
+              "host",
+              "medium",
+              "switch"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "backbone",
+        "label": {
+          "en": "High-capacity campus backbone",
+          "vi": "Backbone campus dung lượng cao"
+        },
+        "correctChoiceId": "fibre",
+        "nodes": [
+          {
+            "id": "sender",
+            "label": {
+              "en": "Network core A",
+              "vi": "Network core A"
+            },
+            "kind": "network",
+            "x": 85,
+            "y": 135
+          },
+          {
+            "id": "medium",
+            "label": {
+              "en": "Light pulses",
+              "vi": "Xung ánh sáng"
+            },
+            "kind": "fibre",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "receiver",
+            "label": {
+              "en": "Network core B",
+              "vi": "Network core B"
+            },
+            "kind": "network",
+            "x": 515,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "sender",
+            "to": "medium",
+            "label": {
+              "en": "encode",
+              "vi": "mã hóa"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "medium",
+            "to": "receiver",
+            "label": {
+              "en": "glass fibre",
+              "vi": "sợi thủy tinh"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Encode as light",
+              "vi": "Mã hóa thành ánh sáng"
+            },
+            "explanation": {
+              "en": "A transmitter represents bits as light pulses.",
+              "vi": "Transmitter biểu diễn bit thành các xung ánh sáng."
+            },
+            "activeNodes": [
+              "sender",
+              "medium"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Travel through glass",
+              "vi": "Truyền qua sợi thủy tinh"
+            },
+            "explanation": {
+              "en": "Fibre offers high bandwidth and is not affected by electromagnetic interference.",
+              "vi": "Fibre có bandwidth cao và không bị ảnh hưởng bởi electromagnetic interference."
+            },
+            "activeNodes": [
+              "medium",
+              "receiver"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Match the requirement",
+              "vi": "Khớp yêu cầu"
+            },
+            "explanation": {
+              "en": "The fixed high-capacity backbone favours fibre despite higher installation cost.",
+              "vi": "Backbone cố định cần dung lượng cao phù hợp fibre dù chi phí lắp đặt cao hơn."
+            },
+            "activeNodes": [
+              "sender",
+              "medium",
+              "receiver"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mobile",
+        "label": {
+          "en": "Mobile devices in a classroom",
+          "vi": "Thiết bị di động trong lớp"
+        },
+        "correctChoiceId": "wireless",
+        "nodes": [
+          {
+            "id": "device",
+            "label": {
+              "en": "Tablet",
+              "vi": "Tablet"
+            },
+            "kind": "client",
+            "x": 90,
+            "y": 135
+          },
+          {
+            "id": "medium",
+            "label": {
+              "en": "Radio waves",
+              "vi": "Sóng radio"
+            },
+            "kind": "wireless",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "wap",
+            "label": {
+              "en": "Wireless access point",
+              "vi": "Wireless access point"
+            },
+            "kind": "network",
+            "x": 510,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "device",
+            "to": "medium",
+            "label": {
+              "en": "radio",
+              "vi": "radio"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "medium",
+            "to": "wap",
+            "label": {
+              "en": "shared air",
+              "vi": "không khí dùng chung"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Remove the cable",
+              "vi": "Loại bỏ cáp"
+            },
+            "explanation": {
+              "en": "The tablet encodes data onto radio waves.",
+              "vi": "Tablet mã hóa dữ liệu lên sóng radio."
+            },
+            "activeNodes": [
+              "device",
+              "medium"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Share the air",
+              "vi": "Dùng chung không khí"
+            },
+            "explanation": {
+              "en": "Wireless devices share a radio channel and may experience interference.",
+              "vi": "Các thiết bị wireless dùng chung radio channel và có thể gặp interference."
+            },
+            "activeNodes": [
+              "medium",
+              "wap"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Match the requirement",
+              "vi": "Khớp yêu cầu"
+            },
+            "explanation": {
+              "en": "Mobility and easy installation favour Wi-Fi, with range, interference and security trade-offs.",
+              "vi": "Tính di động và dễ lắp đặt phù hợp Wi-Fi, kèm trade-off về range, interference và security."
+            },
+            "activeNodes": [
+              "device",
+              "medium",
+              "wap"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "microwave-link",
+        "label": {
+          "en": "Line-of-sight link between towers",
+          "vi": "Link line-of-sight giữa hai tháp"
+        },
+        "correctChoiceId": "microwave",
+        "nodes": [
+          {
+            "id": "towerA",
+            "label": {
+              "en": "Tower A",
+              "vi": "Tháp A"
+            },
+            "kind": "network",
+            "x": 85,
+            "y": 150
+          },
+          {
+            "id": "medium",
+            "label": {
+              "en": "Microwave beam",
+              "vi": "Chùm microwave"
+            },
+            "kind": "wireless",
+            "x": 300,
+            "y": 85
+          },
+          {
+            "id": "towerB",
+            "label": {
+              "en": "Tower B",
+              "vi": "Tháp B"
+            },
+            "kind": "network",
+            "x": 515,
+            "y": 150
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "towerA",
+            "to": "medium",
+            "label": {
+              "en": "directional beam",
+              "vi": "chùm định hướng"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "medium",
+            "to": "towerB",
+            "label": {
+              "en": "line of sight",
+              "vi": "line-of-sight"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Aim a directional signal",
+              "vi": "Hướng tín hiệu định hướng"
+            },
+            "explanation": {
+              "en": "A terrestrial transmitter focuses a microwave signal toward another tower.",
+              "vi": "Bộ phát terrestrial hướng tín hiệu microwave tới một tháp khác."
+            },
+            "activeNodes": [
+              "towerA",
+              "medium"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Keep line of sight",
+              "vi": "Duy trì line-of-sight"
+            },
+            "explanation": {
+              "en": "Buildings, terrain and alignment can obstruct or weaken the path.",
+              "vi": "Tòa nhà, địa hình và việc căn chỉnh có thể che hoặc làm yếu đường truyền."
+            },
+            "activeNodes": [
+              "medium",
+              "towerB"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Match the requirement",
+              "vi": "Khớp yêu cầu"
+            },
+            "explanation": {
+              "en": "A fixed link between visible sites can use terrestrial microwave without laying a cable across the whole route.",
+              "vi": "Một link cố định giữa hai địa điểm nhìn thấy nhau có thể dùng terrestrial microwave mà không cần kéo cáp toàn tuyến."
+            },
+            "activeNodes": [
+              "towerA",
+              "medium",
+              "towerB"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "satellite-link",
+        "label": {
+          "en": "Remote island with no terrestrial route",
+          "vi": "Đảo xa không có tuyến terrestrial"
+        },
+        "correctChoiceId": "satellite",
+        "nodes": [
+          {
+            "id": "site",
+            "label": {
+              "en": "Remote site",
+              "vi": "Địa điểm xa"
+            },
+            "kind": "client",
+            "x": 85,
+            "y": 200
+          },
+          {
+            "id": "sat",
+            "label": {
+              "en": "Satellite",
+              "vi": "Satellite"
+            },
+            "kind": "wireless",
+            "x": 300,
+            "y": 55
+          },
+          {
+            "id": "ground",
+            "label": {
+              "en": "Ground station",
+              "vi": "Ground station"
+            },
+            "kind": "network",
+            "x": 515,
+            "y": 200
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "site",
+            "to": "sat",
+            "label": {
+              "en": "uplink",
+              "vi": "uplink"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "sat",
+            "to": "ground",
+            "label": {
+              "en": "downlink",
+              "vi": "downlink"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Send the uplink",
+              "vi": "Gửi uplink"
+            },
+            "explanation": {
+              "en": "The remote station transmits a radio signal to a satellite.",
+              "vi": "Trạm ở xa truyền tín hiệu radio lên satellite."
+            },
+            "activeNodes": [
+              "site",
+              "sat"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Relay over a wide area",
+              "vi": "Relay trên vùng rộng"
+            },
+            "explanation": {
+              "en": "The satellite relays the signal to a distant ground station; the long path adds latency and weather can affect some links.",
+              "vi": "Satellite relay tín hiệu tới ground station ở xa; đường truyền dài làm tăng latency và một số link có thể bị ảnh hưởng bởi thời tiết."
+            },
+            "activeNodes": [
+              "sat",
+              "ground"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Match the requirement",
+              "vi": "Khớp yêu cầu"
+            },
+            "explanation": {
+              "en": "Very wide coverage and access to remote areas favour satellite when terrestrial infrastructure is unavailable.",
+              "vi": "Coverage rất rộng và khả năng tới vùng xa phù hợp satellite khi không có hạ tầng terrestrial."
+            },
+            "activeNodes": [
+              "site",
+              "sat",
+              "ground"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L14",
+    "visualId": "VIS-P1-L14",
+    "title": {
+      "en": "Build the packet path",
+      "vi": "Dựng đường đi của packet"
+    },
+    "intro": {
+      "en": "Change the path and identify the roles of wired, wireless, extension and internet-connection hardware.",
+      "vi": "Đổi đường đi và xác định vai trò của phần cứng có dây, wireless, mở rộng LAN và kết nối internet."
+    },
+    "prompt": {
+      "en": "Does this path cross between networks and therefore require a router?",
+      "vi": "Đường đi này có đi giữa các network nên cần router không?"
+    },
+    "choices": [
+      {
+        "id": "yes",
+        "label": {
+          "en": "Yes",
+          "vi": "Có"
+        }
+      },
+      {
+        "id": "no",
+        "label": {
+          "en": "No",
+          "vi": "Không"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "local",
+        "label": {
+          "en": "Wired LAN: laptop to local server",
+          "vi": "LAN có dây: laptop tới server local"
+        },
+        "correctChoiceId": "no",
+        "nodes": [
+          {
+            "id": "client",
+            "label": {
+              "en": "Laptop + NIC",
+              "vi": "Laptop + NIC"
+            },
+            "kind": "client",
+            "x": 75,
+            "y": 135
+          },
+          {
+            "id": "cable",
+            "label": {
+              "en": "Ethernet cable",
+              "vi": "Cáp Ethernet"
+            },
+            "kind": "network",
+            "x": 245,
+            "y": 135
+          },
+          {
+            "id": "switch",
+            "label": {
+              "en": "Switch",
+              "vi": "Switch"
+            },
+            "kind": "network",
+            "x": 405,
+            "y": 135
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "LAN server",
+              "vi": "LAN server"
+            },
+            "kind": "server",
+            "x": 535,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "client",
+            "to": "cable",
+            "label": {
+              "en": "frame",
+              "vi": "frame"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "cable",
+            "to": "switch",
+            "label": {
+              "en": "electrical signal",
+              "vi": "tín hiệu điện"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "switch",
+            "to": "server",
+            "label": {
+              "en": "selected port",
+              "vi": "port được chọn"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Create the LAN frame",
+              "vi": "Tạo LAN frame"
+            },
+            "explanation": {
+              "en": "The NIC provides the interface that sends a frame onto the cable.",
+              "vi": "NIC cung cấp interface để gửi frame lên cáp."
+            },
+            "activeNodes": [
+              "client",
+              "cable"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Carry the signal",
+              "vi": "Truyền tín hiệu"
+            },
+            "explanation": {
+              "en": "The cable supplies the wired medium between the host and switch.",
+              "vi": "Cáp cung cấp medium có dây giữa host và switch."
+            },
+            "activeNodes": [
+              "cable",
+              "switch"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Switch to the server",
+              "vi": "Switch tới server"
+            },
+            "explanation": {
+              "en": "The switch uses the destination MAC address to forward the frame through the selected LAN port. The local server provides the requested service.",
+              "vi": "Switch dùng destination MAC address để forward frame qua LAN port phù hợp. Server local cung cấp dịch vụ được yêu cầu."
+            },
+            "activeNodes": [
+              "switch",
+              "server"
+            ],
+            "activeEdges": [
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Stay on one network",
+              "vi": "Ở trong một network"
+            },
+            "explanation": {
+              "en": "Because the source and destination are on the same LAN, no router is needed.",
+              "vi": "Vì source và destination ở cùng LAN nên không cần router."
+            },
+            "activeNodes": [
+              "client",
+              "server"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "wireless-lan",
+        "label": {
+          "en": "Wireless LAN: tablet to local server",
+          "vi": "Wireless LAN: tablet tới server local"
+        },
+        "correctChoiceId": "no",
+        "nodes": [
+          {
+            "id": "client",
+            "label": {
+              "en": "Tablet + WNIC",
+              "vi": "Tablet + WNIC"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 135
+          },
+          {
+            "id": "radio",
+            "label": {
+              "en": "Radio link",
+              "vi": "Radio link"
+            },
+            "kind": "wireless",
+            "x": 215,
+            "y": 135
+          },
+          {
+            "id": "wap",
+            "label": {
+              "en": "WAP",
+              "vi": "WAP"
+            },
+            "kind": "network",
+            "x": 355,
+            "y": 135
+          },
+          {
+            "id": "switch",
+            "label": {
+              "en": "Switch",
+              "vi": "Switch"
+            },
+            "kind": "network",
+            "x": 480,
+            "y": 70
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "LAN server",
+              "vi": "LAN server"
+            },
+            "kind": "server",
+            "x": 535,
+            "y": 215
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "client",
+            "to": "radio",
+            "label": {
+              "en": "wireless frame",
+              "vi": "wireless frame"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "radio",
+            "to": "wap",
+            "label": {
+              "en": "radio",
+              "vi": "radio"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "wap",
+            "to": "switch",
+            "label": {
+              "en": "bridge to LAN",
+              "vi": "bridge vào LAN"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "switch",
+            "to": "server",
+            "label": {
+              "en": "selected port",
+              "vi": "port được chọn"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Use the WNIC",
+              "vi": "Dùng WNIC"
+            },
+            "explanation": {
+              "en": "The wireless network interface sends the frame over radio rather than a cable.",
+              "vi": "Wireless network interface gửi frame qua radio thay vì cáp."
+            },
+            "activeNodes": [
+              "client",
+              "radio"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Reach the WAP",
+              "vi": "Tới WAP"
+            },
+            "explanation": {
+              "en": "The wireless access point connects wireless devices to the wired LAN.",
+              "vi": "Wireless access point nối thiết bị wireless vào LAN có dây."
+            },
+            "activeNodes": [
+              "radio",
+              "wap"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Bridge into the LAN",
+              "vi": "Bridge vào LAN"
+            },
+            "explanation": {
+              "en": "The WAP passes the frame into the LAN; the switch then forwards by destination MAC to the server.",
+              "vi": "WAP chuyển frame vào LAN; switch forward theo destination MAC tới server."
+            },
+            "activeNodes": [
+              "wap",
+              "switch",
+              "server"
+            ],
+            "activeEdges": [
+              "e3",
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Stay on one network",
+              "vi": "Ở trong một network"
+            },
+            "explanation": {
+              "en": "This path remains inside one LAN, so a router is not required.",
+              "vi": "Đường đi vẫn trong một LAN nên không cần router."
+            },
+            "activeNodes": [
+              "client",
+              "server"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e3",
+              "e4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pstdial",
+        "label": {
+          "en": "Internet access over a PSTN modem",
+          "vi": "Kết nối internet qua PSTN modem"
+        },
+        "correctChoiceId": "yes",
+        "nodes": [
+          {
+            "id": "host",
+            "label": {
+              "en": "Host",
+              "vi": "Host"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 135
+          },
+          {
+            "id": "switch",
+            "label": {
+              "en": "Switch",
+              "vi": "Switch"
+            },
+            "kind": "network",
+            "x": 170,
+            "y": 135
+          },
+          {
+            "id": "router",
+            "label": {
+              "en": "Router",
+              "vi": "Router"
+            },
+            "kind": "network",
+            "x": 290,
+            "y": 135
+          },
+          {
+            "id": "modem",
+            "label": {
+              "en": "PSTN modem",
+              "vi": "PSTN modem"
+            },
+            "kind": "network",
+            "x": 410,
+            "y": 135
+          },
+          {
+            "id": "isp",
+            "label": {
+              "en": "ISP network",
+              "vi": "Mạng ISP"
+            },
+            "kind": "cloud",
+            "x": 535,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "host",
+            "to": "switch",
+            "label": {
+              "en": "frame to gateway MAC",
+              "vi": "frame tới gateway MAC"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "switch",
+            "to": "router",
+            "label": {
+              "en": "destination MAC",
+              "vi": "destination MAC"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "router",
+            "to": "modem",
+            "label": {
+              "en": "routed packet",
+              "vi": "packet đã route"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "modem",
+            "to": "isp",
+            "label": {
+              "en": "telephone signal",
+              "vi": "tín hiệu điện thoại"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Address the default gateway",
+              "vi": "Địa chỉ default gateway"
+            },
+            "explanation": {
+              "en": "The host sees that the destination is outside its subnet and builds a frame addressed to the default gateway's MAC address.",
+              "vi": "Host nhận ra destination ngoài subnet và tạo frame gửi tới MAC address của default gateway."
+            },
+            "activeNodes": [
+              "host",
+              "switch",
+              "router"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Forward by destination MAC",
+              "vi": "Forward theo destination MAC"
+            },
+            "explanation": {
+              "en": "The switch forwards that frame to the router; the switch does not make the IP locality decision.",
+              "vi": "Switch forward frame tới router; switch không quyết định destination IP là local hay non-local."
+            },
+            "activeNodes": [
+              "switch",
+              "router"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Route between networks",
+              "vi": "Route giữa các network"
+            },
+            "explanation": {
+              "en": "The router selects the next network path for the packet.",
+              "vi": "Router chọn đường network tiếp theo cho packet."
+            },
+            "activeNodes": [
+              "router",
+              "modem"
+            ],
+            "activeEdges": [
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Adapt to the PSTN link",
+              "vi": "Thích nghi với PSTN link"
+            },
+            "explanation": {
+              "en": "The modem converts signals for the telephone access technology before traffic enters the ISP network.",
+              "vi": "Modem chuyển đổi tín hiệu phù hợp công nghệ truy cập điện thoại trước khi traffic vào mạng ISP."
+            },
+            "activeNodes": [
+              "modem",
+              "isp"
+            ],
+            "activeEdges": [
+              "e4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "dedicated",
+        "label": {
+          "en": "Two sites over a dedicated line",
+          "vi": "Hai site qua dedicated line"
+        },
+        "correctChoiceId": "yes",
+        "nodes": [
+          {
+            "id": "lanA",
+            "label": {
+              "en": "Site A LAN",
+              "vi": "LAN site A"
+            },
+            "kind": "network",
+            "x": 65,
+            "y": 135
+          },
+          {
+            "id": "routerA",
+            "label": {
+              "en": "Router A",
+              "vi": "Router A"
+            },
+            "kind": "network",
+            "x": 185,
+            "y": 135
+          },
+          {
+            "id": "line",
+            "label": {
+              "en": "Dedicated line",
+              "vi": "Dedicated line"
+            },
+            "kind": "fibre",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "routerB",
+            "label": {
+              "en": "Router B",
+              "vi": "Router B"
+            },
+            "kind": "network",
+            "x": 415,
+            "y": 135
+          },
+          {
+            "id": "lanB",
+            "label": {
+              "en": "Site B LAN",
+              "vi": "LAN site B"
+            },
+            "kind": "network",
+            "x": 535,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "lanA",
+            "to": "routerA",
+            "label": {
+              "en": "gateway",
+              "vi": "gateway"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "routerA",
+            "to": "line",
+            "label": {
+              "en": "site route",
+              "vi": "route site"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "line",
+            "to": "routerB",
+            "label": {
+              "en": "leased capacity",
+              "vi": "dung lượng thuê riêng"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "routerB",
+            "to": "lanB",
+            "label": {
+              "en": "destination LAN",
+              "vi": "LAN đích"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Leave Site A's LAN",
+              "vi": "Rời LAN site A"
+            },
+            "explanation": {
+              "en": "Router A accepts traffic for a different network.",
+              "vi": "Router A nhận traffic đi tới một network khác."
+            },
+            "activeNodes": [
+              "lanA",
+              "routerA"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Use dedicated capacity",
+              "vi": "Dùng dung lượng dedicated"
+            },
+            "explanation": {
+              "en": "A dedicated line provides a fixed contracted connection between the sites rather than dialling for each session.",
+              "vi": "Dedicated line cung cấp kết nối cố định theo hợp đồng giữa hai site thay vì dial cho từng session."
+            },
+            "activeNodes": [
+              "routerA",
+              "line",
+              "routerB"
+            ],
+            "activeEdges": [
+              "e2",
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Enter Site B's LAN",
+              "vi": "Vào LAN site B"
+            },
+            "explanation": {
+              "en": "Router B forwards the packet toward the destination LAN.",
+              "vi": "Router B forward packet tới LAN đích."
+            },
+            "activeNodes": [
+              "routerB",
+              "lanB"
+            ],
+            "activeEdges": [
+              "e4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cellular",
+        "label": {
+          "en": "Mobile hotspot over a cellular network",
+          "vi": "Mobile hotspot qua cellular network"
+        },
+        "correctChoiceId": "yes",
+        "nodes": [
+          {
+            "id": "device",
+            "label": {
+              "en": "Laptop",
+              "vi": "Laptop"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 135
+          },
+          {
+            "id": "hotspot",
+            "label": {
+              "en": "Cellular modem",
+              "vi": "Cellular modem"
+            },
+            "kind": "wireless",
+            "x": 185,
+            "y": 135
+          },
+          {
+            "id": "tower",
+            "label": {
+              "en": "Cell tower",
+              "vi": "Cell tower"
+            },
+            "kind": "network",
+            "x": 315,
+            "y": 135
+          },
+          {
+            "id": "carrier",
+            "label": {
+              "en": "Carrier network",
+              "vi": "Mạng carrier"
+            },
+            "kind": "cloud",
+            "x": 445,
+            "y": 135
+          },
+          {
+            "id": "internet",
+            "label": {
+              "en": "Internet service",
+              "vi": "Dịch vụ internet"
+            },
+            "kind": "server",
+            "x": 535,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "device",
+            "to": "hotspot",
+            "label": {
+              "en": "gateway frame",
+              "vi": "frame tới gateway"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "hotspot",
+            "to": "tower",
+            "label": {
+              "en": "cellular radio",
+              "vi": "cellular radio"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "tower",
+            "to": "carrier",
+            "label": {
+              "en": "mobile access",
+              "vi": "truy cập mobile"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "carrier",
+            "to": "internet",
+            "label": {
+              "en": "routed path",
+              "vi": "đường đã route"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Reach the mobile gateway",
+              "vi": "Tới mobile gateway"
+            },
+            "explanation": {
+              "en": "The laptop sends non-local traffic to the hotspot, which acts as its gateway.",
+              "vi": "Laptop gửi traffic non-local tới hotspot, thiết bị đóng vai trò gateway."
+            },
+            "activeNodes": [
+              "device",
+              "hotspot"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Convert for cellular radio",
+              "vi": "Chuyển sang cellular radio"
+            },
+            "explanation": {
+              "en": "The cellular modem provides the wireless interface to the mobile network.",
+              "vi": "Cellular modem cung cấp wireless interface tới mobile network."
+            },
+            "activeNodes": [
+              "hotspot",
+              "tower"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Cross the carrier network",
+              "vi": "Đi qua carrier network"
+            },
+            "explanation": {
+              "en": "The carrier routes traffic onward to internet services; coverage, capacity and latency depend on the cellular service.",
+              "vi": "Carrier route traffic tới dịch vụ internet; coverage, capacity và latency phụ thuộc dịch vụ cellular."
+            },
+            "activeNodes": [
+              "tower",
+              "carrier",
+              "internet"
+            ],
+            "activeEdges": [
+              "e3",
+              "e4"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "lan-extension",
+        "label": {
+          "en": "Extend and segment one LAN",
+          "vi": "Mở rộng và phân đoạn một LAN"
+        },
+        "correctChoiceId": "no",
+        "nodes": [
+          {
+            "id": "hostA",
+            "label": {
+              "en": "LAN segment A",
+              "vi": "LAN segment A"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 135
+          },
+          {
+            "id": "repeater",
+            "label": {
+              "en": "Repeater",
+              "vi": "Repeater"
+            },
+            "kind": "network",
+            "x": 185,
+            "y": 135
+          },
+          {
+            "id": "cable",
+            "label": {
+              "en": "Long cable run",
+              "vi": "Đoạn cáp dài"
+            },
+            "kind": "network",
+            "x": 315,
+            "y": 135
+          },
+          {
+            "id": "bridge",
+            "label": {
+              "en": "Bridge",
+              "vi": "Bridge"
+            },
+            "kind": "network",
+            "x": 445,
+            "y": 135
+          },
+          {
+            "id": "hostB",
+            "label": {
+              "en": "LAN segment B",
+              "vi": "LAN segment B"
+            },
+            "kind": "client",
+            "x": 535,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "hostA",
+            "to": "repeater",
+            "label": {
+              "en": "weakened signal",
+              "vi": "tín hiệu suy yếu"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "repeater",
+            "to": "cable",
+            "label": {
+              "en": "regenerated",
+              "vi": "đã tái tạo"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "cable",
+            "to": "bridge",
+            "label": {
+              "en": "LAN frame",
+              "vi": "LAN frame"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "bridge",
+            "to": "hostB",
+            "label": {
+              "en": "filtered frame",
+              "vi": "frame đã lọc"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Regenerate the signal",
+              "vi": "Tái tạo tín hiệu"
+            },
+            "explanation": {
+              "en": "A repeater receives and regenerates a weakening signal so the physical link can cover a greater distance.",
+              "vi": "Repeater nhận và tái tạo tín hiệu suy yếu để physical link phủ khoảng cách lớn hơn."
+            },
+            "activeNodes": [
+              "hostA",
+              "repeater",
+              "cable"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Filter between segments",
+              "vi": "Lọc giữa các segment"
+            },
+            "explanation": {
+              "en": "A bridge connects LAN segments and forwards or filters frames using MAC addresses.",
+              "vi": "Bridge nối các LAN segment và forward hoặc filter frame bằng MAC address."
+            },
+            "activeNodes": [
+              "cable",
+              "bridge",
+              "hostB"
+            ],
+            "activeEdges": [
+              "e3",
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Remain within the LAN",
+              "vi": "Vẫn trong LAN"
+            },
+            "explanation": {
+              "en": "The repeater and bridge extend or segment one LAN; they do not route between IP networks.",
+              "vi": "Repeater và bridge mở rộng hoặc phân đoạn một LAN; chúng không route giữa các IP network."
+            },
+            "activeNodes": [
+              "hostA",
+              "repeater",
+              "bridge",
+              "hostB"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2",
+              "e3",
+              "e4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L15",
+    "visualId": "VIS-P1-L15",
+    "title": {
+      "en": "Step through classic CSMA/CD",
+      "vi": "Đi từng bước CSMA/CD cổ điển"
+    },
+    "intro": {
+      "en": "In a shared half-duplex Ethernet fixture, change transmit timing and follow sense, transmit, jam, stop, random back-off, re-sense and retry.",
+      "vi": "Trong fixture Ethernet shared half-duplex, đổi thời điểm phát rồi theo dõi sense, transmit, jam, stop, random back-off, re-sense và retry."
+    },
+    "prompt": {
+      "en": "Will this shared-medium attempt collide?",
+      "vi": "Lần truyền trên shared medium này có collision không?"
+    },
+    "choices": [
+      {
+        "id": "collision",
+        "label": {
+          "en": "Collision",
+          "vi": "Collision"
+        }
+      },
+      {
+        "id": "clear",
+        "label": {
+          "en": "No collision",
+          "vi": "Không collision"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "same-time",
+        "label": {
+          "en": "A and B start together",
+          "vi": "A và B bắt đầu cùng lúc"
+        },
+        "correctChoiceId": "collision",
+        "nodes": [
+          {
+            "id": "a",
+            "label": {
+              "en": "Station A",
+              "vi": "Station A"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 60
+          },
+          {
+            "id": "medium",
+            "label": {
+              "en": "Shared half-duplex Ethernet",
+              "vi": "Ethernet shared half-duplex"
+            },
+            "kind": "network",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "b",
+            "label": {
+              "en": "Station B",
+              "vi": "Station B"
+            },
+            "kind": "client",
+            "x": 535,
+            "y": 60
+          },
+          {
+            "id": "jam",
+            "label": {
+              "en": "Jam + stop",
+              "vi": "Jam + dừng"
+            },
+            "kind": "warning",
+            "x": 175,
+            "y": 225
+          },
+          {
+            "id": "backoff",
+            "label": {
+              "en": "Random back-off",
+              "vi": "Random back-off"
+            },
+            "kind": "warning",
+            "x": 425,
+            "y": 225
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "a",
+            "to": "medium",
+            "label": {
+              "en": "frame A",
+              "vi": "frame A"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "b",
+            "to": "medium",
+            "label": {
+              "en": "frame B",
+              "vi": "frame B"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "medium",
+            "to": "jam",
+            "label": {
+              "en": "collision detected",
+              "vi": "phát hiện collision"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "jam",
+            "to": "backoff",
+            "label": {
+              "en": "wait random slots",
+              "vi": "chờ số slot ngẫu nhiên"
+            }
+          },
+          {
+            "id": "e5",
+            "from": "backoff",
+            "to": "medium",
+            "label": {
+              "en": "re-sense + retry",
+              "vi": "re-sense + retry"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Sense before transmitting",
+              "vi": "Sense trước khi transmit"
+            },
+            "explanation": {
+              "en": "Both stations listen and sense an idle shared medium at nearly the same time.",
+              "vi": "Cả hai station listen và sense shared medium đang idle gần như cùng lúc."
+            },
+            "activeNodes": [
+              "a",
+              "medium",
+              "b"
+            ],
+            "activeEdges": []
+          },
+          {
+            "title": {
+              "en": "Transmit together",
+              "vi": "Transmit cùng lúc"
+            },
+            "explanation": {
+              "en": "Propagation delay means each starts before hearing the other signal, so the frames overlap.",
+              "vi": "Propagation delay làm mỗi station bắt đầu trước khi nghe tín hiệu kia nên hai frame chồng nhau."
+            },
+            "activeNodes": [
+              "a",
+              "medium",
+              "b"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Jam and stop",
+              "vi": "Jam và dừng"
+            },
+            "explanation": {
+              "en": "Each station detects the collision, sends a jam indication so all stations recognise it, and stops the current transmission.",
+              "vi": "Mỗi station phát hiện collision, gửi jam indication để mọi station nhận biết rồi dừng lần truyền hiện tại."
+            },
+            "activeNodes": [
+              "medium",
+              "jam"
+            ],
+            "activeEdges": [
+              "e3"
+            ]
+          },
+          {
+            "title": {
+              "en": "Wait a random back-off",
+              "vi": "Chờ random back-off"
+            },
+            "explanation": {
+              "en": "Each station chooses a random waiting interval, reducing the chance that both retry together again.",
+              "vi": "Mỗi station chọn khoảng chờ ngẫu nhiên, giảm khả năng cả hai retry cùng lúc lần nữa."
+            },
+            "activeNodes": [
+              "jam",
+              "backoff"
+            ],
+            "activeEdges": [
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Re-sense and retransmit",
+              "vi": "Re-sense và retransmit"
+            },
+            "explanation": {
+              "en": "After its back-off expires, one station senses the medium again and retransmits successfully if it is idle.",
+              "vi": "Sau khi hết back-off, một station sense lại medium và retransmit thành công nếu medium idle."
+            },
+            "activeNodes": [
+              "backoff",
+              "medium"
+            ],
+            "activeEdges": [
+              "e5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "staggered",
+        "label": {
+          "en": "B waits until A finishes",
+          "vi": "B chờ A truyền xong"
+        },
+        "correctChoiceId": "clear",
+        "nodes": [
+          {
+            "id": "a",
+            "label": {
+              "en": "Station A",
+              "vi": "Station A"
+            },
+            "kind": "client",
+            "x": 80,
+            "y": 80
+          },
+          {
+            "id": "medium",
+            "label": {
+              "en": "Shared half-duplex Ethernet",
+              "vi": "Ethernet shared half-duplex"
+            },
+            "kind": "network",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "b",
+            "label": {
+              "en": "Station B",
+              "vi": "Station B"
+            },
+            "kind": "client",
+            "x": 520,
+            "y": 80
+          },
+          {
+            "id": "done",
+            "label": {
+              "en": "Frames delivered in turn",
+              "vi": "Frame truyền lần lượt"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 230
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "a",
+            "to": "medium",
+            "label": {
+              "en": "frame A",
+              "vi": "frame A"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "medium",
+            "to": "b",
+            "label": {
+              "en": "busy signal",
+              "vi": "tín hiệu busy"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "b",
+            "to": "medium",
+            "label": {
+              "en": "frame B later",
+              "vi": "frame B sau đó"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "medium",
+            "to": "done",
+            "label": {
+              "en": "no overlap",
+              "vi": "không chồng nhau"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "A senses idle",
+              "vi": "A sense idle"
+            },
+            "explanation": {
+              "en": "Station A listens and begins transmitting.",
+              "vi": "Station A listen rồi bắt đầu transmit."
+            },
+            "activeNodes": [
+              "a",
+              "medium"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "B senses busy",
+              "vi": "B sense busy"
+            },
+            "explanation": {
+              "en": "Station B detects A's signal and defers instead of transmitting.",
+              "vi": "Station B phát hiện tín hiệu của A và defer thay vì transmit."
+            },
+            "activeNodes": [
+              "medium",
+              "b"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "B re-senses",
+              "vi": "B re-sense"
+            },
+            "explanation": {
+              "en": "After A finishes, B senses the medium again and finds it idle.",
+              "vi": "Sau khi A kết thúc, B sense lại medium và thấy idle."
+            },
+            "activeNodes": [
+              "b",
+              "medium"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Transmit in turn",
+              "vi": "Transmit lần lượt"
+            },
+            "explanation": {
+              "en": "B transmits after A, so the frames do not overlap and this attempt has no collision.",
+              "vi": "B transmit sau A nên hai frame không chồng nhau và lần này không có collision."
+            },
+            "activeNodes": [
+              "b",
+              "medium",
+              "done"
+            ],
+            "activeEdges": [
+              "e3",
+              "e4"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L16",
+    "visualId": "VIS-P1-L16",
+    "title": {
+      "en": "Compare streaming mode and buffer",
+      "vi": "So sánh streaming mode và buffer"
+    },
+    "intro": {
+      "en": "Switch between real-time and on-demand streams, compare arrival with playback rate, and observe latency, seeking and buffer state.",
+      "vi": "Đổi giữa real-time và on-demand, so sánh arrival rate với playback rate, rồi quan sát latency, seeking và trạng thái buffer."
+    },
+    "prompt": {
+      "en": "What will happen to playback after these steps?",
+      "vi": "Playback sẽ thế nào sau các bước này?"
+    },
+    "choices": [
+      {
+        "id": "smooth",
+        "label": {
+          "en": "Continues smoothly",
+          "vi": "Tiếp tục mượt"
+        }
+      },
+      {
+        "id": "stall",
+        "label": {
+          "en": "Stalls",
+          "vi": "Bị stall"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "realtime-low",
+        "label": {
+          "en": "Real-time live stream: 3 Mb/s arrives, 5 Mb/s plays",
+          "vi": "Real-time live: arrival 3 Mb/s, playback 5 Mb/s"
+        },
+        "correctChoiceId": "stall",
+        "nodes": [
+          {
+            "id": "live",
+            "label": {
+              "en": "Live source",
+              "vi": "Nguồn live"
+            },
+            "kind": "server",
+            "x": 70,
+            "y": 135
+          },
+          {
+            "id": "buffer",
+            "label": {
+              "en": "Buffer 4 → 0 Mb",
+              "vi": "Buffer 4 → 0 Mb"
+            },
+            "kind": "database",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "player",
+            "label": {
+              "en": "Player 5 Mb/s",
+              "vi": "Player 5 Mb/s"
+            },
+            "kind": "client",
+            "x": 530,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "live",
+            "to": "buffer",
+            "label": {
+              "en": "+3 Mb/s",
+              "vi": "+3 Mb/s"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "buffer",
+            "to": "player",
+            "label": {
+              "en": "−5 Mb/s",
+              "vi": "−5 Mb/s"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Choose real-time mode",
+              "vi": "Chọn real-time"
+            },
+            "explanation": {
+              "en": "The content is produced live. The player cannot fetch far ahead of the live point, and seeking is limited by what the service retains.",
+              "vi": "Nội dung được tạo live. Player không thể tải trước xa hơn live point và seeking bị giới hạn bởi phần dịch vụ lưu lại."
+            },
+            "activeNodes": [
+              "live",
+              "buffer"
+            ],
+            "activeEdges": [
+              "e1"
+            ],
+            "metric": {
+              "label": {
+                "en": "Mode",
+                "vi": "Mode"
+              },
+              "value": {
+                "en": "Real-time",
+                "vi": "Real-time"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Start with a small buffer",
+              "vi": "Bắt đầu với buffer nhỏ"
+            },
+            "explanation": {
+              "en": "Playback begins with 4 Mb available; buffering adds delay before viewing but gives a short safety margin.",
+              "vi": "Playback bắt đầu với 4 Mb; buffering tạo một ít delay trước khi xem nhưng cho safety margin ngắn."
+            },
+            "activeNodes": [
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Initial buffer",
+                "vi": "Buffer ban đầu"
+              },
+              "value": {
+                "en": "4 Mb",
+                "vi": "4 Mb"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Drain every second",
+              "vi": "Cạn dần mỗi giây"
+            },
+            "explanation": {
+              "en": "Arrival is 2 Mb/s below consumption, so the buffer loses 2 Mb each second.",
+              "vi": "Arrival thấp hơn consumption 2 Mb/s nên buffer mất 2 Mb mỗi giây."
+            },
+            "activeNodes": [
+              "live",
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Net change",
+                "vi": "Thay đổi ròng"
+              },
+              "value": {
+                "en": "−2 Mb/s",
+                "vi": "−2 Mb/s"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Reach zero",
+              "vi": "Về 0"
+            },
+            "explanation": {
+              "en": "After two seconds the buffer empties and the live playback must stall or reduce bit rate.",
+              "vi": "Sau hai giây buffer cạn và playback live phải stall hoặc giảm bit rate."
+            },
+            "activeNodes": [
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Outcome",
+                "vi": "Kết quả"
+              },
+              "value": {
+                "en": "Stall",
+                "vi": "Stall"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ondemand-fast",
+        "label": {
+          "en": "On-demand stored video: 8 Mb/s arrives, 5 Mb/s plays",
+          "vi": "On-demand stored video: arrival 8 Mb/s, playback 5 Mb/s"
+        },
+        "correctChoiceId": "smooth",
+        "nodes": [
+          {
+            "id": "stored",
+            "label": {
+              "en": "Stored video",
+              "vi": "Video đã lưu"
+            },
+            "kind": "server",
+            "x": 70,
+            "y": 135
+          },
+          {
+            "id": "buffer",
+            "label": {
+              "en": "Buffer 2 → 11 Mb",
+              "vi": "Buffer 2 → 11 Mb"
+            },
+            "kind": "database",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "player",
+            "label": {
+              "en": "Player 5 Mb/s",
+              "vi": "Player 5 Mb/s"
+            },
+            "kind": "client",
+            "x": 530,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "stored",
+            "to": "buffer",
+            "label": {
+              "en": "+8 Mb/s",
+              "vi": "+8 Mb/s"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "buffer",
+            "to": "player",
+            "label": {
+              "en": "−5 Mb/s",
+              "vi": "−5 Mb/s"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Choose on-demand mode",
+              "vi": "Chọn on-demand"
+            },
+            "explanation": {
+              "en": "The complete item is stored on a server, so playback can begin at a chosen time and the service can support seeking to stored positions.",
+              "vi": "Toàn bộ nội dung được lưu trên server nên playback có thể bắt đầu lúc người dùng chọn và dịch vụ có thể hỗ trợ seeking tới vị trí đã lưu."
+            },
+            "activeNodes": [
+              "stored",
+              "buffer"
+            ],
+            "activeEdges": [
+              "e1"
+            ],
+            "metric": {
+              "label": {
+                "en": "Mode",
+                "vi": "Mode"
+              },
+              "value": {
+                "en": "On-demand",
+                "vi": "On-demand"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Pre-buffer",
+              "vi": "Pre-buffer"
+            },
+            "explanation": {
+              "en": "The player downloads 2 Mb before playback starts, trading a short start delay for resilience.",
+              "vi": "Player tải trước 2 Mb trước khi playback, đổi một khoảng delay ngắn lúc bắt đầu để tăng khả năng chống gián đoạn."
+            },
+            "activeNodes": [
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Initial buffer",
+                "vi": "Buffer ban đầu"
+              },
+              "value": {
+                "en": "2 Mb",
+                "vi": "2 Mb"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Receive and consume",
+              "vi": "Nhận và tiêu thụ"
+            },
+            "explanation": {
+              "en": "Each second adds 8 Mb and consumes 5 Mb: net +3 Mb.",
+              "vi": "Mỗi giây thêm 8 Mb và tiêu thụ 5 Mb: ròng +3 Mb."
+            },
+            "activeNodes": [
+              "stored",
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Net change",
+                "vi": "Thay đổi ròng"
+              },
+              "value": {
+                "en": "+3 Mb/s",
+                "vi": "+3 Mb/s"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Build a safety margin",
+              "vi": "Tạo safety margin"
+            },
+            "explanation": {
+              "en": "After three seconds the model buffer is 11 Mb, so playback continues smoothly and stored content remains seekable.",
+              "vi": "Sau ba giây buffer trong mô hình là 11 Mb nên playback tiếp tục mượt và nội dung đã lưu vẫn có thể seek."
+            },
+            "activeNodes": [
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Outcome",
+                "vi": "Kết quả"
+              },
+              "value": {
+                "en": "Smooth",
+                "vi": "Mượt"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "realtime-healthy",
+        "label": {
+          "en": "Real-time live stream: 6 Mb/s arrives, 5 Mb/s plays",
+          "vi": "Real-time live: arrival 6 Mb/s, playback 5 Mb/s"
+        },
+        "correctChoiceId": "smooth",
+        "nodes": [
+          {
+            "id": "live",
+            "label": {
+              "en": "Live source",
+              "vi": "Nguồn live"
+            },
+            "kind": "server",
+            "x": 70,
+            "y": 135
+          },
+          {
+            "id": "buffer",
+            "label": {
+              "en": "Buffer 2 → 5 Mb",
+              "vi": "Buffer 2 → 5 Mb"
+            },
+            "kind": "database",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "player",
+            "label": {
+              "en": "Player 5 Mb/s",
+              "vi": "Player 5 Mb/s"
+            },
+            "kind": "client",
+            "x": 530,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "live",
+            "to": "buffer",
+            "label": {
+              "en": "+6 Mb/s",
+              "vi": "+6 Mb/s"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "buffer",
+            "to": "player",
+            "label": {
+              "en": "−5 Mb/s",
+              "vi": "−5 Mb/s"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Stay near the live point",
+              "vi": "Ở gần live point"
+            },
+            "explanation": {
+              "en": "Real-time playback aims for low delay behind the live source, so the buffer is deliberately limited.",
+              "vi": "Real-time playback hướng tới delay thấp so với nguồn live nên buffer được giữ có giới hạn."
+            },
+            "activeNodes": [
+              "live",
+              "buffer"
+            ],
+            "activeEdges": [
+              "e1"
+            ],
+            "metric": {
+              "label": {
+                "en": "Mode",
+                "vi": "Mode"
+              },
+              "value": {
+                "en": "Real-time",
+                "vi": "Real-time"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Compare rates",
+              "vi": "So sánh tốc độ"
+            },
+            "explanation": {
+              "en": "Arrival exceeds playback by 1 Mb/s in this fixture.",
+              "vi": "Arrival cao hơn playback 1 Mb/s trong fixture này."
+            },
+            "activeNodes": [
+              "live",
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Net change",
+                "vi": "Thay đổi ròng"
+              },
+              "value": {
+                "en": "+1 Mb/s",
+                "vi": "+1 Mb/s"
+              }
+            }
+          },
+          {
+            "title": {
+              "en": "Maintain playback",
+              "vi": "Duy trì playback"
+            },
+            "explanation": {
+              "en": "The buffer grows from 2 to 5 Mb over three seconds, so playback remains smooth while the viewer stays close to live.",
+              "vi": "Buffer tăng từ 2 lên 5 Mb trong ba giây nên playback mượt trong khi người xem vẫn gần live."
+            },
+            "activeNodes": [
+              "buffer",
+              "player"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Outcome",
+                "vi": "Kết quả"
+              },
+              "value": {
+                "en": "Smooth",
+                "vi": "Mượt"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L17",
+    "visualId": "VIS-P1-L17",
+    "title": {
+      "en": "Read an IP assignment",
+      "vi": "Đọc một IP assignment"
+    },
+    "intro": {
+      "en": "Switch among private IPv4, public-scope IPv4 and IPv6 examples; trace format, prefix, scope and static/dynamic assignment.",
+      "vi": "Đổi giữa private IPv4, IPv4 phạm vi public và IPv6; lần theo format, prefix, scope và cách cấp static/dynamic."
+    },
+    "prompt": {
+      "en": "Which address family is shown?",
+      "vi": "Address family nào được hiển thị?"
+    },
+    "choices": [
+      {
+        "id": "ipv4",
+        "label": {
+          "en": "IPv4",
+          "vi": "IPv4"
+        }
+      },
+      {
+        "id": "ipv6",
+        "label": {
+          "en": "IPv6",
+          "vi": "IPv6"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "private-v4",
+        "label": {
+          "en": "192.168.1.24/24 from DHCP",
+          "vi": "192.168.1.24/24 từ DHCP"
+        },
+        "correctChoiceId": "ipv4",
+        "nodes": [
+          {
+            "id": "dhcp",
+            "label": {
+              "en": "DHCP server (on router)",
+              "vi": "DHCP server (trên router)"
+            },
+            "kind": "server",
+            "x": 90,
+            "y": 135
+          },
+          {
+            "id": "address",
+            "label": {
+              "en": "192.168.1.24/24",
+              "vi": "192.168.1.24/24"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "device",
+            "label": {
+              "en": "Laptop",
+              "vi": "Laptop"
+            },
+            "kind": "client",
+            "x": 510,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "dhcp",
+            "to": "address",
+            "label": {
+              "en": "lease",
+              "vi": "lease"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "address",
+            "to": "device",
+            "label": {
+              "en": "assign",
+              "vi": "cấp phát"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Read dotted decimal",
+              "vi": "Đọc dotted decimal"
+            },
+            "explanation": {
+              "en": "IPv4 is written as four decimal octets, each representing eight bits.",
+              "vi": "IPv4 được viết bằng bốn octet thập phân, mỗi octet biểu diễn tám bit."
+            },
+            "activeNodes": [
+              "address"
+            ],
+            "activeEdges": []
+          },
+          {
+            "title": {
+              "en": "Apply the /24 boundary",
+              "vi": "Áp dụng ranh giới /24"
+            },
+            "explanation": {
+              "en": "The first 24 bits identify this network; the remaining 8 bits identify a host within it.",
+              "vi": "24 bit đầu nhận diện network này; 8 bit còn lại nhận diện host trong network."
+            },
+            "activeNodes": [
+              "address",
+              "device"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Classify scope and assignment",
+              "vi": "Phân loại scope và assignment"
+            },
+            "explanation": {
+              "en": "DHCP supplies a dynamic address from a private IPv4 range. Private addresses are not routed directly on the public internet, but private addressing alone is not a complete security control.",
+              "vi": "DHCP cấp một dynamic address thuộc private IPv4 range. Private address không được route trực tiếp trên public internet, nhưng chỉ dùng private addressing không tạo bảo mật hoàn chỉnh."
+            },
+            "activeNodes": [
+              "dhcp",
+              "address",
+              "device"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Scope",
+                "vi": "Phạm vi"
+              },
+              "value": {
+                "en": "Private · dynamic",
+                "vi": "Private · dynamic"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "public-v4",
+        "label": {
+          "en": "Documentation stand-in for a public IPv4 server",
+          "vi": "Địa chỉ tài liệu đại diện cho server IPv4 public"
+        },
+        "correctChoiceId": "ipv4",
+        "nodes": [
+          {
+            "id": "isp",
+            "label": {
+              "en": "ISP allocation",
+              "vi": "Cấp phát từ ISP"
+            },
+            "kind": "cloud",
+            "x": 90,
+            "y": 135
+          },
+          {
+            "id": "address",
+            "label": {
+              "en": "203.0.113.25/24",
+              "vi": "203.0.113.25/24"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "Public-facing server",
+              "vi": "Server hướng public"
+            },
+            "kind": "server",
+            "x": 510,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "isp",
+            "to": "address",
+            "label": {
+              "en": "allocate",
+              "vi": "cấp phát"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "address",
+            "to": "server",
+            "label": {
+              "en": "configure static",
+              "vi": "cấu hình static"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Keep the IPv4 format",
+              "vi": "Giữ format IPv4"
+            },
+            "explanation": {
+              "en": "The address still uses four decimal octets and a prefix length.",
+              "vi": "Địa chỉ vẫn dùng bốn octet thập phân và một prefix length."
+            },
+            "activeNodes": [
+              "address"
+            ],
+            "activeEdges": []
+          },
+          {
+            "title": {
+              "en": "Contrast public scope",
+              "vi": "So sánh public scope"
+            },
+            "explanation": {
+              "en": "This scenario represents a provider-assigned, globally routable public address. The displayed 203.0.113.25 is a documentation-only stand-in and is not itself routed on the public internet.",
+              "vi": "Tình huống này đại diện cho public address được provider cấp và có thể route toàn cầu. Địa chỉ 203.0.113.25 đang hiển thị chỉ dành cho tài liệu và bản thân nó không được route trên public internet."
+            },
+            "activeNodes": [
+              "isp",
+              "address",
+              "server"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Keep the service stable",
+              "vi": "Giữ dịch vụ ổn định"
+            },
+            "explanation": {
+              "en": "The server uses a static assignment so DNS and clients can refer to a stable endpoint; a real deployment would use a valid provider allocation.",
+              "vi": "Server dùng static assignment để DNS và client có thể tham chiếu endpoint ổn định; triển khai thật phải dùng địa chỉ được provider cấp hợp lệ."
+            },
+            "activeNodes": [
+              "address",
+              "server"
+            ],
+            "activeEdges": [
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Scope",
+                "vi": "Phạm vi"
+              },
+              "value": {
+                "en": "Public model · static",
+                "vi": "Mô hình public · static"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "v6",
+        "label": {
+          "en": "2001:db8::25 static server",
+          "vi": "Server static 2001:db8::25"
+        },
+        "correctChoiceId": "ipv6",
+        "nodes": [
+          {
+            "id": "admin",
+            "label": {
+              "en": "Administrator",
+              "vi": "Administrator"
+            },
+            "kind": "client",
+            "x": 90,
+            "y": 135
+          },
+          {
+            "id": "address",
+            "label": {
+              "en": "2001:db8::25",
+              "vi": "2001:db8::25"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 135
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "Web server",
+              "vi": "Web server"
+            },
+            "kind": "server",
+            "x": 510,
+            "y": 135
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "admin",
+            "to": "address",
+            "label": {
+              "en": "configure",
+              "vi": "cấu hình"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "address",
+            "to": "server",
+            "label": {
+              "en": "assign",
+              "vi": "gán"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Read hexadecimal groups",
+              "vi": "Đọc nhóm hexadecimal"
+            },
+            "explanation": {
+              "en": "IPv6 uses hexadecimal groups separated by colons; :: compresses consecutive zero groups.",
+              "vi": "IPv6 dùng các nhóm hexadecimal ngăn bằng dấu hai chấm; :: rút gọn các nhóm zero liên tiếp."
+            },
+            "activeNodes": [
+              "address"
+            ],
+            "activeEdges": []
+          },
+          {
+            "title": {
+              "en": "Keep the format distinct",
+              "vi": "Phân biệt format"
+            },
+            "explanation": {
+              "en": "This is a 128-bit IPv6 representation, not four decimal IPv4 octets.",
+              "vi": "Đây là biểu diễn IPv6 128 bit, không phải bốn octet thập phân của IPv4."
+            },
+            "activeNodes": [
+              "address",
+              "server"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Keep the server address stable",
+              "vi": "Giữ địa chỉ server ổn định"
+            },
+            "explanation": {
+              "en": "A static assignment remains until deliberately changed, helping clients locate a service consistently. 2001:db8::/32 is a documentation prefix in this example.",
+              "vi": "Static assignment giữ nguyên cho tới khi được đổi có chủ ý, giúp client tìm dịch vụ nhất quán. 2001:db8::/32 là prefix dành cho tài liệu trong ví dụ này."
+            },
+            "activeNodes": [
+              "admin",
+              "address",
+              "server"
+            ],
+            "activeEdges": [
+              "e1",
+              "e2"
+            ],
+            "metric": {
+              "label": {
+                "en": "Assignment",
+                "vi": "Cách cấp"
+              },
+              "value": {
+                "en": "IPv6 · static",
+                "vi": "IPv6 · static"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L18",
+    "visualId": "VIS-P1-L18",
+    "title": {
+      "en": "Resolve a URL to a resource",
+      "vi": "Phân giải URL tới tài nguyên"
+    },
+    "intro": {
+      "en": "Select a fresh or cached lookup; follow the DNS answer back to the browser, then the HTTP request to the server and resource response back.",
+      "vi": "Chọn lookup mới hoặc cache; theo DNS answer trở lại browser, sau đó HTTP request tới server và resource response quay về."
+    },
+    "prompt": {
+      "en": "What does DNS return to the browser?",
+      "vi": "DNS trả gì cho browser?"
+    },
+    "choices": [
+      {
+        "id": "ip",
+        "label": {
+          "en": "An IP address for the host name",
+          "vi": "IP address của host name"
+        }
+      },
+      {
+        "id": "page",
+        "label": {
+          "en": "The complete web page",
+          "vi": "Toàn bộ web page"
+        }
+      },
+      {
+        "id": "path",
+        "label": {
+          "en": "Only the resource path",
+          "vi": "Chỉ resource path"
+        }
+      }
+    ],
+    "scenarios": [
+      {
+        "id": "recursive",
+        "label": {
+          "en": "Fresh DNS lookup",
+          "vi": "DNS lookup mới"
+        },
+        "correctChoiceId": "ip",
+        "nodes": [
+          {
+            "id": "browser",
+            "label": {
+              "en": "Browser",
+              "vi": "Browser"
+            },
+            "kind": "client",
+            "x": 65,
+            "y": 135
+          },
+          {
+            "id": "resolver",
+            "label": {
+              "en": "DNS resolver",
+              "vi": "DNS resolver"
+            },
+            "kind": "network",
+            "x": 185,
+            "y": 60
+          },
+          {
+            "id": "dns",
+            "label": {
+              "en": "Authoritative DNS",
+              "vi": "Authoritative DNS"
+            },
+            "kind": "server",
+            "x": 370,
+            "y": 60
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "Web server",
+              "vi": "Web server"
+            },
+            "kind": "server",
+            "x": 535,
+            "y": 135
+          },
+          {
+            "id": "resource",
+            "label": {
+              "en": "/revision/networks",
+              "vi": "/revision/networks"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 225
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "browser",
+            "to": "resolver",
+            "label": {
+              "en": "host-name query",
+              "vi": "query host name"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "resolver",
+            "to": "dns",
+            "label": {
+              "en": "DNS query",
+              "vi": "DNS query"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "dns",
+            "to": "resolver",
+            "label": {
+              "en": "IP answer",
+              "vi": "IP answer"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "resolver",
+            "to": "browser",
+            "label": {
+              "en": "IP answer",
+              "vi": "IP answer"
+            }
+          },
+          {
+            "id": "e5",
+            "from": "browser",
+            "to": "server",
+            "label": {
+              "en": "HTTP request: host + path",
+              "vi": "HTTP request: host + path"
+            }
+          },
+          {
+            "id": "e6",
+            "from": "server",
+            "to": "resource",
+            "label": {
+              "en": "select resource",
+              "vi": "chọn resource"
+            }
+          },
+          {
+            "id": "e7",
+            "from": "server",
+            "to": "browser",
+            "label": {
+              "en": "resource response",
+              "vi": "resource response"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Parse the URL",
+              "vi": "Parse URL"
+            },
+            "explanation": {
+              "en": "The browser separates scheme, host name and resource path. DNS is asked about the host name, not the whole URL.",
+              "vi": "Browser tách scheme, host name và resource path. DNS được hỏi về host name, không phải toàn bộ URL."
+            },
+            "activeNodes": [
+              "browser",
+              "resolver"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Query authoritative DNS",
+              "vi": "Query authoritative DNS"
+            },
+            "explanation": {
+              "en": "The resolver asks an authoritative DNS server for the host-name mapping.",
+              "vi": "Resolver hỏi authoritative DNS server về mapping của host name."
+            },
+            "activeNodes": [
+              "resolver",
+              "dns"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Return the IP answer",
+              "vi": "Trả IP answer"
+            },
+            "explanation": {
+              "en": "The authoritative answer travels back to the resolver, which returns the IP address to the browser. DNS does not contact the web server to deliver this answer.",
+              "vi": "Authoritative answer quay về resolver, rồi resolver trả IP address cho browser. DNS không liên hệ web server để chuyển answer này."
+            },
+            "activeNodes": [
+              "dns",
+              "resolver",
+              "browser"
+            ],
+            "activeEdges": [
+              "e3",
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Request the named resource",
+              "vi": "Request tài nguyên đã nêu"
+            },
+            "explanation": {
+              "en": "Using the resolved IP, the browser connects to the web server and sends the host name and resource path in its request.",
+              "vi": "Dùng IP đã resolve, browser kết nối web server và gửi host name cùng resource path trong request."
+            },
+            "activeNodes": [
+              "browser",
+              "server",
+              "resource"
+            ],
+            "activeEdges": [
+              "e5",
+              "e6"
+            ]
+          },
+          {
+            "title": {
+              "en": "Return the web resource",
+              "vi": "Trả web resource"
+            },
+            "explanation": {
+              "en": "The web server sends the selected resource back to the browser. The internet is the underlying network; the WWW is a service of linked web resources delivered over it.",
+              "vi": "Web server gửi resource đã chọn về browser. Internet là network nền; WWW là dịch vụ các web resource liên kết được truyền trên đó."
+            },
+            "activeNodes": [
+              "server",
+              "browser",
+              "resource"
+            ],
+            "activeEdges": [
+              "e7"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cached",
+        "label": {
+          "en": "Resolver cache hit",
+          "vi": "Resolver cache hit"
+        },
+        "correctChoiceId": "ip",
+        "nodes": [
+          {
+            "id": "browser",
+            "label": {
+              "en": "Browser",
+              "vi": "Browser"
+            },
+            "kind": "client",
+            "x": 70,
+            "y": 135
+          },
+          {
+            "id": "resolver",
+            "label": {
+              "en": "Cached resolver",
+              "vi": "Resolver có cache"
+            },
+            "kind": "database",
+            "x": 260,
+            "y": 65
+          },
+          {
+            "id": "server",
+            "label": {
+              "en": "Web server",
+              "vi": "Web server"
+            },
+            "kind": "server",
+            "x": 520,
+            "y": 135
+          },
+          {
+            "id": "resource",
+            "label": {
+              "en": "/revision/networks",
+              "vi": "/revision/networks"
+            },
+            "kind": "document",
+            "x": 300,
+            "y": 225
+          }
+        ],
+        "edges": [
+          {
+            "id": "e1",
+            "from": "browser",
+            "to": "resolver",
+            "label": {
+              "en": "host-name query",
+              "vi": "query host name"
+            }
+          },
+          {
+            "id": "e2",
+            "from": "resolver",
+            "to": "browser",
+            "label": {
+              "en": "cached IP answer",
+              "vi": "IP answer từ cache"
+            }
+          },
+          {
+            "id": "e3",
+            "from": "browser",
+            "to": "server",
+            "label": {
+              "en": "HTTP request: host + path",
+              "vi": "HTTP request: host + path"
+            }
+          },
+          {
+            "id": "e4",
+            "from": "server",
+            "to": "resource",
+            "label": {
+              "en": "select resource",
+              "vi": "chọn resource"
+            }
+          },
+          {
+            "id": "e5",
+            "from": "server",
+            "to": "browser",
+            "label": {
+              "en": "resource response",
+              "vi": "resource response"
+            }
+          }
+        ],
+        "steps": [
+          {
+            "title": {
+              "en": "Ask the resolver",
+              "vi": "Hỏi resolver"
+            },
+            "explanation": {
+              "en": "The browser sends the host name from the URL to its resolver.",
+              "vi": "Browser gửi host name từ URL tới resolver."
+            },
+            "activeNodes": [
+              "browser",
+              "resolver"
+            ],
+            "activeEdges": [
+              "e1"
+            ]
+          },
+          {
+            "title": {
+              "en": "Use the cached mapping",
+              "vi": "Dùng mapping trong cache"
+            },
+            "explanation": {
+              "en": "A still-valid cached record avoids a new authoritative lookup. The resolver returns the cached IP address to the browser.",
+              "vi": "Record cache còn hiệu lực giúp bỏ qua authoritative lookup mới. Resolver trả IP address trong cache cho browser."
+            },
+            "activeNodes": [
+              "resolver",
+              "browser"
+            ],
+            "activeEdges": [
+              "e2"
+            ]
+          },
+          {
+            "title": {
+              "en": "Request the resource",
+              "vi": "Request resource"
+            },
+            "explanation": {
+              "en": "The browser connects to the web server and sends the host name and path; DNS still does not return the page itself.",
+              "vi": "Browser kết nối web server rồi gửi host name và path; DNS vẫn không trả chính page."
+            },
+            "activeNodes": [
+              "browser",
+              "server",
+              "resource"
+            ],
+            "activeEdges": [
+              "e3",
+              "e4"
+            ]
+          },
+          {
+            "title": {
+              "en": "Receive the response",
+              "vi": "Nhận response"
+            },
+            "explanation": {
+              "en": "The web server returns the selected resource to the browser.",
+              "vi": "Web server trả resource đã chọn về browser."
+            },
+            "activeNodes": [
+              "server",
+              "browser",
+              "resource"
+            ],
+            "activeEdges": [
+              "e5"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

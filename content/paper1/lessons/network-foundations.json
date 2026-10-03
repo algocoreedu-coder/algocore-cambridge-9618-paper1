@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L09",
+  "slug": "network-foundations",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Network purposes, LANs and WANs",
+    "vi": "Mục đích mạng, LAN và WAN"
+  },
+  "question": {
+    "en": "What changes when standalone devices become a network?",
+    "vi": "Điều gì thay đổi khi các thiết bị độc lập trở thành network?"
+  },
+  "opening": {
+    "en": "A network links devices so that users and systems can share resources, data and communication services. Its scope and management distinguish a LAN from a WAN.",
+    "vi": "Network liên kết thiết bị để người dùng và hệ thống chia sẻ tài nguyên, dữ liệu và dịch vụ liên lạc. Phạm vi và cách quản lý giúp phân biệt LAN với WAN."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-01",
+      "text": {
+        "en": "Explain the purpose and benefits of networking devices.",
+        "vi": "Giải thích mục đích và lợi ích của việc nối mạng thiết bị."
+      }
+    },
+    {
+      "id": "AC26-2.1-02",
+      "text": {
+        "en": "Describe the characteristics of LANs and WANs.",
+        "vi": "Mô tả đặc trưng của LAN và WAN."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-01-01",
+    "REQ-2.1-02-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L09-theory-1",
+      "title": {
+        "en": "Why connect devices?",
+        "vi": "Vì sao kết nối thiết bị?"
+      },
+      "paragraphs": [
+        {
+          "en": "Networking allows shared files, printers, services and communication instead of duplicating each resource at every device.",
+          "vi": "Networking cho phép chia sẻ tệp, máy in, dịch vụ và liên lạc thay vì nhân bản mỗi tài nguyên tại từng thiết bị."
+        },
+        {
+          "en": "Central administration can support accounts, access rights and backup, but the network also introduces setup cost, management effort and shared points of failure.",
+          "vi": "Quản trị tập trung có thể hỗ trợ tài khoản, quyền truy cập và backup, nhưng network cũng tạo chi phí thiết lập, công sức quản lý và điểm sự cố dùng chung."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Tie each claimed benefit to a mechanism such as sharing or central management.",
+          "vi": "Gắn mỗi lợi ích với cơ chế như chia sẻ hoặc quản trị tập trung."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L09-theory-2",
+      "title": {
+        "en": "LAN and WAN are scopes, not distance labels alone",
+        "vi": "LAN và WAN là phạm vi, không chỉ là nhãn khoảng cách"
+      },
+      "paragraphs": [
+        {
+          "en": "A LAN connects devices over a limited site or organisation-controlled area and normally uses locally managed infrastructure.",
+          "vi": "LAN kết nối thiết bị trong một địa điểm giới hạn hoặc vùng do tổ chức quản lý và thường dùng hạ tầng được quản lý cục bộ."
+        },
+        {
+          "en": "A WAN connects networks across a wider geographical area, often using carrier, public or leased communication links. A WAN may join several LANs.",
+          "vi": "WAN kết nối các network trên vùng địa lý rộng hơn, thường dùng liên kết của nhà mạng, công cộng hoặc thuê riêng. WAN có thể nối nhiều LAN."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Classify a two-site school network",
+      "vi": "Phân loại network trường học hai cơ sở"
+    },
+    "prompt": {
+      "en": "A school shares printers inside each campus and links both campuses through a leased provider connection.",
+      "vi": "Một trường chia sẻ máy in trong từng cơ sở và nối hai cơ sở bằng đường thuê của nhà cung cấp."
+    },
+    "steps": [
+      {
+        "id": "P1-L09-worked-1",
+        "action": {
+          "en": "Identify each local boundary.",
+          "vi": "Xác định từng ranh giới local."
+        },
+        "result": {
+          "en": "Devices and switches inside one campus form a LAN.",
+          "vi": "Thiết bị và switch trong một cơ sở tạo thành LAN."
+        }
+      },
+      {
+        "id": "P1-L09-worked-2",
+        "action": {
+          "en": "Identify the inter-site link.",
+          "vi": "Xác định liên kết giữa hai cơ sở."
+        },
+        "result": {
+          "en": "The provider link joins the two LANs across sites, forming a WAN.",
+          "vi": "Liên kết của nhà cung cấp nối hai LAN qua các cơ sở, tạo thành WAN."
+        }
+      },
+      {
+        "id": "P1-L09-worked-3",
+        "action": {
+          "en": "Link benefits to mechanisms.",
+          "vi": "Liên hệ lợi ích với cơ chế."
+        },
+        "result": {
+          "en": "Local printer sharing reduces duplication; the WAN permits cross-site data access.",
+          "vi": "Chia sẻ máy in cục bộ giảm trùng lặp; WAN cho phép truy cập dữ liệu giữa các cơ sở."
+        }
+      }
+    ],
+    "result": {
+      "en": "The scenario contains two LANs connected as a WAN; the classification uses scope and infrastructure, not an arbitrary distance threshold.",
+      "vi": "Tình huống có hai LAN được nối thành WAN; cách phân loại dựa vào phạm vi và hạ tầng, không dùng một ngưỡng khoảng cách tùy ý."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for the managed boundary and the links used.",
+        "vi": "Tìm ranh giới quản lý và loại liên kết được dùng."
+      }
+    ],
+    "method": [
+      {
+        "en": "Identify connected resources.",
+        "vi": "Xác định tài nguyên được kết nối."
+      },
+      {
+        "en": "Mark local and inter-site boundaries.",
+        "vi": "Đánh dấu ranh giới local và liên cơ sở."
+      },
+      {
+        "en": "Explain each benefit through a network feature.",
+        "vi": "Giải thích mỗi lợi ích qua một đặc điểm network."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Every network with internet access is a WAN.",
+          "vi": "Mọi network có internet đều là WAN."
+        },
+        "correction": {
+          "en": "A LAN can connect to the internet and remain a LAN; classify the internal network by its scope and infrastructure.",
+          "vi": "LAN có thể kết nối internet và vẫn là LAN; hãy phân loại network nội bộ theo phạm vi và hạ tầng."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L09-recognise",
+        "title": {
+          "en": "Recognise scope and benefit",
+          "vi": "Nhận diện phạm vi và lợi ích"
+        },
+        "setup": {
+          "en": "A design studio has 18 workstations in one office and a shared file store.",
+          "vi": "Một studio có 18 workstation trong một văn phòng và kho tệp dùng chung."
+        },
+        "prompt": {
+          "en": "Classify the network and explain two benefits with their mechanisms.",
+          "vi": "Phân loại network và giải thích hai lợi ích cùng cơ chế."
+        },
+        "expectedEvidence": {
+          "en": "It is a LAN under one local site; shared storage supports common files and central backup, while a shared printer can reduce equipment duplication.",
+          "vi": "Đây là LAN trong một địa điểm; shared storage hỗ trợ tệp dùng chung và backup tập trung, còn máy in chung có thể giảm trùng lặp thiết bị."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L09-CHECK-REQ-2.1-01-01",
+      "requirementId": "REQ-2.1-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two benefits of networking 25 classroom computers instead of keeping them standalone. Link each benefit to a network mechanism.",
+        "vi": "Giải thích hai lợi ích của việc nối mạng 25 máy lớp học thay vì để độc lập. Liên hệ mỗi lợi ích với một cơ chế network."
+      },
+      "hint": {
+        "en": "Consider sharing, administration, communication or backup.",
+        "vi": "Xét việc chia sẻ, quản trị, liên lạc hoặc backup."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Devices can share a printer, reducing duplicated hardware. Shared storage lets authorised users access common files and enables central backup or access control.",
+          "vi": "Thiết bị có thể dùng chung máy in, giảm phần cứng trùng lặp. Shared storage cho phép người được cấp quyền truy cập tệp chung và hỗ trợ backup hoặc access control tập trung."
+        },
+        "rubric": [
+          {
+            "en": "Awards one point for each valid benefit.",
+            "vi": "Cho một điểm cho mỗi lợi ích hợp lệ."
+          },
+          {
+            "en": "Each benefit must be linked to how the network provides it.",
+            "vi": "Mỗi lợi ích phải gắn với cách network tạo ra lợi ích đó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "network-benefit",
+        "resource-sharing"
+      ]
+    },
+    {
+      "id": "P1-L09-CHECK-REQ-2.1-02-01",
+      "requirementId": "REQ-2.1-02-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare a LAN with a WAN using scope, ownership or management of links, and give one example of each.",
+        "vi": "So sánh LAN với WAN theo phạm vi, quyền sở hữu hoặc quản lý liên kết, rồi nêu một ví dụ cho mỗi loại."
+      },
+      "hint": {
+        "en": "Do not rely on one distance number alone.",
+        "vi": "Không chỉ dựa vào một con số khoảng cách."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A LAN covers a limited locally managed site, for example a school computer room. A WAN connects networks across wider areas using carrier, public or leased links, for example a company joining offices in different cities.",
+          "vi": "LAN bao phủ địa điểm giới hạn được quản lý cục bộ, ví dụ phòng máy trường học. WAN nối các network trên vùng rộng hơn qua đường nhà mạng, công cộng hoặc thuê riêng, ví dụ công ty nối văn phòng ở các thành phố khác nhau."
+        },
+        "rubric": [
+          {
+            "en": "States a LAN characteristic and example.",
+            "vi": "Nêu đặc trưng LAN và ví dụ."
+          },
+          {
+            "en": "States a WAN characteristic and example.",
+            "vi": "Nêu đặc trưng WAN và ví dụ."
+          },
+          {
+            "en": "Makes a direct comparison.",
+            "vi": "Thực hiện so sánh trực tiếp."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "LAN",
+        "WAN",
+        "network-scope"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State one network benefit and one defining characteristic of each LAN and WAN.",
+      "vi": "Nêu một lợi ích network và một đặc trưng xác định của LAN và WAN."
+    },
+    "answerPoints": [
+      {
+        "en": "Networks share resources, data or services.",
+        "vi": "Network chia sẻ tài nguyên, dữ liệu hoặc dịch vụ."
+      },
+      {
+        "en": "A LAN is limited and locally managed; a WAN joins networks over a wider area using external or leased links.",
+        "vi": "LAN có phạm vi giới hạn và được quản lý cục bộ; WAN nối các network trên vùng rộng hơn qua liên kết ngoài hoặc thuê riêng."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "network",
+      "meaning": {
+        "en": "Connected devices that exchange data or share resources.",
+        "vi": "Các thiết bị được kết nối để trao đổi dữ liệu hoặc chia sẻ tài nguyên."
+      }
+    },
+    {
+      "term": "LAN",
+      "meaning": {
+        "en": "A locally managed network over a limited area.",
+        "vi": "Network được quản lý cục bộ trong vùng giới hạn."
+      }
+    },
+    {
+      "term": "WAN",
+      "meaning": {
+        "en": "A network connecting networks over a wide area.",
+        "vi": "Network nối các network trên vùng rộng."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-models",
+    "network-topologies"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L09 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 29–32: networking benefits and LAN/WAN characteristics",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L09",
+  "contractCoverage": {
+    "B01": [
+      "P1-L09-objectives"
+    ],
+    "B02": [
+      "P1-L09-theory-1",
+      "P1-L09-theory-2"
+    ],
+    "B03": [
+      "P1-L09-rules"
+    ],
+    "B04": [
+      "P1-L09-recognise"
+    ],
+    "B05": [
+      "P1-L09-worked-1",
+      "P1-L09-worked-2",
+      "P1-L09-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L09"
+    ],
+    "B07": [
+      "P1-L09-CHECK-REQ-2.1-01-01",
+      "P1-L09-CHECK-REQ-2.1-02-01"
+    ],
+    "B08": [
+      "P1-L09-misconceptions"
+    ],
+    "B09": [
+      "P1-L09-recall"
+    ],
+    "B10": [
+      "P1-L09-glossary"
+    ],
+    "B11": [
+      "P1-L09-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}
