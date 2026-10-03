@@ -1,0 +1,416 @@
+[
+  {
+    "lessonId": "P1-L19",
+    "visualId": "VIS-P1-L19",
+    "fixtures": [
+      {
+        "workflow": "printer",
+        "capacity": 4,
+        "produced": 8,
+        "consumed": 2,
+        "waiting": 4,
+        "overflow": 2,
+        "full": true
+      },
+      {
+        "workflow": "audio",
+        "capacity": 4,
+        "produced": 5,
+        "consumed": 4,
+        "waiting": 1,
+        "overflow": 0,
+        "full": false
+      }
+    ],
+    "invariants": [
+      "waiting<=capacity",
+      "overflow=max(0,produced-consumed-capacity)",
+      "buffer does not change consumer rate"
+    ]
+  },
+  {
+    "lessonId": "P1-L20",
+    "visualId": "VIS-P1-L20",
+    "deviceFamilies": [
+      "laser",
+      "3d",
+      "audio",
+      "hdd",
+      "flash",
+      "optical",
+      "touch",
+      "vr"
+    ],
+    "phaseCount": 4,
+    "invariants": [
+      "eight distinct device families",
+      "four causal phases per family",
+      "device-specific glyph and labels"
+    ]
+  },
+  {
+    "lessonId": "P1-L21",
+    "visualId": "VIS-P1-L21",
+    "fixtures": [
+      {
+        "mode": "monitor",
+        "reading": 21,
+        "target": 24,
+        "actuator": "none",
+        "nextReading": 21
+      },
+      {
+        "mode": "control",
+        "reading": 21,
+        "target": 24,
+        "actuator": "on",
+        "nextReading": 22
+      },
+      {
+        "mode": "control",
+        "reading": 24,
+        "target": 24,
+        "actuator": "off",
+        "nextReading": 24
+      },
+      {
+        "mode": "control",
+        "reading": 27,
+        "target": 24,
+        "actuator": "off",
+        "nextReading": 27
+      }
+    ],
+    "sensorTypes": [
+      "temperature",
+      "pressure",
+      "infrared",
+      "sound"
+    ],
+    "invariants": [
+      "actuator on iff mode=control and reading<target",
+      "monitoring has no automatic actuator",
+      "next reading is illustrative, not plant physics"
+    ]
+  },
+  {
+    "lessonId": "P1-L22",
+    "visualId": "VIS-P1-L22",
+    "facts": {
+      "RAM": {
+        "volatile": true,
+        "write": "normal"
+      },
+      "ROM": {
+        "volatile": false,
+        "write": "fixed"
+      },
+      "SRAM": {
+        "volatile": true,
+        "refresh": false,
+        "best": "cache"
+      },
+      "DRAM": {
+        "volatile": true,
+        "refresh": true,
+        "best": "main-memory"
+      },
+      "PROM": {
+        "volatile": false,
+        "write": "once"
+      },
+      "EPROM": {
+        "volatile": false,
+        "write": "uv-erase"
+      },
+      "EEPROM": {
+        "volatile": false,
+        "write": "electrical"
+      }
+    },
+    "invariants": [
+      "SRAM and DRAM are both volatile",
+      "only DRAM requires refresh in this comparison",
+      "PROM once, EPROM UV, EEPROM electrical"
+    ]
+  },
+  {
+    "lessonId": "P1-L23",
+    "visualId": "VIS-P1-L23",
+    "truthTables": {
+      "NOT": [
+        {
+          "a": 0,
+          "b": null,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": null,
+          "y": 0
+        }
+      ],
+      "AND": [
+        {
+          "a": 0,
+          "b": 0,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "y": 1
+        }
+      ],
+      "OR": [
+        {
+          "a": 0,
+          "b": 0,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "y": 1
+        }
+      ],
+      "NAND": [
+        {
+          "a": 0,
+          "b": 0,
+          "y": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "y": 0
+        }
+      ],
+      "NOR": [
+        {
+          "a": 0,
+          "b": 0,
+          "y": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "y": 0
+        }
+      ],
+      "XOR": [
+        {
+          "a": 0,
+          "b": 0,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "y": 0
+        }
+      ]
+    },
+    "invariants": [
+      "NOT has one input",
+      "all other syllabus gates have two inputs",
+      "XOR is 1 iff inputs differ"
+    ]
+  },
+  {
+    "lessonId": "P1-L24",
+    "visualId": "VIS-P1-L24",
+    "expressions": {
+      "alarm": "Y = (A AND B) OR (NOT C)",
+      "permission": "Y = (A OR B) AND C"
+    },
+    "circuits": {
+      "alarm": [
+        {
+          "a": 0,
+          "b": 0,
+          "c": 0,
+          "p": 0,
+          "q": 1,
+          "y": 1
+        },
+        {
+          "a": 0,
+          "b": 0,
+          "c": 1,
+          "p": 0,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "c": 0,
+          "p": 0,
+          "q": 1,
+          "y": 1
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "c": 1,
+          "p": 0,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "p": 0,
+          "q": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "p": 0,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 0,
+          "p": 1,
+          "q": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 1,
+          "p": 1,
+          "q": 0,
+          "y": 1
+        }
+      ],
+      "permission": [
+        {
+          "a": 0,
+          "b": 0,
+          "c": 0,
+          "p": 0,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 0,
+          "c": 1,
+          "p": 0,
+          "q": 1,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "c": 0,
+          "p": 1,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 0,
+          "b": 1,
+          "c": 1,
+          "p": 1,
+          "q": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 0,
+          "p": 1,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 0,
+          "c": 1,
+          "p": 1,
+          "q": 1,
+          "y": 1
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 0,
+          "p": 1,
+          "q": 0,
+          "y": 0
+        },
+        {
+          "a": 1,
+          "b": 1,
+          "c": 1,
+          "p": 1,
+          "q": 1,
+          "y": 1
+        }
+      ]
+    },
+    "invariants": [
+      "eight rows per three-input circuit",
+      "intermediate P and Q evaluated before Y"
+    ]
+  }
+]

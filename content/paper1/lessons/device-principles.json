@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L20",
+  "slug": "device-principles",
+  "sectionId": "3",
+  "strandId": "3.1",
+  "title": {
+    "en": "Device principles and storage media",
+    "vi": "Nguyên lý thiết bị và phương tiện lưu trữ"
+  },
+  "question": {
+    "en": "What physical change lets each device capture, present or store data?",
+    "vi": "Biến đổi vật lý nào giúp mỗi thiết bị thu nhận, trình bày hoặc lưu dữ liệu?"
+  },
+  "opening": {
+    "en": "Exam answers need a causal sequence: identify the active component, the physical change, how that change represents data, and the resulting input, output or stored state.",
+    "vi": "Câu trả lời thi cần chuỗi nhân quả: xác định thành phần hoạt động, biến đổi vật lý, cách biến đổi biểu diễn dữ liệu và trạng thái input, output hoặc stored cuối cùng."
+  },
+  "objectives": [
+    {
+      "id": "AC26-3.1-03",
+      "text": {
+        "en": "Describe the principal operation of the specified input, output and storage devices.",
+        "vi": "Mô tả nguyên lý hoạt động chính của các thiết bị input, output và storage được chỉ định."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-3.1-03-01",
+    "REQ-3.1-03-02",
+    "REQ-3.1-03-03",
+    "REQ-3.1-03-04",
+    "REQ-3.1-03-05",
+    "REQ-3.1-03-06",
+    "REQ-3.1-03-07",
+    "REQ-3.1-03-08"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L20-theory-1",
+      "title": {
+        "en": "Laser and 3D printing",
+        "vi": "Laser printing và 3D printing"
+      },
+      "paragraphs": [
+        {
+          "en": "A laser printer charges a photosensitive drum. A laser discharges selected areas, toner is attracted to the resulting electrostatic image, the toner transfers to paper, and heated pressure rollers fuse it permanently.",
+          "vi": "Laser printer tích điện cho trống quang dẫn. Laser làm mất điện tích ở vùng được chọn, toner bám theo electrostatic image, toner chuyển sang giấy rồi con lăn nhiệt và áp suất cố định toner."
+        },
+        {
+          "en": "A 3D printer starts from a digital model that is sliced into layers. The print head or energy source deposits or fuses material one layer at a time; the platform or head moves until the solid object is built additively.",
+          "vi": "3D printer bắt đầu từ digital model được chia thành các layer. Print head hoặc nguồn năng lượng đắp hoặc kết khối vật liệu từng layer; platform hoặc head di chuyển tới khi vật thể rắn được tạo theo additive manufacturing."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Laser printer: electrostatic image → toner → transfer → fuse. 3D printer: model → slices → layers → object.",
+          "vi": "Laser printer: electrostatic image → toner → transfer → fuse. 3D printer: model → slices → layers → object."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L20-theory-2",
+      "title": {
+        "en": "Microphone and speaker",
+        "vi": "Microphone và speaker"
+      },
+      "paragraphs": [
+        {
+          "en": "In a microphone, sound waves vibrate a diaphragm and coil in a magnetic field, inducing an analogue electrical signal. An ADC can sample that signal for computer storage.",
+          "vi": "Trong microphone, sound wave làm rung diaphragm và coil trong magnetic field, tạo analogue electrical signal. ADC có thể lấy mẫu signal đó để computer lưu trữ."
+        },
+        {
+          "en": "For a speaker, a DAC converts digital samples into an analogue current. The current in a coil creates a changing magnetic field, moving the cone and producing pressure waves in air.",
+          "vi": "Với speaker, DAC đổi digital sample thành analogue current. Dòng điện qua coil tạo magnetic field thay đổi, làm cone chuyển động và tạo pressure wave trong không khí."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L20-theory-3",
+      "title": {
+        "en": "Magnetic, flash and optical storage",
+        "vi": "Magnetic, flash và optical storage"
+      },
+      "paragraphs": [
+        {
+          "en": "An HDD spins magnetically coated platters while an actuator positions a read/write head over a track and sector. Writing changes magnetic orientation; reading senses the stored pattern.",
+          "vi": "HDD quay platter phủ vật liệu từ trong khi actuator đặt read/write head lên track và sector. Ghi làm đổi hướng từ; đọc cảm nhận pattern đã lưu."
+        },
+        {
+          "en": "Flash memory traps or removes charge on floating-gate cells. The resulting threshold state represents bits and remains without power; writes and erases are managed in pages or blocks.",
+          "vi": "Flash memory giữ hoặc loại charge trên floating-gate cell. Threshold state biểu diễn bit và tồn tại khi mất điện; write và erase được quản lý theo page hoặc block."
+        },
+        {
+          "en": "An optical drive focuses a laser on a spiral track. Changes in reflected light from pits/lands or written dye states are sensed and decoded as data; writing uses a stronger laser to change the recording layer.",
+          "vi": "Optical drive hội tụ laser lên spiral track. Thay đổi ánh sáng phản xạ từ pit/land hoặc trạng thái dye được cảm nhận và giải mã thành data; ghi dùng laser mạnh hơn để đổi recording layer."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L20-theory-4",
+      "title": {
+        "en": "Touchscreen and VR headset",
+        "vi": "Touchscreen và VR headset"
+      },
+      "paragraphs": [
+        {
+          "en": "A capacitive touchscreen has a transparent electrode grid. A finger changes local capacitance; the controller measures the changed coordinates and reports a touch event.",
+          "vi": "Capacitive touchscreen có lưới electrode trong suốt. Ngón tay làm đổi capacitance cục bộ; controller đo coordinate thay đổi và báo touch event."
+        },
+        {
+          "en": "A VR headset sends separate views to displays behind lenses. Gyroscopes, accelerometers or cameras measure head movement; the computer renders an updated viewpoint, while binaural audio supports spatial immersion.",
+          "vi": "VR headset gửi hai view riêng tới display sau lens. Gyroscope, accelerometer hoặc camera đo chuyển động đầu; computer render viewpoint mới, còn binaural audio hỗ trợ cảm giác không gian."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Describe a feedback update for head tracking; do not claim the headset creates a real physical world.",
+          "vi": "Mô tả feedback update cho head tracking; không cho rằng headset tạo ra thế giới vật lý thật."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Explain a magnetic hard-disk read",
+      "vi": "Giải thích thao tác đọc HDD"
+    },
+    "prompt": {
+      "en": "A file block must be read from a known sector on an HDD.",
+      "vi": "Một block của file cần được đọc từ sector đã biết trên HDD."
+    },
+    "steps": [
+      {
+        "id": "P1-L20-worked-1",
+        "action": {
+          "en": "Position the medium.",
+          "vi": "Định vị medium."
+        },
+        "result": {
+          "en": "The spindle rotates the platter and the actuator moves the head to the required track.",
+          "vi": "Spindle quay platter và actuator đưa head tới track cần thiết."
+        }
+      },
+      {
+        "id": "P1-L20-worked-2",
+        "action": {
+          "en": "Wait for the sector.",
+          "vi": "Chờ sector."
+        },
+        "result": {
+          "en": "Rotation brings the requested sector under the stationary flying head.",
+          "vi": "Chuyển động quay đưa sector cần đọc xuống dưới head đang bay ổn định."
+        }
+      },
+      {
+        "id": "P1-L20-worked-3",
+        "action": {
+          "en": "Sense and decode.",
+          "vi": "Cảm nhận và giải mã."
+        },
+        "result": {
+          "en": "The head detects magnetic transitions; drive electronics decode them into bits and transfer the block.",
+          "vi": "Head phát hiện magnetic transition; drive electronics giải mã thành bit và transfer block."
+        }
+      }
+    ],
+    "result": {
+      "en": "A strong device answer names the moving parts, physical state and data conversion in order.",
+      "vi": "Câu trả lời tốt gọi tên moving part, physical state và data conversion theo đúng thứ tự."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Ask what energy or physical property changes: charge, magnetism, reflected light, motion or pressure.",
+        "vi": "Hỏi dạng năng lượng hoặc tính chất vật lý nào thay đổi: charge, magnetism, reflected light, motion hay pressure."
+      }
+    ],
+    "method": [
+      {
+        "en": "Identify the source data or stimulus.",
+        "vi": "Xác định source data hoặc stimulus."
+      },
+      {
+        "en": "Trace the active parts in order.",
+        "vi": "Lần theo active part theo thứ tự."
+      },
+      {
+        "en": "End with the encoded, stored or physical output.",
+        "vi": "Kết thúc bằng output đã encoded, stored hoặc physical."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "All storage devices write bits in the same physical way.",
+          "vi": "Mọi storage device ghi bit bằng cùng một cơ chế vật lý."
+        },
+        "correction": {
+          "en": "HDDs use magnetic states, flash uses stored charge, and optical media use laser-readable changes on a track.",
+          "vi": "HDD dùng trạng thái từ, flash dùng charge được giữ và optical media dùng thay đổi trên track đọc bằng laser."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L20-recognise-1",
+        "title": {
+          "en": "Choose the conversion chain",
+          "vi": "Chọn chuỗi biến đổi"
+        },
+        "setup": {
+          "en": "A recorded voice is played from a computer through a loudspeaker.",
+          "vi": "Giọng nói đã ghi được phát từ computer qua loudspeaker."
+        },
+        "prompt": {
+          "en": "State the ordered conversions from file data to sound waves.",
+          "vi": "Nêu các conversion theo thứ tự từ file data tới sound wave."
+        },
+        "expectedEvidence": {
+          "en": "Digital samples → DAC → analogue current → amplified coil current → cone vibration → pressure waves.",
+          "vi": "Digital sample → DAC → analogue current → amplified coil current → cone vibration → pressure wave."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-01",
+      "requirementId": "REQ-3.1-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how a monochrome laser printer places and fixes toner on paper.",
+        "vi": "Mô tả cách monochrome laser printer đặt và cố định toner trên giấy."
+      },
+      "hint": {
+        "en": "Follow charge, laser, toner, paper and fuser in order.",
+        "vi": "Theo thứ tự charge, laser, toner, paper và fuser."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The drum is charged; the laser removes charge in selected areas to form an electrostatic image; toner is attracted to that pattern, transferred to oppositely charged paper, then fused by heated pressure rollers.",
+          "vi": "Drum được charge; laser loại charge ở vùng được chọn để tạo electrostatic image; toner bị hút vào pattern, chuyển sang paper mang charge đối lập rồi được fuser nhiệt và áp suất cố định."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "laser-printer"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-02",
+      "requirementId": "REQ-3.1-03-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a 3D printer turns a digital model into a solid prototype.",
+        "vi": "Giải thích cách 3D printer biến digital model thành prototype rắn."
+      },
+      "hint": {
+        "en": "Use slicing and additive layers.",
+        "vi": "Dùng slicing và additive layer."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Software slices the model into thin cross-sections. The printer deposits, cures or fuses material for each cross-section, moves the head or platform and repeats layer by layer until the object is complete.",
+          "vi": "Software chia model thành cross-section mỏng. Printer đắp, cure hoặc fuse vật liệu theo từng cross-section, di chuyển head hoặc platform và lặp theo layer đến khi vật thể hoàn chỉnh."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "3d-printer"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-03",
+      "requirementId": "REQ-3.1-03-03",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare the transduction chain in a microphone with that in a loudspeaker.",
+        "vi": "So sánh transduction chain của microphone và loudspeaker."
+      },
+      "hint": {
+        "en": "Start and end with the energy form.",
+        "vi": "Bắt đầu và kết thúc bằng dạng năng lượng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A microphone converts sound-wave motion into an analogue electrical signal, which an ADC may digitise. A speaker receives an analogue current from a DAC/amplifier and converts coil and cone motion into sound waves.",
+          "vi": "Microphone đổi chuyển động sound wave thành analogue electrical signal, ADC có thể digitise. Speaker nhận analogue current từ DAC/amplifier và đổi chuyển động coil/cone thành sound wave."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "microphone",
+        "speaker"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-04",
+      "requirementId": "REQ-3.1-03-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how an HDD locates and reads a requested sector.",
+        "vi": "Mô tả cách HDD định vị và đọc một sector được yêu cầu."
+      },
+      "hint": {
+        "en": "Mention platter rotation, actuator/head and magnetic transitions.",
+        "vi": "Nêu platter rotation, actuator/head và magnetic transition."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The spindle rotates the platter, the actuator positions the read/write head over the correct track, the requested sector rotates beneath it, and the head senses magnetic transitions that the drive electronics decode into bits.",
+          "vi": "Spindle quay platter, actuator đặt read/write head trên đúng track, sector cần đọc quay bên dưới và head cảm nhận magnetic transition để drive electronics giải mã thành bit."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "HDD"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-05",
+      "requirementId": "REQ-3.1-03-05",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how flash memory stores a bit without power.",
+        "vi": "Giải thích cách flash memory lưu bit khi không có điện."
+      },
+      "hint": {
+        "en": "Use charge and a floating-gate cell.",
+        "vi": "Dùng charge và floating-gate cell."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A write or erase voltage moves charge onto or away from a floating gate. The trapped charge changes the transistor's threshold state, which is sensed as stored data and remains when power is removed.",
+          "vi": "Write hoặc erase voltage đưa charge vào hoặc ra khỏi floating gate. Charge bị giữ làm đổi threshold state của transistor, được cảm nhận thành stored data và còn lại khi mất điện."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "flash"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-06",
+      "requirementId": "REQ-3.1-03-06",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how an optical drive reads data and how a recordable disc can be written.",
+        "vi": "Mô tả cách optical drive đọc data và cách ghi recordable disc."
+      },
+      "hint": {
+        "en": "Follow the focused laser and reflected light.",
+        "vi": "Theo focused laser và reflected light."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The disc spins while the optical head follows its spiral track. A low-power laser produces different reflected-light levels from recorded states, which a sensor decodes. Writing uses a higher-power laser to change the recording dye or layer.",
+          "vi": "Disc quay khi optical head theo spiral track. Laser công suất thấp tạo mức reflected light khác nhau từ recorded state để sensor giải mã. Ghi dùng laser công suất cao hơn làm đổi dye hoặc layer ghi."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "optical"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-07",
+      "requirementId": "REQ-3.1-03-07",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a capacitive touchscreen finds a finger touch.",
+        "vi": "Giải thích cách capacitive touchscreen xác định thao tác chạm ngón tay."
+      },
+      "hint": {
+        "en": "Use the electrode grid and capacitance change.",
+        "vi": "Dùng electrode grid và thay đổi capacitance."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A transparent electrode grid maintains an electric field. A finger changes capacitance near particular electrodes; the controller measures those changes, calculates coordinates and reports the touch to software.",
+          "vi": "Lưới electrode trong suốt duy trì electric field. Ngón tay làm đổi capacitance gần các electrode; controller đo thay đổi, tính coordinate và báo touch cho software."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "touchscreen"
+      ]
+    },
+    {
+      "id": "P1-L20-CHECK-REQ-3.1-03-08",
+      "requirementId": "REQ-3.1-03-08",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a VR headset updates the view when the user turns their head.",
+        "vi": "Giải thích cách VR headset cập nhật view khi người dùng quay đầu."
+      },
+      "hint": {
+        "en": "Trace sensor measurement, rendering and display.",
+        "vi": "Lần theo sensor measurement, rendering và display."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Gyroscopes, accelerometers or cameras measure the head movement. The computer calculates the new viewpoint and renders updated left/right images; the displays and lenses present them, while spatial audio may be updated to match.",
+          "vi": "Gyroscope, accelerometer hoặc camera đo chuyển động đầu. Computer tính viewpoint mới và render image trái/phải; display và lens trình bày chúng, còn spatial audio có thể được cập nhật tương ứng."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "VR"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Name the defining physical operation for the eight syllabus device families.",
+      "vi": "Nêu thao tác vật lý cốt lõi của tám nhóm thiết bị trong syllabus."
+    },
+    "answerPoints": [
+      {
+        "en": "Laser charge/toner/fuse; 3D sliced layers; microphone/speaker transduction; HDD magnetism; flash trapped charge; optical reflection; touchscreen capacitance; VR tracked viewpoint updates.",
+        "vi": "Laser charge/toner/fuse; 3D sliced layer; microphone/speaker transduction; HDD magnetism; flash trapped charge; optical reflection; touchscreen capacitance; VR tracked viewpoint update."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "transducer",
+      "meaning": {
+        "en": "A device that converts one form of energy into another.",
+        "vi": "Thiết bị đổi một dạng năng lượng thành dạng khác."
+      }
+    },
+    {
+      "term": "additive manufacturing",
+      "meaning": {
+        "en": "Building an object by adding successive material layers.",
+        "vi": "Tạo vật thể bằng cách thêm liên tiếp các layer vật liệu."
+      }
+    },
+    {
+      "term": "floating gate",
+      "meaning": {
+        "en": "An insulated transistor region that can retain charge to represent stored data.",
+        "vi": "Vùng transistor cách điện có thể giữ charge để biểu diễn dữ liệu lưu."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "computer-organisation",
+    "embedded-control"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §3.1, p. 17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L20 · Chapter 3 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C03",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 3, pp. 73–85",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L20",
+  "contractCoverage": {
+    "B01": [
+      "P1-L20-objectives"
+    ],
+    "B02": [
+      "P1-L20-theory-1",
+      "P1-L20-theory-2",
+      "P1-L20-theory-3",
+      "P1-L20-theory-4"
+    ],
+    "B03": [
+      "P1-L20-rules"
+    ],
+    "B04": [
+      "P1-L20-recognise-1"
+    ],
+    "B05": [
+      "P1-L20-worked-1",
+      "P1-L20-worked-2",
+      "P1-L20-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L20"
+    ],
+    "B07": [
+      "P1-L20-CHECK-REQ-3.1-03-01",
+      "P1-L20-CHECK-REQ-3.1-03-02",
+      "P1-L20-CHECK-REQ-3.1-03-03",
+      "P1-L20-CHECK-REQ-3.1-03-04",
+      "P1-L20-CHECK-REQ-3.1-03-05",
+      "P1-L20-CHECK-REQ-3.1-03-06",
+      "P1-L20-CHECK-REQ-3.1-03-07",
+      "P1-L20-CHECK-REQ-3.1-03-08"
+    ],
+    "B08": [
+      "P1-L20-misconceptions"
+    ],
+    "B09": [
+      "P1-L20-recall"
+    ],
+    "B10": [
+      "P1-L20-glossary"
+    ],
+    "B11": [
+      "P1-L20-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, RotateCcw } from "lucide-react";
 import { Button, Field, Select } from "@/app/components/algocore-ui";
 import { ObserveSceneVisual } from "./AtlasReferenceGallery";
 import { Chapter2VisualLab, chapter2VisualLessonIds } from "./Chapter2VisualLab";
+import { Chapter3VisualLab, chapter3VisualLessonIds } from "./Chapter3VisualLab";
 import {
   bitmapStorage,
   bitmapRleFixture,
@@ -349,5 +350,6 @@ export function Paper1VisualLab({ lessonId, locale }: { readonly lessonId: strin
   if (lessonId === "P1-L07") return <AudioLab locale={locale} />;
   if (lessonId === "P1-L08") return <CompressionLab locale={locale} />;
   if (chapter2VisualLessonIds.includes(lessonId)) return <Chapter2VisualLab lessonId={lessonId} locale={locale} />;
+  if (chapter3VisualLessonIds.includes(lessonId)) return <Chapter3VisualLab lessonId={lessonId} locale={locale} />;
   return <p className={styles.unavailable} role="status">{copy(locale, "This Paper 1 visual is not available.", "Minh họa Paper 1 này chưa có.")}</p>;
 }

@@ -1,0 +1,1440 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP03",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "3",
+  "title": {
+    "en": "Chapter 3 mixed practice: Hardware",
+    "vi": "Bài luyện tổng hợp Chapter 3: Hardware"
+  },
+  "intro": {
+    "en": "Fifteen original questions cover every Chapter 3 objective and atomic requirement. Attempt each response before revealing guidance.",
+    "vi": "Mười lăm câu tự biên soạn bao phủ mọi objective và atomic requirement của Chapter 3. Hãy làm trước khi mở hướng dẫn."
+  },
+  "timing": {
+    "timedMinutes": 75,
+    "untimedAvailable": true
+  },
+  "totalMarks": 60,
+  "aoBlueprint": {
+    "AO1": 36,
+    "AO2": 24,
+    "note": {
+      "en": "The 60:40 split mirrors the Paper 1 AO weighting for rehearsal; this is an AlgoCore chapter blueprint, not an official Cambridge paper.",
+      "vi": "Tỉ lệ 60:40 mô phỏng weighting AO của Paper 1 để luyện tập; đây là blueprint Chapter do AlgoCore biên soạn, không phải Cambridge paper chính thức."
+    }
+  },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "kind": "syllabus",
+      "locator": "Cambridge 9618 syllabus for 2026 v2, §§3.1–3.2, pp. 17–18"
+    },
+    {
+      "id": "BOOK-C03",
+      "kind": "coursebook",
+      "locator": "Coursebook Chapter 3, pp. 68–106"
+    },
+    {
+      "id": "ALG-P1",
+      "kind": "algocore",
+      "locator": "P1-CP03 original assessment set v1.0"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP03-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.1-01-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-01"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain why a self-service checkout needs input, output, primary memory and secondary storage.",
+        "vi": "Giải thích vì sao self-service checkout cần input, output, primary memory và secondary storage."
+      },
+      "hint": {
+        "en": "Give each component a distinct job.",
+        "vi": "Nêu nhiệm vụ khác nhau cho mỗi thành phần."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Input captures barcodes and payment; output presents instructions and receipts; primary memory holds the running program and current transaction; secondary storage retains software and records beyond the current session.",
+          "vi": "Input thu barcode và payment; output trình bày hướng dẫn và receipt; primary memory giữ program đang chạy và transaction hiện tại; secondary storage giữ software và record sau phiên hiện tại."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-01-01"
+            ],
+            "point": {
+              "en": "Explains an input role.",
+              "vi": "Giải thích vai trò input."
+            }
+          },
+          {
+            "id": "P1-CP03-Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-01-01"
+            ],
+            "point": {
+              "en": "Explains an output role.",
+              "vi": "Giải thích vai trò output."
+            }
+          },
+          {
+            "id": "P1-CP03-Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-01-01"
+            ],
+            "point": {
+              "en": "Explains active primary-memory use.",
+              "vi": "Giải thích primary memory cho dữ liệu đang hoạt động."
+            }
+          },
+          {
+            "id": "P1-CP03-Q01-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-01-01"
+            ],
+            "point": {
+              "en": "Explains persistent secondary-storage use.",
+              "vi": "Giải thích secondary storage lưu lâu dài."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "computer-organisation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q02",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-3.1-04-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-04"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A sensor sends 40 readings per second but a logging service temporarily writes only 25. Explain the buffer state and one consequence if this continues.",
+        "vi": "Sensor gửi 40 reading mỗi giây nhưng logging service tạm thời chỉ ghi 25. Giải thích trạng thái buffer và một hệ quả nếu tiếp tục."
+      },
+      "hint": {
+        "en": "Compare producer and consumer rates.",
+        "vi": "So sánh tốc độ producer và consumer."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The buffer gains 15 waiting readings each second while the producer is faster. It absorbs the short mismatch, but a finite buffer eventually fills, so the producer must wait or data may be rejected under the stated system policy.",
+          "vi": "Buffer tăng 15 reading đang chờ mỗi giây khi producer nhanh hơn. Nó hấp thụ chênh lệch ngắn hạn nhưng buffer hữu hạn sẽ đầy, khiến producer phải chờ hoặc data bị từ chối theo policy hệ thống."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-04-01"
+            ],
+            "point": {
+              "en": "Identifies the producer as faster.",
+              "vi": "Xác định producer nhanh hơn."
+            }
+          },
+          {
+            "id": "P1-CP03-Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-04-01"
+            ],
+            "point": {
+              "en": "Calculates a net increase of 15 readings per second.",
+              "vi": "Tính buffer tăng ròng 15 reading mỗi giây."
+            }
+          },
+          {
+            "id": "P1-CP03-Q02-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-04-01"
+            ],
+            "point": {
+              "en": "Explains temporary queuing.",
+              "vi": "Giải thích việc xếp hàng tạm thời."
+            }
+          },
+          {
+            "id": "P1-CP03-Q02-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-04-01"
+            ],
+            "point": {
+              "en": "Explains a valid full-buffer consequence.",
+              "vi": "Giải thích hệ quả hợp lệ khi buffer đầy."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "computer-organisation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q03",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.1-03-01",
+        "REQ-3.1-03-02"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-03"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Describe the principal stages of laser printing and 3D printing.",
+        "vi": "Mô tả các stage chính của laser printing và 3D printing."
+      },
+      "hint": {
+        "en": "Use electrostatic toner transfer for one and sliced additive layers for the other.",
+        "vi": "Dùng electrostatic toner transfer cho một loại và sliced additive layer cho loại kia."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A laser printer forms a charged image on a drum, attracts toner, transfers it to paper and fuses it. A 3D printer slices a model and deposits or fuses successive material layers until a solid object is built.",
+          "vi": "Laser printer tạo charged image trên drum, hút toner, transfer sang paper và fuse. 3D printer slice model rồi đắp hoặc fuse liên tiếp các material layer tới khi tạo solid object."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-01"
+            ],
+            "point": {
+              "en": "Explains drum charge and laser image.",
+              "vi": "Giải thích drum charge và laser image."
+            }
+          },
+          {
+            "id": "P1-CP03-Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-01"
+            ],
+            "point": {
+              "en": "Explains toner transfer and fusing.",
+              "vi": "Giải thích toner transfer và fusing."
+            }
+          },
+          {
+            "id": "P1-CP03-Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-02"
+            ],
+            "point": {
+              "en": "Explains model slicing.",
+              "vi": "Giải thích model slicing."
+            }
+          },
+          {
+            "id": "P1-CP03-Q03-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-02"
+            ],
+            "point": {
+              "en": "Explains additive layer formation.",
+              "vi": "Giải thích tạo additive layer."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "device-principles",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q04",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.1-03-03"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-03"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Compare how a microphone and loudspeaker convert energy and state where ADC and DAC are used.",
+        "vi": "So sánh cách microphone và loudspeaker đổi energy và nêu vị trí dùng ADC, DAC."
+      },
+      "hint": {
+        "en": "Trace sound ↔ motion ↔ electrical signal.",
+        "vi": "Lần theo sound ↔ motion ↔ electrical signal."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A microphone turns sound-wave motion into an analogue electrical signal, then an ADC can digitise it. A DAC converts digital samples to analogue current; an amplifier drives a speaker coil and cone to produce sound waves.",
+          "vi": "Microphone đổi chuyển động sound wave thành analogue electrical signal, rồi ADC digitise. DAC đổi digital sample thành analogue current; amplifier điều khiển speaker coil và cone tạo sound wave."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-03"
+            ],
+            "point": {
+              "en": "Explains microphone diaphragm/coil conversion.",
+              "vi": "Giải thích conversion diaphragm/coil của microphone."
+            }
+          },
+          {
+            "id": "P1-CP03-Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-03"
+            ],
+            "point": {
+              "en": "Places the ADC after the analogue microphone signal.",
+              "vi": "Đặt ADC sau analogue signal của microphone."
+            }
+          },
+          {
+            "id": "P1-CP03-Q04-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-03"
+            ],
+            "point": {
+              "en": "Places the DAC before the speaker amplifier.",
+              "vi": "Đặt DAC trước speaker amplifier."
+            }
+          },
+          {
+            "id": "P1-CP03-Q04-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-03"
+            ],
+            "point": {
+              "en": "Explains coil/cone production of sound waves.",
+              "vi": "Giải thích coil/cone tạo sound wave."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "device-principles",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q05",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.1-03-04",
+        "REQ-3.1-03-05"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-03"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Compare the physical storage and read mechanisms of an HDD and flash memory.",
+        "vi": "So sánh cơ chế lưu vật lý và đọc của HDD với flash memory."
+      },
+      "hint": {
+        "en": "Use magnetic transitions versus trapped charge.",
+        "vi": "Dùng magnetic transition và trapped charge."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "An HDD positions a head over spinning magnetic tracks and senses or changes magnetic orientation. Flash uses voltage to trap or remove charge on floating-gate cells and senses threshold state without moving parts.",
+          "vi": "HDD đặt head trên magnetic track đang quay và cảm nhận hoặc đổi hướng từ. Flash dùng voltage giữ hoặc bỏ charge trên floating-gate cell và cảm nhận threshold state mà không có moving part."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-04"
+            ],
+            "point": {
+              "en": "Explains spinning platter and positioned head.",
+              "vi": "Giải thích platter quay và head định vị."
+            }
+          },
+          {
+            "id": "P1-CP03-Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-04"
+            ],
+            "point": {
+              "en": "Explains magnetic state sensing/change.",
+              "vi": "Giải thích cảm nhận/thay đổi magnetic state."
+            }
+          },
+          {
+            "id": "P1-CP03-Q05-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-05"
+            ],
+            "point": {
+              "en": "Explains trapped charge in a floating-gate cell.",
+              "vi": "Giải thích charge bị giữ trong floating-gate cell."
+            }
+          },
+          {
+            "id": "P1-CP03-Q05-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-05"
+            ],
+            "point": {
+              "en": "Explains non-volatile sensing without moving parts.",
+              "vi": "Giải thích sensing non-volatile không có moving part."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "device-principles",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q06",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-3.1-03-06",
+        "REQ-3.1-03-07",
+        "REQ-3.1-03-08"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-03"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A museum uses an optical archive, capacitive information screens and VR exhibits. Explain one complete operation chain for each device family.",
+        "vi": "Bảo tàng dùng optical archive, màn hình capacitive và VR exhibit. Giải thích một operation chain hoàn chỉnh cho mỗi nhóm thiết bị."
+      },
+      "hint": {
+        "en": "Use laser reflection, capacitance coordinates and head-tracked rendering.",
+        "vi": "Dùng laser reflection, capacitance coordinate và head-tracked rendering."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The optical drive follows a spiral track and senses reflected laser levels. A finger changes an electrode grid's capacitance so the controller calculates coordinates. VR sensors measure head motion so the computer renders updated left/right views through the headset lenses.",
+          "vi": "Optical drive theo spiral track và cảm nhận reflected laser level. Ngón tay đổi capacitance của electrode grid để controller tính coordinate. VR sensor đo head motion để computer render view trái/phải cập nhật qua lens."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-06"
+            ],
+            "point": {
+              "en": "Explains optical laser/track/reflection sensing.",
+              "vi": "Giải thích optical laser/track/reflection sensing."
+            }
+          },
+          {
+            "id": "P1-CP03-Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-07"
+            ],
+            "point": {
+              "en": "Explains capacitance change and coordinate calculation.",
+              "vi": "Giải thích capacitance change và tính coordinate."
+            }
+          },
+          {
+            "id": "P1-CP03-Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-08"
+            ],
+            "point": {
+              "en": "Explains head-motion sensing.",
+              "vi": "Giải thích head-motion sensing."
+            }
+          },
+          {
+            "id": "P1-CP03-Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-03-08"
+            ],
+            "point": {
+              "en": "Explains updated stereoscopic rendering.",
+              "vi": "Giải thích updated stereoscopic rendering."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "device-principles",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-3.1-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-02"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "evaluate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "Evaluate using an embedded system to control an insulin pump, giving two benefits and two risks or limitations.",
+        "vi": "Đánh giá việc dùng embedded system điều khiển insulin pump, nêu hai lợi ích và hai rủi ro hoặc hạn chế."
+      },
+      "hint": {
+        "en": "Use dedicated automatic operation and consequences of failure.",
+        "vi": "Dùng automatic operation chuyên dụng và hệ quả failure."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A compact low-power controller can repeatedly read sensors and deliver precise automatic doses. However, software/sensor/controller failure can be safety-critical, updates and repair are constrained, and limited resources reduce flexibility.",
+          "vi": "Controller nhỏ, ít điện có thể đọc sensor lặp lại và tự động cung cấp dose chính xác. Tuy nhiên software/sensor/controller failure có thể nguy hiểm, update và repair bị hạn chế, resource giới hạn làm giảm flexibility."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-02-01"
+            ],
+            "point": {
+              "en": "Explains compact or low-power suitability.",
+              "vi": "Giải thích sự phù hợp về kích thước hoặc điện năng."
+            }
+          },
+          {
+            "id": "P1-CP03-Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-02-01"
+            ],
+            "point": {
+              "en": "Explains automatic dedicated operation.",
+              "vi": "Giải thích automatic operation chuyên dụng."
+            }
+          },
+          {
+            "id": "P1-CP03-Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-02-01"
+            ],
+            "point": {
+              "en": "Explains a safety-critical failure risk.",
+              "vi": "Giải thích rủi ro failure ảnh hưởng an toàn."
+            }
+          },
+          {
+            "id": "P1-CP03-Q07-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-02-01"
+            ],
+            "point": {
+              "en": "Explains an upgrade, repair or flexibility limitation.",
+              "vi": "Giải thích hạn chế upgrade, repair hoặc flexibility."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "embedded-control",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q08",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-3.1-08-01",
+        "REQ-3.1-08-02",
+        "REQ-3.1-08-03",
+        "REQ-3.1-08-04"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-08"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A greenhouse controls pressure-operated irrigation and temperature ventilation. Explain the complete control loop and how it differs from monitoring only.",
+        "vi": "Greenhouse điều khiển irrigation theo pressure và ventilation theo temperature. Giải thích control loop hoàn chỉnh và khác monitoring-only thế nào."
+      },
+      "hint": {
+        "en": "Use sensor, conversion, comparison, actuator and feedback.",
+        "vi": "Dùng sensor, conversion, comparison, actuator và feedback."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Sensors provide pressure and temperature values; the controller compares each with rules or set points, then drives valves/fans. Later readings feed back the effect and change the next action. Monitoring alone would record or alert without automatically operating actuators.",
+          "vi": "Sensor cung cấp pressure và temperature value; controller so sánh với rule hoặc set point rồi điều khiển valve/fan. Reading sau feedback tác động và thay đổi action tiếp theo. Monitoring-only chỉ ghi hoặc alert mà không tự động vận hành actuator."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-08-02"
+            ],
+            "point": {
+              "en": "Explains suitable sensor inputs.",
+              "vi": "Giải thích sensor input phù hợp."
+            }
+          },
+          {
+            "id": "P1-CP03-Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-08-03"
+            ],
+            "point": {
+              "en": "Explains controller-to-actuator output.",
+              "vi": "Giải thích output từ controller tới actuator."
+            }
+          },
+          {
+            "id": "P1-CP03-Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-08-04"
+            ],
+            "point": {
+              "en": "Explains new readings as feedback.",
+              "vi": "Giải thích reading mới là feedback."
+            }
+          },
+          {
+            "id": "P1-CP03-Q08-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-08-01"
+            ],
+            "point": {
+              "en": "Distinguishes monitoring from automatic control.",
+              "vi": "Phân biệt monitoring với automatic control."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "embedded-control",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q09",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.1-05-01",
+        "REQ-3.1-05-02"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-05"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Compare RAM and ROM, then justify one use of each in a smart television.",
+        "vi": "So sánh RAM và ROM rồi biện minh một use case của mỗi loại trong smart television."
+      },
+      "hint": {
+        "en": "Use volatility, write behaviour, working data and firmware.",
+        "vi": "Dùng volatility, write behaviour, working data và firmware."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "RAM is volatile read/write working memory for active apps and video buffers. ROM or updateable non-volatile firmware memory retains startup/control instructions without power and is not overwritten like RAM during normal execution.",
+          "vi": "RAM là working memory volatile read/write cho app đang chạy và video buffer. ROM hoặc firmware memory non-volatile giữ startup/control instruction khi mất điện và không bị overwrite như RAM trong normal execution."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-05-01"
+            ],
+            "point": {
+              "en": "Compares volatility.",
+              "vi": "So sánh volatility."
+            }
+          },
+          {
+            "id": "P1-CP03-Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-05-01"
+            ],
+            "point": {
+              "en": "Compares normal write behaviour.",
+              "vi": "So sánh normal write behaviour."
+            }
+          },
+          {
+            "id": "P1-CP03-Q09-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-05-02"
+            ],
+            "point": {
+              "en": "Justifies RAM for changing active data.",
+              "vi": "Biện minh RAM cho active data thay đổi."
+            }
+          },
+          {
+            "id": "P1-CP03-Q09-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-05-02"
+            ],
+            "point": {
+              "en": "Justifies ROM/non-volatile firmware storage.",
+              "vi": "Biện minh ROM/non-volatile firmware storage."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "memory-technologies",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q10",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-3.1-06-01",
+        "REQ-3.1-06-02"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-06"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A processor designer needs a 4 MiB cache and 16 GiB main memory. Justify SRAM for one and DRAM for the other.",
+        "vi": "Processor designer cần cache 4 MiB và main memory 16 GiB. Biện minh SRAM cho một loại và DRAM cho loại kia."
+      },
+      "hint": {
+        "en": "Use cell design, refresh, speed, density and cost.",
+        "vi": "Dùng cell design, refresh, speed, density và cost."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "SRAM's bistable cells avoid refresh and give fast access, suitable for small cache despite high cost and low density. DRAM capacitor cells need refresh and are slower, but their high density and lower cost make 16 GiB main memory practical.",
+          "vi": "Bistable cell của SRAM không cần refresh và access nhanh, phù hợp cache nhỏ dù cost cao, density thấp. Capacitor cell DRAM cần refresh và chậm hơn nhưng density cao, cost thấp giúp main memory 16 GiB thực tế."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-06-01"
+            ],
+            "point": {
+              "en": "Explains SRAM cell/no-refresh behaviour.",
+              "vi": "Giải thích SRAM cell/không refresh."
+            }
+          },
+          {
+            "id": "P1-CP03-Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-06-01"
+            ],
+            "point": {
+              "en": "Explains DRAM capacitor/refresh behaviour.",
+              "vi": "Giải thích DRAM capacitor/refresh."
+            }
+          },
+          {
+            "id": "P1-CP03-Q10-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-06-02"
+            ],
+            "point": {
+              "en": "Justifies SRAM cache from speed.",
+              "vi": "Biện minh SRAM cache từ speed."
+            }
+          },
+          {
+            "id": "P1-CP03-Q10-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-06-02"
+            ],
+            "point": {
+              "en": "Justifies DRAM main memory from density/cost.",
+              "vi": "Biện minh DRAM main memory từ density/cost."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "memory-technologies",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q11",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.1-07-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.1-07"
+      ],
+      "strandIds": [
+        "3.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Distinguish PROM, EPROM and EEPROM and give a suitable lifecycle clue for each.",
+        "vi": "Phân biệt PROM, EPROM và EEPROM và nêu lifecycle clue phù hợp cho mỗi loại."
+      },
+      "hint": {
+        "en": "Use one-time, ultraviolet and electrical erasure.",
+        "vi": "Dùng one-time, ultraviolet và electrical erasure."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "PROM is programmed once. EPROM is erased with ultraviolet light and reprogrammed, usually after removal. EEPROM is erased and reprogrammed electrically, often in-circuit, while retaining data without power.",
+          "vi": "PROM program một lần. EPROM erase bằng ultraviolet light và program lại, thường sau khi tháo. EEPROM erase và program lại bằng điện, thường in-circuit, và giữ data khi mất điện."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-07-01"
+            ],
+            "point": {
+              "en": "States PROM is one-time programmable.",
+              "vi": "Nêu PROM program một lần."
+            }
+          },
+          {
+            "id": "P1-CP03-Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-07-01"
+            ],
+            "point": {
+              "en": "Explains EPROM ultraviolet erasure.",
+              "vi": "Giải thích EPROM erase bằng ultraviolet."
+            }
+          },
+          {
+            "id": "P1-CP03-Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-07-01"
+            ],
+            "point": {
+              "en": "Explains EEPROM electrical erasure/reprogramming.",
+              "vi": "Giải thích EEPROM erase/program bằng điện."
+            }
+          },
+          {
+            "id": "P1-CP03-Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.1-07-01"
+            ],
+            "point": {
+              "en": "States all are non-volatile ROM technologies.",
+              "vi": "Nêu tất cả là ROM technology non-volatile."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "memory-technologies",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q12",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.2-01-01",
+        "REQ-3.2-01-02"
+      ],
+      "objectiveIds": [
+        "AC26-3.2-01"
+      ],
+      "strandIds": [
+        "3.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Describe the symbol cue and output-1 condition for NOT, AND, OR, NAND, NOR and XOR, including their input counts.",
+        "vi": "Mô tả symbol cue và condition output 1 cho NOT, AND, OR, NAND, NOR và XOR, gồm số input."
+      },
+      "hint": {
+        "en": "Use bubbles and the extra XOR curve.",
+        "vi": "Dùng bubble và đường cong thêm của XOR."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "NOT has one input and an inversion bubble. The other five have two inputs. AND is 1 for 11; OR for at least one 1; NAND except 11; NOR only 00; XOR when inputs differ. NAND/NOR have output bubbles; XOR has an extra input curve.",
+          "vi": "NOT có một input và inversion bubble. Năm gate còn lại có hai input. AND bằng 1 cho 11; OR khi ít nhất một input bằng 1; NAND trừ 11; NOR chỉ 00; XOR khi input khác nhau. NAND/NOR có output bubble; XOR có input curve thêm."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-01-02"
+            ],
+            "point": {
+              "en": "States NOT has one input and the others two.",
+              "vi": "Nêu NOT có một input và các gate khác có hai."
+            }
+          },
+          {
+            "id": "P1-CP03-Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-01-01"
+            ],
+            "point": {
+              "en": "Correctly defines NOT, AND and OR.",
+              "vi": "Định nghĩa đúng NOT, AND và OR."
+            }
+          },
+          {
+            "id": "P1-CP03-Q12-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-01-01"
+            ],
+            "point": {
+              "en": "Correctly defines NAND, NOR and XOR.",
+              "vi": "Định nghĩa đúng NAND, NOR và XOR."
+            }
+          },
+          {
+            "id": "P1-CP03-Q12-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-01-01"
+            ],
+            "point": {
+              "en": "Identifies bubbles and the XOR curve.",
+              "vi": "Nhận diện bubble và XOR curve."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "logic-gates",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q13",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-3.2-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.2-02"
+      ],
+      "strandIds": [
+        "3.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "construct",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Construct the truth tables for NAND and XOR using rows 00, 01, 10, 11, then explain how their 1,1 outputs differ.",
+        "vi": "Lập truth table cho NAND và XOR theo row 00, 01, 10, 11 rồi giải thích output 1,1 khác nhau thế nào."
+      },
+      "hint": {
+        "en": "NAND inverts AND; XOR tests whether inputs differ.",
+        "vi": "NAND invert AND; XOR kiểm tra input khác nhau."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "NAND outputs 1,1,1,0. XOR outputs 0,1,1,0. Both output 0 at 1,1: NAND because AND would be 1 then is inverted; XOR because the inputs are equal rather than different.",
+          "vi": "NAND output 1,1,1,0. XOR output 0,1,1,0. Cả hai output 0 tại 1,1: NAND vì AND bằng 1 rồi bị invert; XOR vì input bằng nhau chứ không khác nhau."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q13-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-02-01"
+            ],
+            "point": {
+              "en": "Lists all four input rows once.",
+              "vi": "Liệt kê đủ bốn input row một lần."
+            }
+          },
+          {
+            "id": "P1-CP03-Q13-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-02-01"
+            ],
+            "point": {
+              "en": "Gives the complete NAND output column.",
+              "vi": "Nêu đúng toàn bộ NAND output column."
+            }
+          },
+          {
+            "id": "P1-CP03-Q13-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-02-01"
+            ],
+            "point": {
+              "en": "Gives the complete XOR output column.",
+              "vi": "Nêu đúng toàn bộ XOR output column."
+            }
+          },
+          {
+            "id": "P1-CP03-Q13-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-02-01"
+            ],
+            "point": {
+              "en": "Explains the 1,1 outputs using both gate definitions.",
+              "vi": "Giải thích output 1,1 bằng definition của cả hai gate."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "logic-gates",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q14",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-3.2-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.2-03"
+      ],
+      "strandIds": [
+        "3.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "construct",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A security light is on when motion A is detected AND it is dark B, OR when override C is on. Construct a labelled logic circuit and expression.",
+        "vi": "Security light bật khi phát hiện motion A AND trời tối B, OR khi override C bật. Dựng logic circuit có nhãn và expression."
+      },
+      "hint": {
+        "en": "Create the A AND B branch before the final OR.",
+        "vi": "Tạo branch A AND B trước final OR."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "P = A AND B. Feed P and C into an OR gate: Y = P OR C = (A AND B) OR C. The circuit has an AND gate for A,B followed by an OR gate joining P with C.",
+          "vi": "P = A AND B. Đưa P và C vào OR gate: Y = P OR C = (A AND B) OR C. Circuit có AND gate cho A,B rồi OR gate nối P với C."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q14-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-03-01"
+            ],
+            "point": {
+              "en": "Defines inputs consistently with the statement.",
+              "vi": "Định nghĩa input nhất quán với statement."
+            }
+          },
+          {
+            "id": "P1-CP03-Q14-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-03-01"
+            ],
+            "point": {
+              "en": "Constructs the A AND B sub-circuit.",
+              "vi": "Dựng sub-circuit A AND B."
+            }
+          },
+          {
+            "id": "P1-CP03-Q14-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-03-01"
+            ],
+            "point": {
+              "en": "Joins the intermediate signal and C using OR.",
+              "vi": "Nối intermediate signal và C bằng OR."
+            }
+          },
+          {
+            "id": "P1-CP03-Q14-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-03-01"
+            ],
+            "point": {
+              "en": "Writes the matching expression and labels output.",
+              "vi": "Viết expression khớp và gắn nhãn output."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "logic-design",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP03-Q15",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-3.2-04-01",
+        "REQ-3.2-05-01"
+      ],
+      "objectiveIds": [
+        "AC26-3.2-04",
+        "AC26-3.2-05"
+      ],
+      "strandIds": [
+        "3.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "construct",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "For a circuit that ORs A and B, inverts C, then ANDs both results, construct the expression and give the final output for A=0, B=1, C=0 using intermediate columns.",
+        "vi": "Với circuit OR A và B, invert C rồi AND hai kết quả, hãy lập expression và cho final output khi A=0, B=1, C=0 bằng intermediate column."
+      },
+      "hint": {
+        "en": "Let P=A OR B and Q=NOT C.",
+        "vi": "Đặt P=A OR B và Q=NOT C."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "P=A OR B and Q=NOT C, so Y=P AND Q=(A OR B) AND (NOT C). For 0,1,0: P=1, Q=1 and Y=1.",
+          "vi": "P=A OR B và Q=NOT C nên Y=P AND Q=(A OR B) AND (NOT C). Với 0,1,0: P=1, Q=1 và Y=1."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP03-Q15-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-05-01"
+            ],
+            "point": {
+              "en": "Writes P=A OR B and Q=NOT C.",
+              "vi": "Viết P=A OR B và Q=NOT C."
+            }
+          },
+          {
+            "id": "P1-CP03-Q15-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-05-01"
+            ],
+            "point": {
+              "en": "Writes Y=(A OR B) AND (NOT C).",
+              "vi": "Viết Y=(A OR B) AND (NOT C)."
+            }
+          },
+          {
+            "id": "P1-CP03-Q15-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-04-01"
+            ],
+            "point": {
+              "en": "Calculates P=1 and Q=1 for the row.",
+              "vi": "Tính P=1 và Q=1 cho row."
+            }
+          },
+          {
+            "id": "P1-CP03-Q15-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-3.2-04-01"
+            ],
+            "point": {
+              "en": "Calculates final Y=1.",
+              "vi": "Tính final Y=1."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award an isolated term where the command word requires a mechanism, comparison or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi command word yêu cầu cơ chế, so sánh hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "logic-design",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

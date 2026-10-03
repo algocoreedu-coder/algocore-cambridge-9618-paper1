@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L22",
+  "slug": "memory-technologies",
+  "sectionId": "3",
+  "strandId": "3.1",
+  "title": {
+    "en": "Memory technologies",
+    "vi": "RAM/ROM, SRAM/DRAM và programmable ROM"
+  },
+  "question": {
+    "en": "Why do systems use several kinds of primary memory?",
+    "vi": "Vì sao hệ thống dùng nhiều loại primary memory?"
+  },
+  "opening": {
+    "en": "Memory choice balances volatility, write capability, access speed, capacity, cost and whether firmware must be changed. The name of a memory technology matters because its physical design changes its suitable use.",
+    "vi": "Lựa chọn memory cân bằng volatility, khả năng write, access speed, capacity, cost và nhu cầu thay đổi firmware. Tên memory technology quan trọng vì thiết kế vật lý quyết định use case phù hợp."
+  },
+  "objectives": [
+    {
+      "id": "AC26-3.1-05",
+      "text": {
+        "en": "Explain differences between RAM and ROM and their uses.",
+        "vi": "Giải thích khác biệt RAM và ROM cùng ứng dụng."
+      }
+    },
+    {
+      "id": "AC26-3.1-06",
+      "text": {
+        "en": "Explain differences between SRAM and DRAM and justify their use.",
+        "vi": "Giải thích khác biệt SRAM và DRAM và biện minh use case."
+      }
+    },
+    {
+      "id": "AC26-3.1-07",
+      "text": {
+        "en": "Distinguish PROM, EPROM and EEPROM.",
+        "vi": "Phân biệt PROM, EPROM và EEPROM."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-3.1-05-01",
+    "REQ-3.1-05-02",
+    "REQ-3.1-06-01",
+    "REQ-3.1-06-02",
+    "REQ-3.1-07-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L19"
+  ],
+  "theory": [
+    {
+      "id": "P1-L22-theory-1",
+      "title": {
+        "en": "RAM and ROM answer different needs",
+        "vi": "RAM và ROM đáp ứng nhu cầu khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "RAM is volatile, read/write working memory. It holds active programs and data, and its contents are lost when power is removed.",
+          "vi": "RAM là working memory volatile có thể read/write. Nó giữ program và data đang hoạt động, và mất nội dung khi mất điện."
+        },
+        {
+          "en": "ROM is non-volatile and normally stores fixed instructions or data such as startup firmware. Its contents remain without power and ordinary operation does not overwrite it like RAM.",
+          "vi": "ROM là non-volatile và thường lưu instruction hoặc data cố định như startup firmware. Nội dung còn khi mất điện và operation bình thường không overwrite như RAM."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L22-theory-2",
+      "title": {
+        "en": "DRAM trades speed for density and cost",
+        "vi": "DRAM đổi speed lấy density và cost"
+      },
+      "paragraphs": [
+        {
+          "en": "A DRAM cell stores charge in a capacitor and must be refreshed repeatedly because charge leaks. Its simple cells provide high capacity at lower cost, so DRAM is used for main memory.",
+          "vi": "DRAM cell lưu charge trong capacitor và phải refresh lặp lại vì charge rò. Cell đơn giản cho capacity cao với cost thấp nên DRAM được dùng làm main memory."
+        },
+        {
+          "en": "An SRAM cell uses a bistable circuit and does not need refresh while power remains. It is faster but more complex, lower density and more expensive, so it is used for small high-speed caches.",
+          "vi": "SRAM cell dùng bistable circuit và không cần refresh khi còn điện. Nó nhanh hơn nhưng phức tạp, density thấp và đắt hơn nên dùng cho cache nhỏ tốc độ cao."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Both SRAM and DRAM are volatile; 'static' does not mean non-volatile.",
+          "vi": "Cả SRAM và DRAM đều volatile; 'static' không có nghĩa là non-volatile."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L22-theory-3",
+      "title": {
+        "en": "Programmable ROM lifecycle",
+        "vi": "Lifecycle của programmable ROM"
+      },
+      "paragraphs": [
+        {
+          "en": "PROM can be programmed once, typically by permanently changing fuse links. EPROM can be erased with ultraviolet light and then reprogrammed, normally after removing the chip.",
+          "vi": "PROM có thể program một lần, thường bằng thay đổi fuse link vĩnh viễn. EPROM có thể erase bằng ultraviolet light rồi program lại, thường sau khi tháo chip."
+        },
+        {
+          "en": "EEPROM is erased and reprogrammed electrically, often in-circuit. This makes updates easier, but it remains a non-volatile ROM technology rather than active volatile working memory.",
+          "vi": "EEPROM được erase và program lại bằng điện, thường ngay trong circuit. Điều này giúp update dễ hơn nhưng nó vẫn là ROM technology non-volatile chứ không phải working memory volatile."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Choose memory for a game console",
+      "vi": "Chọn memory cho game console"
+    },
+    "prompt": {
+      "en": "A console needs startup firmware, large active game memory and a small very fast processor cache.",
+      "vi": "Console cần startup firmware, active game memory dung lượng lớn và processor cache nhỏ rất nhanh."
+    },
+    "steps": [
+      {
+        "id": "P1-L22-worked-1",
+        "action": {
+          "en": "Choose persistent startup storage.",
+          "vi": "Chọn startup storage lâu dài."
+        },
+        "result": {
+          "en": "Use ROM or electrically updateable EEPROM/flash so firmware remains without power.",
+          "vi": "Dùng ROM hoặc EEPROM/flash update bằng điện để firmware còn khi mất điện."
+        }
+      },
+      {
+        "id": "P1-L22-worked-2",
+        "action": {
+          "en": "Choose main working memory.",
+          "vi": "Chọn main working memory."
+        },
+        "result": {
+          "en": "Use DRAM for high-capacity, lower-cost active programs and data.",
+          "vi": "Dùng DRAM cho program và data đang hoạt động cần capacity cao, cost thấp hơn."
+        }
+      },
+      {
+        "id": "P1-L22-worked-3",
+        "action": {
+          "en": "Choose the closest fast memory.",
+          "vi": "Chọn memory nhanh gần processor."
+        },
+        "result": {
+          "en": "Use SRAM for cache because access is fast and no refresh cycle is required, accepting higher cost per bit.",
+          "vi": "Dùng SRAM làm cache vì access nhanh và không cần refresh cycle, chấp nhận cost per bit cao hơn."
+        }
+      }
+    ],
+    "result": {
+      "en": "No one memory is best for all three roles; the requirement determines the technology.",
+      "vi": "Không có một memory tốt nhất cho cả ba vai trò; requirement quyết định technology."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Check power retention, write/erase method, refresh, speed and cost.",
+        "vi": "Kiểm tra power retention, cách write/erase, refresh, speed và cost."
+      }
+    ],
+    "method": [
+      {
+        "en": "Decide volatile or non-volatile.",
+        "vi": "Chọn volatile hay non-volatile."
+      },
+      {
+        "en": "Decide working memory, cache or firmware.",
+        "vi": "Chọn working memory, cache hay firmware."
+      },
+      {
+        "en": "Justify the trade-off rather than naming a technology alone.",
+        "vi": "Biện minh trade-off thay vì chỉ nêu tên technology."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "SRAM is non-volatile because it does not need refreshing.",
+          "vi": "SRAM non-volatile vì không cần refresh."
+        },
+        "correction": {
+          "en": "SRAM keeps a bit without refresh only while power is supplied; it is still volatile.",
+          "vi": "SRAM giữ bit không cần refresh chỉ khi còn nguồn; nó vẫn volatile."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L22-recognise-1",
+        "title": {
+          "en": "Match the memory role",
+          "vi": "Ghép vai trò memory"
+        },
+        "setup": {
+          "en": "A router needs changeable settings that survive power loss and packet buffers that change constantly.",
+          "vi": "Router cần setting thay đổi được nhưng còn khi mất điện và packet buffer thay đổi liên tục."
+        },
+        "prompt": {
+          "en": "Choose suitable memory characteristics for both roles.",
+          "vi": "Chọn đặc tính memory phù hợp cho hai vai trò."
+        },
+        "expectedEvidence": {
+          "en": "Use electrically reprogrammable non-volatile memory for settings and volatile read/write RAM for packet buffers.",
+          "vi": "Dùng memory non-volatile reprogrammable bằng điện cho setting và RAM volatile read/write cho packet buffer."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L22-CHECK-REQ-3.1-05-01",
+      "requirementId": "REQ-3.1-05-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare RAM and ROM using volatility and normal write behaviour.",
+        "vi": "So sánh RAM và ROM theo volatility và normal write behaviour."
+      },
+      "hint": {
+        "en": "State what happens when power is removed.",
+        "vi": "Nêu điều xảy ra khi mất điện."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "RAM is volatile read/write working memory and loses contents without power. ROM is non-volatile, retains fixed instructions or data and is not overwritten during normal operation in the same way.",
+          "vi": "RAM là working memory volatile read/write và mất nội dung khi mất điện. ROM non-volatile, giữ instruction/data cố định và không bị overwrite trong normal operation theo cách của RAM."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "RAM",
+        "ROM"
+      ]
+    },
+    {
+      "id": "P1-L22-CHECK-REQ-3.1-05-02",
+      "requirementId": "REQ-3.1-05-02",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "Justify one use of RAM and one use of ROM in an embedded device.",
+        "vi": "Biện minh một use case của RAM và một use case của ROM trong embedded device."
+      },
+      "hint": {
+        "en": "Link volatility and write need to the use.",
+        "vi": "Liên hệ volatility và nhu cầu write với use case."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "RAM holds sensor readings and variables that change while the program runs. ROM or updateable non-volatile firmware memory holds startup/control instructions that must remain when power is removed.",
+          "vi": "RAM giữ sensor reading và variable thay đổi khi program chạy. ROM hoặc firmware memory non-volatile giữ startup/control instruction phải còn khi mất điện."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "memory-use"
+      ]
+    },
+    {
+      "id": "P1-L22-CHECK-REQ-3.1-06-01",
+      "requirementId": "REQ-3.1-06-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare how SRAM and DRAM store data and whether they require refresh.",
+        "vi": "So sánh cách SRAM và DRAM lưu data và yêu cầu refresh."
+      },
+      "hint": {
+        "en": "Mention bistable circuit versus capacitor charge.",
+        "vi": "Nêu bistable circuit và capacitor charge."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "SRAM uses bistable circuits and retains state without refresh while powered. DRAM stores charge in capacitors that leaks, so every cell must be refreshed periodically. Both lose data when power is removed.",
+          "vi": "SRAM dùng bistable circuit và giữ state không cần refresh khi có điện. DRAM lưu charge trong capacitor bị rò nên mọi cell phải refresh định kỳ. Cả hai mất data khi mất điện."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "SRAM",
+        "DRAM"
+      ]
+    },
+    {
+      "id": "P1-L22-CHECK-REQ-3.1-06-02",
+      "requirementId": "REQ-3.1-06-02",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "Justify SRAM for processor cache and DRAM for main memory.",
+        "vi": "Biện minh SRAM cho processor cache và DRAM cho main memory."
+      },
+      "hint": {
+        "en": "Use speed, density, capacity and cost.",
+        "vi": "Dùng speed, density, capacity và cost."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "SRAM is fast and avoids refresh delays, making its higher cost and lower density acceptable for a small cache. DRAM is denser and cheaper per bit, so it provides the larger main-memory capacity, despite being slower and needing refresh.",
+          "vi": "SRAM nhanh và tránh refresh delay nên cost cao, density thấp vẫn chấp nhận cho cache nhỏ. DRAM có density cao và cost per bit thấp nên cung cấp main-memory capacity lớn hơn dù chậm và cần refresh."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "memory-choice"
+      ]
+    },
+    {
+      "id": "P1-L22-CHECK-REQ-3.1-07-01",
+      "requirementId": "REQ-3.1-07-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish PROM, EPROM and EEPROM by how often and how they can be programmed or erased.",
+        "vi": "Phân biệt PROM, EPROM và EEPROM theo số lần và cách program hoặc erase."
+      },
+      "hint": {
+        "en": "Use one-time, ultraviolet and electrical.",
+        "vi": "Dùng one-time, ultraviolet và electrical."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "PROM is programmed once. EPROM can be erased with ultraviolet light and reprogrammed, normally after removal. EEPROM can be erased and reprogrammed electrically, often while installed in the system.",
+          "vi": "PROM program một lần. EPROM có thể erase bằng ultraviolet light rồi program lại, thường sau khi tháo. EEPROM có thể erase và program lại bằng điện, thường khi vẫn lắp trong system."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "PROM",
+        "EPROM",
+        "EEPROM"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Complete three contrasts: RAM/ROM, SRAM/DRAM and PROM/EPROM/EEPROM.",
+      "vi": "Hoàn thành ba contrast: RAM/ROM, SRAM/DRAM và PROM/EPROM/EEPROM."
+    },
+    "answerPoints": [
+      {
+        "en": "RAM is volatile working memory; ROM retains data. SRAM is fast/no refresh; DRAM is dense/cheap/refresh. PROM once, EPROM UV erase, EEPROM electrical erase.",
+        "vi": "RAM là working memory volatile; ROM giữ data. SRAM nhanh/không refresh; DRAM dense/rẻ/cần refresh. PROM một lần, EPROM erase UV, EEPROM erase bằng điện."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "volatile",
+      "meaning": {
+        "en": "Loses stored data when power is removed.",
+        "vi": "Mất dữ liệu đã lưu khi mất điện."
+      }
+    },
+    {
+      "term": "refresh",
+      "meaning": {
+        "en": "Periodic restoration of charge in DRAM cells.",
+        "vi": "Khôi phục charge định kỳ trong DRAM cell."
+      }
+    },
+    {
+      "term": "firmware",
+      "meaning": {
+        "en": "Persistent software stored for low-level control or startup.",
+        "vi": "Software lâu dài được lưu cho startup hoặc low-level control."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "computer-organisation",
+    "embedded-control"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §3.1, p. 17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L22 · Chapter 3 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C03",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 3, pp. 70–72",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L22",
+  "contractCoverage": {
+    "B01": [
+      "P1-L22-objectives"
+    ],
+    "B02": [
+      "P1-L22-theory-1",
+      "P1-L22-theory-2",
+      "P1-L22-theory-3"
+    ],
+    "B03": [
+      "P1-L22-rules"
+    ],
+    "B04": [
+      "P1-L22-recognise-1"
+    ],
+    "B05": [
+      "P1-L22-worked-1",
+      "P1-L22-worked-2",
+      "P1-L22-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L22"
+    ],
+    "B07": [
+      "P1-L22-CHECK-REQ-3.1-05-01",
+      "P1-L22-CHECK-REQ-3.1-05-02",
+      "P1-L22-CHECK-REQ-3.1-06-01",
+      "P1-L22-CHECK-REQ-3.1-06-02",
+      "P1-L22-CHECK-REQ-3.1-07-01"
+    ],
+    "B08": [
+      "P1-L22-misconceptions"
+    ],
+    "B09": [
+      "P1-L22-recall"
+    ],
+    "B10": [
+      "P1-L22-glossary"
+    ],
+    "B11": [
+      "P1-L22-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

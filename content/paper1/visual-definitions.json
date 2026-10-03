@@ -674,5 +674,332 @@
       "P1-L18-cached-step-4"
     ],
     "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L19",
+    "lessonId": "P1-L19",
+    "title": {
+      "en": "Data flow and finite buffers",
+      "vi": "Dòng dữ liệu và buffer hữu hạn"
+    },
+    "learnerAction": {
+      "en": "Choose a print or audio workflow, set buffer capacity, predict the outcome and trace every transfer.",
+      "vi": "Chọn print/audio workflow, đặt buffer capacity, dự đoán outcome và lần theo từng transfer."
+    },
+    "observableOutcome": {
+      "en": "Explain distinct input, output, primary/secondary storage roles and what a finite buffer can and cannot absorb.",
+      "vi": "Giải thích vai trò riêng của input, output, primary/secondary storage và giới hạn buffer hữu hạn."
+    },
+    "modelScope": {
+      "en": "Two bounded workflows compare producer and consumer units against a selectable 3, 4 or 6-slot FIFO-style waiting area.",
+      "vi": "Hai workflow hữu hạn so sánh producer/consumer unit với vùng chờ kiểu FIFO 3, 4 hoặc 6 slot."
+    },
+    "modelLimitations": {
+      "en": "A discrete rate fixture, not a timing or physical device simulation; storage roles are taught in the surrounding lesson.",
+      "vi": "Fixture tốc độ rời rạc, không phải mô phỏng timing hay device vật lý; vai trò storage được dạy trong lesson."
+    },
+    "atlasIds": [
+      "BOOK-C03-P068-MEMORY-DEVICES",
+      "BOOK-C03-P070-MEMORY-STORAGE",
+      "BOOK-C03-P088-KEYBOARD"
+    ],
+    "sceneIds": [
+      "P1-L19-printer-1",
+      "P1-L19-printer-2",
+      "P1-L19-printer-3",
+      "P1-L19-printer-4",
+      "P1-L19-audio-1",
+      "P1-L19-audio-2",
+      "P1-L19-audio-3",
+      "P1-L19-audio-4"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L20",
+    "lessonId": "P1-L20",
+    "title": {
+      "en": "Eight device mechanisms",
+      "vi": "Tám cơ chế thiết bị"
+    },
+    "learnerAction": {
+      "en": "Select each device family, predict the explanation pattern and step through its distinct components and physical change.",
+      "vi": "Chọn từng nhóm device, dự đoán mẫu explanation và đi qua component cùng physical change riêng."
+    },
+    "observableOutcome": {
+      "en": "Describe laser printer, 3D printer, audio, HDD, flash, optical, touchscreen and VR mechanisms as causal sequences.",
+      "vi": "Mô tả cơ chế laser printer, 3D printer, audio, HDD, flash, optical, touchscreen và VR bằng chuỗi nhân quả."
+    },
+    "modelScope": {
+      "en": "Eight separate device families, each with four authored phases and a distinct schematic glyph.",
+      "vi": "Tám nhóm device riêng, mỗi nhóm có bốn pha được biên soạn và schematic glyph riêng."
+    },
+    "modelLimitations": {
+      "en": "Principle diagrams are not to scale. Specific examples include additive printing, capacitive touch and recordable optical media; no electrical voltages are simulated.",
+      "vi": "Sơ đồ nguyên lý không theo tỉ lệ. Ví dụ cụ thể gồm additive printing, capacitive touch và recordable optical media; không mô phỏng điện áp."
+    },
+    "atlasIds": [
+      "BOOK-C03-P073-HDD-TRACKS",
+      "BOOK-C03-P075-OPTICAL-SPIRAL",
+      "BOOK-C03-P076-DVD-LAYERS",
+      "BOOK-C03-P076-T3-4",
+      "BOOK-C03-P077-LASER-PRINTER",
+      "BOOK-C03-P077-T3-5",
+      "BOOK-C03-P078-INKJET-PRINTER",
+      "BOOK-C03-P078-T3-6",
+      "BOOK-C03-P079-3D-PRINTER",
+      "BOOK-C03-P079-BONE-PRINT",
+      "BOOK-C03-P080-DAC-SPEAKER",
+      "BOOK-C03-P080-LOUDSPEAKER",
+      "BOOK-C03-P081-MICROPHONE",
+      "BOOK-C03-P081-ADC-SOUND",
+      "BOOK-C03-P082-OLED-LAYERS",
+      "BOOK-C03-P105-Q4-INKJET-ORDER"
+    ],
+    "sceneIds": [
+      "P1-L20-laser-1",
+      "P1-L20-laser-2",
+      "P1-L20-laser-3",
+      "P1-L20-laser-4",
+      "P1-L20-3d-1",
+      "P1-L20-3d-2",
+      "P1-L20-3d-3",
+      "P1-L20-3d-4",
+      "P1-L20-audio-1",
+      "P1-L20-audio-2",
+      "P1-L20-audio-3",
+      "P1-L20-audio-4",
+      "P1-L20-hdd-1",
+      "P1-L20-hdd-2",
+      "P1-L20-hdd-3",
+      "P1-L20-hdd-4",
+      "P1-L20-flash-1",
+      "P1-L20-flash-2",
+      "P1-L20-flash-3",
+      "P1-L20-flash-4",
+      "P1-L20-optical-1",
+      "P1-L20-optical-2",
+      "P1-L20-optical-3",
+      "P1-L20-optical-4",
+      "P1-L20-touch-1",
+      "P1-L20-touch-2",
+      "P1-L20-touch-3",
+      "P1-L20-touch-4",
+      "P1-L20-vr-1",
+      "P1-L20-vr-2",
+      "P1-L20-vr-3",
+      "P1-L20-vr-4"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L21",
+    "lessonId": "P1-L21",
+    "title": {
+      "en": "Sensor–controller–actuator feedback",
+      "vi": "Feedback sensor–controller–actuator"
+    },
+    "learnerAction": {
+      "en": "Change sensor, mode, reading and target; predict output and trace comparison, action and feedback.",
+      "vi": "Đổi sensor, mode, reading và target; dự đoán output rồi lần theo comparison, action và feedback."
+    },
+    "observableOutcome": {
+      "en": "Distinguish monitoring from control and explain sensors, actuators and feedback under an explicit threshold rule.",
+      "vi": "Phân biệt monitoring với control và giải thích sensor, actuator, feedback theo threshold rule rõ ràng."
+    },
+    "modelScope": {
+      "en": "Four syllabus sensor labels share a transparent state model; control turns an actuator on only when reading is below target.",
+      "vi": "Bốn sensor label trong syllabus dùng chung state model rõ ràng; control bật actuator chỉ khi reading nhỏ hơn target."
+    },
+    "modelLimitations": {
+      "en": "No hysteresis or physical heating, pressure or sound dynamics; the next reading is a bounded illustrative state transition.",
+      "vi": "Không hysteresis hoặc mô phỏng vật lý nhiệt, pressure hay sound; reading tiếp theo là state transition minh họa hữu hạn."
+    },
+    "atlasIds": [
+      "BOOK-C03-P072-T3-3",
+      "BOOK-C03-P084-ADC-SENSOR",
+      "BOOK-C03-P085-T3-7",
+      "BOOK-C03-P086-MONITOR-CONTROL",
+      "BOOK-C03-P086-T3-8",
+      "BOOK-C03-P087-CAR-SENSORS",
+      "BOOK-C03-P088-STREET-LAMP"
+    ],
+    "sceneIds": [
+      "P1-L21-sense",
+      "P1-L21-compare",
+      "P1-L21-output",
+      "P1-L21-feedback"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L22",
+    "lessonId": "P1-L22",
+    "title": {
+      "en": "Memory lifecycle and selection",
+      "vi": "Lifecycle và lựa chọn memory"
+    },
+    "learnerAction": {
+      "en": "Choose memory type, apply power/write/refresh events and test a concrete use case.",
+      "vi": "Chọn memory type, áp dụng event power/write/refresh và kiểm tra use case cụ thể."
+    },
+    "observableOutcome": {
+      "en": "Compare volatility, refresh and reprogramming, then justify a memory choice from speed, density, cost and lifecycle.",
+      "vi": "So sánh volatility, refresh, reprogramming rồi biện minh memory choice theo speed, density, cost và lifecycle."
+    },
+    "modelScope": {
+      "en": "Seven syllabus labels, three event classes and five bounded use cases with explicit property rules.",
+      "vi": "Bảy nhãn trong syllabus, ba nhóm event và năm use case hữu hạn với property rule rõ ràng."
+    },
+    "modelLimitations": {
+      "en": "No electrical timing, endurance or voltage model; generic RAM/ROM labels are contrasted with their named subtypes.",
+      "vi": "Không mô phỏng electrical timing, endurance hay voltage; nhãn RAM/ROM tổng quát được so sánh với subtype."
+    },
+    "atlasIds": [
+      "BOOK-C03-P070-PRIMARY-TREE",
+      "BOOK-C03-P071-DRAM",
+      "BOOK-C03-P071-SRAM",
+      "BOOK-C03-P071-T3-1",
+      "BOOK-C03-P072-T3-2",
+      "BOOK-C03-P105-Q5-RAM-MATCH"
+    ],
+    "sceneIds": [
+      "P1-L22-inspect",
+      "P1-L22-event",
+      "P1-L22-selection"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L23",
+    "lessonId": "P1-L23",
+    "title": {
+      "en": "Logic symbols and truth rows",
+      "vi": "Logic symbol và truth row"
+    },
+    "learnerAction": {
+      "en": "Select a gate and inputs, predict output, read the standard SVG symbol and verify the highlighted truth row.",
+      "vi": "Chọn gate và input, dự đoán output, đọc standard SVG symbol và verify truth row được highlight."
+    },
+    "observableOutcome": {
+      "en": "Use correct NOT, AND, OR, NAND, NOR and XOR symbols, input counts, functions and complete truth tables.",
+      "vi": "Dùng đúng symbol, số input, function và truth table hoàn chỉnh của NOT, AND, OR, NAND, NOR, XOR."
+    },
+    "modelScope": {
+      "en": "Boolean 0/1, one-input NOT and two-input AND/OR/NAND/NOR/XOR with deterministic tables.",
+      "vi": "Boolean 0/1, NOT một input và AND/OR/NAND/NOR/XOR hai input với table xác định."
+    },
+    "modelLimitations": {
+      "en": "No propagation delay, voltage levels or multi-input extension; input B is disabled for NOT.",
+      "vi": "Không propagation delay, voltage level hay multi-input extension; input B bị disable với NOT."
+    },
+    "atlasIds": [
+      "BOOK-C03-P090-NOT",
+      "BOOK-C03-P090-T3-10",
+      "BOOK-C03-P091-AND",
+      "BOOK-C03-P091-T3-11",
+      "BOOK-C03-P091-OR",
+      "BOOK-C03-P091-T3-12",
+      "BOOK-C03-P091-NAND",
+      "BOOK-C03-P091-T3-13",
+      "BOOK-C03-P091-NOR",
+      "BOOK-C03-P091-T3-14",
+      "BOOK-C03-P092-XOR",
+      "BOOK-C03-P092-T3-15",
+      "BOOK-C03-P089-GATE-FAMILY",
+      "BOOK-C03-P090-INPUT-COMBINATIONS"
+    ],
+    "sceneIds": [
+      "P1-L23-symbol",
+      "P1-L23-inputs",
+      "P1-L23-rule",
+      "P1-L23-truth-row"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L24",
+    "lessonId": "P1-L24",
+    "title": {
+      "en": "Statement to circuit and truth row",
+      "vi": "Từ statement tới circuit và truth row"
+    },
+    "learnerAction": {
+      "en": "Choose one of two circuits, set inputs, predict output and trace P, Q and Y before checking all eight rows.",
+      "vi": "Chọn một trong hai circuit, đặt input, dự đoán output và lần theo P, Q, Y trước khi kiểm tra tám row."
+    },
+    "observableOutcome": {
+      "en": "Translate consistently among a statement, expression, standard-symbol circuit and truth table.",
+      "vi": "Chuyển đổi nhất quán giữa statement, expression, circuit standard symbol và truth table."
+    },
+    "modelScope": {
+      "en": "Two finite three-input rules: Y=(A AND B) OR NOT C and Y=(A OR B) AND C, each with eight exact rows.",
+      "vi": "Hai rule ba input hữu hạn: Y=(A AND B) OR NOT C và Y=(A OR B) AND C, mỗi rule có tám row chính xác."
+    },
+    "modelLimitations": {
+      "en": "This is not a free-form circuit builder; learners must still construct and analyse unseen circuits independently.",
+      "vi": "Đây không phải circuit builder tự do; học sinh vẫn phải tự dựng và phân tích circuit mới."
+    },
+    "atlasIds": [
+      "BOOK-C03-P092-EX3-1",
+      "BOOK-C03-P093-EX3-1-PART1",
+      "BOOK-C03-P093-EX3-1-TABLE1",
+      "BOOK-C03-P093-EX3-1-PART2",
+      "BOOK-C03-P093-EX3-1-TABLE2",
+      "BOOK-C03-P094-EX3-1-PART3",
+      "BOOK-C03-P094-EX3-1-TABLE3",
+      "BOOK-C03-P094-EX3-1-FULL-TABLE",
+      "BOOK-C03-P094-A3B-a",
+      "BOOK-C03-P094-A3B-b",
+      "BOOK-C03-P094-A3B-c",
+      "BOOK-C03-P094-A3B-d",
+      "BOOK-C03-P094-A3B-e",
+      "BOOK-C03-P095-EX3-2-PART1",
+      "BOOK-C03-P095-EX3-2-PART3",
+      "BOOK-C03-P095-EX3-2-FULL",
+      "BOOK-C03-P096-EX3-2-TABLE",
+      "BOOK-C03-P096-WIND-INPUTS",
+      "BOOK-C03-P097-WIND-1",
+      "BOOK-C03-P097-WIND-2",
+      "BOOK-C03-P097-WIND-3",
+      "BOOK-C03-P097-WIND-JOIN",
+      "BOOK-C03-P098-WIND-FINAL",
+      "BOOK-C03-P098-WIND-TABLE",
+      "BOOK-C03-P099-CHEMICAL-INPUTS",
+      "BOOK-C03-P099-POWER-INPUTS",
+      "BOOK-C03-P100-NAND-AND",
+      "BOOK-C03-P100-NAND-OR",
+      "BOOK-C03-P100-NAND-NOT",
+      "BOOK-C03-P100-A3E-2A",
+      "BOOK-C03-P100-A3E-3",
+      "BOOK-C03-P101-EXT3H",
+      "BOOK-C03-P101-MULTI-AND-3",
+      "BOOK-C03-P101-MULTI-T16",
+      "BOOK-C03-P102-MULTI-AND-4",
+      "BOOK-C03-P102-MULTI-T17",
+      "BOOK-C03-P102-MULTI-OR-3",
+      "BOOK-C03-P102-MULTI-T18",
+      "BOOK-C03-P103-MULTI-OR-4",
+      "BOOK-C03-P103-MULTI-T19",
+      "BOOK-C03-P103-A3F-1A",
+      "BOOK-C03-P103-A3F-2A-3",
+      "BOOK-C03-P103-A3F-2A-4",
+      "BOOK-C03-P104-A3F-3-MULTI",
+      "BOOK-C03-P104-A3F-3-CASCADE",
+      "BOOK-C03-P106-Q6A",
+      "BOOK-C03-P106-Q6B",
+      "BOOK-C03-P106-Q6C"
+    ],
+    "sceneIds": [
+      "P1-L24-alarm-1",
+      "P1-L24-alarm-2",
+      "P1-L24-alarm-3",
+      "P1-L24-alarm-4",
+      "P1-L24-permission-1",
+      "P1-L24-permission-2",
+      "P1-L24-permission-3",
+      "P1-L24-permission-4"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]

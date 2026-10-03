@@ -19,6 +19,12 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "streaming": () => import("@/content/paper1/lessons/streaming.json"),
   "ip-addressing": () => import("@/content/paper1/lessons/ip-addressing.json"),
   "web-url-dns": () => import("@/content/paper1/lessons/web-url-dns.json"),
+  "computer-organisation": () => import("@/content/paper1/lessons/computer-organisation.json"),
+  "device-principles": () => import("@/content/paper1/lessons/device-principles.json"),
+  "embedded-control": () => import("@/content/paper1/lessons/embedded-control.json"),
+  "memory-technologies": () => import("@/content/paper1/lessons/memory-technologies.json"),
+  "logic-gates": () => import("@/content/paper1/lessons/logic-gates.json"),
+  "logic-design": () => import("@/content/paper1/lessons/logic-design.json"),
 };
 
 export async function getPaper1Lesson(slug: string): Promise<Paper1Lesson | undefined> {
