@@ -40,6 +40,7 @@ for (const locale of ["en", "vi"]) {
     topic.title[locale],
   ]);
 }
+await page("/paper-1", ["<html lang=\"en\"", "Study map", "Fundamental Theory"]);
 const unknown = await fetch(`${baseUrl}/paper-1/topics/not-a-paper1-topic?lang=en`, { headers: { cookie } });
 if (unknown.status !== 404) failures.push(`/paper-1/topics/not-a-paper1-topic: expected 404, got ${unknown.status}`);
 const unknownPractice = await fetch(`${baseUrl}/paper-1/practice/99?lang=en`, { headers: { cookie } });
@@ -47,4 +48,4 @@ if (unknownPractice.status !== 404) failures.push(`/paper-1/practice/99: expecte
 const retired = await fetch(`${baseUrl}/paper-1/atlas?lang=en&visual=BOOK-C03-P082-RGB-PIXEL`, { headers: { cookie } });
 if (retired.status !== 404) failures.push(`/paper-1/atlas retired visual: expected 404, got ${retired.status}`);
 if (failures.length) { console.error(`Paper 1 HTTP routes: FAIL (${failures.length})`); failures.forEach((entry) => console.error(`- ${entry}`)); process.exit(1); }
-console.log(`Paper 1 HTTP routes: PASS (${2 * (3 + practiceChapters.length + catalog.sections.length + catalog.topics.length)} EN/VI pages; Atlas + legacy practice + ${practiceChapters.length} chapter practice routes; ${catalog.topics.length}/${catalog.topics.length} topics with six anchors and visual IDs; unknown topic/practice and retired Atlas item 404)`);
+console.log(`Paper 1 HTTP routes: PASS (${2 * (3 + practiceChapters.length + catalog.sections.length + catalog.topics.length)} explicit EN/VI pages + English default route; Atlas + legacy practice + ${practiceChapters.length} chapter practice routes; ${catalog.topics.length}/${catalog.topics.length} topics with six anchors and visual IDs; unknown topic/practice and retired Atlas item 404)`);
