@@ -39,7 +39,7 @@ export function AppProviders({
   }, [locale]);
 
   useEffect(() => {
-    const preserveLearningLocale = (event: MouseEvent) => {
+    const navigateLearningRoute = (event: MouseEvent) => {
       if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       const target = event.target;
       if (!(target instanceof Element)) return;
@@ -48,12 +48,16 @@ export function AppProviders({
       const url = new URL(anchor.href, window.location.href);
       const isLearningRoute = /^\/paper-1(?:\/|$)/.test(url.pathname);
       if (url.origin !== window.location.origin || !isLearningRoute) return;
-      if (url.searchParams.get("lang") === locale) return;
-      url.searchParams.set("lang", locale);
+      if (url.searchParams.get("lang") !== locale) url.searchParams.set("lang", locale);
       anchor.href = `${url.pathname}?${url.searchParams.toString()}${url.hash}`;
+      const current = new URL(window.location.href);
+      if (url.pathname === current.pathname && url.search === current.search) return;
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.assign(anchor.href);
     };
-    document.addEventListener("click", preserveLearningLocale, true);
-    return () => document.removeEventListener("click", preserveLearningLocale, true);
+    document.addEventListener("click", navigateLearningRoute, true);
+    return () => document.removeEventListener("click", navigateLearningRoute, true);
   }, [locale]);
 
   useEffect(() => {
