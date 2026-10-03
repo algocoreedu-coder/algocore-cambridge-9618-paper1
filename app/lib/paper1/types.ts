@@ -27,7 +27,21 @@ export interface Paper1Topic {
   readonly objectiveIds: readonly string[];
   readonly requirementIds: readonly string[];
   readonly prerequisiteLessonIds: readonly string[];
-  readonly learningMode: "concept" | "representation" | "calculation" | "comparison";
+  readonly learningMode:
+    | "concept"
+    | "representation"
+    | "calculation"
+    | "comparison"
+    | "scenario"
+    | "diagram"
+    | "state-sequence"
+    | "logic"
+    | "cpu-trace"
+    | "assembly"
+    | "validation"
+    | "argument"
+    | "database"
+    | "sql";
   readonly searchTerms: readonly string[];
 }
 
@@ -129,7 +143,7 @@ export interface Paper1LessonVisualPlacementContract {
 
 export interface Paper1VisualPlacementData {
   readonly schemaVersion: 1;
-  readonly chapterId: "1";
+  readonly chapterId: string;
   readonly lessons: readonly Paper1LessonVisualPlacementContract[];
 }
 
@@ -152,7 +166,7 @@ export interface Paper1AtlasItem {
 export interface Paper1AtlasManifest {
   readonly schemaVersion: 1;
   readonly selection: "representative-final-frame";
-  readonly itemCount: 56;
+  readonly itemCount: number;
   readonly items: readonly Paper1AtlasItem[];
 }
 
@@ -183,8 +197,8 @@ export interface Paper1Lesson {
   readonly assessmentVersion: string;
   readonly lessonId: string;
   readonly slug: string;
-  readonly sectionId: "1";
-  readonly strandId: "1.1" | "1.2" | "1.3";
+  readonly sectionId: string;
+  readonly strandId: string;
   readonly title: Localized;
   readonly question: Localized;
   readonly opening: Localized;
@@ -283,9 +297,9 @@ export interface Paper1PracticeItem {
 export interface Paper1ChapterPractice {
   readonly schemaVersion: 1;
   readonly contentVersion: string;
-  readonly practiceId: "P1-CP01";
+  readonly practiceId: string;
   readonly courseId: "CAIE-9618-P1-2026";
-  readonly chapterId: "1";
+  readonly chapterId: string;
   readonly title: Localized;
   readonly intro: Localized;
   readonly timing: { readonly timedMinutes: number; readonly untimedAvailable: boolean };

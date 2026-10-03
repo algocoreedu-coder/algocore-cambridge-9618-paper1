@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L16",
+  "slug": "streaming",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Real-time and on-demand bit streaming",
+    "vi": "Bit streaming real-time và on-demand"
+  },
+  "question": {
+    "en": "When will playback continue, buffer or fall behind live events?",
+    "vi": "Khi nào playback tiếp tục, buffer hoặc chậm sau sự kiện live?"
+  },
+  "opening": {
+    "en": "Streaming sends a continuing bit sequence for consumption before the whole file is stored locally. Playback depends on arrival rate, media bit rate, buffer and network variation.",
+    "vi": "Streaming gửi chuỗi bit liên tục để dùng trước khi toàn bộ file được lưu local. Playback phụ thuộc arrival rate, media bit rate, buffer và biến động network."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-11",
+      "text": {
+        "en": "Explain real-time/on-demand streaming and rate effects.",
+        "vi": "Giải thích streaming real-time/on-demand và tác động rate."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-11-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L16-theory-1",
+      "title": {
+        "en": "Two stream modes",
+        "vi": "Hai stream mode"
+      },
+      "paragraphs": [
+        {
+          "en": "Real-time streaming carries media captured and delivered as an event happens; low delay matters and future content does not yet exist.",
+          "vi": "Real-time streaming mang media được capture và delivery khi sự kiện diễn ra; delay thấp quan trọng và nội dung tương lai chưa tồn tại."
+        },
+        {
+          "en": "On-demand streaming serves stored media when requested and may support pause or seek.",
+          "vi": "On-demand streaming phục vụ media đã lưu khi được yêu cầu và có thể hỗ trợ pause hoặc seek."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L16-theory-2",
+      "title": {
+        "en": "Rate and buffer determine continuity",
+        "vi": "Rate và buffer quyết định continuity"
+      },
+      "paragraphs": [
+        {
+          "en": "Media bit rate is the number of media bits consumed per second. Available throughput normally needs to exceed bit rate plus overhead for reliable playback.",
+          "vi": "Media bit rate là số media bit consume mỗi giây. Available throughput thường cần lớn hơn bit rate cộng overhead để playback ổn định."
+        },
+        {
+          "en": "If consumption exceeds arrival long enough, the buffer empties and playback stalls or quality adapts. More initial buffering tolerates short drops but increases start-up delay and live latency.",
+          "vi": "Nếu consumption vượt arrival đủ lâu, buffer cạn và playback stall hoặc quality adapt. Initial buffering lớn chịu được drop ngắn nhưng tăng start-up delay và live latency."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Update a streaming buffer",
+      "vi": "Cập nhật streaming buffer"
+    },
+    "prompt": {
+      "en": "Start with 6 Mb buffered; 3 Mb arrives and 4 Mb is consumed each second.",
+      "vi": "Bắt đầu với 6 Mb buffer; mỗi giây 3 Mb tới và 4 Mb được consume."
+    },
+    "steps": [
+      {
+        "id": "P1-L16-worked-1",
+        "action": {
+          "en": "Find the net rate.",
+          "vi": "Tìm net rate."
+        },
+        "result": {
+          "en": "3 − 4 = −1 Mb/s.",
+          "vi": "3 − 4 = −1 Mb/s."
+        }
+      },
+      {
+        "id": "P1-L16-worked-2",
+        "action": {
+          "en": "Update four seconds.",
+          "vi": "Cập nhật bốn giây."
+        },
+        "result": {
+          "en": "6 + 4(−1) = 2 Mb remains.",
+          "vi": "6 + 4(−1) = 2 Mb còn lại."
+        }
+      },
+      {
+        "id": "P1-L16-worked-3",
+        "action": {
+          "en": "Predict exhaustion.",
+          "vi": "Dự đoán cạn."
+        },
+        "result": {
+          "en": "At unchanged rates the buffer lasts two more seconds, then playback stalls.",
+          "vi": "Nếu rate không đổi, buffer kéo dài hai giây rồi playback stall."
+        }
+      }
+    ],
+    "result": {
+      "en": "Buffer masks a short deficit but cannot sustain a permanent negative rate.",
+      "vi": "Buffer che thiếu hụt ngắn nhưng không duy trì được net rate âm lâu dài."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Compare arrival throughput with media consumption rate.",
+        "vi": "So arrival throughput với media consumption rate."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name real-time or on-demand.",
+        "vi": "Xác định real-time hoặc on-demand."
+      },
+      {
+        "en": "Calculate arrival minus consumption.",
+        "vi": "Tính arrival trừ consumption."
+      },
+      {
+        "en": "Track buffer and latency or quality consequence.",
+        "vi": "Theo dõi buffer và hệ quả latency hoặc quality."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Matching broadband speed to bit rate guarantees smooth playback.",
+          "vi": "Broadband speed bằng bit rate bảo đảm playback mượt."
+        },
+        "correction": {
+          "en": "Overhead and variation mean headroom or buffering is normally needed.",
+          "vi": "Overhead và biến động nghĩa là thường cần headroom hoặc buffering."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Buffering makes a live stream truly real-time.",
+          "vi": "Buffering làm live stream hoàn toàn real-time."
+        },
+        "correction": {
+          "en": "Buffering improves continuity but adds delay behind live.",
+          "vi": "Buffering cải thiện continuity nhưng tăng delay sau live."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L16-recognise",
+        "title": {
+          "en": "Recognise a live trade-off",
+          "vi": "Nhận diện live trade-off"
+        },
+        "setup": {
+          "en": "A broadcaster doubles its initial live buffer.",
+          "vi": "Broadcaster tăng gấp đôi initial live buffer."
+        },
+        "prompt": {
+          "en": "Predict one benefit and one cost.",
+          "vi": "Dự đoán một lợi ích và một cost."
+        },
+        "expectedEvidence": {
+          "en": "It absorbs short throughput drops better but adds start-up delay and live latency.",
+          "vi": "Nó hấp thụ throughput drop ngắn tốt hơn nhưng tăng start-up delay và live latency."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L16-CHECK-REQ-2.1-11-01",
+      "requirementId": "REQ-2.1-11-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare real-time and on-demand streaming, then explain a 5 Mb/s stream receiving only 4 Mb/s for a sustained period.",
+        "vi": "So sánh streaming real-time và on-demand, rồi giải thích stream 5 Mb/s chỉ nhận 4 Mb/s kéo dài."
+      },
+      "hint": {
+        "en": "Use content availability and buffer rate.",
+        "vi": "Dùng availability của nội dung và buffer rate."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Real-time delivers media as captured; on-demand serves stored media after a request. Arrival is 1 Mb/s below consumption, so the buffer loses 1 Mb each second. Once empty, playback stalls or the service lowers quality/bit rate.",
+          "vi": "Real-time delivery media khi được capture; on-demand phục vụ media đã lưu sau request. Arrival thấp hơn consumption 1 Mb/s nên buffer mất 1 Mb mỗi giây. Khi cạn, playback stall hoặc dịch vụ giảm quality/bit rate."
+        },
+        "rubric": [
+          {
+            "en": "Distinguishes both modes.",
+            "vi": "Phân biệt hai mode."
+          },
+          {
+            "en": "Explains the negative buffer rate and consequence.",
+            "vi": "Giải thích buffer rate âm và hệ quả."
+          },
+          {
+            "en": "Links throughput and media bit rate.",
+            "vi": "Liên hệ throughput với media bit rate."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "streaming",
+        "buffer",
+        "bit-rate"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the mode distinction and stable-buffer condition.",
+      "vi": "Nêu khác biệt mode và điều kiện buffer ổn định."
+    },
+    "answerPoints": [
+      {
+        "en": "Real-time is captured/delivered live; on-demand is stored and requested.",
+        "vi": "Real-time được capture/delivery live; on-demand được lưu và yêu cầu."
+      },
+      {
+        "en": "Average arrival must meet or exceed consumption, with headroom for overhead and variation.",
+        "vi": "Arrival trung bình phải bằng hoặc vượt consumption, có headroom cho overhead và biến động."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "bit rate",
+      "meaning": {
+        "en": "Media bits required per second.",
+        "vi": "Media bit cần mỗi giây."
+      }
+    },
+    {
+      "term": "buffer",
+      "meaning": {
+        "en": "Temporary storage between arrival and consumption.",
+        "vi": "Lưu trữ tạm giữa arrival và consumption."
+      }
+    },
+    {
+      "term": "on-demand",
+      "meaning": {
+        "en": "Stored media streamed after a user request.",
+        "vi": "Media đã lưu được stream sau user request."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "transmission-media",
+    "web-url-dns"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L16 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 52–53: bit streaming, buffering, bit rate, real-time and on-demand",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L16",
+  "contractCoverage": {
+    "B01": [
+      "P1-L16-objectives"
+    ],
+    "B02": [
+      "P1-L16-theory-1",
+      "P1-L16-theory-2"
+    ],
+    "B03": [
+      "P1-L16-rules"
+    ],
+    "B04": [
+      "P1-L16-recognise"
+    ],
+    "B05": [
+      "P1-L16-worked-1",
+      "P1-L16-worked-2",
+      "P1-L16-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L16"
+    ],
+    "B07": [
+      "P1-L16-CHECK-REQ-2.1-11-01"
+    ],
+    "B08": [
+      "P1-L16-misconceptions"
+    ],
+    "B09": [
+      "P1-L16-recall"
+    ],
+    "B10": [
+      "P1-L16-glossary"
+    ],
+    "B11": [
+      "P1-L16-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

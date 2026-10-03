@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const locale = (await headers()).get('x-algocore-locale') === 'en' ? 'en' : 'vi';
+  const locale = (await headers()).get('x-algocore-locale') === 'vi' ? 'vi' : 'en';
   return (
     <html lang={locale} suppressHydrationWarning data-scroll-behavior="smooth">
       <body className="flex min-h-screen flex-col">

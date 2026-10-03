@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L12",
+  "slug": "cloud-computing",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Public and private cloud computing",
+    "vi": "Public và private cloud computing"
+  },
+  "question": {
+    "en": "Who controls the infrastructure, and what trade-offs follow?",
+    "vi": "Ai kiểm soát hạ tầng và những trade-off nào phát sinh?"
+  },
+  "opening": {
+    "en": "Cloud computing provides shared remote computing or storage resources on demand. Public and private describe deployment and control boundaries, not whether individual files are publicly visible.",
+    "vi": "Cloud computing cung cấp tài nguyên xử lý hoặc lưu trữ từ xa dùng chung theo nhu cầu. Public và private mô tả deployment cùng ranh giới kiểm soát, không nói tệp cá nhân có công khai hay không."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-06",
+      "text": {
+        "en": "Explain public/private cloud and evaluate benefits and drawbacks.",
+        "vi": "Giải thích public/private cloud và đánh giá lợi ích cùng hạn chế."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-06-01",
+    "REQ-2.1-06-02"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L12-theory-1",
+      "title": {
+        "en": "Cloud is a service arrangement",
+        "vi": "Cloud là cách cung cấp dịch vụ"
+      },
+      "paragraphs": [
+        {
+          "en": "Cloud computing supplies processing, applications or storage over a network from provider-managed infrastructure rather than requiring every resource on the user's local device.",
+          "vi": "Cloud computing cung cấp xử lý, ứng dụng hoặc lưu trữ qua network từ hạ tầng do provider quản lý thay vì yêu cầu mọi tài nguyên trên thiết bị local."
+        },
+        {
+          "en": "A public cloud offers shared provider infrastructure to multiple customers; a private cloud is dedicated to one organisation and may be operated by that organisation or a provider.",
+          "vi": "Public cloud cung cấp hạ tầng provider dùng chung cho nhiều khách hàng; private cloud dành riêng cho một tổ chức và có thể do tổ chức hoặc provider vận hành."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Public cloud does not mean all customer data is public.",
+          "vi": "Public cloud không có nghĩa mọi dữ liệu khách hàng đều công khai."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L12-theory-2",
+      "title": {
+        "en": "Evaluate control, scale and dependency",
+        "vi": "Đánh giá control, scale và dependency"
+      },
+      "paragraphs": [
+        {
+          "en": "Benefits can include rapid scaling, access from different locations, provider maintenance, collaboration and reduced upfront hardware purchase.",
+          "vi": "Lợi ích có thể gồm scale nhanh, truy cập từ nhiều nơi, provider bảo trì, collaboration và giảm mua phần cứng ban đầu."
+        },
+        {
+          "en": "Drawbacks can include dependence on network/provider availability, recurring cost, migration difficulty, reduced direct control and security, privacy or compliance concerns.",
+          "vi": "Hạn chế có thể gồm phụ thuộc network/provider availability, chi phí định kỳ, khó migration, giảm kiểm soát trực tiếp và lo ngại security, privacy hoặc compliance."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Choose a deployment for medical records",
+      "vi": "Chọn deployment cho hồ sơ y tế"
+    },
+    "prompt": {
+      "en": "A clinic requires organisation-controlled access and strict data-location policies but wants remote access for authorised staff.",
+      "vi": "Phòng khám cần access do tổ chức kiểm soát và chính sách vị trí dữ liệu nghiêm ngặt nhưng muốn nhân viên được cấp quyền truy cập từ xa."
+    },
+    "steps": [
+      {
+        "id": "P1-L12-worked-1",
+        "action": {
+          "en": "Identify non-negotiable needs.",
+          "vi": "Xác định nhu cầu không thể thay đổi."
+        },
+        "result": {
+          "en": "Controlled access and data governance are decisive.",
+          "vi": "Controlled access và data governance là quyết định."
+        }
+      },
+      {
+        "id": "P1-L12-worked-2",
+        "action": {
+          "en": "Compare deployments.",
+          "vi": "So sánh deployment."
+        },
+        "result": {
+          "en": "A shared public service may offer scale; a private cloud offers a dedicated control boundary.",
+          "vi": "Dịch vụ public dùng chung có thể scale tốt; private cloud cung cấp ranh giới kiểm soát riêng."
+        }
+      },
+      {
+        "id": "P1-L12-worked-3",
+        "action": {
+          "en": "State the choice and residual risk.",
+          "vi": "Nêu lựa chọn và rủi ro còn lại."
+        },
+        "result": {
+          "en": "A private cloud is defensible, but it still needs resilient connectivity, backup and skilled administration.",
+          "vi": "Private cloud là lựa chọn hợp lý nhưng vẫn cần connectivity bền vững, backup và quản trị có kỹ năng."
+        }
+      }
+    ],
+    "result": {
+      "en": "The choice is justified by the stated governance requirements, not by assuming private cloud is automatically secure.",
+      "vi": "Lựa chọn được biện minh bằng yêu cầu governance, không giả định private cloud tự động an toàn."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Separate deployment ownership/control from user permissions.",
+        "vi": "Tách ownership/control của deployment khỏi user permission."
+      }
+    ],
+    "method": [
+      {
+        "en": "List scenario requirements.",
+        "vi": "Liệt kê yêu cầu tình huống."
+      },
+      {
+        "en": "Match each benefit and drawback to a requirement.",
+        "vi": "Ghép mỗi lợi ích và hạn chế với một yêu cầu."
+      },
+      {
+        "en": "State a choice and remaining risk.",
+        "vi": "Nêu lựa chọn và rủi ro còn lại."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Public cloud makes files public.",
+          "vi": "Public cloud làm tệp công khai."
+        },
+        "correction": {
+          "en": "Public cloud means shared provider infrastructure; authentication and permissions still control customer data.",
+          "vi": "Public cloud nghĩa là hạ tầng provider dùng chung; authentication và permission vẫn kiểm soát dữ liệu khách hàng."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Private cloud is automatically secure.",
+          "vi": "Private cloud tự động an toàn."
+        },
+        "correction": {
+          "en": "Security depends on design, configuration, access control, updates and operation.",
+          "vi": "Security phụ thuộc thiết kế, cấu hình, access control, update và vận hành."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L12-recognise",
+        "title": {
+          "en": "Evaluate a startup scenario",
+          "vi": "Đánh giá tình huống startup"
+        },
+        "setup": {
+          "en": "A startup has unpredictable demand, little capital and no data-residency constraint.",
+          "vi": "Startup có nhu cầu khó dự đoán, ít vốn và không có ràng buộc data residency."
+        },
+        "prompt": {
+          "en": "Choose a deployment and state two benefits and one risk.",
+          "vi": "Chọn deployment và nêu hai lợi ích cùng một rủi ro."
+        },
+        "expectedEvidence": {
+          "en": "Public cloud is defensible for elastic capacity and low upfront hardware cost; dependence on provider/network and recurring cost remain risks.",
+          "vi": "Public cloud hợp lý nhờ capacity co giãn và chi phí phần cứng ban đầu thấp; phụ thuộc provider/network và chi phí định kỳ vẫn là rủi ro."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L12-CHECK-REQ-2.1-06-01",
+      "requirementId": "REQ-2.1-06-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish public cloud from private cloud by tenancy and control.",
+        "vi": "Phân biệt public cloud với private cloud theo tenancy và control."
+      },
+      "hint": {
+        "en": "Do not equate public cloud with public files.",
+        "vi": "Không đồng nhất public cloud với tệp công khai."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Public cloud uses provider infrastructure shared across customers with logical separation. Private cloud infrastructure is dedicated to one organisation, which has a more specific control boundary.",
+          "vi": "Public cloud dùng hạ tầng provider chia sẻ giữa nhiều khách hàng với phân tách logic. Hạ tầng private cloud dành riêng cho một tổ chức, có ranh giới kiểm soát cụ thể hơn."
+        },
+        "rubric": [
+          {
+            "en": "Defines both deployment types.",
+            "vi": "Định nghĩa cả hai loại deployment."
+          },
+          {
+            "en": "Compares the control or tenancy boundary.",
+            "vi": "So sánh ranh giới control hoặc tenancy."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "public-cloud",
+        "private-cloud"
+      ]
+    },
+    {
+      "id": "P1-L12-CHECK-REQ-2.1-06-02",
+      "requirementId": "REQ-2.1-06-02",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "A seasonal retailer needs capacity to rise quickly for two months each year. Explain two cloud benefits and two drawbacks relevant to this case.",
+        "vi": "Nhà bán lẻ theo mùa cần capacity tăng nhanh trong hai tháng mỗi năm. Giải thích hai lợi ích và hai hạn chế cloud phù hợp tình huống."
+      },
+      "hint": {
+        "en": "Tie each point to variable demand and operation.",
+        "vi": "Gắn mỗi ý với nhu cầu biến đổi và vận hành."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Elastic capacity and avoiding permanent peak hardware suit seasonal demand. Remote provider management may reduce local workload. Drawbacks include provider/network dependence, recurring usage cost, migration lock-in and security or compliance responsibilities.",
+          "vi": "Capacity co giãn và không phải mua phần cứng cố định cho peak phù hợp nhu cầu theo mùa. Provider quản lý từ xa có thể giảm công việc local. Hạn chế gồm phụ thuộc provider/network, chi phí sử dụng định kỳ, migration lock-in và trách nhiệm security hoặc compliance."
+        },
+        "rubric": [
+          {
+            "en": "Explains two relevant benefits.",
+            "vi": "Giải thích hai lợi ích phù hợp."
+          },
+          {
+            "en": "Explains two relevant drawbacks.",
+            "vi": "Giải thích hai hạn chế phù hợp."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "cloud-tradeoff",
+        "elasticity"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the public/private distinction and one cloud trade-off.",
+      "vi": "Nêu khác biệt public/private và một cloud trade-off."
+    },
+    "answerPoints": [
+      {
+        "en": "Public is provider-shared; private is dedicated to one organisation.",
+        "vi": "Public là hạ tầng provider dùng chung; private dành riêng cho một tổ chức."
+      },
+      {
+        "en": "Cloud can improve scale/access but creates provider and connectivity dependencies.",
+        "vi": "Cloud có thể cải thiện scale/access nhưng tạo phụ thuộc provider và connectivity."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "cloud computing",
+      "meaning": {
+        "en": "Remote on-demand computing or storage services delivered over a network.",
+        "vi": "Dịch vụ xử lý hoặc lưu trữ từ xa theo nhu cầu qua network."
+      }
+    },
+    {
+      "term": "public cloud",
+      "meaning": {
+        "en": "Shared provider infrastructure serving multiple customers.",
+        "vi": "Hạ tầng provider dùng chung phục vụ nhiều khách hàng."
+      }
+    },
+    {
+      "term": "private cloud",
+      "meaning": {
+        "en": "Cloud infrastructure dedicated to one organisation.",
+        "vi": "Hạ tầng cloud dành riêng cho một tổ chức."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-models",
+    "transmission-media"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L12 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 39–43: cloud computing, public/private deployment and trade-offs",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L12",
+  "contractCoverage": {
+    "B01": [
+      "P1-L12-objectives"
+    ],
+    "B02": [
+      "P1-L12-theory-1",
+      "P1-L12-theory-2"
+    ],
+    "B03": [
+      "P1-L12-rules"
+    ],
+    "B04": [
+      "P1-L12-recognise"
+    ],
+    "B05": [
+      "P1-L12-worked-1",
+      "P1-L12-worked-2",
+      "P1-L12-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L12"
+    ],
+    "B07": [
+      "P1-L12-CHECK-REQ-2.1-06-01",
+      "P1-L12-CHECK-REQ-2.1-06-02"
+    ],
+    "B08": [
+      "P1-L12-misconceptions"
+    ],
+    "B09": [
+      "P1-L12-recall"
+    ],
+    "B10": [
+      "P1-L12-glossary"
+    ],
+    "B11": [
+      "P1-L12-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

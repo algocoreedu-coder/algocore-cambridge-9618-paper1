@@ -6,5 +6,7 @@ import { getPaper1ChapterPractice } from "@/app/lib/paper1/practice-registry";
 export const metadata: Metadata = { title: "Chapter 1 mixed revision" };
 
 export default async function Paper1PracticePage({ searchParams }: { readonly searchParams: Promise<PageQuery> }) {
-  return <ChapterPractice practice={getPaper1ChapterPractice()} locale={resolvePaper1Locale(await searchParams)} />;
+  const practice = await getPaper1ChapterPractice("1");
+  if (!practice) throw new Error("Paper 1 Chapter 1 practice is unavailable");
+  return <ChapterPractice practice={practice} locale={resolvePaper1Locale(await searchParams)} />;
 }

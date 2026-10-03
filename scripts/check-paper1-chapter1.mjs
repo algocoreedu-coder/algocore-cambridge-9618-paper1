@@ -9,6 +9,11 @@ const visualDefinitions = read("content/paper1/visual-definitions.json");
 const atlasManifest = read("content/paper1/atlas-manifest.json");
 const visualPlacements = read("content/paper1/visual-placements.json");
 const chapterPractice = read("content/paper1/practice/chapter-1.json");
+const expectedChapter1LessonIds = Array.from({ length: 8 }, (_, index) => `P1-L${String(index + 1).padStart(2, "0")}`);
+const chapter1LessonIds = new Set(expectedChapter1LessonIds);
+const chapter1Topics = catalog.topics.filter((topic) => topic.sectionId === "1");
+const chapter1ManifestLessons = manifest.lessons.filter((lesson) => chapter1LessonIds.has(lesson.lessonId));
+const chapter1VisualDefinitions = visualDefinitions.filter((visual) => chapter1LessonIds.has(visual.lessonId));
 const failures = [];
 const check = (condition, message) => { if (!condition) failures.push(message); };
 const allStrings = (value, visitor) => {
@@ -44,11 +49,11 @@ const assessmentOracles = {
 
 check(catalog.sections.length === 8, `expected 8 sections, got ${catalog.sections.length}`);
 check(catalog.course.examYear === 2026 && catalog.course.syllabusVersion === 2, "course must target Cambridge 9618 exams 2026 syllabus version 2");
-check(catalog.topics.length === 8, `expected 8 released Chapter 1 topics, got ${catalog.topics.length}`);
-check(manifest.lessons.length === 8, `expected 8 manifest lessons, got ${manifest.lessons.length}`);
-check(visualDefinitions.length === 8, `expected 8 visual definitions, got ${visualDefinitions.length}`);
+check(chapter1Topics.length === 8, `expected 8 released Chapter 1 topics, got ${chapter1Topics.length}`);
+check(chapter1Topics.map((topic) => topic.lessonId).join("|") === expectedChapter1LessonIds.join("|"), "Chapter 1 catalog must contain P1-L01–P1-L08 in order");
+check(chapter1ManifestLessons.length === 8, `expected 8 Chapter 1 manifest lessons, got ${chapter1ManifestLessons.length}`);
+check(chapter1VisualDefinitions.length === 8, `expected 8 Chapter 1 visual definitions, got ${chapter1VisualDefinitions.length}`);
 check(catalog.sections[0]?.status === "available", "Section 1 must be available");
-check(catalog.sections.slice(1).every((entry) => entry.status === "planned"), "Sections 2–8 must remain planned");
 
 const lessonIds = new Set();
 const slugs = new Set();
@@ -57,7 +62,7 @@ const requirementIds = new Set();
 const assessedRequirements = new Map();
 const lessonsById = new Map();
 let assessmentCount = 0;
-for (const topic of catalog.topics) {
+for (const topic of chapter1Topics) {
   check(topic.topicId === topic.lessonId, `${topic.slug}: topicId must equal lessonId in v1`);
   check(!lessonIds.has(topic.lessonId), `${topic.lessonId}: duplicate lessonId`);
   check(!slugs.has(topic.slug), `${topic.slug}: duplicate slug`);
@@ -108,7 +113,7 @@ for (const topic of catalog.topics) {
 
 const visualIds = new Set();
 let atlasAssociationCount = 0;
-for (const visual of visualDefinitions) {
+for (const visual of chapter1VisualDefinitions) {
   check(!visualIds.has(visual.visualId), `${visual.visualId}: duplicate visual definition`);
   visualIds.add(visual.visualId);
   check(visual.visualId === `VIS-${visual.lessonId}`, `${visual.visualId}: lesson identity mismatch`);
@@ -120,7 +125,7 @@ for (const visual of visualDefinitions) {
 }
 check(atlasAssociationCount === 56, `expected 56 Chapter 1 atlas associations, got ${atlasAssociationCount}`);
 
-const expectedAtlasIds = visualDefinitions.flatMap((visual) => visual.atlasIds);
+const expectedAtlasIds = chapter1VisualDefinitions.flatMap((visual) => visual.atlasIds);
 const publishedAtlasIds = atlasManifest.items?.map((item) => item.id) ?? [];
 const validAtlasRoles = new Set(["required", "supporting", "extension"]);
 check(atlasManifest.schemaVersion === 1, "public Atlas schema version must be 1");
@@ -130,7 +135,7 @@ check(new Set(publishedAtlasIds).size === 56, "public Atlas IDs must be unique")
 check(JSON.stringify(publishedAtlasIds) === JSON.stringify(expectedAtlasIds), "public Atlas IDs must resolve every visual association exactly and in lesson order");
 
 for (const item of atlasManifest.items ?? []) {
-  const visual = visualDefinitions.find((entry) => entry.visualId === item.visualId);
+  const visual = chapter1VisualDefinitions.find((entry) => entry.visualId === item.visualId);
   check(Boolean(visual) && visual.lessonId === item.lessonId && visual.atlasIds.includes(item.id), `${item.id}: Atlas lesson/visual mapping mismatch`);
   check(validAtlasRoles.has(item.role), `${item.id}: invalid Atlas learning role`);
   check(Boolean(item.title?.en && item.title?.vi && item.description?.en && item.description?.vi), `${item.id}: localized Atlas title or description missing`);
@@ -174,7 +179,7 @@ check(dispositionCounts.DUPLICATE_OR_REMOVE === 1, `expected 1 retired item, got
 check(placementRows.find((row) => row.disposition === "DUPLICATE_OR_REMOVE")?.atlasId === "BOOK-C03-P082-RGB-PIXEL", "retired cross-chapter duplicate mismatch");
 for (const lesson of visualPlacements.lessons ?? []) {
   const lessonContent = lessonsById.get(lesson.lessonId);
-  const visualDefinition = visualDefinitions.find((entry) => entry.lessonId === lesson.lessonId);
+  const visualDefinition = chapter1VisualDefinitions.find((entry) => entry.lessonId === lesson.lessonId);
   check(Boolean(lessonContent), `${lesson.lessonId}: visual placement lesson is not released`);
   for (const placement of lesson.instructionalPlacements ?? []) {
     check(placement.teachingClaim?.en && placement.teachingClaim?.vi && placement.learnerAction?.en && placement.learnerAction?.vi, `${placement.atlasId}: instructional purpose/action missing`);
