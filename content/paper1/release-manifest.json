@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "CAIE-9618-P1-2026",
-  "releaseId": "paper1-chapter5-2026.10.04-v1.0.0",
+  "releaseId": "paper1-chapter6-2026.10.04-v1.0.0",
   "lessons": [
     {
       "lessonId": "P1-L01",
@@ -305,6 +305,38 @@
       "state": "available",
       "contentVersion": "1.0.0",
       "modelVersions": ["VIS-P1-L36@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L37",
+      "slug": "security-foundations",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L37@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L38",
+      "slug": "threats-protection",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L38@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L39",
+      "slug": "validation",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L39@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L40",
+      "slug": "verification-transfer",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L40@1"],
       "assessmentVersion": "1.0.0"
     }
   ]

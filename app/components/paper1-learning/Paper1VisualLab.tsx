@@ -8,6 +8,7 @@ import { Chapter2VisualLab, chapter2VisualLessonIds } from "./Chapter2VisualLab"
 import { Chapter3VisualLab, chapter3VisualLessonIds } from "./Chapter3VisualLab";
 import { Chapter4VisualLab } from "./Chapter4VisualLab";
 import { Chapter5VisualLab } from "./Chapter5VisualLab";
+import { Chapter6VisualLab } from "./Chapter6VisualLab";
 import {
   bitmapStorage,
   bitmapRleFixture,
@@ -34,6 +35,7 @@ import styles from "./Paper1VisualLab.module.css";
 
 const chapter4VisualLessonIds = Object.freeze(["P1-L25", "P1-L26", "P1-L27", "P1-L28", "P1-L29", "P1-L30", "P1-L31", "P1-L32"]);
 const chapter5VisualLessonIds = Object.freeze(["P1-L33", "P1-L34", "P1-L35", "P1-L36"]);
+const chapter6VisualLessonIds = Object.freeze(["P1-L37", "P1-L38", "P1-L39", "P1-L40"]);
 
 type Locale = LearningLocale;
 type Scene = Readonly<{ sceneId?: string; title: string; explanation: string; transcript: string; graphic: ReactNode }>;
@@ -358,5 +360,6 @@ export function Paper1VisualLab({ lessonId, locale }: { readonly lessonId: strin
   if (chapter3VisualLessonIds.includes(lessonId)) return <Chapter3VisualLab lessonId={lessonId} locale={locale} />;
   if (chapter4VisualLessonIds.includes(lessonId)) return <Chapter4VisualLab lessonId={lessonId} locale={locale} />;
   if (chapter5VisualLessonIds.includes(lessonId)) return <Chapter5VisualLab lessonId={lessonId} locale={locale} />;
+  if (chapter6VisualLessonIds.includes(lessonId)) return <Chapter6VisualLab lessonId={lessonId} locale={locale} />;
   return <p className={styles.unavailable} role="status">{copy(locale, "This Paper 1 visual is not available.", "Minh họa Paper 1 này chưa có.")}</p>;
 }

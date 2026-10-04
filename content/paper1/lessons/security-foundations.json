@@ -1,0 +1,464 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L37",
+  "slug": "security-foundations",
+  "sectionId": "6",
+  "strandId": "6.1",
+  "title": {
+    "en": "Security, privacy and data integrity",
+    "vi": "Security, privacy và data integrity"
+  },
+  "question": {
+    "en": "How do security, privacy and integrity differ, and what exactly needs protection?",
+    "vi": "Security, privacy và integrity khác nhau thế nào, và chính xác cần bảo vệ điều gì?"
+  },
+  "opening": {
+    "en": "A useful security answer classifies the asset, permitted action and consequence. The three terms overlap in real incidents but retain different meanings.",
+    "vi": "Một security answer hữu ích phân loại asset, permitted action và consequence. Ba thuật ngữ có thể cùng xuất hiện trong incident thực nhưng vẫn có ý nghĩa khác nhau."
+  },
+  "objectives": [
+    {
+      "id": "AC26-6.1-01",
+      "text": {
+        "en": "Explain the difference between security, privacy and integrity of data.",
+        "vi": "Giải thích sự khác nhau giữa security, privacy và integrity của data."
+      }
+    },
+    {
+      "id": "AC26-6.1-02",
+      "text": {
+        "en": "Explain why both data and the computer system require protection.",
+        "vi": "Giải thích vì sao cả data lẫn computer system đều cần protection."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-6.1-01-01",
+    "REQ-6.1-02-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L37-theory-1",
+      "title": {
+        "en": "Three related properties",
+        "vi": "Ba property có liên hệ"
+      },
+      "paragraphs": [
+        {
+          "en": "Data security protects data and systems from unauthorised access, damage and loss. It is the broad protective goal, supported by technical and organisational controls.",
+          "vi": "Data security bảo vệ data và system khỏi unauthorised access, damage và loss. Đây là mục tiêu bảo vệ rộng, được hỗ trợ bởi technical và organisational control."
+        },
+        {
+          "en": "Privacy controls who may access, use or disclose personal or sensitive data and for which authorised purpose. Integrity concerns data remaining complete, consistent and protected from unauthorised change.",
+          "vi": "Privacy kiểm soát ai được access, use hoặc disclose personal hay sensitive data và vì authorised purpose nào. Integrity liên quan việc data vẫn complete, consistent và được bảo vệ khỏi unauthorised change."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "An incident may affect privacy, integrity and wider security at the same time.",
+          "vi": "Một incident có thể đồng thời ảnh hưởng privacy, integrity và security rộng hơn."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L37-theory-2",
+      "title": {
+        "en": "Protect the data and the computer system",
+        "vi": "Bảo vệ data và computer system"
+      },
+      "paragraphs": [
+        {
+          "en": "Protecting data limits unauthorised reading, copying, alteration and deletion. It also supports recovery when protected information is damaged or lost.",
+          "vi": "Bảo vệ data hạn chế việc read, copy, alter và delete trái phép. Việc này cũng hỗ trợ recovery khi protected information bị damage hoặc loss."
+        },
+        {
+          "en": "Protecting the computer system keeps hardware, software, services and accounts operating as intended. A secure data file is still unavailable if the server or network service has been disabled.",
+          "vi": "Bảo vệ computer system giữ hardware, software, service và account hoạt động đúng mục đích. Một data file an toàn vẫn unavailable nếu server hoặc network service bị vô hiệu hoá."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A strong explanation names an asset, a threat or action, a control and the consequence.",
+          "vi": "Một explanation tốt nêu asset, threat hoặc action, control và consequence."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L37-theory-3",
+      "title": {
+        "en": "Authorised actions define the boundary",
+        "vi": "Authorised action xác định boundary"
+      },
+      "paragraphs": [
+        {
+          "en": "The same action can be permitted for one role and forbidden for another. A counsellor may read a safeguarding note, while a receptionist may only confirm an appointment.",
+          "vi": "Cùng một action có thể được phép với role này nhưng bị cấm với role khác. Counsellor có thể read safeguarding note, còn receptionist chỉ được confirm appointment."
+        },
+        {
+          "en": "A privacy breach can occur without changing a record. An integrity breach can occur without publishing it. Security controls must therefore consider identity, permission, data state and system operation separately.",
+          "vi": "Privacy breach có thể xảy ra mà không change record. Integrity breach có thể xảy ra mà không publish record. Vì vậy security control phải xét riêng identity, permission, data state và system operation."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Do not label every incident with only one property when the facts support several.",
+          "vi": "Không gán mọi incident chỉ một property khi facts cho thấy nhiều property bị ảnh hưởng."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Classify a record incident",
+      "vi": "Phân loại record incident"
+    },
+    "prompt": {
+      "en": "A tutoring centre stores learner support plans. A tutor may read assigned plans but may not export them. Trace an attempted export and a later unauthorised edit.",
+      "vi": "Trung tâm tutoring lưu learner support plan. Tutor được read plan được giao nhưng không được export. Trace một attempted export và một unauthorised edit sau đó."
+    },
+    "steps": [
+      {
+        "id": "P1-L37-worked-1",
+        "action": {
+          "en": "Identify the asset and role.",
+          "vi": "Xác định asset và role."
+        },
+        "result": {
+          "en": "The asset is the support plan; the authenticated tutor has read permission for assigned learners only.",
+          "vi": "Asset là support plan; authenticated tutor chỉ có read permission cho learner được giao."
+        }
+      },
+      {
+        "id": "P1-L37-worked-2",
+        "action": {
+          "en": "Inspect the export attempt.",
+          "vi": "Xét attempted export."
+        },
+        "result": {
+          "en": "Exporting the plan exceeds the permitted purpose and risks unauthorised disclosure, so privacy is affected.",
+          "vi": "Export plan vượt quá permitted purpose và tạo risk unauthorised disclosure, nên privacy bị ảnh hưởng."
+        }
+      },
+      {
+        "id": "P1-L37-worked-3",
+        "action": {
+          "en": "Inspect the later edit.",
+          "vi": "Xét edit sau đó."
+        },
+        "result": {
+          "en": "Changing an assessment without permission alters the trusted data state, so integrity is affected.",
+          "vi": "Change assessment khi không được phép làm thay đổi trusted data state, nên integrity bị ảnh hưởng."
+        }
+      },
+      {
+        "id": "P1-L37-worked-4",
+        "action": {
+          "en": "State the wider protection need.",
+          "vi": "Nêu wider protection need."
+        },
+        "result": {
+          "en": "The centre must protect both the records and the service that stores them so authorised staff can work while prohibited actions are blocked and logged.",
+          "vi": "Trung tâm phải bảo vệ cả record lẫn service lưu chúng để authorised staff làm việc trong khi prohibited action bị block và log."
+        }
+      }
+    ],
+    "result": {
+      "en": "Privacy, integrity and security answer different questions about the same system; classify the evidence rather than guessing one label.",
+      "vi": "Privacy, integrity và security trả lời các câu hỏi khác nhau về cùng system; hãy phân loại evidence thay vì đoán một label."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for who may see or use data, whether data changed, and whether the system remains protected and available.",
+        "vi": "Tìm ai được see hoặc use data, data có change không, và system còn protected và available không."
+      },
+      {
+        "en": "When asked to explain a need, state what could happen without protection.",
+        "vi": "Khi được yêu cầu explain nhu cầu, nêu điều có thể xảy ra nếu thiếu protection."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the asset, actor, attempted action and permission.",
+        "vi": "Nêu asset, actor, attempted action và permission."
+      },
+      {
+        "en": "Link each affected property to a concrete consequence.",
+        "vi": "Liên hệ mỗi affected property với một concrete consequence."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Security, privacy and integrity are interchangeable.",
+          "vi": "Security, privacy và integrity có thể dùng thay nhau."
+        },
+        "correction": {
+          "en": "Security is the wider protective goal; privacy concerns permitted use/disclosure; integrity concerns the trusted data state.",
+          "vi": "Security là mục tiêu bảo vệ rộng; privacy liên quan permitted use/disclosure; integrity liên quan trusted data state."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Validation guarantees integrity and correctness.",
+          "vi": "Validation bảo đảm integrity và correctness."
+        },
+        "correction": {
+          "en": "Validation checks declared rules and can reduce risk; it cannot prove that a plausible value matches reality.",
+          "vi": "Validation kiểm declared rule và có thể giảm risk; nó không chứng minh plausible value khớp thực tế."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L37-recognise-1",
+        "title": {
+          "en": "Disclosure without alteration",
+          "vi": "Disclosure không alteration"
+        },
+        "setup": {
+          "en": "A support plan is copied to an unauthorised personal account but its contents are unchanged.",
+          "vi": "Support plan bị copy sang unauthorised personal account nhưng content không đổi."
+        },
+        "prompt": {
+          "en": "Which property is directly affected, and why?",
+          "vi": "Property nào bị ảnh hưởng trực tiếp và vì sao?"
+        },
+        "expectedEvidence": {
+          "en": "Privacy is directly affected because sensitive data is disclosed outside the authorised people and purpose; wider security has also failed.",
+          "vi": "Privacy bị ảnh hưởng trực tiếp vì sensitive data bị disclose ngoài authorised people và purpose; wider security cũng thất bại."
+        }
+      },
+      {
+        "id": "P1-L37-recognise-2",
+        "title": {
+          "en": "Trusted data changed",
+          "vi": "Trusted data bị change"
+        },
+        "setup": {
+          "en": "An unauthorised user changes a learner's attendance total.",
+          "vi": "Unauthorised user change attendance total của learner."
+        },
+        "prompt": {
+          "en": "Name the direct data property and one consequence.",
+          "vi": "Nêu direct data property và một consequence."
+        },
+        "expectedEvidence": {
+          "en": "Integrity is affected because the trusted value was altered; reports and decisions can now use inconsistent data.",
+          "vi": "Integrity bị ảnh hưởng vì trusted value bị alter; report và decision có thể dùng inconsistent data."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L37-CHECK-REQ-6.1-01-01",
+      "requirementId": "REQ-6.1-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish data security, privacy and integrity using one original record-system scenario.",
+        "vi": "Phân biệt data security, privacy và integrity bằng một record-system scenario tự tạo."
+      },
+      "hint": {
+        "en": "Use access/use, unauthorised change and wider protection as separate tests.",
+        "vi": "Dùng access/use, unauthorised change và wider protection như các test riêng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Security is the broad protection of data and the system from unauthorised access, damage or loss. Privacy controls authorised access, use and disclosure of sensitive data. Integrity means data remains complete, consistent and protected from unauthorised alteration. For example, reading a learner record without permission breaches privacy, while changing its score breaches integrity; both show a security failure.",
+          "vi": "Security là bảo vệ rộng đối với data và system khỏi unauthorised access, damage hoặc loss. Privacy kiểm soát authorised access, use và disclosure của sensitive data. Integrity nghĩa là data vẫn complete, consistent và được bảo vệ khỏi unauthorised alteration. Ví dụ, read learner record khi không có permission vi phạm privacy, còn change score vi phạm integrity; cả hai cho thấy security failure."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "security",
+        "privacy",
+        "integrity"
+      ]
+    },
+    {
+      "id": "P1-L37-CHECK-REQ-6.1-02-01",
+      "requirementId": "REQ-6.1-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why an online learning service must protect both its data and its computer system.",
+        "vi": "Giải thích vì sao online learning service phải bảo vệ cả data lẫn computer system."
+      },
+      "hint": {
+        "en": "Give one data consequence and one system consequence.",
+        "vi": "Nêu một data consequence và một system consequence."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Learner records need protection from unauthorised reading, copying, alteration and deletion so they remain private and trustworthy. The servers, accounts and network service also need protection from disruption or misuse so authorised users can access the records and applications remain available. Protecting only one side leaves the other as a route to harm.",
+          "vi": "Learner record cần được bảo vệ khỏi unauthorised reading, copying, alteration và deletion để vẫn private và trustworthy. Server, account và network service cũng cần được bảo vệ khỏi disruption hoặc misuse để authorised user access record và application vẫn available. Chỉ bảo vệ một phía sẽ để phía kia thành đường gây hại."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "data-security",
+        "system-security"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the three properties and one question each asks.",
+      "vi": "Nêu ba property và một câu hỏi mà mỗi property đặt ra."
+    },
+    "answerPoints": [
+      {
+        "en": "Security: is the asset protected? Privacy: who may access/use/disclose it? Integrity: has the trusted data state been preserved?",
+        "vi": "Security: asset có được bảo vệ không? Privacy: ai được access/use/disclose? Integrity: trusted data state có được giữ không?"
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "data security",
+      "meaning": {
+        "en": "Protection of data and systems from unauthorised access, damage or loss.",
+        "vi": "Bảo vệ data và system khỏi unauthorised access, damage hoặc loss."
+      }
+    },
+    {
+      "term": "privacy",
+      "meaning": {
+        "en": "Control of authorised access, use and disclosure of sensitive data.",
+        "vi": "Kiểm soát authorised access, use và disclosure của sensitive data."
+      }
+    },
+    {
+      "term": "integrity",
+      "meaning": {
+        "en": "Data remaining complete, consistent and protected from unauthorised alteration.",
+        "vi": "Data vẫn complete, consistent và được bảo vệ khỏi unauthorised alteration."
+      }
+    },
+    {
+      "term": "asset",
+      "meaning": {
+        "en": "Data, hardware, software or service that requires protection.",
+        "vi": "Data, hardware, software hoặc service cần protection."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "threats-protection",
+    "validation"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §6.1–6.2, printed/PDF p. 24",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L37 · Chapter 6 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C06",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 6, printed pp. 159–161 and 169; PDF pp. 175–177 and 185",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L37",
+  "contractCoverage": {
+    "B01": [
+      "P1-L37-objectives"
+    ],
+    "B02": [
+      "P1-L37-theory-1",
+      "P1-L37-theory-2",
+      "P1-L37-theory-3"
+    ],
+    "B03": [
+      "P1-L37-theory-1",
+      "P1-L37-theory-2",
+      "P1-L37-theory-3"
+    ],
+    "B04": [
+      "P1-L37-recognise-1",
+      "P1-L37-recognise-2"
+    ],
+    "B05": [
+      "P1-L37-worked-1",
+      "P1-L37-worked-2",
+      "P1-L37-worked-3",
+      "P1-L37-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L37"
+    ],
+    "B07": [
+      "P1-L37-CHECK-REQ-6.1-01-01",
+      "P1-L37-CHECK-REQ-6.1-02-01"
+    ],
+    "B08": [
+      "P1-L37-recognise-1",
+      "P1-L37-recognise-2"
+    ],
+    "B09": [
+      "P1-L37-recall"
+    ],
+    "B10": [
+      "P1-L37-glossary"
+    ],
+    "B11": [
+      "P1-L37-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

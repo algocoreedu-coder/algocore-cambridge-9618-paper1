@@ -2,9 +2,9 @@
 
 Interactive bilingual revision website for Cambridge International AS & A Level Computer Science (9618) Paper 1.
 
-The current release candidate contains Chapters 1–5: 36 bilingual lessons aligned to the 2026 syllabus, 36 interactive models, 140 requirement-level checks and five mixed revision sets. Chapter 1 also includes a 55-item learner visual Atlas. Chapters 4 and 5 classify 43 and 26 coursebook Atlas source pointers respectively while their learner models use original, deterministic diagrams. Sections 6–8 remain visibly marked as planned.
+The current release candidate contains Chapters 1–6: 40 bilingual lessons aligned to the 2026 syllabus, 40 interactive models, 165 requirement-level checks and six mixed revision sets. Chapter 1 also includes a 55-item learner visual Atlas. Chapters 4, 5 and 6 classify 43, 26 and 25 unique coursebook source pointers respectively while their learner models use original, deterministic diagrams. Sections 7–8 remain visibly marked as planned.
 
-Chapter 1 covers all 17 learning objectives and all 23 atomic requirements in syllabus Sections 1.1–1.3. Chapter 2 covers all 15 learning objectives and all 26 atomic requirements in syllabus Section 2.1. Chapter 3 covers all 13 learning objectives and all 26 atomic requirements in syllabus Sections 3.1–3.2. Chapter 4 covers all 17 learning objectives and all 41 atomic requirements in syllabus Sections 4.1–4.3. Chapter 5 covers all 8 learning objectives and all 24 atomic requirements in syllabus Sections 5.1–5.2. Each lesson follows the same six-stage teaching route: Understand, Observe, Worked example, Recognise, Check and Recall. Visuals used in the teaching route state the learner action and expected observation; supporting coursebook visuals appear after Chapter 1 lessons or in the separate Chapter 1 Atlas.
+Chapter 1 covers all 17 learning objectives and all 23 atomic requirements in syllabus Sections 1.1–1.3. Chapter 2 covers all 15 learning objectives and all 26 atomic requirements in syllabus Section 2.1. Chapter 3 covers all 13 learning objectives and all 26 atomic requirements in syllabus Sections 3.1–3.2. Chapter 4 covers all 17 learning objectives and all 41 atomic requirements in syllabus Sections 4.1–4.3. Chapter 5 covers all 8 learning objectives and all 24 atomic requirements in syllabus Sections 5.1–5.2. Chapter 6 covers all 9 learning objectives and all 25 atomic requirements in syllabus Sections 6.1–6.2. Each lesson follows the same six-stage teaching route: Understand, Observe, Worked example, Recognise, Check and Recall. Visuals used in the teaching route state the learner action and expected observation; supporting coursebook visuals appear after Chapter 1 lessons or in the separate Chapter 1 Atlas. Chapter 6 keeps all 25 coursebook pointers as non-rendered source-alignment records and uses original security, validation, parity and checksum fixtures.
 
 Progress distinguishes lesson availability from learner activity. Opening a hint or solution never marks a lesson reviewed. Deterministic checks require a correct attempt, while open responses require a recorded answer and an explicit rubric review.
 
@@ -53,6 +53,7 @@ npm run check:paper1:http
 - `/paper-1/sections/3`
 - `/paper-1/sections/4`
 - `/paper-1/sections/5`
+- `/paper-1/sections/6`
 - `/paper-1/atlas`
 - `/paper-1/practice`
 - `/paper-1/practice/1`
@@ -60,6 +61,7 @@ npm run check:paper1:http
 - `/paper-1/practice/3`
 - `/paper-1/practice/4`
 - `/paper-1/practice/5`
+- `/paper-1/practice/6`
 - `/paper-1/topics/<lesson-slug>`
 
 Use `?lang=en` or `?lang=vi` for the learning language.

@@ -1145,5 +1145,337 @@
     "atlasIds": ["BOOK-C05-P154-F5-12", "BOOK-C05-P154-F5-13", "BOOK-C05-P155-F5-14", "BOOK-C05-P155-F5-15", "BOOK-C05-P156-F5-16", "BOOK-C05-P157-F5-17"],
     "sceneIds": ["P1-L36-authoring-cursor", "P1-L36-authoring-prompt", "P1-L36-authoring-diagnostic", "P1-L36-authoring-presentation", "P1-L36-debugging-set-breakpoint", "P1-L36-debugging-pause-before-line", "P1-L36-debugging-single-step-line-three", "P1-L36-debugging-single-step-line-four", "P1-L36-debugging-report"],
     "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+{
+    "visualId": "VIS-P1-L37",
+    "lessonId": "P1-L37",
+    "title": {
+      "en": "Data incident evidence ledger",
+      "vi": "Sổ bằng chứng sự cố dữ liệu"
+    },
+    "learnerAction": {
+      "en": "Choose an incident, predict the affected security property, then trace the actor, access or change, protected target and evidence-backed verdict.",
+      "vi": "Chọn một sự cố, dự đoán thuộc tính security bị ảnh hưởng rồi trace actor, access hoặc change, protected target và verdict có bằng chứng."
+    },
+    "observableOutcome": {
+      "en": "Distinguish security, privacy and integrity by the visible event and identify whether data, the computer system or both require protection.",
+      "vi": "Phân biệt security, privacy và integrity bằng event quan sát được, đồng thời xác định dữ liệu, hệ thống máy tính hay cả hai cần được bảo vệ."
+    },
+    "modelScope": {
+      "en": "Three deterministic incidents expose actor rights, data access, data change, affected properties and protected target across four learner-paced frames.",
+      "vi": "Ba incident xác định hiển thị actor rights, data access, data change, affected properties và protected target qua bốn frame do học sinh điều khiển."
+    },
+    "modelLimitations": {
+      "en": "The finite incidents classify syllabus concepts; they do not simulate a live account, breach investigation or legal privacy judgement.",
+      "vi": "Các incident hữu hạn phân loại khái niệm syllabus; chúng không mô phỏng account thật, điều tra breach hoặc phán quyết pháp lý về privacy."
+    },
+    "atlasIds": [
+      "BOOK-C06-P161-F6-1"
+    ],
+    "sceneIds": [
+      "P1-L37-stranger-read-record",
+      "P1-L37-stranger-read-boundary",
+      "P1-L37-stranger-read-observe",
+      "P1-L37-stranger-read-verdict",
+      "P1-L37-purpose-overshare-record",
+      "P1-L37-purpose-overshare-boundary",
+      "P1-L37-purpose-overshare-observe",
+      "P1-L37-purpose-overshare-verdict",
+      "P1-L37-mark-transposition-record",
+      "P1-L37-mark-transposition-boundary",
+      "P1-L37-mark-transposition-observe",
+      "P1-L37-mark-transposition-verdict"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L38",
+    "lessonId": "P1-L38",
+    "title": {
+      "en": "Threat path and control checkpoint",
+      "vi": "Đường threat và checkpoint kiểm soát"
+    },
+    "learnerAction": {
+      "en": "Choose a threat path, predict a relevant control, compare the applied and omitted traces, then state the remaining risk.",
+      "vi": "Chọn một threat path, dự đoán control phù hợp, so sánh trace applied và omitted rồi nêu remaining risk."
+    },
+    "observableOutcome": {
+      "en": "Connect each named threat to a proportionate protection point without claiming that encryption, signatures, biometrics or filtering remove every risk.",
+      "vi": "Liên hệ từng threat được nêu với protection point phù hợp mà không khẳng định encryption, signature, biometric hay filtering loại bỏ mọi risk."
+    },
+    "modelScope": {
+      "en": "Eight deterministic threat paths each run with the relevant control applied or omitted across source, approach, checkpoint and outcome.",
+      "vi": "Tám threat path xác định chạy với control phù hợp applied hoặc omitted qua source, approach, checkpoint và outcome."
+    },
+    "modelLimitations": {
+      "en": "Outcomes belong to declared teaching fixtures; the model is not a penetration test, malware scanner, cryptographic implementation or biometric matcher.",
+      "vi": "Outcome chỉ thuộc fixture dạy học đã khai báo; model không phải penetration test, malware scanner, cryptographic implementation hay biometric matcher."
+    },
+    "atlasIds": [
+      "BOOK-C06-P161-F6-1",
+      "BOOK-C06-P162-F6-2",
+      "BOOK-C06-P164-F6-3",
+      "BOOK-C06-P164-F6-4",
+      "BOOK-C06-P167-F6-5",
+      "BOOK-C06-P168-SAVE-PASSWORD",
+      "BOOK-C06-P168-PHISHING-MAIL"
+    ],
+    "sceneIds": [
+      "P1-L38-phishing-applied-source",
+      "P1-L38-phishing-applied-approach",
+      "P1-L38-phishing-applied-checkpoint",
+      "P1-L38-phishing-applied-outcome",
+      "P1-L38-phishing-omitted-source",
+      "P1-L38-phishing-omitted-approach",
+      "P1-L38-phishing-omitted-checkpoint",
+      "P1-L38-phishing-omitted-outcome",
+      "P1-L38-pharming-applied-source",
+      "P1-L38-pharming-applied-approach",
+      "P1-L38-pharming-applied-checkpoint",
+      "P1-L38-pharming-applied-outcome",
+      "P1-L38-pharming-omitted-source",
+      "P1-L38-pharming-omitted-approach",
+      "P1-L38-pharming-omitted-checkpoint",
+      "P1-L38-pharming-omitted-outcome",
+      "P1-L38-virus-applied-source",
+      "P1-L38-virus-applied-approach",
+      "P1-L38-virus-applied-checkpoint",
+      "P1-L38-virus-applied-outcome",
+      "P1-L38-virus-omitted-source",
+      "P1-L38-virus-omitted-approach",
+      "P1-L38-virus-omitted-checkpoint",
+      "P1-L38-virus-omitted-outcome",
+      "P1-L38-spyware-applied-source",
+      "P1-L38-spyware-applied-approach",
+      "P1-L38-spyware-applied-checkpoint",
+      "P1-L38-spyware-applied-outcome",
+      "P1-L38-spyware-omitted-source",
+      "P1-L38-spyware-omitted-approach",
+      "P1-L38-spyware-omitted-checkpoint",
+      "P1-L38-spyware-omitted-outcome",
+      "P1-L38-unauthorised-access-applied-source",
+      "P1-L38-unauthorised-access-applied-approach",
+      "P1-L38-unauthorised-access-applied-checkpoint",
+      "P1-L38-unauthorised-access-applied-outcome",
+      "P1-L38-unauthorised-access-omitted-source",
+      "P1-L38-unauthorised-access-omitted-approach",
+      "P1-L38-unauthorised-access-omitted-checkpoint",
+      "P1-L38-unauthorised-access-omitted-outcome",
+      "P1-L38-plaintext-interception-applied-source",
+      "P1-L38-plaintext-interception-applied-approach",
+      "P1-L38-plaintext-interception-applied-checkpoint",
+      "P1-L38-plaintext-interception-applied-outcome",
+      "P1-L38-plaintext-interception-omitted-source",
+      "P1-L38-plaintext-interception-omitted-approach",
+      "P1-L38-plaintext-interception-omitted-checkpoint",
+      "P1-L38-plaintext-interception-omitted-outcome",
+      "P1-L38-changed-signed-message-applied-source",
+      "P1-L38-changed-signed-message-applied-approach",
+      "P1-L38-changed-signed-message-applied-checkpoint",
+      "P1-L38-changed-signed-message-applied-outcome",
+      "P1-L38-changed-signed-message-omitted-source",
+      "P1-L38-changed-signed-message-omitted-approach",
+      "P1-L38-changed-signed-message-omitted-checkpoint",
+      "P1-L38-changed-signed-message-omitted-outcome",
+      "P1-L38-biometric-access-applied-source",
+      "P1-L38-biometric-access-applied-approach",
+      "P1-L38-biometric-access-applied-checkpoint",
+      "P1-L38-biometric-access-applied-outcome",
+      "P1-L38-biometric-access-omitted-source",
+      "P1-L38-biometric-access-omitted-approach",
+      "P1-L38-biometric-access-omitted-checkpoint",
+      "P1-L38-biometric-access-omitted-outcome"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L39",
+    "lessonId": "P1-L39",
+    "title": {
+      "en": "Validation gatebench",
+      "vi": "Bàn kiểm tra validation"
+    },
+    "learnerAction": {
+      "en": "Choose one of the seven syllabus validation methods, predict pass or fail, inspect the condition and calculation, then state the limitation.",
+      "vi": "Chọn một trong bảy validation method của syllabus, dự đoán pass hoặc fail, inspect condition và calculation rồi nêu limitation."
+    },
+    "observableOutcome": {
+      "en": "Apply range, format, length, presence, existence, limit and check-digit rules and explain why valid data may still be factually wrong.",
+      "vi": "Áp dụng range, format, length, presence, existence, limit và check-digit rule, đồng thời giải thích vì sao dữ liệu valid vẫn có thể sai thực tế."
+    },
+    "modelScope": {
+      "en": "Seven rules each have one passing and one failing deterministic fixture across input, rule, apply and verdict frames; the check digit uses a declared weighted modulo-11 classroom rule.",
+      "vi": "Bảy rule, mỗi rule có một fixture pass và một fixture fail xác định qua input, rule, apply và verdict; check digit dùng rule weighted modulo-11 minh hoạ đã công bố."
+    },
+    "modelLimitations": {
+      "en": "Fixtures test only their declared condition; type, consistency and uniqueness are enrichment and no validation result proves real-world correctness.",
+      "vi": "Fixture chỉ test condition đã khai báo; type, consistency và uniqueness là enrichment, và không validation result nào chứng minh tính đúng ngoài đời."
+    },
+    "atlasIds": [
+      "BOOK-C06-P169-DATE-FORMAT",
+      "BOOK-C06-P170-T6-1",
+      "BOOK-C06-P171-F6-6",
+      "BOOK-C06-P171-MOD11",
+      "BOOK-C06-P177-EXAM-MOD11",
+      "BOOK-C06-P176-ACT6B-FORM",
+      "BOOK-C06-P176-ACT6B-RECORD"
+    ],
+    "sceneIds": [
+      "P1-L39-range-passes-input",
+      "P1-L39-range-passes-rule",
+      "P1-L39-range-passes-apply",
+      "P1-L39-range-passes-verdict",
+      "P1-L39-range-fails-input",
+      "P1-L39-range-fails-rule",
+      "P1-L39-range-fails-apply",
+      "P1-L39-range-fails-verdict",
+      "P1-L39-format-passes-input",
+      "P1-L39-format-passes-rule",
+      "P1-L39-format-passes-apply",
+      "P1-L39-format-passes-verdict",
+      "P1-L39-format-fails-input",
+      "P1-L39-format-fails-rule",
+      "P1-L39-format-fails-apply",
+      "P1-L39-format-fails-verdict",
+      "P1-L39-length-passes-input",
+      "P1-L39-length-passes-rule",
+      "P1-L39-length-passes-apply",
+      "P1-L39-length-passes-verdict",
+      "P1-L39-length-fails-input",
+      "P1-L39-length-fails-rule",
+      "P1-L39-length-fails-apply",
+      "P1-L39-length-fails-verdict",
+      "P1-L39-presence-passes-input",
+      "P1-L39-presence-passes-rule",
+      "P1-L39-presence-passes-apply",
+      "P1-L39-presence-passes-verdict",
+      "P1-L39-presence-fails-input",
+      "P1-L39-presence-fails-rule",
+      "P1-L39-presence-fails-apply",
+      "P1-L39-presence-fails-verdict",
+      "P1-L39-existence-passes-input",
+      "P1-L39-existence-passes-rule",
+      "P1-L39-existence-passes-apply",
+      "P1-L39-existence-passes-verdict",
+      "P1-L39-existence-fails-input",
+      "P1-L39-existence-fails-rule",
+      "P1-L39-existence-fails-apply",
+      "P1-L39-existence-fails-verdict",
+      "P1-L39-limit-passes-input",
+      "P1-L39-limit-passes-rule",
+      "P1-L39-limit-passes-apply",
+      "P1-L39-limit-passes-verdict",
+      "P1-L39-limit-fails-input",
+      "P1-L39-limit-fails-rule",
+      "P1-L39-limit-fails-apply",
+      "P1-L39-limit-fails-verdict",
+      "P1-L39-check-digit-passes-input",
+      "P1-L39-check-digit-passes-rule",
+      "P1-L39-check-digit-passes-apply",
+      "P1-L39-check-digit-passes-verdict",
+      "P1-L39-check-digit-fails-input",
+      "P1-L39-check-digit-fails-rule",
+      "P1-L39-check-digit-fails-apply",
+      "P1-L39-check-digit-fails-verdict"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L40",
+    "lessonId": "P1-L40",
+    "title": {
+      "en": "Verification and transfer bench",
+      "vi": "Bàn verification và truyền dữ liệu"
+    },
+    "learnerAction": {
+      "en": "Choose an entry or transfer method, predict whether the fixture is detected, then inspect source, transfer, recomputation and verdict evidence.",
+      "vi": "Chọn một method nhập hoặc truyền, dự đoán fixture có bị phát hiện không rồi inspect bằng chứng source, transfer, recomputation và verdict."
+    },
+    "observableOutcome": {
+      "en": "Separate visual and double-entry verification from byte parity, block parity and checksum checks, including declared undetected cases.",
+      "vi": "Phân biệt visual và double-entry verification với byte parity, block parity và checksum check, gồm cả các case không phát hiện được đã khai báo."
+    },
+    "modelScope": {
+      "en": "Fourteen deterministic fixtures cover visual checking, double entry, byte parity, block parity and direct-sum modulo-256 checksum across four frames.",
+      "vi": "Mười bốn fixture xác định cover visual checking, double entry, byte parity, block parity và checksum direct-sum modulo 256 qua bốn frame."
+    },
+    "modelLimitations": {
+      "en": "The model exposes selected collisions and parity limitations; it does not claim universal detection, correction or production-grade error control.",
+      "vi": "Model hiển thị một số collision và giới hạn parity; không khẳng định khả năng phát hiện, sửa lỗi phổ quát hoặc error control cấp production."
+    },
+    "atlasIds": [
+      "BOOK-C06-P176-ACT6B-FORM",
+      "BOOK-C06-P176-ACT6B-RECORD",
+      "BOOK-C06-P172-F6-7",
+      "BOOK-C06-P173-F6-8",
+      "BOOK-C06-P173-F6-9",
+      "BOOK-C06-P173-F6-10",
+      "BOOK-C06-P173-ACT6E",
+      "BOOK-C06-P174-ACT6F",
+      "BOOK-C06-P174-T6-2",
+      "BOOK-C06-P176-ACT6B-BLOCK",
+      "BOOK-C06-P177-EXAM-BLOCK",
+      "BOOK-C06-P175-CORRECTED-BYTE",
+      "BOOK-C06-P175-UNDETECTED"
+    ],
+    "sceneIds": [
+      "P1-L40-visual-match-source",
+      "P1-L40-visual-match-transfer",
+      "P1-L40-visual-match-recompute",
+      "P1-L40-visual-match-verdict",
+      "P1-L40-visual-difference-source",
+      "P1-L40-visual-difference-transfer",
+      "P1-L40-visual-difference-recompute",
+      "P1-L40-visual-difference-verdict",
+      "P1-L40-double-entry-match-source",
+      "P1-L40-double-entry-match-transfer",
+      "P1-L40-double-entry-match-recompute",
+      "P1-L40-double-entry-match-verdict",
+      "P1-L40-double-entry-difference-source",
+      "P1-L40-double-entry-difference-transfer",
+      "P1-L40-double-entry-difference-recompute",
+      "P1-L40-double-entry-difference-verdict",
+      "P1-L40-double-entry-same-wrong-twice-source",
+      "P1-L40-double-entry-same-wrong-twice-transfer",
+      "P1-L40-double-entry-same-wrong-twice-recompute",
+      "P1-L40-double-entry-same-wrong-twice-verdict",
+      "P1-L40-byte-parity-no-change-source",
+      "P1-L40-byte-parity-no-change-transfer",
+      "P1-L40-byte-parity-no-change-recompute",
+      "P1-L40-byte-parity-no-change-verdict",
+      "P1-L40-byte-parity-one-flip-source",
+      "P1-L40-byte-parity-one-flip-transfer",
+      "P1-L40-byte-parity-one-flip-recompute",
+      "P1-L40-byte-parity-one-flip-verdict",
+      "P1-L40-byte-parity-two-flips-source",
+      "P1-L40-byte-parity-two-flips-transfer",
+      "P1-L40-byte-parity-two-flips-recompute",
+      "P1-L40-byte-parity-two-flips-verdict",
+      "P1-L40-block-parity-no-change-source",
+      "P1-L40-block-parity-no-change-transfer",
+      "P1-L40-block-parity-no-change-recompute",
+      "P1-L40-block-parity-no-change-verdict",
+      "P1-L40-block-parity-one-flip-source",
+      "P1-L40-block-parity-one-flip-transfer",
+      "P1-L40-block-parity-one-flip-recompute",
+      "P1-L40-block-parity-one-flip-verdict",
+      "P1-L40-block-parity-rectangle-source",
+      "P1-L40-block-parity-rectangle-transfer",
+      "P1-L40-block-parity-rectangle-recompute",
+      "P1-L40-block-parity-rectangle-verdict",
+      "P1-L40-checksum-no-change-source",
+      "P1-L40-checksum-no-change-transfer",
+      "P1-L40-checksum-no-change-recompute",
+      "P1-L40-checksum-no-change-verdict",
+      "P1-L40-checksum-one-changed-byte-source",
+      "P1-L40-checksum-one-changed-byte-transfer",
+      "P1-L40-checksum-one-changed-byte-recompute",
+      "P1-L40-checksum-one-changed-byte-verdict",
+      "P1-L40-checksum-compensating-source",
+      "P1-L40-checksum-compensating-transfer",
+      "P1-L40-checksum-compensating-recompute",
+      "P1-L40-checksum-compensating-verdict"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]
