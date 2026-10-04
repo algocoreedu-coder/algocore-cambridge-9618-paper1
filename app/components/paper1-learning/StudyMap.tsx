@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Clock3, FileCheck2, Layers3, Search, X } from "lucide-react";
 import { Button, SegmentedControl } from "@/app/components/algocore-ui";
 import { paper1Href } from "@/app/lib/paper1/href";
+import type { Paper1ProgressContract } from "@/app/lib/paper1/progress-contract";
 import type { Paper1Catalog, Paper1Locale, Paper1ReleaseState, Paper1Topic } from "@/app/lib/paper1/types";
 import { Paper1LocaleBoundary } from "./Paper1LocaleBoundary";
 import { paper1ProgressLabel, usePaper1Progress } from "./usePaper1Progress";
@@ -12,11 +13,11 @@ import styles from "./Paper1Learning.module.css";
 
 function normalise(value: string) { return value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d"); }
 
-export function StudyMap({ catalog, releaseStates, locale }: { readonly catalog: Paper1Catalog; readonly releaseStates: Readonly<Record<string, Paper1ReleaseState>>; readonly locale: Paper1Locale }) {
+export function StudyMap({ catalog, releaseStates, progressContracts, locale }: { readonly catalog: Paper1Catalog; readonly releaseStates: Readonly<Record<string, Paper1ReleaseState>>; readonly progressContracts: Readonly<Record<string, Paper1ProgressContract>>; readonly locale: Paper1Locale }) {
   const [selectedId, setSelectedId] = useState("1");
   const [view, setView] = useState("map");
   const [query, setQuery] = useState("");
-  const progress = usePaper1Progress(catalog.topics);
+  const progress = usePaper1Progress(catalog.topics, progressContracts);
   const selected = catalog.sections.find((section) => section.id === selectedId) ?? catalog.sections[0];
   const totalLessons = catalog.topics.length;
   const openCount = catalog.topics.filter((topic) => releaseStates[topic.slug] === "available").length;
@@ -47,6 +48,7 @@ export function StudyMap({ catalog, releaseStates, locale }: { readonly catalog:
       <p><strong>{locale === "vi" ? "Nội dung:" : "Availability:"}</strong> {openCount}/{totalLessons} {locale === "vi" ? "bài đã mở" : "lessons open"}</p>
       <p><strong>{locale === "vi" ? "Tiến độ của bạn:" : "Your progress:"}</strong> {reviewedCount}/{openCount} {locale === "vi" ? "bài đã ôn và đối chiếu" : "open lessons reviewed"}</p>
       <small>{locale === "vi" ? "Reviewed chỉ xuất hiện khi mọi câu xác định từng được làm đúng và mọi câu mở đã được nộp rồi xác nhận tự đối chiếu rubric." : "Reviewed requires a correct attempt for every deterministic checkpoint and a submitted, explicitly rubric-reviewed response for every open checkpoint."}</small>
+      <small>{locale === "vi" ? "Tiến độ được lưu riêng cho phiên đăng nhập này trên trình duyệt. Đăng xuất sẽ bắt đầu một hồ sơ học cục bộ mới ở lần đăng nhập tiếp theo." : "Progress is private to this browser sign-in session. Signing out starts a new local learning record at the next sign-in."}</small>
     </div>
     <p className={styles.availability}><CheckCircle2 size={18} />{locale === "vi" ? (openCount === totalLessons ? `Đã mở đủ ${totalLessons} bài trong phạm vi hiện có.` : `Hiện mở ${openCount}/${totalLessons} bài thuộc ${availableSectionCount}/8 phần; các phần còn lại được ghi rõ là đang biên soạn.`) : (openCount === totalLessons ? `All ${totalLessons} lessons in the current scope are open.` : `${openCount}/${totalLessons} lessons across ${availableSectionCount}/8 sections are open; the remaining sections are clearly marked as planned.`)}</p>
     <section className={styles.search} aria-labelledby="paper1-search-label"><label id="paper1-search-label" htmlFor="paper1-search">{locale === "vi" ? "Bạn muốn ôn kiến thức nào?" : "What do you want to revise?"}</label><div><Search size={20} /><input id="paper1-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === "Escape") setQuery(""); }} placeholder={locale === "vi" ? "Tìm bit, bitmap, LAN, topology, DNS…" : "Search bit, bitmap, LAN, topology, DNS…"} />{query && <button type="button" onClick={() => setQuery("")} aria-label={locale === "vi" ? "Xóa tìm kiếm" : "Clear search"}><X size={18} /></button>}</div></section>

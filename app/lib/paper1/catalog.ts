@@ -1,6 +1,8 @@
 import catalogData from "@/content/paper1/catalog.json";
 import releaseData from "@/content/paper1/release-manifest.json";
-import type { Paper1Catalog, Paper1Locale, Paper1ReleaseManifest, Paper1ReleaseState } from "./types";
+import { getPaper1Lesson } from "./lesson-registry";
+import { paper1ProgressContractFromLesson, type Paper1ProgressContract } from "./progress-contract";
+import type { Paper1Catalog, Paper1Locale, Paper1ReleaseManifest, Paper1ReleaseState, Paper1Topic } from "./types";
 
 export type PageQuery = Record<string, string | string[] | undefined>;
 
@@ -32,4 +34,14 @@ export function availablePaper1Slugs(): ReadonlySet<string> {
 
 export function getPaper1ReleaseStates(): Readonly<Record<string, Paper1ReleaseState>> {
   return Object.fromEntries(getPaper1ReleaseManifest().lessons.map((entry) => [entry.slug, entry.state]));
+}
+
+export async function getPaper1ProgressContracts(topics: readonly Paper1Topic[]): Promise<Readonly<Record<string, Paper1ProgressContract>>> {
+  const releaseStates = getPaper1ReleaseStates();
+  const entries = await Promise.all(topics.map(async (topic) => {
+    if (releaseStates[topic.slug] !== "available") return null;
+    const lesson = await getPaper1Lesson(topic.slug);
+    return lesson ? [topic.lessonId, paper1ProgressContractFromLesson(lesson)] as const : null;
+  }));
+  return Object.fromEntries(entries.filter((entry): entry is NonNullable<typeof entry> => entry !== null));
 }

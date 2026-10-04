@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L29",
+  "slug": "addressing-modes",
+  "sectionId": "4",
+  "strandId": "4.2",
+  "title": {
+    "en": "Addressing modes",
+    "vi": "Các addressing mode"
+  },
+  "question": {
+    "en": "Is the operand a value, an address, a pointer or part of an address calculation?",
+    "vi": "Operand là value, address, pointer hay một phần của address calculation?"
+  },
+  "opening": {
+    "en": "Addressing modes define the path from an instruction operand to the value used. Keep the operand, effective address and fetched value in separate columns.",
+    "vi": "Addressing mode xác định đường đi từ instruction operand tới value được dùng. Hãy tách operand, effective address và fetched value thành các cột riêng."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.2-06",
+      "text": {
+        "en": "Understand and use immediate, direct, indirect, indexed and relative addressing.",
+        "vi": "Hiểu và dùng immediate, direct, indirect, indexed và relative addressing."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.2-06-01",
+    "REQ-4.2-06-02",
+    "REQ-4.2-06-03",
+    "REQ-4.2-06-04",
+    "REQ-4.2-06-05"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L29-theory-1",
+      "title": {
+        "en": "Value or address",
+        "vi": "Value hay address"
+      },
+      "paragraphs": [
+        {
+          "en": "Immediate addressing uses the operand value and performs no operand-memory dereference. Direct addressing treats the operand as the effective address.",
+          "vi": "Immediate addressing dùng operand value và không thực hiện operand-memory dereference. Direct addressing xem operand là effective address."
+        },
+        {
+          "en": "The # prefix in the syllabus instruction table marks an immediate number.",
+          "vi": "Prefix # trong syllabus instruction table đánh dấu immediate number."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "#100 means the value 100, not Memory[100].",
+          "vi": "#100 nghĩa là value 100, không phải Memory[100]."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L29-theory-2",
+      "title": {
+        "en": "Pointers and indexes",
+        "vi": "Pointer và index"
+      },
+      "paragraphs": [
+        {
+          "en": "Indirect addressing reads a pointer from the operand address, then reads the value at that second address. Indexed addressing adds IX to the address field before the memory read.",
+          "vi": "Indirect addressing đọc pointer từ operand address rồi đọc value tại address thứ hai đó. Indexed addressing cộng IX với address field trước memory read."
+        },
+        {
+          "en": "Count dereferences to distinguish direct from indirect.",
+          "vi": "Đếm dereference để phân biệt direct với indirect."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Indexed addressing adds the contents of IX, not Memory[IX].",
+          "vi": "Indexed addressing cộng contents của IX, không phải Memory[IX]."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L29-theory-3",
+      "title": {
+        "en": "Relative addressing",
+        "vi": "Relative addressing"
+      },
+      "paragraphs": [
+        {
+          "en": "Relative addressing adds an operand offset to a declared current/base PC value. It is commonly used to calculate a branch target, as in the coursebook JMR example. The instruction changes control flow to that target; calculating it does not by itself fetch a data value from Memory[target].",
+          "vi": "Relative addressing cộng operand offset vào current/base PC value đã công bố. Nó thường được dùng để tính branch target, như ví dụ JMR trong coursebook. Instruction chuyển control flow tới target đó; riêng việc tính target không tự động fetch data value từ Memory[target]."
+        },
+        {
+          "en": "The coursebook example opcode is not assumed to be a guaranteed 2026 syllabus opcode; use the supplied instruction table.",
+          "vi": "Không giả định example opcode trong coursebook là opcode được bảo đảm trong syllabus 2026; hãy dùng instruction table được cung cấp."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Write the equation before following memory.",
+          "vi": "Viết equation trước khi đi theo memory."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace five paths",
+      "vi": "Trace năm đường"
+    },
+    "prompt": {
+      "en": "Use operand 100, IX=5, PC=201, Memory[100]=120, Memory[120]=77, Memory[105]=42 and Memory[203]=88.",
+      "vi": "Dùng operand 100, IX=5, PC=201, Memory[100]=120, Memory[120]=77, Memory[105]=42 và Memory[203]=88."
+    },
+    "steps": [
+      {
+        "id": "P1-L29-worked-1",
+        "action": {
+          "en": "Immediate.",
+          "vi": "Immediate."
+        },
+        "result": {
+          "en": "Value 100, no effective address and zero reads.",
+          "vi": "Value 100, không có effective address và zero read."
+        }
+      },
+      {
+        "id": "P1-L29-worked-2",
+        "action": {
+          "en": "Direct and indirect.",
+          "vi": "Direct và indirect."
+        },
+        "result": {
+          "en": "Direct: EA100→120. Indirect: 100→pointer120→77.",
+          "vi": "Direct: EA100→120. Indirect: 100→pointer120→77."
+        }
+      },
+      {
+        "id": "P1-L29-worked-3",
+        "action": {
+          "en": "Indexed and relative.",
+          "vi": "Indexed và relative."
+        },
+        "result": {
+          "en": "Indexed: 100+5=105→42. Relative branch fixture: target=201+2=203, so control transfers to address 203; no data fetch is implied by the target calculation.",
+          "vi": "Indexed: 100+5=105→42. Relative branch fixture: target=201+2=203 nên control chuyển tới address 203; phép tính target không hàm ý data fetch."
+        }
+      }
+    ],
+    "result": {
+      "en": "Each mode has a distinct equation and number of reads.",
+      "vi": "Mỗi mode có equation và số lần read riêng."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Prefixes, IX, PC, or an extra pointer read reveal the addressing mode.",
+        "vi": "Prefix, IX, PC hoặc pointer read bổ sung cho biết addressing mode."
+      }
+    ],
+    "method": [
+      {
+        "en": "Copy the operand exactly.",
+        "vi": "Sao chép operand chính xác."
+      },
+      {
+        "en": "Form EA, count dereferences, then state the fetched value.",
+        "vi": "Tạo EA, đếm dereference rồi nêu fetched value."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "LDM #100 reads Memory[100].",
+          "vi": "LDM #100 đọc Memory[100]."
+        },
+        "correction": {
+          "en": "Immediate addressing uses literal value 100 and performs no memory dereference for the operand.",
+          "vi": "Immediate addressing dùng literal value 100 và không memory dereference operand."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Indirect addressing reads the same value as direct addressing.",
+          "vi": "Indirect addressing đọc cùng value với direct addressing."
+        },
+        "correction": {
+          "en": "Indirect uses Memory[operand] as another address, then reads again.",
+          "vi": "Indirect dùng Memory[operand] làm một address khác rồi đọc thêm lần nữa."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Indexed addressing reads Memory[IX].",
+          "vi": "Indexed addressing đọc Memory[IX]."
+        },
+        "correction": {
+          "en": "It adds IX contents to the instruction address field to form EA.",
+          "vi": "Nó cộng IX contents vào instruction address field để tạo EA."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L29-recognise-1",
+        "title": {
+          "en": "Count the arrows",
+          "vi": "Đếm arrow"
+        },
+        "setup": {
+          "en": "A route goes operand 100 → Memory[100]=120 → Memory[120]=77.",
+          "vi": "Route đi operand 100 → Memory[100]=120 → Memory[120]=77."
+        },
+        "prompt": {
+          "en": "Name the mode and explain both reads.",
+          "vi": "Nêu mode và giải thích hai lần read."
+        },
+        "expectedEvidence": {
+          "en": "It is indirect: the first read obtains effective address 120 and the second obtains value 77.",
+          "vi": "Đó là indirect: lần đọc đầu lấy effective address 120 và lần thứ hai lấy value 77."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L29-CHECK-REQ-4.2-06-01",
+      "requirementId": "REQ-4.2-06-01",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "With ACC empty, what value does LDM #100 load, and how many data-memory dereferences are needed? Enter ACC;dereferences.",
+        "vi": "Khi ACC rỗng, LDM #100 nạp value nào và cần bao nhiêu data-memory dereference? Nhập ACC;dereferences."
+      },
+      "hint": {
+        "en": "The # marks an immediate literal.",
+        "vi": "Dấu # đánh dấu immediate literal."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Immediate addressing uses the operand value itself, so ACC becomes 100 and no memory location is dereferenced for the operand.",
+          "vi": "Immediate addressing dùng chính operand value, nên ACC trở thành 100 và không dereference memory location nào cho operand."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "100;0",
+        "ACC=100;dereferences=0",
+        "ACC=100;reads=0"
+      ],
+      "semanticTags": [
+        "immediate-addressing"
+      ]
+    },
+    {
+      "id": "P1-L29-CHECK-REQ-4.2-06-02",
+      "requirementId": "REQ-4.2-06-02",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Memory[100]=120. Trace direct instruction LDD 100. Enter effectiveAddress;ACC;dataDereferences.",
+        "vi": "Memory[100]=120. Trace direct instruction LDD 100. Nhập effectiveAddress;ACC;dataDereferences."
+      },
+      "hint": {
+        "en": "The operand is the effective address.",
+        "vi": "Operand chính là effective address."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Direct addressing gives effective address 100 and reads Memory[100], so ACC becomes 120 after one data-memory dereference.",
+          "vi": "Direct addressing cho effective address 100 và đọc Memory[100], nên ACC trở thành 120 sau một data-memory dereference."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "100;120;1",
+        "EA=100;ACC=120;dereferences=1",
+        "EA=100;ACC=120;reads=1",
+        "100->120;1",
+        "100→120;1"
+      ],
+      "semanticTags": [
+        "direct-addressing"
+      ]
+    },
+    {
+      "id": "P1-L29-CHECK-REQ-4.2-06-03",
+      "requirementId": "REQ-4.2-06-03",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Memory[100]=120 and Memory[120]=77. Trace indirect instruction LDI 100. Enter effectiveAddress;ACC;dataDereferences.",
+        "vi": "Memory[100]=120 và Memory[120]=77. Trace indirect instruction LDI 100. Nhập effectiveAddress;ACC;dataDereferences."
+      },
+      "hint": {
+        "en": "The first read obtains a second address.",
+        "vi": "Lần đọc đầu lấy một address thứ hai."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Indirect addressing first reads Memory[100]=120 as the effective address, then reads Memory[120]=77, so ACC becomes 77 after two dereferences.",
+          "vi": "Indirect addressing trước hết đọc Memory[100]=120 làm effective address, rồi đọc Memory[120]=77, nên ACC trở thành 77 sau hai dereference."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "120;77;2",
+        "EA=120;ACC=77;dereferences=2",
+        "EA=120;ACC=77;reads=2",
+        "100->120->77;2",
+        "100→120→77;2"
+      ],
+      "semanticTags": [
+        "indirect-addressing"
+      ]
+    },
+    {
+      "id": "P1-L29-CHECK-REQ-4.2-06-04",
+      "requirementId": "REQ-4.2-06-04",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "IX=5 and Memory[105]=42. Trace indexed instruction LDX 100. Enter effectiveAddress;ACC;dataDereferences.",
+        "vi": "IX=5 và Memory[105]=42. Trace indexed instruction LDX 100. Nhập effectiveAddress;ACC;dataDereferences."
+      },
+      "hint": {
+        "en": "Add the address field to IX before reading memory.",
+        "vi": "Cộng address field với IX trước khi đọc memory."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Indexed addressing forms effective address 100+IX=105, then reads Memory[105]=42 into ACC.",
+          "vi": "Indexed addressing tạo effective address 100+IX=105 rồi đọc Memory[105]=42 vào ACC."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "105;42;1",
+        "EA=105;ACC=42;dereferences=1",
+        "EA=105;ACC=42;reads=1",
+        "100+5=105;42;1"
+      ],
+      "semanticTags": [
+        "indexed-addressing",
+        "IX"
+      ]
+    },
+    {
+      "id": "P1-L29-CHECK-REQ-4.2-06-05",
+      "requirementId": "REQ-4.2-06-05",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "For a JMR-style relative branch, the declared PC base is 201 and the offset is 2. Enter targetAddress;controlAction.",
+        "vi": "Với relative branch kiểu JMR, PC base đã công bố là 201 và offset là 2. Nhập targetAddress;controlAction."
+      },
+      "hint": {
+        "en": "Use the stated PC base; do not assume a hidden increment.",
+        "vi": "Dùng PC base đã nêu; không tự giả định hidden increment."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Relative addressing forms branch target PC+offset=201+2=203, then control transfers to address 203. The target calculation does not itself read Memory[203]. The PC base convention must always be declared by the question or instruction model.",
+          "vi": "Relative addressing tạo branch target PC+offset=201+2=203 rồi control chuyển tới address 203. Phép tính target không tự đọc Memory[203]. PC base convention luôn phải được question hoặc instruction model công bố."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "203;branch to 203",
+        "203,branch to 203",
+        "target=203;PC=203",
+        "201+2=203;control transfers to 203",
+        "203;jump to 203"
+      ],
+      "semanticTags": [
+        "relative-addressing",
+        "PC"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Write one path equation for each addressing mode.",
+      "vi": "Viết một path equation cho mỗi addressing mode."
+    },
+    "answerPoints": [
+      {
+        "en": "Immediate: value; direct: EA=operand; indirect: EA=Memory[operand]; indexed: EA=operand+IX; relative branch target=declared PC+offset, followed by a control-flow change rather than an automatic data fetch.",
+        "vi": "Immediate: value; direct: EA=operand; indirect: EA=Memory[operand]; indexed: EA=operand+IX; relative branch target=declared PC+offset, sau đó đổi control flow thay vì tự động data fetch."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "effective address",
+      "meaning": {
+        "en": "The final memory address used for the operand access.",
+        "vi": "Memory address cuối cùng dùng để truy cập operand."
+      }
+    },
+    {
+      "term": "dereference",
+      "meaning": {
+        "en": "Read the contents stored at an address.",
+        "vi": "Đọc contents lưu tại một address."
+      }
+    },
+    {
+      "term": "immediate",
+      "meaning": {
+        "en": "Use the operand value itself.",
+        "vi": "Dùng chính operand value."
+      }
+    },
+    {
+      "term": "direct",
+      "meaning": {
+        "en": "Use the operand as the memory address.",
+        "vi": "Dùng operand làm memory address."
+      }
+    },
+    {
+      "term": "indirect",
+      "meaning": {
+        "en": "Read a second address from the operand location.",
+        "vi": "Đọc address thứ hai từ operand location."
+      }
+    },
+    {
+      "term": "indexed",
+      "meaning": {
+        "en": "Add IX to the address field.",
+        "vi": "Cộng IX vào address field."
+      }
+    },
+    {
+      "term": "relative",
+      "meaning": {
+        "en": "Add an offset to a declared PC base, commonly to form a branch target.",
+        "vi": "Cộng offset vào PC base đã công bố, thường để tạo branch target."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "assembly-translation",
+    "assembly-tracing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.2, pp. 20–21",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L29 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 124–126",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L29",
+  "contractCoverage": {
+    "B01": [
+      "P1-L29-objectives"
+    ],
+    "B02": [
+      "P1-L29-theory-1",
+      "P1-L29-theory-2",
+      "P1-L29-theory-3"
+    ],
+    "B03": [
+      "P1-L29-theory-1",
+      "P1-L29-theory-2",
+      "P1-L29-theory-3"
+    ],
+    "B04": [
+      "P1-L29-recognise-1"
+    ],
+    "B05": [
+      "P1-L29-worked-1",
+      "P1-L29-worked-2",
+      "P1-L29-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L29"
+    ],
+    "B07": [
+      "P1-L29-CHECK-REQ-4.2-06-01",
+      "P1-L29-CHECK-REQ-4.2-06-02",
+      "P1-L29-CHECK-REQ-4.2-06-03",
+      "P1-L29-CHECK-REQ-4.2-06-04",
+      "P1-L29-CHECK-REQ-4.2-06-05"
+    ],
+    "B08": [
+      "P1-L29-recognise-1"
+    ],
+    "B09": [
+      "P1-L29-recall"
+    ],
+    "B10": [
+      "P1-L29-glossary"
+    ],
+    "B11": [
+      "P1-L29-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

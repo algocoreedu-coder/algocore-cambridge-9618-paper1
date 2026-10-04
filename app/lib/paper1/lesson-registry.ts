@@ -25,6 +25,14 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "memory-technologies": () => import("@/content/paper1/lessons/memory-technologies.json"),
   "logic-gates": () => import("@/content/paper1/lessons/logic-gates.json"),
   "logic-design": () => import("@/content/paper1/lessons/logic-design.json"),
+  "cpu-architecture": () => import("@/content/paper1/lessons/cpu-architecture.json"),
+  "performance-ports": () => import("@/content/paper1/lessons/performance-ports.json"),
+  "fetch-execute-interrupts": () => import("@/content/paper1/lessons/fetch-execute-interrupts.json"),
+  "assembly-translation": () => import("@/content/paper1/lessons/assembly-translation.json"),
+  "addressing-modes": () => import("@/content/paper1/lessons/addressing-modes.json"),
+  "assembly-tracing": () => import("@/content/paper1/lessons/assembly-tracing.json"),
+  "bit-shifts": () => import("@/content/paper1/lessons/bit-shifts.json"),
+  "bit-masking": () => import("@/content/paper1/lessons/bit-masking.json"),
 };
 
 export async function getPaper1Lesson(slug: string): Promise<Paper1Lesson | undefined> {

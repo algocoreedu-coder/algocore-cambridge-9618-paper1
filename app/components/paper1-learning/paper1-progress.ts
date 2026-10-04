@@ -1,3 +1,5 @@
+import type { Paper1AssessmentReviewRule } from "@/app/lib/paper1/progress-contract";
+
 export type Paper1CheckpointState = {
   readonly draft: string;
   readonly attemptCount: number;
@@ -17,7 +19,7 @@ export type Paper1ProgressEnvelope = {
     readonly assessmentVersion: string;
     readonly contentVersion?: string;
     readonly assessmentIds?: readonly string[];
-    readonly assessmentReviewRules?: readonly { readonly id: string; readonly reviewKind: "deterministic" | "self-review" }[];
+    readonly assessmentReviewRules?: readonly Paper1AssessmentReviewRule[];
     readonly lastAssessmentId?: string;
   };
   readonly items: Paper1StoredProgress;
@@ -69,7 +71,21 @@ function isCheckpointState(value: unknown): value is Paper1CheckpointState {
     && validResult;
 }
 
-export function readPaper1ProgressEnvelope(scope: string, lessonId: string, assessmentVersion?: string, currentAssessmentIds: readonly string[] = []): Paper1ProgressEnvelope | undefined {
+function sameStringList(left: readonly string[] | undefined, right: readonly string[]) {
+  return Array.isArray(left) && left.length === right.length && left.every((value, index) => value === right[index]);
+}
+
+function sameReviewRules(left: readonly Paper1AssessmentReviewRule[] | undefined, right: readonly Paper1AssessmentReviewRule[]) {
+  return Array.isArray(left) && left.length === right.length && left.every((rule, index) => rule.id === right[index]?.id && rule.reviewKind === right[index]?.reviewKind);
+}
+
+export function readPaper1ProgressEnvelope(
+  scope: string,
+  lessonId: string,
+  assessmentVersion?: string,
+  currentAssessmentIds: readonly string[] = [],
+  currentReviewRules: readonly Paper1AssessmentReviewRule[] = [],
+): Paper1ProgressEnvelope | undefined {
   if (typeof localStorage === "undefined" || !scope) return undefined;
   try {
     localStorage.removeItem(`${STORAGE_KEY}:${lessonId}`);
@@ -78,17 +94,20 @@ export function readPaper1ProgressEnvelope(scope: string, lessonId: string, asse
     const envelope = parsed as Partial<Paper1ProgressEnvelope>;
     if (!envelope.meta) return undefined;
     const versionMatches = typeof envelope.meta.assessmentVersion === "string" && (!assessmentVersion || envelope.meta.assessmentVersion === assessmentVersion);
-    const legacyCompatible = envelope.meta.contentVersion === "1.1.0" && currentAssessmentIds.length > 0;
-    if (!versionMatches && !legacyCompatible) return undefined;
+    if (!versionMatches) return undefined;
+    if (currentAssessmentIds.length && !sameStringList(envelope.meta.assessmentIds, currentAssessmentIds)) return undefined;
+    if (currentReviewRules.length && !sameReviewRules(envelope.meta.assessmentReviewRules, currentReviewRules)) return undefined;
     if (!envelope.items || typeof envelope.items !== "object" || Array.isArray(envelope.items)) return undefined;
     if (!Object.values(envelope.items).every(isCheckpointState)) return undefined;
     if (currentAssessmentIds.length && Object.keys(envelope.items).some((id) => !currentAssessmentIds.includes(id))) return undefined;
+    const lastAssessmentId = envelope.meta.lastAssessmentId;
+    if (lastAssessmentId && currentAssessmentIds.length && !currentAssessmentIds.includes(lastAssessmentId)) return undefined;
     return {
       meta: {
-        assessmentVersion: assessmentVersion ?? envelope.meta.assessmentVersion ?? "1.0.0",
+        assessmentVersion: assessmentVersion ?? envelope.meta.assessmentVersion,
         assessmentIds: currentAssessmentIds.length ? currentAssessmentIds : envelope.meta.assessmentIds,
-        assessmentReviewRules: envelope.meta.assessmentReviewRules,
-        lastAssessmentId: envelope.meta.lastAssessmentId,
+        assessmentReviewRules: currentReviewRules.length ? currentReviewRules : envelope.meta.assessmentReviewRules,
+        lastAssessmentId,
       },
       items: envelope.items,
     } as Paper1ProgressEnvelope;
