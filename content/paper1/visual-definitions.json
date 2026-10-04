@@ -1097,5 +1097,53 @@
     "atlasIds": ["BOOK-C04-P130-AND-OR-XOR-TABLE", "BOOK-C04-P131-T4-11", "BOOK-C04-P132-SENSOR3-MASK", "BOOK-C04-P133-SENSOR-BIT-LAYOUT", "BOOK-C04-P134-Q5-ISA", "BOOK-C04-P134-Q5-PROGRAM", "BOOK-C04-P135-Q5-TRACE"],
     "sceneIds": ["P1-L32-locate", "P1-L32-mask", "P1-L32-apply", "P1-L32-interpret"],
     "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L33",
+    "lessonId": "P1-L33",
+    "title": { "en": "Operating-system service desk", "vi": "Bàn dịch vụ hệ điều hành" },
+    "learnerAction": { "en": "Choose a memory, file, security, hardware or process request, predict its manager, then follow classification, action and receipt.", "vi": "Chọn yêu cầu memory, file, security, hardware hoặc process, dự đoán manager rồi theo dõi classification, action và receipt." },
+    "observableOutcome": { "en": "Match each request to an operating-system management task and distinguish an accepted service request from a completed physical effect.", "vi": "Match từng request với operating-system management task và phân biệt request được tiếp nhận với physical effect đã hoàn tất." },
+    "modelScope": { "en": "Five deterministic finite cases expose the requester, selected manager, state change, result and declared boundary.", "vi": "Năm case hữu hạn xác định hiển thị requester, manager được chọn, state change, result và boundary đã khai báo." },
+    "modelLimitations": { "en": "The model does not implement paging, scheduling, a file system, security enforcement or a real printer.", "vi": "Mô hình không triển khai paging, scheduling, file system, security enforcement hoặc máy in thật." },
+    "atlasIds": ["BOOK-C05-P138-F5-1", "BOOK-C05-P139-CLI-ICON", "BOOK-C05-P139-F5-2", "BOOK-C05-P140-F5-3", "BOOK-C05-P141-F5-4", "BOOK-C05-P158-EXAM-OS"],
+    "sceneIds": ["P1-L33-memory-request", "P1-L33-memory-classify", "P1-L33-memory-handle", "P1-L33-memory-receipt", "P1-L33-file-request", "P1-L33-file-classify", "P1-L33-file-handle", "P1-L33-file-receipt", "P1-L33-security-request", "P1-L33-security-classify", "P1-L33-security-handle", "P1-L33-security-receipt", "P1-L33-hardware-request", "P1-L33-hardware-classify", "P1-L33-hardware-handle", "P1-L33-hardware-receipt", "P1-L33-process-request", "P1-L33-process-classify", "P1-L33-process-handle", "P1-L33-process-receipt"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L34",
+    "lessonId": "P1-L34",
+    "title": { "en": "Utility and reusable-code workbench", "vi": "Bàn utility và reusable code" },
+    "learnerAction": { "en": "Choose a finite problem, predict the appropriate utility, library or DLL service, then inspect its artifact, invariant and limitation.", "vi": "Chọn một problem hữu hạn, dự đoán utility, library hoặc DLL service phù hợp rồi inspect artifact, invariant và limitation." },
+    "observableOutcome": { "en": "Select the right service and explain what it changes, what it preserves and what it cannot guarantee.", "vi": "Chọn đúng service và giải thích nó thay đổi gì, giữ nguyên gì và không thể bảo đảm điều gì." },
+    "modelScope": { "en": "Eight reviewed cases cover formatting, malware checking, HDD defragmentation, repair, compression, backup, program libraries and DLLs.", "vi": "Tám case đã review cover formatting, malware checking, HDD defragmentation, repair, compression, backup, program library và DLL." },
+    "modelLimitations": { "en": "All operations apply only to declared fixtures and never read, write, scan, format or repair the learner device.", "vi": "Mọi operation chỉ áp dụng lên fixture đã khai báo và không đọc, ghi, scan, format hoặc repair thiết bị của học sinh." },
+    "atlasIds": ["BOOK-C05-P143-T5-1", "BOOK-C05-P144-F5-5", "BOOK-C05-P145-F5-6", "BOOK-C05-P145-F5-7", "BOOK-C05-P145-F5-8", "BOOK-C05-P146-F5-9", "BOOK-C05-P147-F5-10", "BOOK-C05-P147-F5-11", "BOOK-C05-P148-T5-2"],
+    "sceneIds": ["P1-L34-format-inspect", "P1-L34-format-select", "P1-L34-format-apply", "P1-L34-format-receipt", "P1-L34-virus-inspect", "P1-L34-virus-select", "P1-L34-virus-apply", "P1-L34-virus-receipt", "P1-L34-defragment-inspect", "P1-L34-defragment-select", "P1-L34-defragment-apply", "P1-L34-defragment-receipt", "P1-L34-repair-inspect", "P1-L34-repair-select", "P1-L34-repair-apply", "P1-L34-repair-receipt", "P1-L34-compression-inspect", "P1-L34-compression-select", "P1-L34-compression-apply", "P1-L34-compression-receipt", "P1-L34-backup-inspect", "P1-L34-backup-select", "P1-L34-backup-apply", "P1-L34-backup-receipt", "P1-L34-library-inspect", "P1-L34-library-select", "P1-L34-library-apply", "P1-L34-library-receipt", "P1-L34-dll-inspect", "P1-L34-dll-select", "P1-L34-dll-apply", "P1-L34-dll-receipt"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L35",
+    "lessonId": "P1-L35",
+    "title": { "en": "Translation and execution pipeline", "vi": "Pipeline translation và execution" },
+    "learnerAction": { "en": "Choose assembler, compiler, interpreter or Java hybrid, predict its artifact, then locate translation diagnostics, runtime failures or logic errors.", "vi": "Chọn assembler, compiler, interpreter hoặc Java hybrid, dự đoán artifact rồi xác định translation diagnostic, runtime failure hoặc logic error." },
+    "observableOutcome": { "en": "Separate source, translator, artifact and runtime; compare stored output and run requirements; keep Java bytecode distinct from native machine code.", "vi": "Tách source, translator, artifact và runtime; so sánh stored output cùng run requirement; phân biệt Java bytecode với native machine code." },
+    "modelScope": { "en": "Four deterministic translator contracts combine with four declared error modes across a four-stage learner-paced pipeline.", "vi": "Bốn translator contract xác định kết hợp bốn error mode đã khai báo trong pipeline bốn stage do học sinh điều khiển." },
+    "modelLimitations": { "en": "The model states syllabus-level stages and does not emulate a production compiler, interpreter, virtual machine, loader or processor.", "vi": "Mô hình nêu stage ở syllabus level và không giả lập compiler, interpreter, virtual machine, loader hoặc processor production." },
+    "atlasIds": ["BOOK-C05-P150-PIC-CODE", "BOOK-C05-P151-T5-3", "BOOK-C05-P151-T5-4", "BOOK-C05-P152-JAVA-BYTECODE", "BOOK-C05-P153-PYTHON-BYTECODE"],
+    "sceneIds": ["P1-L35-assembler-source", "P1-L35-assembler-translate", "P1-L35-assembler-artifact", "P1-L35-assembler-execute", "P1-L35-compiler-source", "P1-L35-compiler-translate", "P1-L35-compiler-artifact", "P1-L35-compiler-execute", "P1-L35-interpreter-source", "P1-L35-interpreter-translate", "P1-L35-interpreter-artifact", "P1-L35-interpreter-execute", "P1-L35-java-hybrid-source", "P1-L35-java-hybrid-translate", "P1-L35-java-hybrid-artifact", "P1-L35-java-hybrid-execute", "P1-L35-error-none", "P1-L35-error-translation-diagnostic", "P1-L35-error-runtime-failure", "P1-L35-error-logic-error"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L36",
+    "lessonId": "P1-L36",
+    "title": { "en": "IDE authoring and debug bench", "vi": "Bàn authoring và debug IDE" },
+    "learnerAction": { "en": "Choose authoring or debugging, predict the tool feedback or variable state, then step through prompts, diagnostics, breakpoint, single-step and watch evidence.", "vi": "Chọn authoring hoặc debugging, dự đoán tool feedback hay variable state rồi step qua prompt, diagnostic, breakpoint, single-step và watch evidence." },
+    "observableOutcome": { "en": "Explain how an IDE supports authoring and debugging, and interpret a breakpoint as pausing before the marked line executes.", "vi": "Giải thích IDE hỗ trợ authoring và debugging như thế nào, đồng thời hiểu breakpoint là dừng trước khi line được đánh dấu thực thi." },
+    "modelScope": { "en": "A four-frame authoring packet and a five-frame debugging packet show an incomplete fixture and a deliberate plus-versus-multiply logic error with exact variables.", "vi": "Packet authoring bốn frame và packet debugging năm frame hiển thị fixture chưa hoàn chỉnh cùng logic error cộng-thay-vì-nhân với variable chính xác." },
+    "modelLimitations": { "en": "This is an AlgoCore-original teaching bench, not a screenshot or complete emulation of any branded IDE.", "vi": "Đây là teaching bench gốc của AlgoCore, không phải screenshot hoặc bản giả lập đầy đủ của IDE mang thương hiệu." },
+    "atlasIds": ["BOOK-C05-P154-F5-12", "BOOK-C05-P154-F5-13", "BOOK-C05-P155-F5-14", "BOOK-C05-P155-F5-15", "BOOK-C05-P156-F5-16", "BOOK-C05-P157-F5-17"],
+    "sceneIds": ["P1-L36-authoring-cursor", "P1-L36-authoring-prompt", "P1-L36-authoring-diagnostic", "P1-L36-authoring-presentation", "P1-L36-debugging-set-breakpoint", "P1-L36-debugging-pause-before-line", "P1-L36-debugging-single-step-line-three", "P1-L36-debugging-single-step-line-four", "P1-L36-debugging-report"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]

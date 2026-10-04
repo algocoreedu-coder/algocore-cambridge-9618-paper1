@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { BookImage, BookOpenText, RefreshCcw } from "lucide-react";
 import { Button, Disclosure } from "@/app/components/algocore-ui";
+import placementData from "@/content/paper1/visual-placements.json";
 import {
   getPaper1InstructionalPlacementsForStage,
   resolvePaper1ReferencePlacements,
@@ -14,6 +15,39 @@ import type {
   Paper1Locale,
 } from "@/app/lib/paper1/types";
 import styles from "./LessonPage.module.css";
+
+type SourcePointerPlacement = {
+  readonly atlasId: string;
+  readonly disposition: string;
+  readonly sourceLocator: string;
+  readonly renderMode: "source-pointer-note";
+  readonly replacementVisualId: string;
+  readonly rationale?: { readonly en: string; readonly vi: string };
+  readonly stage?: Paper1LessonStage;
+  readonly anchor?: { readonly targetId: string };
+  readonly teachingClaim?: { readonly en: string; readonly vi: string };
+  readonly learnerAction?: { readonly en: string; readonly vi: string };
+  readonly teacherPrompt?: { readonly en: string; readonly vi: string };
+  readonly expectedObservation?: { readonly en: string; readonly vi: string };
+  readonly misconceptionOrLimit?: { readonly en: string; readonly vi: string };
+  readonly textEquivalent?: { readonly en: string; readonly vi: string };
+  readonly order: number;
+};
+
+type SourcePointerContract = {
+  readonly lessonId: string;
+  readonly visualId: string;
+  readonly instructionalPlacements: readonly SourcePointerPlacement[];
+  readonly referencePlacements: readonly SourcePointerPlacement[];
+};
+
+const sourcePointerContracts = ((placementData as unknown as {
+  readonly sourcePointerLessons?: readonly SourcePointerContract[];
+}).sourcePointerLessons ?? []);
+
+function getSourcePointerContract(lessonId: string) {
+  return sourcePointerContracts.find((entry) => entry.lessonId === lessonId);
+}
 
 export function AtlasImage({ item, locale }: { readonly item: Paper1AtlasItem; readonly locale: Paper1Locale }) {
   const [attempt, setAttempt] = useState(0);
@@ -114,6 +148,31 @@ export function LessonReferenceDisclosure({ lessonId, locale }: { readonly lesso
           <AtlasImage item={item} locale={locale} />
           <figcaption><AtlasSourceMeta item={item} locale={locale} /><h3>{item.title[locale]}</h3><p>{placement.rationale[locale]}</p><p className={styles.textEquivalent}>{item.description[locale]}</p></figcaption>
         </figure>)}
+      </div>
+    </Disclosure>
+  </aside>;
+}
+
+export function TeacherSourceAuditDisclosure({ lessonId, locale }: { readonly lessonId: string; readonly locale: Paper1Locale }) {
+  const contract = getSourcePointerContract(lessonId);
+  if (!contract) return null;
+  const placements = [...contract.instructionalPlacements, ...contract.referencePlacements]
+    .toSorted((left, right) => (left.stage ?? "reference").localeCompare(right.stage ?? "reference") || left.order - right.order);
+  return <aside className={styles.lessonReferences} aria-labelledby={`${lessonId}-source-audit`} data-teacher-source-audit={lessonId}>
+    <h2 id={`${lessonId}-source-audit`}>{locale === "vi" ? "Đối chiếu coursebook (tuỳ chọn)" : "Optional coursebook alignment"}</h2>
+    <p>{locale === "vi"
+      ? "Các pointer này ghi lại cách bài học bám coursebook. Chúng không thuộc sáu stage học tập và không hiển thị hình trong sách."
+      : "These pointers record coursebook alignment. They are outside the six learning stages and do not render coursebook images."}</p>
+    <Disclosure summary={locale === "vi" ? `Mở ${placements.length} ghi chú nguồn` : `Open ${placements.length} source notes`}>
+      <div className={styles.atlasGrid}>
+        {placements.map((placement) => <article className={styles.atlasCard} data-atlas-id={placement.atlasId} data-disposition={placement.disposition} data-render-mode={placement.renderMode} key={placement.atlasId}>
+          <div className={styles.atlasMeta}><span><BookOpenText size={14} aria-hidden="true" />{placement.stage ?? (locale === "vi" ? "tham khảo" : "reference")}</span></div>
+          <h3>{placement.sourceLocator}</h3>
+          <p>{placement.rationale?.[locale] ?? placement.misconceptionOrLimit?.[locale] ?? placement.textEquivalent?.[locale]}</p>
+          <p className={styles.textEquivalent}>{locale === "vi"
+            ? "Hình trong sách không được hiển thị; bài học dùng visual gốc của AlgoCore."
+            : "The coursebook image is not rendered; the lesson uses an AlgoCore-original visual."}</p>
+        </article>)}
       </div>
     </Disclosure>
   </aside>;

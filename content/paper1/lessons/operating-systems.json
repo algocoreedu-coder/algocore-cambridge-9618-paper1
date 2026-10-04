@@ -1,0 +1,637 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L33",
+  "slug": "operating-systems",
+  "sectionId": "5",
+  "strandId": "5.1",
+  "title": {
+    "en": "Operating systems and resource management",
+    "vi": "Operating system và quản lý tài nguyên"
+  },
+  "question": {
+    "en": "Why does a computer need an operating system, and which manager handles each request?",
+    "vi": "Vì sao máy tính cần operating system và manager nào xử lý từng request?"
+  },
+  "opening": {
+    "en": "An operating system coordinates applications, users and shared hardware. A strong answer names the management action and explains the consequence, rather than listing categories.",
+    "vi": "Operating system phối hợp application, user và hardware dùng chung. Câu trả lời tốt phải nêu management action và giải thích consequence thay vì chỉ liệt kê category."
+  },
+  "objectives": [
+    {
+      "id": "AC26-5.1-01",
+      "text": {
+        "en": "Explain why a computer system requires an operating system.",
+        "vi": "Giải thích vì sao computer system cần operating system."
+      }
+    },
+    {
+      "id": "AC26-5.1-02",
+      "text": {
+        "en": "Explain the key memory, file, security, hardware and process management tasks carried out by an operating system.",
+        "vi": "Giải thích các task quản lý memory, file, security, hardware và process chính do operating system thực hiện."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-5.1-01-01",
+    "REQ-5.1-02-01",
+    "REQ-5.1-02-02",
+    "REQ-5.1-02-03",
+    "REQ-5.1-02-04",
+    "REQ-5.1-02-05"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L33-theory-1",
+      "title": {
+        "en": "The operating system coordinates the computer",
+        "vi": "Operating system phối hợp máy tính"
+      },
+      "paragraphs": [
+        {
+          "en": "The OS provides an environment in which applications can run. It offers services and an interface while hiding much of the detail of individual hardware devices.",
+          "vi": "OS cung cấp environment để application chạy. Nó cung cấp service và interface đồng thời che bớt chi tiết của từng hardware device."
+        },
+        {
+          "en": "The OS also arbitrates shared resources. Without that coordination, programs could overwrite memory, compete for a device, bypass access rules or leave data in inconsistent states.",
+          "vi": "OS còn phân xử resource dùng chung. Nếu thiếu coordination này, program có thể ghi đè memory, tranh device, bỏ qua access rule hoặc làm data không nhất quán."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "The user interface is one OS service; it is not the whole OS.",
+          "vi": "User interface là một OS service; nó không phải toàn bộ OS."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L33-theory-2",
+      "title": {
+        "en": "Memory and process management",
+        "vi": "Quản lý memory và process"
+      },
+      "paragraphs": [
+        {
+          "en": "Memory management tracks free and allocated primary memory, assigns space to programs, releases it when no longer needed and protects one process from another.",
+          "vi": "Memory management theo dõi primary memory còn trống và đã cấp, cấp space cho program, thu hồi khi không còn cần và bảo vệ process khỏi nhau."
+        },
+        {
+          "en": "Process management coordinates programs that are running. It allocates processor time and other resources, manages waiting work and keeps processes synchronised without requiring a particular scheduling algorithm at Paper 1 depth.",
+          "vi": "Process management phối hợp các program đang chạy. Nó cấp processor time và resource khác, quản lý work đang chờ và đồng bộ process mà không cần một scheduling algorithm cụ thể ở mức Paper 1."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A process is a program in execution, not every task named in everyday language.",
+          "vi": "Process là program đang execute, không phải mọi task theo nghĩa thông thường."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L33-theory-3",
+      "title": {
+        "en": "Files, security and peripheral hardware",
+        "vi": "File, security và peripheral hardware"
+      },
+      "paragraphs": [
+        {
+          "en": "File management maintains names, directories, storage locations, access permissions and operations such as create, open, save, move and delete.",
+          "vi": "File management duy trì name, directory, storage location, access permission và operation như create, open, save, move và delete."
+        },
+        {
+          "en": "Security management authenticates users and processes, enforces access rights, applies updates, records activity and supports recovery. Hardware management uses device drivers, buffers, queues and interrupt handling so peripherals can be shared safely.",
+          "vi": "Security management xác thực user và process, thực thi access right, áp dụng update, ghi activity và hỗ trợ recovery. Hardware management dùng device driver, buffer, queue và interrupt handling để peripheral được chia sẻ an toàn."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A manager answer needs an action and its effect, not only a category name.",
+          "vi": "Câu trả lời về manager cần action và effect, không chỉ tên category."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Route a print request",
+      "vi": "Định tuyến một print request"
+    },
+    "prompt": {
+      "en": "A student prints a protected report while another program is exporting video. Explain how the OS coordinates the request.",
+      "vi": "Một học sinh in protected report trong khi program khác đang export video. Giải thích OS phối hợp request như thế nào."
+    },
+    "steps": [
+      {
+        "id": "P1-L33-worked-1",
+        "action": {
+          "en": "Check access.",
+          "vi": "Kiểm tra access."
+        },
+        "result": {
+          "en": "Security management authenticates the student and checks permission to read the report.",
+          "vi": "Security management xác thực học sinh và kiểm tra permission đọc report."
+        }
+      },
+      {
+        "id": "P1-L33-worked-2",
+        "action": {
+          "en": "Prepare the file and device request.",
+          "vi": "Chuẩn bị file và device request."
+        },
+        "result": {
+          "en": "File management locates the report; hardware management loads the printer driver and places the job in a queue or buffer.",
+          "vi": "File management tìm report; hardware management load printer driver và đặt job vào queue hoặc buffer."
+        }
+      },
+      {
+        "id": "P1-L33-worked-3",
+        "action": {
+          "en": "Coordinate running work.",
+          "vi": "Phối hợp work đang chạy."
+        },
+        "result": {
+          "en": "Process and memory management allocate processor time and protected memory so printing and video export can progress without overwriting each other.",
+          "vi": "Process và memory management cấp processor time cùng protected memory để printing và video export tiến hành mà không ghi đè nhau."
+        }
+      },
+      {
+        "id": "P1-L33-worked-4",
+        "action": {
+          "en": "Handle completion or an error.",
+          "vi": "Xử lý completion hoặc error."
+        },
+        "result": {
+          "en": "Hardware management handles the printer interrupt, reports an error if necessary and releases the resource when the job completes.",
+          "vi": "Hardware management xử lý printer interrupt, báo error nếu cần và release resource khi job hoàn tất."
+        }
+      }
+    ],
+    "result": {
+      "en": "The OS supplies coordinated services across several managers; no single application safely performs every task alone.",
+      "vi": "OS cung cấp service phối hợp qua nhiều manager; không application nào tự thực hiện an toàn mọi task một mình."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for a resource, a competing request and a required OS action.",
+        "vi": "Tìm resource, request cạnh tranh và OS action cần thiết."
+      },
+      {
+        "en": "Command words such as explain require a mechanism and consequence.",
+        "vi": "Command word như explain yêu cầu mechanism và consequence."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the responsible manager.",
+        "vi": "Nêu manager chịu trách nhiệm."
+      },
+      {
+        "en": "State what it does and why that action matters in the scenario.",
+        "vi": "Nêu nó làm gì và vì sao action đó quan trọng trong scenario."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "The OS is only the graphical user interface.",
+          "vi": "OS chỉ là graphical user interface."
+        },
+        "correction": {
+          "en": "The interface is one service; resource management is also essential.",
+          "vi": "Interface là một service; resource management cũng thiết yếu."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Applications can manage shared hardware safely without the OS.",
+          "vi": "Application có thể quản lý hardware dùng chung an toàn mà không cần OS."
+        },
+        "correction": {
+          "en": "The OS coordinates drivers, queues, interrupts, permissions and competing access.",
+          "vi": "OS phối hợp driver, queue, interrupt, permission và competing access."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Listing memory, files and devices explains OS management.",
+          "vi": "Liệt kê memory, file và device là đã giải thích OS management."
+        },
+        "correction": {
+          "en": "Each explanation needs a concrete action and its effect on the system.",
+          "vi": "Mỗi giải thích cần concrete action và effect đối với hệ thống."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L33-recognise-1",
+        "title": {
+          "en": "Choose the manager",
+          "vi": "Chọn manager"
+        },
+        "setup": {
+          "en": "Two applications request the same printer.",
+          "vi": "Hai application yêu cầu cùng một printer."
+        },
+        "prompt": {
+          "en": "Name the manager and explain one action.",
+          "vi": "Nêu manager và giải thích một action."
+        },
+        "expectedEvidence": {
+          "en": "Hardware management queues the jobs or assigns priority so the device is shared without conflicting output.",
+          "vi": "Hardware management xếp queue hoặc gán priority để device được chia sẻ mà không xung đột output."
+        }
+      },
+      {
+        "id": "P1-L33-recognise-2",
+        "title": {
+          "en": "Protect the processes",
+          "vi": "Bảo vệ process"
+        },
+        "setup": {
+          "en": "A browser and editor are running at the same time.",
+          "vi": "Browser và editor đang chạy cùng lúc."
+        },
+        "prompt": {
+          "en": "Explain one memory-management responsibility.",
+          "vi": "Giải thích một trách nhiệm memory management."
+        },
+        "expectedEvidence": {
+          "en": "Allocate separate memory and prevent either process from overwriting the other's data.",
+          "vi": "Cấp memory riêng và ngăn mỗi process ghi đè data của process kia."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L33-CHECK-REQ-5.1-01-01",
+      "requirementId": "REQ-5.1-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why a general-purpose computer requires an operating system.",
+        "vi": "Giải thích vì sao general-purpose computer cần operating system."
+      },
+      "hint": {
+        "en": "Connect applications and users to shared hardware and resources.",
+        "vi": "Liên hệ application và user với hardware và resource dùng chung."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The OS provides an environment and services for applications, an interface for users or applications, and coordinated access to memory, files, devices and processor time. This prevents conflicts and hides hardware-specific complexity.",
+          "vi": "OS cung cấp environment và service cho application, interface cho user hoặc application, và coordinated access tới memory, file, device cùng processor time. Điều này ngăn conflict và che hardware-specific complexity."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "operating-system",
+        "purpose"
+      ]
+    },
+    {
+      "id": "P1-L33-CHECK-REQ-5.1-02-01",
+      "requirementId": "REQ-5.1-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two memory-management tasks carried out by an OS.",
+        "vi": "Giải thích hai memory-management task do OS thực hiện."
+      },
+      "hint": {
+        "en": "Use allocation, tracking or protection and state why each matters.",
+        "vi": "Dùng allocation, tracking hoặc protection và nêu vì sao mỗi ý quan trọng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The OS tracks free and allocated memory, assigns enough space to a process and releases it later. It also protects address spaces so one process cannot overwrite another process or the OS.",
+          "vi": "OS theo dõi memory trống và đã cấp, cấp đủ space cho process rồi release sau đó. Nó còn bảo vệ address space để một process không ghi đè process khác hoặc OS."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "memory-management",
+        "allocation",
+        "protection"
+      ]
+    },
+    {
+      "id": "P1-L33-CHECK-REQ-5.1-02-02",
+      "requirementId": "REQ-5.1-02-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how OS file management supports a user saving and reopening a report.",
+        "vi": "Giải thích OS file management hỗ trợ user save rồi reopen report như thế nào."
+      },
+      "hint": {
+        "en": "Refer to names, directories, storage and access.",
+        "vi": "Đề cập name, directory, storage và access."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "File management applies naming rules, records the file in a directory, allocates or locates its storage blocks and maintains permissions. When reopened, the OS uses the directory and file metadata to locate and read the stored data.",
+          "vi": "File management áp dụng naming rule, ghi file vào directory, cấp hoặc tìm storage block và duy trì permission. Khi reopen, OS dùng directory cùng file metadata để tìm và đọc stored data."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "file-management",
+        "directory",
+        "permissions"
+      ]
+    },
+    {
+      "id": "P1-L33-CHECK-REQ-5.1-02-03",
+      "requirementId": "REQ-5.1-02-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two security-management actions that protect files on a shared computer.",
+        "vi": "Giải thích hai security-management action bảo vệ file trên shared computer."
+      },
+      "hint": {
+        "en": "Choose controls and link each to the threat it reduces.",
+        "vi": "Chọn control và liên hệ mỗi control với threat nó giảm."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The OS authenticates a user before access and enforces file permissions so unauthorised users cannot read or change protected files. It can also apply security updates, log activity and provide recovery facilities after loss or corruption.",
+          "vi": "OS xác thực user trước khi access và thực thi file permission để user không được phép không thể đọc hoặc sửa protected file. Nó còn có thể áp dụng security update, log activity và cung cấp recovery sau loss hoặc corruption."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "security-management",
+        "authentication",
+        "access-rights"
+      ]
+    },
+    {
+      "id": "P1-L33-CHECK-REQ-5.1-02-04",
+      "requirementId": "REQ-5.1-02-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how an OS manages a printer shared by several processes.",
+        "vi": "Giải thích OS quản lý printer được nhiều process dùng chung như thế nào."
+      },
+      "hint": {
+        "en": "Include a driver and one coordination mechanism.",
+        "vi": "Bao gồm driver và một coordination mechanism."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The OS uses a printer driver to translate commands into the device's required form. It places jobs in a queue or buffer, controls access and priority, sends data when the printer is ready and handles interrupts or error messages.",
+          "vi": "OS dùng printer driver để dịch command sang dạng device cần. Nó đặt job vào queue hoặc buffer, kiểm soát access và priority, gửi data khi printer sẵn sàng và xử lý interrupt hoặc error message."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "hardware-management",
+        "device-driver",
+        "queue",
+        "interrupt"
+      ]
+    },
+    {
+      "id": "P1-L33-CHECK-REQ-5.1-02-05",
+      "requirementId": "REQ-5.1-02-05",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how process management allows several programs to run without uncontrolled competition.",
+        "vi": "Giải thích process management cho phép nhiều program chạy mà không cạnh tranh mất kiểm soát như thế nào."
+      },
+      "hint": {
+        "en": "Use processor time, resource allocation or synchronisation.",
+        "vi": "Dùng processor time, resource allocation hoặc synchronisation."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Process management tracks running and waiting processes, allocates processor time and other resources, resolves competing requests and coordinates sharing or exchange of data. This keeps processes progressing without a process taking a shared resource indefinitely.",
+          "vi": "Process management theo dõi process đang chạy và chờ, cấp processor time cùng resource khác, giải quyết competing request và phối hợp chia sẻ hoặc exchange data. Nhờ vậy process tiến hành mà không process nào giữ shared resource vô hạn."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "process-management",
+        "resource-allocation",
+        "coordination"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "For each OS manager, name one action and one consequence.",
+      "vi": "Với mỗi OS manager, nêu một action và một consequence."
+    },
+    "answerPoints": [
+      {
+        "en": "Memory allocates/protects; files organise/control access; security authenticates/enforces; hardware coordinates devices; process management schedules and shares resources.",
+        "vi": "Memory cấp phát/bảo vệ; file tổ chức/kiểm soát access; security xác thực/thực thi; hardware phối hợp device; process management schedule và chia sẻ resource."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "operating system",
+      "meaning": {
+        "en": "System software that supplies application services and manages computer resources.",
+        "vi": "System software cung cấp application service và quản lý computer resource."
+      }
+    },
+    {
+      "term": "process",
+      "meaning": {
+        "en": "A program currently being executed.",
+        "vi": "Program đang được execute."
+      }
+    },
+    {
+      "term": "memory management",
+      "meaning": {
+        "en": "Allocation, tracking and protection of primary memory.",
+        "vi": "Cấp phát, theo dõi và bảo vệ primary memory."
+      }
+    },
+    {
+      "term": "device driver",
+      "meaning": {
+        "en": "Software that lets the OS communicate with a specific device.",
+        "vi": "Software cho phép OS giao tiếp với device cụ thể."
+      }
+    },
+    {
+      "term": "buffer",
+      "meaning": {
+        "en": "Temporary storage used while data moves between components with different rates.",
+        "vi": "Vùng lưu tạm dùng khi data di chuyển giữa component có tốc độ khác nhau."
+      }
+    },
+    {
+      "term": "access rights",
+      "meaning": {
+        "en": "Rules defining which users or processes may read, change or execute a resource.",
+        "vi": "Rule quy định user hoặc process nào được đọc, sửa hoặc execute resource."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "utilities-libraries",
+    "translators"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §5.1–5.2, p. 23",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L33 · Chapter 5 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C05",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 5, pp. 138–142",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L33",
+  "contractCoverage": {
+    "B01": [
+      "P1-L33-objectives"
+    ],
+    "B02": [
+      "P1-L33-theory-1",
+      "P1-L33-theory-2",
+      "P1-L33-theory-3"
+    ],
+    "B03": [
+      "P1-L33-theory-1",
+      "P1-L33-theory-2",
+      "P1-L33-theory-3"
+    ],
+    "B04": [
+      "P1-L33-recognise-1",
+      "P1-L33-recognise-2"
+    ],
+    "B05": [
+      "P1-L33-worked-1",
+      "P1-L33-worked-2",
+      "P1-L33-worked-3",
+      "P1-L33-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L33"
+    ],
+    "B07": [
+      "P1-L33-CHECK-REQ-5.1-01-01",
+      "P1-L33-CHECK-REQ-5.1-02-01",
+      "P1-L33-CHECK-REQ-5.1-02-02",
+      "P1-L33-CHECK-REQ-5.1-02-03",
+      "P1-L33-CHECK-REQ-5.1-02-04",
+      "P1-L33-CHECK-REQ-5.1-02-05"
+    ],
+    "B08": [
+      "P1-L33-recognise-1",
+      "P1-L33-recognise-2"
+    ],
+    "B09": [
+      "P1-L33-recall"
+    ],
+    "B10": [
+      "P1-L33-glossary"
+    ],
+    "B11": [
+      "P1-L33-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

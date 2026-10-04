@@ -33,6 +33,10 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "assembly-tracing": () => import("@/content/paper1/lessons/assembly-tracing.json"),
   "bit-shifts": () => import("@/content/paper1/lessons/bit-shifts.json"),
   "bit-masking": () => import("@/content/paper1/lessons/bit-masking.json"),
+  "operating-systems": () => import("@/content/paper1/lessons/operating-systems.json"),
+  "utilities-libraries": () => import("@/content/paper1/lessons/utilities-libraries.json"),
+  "translators": () => import("@/content/paper1/lessons/translators.json"),
+  "ide-tools": () => import("@/content/paper1/lessons/ide-tools.json"),
 };
 
 export async function getPaper1Lesson(slug: string): Promise<Paper1Lesson | undefined> {
