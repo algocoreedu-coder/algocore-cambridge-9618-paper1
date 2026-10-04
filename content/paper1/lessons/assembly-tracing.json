@@ -1,0 +1,614 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L30",
+  "slug": "assembly-tracing",
+  "sectionId": "4",
+  "strandId": "4.2",
+  "title": {
+    "en": "Instruction groups and assembly tracing",
+    "vi": "Nhóm instruction và trace assembly"
+  },
+  "question": {
+    "en": "Can you predict the exact PC, ACC, memory and output state after each instruction?",
+    "vi": "Bạn có thể dự đoán chính xác PC, ACC, memory và output state sau mỗi instruction không?"
+  },
+  "opening": {
+    "en": "A trace changes only what the current instruction specifies. The safest method records the before state, executes one instruction, then records the next PC and changed destinations.",
+    "vi": "Trace chỉ thay đổi những gì current instruction quy định. Phương pháp an toàn nhất là ghi before state, execute một instruction rồi ghi next PC và destination đã đổi."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.2-04",
+      "text": {
+        "en": "Trace a simple assembly language program.",
+        "vi": "Trace một simple assembly language program."
+      }
+    },
+    {
+      "id": "AC26-4.2-05",
+      "text": {
+        "en": "Explain data movement, I/O, arithmetic, jump and compare instruction groups.",
+        "vi": "Giải thích các nhóm instruction data movement, I/O, arithmetic, jump và compare."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.2-04-01",
+    "REQ-4.2-05-01",
+    "REQ-4.2-05-02",
+    "REQ-4.2-05-03",
+    "REQ-4.2-05-04",
+    "REQ-4.2-05-05"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L29"
+  ],
+  "theory": [
+    {
+      "id": "P1-L30-theory-1",
+      "title": {
+        "en": "Classify before tracing",
+        "vi": "Phân loại trước khi trace"
+      },
+      "paragraphs": [
+        {
+          "en": "Data movement changes ACC, IX or memory. I/O exchanges a character through ACC. Arithmetic changes ACC or IX. Compare records a condition; jumps change PC.",
+          "vi": "Data movement thay đổi ACC, IX hoặc memory. I/O trao đổi character qua ACC. Arithmetic thay đổi ACC hoặc IX. Compare ghi condition; jump thay đổi PC."
+        },
+        {
+          "en": "Use only the supplied instruction table; do not import semantics from Python or another assembly language.",
+          "vi": "Chỉ dùng instruction table được cung cấp; không mang semantics từ Python hoặc assembly language khác vào."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "CMP preserves ACC in the syllabus model.",
+          "vi": "CMP giữ nguyên ACC trong syllabus model."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L30-theory-2",
+      "title": {
+        "en": "One-instruction state updates",
+        "vi": "Cập nhật state từng instruction"
+      },
+      "paragraphs": [
+        {
+          "en": "Write the current PC and instruction, evaluate its operand with the correct addressing mode, update only the destination state, then choose the next PC.",
+          "vi": "Ghi current PC và instruction, evaluate operand bằng addressing mode đúng, chỉ cập nhật destination state rồi chọn next PC."
+        },
+        {
+          "en": "For a not-taken conditional jump, PC continues to the next sequential instruction. For JMP or a taken jump, PC becomes the target.",
+          "vi": "Với conditional jump không taken, PC tiếp tục tới sequential instruction tiếp theo. Với JMP hoặc taken jump, PC trở thành target."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Skipped instructions do not change state.",
+          "vi": "Skipped instruction không thay đổi state."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L30-theory-3",
+      "title": {
+        "en": "Two reviewed trace fixtures",
+        "vi": "Hai trace fixture đã review"
+      },
+      "paragraphs": [
+        {
+          "en": "The branch fixture covers IN, CMP, JPE, ADD, JMP, OUT and END for both equal and not-equal inputs.",
+          "vi": "Branch fixture bao phủ IN, CMP, JPE, ADD, JMP, OUT và END cho cả equal và not-equal input."
+        },
+        {
+          "en": "The load/store fixture uses LDM #12; STO 20; LDD 21; ADD 20; STO 22; END with Memory[20]=0, Memory[21]=8 and Memory[22]=0.",
+          "vi": "Load/store fixture dùng LDM #12; STO 20; LDD 21; ADD 20; STO 22; END với Memory[20]=0, Memory[21]=8 và Memory[22]=0."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Together the fixtures expose every required instruction group.",
+          "vi": "Hai fixture cùng nhau thể hiện mọi instruction group bắt buộc."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace the load/store fixture",
+      "vi": "Trace load/store fixture"
+    },
+    "prompt": {
+      "en": "Initial PC=0, ACC=0, Memory[20]=0, Memory[21]=8 and Memory[22]=0.",
+      "vi": "Ban đầu PC=0, ACC=0, Memory[20]=0, Memory[21]=8 và Memory[22]=0."
+    },
+    "steps": [
+      {
+        "id": "P1-L30-worked-1",
+        "action": {
+          "en": "Load and store the first value.",
+          "vi": "Load và store value đầu."
+        },
+        "result": {
+          "en": "LDM #12 → PC1, ACC12; STO 20 → PC2, Memory[20]=12, ACC12.",
+          "vi": "LDM #12 → PC1, ACC12; STO 20 → PC2, Memory[20]=12, ACC12."
+        }
+      },
+      {
+        "id": "P1-L30-worked-2",
+        "action": {
+          "en": "Load the second value.",
+          "vi": "Load value thứ hai."
+        },
+        "result": {
+          "en": "LDD 21 → PC3, ACC8; memory is unchanged.",
+          "vi": "LDD 21 → PC3, ACC8; memory không đổi."
+        }
+      },
+      {
+        "id": "P1-L30-worked-3",
+        "action": {
+          "en": "Add and store the result.",
+          "vi": "Cộng và store result."
+        },
+        "result": {
+          "en": "ADD 20 → PC4, ACC20; STO 22 → PC5, Memory[22]=20.",
+          "vi": "ADD 20 → PC4, ACC20; STO 22 → PC5, Memory[22]=20."
+        }
+      },
+      {
+        "id": "P1-L30-worked-4",
+        "action": {
+          "en": "End the program.",
+          "vi": "Kết thúc program."
+        },
+        "result": {
+          "en": "END returns control to the operating system; the fixture does not assert a post-END PC.",
+          "vi": "END trả control về operating system; fixture không khẳng định post-END PC."
+        }
+      }
+    ],
+    "result": {
+      "en": "Final ACC=20, Memory[20]=12, Memory[21]=8 and Memory[22]=20.",
+      "vi": "Cuối cùng ACC=20, Memory[20]=12, Memory[21]=8 và Memory[22]=20."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "A trace supplies a program, initial state and an instruction table.",
+        "vi": "Trace cung cấp program, initial state và instruction table."
+      }
+    ],
+    "method": [
+      {
+        "en": "Read one instruction and resolve its operand.",
+        "vi": "Đọc một instruction và resolve operand."
+      },
+      {
+        "en": "Update the destination and PC; copy all unchanged state forward.",
+        "vi": "Cập nhật destination và PC; sao chép mọi unchanged state sang row tiếp."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "CMP subtracts and stores the result in ACC.",
+          "vi": "CMP subtract và lưu result vào ACC."
+        },
+        "correction": {
+          "en": "CMP records a comparison condition while preserving ACC.",
+          "vi": "CMP ghi comparison condition và giữ ACC."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A conditional jump always goes to its target.",
+          "vi": "Conditional jump luôn đi tới target."
+        },
+        "correction": {
+          "en": "It jumps only when its stated comparison condition is satisfied.",
+          "vi": "Nó chỉ jump khi comparison condition được thỏa mãn."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Every trace row changes every register.",
+          "vi": "Mỗi trace row thay đổi mọi register."
+        },
+        "correction": {
+          "en": "Only destinations named by the executed instruction change; carry other values forward.",
+          "vi": "Chỉ destination do executed instruction nêu mới đổi; giữ các value khác."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L30-recognise-1",
+        "title": {
+          "en": "Find the skipped row",
+          "vi": "Tìm skipped row"
+        },
+        "setup": {
+          "en": "ACC=65 before CMP #65, followed by JPE 5 and ADD #1 at address 3.",
+          "vi": "ACC=65 trước CMP #65, sau đó JPE 5 và ADD #1 tại address 3."
+        },
+        "prompt": {
+          "en": "Does ADD execute? Explain.",
+          "vi": "ADD có execute không? Giải thích."
+        },
+        "expectedEvidence": {
+          "en": "CMP sets equal true; JPE jumps to 5, so address 3 is skipped and ACC remains 65.",
+          "vi": "CMP đặt equal true; JPE jump tới 5 nên address 3 bị skip và ACC vẫn là 65."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L30-CHECK-REQ-4.2-04-01",
+      "requirementId": "REQ-4.2-04-01",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Trace the branch program for input ASCII 66: IN; CMP #65; JPE 5; ADD #1; JMP 5; OUT; END. State the final output.",
+        "vi": "Trace branch program cho input ASCII 66: IN; CMP #65; JPE 5; ADD #1; JMP 5; OUT; END. Nêu final output."
+      },
+      "hint": {
+        "en": "Track PC, ACC and the equal condition after every instruction.",
+        "vi": "Theo dõi PC, ACC và equal condition sau mỗi instruction."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "IN sets ACC=66. CMP #65 leaves ACC=66 and equal=false. JPE is not taken, so ADD #1 makes ACC=67. JMP selects OUT, which emits ASCII 67, character C; END then returns control.",
+          "vi": "IN đặt ACC=66. CMP #65 giữ ACC=66 và equal=false. JPE không taken nên ADD #1 làm ACC=67. JMP chọn OUT, phát ASCII 67 là character C; sau đó END trả control."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "C",
+        "67",
+        "ASCII 67",
+        "character C",
+        "C;67",
+        "67;C",
+        "ASCII 67;C"
+      ],
+      "semanticTags": [
+        "trace",
+        "PC",
+        "ACC",
+        "branch"
+      ]
+    },
+    {
+      "id": "P1-L30-CHECK-REQ-4.2-05-01",
+      "requirementId": "REQ-4.2-05-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the state changes caused by LDM #12, LDD 21 and STO 20.",
+        "vi": "Giải thích state change do LDM #12, LDD 21 và STO 20 gây ra."
+      },
+      "hint": {
+        "en": "Separate loading a literal, loading memory contents and storing ACC.",
+        "vi": "Tách load literal, load memory contents và store ACC."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "LDM #12 loads literal 12 into ACC. LDD 21 loads Memory[21] into ACC. STO 20 copies ACC into Memory[20] without changing ACC. These are data-movement instructions.",
+          "vi": "LDM #12 nạp literal 12 vào ACC. LDD 21 nạp Memory[21] vào ACC. STO 20 sao chép ACC vào Memory[20] mà không đổi ACC. Đây là data-movement instruction."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "data-movement",
+        "LDM",
+        "LDD",
+        "STO"
+      ]
+    },
+    {
+      "id": "P1-L30-CHECK-REQ-4.2-05-02",
+      "requirementId": "REQ-4.2-05-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the effects of IN and OUT in the syllabus instruction model.",
+        "vi": "Giải thích tác dụng của IN và OUT trong syllabus instruction model."
+      },
+      "hint": {
+        "en": "Use ASCII and ACC.",
+        "vi": "Dùng ASCII và ACC."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "IN keys in a character and stores its ASCII value in ACC. OUT outputs the character whose ASCII value is currently in ACC. The instructions use ACC as the I/O data register in this model.",
+          "vi": "IN nhập một character và lưu ASCII value vào ACC. OUT xuất character có ASCII value đang nằm trong ACC. Trong mô hình này instruction dùng ACC làm I/O data register."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "input",
+        "output",
+        "ASCII",
+        "ACC"
+      ]
+    },
+    {
+      "id": "P1-L30-CHECK-REQ-4.2-05-03",
+      "requirementId": "REQ-4.2-05-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how ADD, SUB, INC and DEC change processor state.",
+        "vi": "Giải thích ADD, SUB, INC và DEC thay đổi processor state như thế nào."
+      },
+      "hint": {
+        "en": "State the destination of each result.",
+        "vi": "Nêu destination của mỗi result."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "ADD and SUB combine ACC with an immediate value or addressed contents and store the result in ACC. INC adds one to ACC or IX; DEC subtracts one from ACC or IX, according to the supplied register operand.",
+          "vi": "ADD và SUB kết hợp ACC với immediate value hoặc addressed contents rồi lưu result trong ACC. INC cộng một vào ACC hoặc IX; DEC trừ một khỏi ACC hoặc IX theo register operand được cung cấp."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "arithmetic",
+        "ADD",
+        "SUB",
+        "INC",
+        "DEC"
+      ]
+    },
+    {
+      "id": "P1-L30-CHECK-REQ-4.2-05-04",
+      "requirementId": "REQ-4.2-05-04",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish JMP from JPE and JPN.",
+        "vi": "Phân biệt JMP với JPE và JPN."
+      },
+      "hint": {
+        "en": "One always changes flow; two depend on comparison state.",
+        "vi": "Một loại luôn đổi flow; hai loại phụ thuộc comparison state."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "JMP unconditionally loads the target address into PC. After a compare, JPE jumps when the comparison is true/equal and JPN jumps when it is false/not equal. If a conditional jump is not taken, execution continues at the next address.",
+          "vi": "JMP nạp target address vào PC vô điều kiện. Sau compare, JPE jump khi comparison true/equal và JPN jump khi false/not equal. Nếu conditional jump không taken, execution tiếp tục ở next address."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "jump",
+        "conditional",
+        "unconditional"
+      ]
+    },
+    {
+      "id": "P1-L30-CHECK-REQ-4.2-05-05",
+      "requirementId": "REQ-4.2-05-05",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the effect of CMP #65 and why ACC must remain unchanged.",
+        "vi": "Giải thích tác dụng của CMP #65 và vì sao ACC phải không đổi."
+      },
+      "hint": {
+        "en": "Comparison records a condition for a later jump.",
+        "vi": "Comparison ghi condition cho jump sau đó."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "CMP #65 compares ACC with literal 65 and records whether the condition is true or false for a following conditional jump. It does not replace ACC; changing ACC would destroy the value being tested.",
+          "vi": "CMP #65 so sánh ACC với literal 65 và ghi condition true hoặc false cho conditional jump tiếp theo. Nó không thay ACC; đổi ACC sẽ phá hủy value đang được kiểm tra."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "compare",
+        "CMP",
+        "status"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the destination state changed by each required instruction group.",
+      "vi": "Nêu destination state bị thay đổi bởi mỗi instruction group bắt buộc."
+    },
+    "answerPoints": [
+      {
+        "en": "Movement changes registers/memory; I/O uses ACC; arithmetic changes ACC/IX; compare changes condition state; jumps change PC.",
+        "vi": "Movement thay đổi register/memory; I/O dùng ACC; arithmetic thay đổi ACC/IX; compare đổi condition state; jump đổi PC."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "trace table",
+      "meaning": {
+        "en": "Ordered record of instruction and processor state after each step.",
+        "vi": "Bản ghi có thứ tự của instruction và processor state sau mỗi bước."
+      }
+    },
+    {
+      "term": "conditional jump",
+      "meaning": {
+        "en": "Change of PC only when a comparison condition is satisfied.",
+        "vi": "Thay đổi PC chỉ khi comparison condition được thỏa mãn."
+      }
+    },
+    {
+      "term": "data movement",
+      "meaning": {
+        "en": "Instruction that copies a value between registers or memory.",
+        "vi": "Instruction sao chép value giữa register hoặc memory."
+      }
+    },
+    {
+      "term": "compare",
+      "meaning": {
+        "en": "Instruction that records a condition without replacing ACC.",
+        "vi": "Instruction ghi condition mà không thay ACC."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "addressing-modes",
+    "bit-masking"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.2, pp. 20–21",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L30 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 124–129",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L30",
+  "contractCoverage": {
+    "B01": [
+      "P1-L30-objectives"
+    ],
+    "B02": [
+      "P1-L30-theory-1",
+      "P1-L30-theory-2",
+      "P1-L30-theory-3"
+    ],
+    "B03": [
+      "P1-L30-theory-1",
+      "P1-L30-theory-2",
+      "P1-L30-theory-3"
+    ],
+    "B04": [
+      "P1-L30-recognise-1"
+    ],
+    "B05": [
+      "P1-L30-worked-1",
+      "P1-L30-worked-2",
+      "P1-L30-worked-3",
+      "P1-L30-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L30"
+    ],
+    "B07": [
+      "P1-L30-CHECK-REQ-4.2-04-01",
+      "P1-L30-CHECK-REQ-4.2-05-01",
+      "P1-L30-CHECK-REQ-4.2-05-02",
+      "P1-L30-CHECK-REQ-4.2-05-03",
+      "P1-L30-CHECK-REQ-4.2-05-04",
+      "P1-L30-CHECK-REQ-4.2-05-05"
+    ],
+    "B08": [
+      "P1-L30-recognise-1"
+    ],
+    "B09": [
+      "P1-L30-recall"
+    ],
+    "B10": [
+      "P1-L30-glossary"
+    ],
+    "B11": [
+      "P1-L30-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

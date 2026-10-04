@@ -1,0 +1,627 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L26",
+  "slug": "performance-ports",
+  "sectionId": "4",
+  "strandId": "4.1",
+  "title": {
+    "en": "Processor performance and peripheral ports",
+    "vi": "Hiệu năng processor và peripheral port"
+  },
+  "question": {
+    "en": "Which change removes the real bottleneck, and which port carries the required signal?",
+    "vi": "Thay đổi nào loại bỏ bottleneck thực sự và port nào mang signal cần thiết?"
+  },
+  "opening": {
+    "en": "Performance is conditional: a faster component helps only when the workload can use it. Port choice is also a compatibility decision about the signal and device.",
+    "vi": "Performance phụ thuộc điều kiện: component nhanh hơn chỉ hữu ích khi workload dùng được nó. Chọn port cũng là quyết định tương thích về signal và device."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.1-05",
+      "text": {
+        "en": "Explain how processor type, cores, bus width, clock speed and cache contribute to performance.",
+        "vi": "Giải thích processor type, core, bus width, clock speed và cache đóng góp vào performance."
+      }
+    },
+    {
+      "id": "AC26-4.1-06",
+      "text": {
+        "en": "Explain how USB, HDMI and VGA connect peripheral devices.",
+        "vi": "Giải thích USB, HDMI và VGA kết nối peripheral device như thế nào."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.1-05-01",
+    "REQ-4.1-05-02",
+    "REQ-4.1-05-03",
+    "REQ-4.1-05-04",
+    "REQ-4.1-06-01",
+    "REQ-4.1-06-02",
+    "REQ-4.1-06-03"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L26-theory-1",
+      "title": {
+        "en": "Performance has a bottleneck",
+        "vi": "Performance có bottleneck"
+      },
+      "paragraphs": [
+        {
+          "en": "Processor type, number of cores, clock speed, bus width and cache influence different parts of a system. A valid explanation names the mechanism and the condition under which it matters.",
+          "vi": "Processor type, số core, clock speed, bus width và cache ảnh hưởng các phần khác nhau của hệ thống. Giải thích hợp lệ phải nêu cơ chế và điều kiện mà nó có tác dụng."
+        },
+        {
+          "en": "No single factor is a universal performance score. Workload, software, memory, I/O and thermal constraints can dominate.",
+          "vi": "Không có một factor nào là universal performance score. Workload, software, memory, I/O và thermal constraint có thể chi phối."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Change one factor at a time before attributing a result.",
+          "vi": "Thay đổi từng factor một trước khi kết luận nguyên nhân."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L26-theory-2",
+      "title": {
+        "en": "Processor type, cores, buses, clock and cache",
+        "vi": "Processor type, core, bus, clock và cache"
+      },
+      "paragraphs": [
+        {
+          "en": "Different processor types can provide different architectures, instruction capabilities and amounts of useful work per clock cycle, so a type suited to the workload may perform it faster. Extra cores help parallel work; higher clock speed provides more cycles; wider buses change transfer/addressing capacity; cache can avoid slower main-memory access.",
+          "vi": "Các processor type khác nhau có thể cung cấp architecture, instruction capability và lượng useful work mỗi clock cycle khác nhau, nên type phù hợp với workload có thể xử lý nhanh hơn. Core bổ sung giúp parallel work; clock speed cao hơn cung cấp nhiều cycle; bus rộng hơn thay đổi transfer/addressing capacity; cache có thể tránh lần truy cập main memory chậm hơn."
+        },
+        {
+          "en": "Every benefit has a boundary: software may not exploit a processor's features or extra cores, while serial work, cache misses, incompatible bus widths or I/O waits can remain.",
+          "vi": "Mỗi lợi ích có giới hạn: software có thể không tận dụng feature của processor hoặc core bổ sung, còn serial work, cache miss, bus width không tương thích hoặc I/O wait vẫn có thể tồn tại."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Use may or can unless the scenario fixes every other factor.",
+          "vi": "Dùng có thể trừ khi scenario đã khóa mọi factor khác."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L26-theory-3",
+      "title": {
+        "en": "Ports carry different signals",
+        "vi": "Port mang signal khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "USB is a general serial peripheral connection. HDMI carries digital video and audio. VGA carries analogue video and normally needs a separate audio connection.",
+          "vi": "USB là general serial peripheral connection. HDMI mang digital video và audio. VGA mang analogue video và thường cần audio connection riêng."
+        },
+        {
+          "en": "Choose a port by the device need and compatible endpoints, not by connector appearance alone.",
+          "vi": "Chọn port theo nhu cầu device và endpoint tương thích, không chỉ theo hình connector."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Avoid version-specific speed claims unless a question supplies the version.",
+          "vi": "Tránh speed claim riêng theo version trừ khi question cung cấp version."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Recommend one upgrade",
+      "vi": "Đề xuất một upgrade"
+    },
+    "prompt": {
+      "en": "A data-analysis program processes independent chunks but currently uses one core. The system has sufficient memory bandwidth.",
+      "vi": "Data-analysis program xử lý các chunk độc lập nhưng hiện dùng một core. Hệ thống có đủ memory bandwidth."
+    },
+    "steps": [
+      {
+        "id": "P1-L26-worked-1",
+        "action": {
+          "en": "Identify the workload property.",
+          "vi": "Xác định tính chất workload."
+        },
+        "result": {
+          "en": "Independent chunks can run in parallel.",
+          "vi": "Các chunk độc lập có thể chạy song song."
+        }
+      },
+      {
+        "id": "P1-L26-worked-2",
+        "action": {
+          "en": "Select a relevant factor.",
+          "vi": "Chọn factor phù hợp."
+        },
+        "result": {
+          "en": "A multi-core processor can execute multiple chunks concurrently.",
+          "vi": "Multi-core processor có thể thực hiện nhiều chunk đồng thời."
+        }
+      },
+      {
+        "id": "P1-L26-worked-3",
+        "action": {
+          "en": "State the limit.",
+          "vi": "Nêu giới hạn."
+        },
+        "result": {
+          "en": "Serial setup, coordination and software scaling prevent a guaranteed proportional speed-up.",
+          "vi": "Serial setup, coordination và software scaling ngăn việc bảo đảm tăng theo tỉ lệ."
+        }
+      }
+    ],
+    "result": {
+      "en": "The recommendation is conditional and names both the benefit and its limit.",
+      "vi": "Đề xuất có điều kiện và nêu cả lợi ích lẫn giới hạn."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for a workload bottleneck or a required signal type.",
+        "vi": "Tìm workload bottleneck hoặc loại signal cần dùng."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the factor or port.",
+        "vi": "Nêu factor hoặc port."
+      },
+      {
+        "en": "Explain the mechanism, then state the condition or limitation.",
+        "vi": "Giải thích cơ chế rồi nêu điều kiện hoặc giới hạn."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Twice the clock speed or cores always makes every program twice as fast.",
+          "vi": "Clock speed hoặc core gấp đôi luôn làm mọi program nhanh gấp đôi."
+        },
+        "correction": {
+          "en": "Whole-system gain depends on parallelism, work per cycle, memory, I/O, software and coordination.",
+          "vi": "Lợi ích toàn hệ thống phụ thuộc parallelism, work per cycle, memory, I/O, software và coordination."
+        }
+      },
+      {
+        "mistake": {
+          "en": "HDMI, VGA and USB are interchangeable display ports.",
+          "vi": "HDMI, VGA và USB là các display port thay thế nhau."
+        },
+        "correction": {
+          "en": "They carry different signals and serve different peripheral roles; compatibility must be stated.",
+          "vi": "Chúng mang signal khác nhau và phục vụ peripheral role khác nhau; phải nêu compatibility."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L26-recognise-1",
+        "title": {
+          "en": "Find the bottleneck",
+          "vi": "Tìm bottleneck"
+        },
+        "setup": {
+          "en": "A video export uses all cores but waits repeatedly for data from storage.",
+          "vi": "Video export dùng mọi core nhưng liên tục chờ data từ storage."
+        },
+        "prompt": {
+          "en": "Explain why adding more cores may have little effect.",
+          "vi": "Giải thích vì sao thêm core có thể ít tác dụng."
+        },
+        "expectedEvidence": {
+          "en": "Storage or I/O is the active bottleneck, so unused extra cores cannot remove that wait.",
+          "vi": "Storage hoặc I/O là bottleneck hiện tại, nên core bổ sung không dùng được không thể loại bỏ thời gian chờ."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-05-01",
+      "requirementId": "REQ-4.1-05-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how (i) processor type and (ii) number of cores may affect performance. State one condition or limit for each factor.",
+        "vi": "Giải thích (i) processor type và (ii) số core có thể ảnh hưởng performance như thế nào. Nêu một điều kiện hoặc giới hạn cho mỗi factor."
+      },
+      "hint": {
+        "en": "Separate architecture and workload fit from parallel work, serial work and coordination.",
+        "vi": "Tách architecture và mức phù hợp với workload khỏi parallel work, serial work và coordination."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A processor type whose architecture and instruction capabilities suit the workload may complete more useful work per cycle, but software, memory and the rest of the system can limit that advantage. More cores can execute parallelisable work at the same time, but serial sections, communication, scheduling overhead and software that cannot use extra cores limit the gain, so twice as many cores need not make the whole task twice as fast.",
+          "vi": "Processor type có architecture và instruction capability phù hợp với workload có thể hoàn thành nhiều useful work hơn mỗi cycle, nhưng software, memory và phần còn lại của hệ thống có thể giới hạn lợi ích đó. Nhiều core có thể thực hiện parallelisable work cùng lúc, nhưng serial section, communication, scheduling overhead và software không dùng được core bổ sung sẽ giới hạn lợi ích, nên số core gấp đôi không nhất thiết làm toàn bộ task nhanh gấp đôi."
+        },
+        "rubric": [
+          {
+            "en": "Processor type: links architecture, instruction capabilities or work per cycle to suitability for the workload, and states that software or another system bottleneck can limit the benefit.",
+            "vi": "Processor type: liên hệ architecture, instruction capability hoặc work per cycle với mức phù hợp cho workload, đồng thời nêu software hoặc system bottleneck khác có thể giới hạn lợi ích."
+          },
+          {
+            "en": "Number of cores: links extra cores to concurrent execution of parallelisable work, and states a valid limit such as serial work, communication, scheduling or software support.",
+            "vi": "Số core: liên hệ core bổ sung với concurrent execution của parallelisable work, đồng thời nêu giới hạn hợp lệ như serial work, communication, scheduling hoặc software support."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "processor-type",
+        "cores"
+      ]
+    },
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-05-02",
+      "requirementId": "REQ-4.1-05-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how address-bus width and data-bus width can affect performance.",
+        "vi": "Giải thích address-bus width và data-bus width có thể ảnh hưởng performance như thế nào."
+      },
+      "hint": {
+        "en": "The two widths change different limits.",
+        "vi": "Hai width thay đổi hai giới hạn khác nhau."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A wider address bus can address more memory locations directly. A wider data bus can transfer more bits per transfer, potentially reducing the number of transfers for a word. Actual performance also depends on compatible components and the workload.",
+          "vi": "Address bus rộng hơn có thể định địa chỉ trực tiếp nhiều memory location hơn. Data bus rộng hơn có thể chuyển nhiều bit hơn mỗi transfer, có thể giảm số transfer cho một word. Performance thực tế còn phụ thuộc component tương thích và workload."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bus-width",
+        "address-bus",
+        "data-bus"
+      ]
+    },
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-05-03",
+      "requirementId": "REQ-4.1-05-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how clock speed contributes to processor performance and state one limitation.",
+        "vi": "Giải thích clock speed đóng góp vào processor performance và nêu một giới hạn."
+      },
+      "hint": {
+        "en": "More cycles per second is not a universal benchmark.",
+        "vi": "Nhiều cycle mỗi giây không phải universal benchmark."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A higher clock speed supplies more cycles per second, so the same processor design may complete more operations in a given time. Performance still depends on work per cycle, memory or I/O waits, software and thermal limits; increasing clock speed does not guarantee the same proportional whole-system gain.",
+          "vi": "Clock speed cao hơn cung cấp nhiều cycle mỗi giây, nên cùng processor design có thể hoàn thành nhiều operation hơn trong một khoảng thời gian. Performance vẫn phụ thuộc work per cycle, memory/I/O wait, software và thermal limit; tăng clock speed không bảo đảm toàn hệ thống tăng theo cùng tỉ lệ."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "clock-speed",
+        "performance"
+      ]
+    },
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-05-04",
+      "requirementId": "REQ-4.1-05-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how cache memory can improve processor performance and what happens on a cache miss.",
+        "vi": "Giải thích cache memory có thể tăng processor performance và điều gì xảy ra khi cache miss."
+      },
+      "hint": {
+        "en": "Contrast a fast nearby copy with slower main memory.",
+        "vi": "So sánh bản sao nhanh ở gần với main memory chậm hơn."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Cache keeps copies of frequently or recently used instructions and data close to the processor. A cache hit avoids a slower main-memory access; a cache miss still requires the processor to fetch from main memory, so cache does not remove every wait.",
+          "vi": "Cache giữ bản sao instruction và data dùng thường xuyên hoặc gần đây ở gần processor. Cache hit tránh một lần truy cập main memory chậm hơn; cache miss vẫn buộc processor fetch từ main memory, nên cache không loại bỏ mọi thời gian chờ."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "cache",
+        "cache-hit",
+        "cache-miss"
+      ]
+    },
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-06-01",
+      "requirementId": "REQ-4.1-06-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why USB is suitable for connecting a keyboard or external storage device.",
+        "vi": "Giải thích vì sao USB phù hợp để kết nối keyboard hoặc external storage device."
+      },
+      "hint": {
+        "en": "Describe peripheral data exchange without quoting a version-specific speed.",
+        "vi": "Mô tả peripheral data exchange mà không nêu speed riêng của một version."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "USB provides a standard serial connection for peripheral data exchange and can support device detection and power for compatible devices. Capability depends on the device, cable and USB versions at both ends.",
+          "vi": "USB cung cấp standard serial connection để trao đổi peripheral data và có thể hỗ trợ device detection cùng power cho device tương thích. Khả năng phụ thuộc device, cable và USB version ở cả hai đầu."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "USB",
+        "peripheral"
+      ]
+    },
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-06-02",
+      "requirementId": "REQ-4.1-06-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why HDMI is suitable for a modern display with speakers.",
+        "vi": "Giải thích vì sao HDMI phù hợp cho modern display có speaker."
+      },
+      "hint": {
+        "en": "Name the signal types it carries.",
+        "vi": "Nêu các loại signal mà nó mang."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "HDMI carries digital video and digital audio over one compatible connection, so it can send both picture and sound to the display. The devices and cable must support the required HDMI features.",
+          "vi": "HDMI mang digital video và digital audio qua một connection tương thích, nên có thể gửi cả hình và âm thanh tới display. Device và cable phải hỗ trợ HDMI feature cần dùng."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "HDMI",
+        "digital-video",
+        "digital-audio"
+      ]
+    },
+    {
+      "id": "P1-L26-CHECK-REQ-4.1-06-03",
+      "requirementId": "REQ-4.1-06-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain what VGA carries and one limitation compared with HDMI.",
+        "vi": "Giải thích VGA mang gì và một giới hạn so với HDMI."
+      },
+      "hint": {
+        "en": "Identify analogue video and audio handling.",
+        "vi": "Xác định analogue video và cách xử lý audio."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "VGA carries an analogue video signal. It does not normally carry audio, so sound needs a separate connection, and digital displays require conversion compared with a digital HDMI path.",
+          "vi": "VGA mang analogue video signal. Nó thường không mang audio nên âm thanh cần connection riêng, và digital display cần conversion so với digital HDMI path."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "VGA",
+        "analogue-video"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "For each performance factor and port, state one mechanism and one condition.",
+      "vi": "Với mỗi performance factor và port, nêu một cơ chế và một điều kiện."
+    },
+    "answerPoints": [
+      {
+        "en": "Cores need parallel work; clock needs useful work per cycle; cache needs hits; bus width needs compatible transfers; ports need compatible signal use.",
+        "vi": "Core cần parallel work; clock cần useful work per cycle; cache cần hit; bus width cần transfer tương thích; port cần signal use tương thích."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "core",
+      "meaning": {
+        "en": "A processor unit containing control, arithmetic/logic and register resources.",
+        "vi": "Một processor unit chứa control, arithmetic/logic và register resource."
+      }
+    },
+    {
+      "term": "cache memory",
+      "meaning": {
+        "en": "Fast memory near the processor holding copies of selected instructions and data.",
+        "vi": "Memory nhanh gần processor giữ bản sao instruction và data được chọn."
+      }
+    },
+    {
+      "term": "bottleneck",
+      "meaning": {
+        "en": "The limiting part of a workload or system.",
+        "vi": "Phần giới hạn workload hoặc hệ thống."
+      }
+    },
+    {
+      "term": "USB",
+      "meaning": {
+        "en": "A serial connection used by many peripheral devices.",
+        "vi": "Serial connection dùng bởi nhiều peripheral device."
+      }
+    },
+    {
+      "term": "HDMI",
+      "meaning": {
+        "en": "A digital audio and video connection.",
+        "vi": "Digital audio và video connection."
+      }
+    },
+    {
+      "term": "VGA",
+      "meaning": {
+        "en": "An analogue video connection.",
+        "vi": "Analogue video connection."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "cpu-architecture",
+    "fetch-execute-interrupts"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.1, p. 19",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L26 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 113–116",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L26",
+  "contractCoverage": {
+    "B01": [
+      "P1-L26-objectives"
+    ],
+    "B02": [
+      "P1-L26-theory-1",
+      "P1-L26-theory-2",
+      "P1-L26-theory-3"
+    ],
+    "B03": [
+      "P1-L26-theory-1",
+      "P1-L26-theory-2",
+      "P1-L26-theory-3"
+    ],
+    "B04": [
+      "P1-L26-recognise-1"
+    ],
+    "B05": [
+      "P1-L26-worked-1",
+      "P1-L26-worked-2",
+      "P1-L26-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L26"
+    ],
+    "B07": [
+      "P1-L26-CHECK-REQ-4.1-05-01",
+      "P1-L26-CHECK-REQ-4.1-05-02",
+      "P1-L26-CHECK-REQ-4.1-05-03",
+      "P1-L26-CHECK-REQ-4.1-05-04",
+      "P1-L26-CHECK-REQ-4.1-06-01",
+      "P1-L26-CHECK-REQ-4.1-06-02",
+      "P1-L26-CHECK-REQ-4.1-06-03"
+    ],
+    "B08": [
+      "P1-L26-recognise-1"
+    ],
+    "B09": [
+      "P1-L26-recall"
+    ],
+    "B10": [
+      "P1-L26-glossary"
+    ],
+    "B11": [
+      "P1-L26-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

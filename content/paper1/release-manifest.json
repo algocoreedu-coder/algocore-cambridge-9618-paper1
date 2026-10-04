@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "CAIE-9618-P1-2026",
-  "releaseId": "paper1-chapter3-2026.10.03-v1.0.0",
+  "releaseId": "paper1-chapter4-2026.10.04-v1.0.0",
   "lessons": [
     {
       "lessonId": "P1-L01",
@@ -209,6 +209,70 @@
       "state": "available",
       "contentVersion": "1.0.0",
       "modelVersions": ["VIS-P1-L24@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L25",
+      "slug": "cpu-architecture",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L25@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L26",
+      "slug": "performance-ports",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L26@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L27",
+      "slug": "fetch-execute-interrupts",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L27@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L28",
+      "slug": "assembly-translation",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L28@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L29",
+      "slug": "addressing-modes",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L29@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L30",
+      "slug": "assembly-tracing",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L30@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L31",
+      "slug": "bit-shifts",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L31@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L32",
+      "slug": "bit-masking",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L32@1"],
       "assessmentVersion": "1.0.0"
     }
   ]

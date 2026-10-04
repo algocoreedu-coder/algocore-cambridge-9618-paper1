@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L25",
+  "slug": "cpu-architecture",
+  "sectionId": "4",
+  "strandId": "4.1",
+  "title": {
+    "en": "CPU architecture, registers and buses",
+    "vi": "Kiến trúc CPU, register và các bus"
+  },
+  "question": {
+    "en": "How do instructions, addresses and data move through a stored-program computer?",
+    "vi": "Instruction, address và data di chuyển trong máy tính stored-program như thế nào?"
+  },
+  "opening": {
+    "en": "A processor works because every register and bus has a precise job. The key is to keep an address separate from the contents stored at that address.",
+    "vi": "Processor hoạt động vì mỗi register và bus có một nhiệm vụ chính xác. Điểm then chốt là tách address khỏi contents lưu tại address đó."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.1-01",
+      "text": {
+        "en": "Explain the basic Von Neumann model and stored-program concept.",
+        "vi": "Giải thích mô hình Von Neumann cơ bản và stored-program concept."
+      }
+    },
+    {
+      "id": "AC26-4.1-02",
+      "text": {
+        "en": "Explain the purpose and roles of general-purpose and special-purpose registers.",
+        "vi": "Giải thích mục đích và vai trò của general-purpose và special-purpose register."
+      }
+    },
+    {
+      "id": "AC26-4.1-03",
+      "text": {
+        "en": "Explain the roles of the ALU, Control Unit, system clock and IAS.",
+        "vi": "Giải thích vai trò của ALU, Control Unit, system clock và IAS."
+      }
+    },
+    {
+      "id": "AC26-4.1-04",
+      "text": {
+        "en": "Explain transfer through the address, data and control buses.",
+        "vi": "Giải thích transfer qua address, data và control bus."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.1-01-01",
+    "REQ-4.1-02-01",
+    "REQ-4.1-02-02",
+    "REQ-4.1-03-01",
+    "REQ-4.1-03-02",
+    "REQ-4.1-04-01",
+    "REQ-4.1-04-02",
+    "REQ-4.1-04-03"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L25-theory-1",
+      "title": {
+        "en": "Stored programs share memory",
+        "vi": "Program lưu trữ dùng chung memory"
+      },
+      "paragraphs": [
+        {
+          "en": "In the Von Neumann model, instructions and data share memory. The CPU fetches an instruction, decodes it and executes it, usually following the sequence of addresses held by the PC.",
+          "vi": "Trong mô hình Von Neumann, instruction và data dùng chung memory. CPU fetch instruction, decode rồi execute, thường theo chuỗi address do PC giữ."
+        },
+        {
+          "en": "IAS is the primary memory that holds active programs and data for direct processor access. It is not a CPU register or permanent secondary storage.",
+          "vi": "IAS là primary memory giữ program và data đang hoạt động để processor truy cập trực tiếp. IAS không phải CPU register hay secondary storage lâu dài."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A stored program can be changed by loading different instructions into memory.",
+          "vi": "Stored program có thể thay đổi bằng cách nạp instruction khác vào memory."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L25-theory-2",
+      "title": {
+        "en": "Processor components and registers",
+        "vi": "Thành phần processor và register"
+      },
+      "paragraphs": [
+        {
+          "en": "The ALU performs arithmetic and logic. The Control Unit decodes instructions and coordinates state changes. The system clock provides timing signals.",
+          "vi": "ALU thực hiện arithmetic và logic. Control Unit decode instruction và phối hợp thay đổi trạng thái. System clock cung cấp timing signal."
+        },
+        {
+          "en": "PC and MAR hold addresses. MDR and CIR hold transferred contents or the current instruction. ACC holds working values, IX supports indexed addressing, and the Status Register stores condition flags.",
+          "vi": "PC và MAR giữ address. MDR và CIR giữ transferred contents hoặc current instruction. ACC giữ working value, IX hỗ trợ indexed addressing và Status Register giữ condition flag."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Register names describe roles, not the data type of every value they can contain.",
+          "vi": "Tên register mô tả vai trò, không mô tả data type của mọi giá trị chúng có thể giữ."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L25-theory-3",
+      "title": {
+        "en": "Three buses, three meanings",
+        "vi": "Ba bus, ba ý nghĩa"
+      },
+      "paragraphs": [
+        {
+          "en": "The address bus selects a location. The data bus transports data or instructions. The control bus transports signals such as READ and WRITE.",
+          "vi": "Address bus chọn một location. Data bus vận chuyển data hoặc instruction. Control bus vận chuyển signal như READ và WRITE."
+        },
+        {
+          "en": "For a memory read, MAR supplies the address, the Control Unit requests READ, and memory returns the contents to MDR. For a write, the data direction reverses.",
+          "vi": "Trong memory read, MAR cấp address, Control Unit yêu cầu READ và memory trả contents về MDR. Trong write, hướng data đảo lại."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Address 100 and Memory[100] are different values.",
+          "vi": "Address 100 và Memory[100] là hai giá trị khác nhau."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace one memory read",
+      "vi": "Trace một lần đọc memory"
+    },
+    "prompt": {
+      "en": "Memory[100] contains 42. Trace a CPU read into MDR.",
+      "vi": "Memory[100] chứa 42. Trace CPU đọc vào MDR."
+    },
+    "steps": [
+      {
+        "id": "P1-L25-worked-1",
+        "action": {
+          "en": "Select the location.",
+          "vi": "Chọn location."
+        },
+        "result": {
+          "en": "MAR receives address 100 and places 100 on the address bus.",
+          "vi": "MAR nhận address 100 và đặt 100 lên address bus."
+        }
+      },
+      {
+        "id": "P1-L25-worked-2",
+        "action": {
+          "en": "Request the operation.",
+          "vi": "Yêu cầu operation."
+        },
+        "result": {
+          "en": "The Control Unit places READ on the control bus.",
+          "vi": "Control Unit đặt READ lên control bus."
+        }
+      },
+      {
+        "id": "P1-L25-worked-3",
+        "action": {
+          "en": "Transfer the contents.",
+          "vi": "Chuyển contents."
+        },
+        "result": {
+          "en": "Memory sends contents 42 over the data bus to MDR.",
+          "vi": "Memory gửi contents 42 qua data bus tới MDR."
+        }
+      }
+    ],
+    "result": {
+      "en": "MAR=100 and MDR=42; the address never becomes the data.",
+      "vi": "MAR=100 và MDR=42; address không biến thành data."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for words such as address, contents, signal, next instruction or result.",
+        "vi": "Tìm các từ như address, contents, signal, next instruction hoặc result."
+      }
+    ],
+    "method": [
+      {
+        "en": "Label every value as address, contents, instruction, signal or result.",
+        "vi": "Gắn nhãn mỗi giá trị là address, contents, instruction, signal hoặc result."
+      },
+      {
+        "en": "Name the source, bus and destination for each transfer.",
+        "vi": "Nêu source, bus và destination cho mỗi transfer."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "The PC stores the current instruction.",
+          "vi": "PC giữ current instruction."
+        },
+        "correction": {
+          "en": "In the declared model, PC stores the address of the next instruction to fetch; CIR holds the current instruction.",
+          "vi": "Trong mô hình đã công bố, PC giữ address của instruction tiếp theo cần fetch; CIR giữ current instruction."
+        }
+      },
+      {
+        "mistake": {
+          "en": "MAR contains the data read from memory.",
+          "vi": "MAR chứa data đọc từ memory."
+        },
+        "correction": {
+          "en": "MAR holds an address; MDR holds the transferred contents.",
+          "vi": "MAR giữ address; MDR giữ transferred contents."
+        }
+      },
+      {
+        "mistake": {
+          "en": "IAS is a register or secondary storage.",
+          "vi": "IAS là register hoặc secondary storage."
+        },
+        "correction": {
+          "en": "IAS is primary memory holding active instructions and data.",
+          "vi": "IAS là primary memory giữ instruction và data đang hoạt động."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L25-recognise-1",
+        "title": {
+          "en": "Choose the correct path",
+          "vi": "Chọn đúng đường"
+        },
+        "setup": {
+          "en": "A diagram shows 100 leaving MAR and 42 returning from memory.",
+          "vi": "Diagram cho thấy 100 rời MAR và 42 trở về từ memory."
+        },
+        "prompt": {
+          "en": "Name both buses and the destination register.",
+          "vi": "Nêu tên hai bus và destination register."
+        },
+        "expectedEvidence": {
+          "en": "100 uses the address bus; 42 uses the data bus and enters MDR.",
+          "vi": "100 đi qua address bus; 42 đi qua data bus và vào MDR."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-01-01",
+      "requirementId": "REQ-4.1-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the stored-program concept in a Von Neumann computer.",
+        "vi": "Giải thích stored-program concept trong máy tính Von Neumann."
+      },
+      "hint": {
+        "en": "State what shares memory and how instructions are processed.",
+        "vi": "Nêu những gì dùng chung memory và cách instruction được xử lý."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Program instructions and data are stored in the same memory. The processor fetches an instruction from memory, decodes it and executes it; normally the PC identifies the next instruction to fetch.",
+          "vi": "Program instruction và data được lưu trong cùng memory. Processor fetch một instruction từ memory, decode rồi execute; thông thường PC xác định địa chỉ instruction tiếp theo cần fetch."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "von-neumann",
+        "stored-program"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-02-01",
+      "requirementId": "REQ-4.1-02-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish a general-purpose register from a special-purpose register and give one example of each.",
+        "vi": "Phân biệt general-purpose register với special-purpose register và nêu một ví dụ cho mỗi loại."
+      },
+      "hint": {
+        "en": "Compare how freely each register can be used.",
+        "vi": "So sánh mức độ tự do khi sử dụng mỗi register."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A general-purpose register holds working values for a range of operations; the ACC is the general-purpose register in the syllabus model. A special-purpose register has a defined processor role, such as the PC holding the address of the next instruction.",
+          "vi": "General-purpose register giữ working value cho nhiều operation; ACC là general-purpose register trong mô hình syllabus. Special-purpose register có vai trò processor xác định, ví dụ PC giữ địa chỉ instruction tiếp theo."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "register",
+        "general-purpose",
+        "special-purpose"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-02-02",
+      "requirementId": "REQ-4.1-02-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "State the role of PC, MAR, MDR, CIR, ACC, IX and the Status Register.",
+        "vi": "Nêu vai trò của PC, MAR, MDR, CIR, ACC, IX và Status Register."
+      },
+      "hint": {
+        "en": "Separate addresses, contents, the current instruction, working data and flags.",
+        "vi": "Tách địa chỉ, contents, current instruction, working data và flags."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "PC holds the next-instruction address; MAR holds the memory address being accessed; MDR holds data or an instruction moving to or from memory; CIR holds the current instruction; ACC holds working data and ALU results; IX supports indexed addressing; the Status Register stores condition flags produced by operations.",
+          "vi": "PC giữ địa chỉ instruction tiếp theo; MAR giữ memory address đang được truy cập; MDR giữ data hoặc instruction đang đi tới hay từ memory; CIR giữ current instruction; ACC giữ working data và kết quả ALU; IX hỗ trợ indexed addressing; Status Register giữ condition flag do operation tạo ra."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "PC",
+        "MAR",
+        "MDR",
+        "CIR",
+        "ACC",
+        "IX",
+        "status-register"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-03-01",
+      "requirementId": "REQ-4.1-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the distinct roles of the ALU and Control Unit.",
+        "vi": "Giải thích vai trò riêng của ALU và Control Unit."
+      },
+      "hint": {
+        "en": "One processes values; the other coordinates components.",
+        "vi": "Một thành phần xử lý giá trị; thành phần còn lại phối hợp các bộ phận."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The ALU performs arithmetic and logical operations. The Control Unit decodes instructions and issues control signals so registers, memory, the ALU and I/O perform the required operations in sequence.",
+          "vi": "ALU thực hiện arithmetic và logical operation. Control Unit decode instruction rồi phát control signal để register, memory, ALU và I/O thực hiện đúng operation theo thứ tự."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "ALU",
+        "control-unit"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-03-02",
+      "requirementId": "REQ-4.1-03-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the roles of the system clock and Immediate Access Store (IAS).",
+        "vi": "Giải thích vai trò của system clock và Immediate Access Store (IAS)."
+      },
+      "hint": {
+        "en": "Link timing to coordination and IAS to active programs and data.",
+        "vi": "Liên hệ timing với coordination và IAS với program/data đang hoạt động."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The system clock supplies timing signals that synchronise processor operations. IAS is primary memory holding programs and data currently needed by the processor, giving faster access than secondary storage.",
+          "vi": "System clock cung cấp timing signal để đồng bộ operation của processor. IAS là primary memory giữ program và data processor đang cần, cho phép truy cập nhanh hơn secondary storage."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "system-clock",
+        "IAS"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-04-01",
+      "requirementId": "REQ-4.1-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain what the address bus carries during a read from memory location 100.",
+        "vi": "Giải thích address bus mang gì trong lần đọc memory location 100."
+      },
+      "hint": {
+        "en": "Name the value and its direction between CPU and memory.",
+        "vi": "Nêu giá trị và hướng đi giữa CPU với memory."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The MAR places address 100 on the address bus so memory can select location 100. In the taught CPU-memory model, this address travels from CPU to memory; it is not the contents stored at location 100.",
+          "vi": "MAR đặt address 100 lên address bus để memory chọn location 100. Trong mô hình CPU-memory đang học, địa chỉ đi từ CPU tới memory; đó không phải contents lưu tại location 100."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "address-bus",
+        "MAR"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-04-02",
+      "requirementId": "REQ-4.1-04-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain what the data bus carries when memory location 100 contains 42 and is read.",
+        "vi": "Giải thích data bus mang gì khi memory location 100 chứa 42 và được đọc."
+      },
+      "hint": {
+        "en": "Keep address 100 separate from contents 42.",
+        "vi": "Tách address 100 khỏi contents 42."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "After memory selects address 100, contents 42 travel from memory to the MDR over the data bus. The data bus is bidirectional because later a write can carry data from the processor to memory.",
+          "vi": "Sau khi memory chọn address 100, contents 42 đi từ memory tới MDR qua data bus. Data bus là bidirectional vì trong lần write nó có thể mang data từ processor tới memory."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "data-bus",
+        "MDR"
+      ]
+    },
+    {
+      "id": "P1-L25-CHECK-REQ-4.1-04-03",
+      "requirementId": "REQ-4.1-04-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of the control bus in a memory read and a memory write.",
+        "vi": "Giải thích vai trò control bus trong memory read và memory write."
+      },
+      "hint": {
+        "en": "Use READ and WRITE as examples of control signals.",
+        "vi": "Dùng READ và WRITE làm ví dụ control signal."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The Control Unit places a READ or WRITE signal on the control bus to tell memory which operation to perform. The control bus carries coordinating signals; it does not carry the selected address or the payload contents.",
+          "vi": "Control Unit đặt signal READ hoặc WRITE lên control bus để báo memory thực hiện operation nào. Control bus mang signal phối hợp; nó không mang selected address hay payload contents."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "control-bus",
+        "control-signal"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State one sentence for the role of each CPU component, register and bus in this lesson.",
+      "vi": "Nêu một câu về vai trò của mỗi CPU component, register và bus trong bài."
+    },
+    "answerPoints": [
+      {
+        "en": "Keep addresses in PC/MAR, transferred contents in MDR, the current instruction in CIR and working results in ACC.",
+        "vi": "Giữ address trong PC/MAR, transferred contents trong MDR, current instruction trong CIR và working result trong ACC."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "stored-program concept",
+      "meaning": {
+        "en": "Instructions and data are stored in memory for the processor to fetch.",
+        "vi": "Instruction và data được lưu trong memory để processor fetch."
+      }
+    },
+    {
+      "term": "register",
+      "meaning": {
+        "en": "Small fast storage inside the processor with a defined role.",
+        "vi": "Vùng lưu trữ nhỏ, nhanh trong processor với vai trò xác định."
+      }
+    },
+    {
+      "term": "address bus",
+      "meaning": {
+        "en": "Carries the address of a selected location.",
+        "vi": "Mang address của location được chọn."
+      }
+    },
+    {
+      "term": "data bus",
+      "meaning": {
+        "en": "Carries data or instructions between components.",
+        "vi": "Mang data hoặc instruction giữa các component."
+      }
+    },
+    {
+      "term": "control bus",
+      "meaning": {
+        "en": "Carries control and timing signals.",
+        "vi": "Mang control và timing signal."
+      }
+    },
+    {
+      "term": "IAS",
+      "meaning": {
+        "en": "Primary memory holding active programs and data.",
+        "vi": "Primary memory giữ program và data đang hoạt động."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "fetch-execute-interrupts",
+    "performance-ports"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.1, p. 19",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L25 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 107–113",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L25",
+  "contractCoverage": {
+    "B01": [
+      "P1-L25-objectives"
+    ],
+    "B02": [
+      "P1-L25-theory-1",
+      "P1-L25-theory-2",
+      "P1-L25-theory-3"
+    ],
+    "B03": [
+      "P1-L25-theory-1",
+      "P1-L25-theory-2",
+      "P1-L25-theory-3"
+    ],
+    "B04": [
+      "P1-L25-recognise-1"
+    ],
+    "B05": [
+      "P1-L25-worked-1",
+      "P1-L25-worked-2",
+      "P1-L25-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L25"
+    ],
+    "B07": [
+      "P1-L25-CHECK-REQ-4.1-01-01",
+      "P1-L25-CHECK-REQ-4.1-02-01",
+      "P1-L25-CHECK-REQ-4.1-02-02",
+      "P1-L25-CHECK-REQ-4.1-03-01",
+      "P1-L25-CHECK-REQ-4.1-03-02",
+      "P1-L25-CHECK-REQ-4.1-04-01",
+      "P1-L25-CHECK-REQ-4.1-04-02",
+      "P1-L25-CHECK-REQ-4.1-04-03"
+    ],
+    "B08": [
+      "P1-L25-recognise-1"
+    ],
+    "B09": [
+      "P1-L25-recall"
+    ],
+    "B10": [
+      "P1-L25-glossary"
+    ],
+    "B11": [
+      "P1-L25-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

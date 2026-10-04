@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import {
   createStudentProgressScope,
+  isValidStudentProgressScope,
   safeLearningPath,
   STUDENT_SESSION_COOKIE,
   STUDENT_PROGRESS_SCOPE_COOKIE,
@@ -22,7 +23,10 @@ export function proxy(request: NextRequest) {
     if (hasValidSession) {
       const redirectTo = safeLearningPath(request.nextUrl.searchParams.get("next"), locale);
       const response = NextResponse.redirect(new URL(redirectTo, request.url));
-      response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, createStudentProgressScope(), studentProgressScopeCookieOptions);
+      const progressScope = request.cookies.get(STUDENT_PROGRESS_SCOPE_COOKIE)?.value;
+      if (!isValidStudentProgressScope(progressScope)) {
+        response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, createStudentProgressScope(), studentProgressScopeCookieOptions);
+      }
       return response;
     }
     return NextResponse.next({ request: { headers: requestHeaders } });
@@ -40,9 +44,9 @@ export function proxy(request: NextRequest) {
   }
 
   const response = NextResponse.next({ request: { headers: requestHeaders } });
-  const expectedProgressScope = createStudentProgressScope();
-  if (request.cookies.get(STUDENT_PROGRESS_SCOPE_COOKIE)?.value !== expectedProgressScope) {
-    response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, expectedProgressScope, studentProgressScopeCookieOptions);
+  const progressScope = request.cookies.get(STUDENT_PROGRESS_SCOPE_COOKIE)?.value;
+  if (!isValidStudentProgressScope(progressScope)) {
+    response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, createStudentProgressScope(), studentProgressScopeCookieOptions);
   }
   return response;
 }

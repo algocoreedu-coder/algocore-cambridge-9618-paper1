@@ -1,0 +1,1097 @@
+[
+  {
+    "lessonId": "P1-L25",
+    "visualId": "VIS-P1-L25",
+    "fixtures": [
+      {
+        "mode": "read",
+        "address": 100,
+        "payload": 42,
+        "frames": [
+          {
+            "id": "inspect",
+            "MAR": "—",
+            "MDR": "—",
+            "memoryValue": 42
+          },
+          {
+            "id": "address",
+            "MAR": 100,
+            "addressBus": 100
+          },
+          {
+            "id": "control",
+            "memoryControl": "READ",
+            "cuState": "ISSUE READ"
+          },
+          {
+            "id": "commit",
+            "MDR": 42,
+            "dataBus": 42,
+            "memoryValue": 42
+          }
+        ]
+      },
+      {
+        "mode": "write",
+        "address": 100,
+        "payload": 42,
+        "frames": [
+          {
+            "id": "inspect",
+            "MDR": 42,
+            "memoryValue": 0
+          },
+          {
+            "id": "address",
+            "MAR": 100,
+            "addressBus": 100
+          },
+          {
+            "id": "control",
+            "memoryControl": "WRITE",
+            "cuState": "ISSUE WRITE"
+          },
+          {
+            "id": "commit",
+            "MDR": 42,
+            "dataBus": 42,
+            "memoryValue": 42
+          }
+        ]
+      }
+    ],
+    "invariants": [
+      "address bus selects a location and never carries the stored payload",
+      "data direction is memory-to-MDR for READ and MDR-to-memory for WRITE",
+      "each frame emphasizes at most three semantic objects"
+    ]
+  },
+  {
+    "lessonId": "P1-L26",
+    "visualId": "VIS-P1-L26",
+    "cases": {
+      "processor": [
+        "workload-instruction-profile",
+        "different-processor-type",
+        "architecture-may-match-workload",
+        "software-system-and-task-still-matter"
+      ],
+      "clock": [
+        "cpu-bound",
+        "higher-clock",
+        "more-cycles-per-second",
+        "cpi-and-io-still-matter"
+      ],
+      "cores": [
+        "parallelisable-work",
+        "more-cores",
+        "parts-run-concurrently",
+        "serial-work-and-coordination"
+      ],
+      "cache": [
+        "repeated-data-read",
+        "nearer-copy",
+        "cache-hit-reduces-wait",
+        "cache-miss-needs-slower-memory"
+      ],
+      "bus": [
+        "word-transfer",
+        "wider-data-bus",
+        "more-bits-per-transfer",
+        "compatibility-and-workload"
+      ],
+      "usb": [
+        "peripheral-data",
+        "usb",
+        "data-exchange",
+        "version-device-cable"
+      ],
+      "hdmi": [
+        "digital-display",
+        "hdmi",
+        "digital-video-and-audio",
+        "matching-compatible-endpoints"
+      ],
+      "vga": [
+        "analogue-display",
+        "vga",
+        "analogue-video",
+        "no-standard-audio"
+      ]
+    },
+    "invariants": [
+      "performance outcomes are qualitative and conditional, never benchmark percentages",
+      "HDMI carries digital video and audio in this scope",
+      "VGA carries analogue video and no standard audio"
+    ]
+  },
+  {
+    "lessonId": "P1-L27",
+    "visualId": "VIS-P1-L27",
+    "model": "M1",
+    "operand": 42,
+    "packets": {
+      "fetch": [
+        {
+          "id": "mar-from-pc",
+          "PC": 200,
+          "MAR": 200
+        },
+        {
+          "id": "increment-pc",
+          "PC": 201,
+          "MAR": 200
+        },
+        {
+          "id": "instruction-to-mdr",
+          "MDR": "LDD 100",
+          "memoryControl": "READ",
+          "cuState": "FETCH INSTRUCTION"
+        },
+        {
+          "id": "mdr-to-cir",
+          "MDR": "LDD 100",
+          "CIR": "LDD 100",
+          "memoryControl": "—",
+          "cuState": "LOAD CIR"
+        }
+      ],
+      "execute": [
+        {
+          "id": "decode",
+          "CIR": "LDD 100",
+          "memoryControl": "—",
+          "cuState": "DECODE LDD"
+        },
+        {
+          "id": "operand-address",
+          "MAR": 100,
+          "addressBus": 100,
+          "cuState": "SELECT OPERAND"
+        },
+        {
+          "id": "operand-read",
+          "MDR": 42,
+          "dataBus": 42,
+          "memoryControl": "READ",
+          "cuState": "READ OPERAND"
+        },
+        {
+          "id": "acc-from-mdr",
+          "ACC": 42,
+          "memoryControl": "—",
+          "cuState": "EXECUTE LDD"
+        }
+      ],
+      "interrupt": [
+        {
+          "id": "interrupt-check",
+          "PC": 201,
+          "ACC": 42,
+          "status": "Z=1",
+          "interruptRequest": "PENDING",
+          "cuState": "CHECK INTERRUPT"
+        },
+        {
+          "id": "save-context",
+          "savedContext": {
+            "PC": 201,
+            "ACC": 42,
+            "status": "Z=1"
+          },
+          "interruptRequest": "PENDING",
+          "cuState": "SAVE PC/ACC/STATUS"
+        },
+        {
+          "id": "dispatch",
+          "PC": 900,
+          "interruptRequest": "PENDING",
+          "cuState": "DISPATCH ISR"
+        },
+        {
+          "id": "service",
+          "PC": 901,
+          "ACC": 7,
+          "status": "Z=0",
+          "interruptRequest": "PENDING",
+          "cuState": "SERVICE DEVICE"
+        }
+      ],
+      "return": [
+        {
+          "id": "isr-complete",
+          "PC": 901,
+          "ACC": 7,
+          "status": "Z=0",
+          "interruptRequest": "—",
+          "cuState": "ISR COMPLETE"
+        },
+        {
+          "id": "restore-status",
+          "status": "Z=1",
+          "cuState": "RESTORE STATUS"
+        },
+        {
+          "id": "restore-acc",
+          "ACC": 42,
+          "cuState": "RESTORE ACC"
+        },
+        {
+          "id": "restore-pc",
+          "PC": 201,
+          "ACC": 42,
+          "status": "Z=1",
+          "cuState": "RESUME MAIN PROGRAM"
+        }
+      ],
+      "interruptNone": [
+        {
+          "id": "interrupt-check",
+          "PC": 201,
+          "ACC": 42,
+          "status": "Z=1",
+          "interruptRequest": "NONE",
+          "cuState": "CHECK INTERRUPT"
+        },
+        {
+          "id": "save-context",
+          "PC": 201,
+          "ACC": 42,
+          "status": "Z=1",
+          "interruptRequest": "NONE",
+          "cuState": "NEXT CYCLE"
+        },
+        {
+          "id": "dispatch",
+          "PC": 201,
+          "ACC": 42,
+          "status": "Z=1",
+          "interruptRequest": "NONE",
+          "cuState": "FETCH NEXT"
+        },
+        {
+          "id": "service",
+          "PC": 201,
+          "ACC": 42,
+          "status": "Z=1",
+          "interruptRequest": "NONE",
+          "cuState": "FETCH NEXT"
+        }
+      ]
+    },
+    "invariants": [
+      "MAR receives the old PC before PC increments",
+      "interrupt check occurs after the current instruction completes",
+      "return restores PC, ACC and Status to the saved main-program values"
+    ]
+  },
+  {
+    "lessonId": "P1-L28",
+    "visualId": "VIS-P1-L28",
+    "fixture": {
+      "start": 100,
+      "forwardReferenceAddress": 101,
+      "source": [
+        [
+          "START",
+          "LDM",
+          "#5"
+        ],
+        [
+          "",
+          "JMP",
+          "DONE"
+        ],
+        [
+          "VALUE",
+          "DAT",
+          7
+        ],
+        [
+          "DONE",
+          "OUT",
+          ""
+        ],
+        [
+          "",
+          "END",
+          ""
+        ]
+      ],
+      "symbols": {
+        "START": 100,
+        "VALUE": 102,
+        "DONE": 103
+      },
+      "object": [
+        {
+          "address": 100,
+          "opcode": 1,
+          "operand": 5
+        },
+        {
+          "address": 101,
+          "opcode": 2,
+          "operand": 103
+        },
+        {
+          "address": 102,
+          "opcode": 0,
+          "operand": 7
+        },
+        {
+          "address": 103,
+          "opcode": 3,
+          "operand": 0
+        },
+        {
+          "address": 104,
+          "opcode": 4,
+          "operand": 0
+        }
+      ]
+    },
+    "invariants": [
+      "each source row occupies one address in this declared toy fixture",
+      "Pass 1 records symbols before Pass 2 resolves DONE",
+      "toy opcode numbers are not claimed as Cambridge CPU encodings"
+    ]
+  },
+  {
+    "lessonId": "P1-L29",
+    "visualId": "VIS-P1-L29",
+    "memory": {
+      "100": 120,
+      "105": 42,
+      "120": 77,
+      "203": 88
+    },
+    "IX": 5,
+    "PC": 201,
+    "fixtures": [
+      {
+        "mode": "immediate",
+        "operand": 100,
+        "effectiveAddress": null,
+        "value": 100,
+        "readCount": 0,
+        "path": [
+          100
+        ]
+      },
+      {
+        "mode": "direct",
+        "operand": 100,
+        "effectiveAddress": 100,
+        "value": 120,
+        "readCount": 1,
+        "path": [
+          100,
+          120
+        ]
+      },
+      {
+        "mode": "indirect",
+        "operand": 100,
+        "effectiveAddress": 120,
+        "value": 77,
+        "readCount": 2,
+        "path": [
+          100,
+          120,
+          77
+        ]
+      },
+      {
+        "mode": "indexed",
+        "operand": 100,
+        "effectiveAddress": 105,
+        "value": 42,
+        "readCount": 1,
+        "path": [
+          105,
+          42
+        ]
+      },
+      {
+        "mode": "relative",
+        "operand": 2,
+        "effectiveAddress": 203,
+        "value": 203,
+        "readCount": 0,
+        "path": [
+          203
+        ],
+        "purpose": "control-flow-target"
+      }
+    ],
+    "invariants": [
+      "immediate mode performs no memory dereference",
+      "indirect mode reads the pointer then the value",
+      "relative mode uses PC=201 after fetch to calculate branch target 203 and does not perform a data-memory read in this fixture"
+    ]
+  },
+  {
+    "lessonId": "P1-L30",
+    "visualId": "VIS-P1-L30",
+    "branchFixture": {
+      "program": [
+        "IN",
+        "CMP #65",
+        "JPE 5",
+        "ADD #1",
+        "JMP 5",
+        "OUT",
+        "END"
+      ],
+      "input65": [
+        {
+          "instruction": "IN",
+          "PC": 1,
+          "ACC": 65,
+          "equal": null,
+          "output": "—"
+        },
+        {
+          "instruction": "CMP #65",
+          "PC": 2,
+          "ACC": 65,
+          "equal": true,
+          "output": "—"
+        },
+        {
+          "instruction": "JPE 5",
+          "PC": 5,
+          "ACC": 65,
+          "equal": true,
+          "output": "—"
+        },
+        {
+          "instruction": "OUT",
+          "PC": 6,
+          "ACC": 65,
+          "equal": true,
+          "output": "A"
+        },
+        {
+          "instruction": "END",
+          "PC": 6,
+          "ACC": 65,
+          "equal": true,
+          "output": "A"
+        }
+      ],
+      "input66": [
+        {
+          "instruction": "IN",
+          "PC": 1,
+          "ACC": 66,
+          "equal": null,
+          "output": "—"
+        },
+        {
+          "instruction": "CMP #65",
+          "PC": 2,
+          "ACC": 66,
+          "equal": false,
+          "output": "—"
+        },
+        {
+          "instruction": "JPE 5",
+          "PC": 3,
+          "ACC": 66,
+          "equal": false,
+          "output": "—"
+        },
+        {
+          "instruction": "ADD #1",
+          "PC": 4,
+          "ACC": 67,
+          "equal": false,
+          "output": "—"
+        },
+        {
+          "instruction": "JMP 5",
+          "PC": 5,
+          "ACC": 67,
+          "equal": false,
+          "output": "—"
+        },
+        {
+          "instruction": "OUT",
+          "PC": 6,
+          "ACC": 67,
+          "equal": false,
+          "output": "C"
+        },
+        {
+          "instruction": "END",
+          "PC": 6,
+          "ACC": 67,
+          "equal": false,
+          "output": "C"
+        }
+      ]
+    },
+    "loadStoreFixture": {
+      "program": [
+        "LDM #12",
+        "STO 20",
+        "LDD 21",
+        "ADD 20",
+        "STO 22",
+        "END"
+      ],
+      "initialMemory": {
+        "20": 0,
+        "21": 8,
+        "22": 0
+      },
+      "states": [
+        {
+          "instruction": "initial",
+          "PC": 0,
+          "ACC": 0,
+          "M20": 0,
+          "M21": 8,
+          "M22": 0,
+          "halted": false,
+          "output": ""
+        },
+        {
+          "instruction": "LDM #12",
+          "PC": 1,
+          "ACC": 12,
+          "M20": 0,
+          "M21": 8,
+          "M22": 0,
+          "halted": false,
+          "output": ""
+        },
+        {
+          "instruction": "STO 20",
+          "PC": 2,
+          "ACC": 12,
+          "M20": 12,
+          "M21": 8,
+          "M22": 0,
+          "halted": false,
+          "output": ""
+        },
+        {
+          "instruction": "LDD 21",
+          "PC": 3,
+          "ACC": 8,
+          "M20": 12,
+          "M21": 8,
+          "M22": 0,
+          "halted": false,
+          "output": ""
+        },
+        {
+          "instruction": "ADD 20",
+          "PC": 4,
+          "ACC": 20,
+          "M20": 12,
+          "M21": 8,
+          "M22": 0,
+          "halted": false,
+          "output": ""
+        },
+        {
+          "instruction": "STO 22",
+          "PC": 5,
+          "ACC": 20,
+          "M20": 12,
+          "M21": 8,
+          "M22": 20,
+          "halted": false,
+          "output": ""
+        },
+        {
+          "instruction": "END",
+          "PC": 5,
+          "ACC": 20,
+          "M20": 12,
+          "M21": 8,
+          "M22": 20,
+          "halted": true,
+          "returnedToOS": true,
+          "output": ""
+        }
+      ],
+      "boundary": "END returns control to the operating system; no post-END PC value is asserted."
+    },
+    "invariants": [
+      "CMP changes the comparison flag and does not change ACC",
+      "JPE selects address 5 iff equal=true",
+      "one trace step executes at most one instruction",
+      "STO changes memory and leaves ACC unchanged",
+      "LDD changes ACC and leaves memory unchanged",
+      "END produces no output and makes no post-handoff PC claim"
+    ]
+  },
+  {
+    "lessonId": "P1-L31",
+    "visualId": "VIS-P1-L31",
+    "fixtures": [
+      {
+        "value": 150,
+        "kind": "lsl",
+        "before": "10010110",
+        "after": "00101100",
+        "result": 44,
+        "outgoingBit": 1,
+        "insertedBit": 0,
+        "overflow": false
+      },
+      {
+        "value": 150,
+        "kind": "asl",
+        "before": "10010110",
+        "after": "00101100",
+        "result": 44,
+        "outgoingBit": 1,
+        "insertedBit": 0,
+        "overflow": true
+      },
+      {
+        "value": 150,
+        "kind": "asr",
+        "before": "10010110",
+        "after": "11001011",
+        "result": 203,
+        "outgoingBit": 0,
+        "insertedBit": 1,
+        "overflow": false
+      },
+      {
+        "value": 149,
+        "kind": "lsr",
+        "before": "10010101",
+        "after": "01001010",
+        "result": 74,
+        "outgoingBit": 1,
+        "insertedBit": 0,
+        "overflow": false
+      },
+      {
+        "value": 149,
+        "kind": "ror",
+        "before": "10010101",
+        "after": "11001010",
+        "result": 202,
+        "outgoingBit": 1,
+        "insertedBit": 1,
+        "overflow": false
+      },
+      {
+        "value": 149,
+        "kind": "rol",
+        "before": "10010101",
+        "after": "00101011",
+        "result": 43,
+        "outgoingBit": 1,
+        "insertedBit": 1,
+        "overflow": false
+      },
+      {
+        "value": 0,
+        "kind": "lsl",
+        "before": "00000000",
+        "after": "00000000",
+        "result": 0,
+        "outgoingBit": 0,
+        "insertedBit": 0,
+        "overflow": false
+      },
+      {
+        "value": 255,
+        "kind": "asr",
+        "before": "11111111",
+        "after": "11111111",
+        "result": 255,
+        "outgoingBit": 1,
+        "insertedBit": 1,
+        "overflow": false
+      },
+      {
+        "value": 64,
+        "kind": "asl",
+        "before": "01000000",
+        "after": "10000000",
+        "result": 128,
+        "outgoingBit": 0,
+        "insertedBit": 0,
+        "overflow": true
+      },
+      {
+        "value": 192,
+        "kind": "asl",
+        "before": "11000000",
+        "after": "10000000",
+        "result": 128,
+        "outgoingBit": 1,
+        "insertedBit": 0,
+        "overflow": false
+      },
+      {
+        "value": 191,
+        "kind": "asl",
+        "before": "10111111",
+        "after": "01111110",
+        "result": 126,
+        "outgoingBit": 1,
+        "insertedBit": 0,
+        "overflow": true
+      }
+    ],
+    "invariants": [
+      "word width remains exactly eight bits",
+      "ASR copies the sign bit and logical shifts insert zero",
+      "cyclic shifts wrap the outgoing bit"
+    ]
+  },
+  {
+    "lessonId": "P1-L32",
+    "visualId": "VIS-P1-L32",
+    "fixtures": [
+      {
+        "input": 150,
+        "sourceRegister": 150,
+        "sourceBits": "10010110",
+        "accBefore": 150,
+        "targetBit": 2,
+        "targetBefore": 1,
+        "mask": 4,
+        "maskBits": "00000100",
+        "operation": "AND",
+        "result": 4,
+        "resultBits": "00000100",
+        "accAfter": 4,
+        "accAfterBits": "00000100",
+        "accTargetAfter": 1,
+        "testResult": "set",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": false,
+        "commitPerformed": false,
+        "deviceRegisterAfter": 150,
+        "deviceRegisterChanged": false,
+        "targetChanged": false,
+        "targetAfter": 1,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 2",
+          "mode": "monitoring",
+          "before": "active",
+          "after": "active",
+          "explicitWriteBack": false,
+          "commitPerformed": false,
+          "deviceRegisterChanged": false,
+          "targetChanged": false
+        }
+      },
+      {
+        "input": 150,
+        "sourceRegister": 150,
+        "sourceBits": "10010110",
+        "accBefore": 150,
+        "targetBit": 2,
+        "targetBefore": 1,
+        "mask": 4,
+        "maskBits": "00000100",
+        "operation": "OR",
+        "result": 150,
+        "resultBits": "10010110",
+        "accAfter": 150,
+        "accAfterBits": "10010110",
+        "accTargetAfter": 1,
+        "testResult": "not-a-test",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": true,
+        "commitPerformed": true,
+        "deviceRegisterAfter": 150,
+        "deviceRegisterChanged": false,
+        "targetChanged": false,
+        "targetAfter": 1,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 2",
+          "mode": "control",
+          "before": "active",
+          "after": "active",
+          "explicitWriteBack": true,
+          "commitPerformed": true,
+          "deviceRegisterChanged": false,
+          "targetChanged": false
+        }
+      },
+      {
+        "input": 150,
+        "sourceRegister": 150,
+        "sourceBits": "10010110",
+        "accBefore": 150,
+        "targetBit": 2,
+        "targetBefore": 1,
+        "mask": 4,
+        "maskBits": "00000100",
+        "operation": "XOR",
+        "result": 146,
+        "resultBits": "10010010",
+        "accAfter": 146,
+        "accAfterBits": "10010010",
+        "accTargetAfter": 0,
+        "testResult": "not-a-test",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": true,
+        "commitPerformed": true,
+        "deviceRegisterAfter": 146,
+        "deviceRegisterChanged": true,
+        "targetChanged": true,
+        "targetAfter": 0,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 2",
+          "mode": "control",
+          "before": "active",
+          "after": "inactive",
+          "explicitWriteBack": true,
+          "commitPerformed": true,
+          "deviceRegisterChanged": true,
+          "targetChanged": true
+        }
+      },
+      {
+        "input": 0,
+        "sourceRegister": 0,
+        "sourceBits": "00000000",
+        "accBefore": 0,
+        "targetBit": 7,
+        "targetBefore": 0,
+        "mask": 128,
+        "maskBits": "10000000",
+        "operation": "OR",
+        "result": 128,
+        "resultBits": "10000000",
+        "accAfter": 128,
+        "accAfterBits": "10000000",
+        "accTargetAfter": 1,
+        "testResult": "not-a-test",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": true,
+        "commitPerformed": true,
+        "deviceRegisterAfter": 128,
+        "deviceRegisterChanged": true,
+        "targetChanged": true,
+        "targetAfter": 1,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 7",
+          "mode": "control",
+          "before": "inactive",
+          "after": "active",
+          "explicitWriteBack": true,
+          "commitPerformed": true,
+          "deviceRegisterChanged": true,
+          "targetChanged": true
+        }
+      },
+      {
+        "input": 0,
+        "sourceRegister": 0,
+        "sourceBits": "00000000",
+        "accBefore": 0,
+        "targetBit": 0,
+        "targetBefore": 0,
+        "mask": 1,
+        "maskBits": "00000001",
+        "operation": "AND",
+        "result": 0,
+        "resultBits": "00000000",
+        "accAfter": 0,
+        "accAfterBits": "00000000",
+        "accTargetAfter": 0,
+        "testResult": "clear",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": false,
+        "commitPerformed": false,
+        "deviceRegisterAfter": 0,
+        "deviceRegisterChanged": false,
+        "targetChanged": false,
+        "targetAfter": 0,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 0",
+          "mode": "monitoring",
+          "before": "inactive",
+          "after": "inactive",
+          "explicitWriteBack": false,
+          "commitPerformed": false,
+          "deviceRegisterChanged": false,
+          "targetChanged": false
+        }
+      },
+      {
+        "input": 1,
+        "sourceRegister": 1,
+        "sourceBits": "00000001",
+        "accBefore": 1,
+        "targetBit": 0,
+        "targetBefore": 1,
+        "mask": 1,
+        "maskBits": "00000001",
+        "operation": "AND",
+        "result": 1,
+        "resultBits": "00000001",
+        "accAfter": 1,
+        "accAfterBits": "00000001",
+        "accTargetAfter": 1,
+        "testResult": "set",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": false,
+        "commitPerformed": false,
+        "deviceRegisterAfter": 1,
+        "deviceRegisterChanged": false,
+        "targetChanged": false,
+        "targetAfter": 1,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 0",
+          "mode": "monitoring",
+          "before": "active",
+          "after": "active",
+          "explicitWriteBack": false,
+          "commitPerformed": false,
+          "deviceRegisterChanged": false,
+          "targetChanged": false
+        }
+      },
+      {
+        "input": 0,
+        "sourceRegister": 0,
+        "sourceBits": "00000000",
+        "accBefore": 0,
+        "targetBit": 0,
+        "targetBefore": 0,
+        "mask": 1,
+        "maskBits": "00000001",
+        "operation": "OR",
+        "result": 1,
+        "resultBits": "00000001",
+        "accAfter": 1,
+        "accAfterBits": "00000001",
+        "accTargetAfter": 1,
+        "testResult": "not-a-test",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": true,
+        "commitPerformed": true,
+        "deviceRegisterAfter": 1,
+        "deviceRegisterChanged": true,
+        "targetChanged": true,
+        "targetAfter": 1,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 0",
+          "mode": "control",
+          "before": "inactive",
+          "after": "active",
+          "explicitWriteBack": true,
+          "commitPerformed": true,
+          "deviceRegisterChanged": true,
+          "targetChanged": true
+        }
+      },
+      {
+        "input": 1,
+        "sourceRegister": 1,
+        "sourceBits": "00000001",
+        "accBefore": 1,
+        "targetBit": 0,
+        "targetBefore": 1,
+        "mask": 1,
+        "maskBits": "00000001",
+        "operation": "XOR",
+        "result": 0,
+        "resultBits": "00000000",
+        "accAfter": 0,
+        "accAfterBits": "00000000",
+        "accTargetAfter": 0,
+        "testResult": "not-a-test",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": true,
+        "commitPerformed": true,
+        "deviceRegisterAfter": 0,
+        "deviceRegisterChanged": true,
+        "targetChanged": true,
+        "targetAfter": 0,
+        "scenario": "greenhouse",
+        "deviceState": {
+          "scenario": "greenhouse",
+          "deviceName": "greenhouse channel 0",
+          "mode": "control",
+          "before": "active",
+          "after": "inactive",
+          "explicitWriteBack": true,
+          "commitPerformed": true,
+          "deviceRegisterChanged": true,
+          "targetChanged": true
+        }
+      },
+      {
+        "input": 128,
+        "sourceRegister": 128,
+        "sourceBits": "10000000",
+        "accBefore": 128,
+        "targetBit": 7,
+        "targetBefore": 1,
+        "mask": 128,
+        "maskBits": "10000000",
+        "operation": "XOR",
+        "result": 0,
+        "resultBits": "00000000",
+        "accAfter": 0,
+        "accAfterBits": "00000000",
+        "accTargetAfter": 0,
+        "testResult": "not-a-test",
+        "sourceRegisterChanged": false,
+        "explicitWriteBack": true,
+        "commitPerformed": true,
+        "deviceRegisterAfter": 0,
+        "deviceRegisterChanged": true,
+        "targetChanged": true,
+        "targetAfter": 0,
+        "scenario": "alarm-panel",
+        "deviceState": {
+          "scenario": "alarm-panel",
+          "deviceName": "alarm zone 7",
+          "mode": "control",
+          "before": "active",
+          "after": "inactive",
+          "explicitWriteBack": true,
+          "commitPerformed": true,
+          "deviceRegisterChanged": true,
+          "targetChanged": true
+        }
+      }
+    ],
+    "invariants": [
+      "bit 0 is the rightmost least-significant bit",
+      "AND, OR and XOR store the bitwise result in ACC while the ALU leaves the source register unchanged",
+      "AND monitoring interprets ACC and performs no device write",
+      "OR and XOR control require an explicit write of ACC to the device register",
+      "an explicit write can occur without changing device state when the target bit already has the requested value"
+    ],
+    "deviceScenarios": [
+      "greenhouse",
+      "alarm-panel"
+    ]
+  }
+]

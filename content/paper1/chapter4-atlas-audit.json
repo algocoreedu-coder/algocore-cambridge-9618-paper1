@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "auditId": "P1-C04-ATLAS-AUDIT-2026-10-04",
+  "chapterId": "4",
+  "syllabus": "Cambridge International AS & A Level Computer Science 9618, examination 2026",
+  "authority": {
+    "syllabusLocator": "2026 syllabus, Paper 1 Sections 4.1–4.3",
+    "coursebookLocator": "Coursebook Chapter 4, printed pages 109–135",
+    "learnerVisualOrigin": "AlgoCore-original"
+  },
+  "taxonomy": {
+    "allowedDispositions": [
+      "INLINE_UNDERSTAND",
+      "INLINE_OBSERVE_SCENE",
+      "INLINE_WORKED_EXAMPLE",
+      "INLINE_RECOGNISE",
+      "LESSON_REFERENCE_DISCLOSURE",
+      "CHAPTER_ATLAS_ONLY",
+      "DUPLICATE_OR_REMOVE"
+    ],
+    "renderStatuses": [
+      "not-rendered-source-pointer"
+    ],
+    "referenceStatuses": [
+      "mapped-to-original-learner-visual"
+    ]
+  },
+  "copyrightBoundary": {
+    "en": "Every BOOK-C04 ID is a source and audit pointer only. Public interactive diagrams, state ledgers, labels and transitions are AlgoCore-original and do not reproduce coursebook scans or artwork.",
+    "vi": "Mỗi BOOK-C04 ID chỉ là pointer phục vụ nguồn và audit. Diagram tương tác, state ledger, nhãn và transition trên public runtime là sản phẩm gốc của AlgoCore, không sao chép scan hoặc artwork của coursebook."
+  },
+  "inventory": {
+    "totalIds": 43,
+    "uniqueIds": 43,
+    "lessonCounts": {
+      "P1-L25": 5,
+      "P1-L26": 5,
+      "P1-L27": 4,
+      "P1-L28": 6,
+      "P1-L30": 14,
+      "P1-L32": 7,
+      "P1-L31": 2,
+      "P1-L29": 0
+    },
+    "dispositionCounts": {
+      "INLINE_UNDERSTAND": 11,
+      "INLINE_OBSERVE_SCENE": 4,
+      "INLINE_WORKED_EXAMPLE": 4,
+      "INLINE_RECOGNISE": 5,
+      "LESSON_REFERENCE_DISCLOSURE": 12,
+      "CHAPTER_ATLAS_ONLY": 7,
+      "DUPLICATE_OR_REMOVE": 0
+    },
+    "zeroAtlasLessonIds": [
+      "P1-L29"
+    ]
+  },
+  "items": [
+    {
+      "atlasId": "BOOK-C04-P109-VON-NEUMANN",
+      "lessonId": "P1-L25",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 109",
+      "rationale": {
+        "en": "This source pointer concerns the stored-program CPU, its registers and three bus connections. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L25, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến CPU stored-program, các register và ba kết nối bus. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L25, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L25"
+    },
+    {
+      "atlasId": "BOOK-C04-P110-T4-1",
+      "lessonId": "P1-L25",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 110",
+      "rationale": {
+        "en": "This source pointer concerns the functions of common processor registers. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L25, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến chức năng của các processor register thường gặp. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L25, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L25"
+    },
+    {
+      "atlasId": "BOOK-C04-P111-FLAGS-POSITIVE",
+      "lessonId": "P1-L25",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 111",
+      "rationale": {
+        "en": "This source pointer concerns status flags after a positive addition. It supports a recognition or misconception checkpoint after the core explanation. The public learner visual is VIS-P1-L25, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến status flag sau phép cộng có kết quả dương. Nó hỗ trợ checkpoint nhận diện hoặc sửa ngộ nhận sau phần giải thích cốt lõi. Visual cho học sinh trên public runtime là VIS-P1-L25, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L25"
+    },
+    {
+      "atlasId": "BOOK-C04-P111-FLAGS-NEGATIVE",
+      "lessonId": "P1-L25",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 111",
+      "rationale": {
+        "en": "This source pointer concerns carry, negative and overflow distinctions after signed arithmetic. It supports a recognition or misconception checkpoint after the core explanation. The public learner visual is VIS-P1-L25, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến sự khác nhau giữa carry, negative và overflow sau số học có dấu. Nó hỗ trợ checkpoint nhận diện hoặc sửa ngộ nhận sau phần giải thích cốt lõi. Visual cho học sinh trên public runtime là VIS-P1-L25, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L25"
+    },
+    {
+      "atlasId": "BOOK-C04-P112-SYSTEM-BUSES",
+      "lessonId": "P1-L25",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 112",
+      "rationale": {
+        "en": "This source pointer concerns address, data and control bus roles and directions. It supports observation of a causal sequence that the original model reconstructs as stepped states. The public learner visual is VIS-P1-L25, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến vai trò và hướng của address, data và control bus. Nó hỗ trợ quan sát chuỗi nhân quả mà mô hình gốc tái dựng thành các state từng bước. Visual cho học sinh trên public runtime là VIS-P1-L25, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L25"
+    },
+    {
+      "atlasId": "BOOK-C04-P113-CORE-LINKS",
+      "lessonId": "P1-L26",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 113",
+      "rationale": {
+        "en": "This source pointer concerns the relationship among multiple processor cores. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L26, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến quan hệ giữa nhiều processor core. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L26, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L26"
+    },
+    {
+      "atlasId": "BOOK-C04-P114-PORT-CABLES",
+      "lessonId": "P1-L26",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 114",
+      "rationale": {
+        "en": "This source pointer concerns visual recognition of USB, HDMI and VGA connectors. It supports a recognition or misconception checkpoint after the core explanation. The public learner visual is VIS-P1-L26, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến nhận diện trực quan connector USB, HDMI và VGA. Nó hỗ trợ checkpoint nhận diện hoặc sửa ngộ nhận sau phần giải thích cốt lõi. Visual cho học sinh trên public runtime là VIS-P1-L26, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L26"
+    },
+    {
+      "atlasId": "BOOK-C04-P115-T4-2",
+      "lessonId": "P1-L26",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 115",
+      "rationale": {
+        "en": "This source pointer concerns USB benefits and constraints. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L26, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến lợi ích và giới hạn của USB. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L26, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L26"
+    },
+    {
+      "atlasId": "BOOK-C04-P116-T4-3",
+      "lessonId": "P1-L26",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 116",
+      "rationale": {
+        "en": "This source pointer concerns the signal and use differences between HDMI and VGA. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L26, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến khác biệt về signal và use giữa HDMI và VGA. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L26, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L26"
+    },
+    {
+      "atlasId": "BOOK-C04-P120-A4A-PORT-MATCH",
+      "lessonId": "P1-L26",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 120",
+      "rationale": {
+        "en": "This source pointer concerns matching HDMI and VGA features to a device need. It supports a recognition or misconception checkpoint after the core explanation. The public learner visual is VIS-P1-L26, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến ghép đặc điểm HDMI và VGA với nhu cầu thiết bị. Nó hỗ trợ checkpoint nhận diện hoặc sửa ngộ nhận sau phần giải thích cốt lõi. Visual cho học sinh trên public runtime là VIS-P1-L26, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L26"
+    },
+    {
+      "atlasId": "BOOK-C04-P117-FETCH-CYCLE",
+      "lessonId": "P1-L27",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 117",
+      "rationale": {
+        "en": "This source pointer concerns the register-by-register fetch, decode and execute sequence. It supports observation of a causal sequence that the original model reconstructs as stepped states. The public learner visual is VIS-P1-L27, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến chuỗi fetch, decode và execute theo từng register. Nó hỗ trợ quan sát chuỗi nhân quả mà mô hình gốc tái dựng thành các state từng bước. Visual cho học sinh trên public runtime là VIS-P1-L27, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L27"
+    },
+    {
+      "atlasId": "BOOK-C04-P117-RTN",
+      "lessonId": "P1-L27",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 117",
+      "rationale": {
+        "en": "This source pointer concerns Register Transfer Notation for a fetch sequence. It supports an ordered worked trace; the public lesson uses different values and original presentation. The public learner visual is VIS-P1-L27, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến Register Transfer Notation của một chuỗi fetch. Nó hỗ trợ worked trace theo thứ tự; bài public dùng giá trị khác và cách trình bày gốc. Visual cho học sinh trên public runtime là VIS-P1-L27, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L27"
+    },
+    {
+      "atlasId": "BOOK-C04-P118-RTN-RISC",
+      "lessonId": "P1-L27",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 118",
+      "rationale": {
+        "en": "This source pointer concerns a RISC example in which the program counter advances by four bytes. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L27, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến ví dụ RISC trong đó program counter tăng bốn byte. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L27, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L27"
+    },
+    {
+      "atlasId": "BOOK-C04-P118-INTERRUPT-CYCLE",
+      "lessonId": "P1-L27",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 118",
+      "rationale": {
+        "en": "This source pointer concerns interrupt checking, context save, ISR service, restore and resume. It supports observation of a causal sequence that the original model reconstructs as stepped states. The public learner visual is VIS-P1-L27, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến kiểm tra interrupt, lưu context, phục vụ ISR, khôi phục và tiếp tục. Nó hỗ trợ quan sát chuỗi nhân quả mà mô hình gốc tái dựng thành các state từng bước. Visual cho học sinh trên public runtime là VIS-P1-L27, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L27"
+    },
+    {
+      "atlasId": "BOOK-C04-P122-ASM-HEX-BINARY",
+      "lessonId": "P1-L28",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 122",
+      "rationale": {
+        "en": "This source pointer concerns the relationship among assembly, hexadecimal and binary representations. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L28, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến quan hệ giữa biểu diễn assembly, hexadecimal và binary. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L28, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L28"
+    },
+    {
+      "atlasId": "BOOK-C04-P122-OPCODE-OPERAND",
+      "lessonId": "P1-L28",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 122",
+      "rationale": {
+        "en": "This source pointer concerns the opcode and operand fields of an instruction. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L28, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến các trường opcode và operand của một instruction. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L28, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L28"
+    },
+    {
+      "atlasId": "BOOK-C04-P122-LABEL-ADDRESS",
+      "lessonId": "P1-L28",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 122",
+      "rationale": {
+        "en": "This source pointer concerns replacement of a source label by an address. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L28, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến việc thay source label bằng address. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L28, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L28"
+    },
+    {
+      "atlasId": "BOOK-C04-P123-ASSEMBLER-PASSES",
+      "lessonId": "P1-L28",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 123",
+      "rationale": {
+        "en": "This source pointer concerns two assembler passes resolving a forward reference. It supports observation of a causal sequence that the original model reconstructs as stepped states. The public learner visual is VIS-P1-L28, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến hai assembler pass xử lý forward reference. Nó hỗ trợ quan sát chuỗi nhân quả mà mô hình gốc tái dựng thành các state từng bước. Visual cho học sinh trên public runtime là VIS-P1-L28, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L28"
+    },
+    {
+      "atlasId": "BOOK-C04-P123-ASSEMBLER-SYMBOLS",
+      "lessonId": "P1-L28",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 123",
+      "rationale": {
+        "en": "This source pointer concerns symbol-table entries created and resolved across the two passes. It supports an ordered worked trace; the public lesson uses different values and original presentation. The public learner visual is VIS-P1-L28, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến các symbol-table entry được tạo và resolve qua hai pass. Nó hỗ trợ worked trace theo thứ tự; bài public dùng giá trị khác và cách trình bày gốc. Visual cho học sinh trên public runtime là VIS-P1-L28, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L28"
+    },
+    {
+      "atlasId": "BOOK-C04-P126-T4-9",
+      "lessonId": "P1-L28",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 126",
+      "rationale": {
+        "en": "This source pointer concerns instruction labels and data labels. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L28, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến instruction label và data label. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L28, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L28"
+    },
+    {
+      "atlasId": "BOOK-C04-P124-T4-4",
+      "lessonId": "P1-L30",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 124",
+      "rationale": {
+        "en": "This source pointer concerns the declared data-movement instruction group. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến nhóm instruction data movement đã công bố. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P124-T4-5",
+      "lessonId": "P1-L30",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 124",
+      "rationale": {
+        "en": "This source pointer concerns the declared input/output instruction group. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến nhóm instruction input/output đã công bố. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P124-T4-6",
+      "lessonId": "P1-L30",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 124",
+      "rationale": {
+        "en": "This source pointer concerns the declared arithmetic instruction group. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến nhóm instruction arithmetic đã công bố. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P125-T4-7",
+      "lessonId": "P1-L30",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 125",
+      "rationale": {
+        "en": "This source pointer concerns the declared jump instruction group. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến nhóm instruction jump đã công bố. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P125-T4-8",
+      "lessonId": "P1-L30",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 125",
+      "rationale": {
+        "en": "This source pointer concerns the compare instruction and flag semantics. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến instruction compare và flag semantics. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P126-SUM-HIGHLEVEL",
+      "lessonId": "P1-L30",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 126",
+      "rationale": {
+        "en": "This source pointer concerns a high-level sum decomposed into operations. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến một phép tính tổng ở high level được tách thành các operation. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P126-SUM-ASSEMBLY",
+      "lessonId": "P1-L30",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 126",
+      "rationale": {
+        "en": "This source pointer concerns an assembly program adding three stored values. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến assembly program cộng ba giá trị đã lưu. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P127-SUM-SYMBOLS",
+      "lessonId": "P1-L30",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 127",
+      "rationale": {
+        "en": "This source pointer concerns the symbol table for the three-value sum. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến symbol table cho phép cộng ba giá trị. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P127-SUM-TRACE",
+      "lessonId": "P1-L30",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 127",
+      "rationale": {
+        "en": "This source pointer concerns the state trace for the three-value sum. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến state trace cho phép cộng ba giá trị. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P127-LOOP-HIGHLEVEL",
+      "lessonId": "P1-L30",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 127",
+      "rationale": {
+        "en": "This source pointer concerns an extended high-level loop with indexed access. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến loop high level mở rộng có indexed access. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P127-LOOP-ASSEMBLY",
+      "lessonId": "P1-L30",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 127",
+      "rationale": {
+        "en": "This source pointer concerns the extended assembly loop using the index register. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến assembly loop mở rộng dùng index register. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P128-LOOP-SYMBOLS",
+      "lessonId": "P1-L30",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 128",
+      "rationale": {
+        "en": "This source pointer concerns the symbol table supporting the extended loop. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến symbol table hỗ trợ loop mở rộng. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P128-LOOP-TRACE",
+      "lessonId": "P1-L30",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 128",
+      "rationale": {
+        "en": "This source pointer concerns the full multi-iteration trace of the extended loop. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến trace nhiều iteration đầy đủ của loop mở rộng. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P129-A4B-BRANCH",
+      "lessonId": "P1-L30",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 129",
+      "rationale": {
+        "en": "This source pointer concerns an additional branch-tracing activity. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L30, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến activity trace branch bổ sung. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L30, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L30"
+    },
+    {
+      "atlasId": "BOOK-C04-P130-AND-OR-XOR-TABLE",
+      "lessonId": "P1-L32",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 4, printed page 130",
+      "rationale": {
+        "en": "This source pointer concerns the truth-table distinction among AND, OR and XOR. It anchors terminology before the learner manipulates the original model. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến phân biệt AND, OR và XOR bằng truth table. Nó khóa thuật ngữ trước khi học sinh thao tác mô hình gốc. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    },
+    {
+      "atlasId": "BOOK-C04-P131-T4-10",
+      "lessonId": "P1-L31",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 131",
+      "rationale": {
+        "en": "This source pointer concerns LSL and LSR instruction examples. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L31, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến ví dụ instruction LSL và LSR. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L31, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L31"
+    },
+    {
+      "atlasId": "BOOK-C04-P131-T4-11",
+      "lessonId": "P1-L32",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 131",
+      "rationale": {
+        "en": "This source pointer concerns AND, OR and XOR mask examples. It is useful reinforcement after the required flow and does not need a second inline rendering. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến ví dụ mask AND, OR và XOR. Nó là phần củng cố hữu ích sau flow bắt buộc và không cần render inline lần hai. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    },
+    {
+      "atlasId": "BOOK-C04-P132-SENSOR3-MASK",
+      "lessonId": "P1-L32",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 132",
+      "rationale": {
+        "en": "This source pointer concerns a step trace that tests one sensor bit with a mask. It supports an ordered worked trace; the public lesson uses different values and original presentation. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến trace từng bước kiểm tra một sensor bit bằng mask. Nó hỗ trợ worked trace theo thứ tự; bài public dùng giá trị khác và cách trình bày gốc. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    },
+    {
+      "atlasId": "BOOK-C04-P132-A4C-BEFORE-AFTER",
+      "lessonId": "P1-L31",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 132",
+      "rationale": {
+        "en": "This source pointer concerns before-and-after bit strips for a shift. It supports an ordered worked trace; the public lesson uses different values and original presentation. The public learner visual is VIS-P1-L31, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến bit strip trước và sau một phép shift. Nó hỗ trợ worked trace theo thứ tự; bài public dùng giá trị khác và cách trình bày gốc. Visual cho học sinh trên public runtime là VIS-P1-L31, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L31"
+    },
+    {
+      "atlasId": "BOOK-C04-P133-SENSOR-BIT-LAYOUT",
+      "lessonId": "P1-L32",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 4, printed page 133",
+      "rationale": {
+        "en": "This source pointer concerns four sensor states packed into one byte. It supports a recognition or misconception checkpoint after the core explanation. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến bốn sensor state được đóng gói trong một byte. Nó hỗ trợ checkpoint nhận diện hoặc sửa ngộ nhận sau phần giải thích cốt lõi. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    },
+    {
+      "atlasId": "BOOK-C04-P134-Q5-ISA",
+      "lessonId": "P1-L32",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 134",
+      "rationale": {
+        "en": "This source pointer concerns the instruction table for an end-of-chapter sensor exercise. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến instruction table của bài tập sensor cuối chương. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    },
+    {
+      "atlasId": "BOOK-C04-P134-Q5-PROGRAM",
+      "lessonId": "P1-L32",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 134",
+      "rationale": {
+        "en": "This source pointer concerns the end-of-chapter program that counts active sensors. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến program cuối chương đếm active sensor. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    },
+    {
+      "atlasId": "BOOK-C04-P135-Q5-TRACE",
+      "lessonId": "P1-L32",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 4, printed page 135",
+      "rationale": {
+        "en": "This source pointer concerns the blank trace table paired with the end-of-chapter sensor program. It is extended or end-of-chapter practice outside the required lesson path. The public learner visual is VIS-P1-L32, an AlgoCore-original reconstruction; the book asset is not copied into the runtime.",
+        "vi": "Source pointer này liên quan đến blank trace table đi cùng program sensor cuối chương. Nó là phần luyện mở rộng hoặc cuối chương, nằm ngoài đường học bắt buộc. Visual cho học sinh trên public runtime là VIS-P1-L32, bản tái dựng gốc của AlgoCore; asset từ sách không được sao chép vào runtime."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L32"
+    }
+  ]
+}

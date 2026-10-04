@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L32",
+  "slug": "bit-masking",
+  "sectionId": "4",
+  "strandId": "4.3",
+  "title": {
+    "en": "Bit masking for monitoring and control",
+    "vi": "Bit masking cho monitoring và control"
+  },
+  "question": {
+    "en": "How can one mask inspect or change a target bit while preserving every other device flag?",
+    "vi": "Một mask có thể kiểm tra hoặc đổi target bit mà vẫn giữ mọi device flag khác như thế nào?"
+  },
+  "opening": {
+    "en": "A device register packs several independent flags into one word. A mask aligns selected 1-bits with targets so a bitwise operation can test, set or toggle them predictably.",
+    "vi": "Device register đóng gói nhiều flag độc lập trong một word. Mask căn selected 1-bit với target để bitwise operation test, set hoặc toggle chúng một cách dự đoán được."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.3-02",
+      "text": {
+        "en": "Explain how bit manipulation supports device monitoring and control.",
+        "vi": "Giải thích bit manipulation hỗ trợ device monitoring và control."
+      }
+    },
+    {
+      "id": "AC26-4.3-03",
+      "text": {
+        "en": "Carry out AND, OR, XOR, test/set masks and LSL/LSR.",
+        "vi": "Thực hiện AND, OR, XOR, test/set mask và LSL/LSR."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.3-02-01",
+    "REQ-4.3-03-01",
+    "REQ-4.3-03-02",
+    "REQ-4.3-03-03"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L23",
+    "P1-L31"
+  ],
+  "theory": [
+    {
+      "id": "P1-L32-theory-1",
+      "title": {
+        "en": "One-hot masks select one bit",
+        "vi": "One-hot mask chọn một bit"
+      },
+      "paragraphs": [
+        {
+          "en": "With bit 0 defined as the LSB, mask 1<<n has a 1 only at target bit n. Align input, mask and result before applying a truth table.",
+          "vi": "Khi bit 0 được định nghĩa là LSB, mask 1<<n có 1 chỉ tại target bit n. Căn input, mask và result trước khi áp dụng truth table."
+        },
+        {
+          "en": "A multi-bit mask uses several 1-bits to select several flags at once.",
+          "vi": "Multi-bit mask dùng nhiều 1-bit để chọn nhiều flag cùng lúc."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Always state the bit-number convention.",
+          "vi": "Luôn nêu bit-number convention."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L32-theory-2",
+      "title": {
+        "en": "AND tests, OR sets, XOR toggles",
+        "vi": "AND test, OR set, XOR toggle"
+      },
+      "paragraphs": [
+        {
+          "en": "The processor applies AND to the value in ACC and a one-hot mask, then the result always replaces ACC. A non-zero ACC means the target bit was 1. The input device or memory register is unchanged unless a later STO or output instruction writes ACC back.",
+          "vi": "Processor áp dụng AND cho giá trị trong ACC và one-hot mask, sau đó result luôn thay thế ACC. ACC khác 0 nghĩa là target bit bằng 1. Input device hoặc memory register không đổi trừ khi lệnh STO hoặc output sau đó ghi ACC trở lại."
+        },
+        {
+          "en": "OR with a 1 sets the corresponding bit in ACC; XOR with a 1 toggles it in ACC. To change a source register or physical output, the program must explicitly store or output the ACC result. XOR clears a target only when its previous value was known to be 1.",
+          "vi": "OR với 1 set bit tương ứng trong ACC; XOR với 1 toggle bit đó trong ACC. Muốn thay đổi source register hoặc physical output, program phải store hoặc output ACC result một cách tường minh. XOR chỉ clear target khi giá trị trước đó đã biết là 1."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "XOR is toggle, not unconditional clear.",
+          "vi": "XOR là toggle, không phải unconditional clear."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L32-theory-3",
+      "title": {
+        "en": "From register state to device action",
+        "vi": "Từ register state tới device action"
+      },
+      "paragraphs": [
+        {
+          "en": "Monitoring reads and reports flags. Control reads flags, decides and changes an actuator or output. A correct explanation links a bit meaning to the resulting device state.",
+          "vi": "Monitoring đọc và báo flag. Control đọc flag, quyết định rồi thay đổi actuator hoặc output. Giải thích đúng phải liên hệ bit meaning với device state kết quả."
+        },
+        {
+          "en": "LSL and LSR may reposition fields or flags, but their zero-fill behavior follows the supplied instruction table.",
+          "vi": "LSL và LSR có thể di chuyển field hoặc flag, nhưng zero-fill behavior phải theo supplied instruction table."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Preserve every non-target bit unless the specified operation changes it.",
+          "vi": "Giữ mọi non-target bit trừ khi operation được nêu làm nó thay đổi."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Test and toggle a sensor flag",
+      "vi": "Test và toggle sensor flag"
+    },
+    "prompt": {
+      "en": "Register=150=10010110₂; target bit 2; mask=4=00000100₂.",
+      "vi": "Register=150=10010110₂; target bit 2; mask=4=00000100₂."
+    },
+    "steps": [
+      {
+        "id": "P1-L32-worked-1",
+        "action": {
+          "en": "Align input and mask.",
+          "vi": "Căn input và mask."
+        },
+        "result": {
+          "en": "The mask 1 is under bit 2; every other mask bit is 0.",
+          "vi": "Mask 1 nằm dưới bit 2; mọi mask bit khác là 0."
+        }
+      },
+      {
+        "id": "P1-L32-worked-2",
+        "action": {
+          "en": "Test with AND.",
+          "vi": "Test bằng AND."
+        },
+        "result": {
+          "en": "ACC becomes 00000100₂, so bit 2 was set in the input; the input device register remains 10010110₂.",
+          "vi": "ACC trở thành 00000100₂ nên bit 2 đã set trong input; input device register vẫn là 10010110₂."
+        }
+      },
+      {
+        "id": "P1-L32-worked-3",
+        "action": {
+          "en": "Toggle with XOR.",
+          "vi": "Toggle bằng XOR."
+        },
+        "result": {
+          "en": "ACC becomes 10010010₂: bit 2 is toggled from 1 to 0 in the result and every other bit is preserved. A later explicit store or output is required before the device flag changes.",
+          "vi": "ACC trở thành 10010010₂: bit 2 được toggle từ 1 thành 0 trong result và mọi bit khác được giữ. Cần một lệnh store hoặc output tường minh sau đó thì device flag mới thay đổi."
+        }
+      },
+      {
+        "id": "P1-L32-worked-4",
+        "action": {
+          "en": "Interpret the device.",
+          "vi": "Diễn giải device."
+        },
+        "result": {
+          "en": "The bitwise result is already in ACC. The target sensor flag changes only after an explicit store or output writes ACC to the device register.",
+          "vi": "Bitwise result đã nằm trong ACC. Target sensor flag chỉ thay đổi sau khi lệnh store hoặc output tường minh ghi ACC vào device register."
+        }
+      },
+      {
+        "id": "P1-L32-worked-5",
+        "action": {
+          "en": "Extend the method to a multi-bit test.",
+          "vi": "Mở rộng phương pháp sang phép test nhiều bit."
+        },
+        "result": {
+          "en": "Mask 10000100₂ selects bits 7 and 2 together. After 10010110₂ AND 10000100₂, ACC becomes 10000100₂, so both selected input flags were set while every unselected column is 0 in ACC.",
+          "vi": "Mask 10000100₂ chọn đồng thời bit 7 và bit 2. Sau phép 10010110₂ AND 10000100₂, ACC trở thành 10000100₂, nên cả hai input flag được chọn đều đã set còn mọi cột không được chọn bằng 0 trong ACC."
+        }
+      }
+    ],
+    "result": {
+      "en": "The mask isolates one target while proving non-target preservation.",
+      "vi": "Mask cô lập một target đồng thời chứng minh non-target bit được giữ."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Words test, set, clear, toggle, sensor flag or actuator point to masking.",
+        "vi": "Các từ test, set, clear, toggle, sensor flag hoặc actuator chỉ tới masking."
+      }
+    ],
+    "method": [
+      {
+        "en": "Label bit 0 and write a one-hot or multi-bit mask.",
+        "vi": "Gắn nhãn bit 0 và viết one-hot hoặc multi-bit mask."
+      },
+      {
+        "en": "Apply the truth table column by column, then interpret device state.",
+        "vi": "Áp dụng truth table từng cột rồi diễn giải device state."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "XOR with a mask always clears the selected bit.",
+          "vi": "XOR với mask luôn clear selected bit."
+        },
+        "correction": {
+          "en": "XOR toggles: 1 becomes 0 and 0 becomes 1.",
+          "vi": "XOR toggle: 1 thành 0 và 0 thành 1."
+        }
+      },
+      {
+        "mistake": {
+          "en": "AND test must overwrite the source register.",
+          "vi": "AND test phải overwrite source register."
+        },
+        "correction": {
+          "en": "AND always writes its result to ACC. The original input register is preserved unless a later STO or output instruction explicitly writes ACC back.",
+          "vi": "AND luôn ghi result vào ACC. Input register ban đầu được giữ nguyên trừ khi lệnh STO hoặc output sau đó ghi ACC trở lại một cách tường minh."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Monitoring and control mean the same thing.",
+          "vi": "Monitoring và control có cùng nghĩa."
+        },
+        "correction": {
+          "en": "Monitoring reports state; control uses state to change a device or actuator.",
+          "vi": "Monitoring báo state; control dùng state để thay đổi device hoặc actuator."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L32-recognise-1",
+        "title": {
+          "en": "Choose the mask operation",
+          "vi": "Chọn mask operation"
+        },
+        "setup": {
+          "en": "A controller must switch bit 5 on while leaving all other output bits unchanged.",
+          "vi": "Controller phải bật bit 5 và giữ mọi output bit khác."
+        },
+        "prompt": {
+          "en": "Give the mask and operation.",
+          "vi": "Cho mask và operation."
+        },
+        "expectedEvidence": {
+          "en": "Use mask 00100000₂ with OR. The 1 sets bit 5, while OR with zero preserves every other input bit.",
+          "vi": "Dùng mask 00100000₂ với OR. Bit 1 set bit 5, còn OR với zero giữ mọi input bit khác."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L32-CHECK-REQ-4.3-02-01",
+      "requirementId": "REQ-4.3-02-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish monitoring from control using an eight-bit sensor register.",
+        "vi": "Phân biệt monitoring với control bằng eight-bit sensor register."
+      },
+      "hint": {
+        "en": "One reports readings; the other uses them to change a device.",
+        "vi": "Một loại báo reading; loại kia dùng reading để thay đổi device."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Monitoring reads or records the sensor bits and reports state without necessarily changing the physical system. Control reads the bits, makes a decision and sends an output that adjusts an actuator or device, often forming feedback.",
+          "vi": "Monitoring đọc hoặc ghi sensor bit và báo state mà không nhất thiết thay đổi physical system. Control đọc bit, ra quyết định và gửi output điều chỉnh actuator hoặc device, thường tạo feedback."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "monitoring",
+        "control",
+        "device-register"
+      ]
+    },
+    {
+      "id": "P1-L32-CHECK-REQ-4.3-03-01",
+      "requirementId": "REQ-4.3-03-01",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "For input 10010110₂ and mask 00000100₂, calculate bitwise AND, OR and XOR. Enter AND;OR;XOR as three 8-bit results.",
+        "vi": "Với input 10010110₂ và mask 00000100₂, tính bitwise AND, OR và XOR. Nhập AND;OR;XOR dưới dạng ba result 8-bit."
+      },
+      "hint": {
+        "en": "Apply each truth table independently to all eight columns.",
+        "vi": "Áp dụng mỗi truth table độc lập cho cả tám cột."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "AND=00000100₂, OR=10010110₂ and XOR=10010010₂.",
+          "vi": "AND=00000100₂, OR=10010110₂ và XOR=10010010₂."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "00000100;10010110;10010010",
+        "AND=00000100;OR=10010110;XOR=10010010",
+        "AND:00000100;OR:10010110;XOR:10010010",
+        "B00000100;B10010110;B10010010",
+        "0b00000100;0b10010110;0b10010010",
+        "00000100,10010110,10010010"
+      ],
+      "semanticTags": [
+        "AND",
+        "OR",
+        "XOR",
+        "bitwise"
+      ]
+    },
+    {
+      "id": "P1-L32-CHECK-REQ-4.3-03-02",
+      "requirementId": "REQ-4.3-03-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how to test bit 2 and set bit 0 of register 10010010₂ without changing unrelated bits. Bit 0 is the LSB.",
+        "vi": "Giải thích cách test bit 2 và set bit 0 của register 10010010₂ mà không đổi bit không liên quan. Bit 0 là LSB."
+      },
+      "hint": {
+        "en": "Use a one-hot mask for each target.",
+        "vi": "Dùng one-hot mask cho từng target."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Load the source value into ACC, then AND with mask 00000100₂. ACC becomes 00000000₂, so bit 2 is clear; the source register is unchanged. Reload the source into ACC and OR with mask 00000001₂. ACC becomes 10010011₂ while every unrelated bit is preserved. The source changes only if this ACC value is explicitly stored or output.",
+          "vi": "Load source value vào ACC rồi AND với mask 00000100₂. ACC trở thành 00000000₂ nên bit 2 clear; source register không đổi. Reload source vào ACC rồi OR với mask 00000001₂. ACC trở thành 10010011₂ và mọi bit không liên quan được giữ. Source chỉ thay đổi nếu ACC value này được store hoặc output tường minh."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bit-mask",
+        "test",
+        "set"
+      ]
+    },
+    {
+      "id": "P1-L32-CHECK-REQ-4.3-03-03",
+      "requirementId": "REQ-4.3-03-03",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "ACC contains 00101101₂. Apply LSL #2 and then, separately from the original value, LSR #3. Enter LSL;LSR as two 8-bit results.",
+        "vi": "ACC chứa 00101101₂. Áp dụng LSL #2 rồi, tách riêng từ original value, LSR #3. Nhập LSL;LSR dưới dạng hai result 8-bit."
+      },
+      "hint": {
+        "en": "Keep an 8-bit word and insert zeros.",
+        "vi": "Giữ 8-bit word và chèn zero."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "LSL #2 gives 10110100₂ after two logical-left steps. LSR #3 from the original gives 00000101₂ after three logical-right steps. Bits beyond the 8-bit boundary are discarded.",
+          "vi": "LSL #2 cho 10110100₂ sau hai logical-left step. LSR #3 từ original cho 00000101₂ sau ba logical-right step. Bit vượt 8-bit boundary bị loại."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "10110100;00000101",
+        "LSL=10110100;LSR=00000101",
+        "LSL:10110100;LSR:00000101",
+        "B10110100;B00000101",
+        "0b10110100;0b00000101",
+        "10110100,00000101"
+      ],
+      "semanticTags": [
+        "LSL",
+        "LSR"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the purpose of AND, OR and XOR masks and the difference between monitoring and control.",
+      "vi": "Nêu mục đích AND, OR và XOR mask cùng khác biệt giữa monitoring và control."
+    },
+    "answerPoints": [
+      {
+        "en": "AND tests/selects, OR sets, XOR toggles; monitoring reports, while control changes an output using the reading.",
+        "vi": "AND test/select, OR set, XOR toggle; monitoring báo state còn control thay đổi output dựa trên reading."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "bit mask",
+      "meaning": {
+        "en": "A word used with a bitwise operation to select target bit positions.",
+        "vi": "Word dùng với bitwise operation để chọn target bit position."
+      }
+    },
+    {
+      "term": "bitwise",
+      "meaning": {
+        "en": "Operation applied independently to matching bit columns.",
+        "vi": "Operation áp dụng độc lập cho các bit column tương ứng."
+      }
+    },
+    {
+      "term": "monitoring",
+      "meaning": {
+        "en": "Reading or recording device state without necessarily changing it.",
+        "vi": "Đọc hoặc ghi device state mà không nhất thiết thay đổi nó."
+      }
+    },
+    {
+      "term": "control",
+      "meaning": {
+        "en": "Using an input state to adjust an output or actuator.",
+        "vi": "Dùng input state để điều chỉnh output hoặc actuator."
+      }
+    },
+    {
+      "term": "toggle",
+      "meaning": {
+        "en": "Change a bit from 0 to 1 or from 1 to 0.",
+        "vi": "Đổi bit từ 0 sang 1 hoặc từ 1 sang 0."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "logic-gates",
+    "bit-shifts",
+    "assembly-tracing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.3, p. 22",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L32 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 131–132",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L32",
+  "contractCoverage": {
+    "B01": [
+      "P1-L32-objectives"
+    ],
+    "B02": [
+      "P1-L32-theory-1",
+      "P1-L32-theory-2",
+      "P1-L32-theory-3"
+    ],
+    "B03": [
+      "P1-L32-theory-1",
+      "P1-L32-theory-2",
+      "P1-L32-theory-3"
+    ],
+    "B04": [
+      "P1-L32-recognise-1"
+    ],
+    "B05": [
+      "P1-L32-worked-1",
+      "P1-L32-worked-2",
+      "P1-L32-worked-3",
+      "P1-L32-worked-4",
+      "P1-L32-worked-5"
+    ],
+    "B06": [
+      "VIS-P1-L32"
+    ],
+    "B07": [
+      "P1-L32-CHECK-REQ-4.3-02-01",
+      "P1-L32-CHECK-REQ-4.3-03-01",
+      "P1-L32-CHECK-REQ-4.3-03-02",
+      "P1-L32-CHECK-REQ-4.3-03-03"
+    ],
+    "B08": [
+      "P1-L32-recognise-1"
+    ],
+    "B09": [
+      "P1-L32-recall"
+    ],
+    "B10": [
+      "P1-L32-glossary"
+    ],
+    "B11": [
+      "P1-L32-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

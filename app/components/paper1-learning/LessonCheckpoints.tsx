@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CheckCircle2, Eye, HelpCircle, RotateCcw } from "lucide-react";
 import { Button, Feedback } from "@/app/components/algocore-ui";
+import { paper1AssessmentReviewKind } from "@/app/lib/paper1/progress-contract";
 import type { Paper1Assessment, Paper1Locale } from "@/app/lib/paper1/types";
 import {
   announcePaper1ProgressChange,
@@ -26,7 +27,8 @@ export function LessonCheckpoints({ lessonId, assessmentVersion, assessments, lo
   useEffect(() => {
     const scope = readPaper1ProgressScope();
     const assessmentIds = assessments.map((assessment) => assessment.id);
-    const envelope = readPaper1ProgressEnvelope(scope, lessonId, assessmentVersion, assessmentIds);
+    const assessmentReviewRules = assessments.map((assessment) => ({ id: assessment.id, reviewKind: paper1AssessmentReviewKind(assessment) }));
+    const envelope = readPaper1ProgressEnvelope(scope, lessonId, assessmentVersion, assessmentIds, assessmentReviewRules);
     setReady(false);
     setProgressScope(scope);
     setItems(envelope?.items ?? {});
@@ -36,7 +38,7 @@ export function LessonCheckpoints({ lessonId, assessmentVersion, assessments, lo
   useEffect(() => {
     if (!ready || !progressScope) return;
     try {
-      const envelope: Paper1ProgressEnvelope = { meta: { assessmentVersion, assessmentIds: assessments.map((assessment) => assessment.id), assessmentReviewRules: assessments.map((assessment) => ({ id: assessment.id, reviewKind: ["explain", "compare", "justify"].includes(assessment.kind) ? "self-review" : "deterministic" })), lastAssessmentId }, items };
+      const envelope: Paper1ProgressEnvelope = { meta: { assessmentVersion, assessmentIds: assessments.map((assessment) => assessment.id), assessmentReviewRules: assessments.map((assessment) => ({ id: assessment.id, reviewKind: paper1AssessmentReviewKind(assessment) })), lastAssessmentId }, items };
       localStorage.setItem(paper1ProgressStorageKey(progressScope, lessonId), JSON.stringify(envelope));
       announcePaper1ProgressChange(lessonId);
     } catch { /* memory fallback keeps the lesson usable */ }
