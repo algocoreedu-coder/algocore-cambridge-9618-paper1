@@ -158,6 +158,7 @@ export function TeacherSourceAuditDisclosure({ lessonId, locale }: { readonly le
   if (!contract) return null;
   const placements = [...contract.instructionalPlacements, ...contract.referencePlacements]
     .toSorted((left, right) => (left.stage ?? "reference").localeCompare(right.stage ?? "reference") || left.order - right.order);
+  if (!placements.length) return null;
   return <aside className={styles.lessonReferences} aria-labelledby={`${lessonId}-source-audit`} data-teacher-source-audit={lessonId}>
     <h2 id={`${lessonId}-source-audit`}>{locale === "vi" ? "Đối chiếu coursebook (tuỳ chọn)" : "Optional coursebook alignment"}</h2>
     <p>{locale === "vi"

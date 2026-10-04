@@ -57,6 +57,7 @@ check(expected.reduce((sum, entry) => sum + entry.atlas.length, 0) === 43, "vali
 
 const catalog = read("content/paper1/catalog.json");
 const manifest = read("content/paper1/release-manifest.json");
+const releaseChapter = Number(manifest?.releaseId?.match(/^paper1-chapter(\d+)-/i)?.[1]);
 const definitions = read("content/paper1/visual-definitions.json");
 const atlasAudit = read("content/paper1/chapter4-atlas-audit.json");
 const practice = read("content/paper1/practice/chapter-4.json");
@@ -66,7 +67,7 @@ if (catalog) {
   const section = catalog.sections?.find((entry) => entry.id === "4");
   check(section?.status === "available", "catalog: Section 4 must be available");
   localized(section?.title, "catalog Section 4 title"); localized(section?.summary, "catalog Section 4 summary"); localized(section?.question, "catalog Section 4 question");
-  check(["5", "6"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.filter((entry) => ["7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 5–6 must be available and Sections 7–8 must remain planned");
+  check(["5", "6", "7"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.find((entry) => entry.id === "8")?.status === (releaseChapter >= 8 ? "available" : "planned"), "catalog: Sections 5–7 must remain available; Section 8 must be planned through Chapter 7 and available from Chapter 8");
   const strands = catalog.strands?.filter((entry) => entry.sectionId === "4") ?? [];
   check(same(strands.map((entry) => entry.id), ["4.1", "4.2", "4.3"]), "catalog: Chapter 4 strands/order mismatch");
   strands.forEach((entry) => localized(entry.title, `catalog strand ${entry.id}`));
@@ -88,7 +89,7 @@ if (catalog) {
 }
 
 if (manifest) {
-  check(/chapter-?[456]/i.test(manifest.releaseId ?? ""), "release manifest must identify a cumulative candidate containing Chapter 4");
+  check(/^paper1-chapter(?:[4-9]|[1-9]\d)-/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 4 or a later cumulative candidate");
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lesson IDs");
   for (const item of expected) {
     const released = manifest.lessons?.find((entry) => entry.lessonId === item.lessonId);

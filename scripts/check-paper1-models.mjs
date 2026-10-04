@@ -5,6 +5,7 @@ import { bufferOccupancy, circuitRows, controlDecision, evaluateLogicCircuit, lo
 import { BRANCH_PROGRAM, LOAD_STORE_PROGRAM, PERFORMANCE_CASES, addressModel, addressingFrames, assembleFixture, branchPacketFrames, cpuPacketFrames, cpuTransferFrames, loadStorePacketFrames, mask8, normalizeBoundedInteger, performanceFrames, shift8 } from "../app/lib/paper1/chapter4-models.ts";
 import { DEFRAG_AFTER, DEFRAG_BEFORE, OS_CASES, TRANSLATOR_CASES, UTILITY_CASES, ideFrames, orderedPredictionChoices, osRequestFrames, translatorFrames, utilityFrames } from "../app/lib/paper1/chapter5-models.ts";
 import { SECURITY_INCIDENTS, THREAT_PATHS, VALIDATION_FIXTURES, VERIFICATION_FIXTURES, securityIncidentFrames, threatProtectionFrames, validationFrames, verificationFacts, verificationFrames } from "../app/lib/paper1/chapter6-models.ts";
+import { AI_IMPACT_DIMENSIONS, AI_USE_CASES, ETHICS_ACTIONS, ETHICS_SCENARIOS, LICENCE_PROFILES, LICENCE_SCENARIOS, aiImpactFrames, licenceFitFrames, professionalEthicsFrames } from "../app/lib/paper1/chapter7-models.ts";
 
 const checks = [];
 const run = (name, test) => { test(); checks.push(name); };
@@ -293,6 +294,7 @@ run("Chapter 5 IDE authoring and breakpoint execution boundary", () => {
 const chapter4Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter4-visual-oracles.json", import.meta.url), "utf8"));
 const chapter5Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter5-visual-oracles.json", import.meta.url), "utf8"));
 const chapter6Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter6-visual-oracles.json", import.meta.url), "utf8"));
+const chapter7Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter7-visual-oracles.json", import.meta.url), "utf8"));
 const projectDeclared = (actual, declared, path = "fixture") => {
   if (Array.isArray(declared)) {
     assert.ok(Array.isArray(actual), `${path} must be an array`);
@@ -501,4 +503,110 @@ run("Chapter 6 exhaustive visual-oracle parity", () => {
   }
 });
 
-console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapters 4–6 JSON fixtures compared; Chapter 6 covers 188 deterministic security, validation and verification states)`);
+run("Chapter 7 exhaustive visual-oracle parity", () => {
+  assert.deepEqual(chapter7Oracles.map((entry) => entry.lessonId), ["P1-L41", "P1-L42", "P1-L43"]);
+  assert.deepEqual(chapter7Oracles.map((entry) => entry.stateCount), [24, 64, 36]);
+  assert.equal(chapter7Oracles.reduce((sum, entry) => sum + entry.stateCount, 0), 124);
+  const selectorCounts = { "P1-L41": 6, "P1-L42": 16, "P1-L43": 9 };
+  for (const entry of chapter7Oracles) {
+    assert.equal(entry.states.length, entry.stateCount, `${entry.lessonId} oracle state cardinality`);
+    const stateKeys = entry.states.map((state) => `${JSON.stringify(state.selector)}::${state.frameId}`);
+    assert.equal(new Set(stateKeys).size, entry.stateCount, `${entry.lessonId} selector/frame records must be unique`);
+    assert.equal(new Set(entry.states.map((state) => JSON.stringify(state.selector))).size, selectorCounts[entry.lessonId], `${entry.lessonId} selector cardinality`);
+  }
+
+  const oracle = Object.fromEntries(chapter7Oracles.map((entry) => [entry.lessonId, entry]));
+  const compare = (lessonId, entry, frames, path) => {
+    assert.deepEqual(frames.map((frame) => frame.id), oracle[lessonId].frameIds, `${path}.frameIds`);
+    const actual = frames.find((frame) => frame.id === entry.frameId);
+    assert.ok(actual, `${path}.${entry.frameId} missing`);
+    assert.deepEqual({ selector: entry.selector, frameId: actual.id, ticket: actual.ticket, activeIds: actual.activeIds, state: actual.state }, entry, `${path}.${entry.frameId}`);
+    assert.ok(actual.activeIds.length <= 3, `${path}.${entry.frameId} highlights more than three semantic objects`);
+  };
+
+  assert.deepEqual(ETHICS_SCENARIOS, ["unsafe-release", "confidential-code-reuse", "known-bias-error"]);
+  assert.deepEqual(Object.fromEntries(ETHICS_SCENARIOS.map((scenario) => [scenario, ETHICS_ACTIONS[scenario].length])), {
+    "unsafe-release": 2,
+    "confidential-code-reuse": 2,
+    "known-bias-error": 2,
+  });
+  for (const entry of oracle["P1-L41"].states) compare("P1-L41", entry, professionalEthicsFrames(entry.selector.scenario, entry.selector.action), `P1-L41.${entry.selector.scenario}.${entry.selector.action}`);
+  const legalVerdict = /^(?:legal|illegal|lawful|unlawful|always-legal|always-illegal)$/i;
+  const requiredEthicsFields = ["legalStatusBoundary", "legalEvidenceNeeded", "professionalEthicsRelation", "professionalEthicsEvidence", "professionalBodyContribution"];
+  for (const entry of oracle["P1-L41"].states) {
+    const state = entry.state;
+    for (const field of requiredEthicsFields) assert.ok(typeof state[field] === "string" && state[field].trim(), `P1-L41.${entry.selector.scenario}.${entry.selector.action}.${entry.frameId}.${field} must be explicit and non-empty`);
+    assert.ok(["supports-duty", "conflicts-with-duty"].includes(state.professionalEthicsRelation), `${entry.selector.scenario}.${entry.selector.action}: professional ethics relation must use the finite ethical relation`);
+    assert.ok(!legalVerdict.test(state.legalStatusBoundary.trim()), `${entry.selector.scenario}.${entry.selector.action}: legal status must not be a universal verdict`);
+    assert.ok(!Object.hasOwn(state, "legalVerdict") && !Object.hasOwn(state, "isLegal"), `${entry.selector.scenario}.${entry.selector.action}: categorical legal verdict fields are prohibited`);
+    assert.notEqual(state.legalStatusBoundary, state.professionalEthicsRelation, `${entry.selector.scenario}.${entry.selector.action}: legal boundary must remain separate from ethical relation`);
+    assert.notEqual(state.legalEvidenceNeeded, state.professionalEthicsEvidence, `${entry.selector.scenario}.${entry.selector.action}: legal and professional-ethics evidence must remain separate`);
+    assert.ok(!state.legalStatusBoundary.includes(state.professionalEthicsRelation) && !state.legalEvidenceNeeded.includes(state.professionalEthicsRelation), `${entry.selector.scenario}.${entry.selector.action}: legal fields must not derive from ethical relation`);
+    assert.match(state.professionalBodyContribution, /membership-does-not-guarantee-conduct/, `${entry.selector.scenario}.${entry.selector.action}: membership boundary`);
+    if (entry.frameId === "facts") {
+      assert.equal(state.revealedLegalStatusBoundary, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: initial frame must not reveal legal boundary`);
+      assert.equal(state.revealedLegalEvidenceNeeded, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: initial frame must not reveal legal evidence`);
+      assert.equal(state.revealedProfessionalEthicsRelation, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: initial frame must not reveal professional-ethics relation`);
+      assert.equal(state.revealedProfessionalEthicsEvidence, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: initial frame must not reveal professional-ethics evidence`);
+      assert.equal(state.revealedRelation, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: initial frame must not reveal ethical relation`);
+      assert.equal(state.revealedArgument, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: initial frame must not reveal conclusion`);
+    }
+    if (entry.frameId === "action" || entry.frameId === "effects") {
+      assert.equal(state.revealedLegalStatusBoundary, state.legalStatusBoundary, `${entry.selector.scenario}.${entry.selector.action}: legal boundary must reveal from action frame`);
+      assert.equal(state.revealedLegalEvidenceNeeded, state.legalEvidenceNeeded, `${entry.selector.scenario}.${entry.selector.action}: legal evidence must reveal from action frame`);
+      assert.equal(state.revealedProfessionalEthicsRelation, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: professional-ethics relation must remain prediction-locked`);
+      assert.equal(state.revealedProfessionalEthicsEvidence, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: professional-ethics evidence must remain prediction-locked`);
+    }
+    if (entry.frameId === "argument") {
+      assert.equal(state.revealedLegalStatusBoundary, state.legalStatusBoundary, `${entry.selector.scenario}.${entry.selector.action}: final frame must retain legal boundary`);
+      assert.equal(state.revealedLegalEvidenceNeeded, state.legalEvidenceNeeded, `${entry.selector.scenario}.${entry.selector.action}: final frame must retain legal evidence`);
+      assert.equal(state.revealedProfessionalEthicsRelation, state.professionalEthicsRelation, `${entry.selector.scenario}.${entry.selector.action}: final frame must reveal professional-ethics relation`);
+      assert.equal(state.revealedProfessionalEthicsEvidence, state.professionalEthicsEvidence, `${entry.selector.scenario}.${entry.selector.action}: final frame must reveal professional-ethics evidence`);
+      assert.equal(state.revealedRelation, state.professionalEthicsRelation, `${entry.selector.scenario}.${entry.selector.action}: final frame must reveal the professional-ethics relation`);
+      assert.notEqual(state.revealedArgument, "not-revealed", `${entry.selector.scenario}.${entry.selector.action}: final frame must reveal the qualified argument`);
+    }
+  }
+  for (const scenario of ETHICS_SCENARIOS) {
+    const [firstAction, secondAction] = ETHICS_ACTIONS[scenario];
+    const firstStates = oracle["P1-L41"].states.filter((entry) => entry.selector.scenario === scenario && entry.selector.action === firstAction);
+    const secondStates = oracle["P1-L41"].states.filter((entry) => entry.selector.scenario === scenario && entry.selector.action === secondAction);
+    assert.equal(firstStates.length, 4, `${scenario}.${firstAction}: four frames required`);
+    assert.equal(secondStates.length, 4, `${scenario}.${secondAction}: four frames required`);
+    assert.equal(new Set([...firstStates, ...secondStates].map((entry) => entry.state.legalStatusBoundary)).size, 1, `${scenario}: action changes must not change the scenario legal-boundary caveat`);
+    assert.notEqual(firstStates[0].state.professionalEthicsEvidence, secondStates[0].state.professionalEthicsEvidence, `${scenario}: action changes must change professional-ethics evidence`);
+    assert.notDeepEqual(firstStates[0].state.stakeholderEffects, secondStates[0].state.stakeholderEffects, `${scenario}: action changes must change the consequence trace`);
+  }
+  for (const scenario of ETHICS_SCENARIOS) {
+    for (const action of ETHICS_ACTIONS[scenario]) {
+      const conclusion = professionalEthicsFrames(scenario, action).at(-1).state;
+      assert.match(conclusion.bodyContext, /membership-does-not-guarantee-conduct/, `${scenario}.${action}: professional-body membership boundary`);
+      assert.notEqual(conclusion.revealedRelation, "not-revealed", `${scenario}.${action}: final frame must expose a qualified duty relation`);
+    }
+  }
+
+  assert.deepEqual(LICENCE_SCENARIOS, ["community-accessibility", "collaborative-library", "classroom-trial", "payroll-deployment"]);
+  assert.deepEqual(LICENCE_PROFILES, ["fsf-free-software", "osi-open-source", "shareware-trial", "proprietary-commercial"]);
+  for (const entry of oracle["P1-L42"].states) compare("P1-L42", entry, licenceFitFrames(entry.selector.scenario, entry.selector.profile), `P1-L42.${entry.selector.scenario}.${entry.selector.profile}`);
+  const freeSoftware = licenceFitFrames("community-accessibility", "fsf-free-software").at(-1).state;
+  assert.match(freeSoftware.overlapCaveat, /sold-commercially/, "free software must not be equated with zero price");
+  const openSource = licenceFitFrames("collaborative-library", "osi-open-source").at(-1).state;
+  assert.match(openSource.overlapCaveat, /sold-commercially/, "open source must not be equated with non-commercial software");
+  const shareware = licenceFitFrames("classroom-trial", "shareware-trial").at(-1).state;
+  assert.ok(shareware.conditions.includes("normally-proprietary-and-copyrighted"), "shareware boundary must remain explicit");
+  for (const scenario of LICENCE_SCENARIOS) for (const profile of LICENCE_PROFILES) {
+    const conclusion = licenceFitFrames(scenario, profile).at(-1).state;
+    assert.ok(conclusion.unresolvedTerms.length > 0, `${scenario}.${profile}: actual licence terms must remain unresolved until checked`);
+  }
+
+  assert.deepEqual(AI_USE_CASES, ["medical-triage", "adaptive-learning", "traffic-routing"]);
+  assert.deepEqual(AI_IMPACT_DIMENSIONS, ["social", "economic", "environmental"]);
+  for (const entry of oracle["P1-L43"].states) compare("P1-L43", entry, aiImpactFrames(entry.selector.useCase, entry.selector.dimension), `P1-L43.${entry.selector.useCase}.${entry.selector.dimension}`);
+  for (const useCase of AI_USE_CASES) for (const dimension of AI_IMPACT_DIMENSIONS) {
+    const conclusion = aiImpactFrames(useCase, dimension).at(-1).state;
+    assert.ok(conclusion.inputData.length > 0 && conclusion.aiTask.length > 0 && conclusion.output.length > 0, `${useCase}.${dimension}: input-processing-output mechanism must be explicit`);
+    assert.ok(conclusion.revealedBenefit.length > 0 && conclusion.revealedRisk.length > 0, `${useCase}.${dimension}: balanced causal paths required`);
+    assert.ok(conclusion.conditions.length > 0, `${useCase}.${dimension}: conclusion must remain conditional`);
+  }
+});
+
+console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapters 4–7 JSON fixtures compared; Chapter 7 covers 124 deterministic professional ethics, licensing and AI impact states)`);

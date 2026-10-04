@@ -3485,6 +3485,155 @@
         "order": 6
       }
     ]
+  },
+  {
+    "lessonId": "P1-L41",
+    "visualId": "VIS-P1-L41",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [
+      {
+        "atlasId": "BOOK-C07-P184-F7-1",
+        "disposition": "INLINE_UNDERSTAND",
+        "sourceLocator": "Coursebook Chapter 7, Figure 7.1, printed p184 / PDF p200",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L41",
+        "stage": "understand",
+        "anchor": {
+          "kind": "theory-block",
+          "targetId": "P1-L41-theory-1",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-7.1-01",
+          "AC26-7.1-02"
+        ],
+        "requirementIds": [
+          "REQ-7.1-01-01",
+          "REQ-7.1-01-02",
+          "REQ-7.1-02-01",
+          "REQ-7.1-02-02"
+        ],
+        "teachingClaim": {
+          "en": "Public wellbeing provides a stakeholder-and-consequence frame before professional decision reasoning, without collapsing ethics into one automatic verdict.",
+          "vi": "Public wellbeing cung cấp frame stakeholder và consequence trước khi lập luận quyết định nghề nghiệp mà không thu ethics thành một verdict tự động."
+        },
+        "learnerAction": {
+          "en": "Read the original four-part wellbeing anchor, predict the stakeholder affected by one action, then locate the evidence in the professional decision ledger.",
+          "vi": "Đọc anchor wellbeing gốc gồm bốn phần, dự đoán stakeholder bị ảnh hưởng bởi một action rồi tìm evidence trong professional decision ledger."
+        },
+        "teacherPrompt": {
+          "en": "Which professional duty and stakeholder consequence does this concern make visible?",
+          "vi": "Concern này làm rõ professional duty và stakeholder consequence nào?"
+        },
+        "expectedObservation": {
+          "en": "The learner connects a stated action to a named stakeholder and consequence while keeping ethical and legal evidence separate.",
+          "vi": "Học sinh nối action đã nêu với stakeholder và consequence cụ thể, đồng thời tách evidence ethical khỏi legal."
+        },
+        "misconceptionOrLimit": {
+          "en": "A public concern is evidence for reasoning; it is not an automatic morality score or legal ruling.",
+          "vi": "Public concern là evidence để lập luận; không phải morality score hoặc phán quyết pháp lý tự động."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned understand note for BOOK-C07-P184-F7-1.",
+          "vi": "Ghi chú understand đối chiếu nguồn cho BOOK-C07-P184-F7-1."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 7, Figure 7.1, printed p184 / PDF p200 is an audit pointer mapped to VIS-P1-L41; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 7, Figure 7.1, trang in 184 / PDF 200 là pointer audit được map tới VIS-P1-L41; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "prepares-dynamic-model",
+        "order": 0
+      }
+    ],
+    "referencePlacements": [
+      {
+        "atlasId": "BOOK-C07-P195-EXAM-ETHICS-DIAGRAM",
+        "disposition": "DUPLICATE_OR_REMOVE",
+        "sourceLocator": "Coursebook Chapter 7, end-of-chapter question 4 matching diagram, printed p195 / PDF p211",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L41",
+        "rationale": {
+          "en": "Removed because the legacy matching layout turns ethical reasoning into a copied fixed-answer exercise; the original ledger replaces it.",
+          "vi": "Loại vì layout matching cũ biến ethical reasoning thành bài fixed-answer sao chép; ledger gốc thay thế."
+        },
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C07-P195-EXAM-ETHICS-TABLE",
+        "disposition": "DUPLICATE_OR_REMOVE",
+        "sourceLocator": "Coursebook Chapter 7, end-of-chapter question 4 incident table, printed p195 / PDF p211",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L41",
+        "rationale": {
+          "en": "Removed with the same legacy item because its incident wording is assessment material; original finite scenarios replace it.",
+          "vi": "Loại cùng item đề cũ vì wording incident là assessment material; finite scenario gốc thay thế."
+        },
+        "order": 1
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L42",
+    "visualId": "VIS-P1-L42",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [],
+    "referencePlacements": []
+  },
+  {
+    "lessonId": "P1-L43",
+    "visualId": "VIS-P1-L43",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [],
+    "referencePlacements": [
+      {
+        "atlasId": "BOOK-C07-P190-F7-2-TRAIN",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 7, Figure 7.2 left photograph, printed p190 / PDF p206",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L43",
+        "rationale": {
+          "en": "Optional recognition after the core mechanism trace; the original lesson uses no copied photograph.",
+          "vi": "Recognition tuỳ chọn sau core mechanism trace; bài gốc không dùng ảnh sao chép."
+        },
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C07-P190-F7-2-ARM",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 7, Figure 7.2 centre photograph, printed p190 / PDF p206",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L43",
+        "rationale": {
+          "en": "Optional application context shown only through an original abstract control loop without unsupported medical claims.",
+          "vi": "Context ứng dụng tuỳ chọn chỉ thể hiện bằng control loop trừu tượng gốc, không có medical claim thiếu nguồn."
+        },
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C07-P190-F7-2-ROBOT",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 7, Figure 7.2 right photograph, printed p190 / PDF p206",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L43",
+        "rationale": {
+          "en": "Optional sense–decide–act recognition; it does not prove a universal safety or employment impact.",
+          "vi": "Recognition sense–decide–act tuỳ chọn; không chứng minh tác động safety hoặc employment phổ quát."
+        },
+        "order": 2
+      }
+    ]
   }
   ]
 }

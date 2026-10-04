@@ -1477,5 +1477,221 @@
       "P1-L40-checksum-compensating-verdict"
     ],
     "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L41",
+    "lessonId": "P1-L41",
+    "title": {
+      "en": "Professional decision and stakeholder ledger",
+      "vi": "Sổ quyết định nghề nghiệp và stakeholder"
+    },
+    "learnerAction": {
+      "en": "Choose an authored scenario and action, predict the professional duty and stakeholder effect, then compare an evidence-based argument with the rubric.",
+      "vi": "Chọn scenario và action đã soạn, dự đoán professional duty cùng ảnh hưởng tới stakeholder rồi so sánh lập luận có bằng chứng với rubric."
+    },
+    "observableOutcome": {
+      "en": "Separate ethical from legal reasoning and explain how a professional principle, body contribution and consequence support a qualified judgement.",
+      "vi": "Tách lập luận ethical khỏi legal và giải thích professional principle, đóng góp của tổ chức và consequence hỗ trợ judgement có điều kiện thế nào."
+    },
+    "modelScope": {
+      "en": "Three original scenarios each expose two actions across facts, action, stakeholder effects and a qualified argument ledger.",
+      "vi": "Ba scenario gốc, mỗi scenario hiển thị hai action qua facts, action, stakeholder effects và sổ lập luận có điều kiện."
+    },
+    "modelLimitations": {
+      "en": "Finite facts and consequences are deterministic; the learner justification uses rubric self-review and professional-body membership never guarantees ethical conduct.",
+      "vi": "Facts và consequences hữu hạn là deterministic; phần biện minh dùng rubric tự kiểm và membership tổ chức nghề nghiệp không bao giờ bảo đảm hành vi có đạo đức."
+    },
+    "atlasIds": [
+      "BOOK-C07-P184-F7-1",
+      "BOOK-C07-P195-EXAM-ETHICS-DIAGRAM",
+      "BOOK-C07-P195-EXAM-ETHICS-TABLE"
+    ],
+    "sceneIds": [
+      "P1-L41-unsafe-release-report-and-delay-facts",
+      "P1-L41-unsafe-release-report-and-delay-action",
+      "P1-L41-unsafe-release-report-and-delay-effects",
+      "P1-L41-unsafe-release-report-and-delay-argument",
+      "P1-L41-unsafe-release-conceal-and-release-facts",
+      "P1-L41-unsafe-release-conceal-and-release-action",
+      "P1-L41-unsafe-release-conceal-and-release-effects",
+      "P1-L41-unsafe-release-conceal-and-release-argument",
+      "P1-L41-confidential-code-reuse-permission-or-reimplement-facts",
+      "P1-L41-confidential-code-reuse-permission-or-reimplement-action",
+      "P1-L41-confidential-code-reuse-permission-or-reimplement-effects",
+      "P1-L41-confidential-code-reuse-permission-or-reimplement-argument",
+      "P1-L41-confidential-code-reuse-copy-without-permission-facts",
+      "P1-L41-confidential-code-reuse-copy-without-permission-action",
+      "P1-L41-confidential-code-reuse-copy-without-permission-effects",
+      "P1-L41-confidential-code-reuse-copy-without-permission-argument",
+      "P1-L41-known-bias-error-document-and-escalate-facts",
+      "P1-L41-known-bias-error-document-and-escalate-action",
+      "P1-L41-known-bias-error-document-and-escalate-effects",
+      "P1-L41-known-bias-error-document-and-escalate-argument",
+      "P1-L41-known-bias-error-suppress-evidence-facts",
+      "P1-L41-known-bias-error-suppress-evidence-action",
+      "P1-L41-known-bias-error-suppress-evidence-effects",
+      "P1-L41-known-bias-error-suppress-evidence-argument"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L42",
+    "lessonId": "P1-L42",
+    "title": {
+      "en": "Copyright boundary and licence-fit matrix",
+      "vi": "Ranh giới copyright và matrix độ phù hợp licence"
+    },
+    "learnerAction": {
+      "en": "Choose a usage scenario and syllabus reference profile, predict its fit, compare permissions with declared needs, then justify the result with a terms caveat.",
+      "vi": "Chọn usage scenario và syllabus reference profile, dự đoán độ phù hợp, so sánh permission với nhu cầu đã nêu rồi biện minh kết quả kèm lưu ý về terms."
+    },
+    "observableOutcome": {
+      "en": "Explain the purpose of copyright, distinguish the four syllabus profiles and justify a fit without treating FSF/OSI as licence documents or commercial/open source as opposites.",
+      "vi": "Giải thích mục đích copyright, phân biệt bốn profile của syllabus và biện minh độ phù hợp mà không coi FSF/OSI là licence document hay commercial/open source đối lập tuyệt đối."
+    },
+    "modelScope": {
+      "en": "Four original usage scenarios are compared with four simplified syllabus reference profiles through needs, permissions, evidence and qualified fit.",
+      "vi": "Bốn usage scenario gốc được so với bốn syllabus reference profile đơn giản qua needs, permissions, evidence và qualified fit."
+    },
+    "modelLimitations": {
+      "en": "The matrix is jurisdiction-neutral educational guidance; actual rights depend on the specific licence and the model does not provide legal advice.",
+      "vi": "Matrix là hướng dẫn giáo dục trung lập về jurisdiction; quyền thực tế phụ thuộc licence cụ thể và model không cung cấp tư vấn pháp lý."
+    },
+    "atlasIds": [],
+    "sceneIds": [
+      "P1-L42-community-accessibility-fsf-free-software-needs",
+      "P1-L42-community-accessibility-fsf-free-software-profile",
+      "P1-L42-community-accessibility-fsf-free-software-compare",
+      "P1-L42-community-accessibility-fsf-free-software-verdict",
+      "P1-L42-community-accessibility-osi-open-source-needs",
+      "P1-L42-community-accessibility-osi-open-source-profile",
+      "P1-L42-community-accessibility-osi-open-source-compare",
+      "P1-L42-community-accessibility-osi-open-source-verdict",
+      "P1-L42-community-accessibility-shareware-trial-needs",
+      "P1-L42-community-accessibility-shareware-trial-profile",
+      "P1-L42-community-accessibility-shareware-trial-compare",
+      "P1-L42-community-accessibility-shareware-trial-verdict",
+      "P1-L42-community-accessibility-proprietary-commercial-needs",
+      "P1-L42-community-accessibility-proprietary-commercial-profile",
+      "P1-L42-community-accessibility-proprietary-commercial-compare",
+      "P1-L42-community-accessibility-proprietary-commercial-verdict",
+      "P1-L42-collaborative-library-fsf-free-software-needs",
+      "P1-L42-collaborative-library-fsf-free-software-profile",
+      "P1-L42-collaborative-library-fsf-free-software-compare",
+      "P1-L42-collaborative-library-fsf-free-software-verdict",
+      "P1-L42-collaborative-library-osi-open-source-needs",
+      "P1-L42-collaborative-library-osi-open-source-profile",
+      "P1-L42-collaborative-library-osi-open-source-compare",
+      "P1-L42-collaborative-library-osi-open-source-verdict",
+      "P1-L42-collaborative-library-shareware-trial-needs",
+      "P1-L42-collaborative-library-shareware-trial-profile",
+      "P1-L42-collaborative-library-shareware-trial-compare",
+      "P1-L42-collaborative-library-shareware-trial-verdict",
+      "P1-L42-collaborative-library-proprietary-commercial-needs",
+      "P1-L42-collaborative-library-proprietary-commercial-profile",
+      "P1-L42-collaborative-library-proprietary-commercial-compare",
+      "P1-L42-collaborative-library-proprietary-commercial-verdict",
+      "P1-L42-classroom-trial-fsf-free-software-needs",
+      "P1-L42-classroom-trial-fsf-free-software-profile",
+      "P1-L42-classroom-trial-fsf-free-software-compare",
+      "P1-L42-classroom-trial-fsf-free-software-verdict",
+      "P1-L42-classroom-trial-osi-open-source-needs",
+      "P1-L42-classroom-trial-osi-open-source-profile",
+      "P1-L42-classroom-trial-osi-open-source-compare",
+      "P1-L42-classroom-trial-osi-open-source-verdict",
+      "P1-L42-classroom-trial-shareware-trial-needs",
+      "P1-L42-classroom-trial-shareware-trial-profile",
+      "P1-L42-classroom-trial-shareware-trial-compare",
+      "P1-L42-classroom-trial-shareware-trial-verdict",
+      "P1-L42-classroom-trial-proprietary-commercial-needs",
+      "P1-L42-classroom-trial-proprietary-commercial-profile",
+      "P1-L42-classroom-trial-proprietary-commercial-compare",
+      "P1-L42-classroom-trial-proprietary-commercial-verdict",
+      "P1-L42-payroll-deployment-fsf-free-software-needs",
+      "P1-L42-payroll-deployment-fsf-free-software-profile",
+      "P1-L42-payroll-deployment-fsf-free-software-compare",
+      "P1-L42-payroll-deployment-fsf-free-software-verdict",
+      "P1-L42-payroll-deployment-osi-open-source-needs",
+      "P1-L42-payroll-deployment-osi-open-source-profile",
+      "P1-L42-payroll-deployment-osi-open-source-compare",
+      "P1-L42-payroll-deployment-osi-open-source-verdict",
+      "P1-L42-payroll-deployment-shareware-trial-needs",
+      "P1-L42-payroll-deployment-shareware-trial-profile",
+      "P1-L42-payroll-deployment-shareware-trial-compare",
+      "P1-L42-payroll-deployment-shareware-trial-verdict",
+      "P1-L42-payroll-deployment-proprietary-commercial-needs",
+      "P1-L42-payroll-deployment-proprietary-commercial-profile",
+      "P1-L42-payroll-deployment-proprietary-commercial-compare",
+      "P1-L42-payroll-deployment-proprietary-commercial-verdict"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L43",
+    "lessonId": "P1-L43",
+    "title": {
+      "en": "AI application and impact map",
+      "vi": "Bản đồ ứng dụng và tác động AI"
+    },
+    "learnerAction": {
+      "en": "Choose an AI use case and impact dimension, predict one benefit and risk, then trace input, task, output, operational change and conditional consequence.",
+      "vi": "Chọn AI use case và impact dimension, dự đoán một benefit cùng risk rồi trace input, task, output, operational change và consequence có điều kiện."
+    },
+    "observableOutcome": {
+      "en": "Explain an AI application mechanism and balanced social, economic and environmental impacts through named stakeholders and conditions.",
+      "vi": "Giải thích cơ chế ứng dụng AI và tác động xã hội, kinh tế, môi trường cân bằng qua stakeholder cùng condition cụ thể."
+    },
+    "modelScope": {
+      "en": "Three original AI applications each expose social, economic and environmental causal chains across four learner-paced frames.",
+      "vi": "Ba ứng dụng AI gốc, mỗi ứng dụng hiển thị causal chain xã hội, kinh tế và môi trường qua bốn frame do học sinh điều khiển."
+    },
+    "modelLimitations": {
+      "en": "The authored chains are qualitative and conditional; they contain no invented statistics, guaranteed impact or universal good/bad verdict.",
+      "vi": "Các chain đã soạn mang tính qualitative và conditional; không có thống kê bịa đặt, tác động bảo đảm hay verdict tốt/xấu phổ quát."
+    },
+    "atlasIds": [
+      "BOOK-C07-P190-F7-2-TRAIN",
+      "BOOK-C07-P190-F7-2-ARM",
+      "BOOK-C07-P190-F7-2-ROBOT"
+    ],
+    "sceneIds": [
+      "P1-L43-medical-triage-social-application",
+      "P1-L43-medical-triage-social-dimension",
+      "P1-L43-medical-triage-social-causal-paths",
+      "P1-L43-medical-triage-social-conclusion",
+      "P1-L43-medical-triage-economic-application",
+      "P1-L43-medical-triage-economic-dimension",
+      "P1-L43-medical-triage-economic-causal-paths",
+      "P1-L43-medical-triage-economic-conclusion",
+      "P1-L43-medical-triage-environmental-application",
+      "P1-L43-medical-triage-environmental-dimension",
+      "P1-L43-medical-triage-environmental-causal-paths",
+      "P1-L43-medical-triage-environmental-conclusion",
+      "P1-L43-adaptive-learning-social-application",
+      "P1-L43-adaptive-learning-social-dimension",
+      "P1-L43-adaptive-learning-social-causal-paths",
+      "P1-L43-adaptive-learning-social-conclusion",
+      "P1-L43-adaptive-learning-economic-application",
+      "P1-L43-adaptive-learning-economic-dimension",
+      "P1-L43-adaptive-learning-economic-causal-paths",
+      "P1-L43-adaptive-learning-economic-conclusion",
+      "P1-L43-adaptive-learning-environmental-application",
+      "P1-L43-adaptive-learning-environmental-dimension",
+      "P1-L43-adaptive-learning-environmental-causal-paths",
+      "P1-L43-adaptive-learning-environmental-conclusion",
+      "P1-L43-traffic-routing-social-application",
+      "P1-L43-traffic-routing-social-dimension",
+      "P1-L43-traffic-routing-social-causal-paths",
+      "P1-L43-traffic-routing-social-conclusion",
+      "P1-L43-traffic-routing-economic-application",
+      "P1-L43-traffic-routing-economic-dimension",
+      "P1-L43-traffic-routing-economic-causal-paths",
+      "P1-L43-traffic-routing-economic-conclusion",
+      "P1-L43-traffic-routing-environmental-application",
+      "P1-L43-traffic-routing-environmental-dimension",
+      "P1-L43-traffic-routing-environmental-causal-paths",
+      "P1-L43-traffic-routing-environmental-conclusion"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]

@@ -30,6 +30,7 @@ check(requirementIds.size === 26, `validator fixture must contain 26 requirement
 
 const catalog = read("content/paper1/catalog.json");
 const manifest = read("content/paper1/release-manifest.json");
+const releaseChapter = Number(manifest?.releaseId?.match(/^paper1-chapter(\d+)-/i)?.[1]);
 const practice = read("content/paper1/practice/chapter-3.json");
 const definitions = read("content/paper1/visual-definitions.json");
 const oracles = read("content/paper1/chapter3-visual-oracles.json");
@@ -54,12 +55,12 @@ if (catalog) {
     localized(topic.title, `${item.lessonId} catalog title`); localized(topic.summary, `${item.lessonId} catalog summary`);
     check(Array.isArray(topic.searchTerms) && topic.searchTerms.length > 0 && topic.searchTerms.every(text), `${item.lessonId}: search terms missing`);
   }
-  check(["4", "5", "6"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.filter((entry) => ["7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 4–6 must be available and Sections 7–8 must remain planned");
+  check(["4", "5", "6", "7"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.find((entry) => entry.id === "8")?.status === (releaseChapter >= 8 ? "available" : "planned"), "catalog: Sections 4–7 must remain available; Section 8 must be planned through Chapter 7 and available from Chapter 8");
   safe(catalog, "catalog");
 }
 
 if (manifest) {
-  check(/chapter-?[3456]/i.test(manifest.releaseId ?? ""), "release manifest must identify a cumulative candidate containing Chapter 3");
+  check(/^paper1-chapter(?:[3-9]|[1-9]\d)-/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 3 or a later cumulative candidate");
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lesson IDs");
   for (const item of expected) {
     const released = manifest.lessons?.find((entry) => entry.lessonId === item.lessonId);

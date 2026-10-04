@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "auditId": "P1-C07-ATLAS-AUDIT-2026-10-04",
+  "chapterId": "7",
+  "syllabus": "Cambridge International AS & A Level Computer Science 9618, examination 2026",
+  "authority": {
+    "syllabusLocator": "2026 syllabus, Paper 1 Section 7.1, printed/PDF p25",
+    "coursebookLocator": "Coursebook Chapter 7, printed pages 178–195 / PDF pages 194–211",
+    "learnerVisualOrigin": "AlgoCore-original"
+  },
+  "taxonomy": {
+    "allowedDispositions": [
+      "INLINE_UNDERSTAND",
+      "INLINE_OBSERVE_SCENE",
+      "INLINE_WORKED_EXAMPLE",
+      "INLINE_RECOGNISE",
+      "LESSON_REFERENCE_DISCLOSURE",
+      "CHAPTER_ATLAS_ONLY",
+      "DUPLICATE_OR_REMOVE"
+    ],
+    "renderStatuses": [
+      "not-rendered-source-pointer"
+    ],
+    "referenceStatuses": [
+      "mapped-to-original-learner-visual"
+    ]
+  },
+  "copyrightBoundary": {
+    "en": "Every BOOK-C07 ID is a source/audit pointer only. Public diagrams, scenarios, facts, labels and transitions are AlgoCore-original and do not reproduce coursebook figures, photographs, named incidents, organisation branding, examination wording, question values or layouts.",
+    "vi": "Mỗi BOOK-C07 ID chỉ là pointer nguồn/audit. Diagram, scenario, facts, nhãn và transition trên public runtime là sản phẩm gốc AlgoCore; không sao chép figure, ảnh, incident có tên, branding tổ chức, wording, giá trị hay bố cục câu thi trong coursebook."
+  },
+  "inventory": {
+    "totalIds": 6,
+    "uniqueIds": 6,
+    "mappingCount": 6,
+    "lessonMappingCounts": {
+      "P1-L41": 3,
+      "P1-L42": 0,
+      "P1-L43": 3
+    },
+    "dispositionCounts": {
+      "INLINE_UNDERSTAND": 1,
+      "INLINE_OBSERVE_SCENE": 0,
+      "INLINE_WORKED_EXAMPLE": 0,
+      "INLINE_RECOGNISE": 0,
+      "LESSON_REFERENCE_DISCLOSURE": 3,
+      "CHAPTER_ATLAS_ONLY": 0,
+      "DUPLICATE_OR_REMOVE": 2
+    },
+    "zeroAtlasLessonIds": [
+      "P1-L42"
+    ]
+  },
+  "items": [
+    {
+      "atlasId": "BOOK-C07-P184-F7-1",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L41",
+          "replacementVisualId": "VIS-P1-L41"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 7, Figure 7.1, printed p184 / PDF p200",
+      "rationale": {
+        "en": "The public-wellbeing map supports a compact safety, public-interest, benefit and concern anchor before scenario reasoning; the runtime rebuilds it without copying the layout and does not impose one objective verdict.",
+        "vi": "Sơ đồ public wellbeing hỗ trợ anchor ngắn về safety, public interest, benefit và concern trước khi lập luận theo scenario; runtime dựng lại mà không sao chép layout và không áp một verdict khách quan duy nhất."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C07-P195-EXAM-ETHICS-DIAGRAM",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L41",
+          "replacementVisualId": "VIS-P1-L41"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 7, end-of-chapter question 4 matching diagram, printed p195 / PDF p211",
+      "rationale": {
+        "en": "The legacy examination matching diagram reduces judgement to a fixed match and is removed; the original stakeholder ledger replaces its teaching purpose.",
+        "vi": "Diagram matching của đề cũ thu gọn judgement thành nối cặp cố định nên bị loại; stakeholder ledger gốc thay thế mục đích dạy học."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C07-P195-EXAM-ETHICS-TABLE",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L41",
+          "replacementVisualId": "VIS-P1-L41"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 7, end-of-chapter question 4 incident table, printed p195 / PDF p211",
+      "rationale": {
+        "en": "The incident table is inseparable from copied assessment wording and is replaced by three original two-action scenarios.",
+        "vi": "Incident table gắn với wording assessment đã sao chép và được thay bằng ba scenario gốc, mỗi scenario có hai action."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C07-P190-F7-2-TRAIN",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L43",
+          "replacementVisualId": "VIS-P1-L43"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 7, Figure 7.2 left photograph, printed p190 / PDF p206",
+      "rationale": {
+        "en": "An automated train is optional recognition context after the learner traces input, AI task, output and use; no photograph is copied and it owns no semantic state.",
+        "vi": "Tàu tự động là context recognition tuỳ chọn sau khi học sinh trace input, AI task, output và use; không sao chép ảnh và pointer không sở hữu semantic state."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C07-P190-F7-2-ARM",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L43",
+          "replacementVisualId": "VIS-P1-L43"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 7, Figure 7.2 centre photograph, printed p190 / PDF p206",
+      "rationale": {
+        "en": "A controlled prosthetic limb broadens application recognition; the public reference uses an abstract original control loop and adds no unsupported medical-effect claim.",
+        "vi": "Chi giả có điều khiển mở rộng nhận biết ứng dụng; reference public dùng control loop trừu tượng gốc và không thêm claim y khoa thiếu nguồn."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C07-P190-F7-2-ROBOT",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L43",
+          "replacementVisualId": "VIS-P1-L43"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 7, Figure 7.2 right photograph, printed p190 / PDF p206",
+      "rationale": {
+        "en": "A hazardous-environment robot supports sense–decide–act recognition without proving a universal safety or employment conclusion; the photograph is not copied.",
+        "vi": "Robot trong môi trường nguy hiểm hỗ trợ nhận biết sense–decide–act mà không chứng minh kết luận phổ quát về safety hoặc employment; ảnh không được sao chép."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    }
+  ]
+}

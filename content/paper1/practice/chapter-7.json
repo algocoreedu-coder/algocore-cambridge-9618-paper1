@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP07",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "7",
+  "title": { "en": "Chapter 7 practice · Ethics and ownership", "vi": "Luyện tập Chapter 7 · Ethics và ownership" },
+  "intro": { "en": "Twelve AlgoCore-original questions test professional reasoning, copyright and licence distinctions, and mechanism-based evaluation of AI. Attempt each response before revealing the marking guide.", "vi": "Mười hai câu AlgoCore tự biên soạn kiểm tra professional reasoning, copyright cùng licence distinction và mechanism-based evaluation của AI. Hãy làm trước khi mở marking guide." },
+  "timing": { "timedMinutes": 72, "untimedAvailable": true },
+  "totalMarks": 60,
+  "aoBlueprint": { "AO1": 36, "AO2": 24, "note": { "en": "Approximate Paper 1 weighting: AO1 60%, AO2 40%.", "vi": "Xấp xỉ weighting Paper 1: AO1 60%, AO2 40%." } },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    { "id": "SYL-2026", "title": { "en": "Cambridge International AS & A Level Computer Science 9618 syllabus", "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618" }, "locator": "2026 syllabus v2 §7.1, printed/PDF p. 25", "kind": "syllabus" },
+    { "id": "ALG-P1", "title": { "en": "AlgoCore original assessment material", "vi": "Học liệu đánh giá gốc do AlgoCore biên soạn" }, "locator": "Paper 1 · P1-CP07 · Chapter 7 assessment 1.0", "kind": "algocore" },
+    { "id": "BOOK-C07", "title": { "en": "A Level Computer Science coursebook", "vi": "Sách A Level Computer Science" }, "locator": "Coursebook Chapter 7, printed pp. 178–195; PDF pp. 194–211", "kind": "coursebook" }
+  ],
+  "items": [
+    {
+      "id": "P1-CP07-Q01", "level": "guided", "requirementIds": ["REQ-7.1-01-01"], "objectiveIds": ["AC26-7.1-01"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "explain", "responseProduct": "structured-response", "novelContext": true, "marks": 5,
+      "prompt": { "en": "A team is building software that allocates emergency shelter places. Explain why its computing professionals need a code of conduct.", "vi": "Một team đang build software phân bổ emergency shelter place. Giải thích vì sao computing professional của team cần code of conduct." },
+      "hint": { "en": "Link shared duties to a decision, a stakeholder and public interest.", "vi": "Liên hệ shared duty với decision, stakeholder và public interest." },
+      "solution": {
+        "modelAnswer": { "en": "The system can affect safety, privacy, fairness and access to essential support. A code states shared duties such as competence, honesty, confidentiality and public interest. It helps professionals recognise conflicts, justify decisions consistently and challenge harmful practice, while leaving them responsible for applying judgement to the evidence.", "vi": "System có thể ảnh hưởng safety, privacy, fairness và access tới essential support. Code nêu shared duty như competence, honesty, confidentiality và public interest. Code giúp professional nhận ra conflict, justify decision nhất quán và challenge harmful practice, đồng thời vẫn để họ chịu responsibility khi apply judgement vào evidence." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q01-M1", "marks": 1, "requirementIds": ["REQ-7.1-01-01"], "point": { "en": "Identifies a material effect such as safety, privacy, fairness or access.", "vi": "Xác định material effect như safety, privacy, fairness hoặc access." } },
+          { "id": "P1-CP07-Q01-M2", "marks": 1, "requirementIds": ["REQ-7.1-01-01"], "point": { "en": "States that a code supplies shared professional duties or standards.", "vi": "Nêu code cung cấp shared professional duty hoặc standard." } },
+          { "id": "P1-CP07-Q01-M3", "marks": 1, "requirementIds": ["REQ-7.1-01-01"], "point": { "en": "Explains how the code helps recognise or resolve a conflict.", "vi": "Giải thích code giúp recognise hoặc resolve conflict thế nào." } },
+          { "id": "P1-CP07-Q01-M4", "marks": 1, "requirementIds": ["REQ-7.1-01-01"], "point": { "en": "Links conduct to protection of a named stakeholder or public interest.", "vi": "Liên hệ conduct với protection của named stakeholder hoặc public interest." } },
+          { "id": "P1-CP07-Q01-M5", "marks": 1, "requirementIds": ["REQ-7.1-01-01"], "point": { "en": "Explains that a code guides but does not replace professional judgement.", "vi": "Giải thích code hướng dẫn nhưng không thay professional judgement." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "professional-ethics", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q02", "level": "guided", "requirementIds": ["REQ-7.1-01-02"], "objectiveIds": ["AC26-7.1-01"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "explain", "responseProduct": "structured-response", "novelContext": true, "marks": 5,
+      "prompt": { "en": "Explain how belonging to a professional body such as BCS or IEEE can improve a developer's professional practice.", "vi": "Giải thích việc tham gia professional body như BCS hoặc IEEE có thể cải thiện professional practice của developer thế nào." },
+      "hint": { "en": "Name resources or benefits and explain their effects; include a boundary.", "vi": "Nêu resource hoặc benefit và giải thích effect; gồm một boundary." },
+      "solution": {
+        "modelAnswer": { "en": "A professional body can provide a code and current guidance, continuing professional development, technical standards, advice and a community of peers. These resources help a developer update knowledge, compare decisions with recognised duties and receive informed challenge. Membership supports responsible practice but does not guarantee that every action is ethical.", "vi": "Professional body có thể cung cấp code và current guidance, continuing professional development, technical standard, advice cùng peer community. Các resource này giúp developer update knowledge, compare decision với recognised duty và nhận informed challenge. Membership hỗ trợ responsible practice nhưng không guarantee mọi action là ethical." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q02-M1", "marks": 1, "requirementIds": ["REQ-7.1-01-02"], "point": { "en": "Names codes, standards or current professional guidance.", "vi": "Nêu code, standard hoặc current professional guidance." } },
+          { "id": "P1-CP07-Q02-M2", "marks": 1, "requirementIds": ["REQ-7.1-01-02"], "point": { "en": "Explains how guidance supports a professional decision.", "vi": "Giải thích guidance hỗ trợ professional decision thế nào." } },
+          { "id": "P1-CP07-Q02-M3", "marks": 1, "requirementIds": ["REQ-7.1-01-02"], "point": { "en": "Names continuing development, training or updating of knowledge.", "vi": "Nêu continuing development, training hoặc updating knowledge." } },
+          { "id": "P1-CP07-Q02-M4", "marks": 1, "requirementIds": ["REQ-7.1-01-02"], "point": { "en": "Explains peer community, advice, networking or accountability benefit.", "vi": "Giải thích benefit của peer community, advice, networking hoặc accountability." } },
+          { "id": "P1-CP07-Q02-M5", "marks": 1, "requirementIds": ["REQ-7.1-01-02"], "point": { "en": "States that membership supports but cannot guarantee ethical conduct.", "vi": "Nêu membership hỗ trợ nhưng không thể guarantee ethical conduct." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "professional-ethics", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q03", "level": "guided", "requirementIds": ["REQ-7.1-03-01"], "objectiveIds": ["AC26-7.1-03"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "explain", "responseProduct": "structured-response", "novelContext": true, "marks": 5,
+      "prompt": { "en": "Explain why copyright legislation is needed for software, digital artwork and documentation.", "vi": "Giải thích vì sao copyright legislation cần cho software, digital artwork và documentation." },
+      "hint": { "en": "Connect easy copying with control, incentives and remedies.", "vi": "Liên hệ easy copying với control, incentive và remedy." },
+      "solution": {
+        "modelAnswer": { "en": "Digital work can be copied, adapted and distributed rapidly. Copyright legislation gives rights holders legal control over specified uses, supports recognition, licensing income and investment in creation or maintenance, and provides remedies for unauthorised use. A licence can then grant selected permissions. Exact rights and exceptions depend on the applicable law.", "vi": "Digital work có thể bị copy, adapt và distribute nhanh. Copyright legislation cho rights holder legal control đối với specified use, hỗ trợ recognition, licensing income và investment cho creation hoặc maintenance, và cung cấp remedy cho unauthorised use. Licence sau đó có thể cấp selected permission. Exact right và exception phụ thuộc applicable law." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q03-M1", "marks": 1, "requirementIds": ["REQ-7.1-03-01"], "point": { "en": "Explains that digital work is easy to copy, adapt or distribute.", "vi": "Giải thích digital work dễ bị copy, adapt hoặc distribute." } },
+          { "id": "P1-CP07-Q03-M2", "marks": 1, "requirementIds": ["REQ-7.1-03-01"], "point": { "en": "States legal control over specified uses of protected work.", "vi": "Nêu legal control đối với specified use của protected work." } },
+          { "id": "P1-CP07-Q03-M3", "marks": 1, "requirementIds": ["REQ-7.1-03-01"], "point": { "en": "Explains recognition, licensing income or investment purpose.", "vi": "Giải thích purpose về recognition, licensing income hoặc investment." } },
+          { "id": "P1-CP07-Q03-M4", "marks": 1, "requirementIds": ["REQ-7.1-03-01"], "point": { "en": "Explains a legal remedy or response to unauthorised use.", "vi": "Giải thích legal remedy hoặc response với unauthorised use." } },
+          { "id": "P1-CP07-Q03-M5", "marks": 1, "requirementIds": ["REQ-7.1-03-01"], "point": { "en": "Preserves a jurisdiction or licence boundary instead of claiming universal rules.", "vi": "Giữ jurisdiction hoặc licence boundary thay vì claim universal rule." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "copyright-licences", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q04", "level": "guided", "requirementIds": ["REQ-7.1-04-01"], "objectiveIds": ["AC26-7.1-04"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "compare", "responseProduct": "structured-response", "novelContext": false, "marks": 5,
+      "prompt": { "en": "Compare free software, open-source software, shareware and proprietary commercial software. Include one overlap that prevents a simple four-box classification.", "vi": "Compare free software, open-source software, shareware và proprietary commercial software. Bao gồm một overlap ngăn cách phân loại bốn box đơn giản." },
+      "hint": { "en": "Separate freedom, source access, trial/payment and restrictions.", "vi": "Tách freedom, source access, trial/payment và restriction." },
+      "solution": {
+        "modelAnswer": { "en": "Free software protects freedoms to run, study, change and redistribute. Open-source software provides source and licence permissions meeting open criteria. Shareware is usually proprietary trial or limited use before payment. The Cambridge proprietary commercial contrast is usually paid software with restricted copying, modification or redistribution. Free and open definitions overlap, and either can support commercial sales or services; exact rights depend on the licence.", "vi": "Free software bảo vệ freedom để run, study, change và redistribute. Open-source software cung cấp source và licence permission đáp ứng open criteria. Shareware thường là proprietary trial hoặc limited use trước payment. Cambridge proprietary commercial contrast thường là paid software với restricted copying, modification hoặc redistribution. Free và open definition overlap, và cả hai có thể support commercial sale hoặc service; exact right phụ thuộc licence." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q04-M1", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Explains free software through freedoms, not zero price.", "vi": "Giải thích free software qua freedom, không phải zero price." } },
+          { "id": "P1-CP07-Q04-M2", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Explains open source through source and open licence permissions.", "vi": "Giải thích open source qua source và open licence permission." } },
+          { "id": "P1-CP07-Q04-M3", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Explains shareware as proprietary trial/limited use before payment.", "vi": "Giải thích shareware là proprietary trial/limited use trước payment." } },
+          { "id": "P1-CP07-Q04-M4", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Describes the Cambridge proprietary commercial contrast and its restrictions.", "vi": "Mô tả Cambridge proprietary commercial contrast và restriction." } },
+          { "id": "P1-CP07-Q04-M5", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Explains free/open overlap or compatibility with commercial activity and the exact-licence caveat.", "vi": "Giải thích free/open overlap hoặc compatibility với commercial activity và exact-licence caveat." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "copyright-licences", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q05", "level": "faded", "requirementIds": ["REQ-7.1-02-01"], "objectiveIds": ["AC26-7.1-02"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "justify", "responseProduct": "structured-response", "novelContext": true, "marks": 4,
+      "prompt": { "en": "A programmer copies confidential source code from an employer into a paid side project. Identify and justify a professional action.", "vi": "Programmer copy confidential source code từ employer vào paid side project. Xác định và justify professional action." },
+      "hint": { "en": "Use fact → action → professional principle.", "vi": "Dùng fact → action → professional principle." },
+      "solution": {
+        "modelAnswer": { "en": "The programmer should stop using the copied code, preserve evidence and report the conflict through the appropriate employer channel, then create or obtain authorised code. The action responds to the known unauthorised copying and supports confidentiality, honesty, respect for ownership and professional trust.", "vi": "Programmer nên dừng dùng copied code, preserve evidence và report conflict qua appropriate employer channel, rồi tự tạo hoặc obtain authorised code. Action đáp lại known unauthorised copying và hỗ trợ confidentiality, honesty, respect for ownership cùng professional trust." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q05-M1", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "Identifies the unauthorised use of confidential employer code.", "vi": "Xác định unauthorised use của confidential employer code." } },
+          { "id": "P1-CP07-Q05-M2", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "Chooses a proportionate action such as stopping use and reporting appropriately.", "vi": "Chọn proportionate action như dừng use và report đúng kênh." } },
+          { "id": "P1-CP07-Q05-M3", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "Links the action to confidentiality, honesty, ownership or trust.", "vi": "Liên hệ action với confidentiality, honesty, ownership hoặc trust." } },
+          { "id": "P1-CP07-Q05-M4", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "States an authorised replacement route for the code.", "vi": "Nêu authorised replacement route cho code." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "professional-ethics", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q06", "level": "faded", "requirementIds": ["REQ-7.1-02-02"], "objectiveIds": ["AC26-7.1-02"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "explain", "responseProduct": "structured-response", "novelContext": true, "marks": 4,
+      "prompt": { "en": "A developer hides a known bias in a scholarship-ranking system and releases it. Explain two stakeholder impacts.", "vi": "Developer che giấu known bias trong scholarship-ranking system rồi release. Giải thích hai stakeholder impact." },
+      "hint": { "en": "Name stakeholder → mechanism → consequence twice.", "vi": "Nêu stakeholder → mechanism → consequence hai lần." },
+      "solution": {
+        "modelAnswer": { "en": "Applicants represented poorly in the data may receive systematically lower rankings and lose access to scholarships despite merit. The university may make unfair decisions using an output it believes is reliable, causing appeals, remediation cost and loss of trust when the hidden bias is discovered.", "vi": "Applicant được represent kém trong data có thể nhận systematically lower ranking và mất access tới scholarship dù đủ merit. University có thể ra unfair decision bằng output mà họ tưởng reliable, gây appeal, remediation cost và loss of trust khi hidden bias bị phát hiện." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q06-M1", "marks": 1, "requirementIds": ["REQ-7.1-02-02"], "point": { "en": "Names an affected applicant group or individual.", "vi": "Nêu affected applicant group hoặc individual." } },
+          { "id": "P1-CP07-Q06-M2", "marks": 1, "requirementIds": ["REQ-7.1-02-02"], "point": { "en": "Explains how biased ranking changes access or opportunity.", "vi": "Giải thích biased ranking thay đổi access hoặc opportunity thế nào." } },
+          { "id": "P1-CP07-Q06-M3", "marks": 1, "requirementIds": ["REQ-7.1-02-02"], "point": { "en": "Names the institution or another distinct stakeholder.", "vi": "Nêu institution hoặc stakeholder riêng khác." } },
+          { "id": "P1-CP07-Q06-M4", "marks": 1, "requirementIds": ["REQ-7.1-02-02"], "point": { "en": "Explains a distinct trust, cost, appeal or decision-quality consequence.", "vi": "Giải thích consequence riêng về trust, cost, appeal hoặc decision quality." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "professional-ethics", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q07", "level": "faded", "requirementIds": ["REQ-7.1-04-01", "REQ-7.1-04-02"], "objectiveIds": ["AC26-7.1-04"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "justify", "responseProduct": "structured-response", "novelContext": true, "marks": 4,
+      "prompt": { "en": "A school must inspect source code, modify accessibility features and redistribute its version. The supplier also offers paid support. Use a permission matrix to justify a licence profile.", "vi": "School phải inspect source code, modify accessibility feature và redistribute version của mình. Supplier cũng cung cấp paid support. Dùng permission matrix để justify licence profile." },
+      "hint": { "en": "Match source, modification, redistribution and payment separately.", "vi": "Match riêng source, modification, redistribution và payment." },
+      "solution": {
+        "modelAnswer": { "en": "The stated needs require source access plus modification and redistribution permissions, so a suitable FSF-aligned free-software or OSI-approved open-source licence is a strong fit. Paid support can coexist with those permissions. The school must check the exact licence and comply with conditions such as attribution or source disclosure where applicable.", "vi": "Stated need yêu cầu source access cùng modification và redistribution permission, nên suitable FSF-aligned free-software hoặc OSI-approved open-source licence là strong fit. Paid support có thể coexist với các permission đó. School phải check exact licence và comply với condition như attribution hoặc source disclosure khi applicable." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q07-M1", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Identifies source access as a separate need.", "vi": "Xác định source access là need riêng." } },
+          { "id": "P1-CP07-Q07-M2", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Identifies modification and redistribution permissions.", "vi": "Xác định modification và redistribution permission." } },
+          { "id": "P1-CP07-Q07-M3", "marks": 1, "requirementIds": ["REQ-7.1-04-02"], "point": { "en": "Justifies a suitable free/open licence profile from the needs.", "vi": "Justify suitable free/open licence profile từ các need." } },
+          { "id": "P1-CP07-Q07-M4", "marks": 1, "requirementIds": ["REQ-7.1-04-02"], "point": { "en": "Explains commercial-support compatibility and the exact-licence condition.", "vi": "Giải thích commercial-support compatibility và exact-licence condition." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "copyright-licences", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q08", "level": "faded", "requirementIds": ["REQ-7.1-05-01"], "objectiveIds": ["AC26-7.1-05"], "strandIds": ["7.1"], "ao": "AO1", "commandWord": "explain", "responseProduct": "structured-response", "novelContext": true, "marks": 4,
+      "prompt": { "en": "Explain how an AI system can help a museum provide live language access for visitors.", "vi": "Giải thích AI system có thể giúp museum cung cấp live language access cho visitor thế nào." },
+      "hint": { "en": "Give input, processing, output and use/human boundary.", "vi": "Nêu input, processing, output và use/human boundary." },
+      "solution": {
+        "modelAnswer": { "en": "A microphone captures a guide's speech as input. An AI model recognises the speech and translates it into a selected language. The system outputs captions or synthesised speech for the visitor. Staff or users can correct names, choose the language and handle errors or inaccessible output.", "vi": "Microphone capture speech của guide làm input. AI model recognise speech và translate sang selected language. System output caption hoặc synthesised speech cho visitor. Staff hoặc user có thể correct name, choose language và handle error hoặc inaccessible output." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q08-M1", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "Identifies captured speech/audio as input.", "vi": "Xác định captured speech/audio là input." } },
+          { "id": "P1-CP07-Q08-M2", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "Explains speech recognition and translation processing.", "vi": "Giải thích speech recognition và translation processing." } },
+          { "id": "P1-CP07-Q08-M3", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "States captions or translated speech as the used output.", "vi": "Nêu caption hoặc translated speech là output được use." } },
+          { "id": "P1-CP07-Q08-M4", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "States a human/user boundary or exception route.", "vi": "Nêu human/user boundary hoặc exception route." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept technically equivalent wording.", "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "ai-impacts", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q09", "level": "independent", "requirementIds": ["REQ-7.1-01-01", "REQ-7.1-02-01", "REQ-7.1-02-02"], "objectiveIds": ["AC26-7.1-01", "AC26-7.1-02"], "strandIds": ["7.1"], "ao": "AO2", "commandWord": "evaluate", "responseProduct": "structured-response", "novelContext": true, "marks": 6,
+      "prompt": { "en": "A transport developer proves that a route-planning update sometimes sends tall vehicles under a low bridge. A manager asks the developer to hide the failed tests until after a public launch. Evaluate what the developer should do.", "vi": "Transport developer chứng minh route-planning update đôi khi gửi tall vehicle qua low bridge. Manager yêu cầu developer giấu failed test tới sau public launch. Evaluate developer nên làm gì." },
+      "hint": { "en": "Use facts, action, principle, stakeholders and a proportionate escalation route.", "vi": "Dùng facts, action, principle, stakeholder và proportionate escalation route." },
+      "solution": {
+        "modelAnswer": { "en": "The reproducible failed tests show a foreseeable safety risk. The developer should preserve the evidence, report it through the responsible safety/release channel and pause the affected update until the routing constraint is fixed and retested. This follows competence, honesty and public-interest duties. Drivers, passengers and other road users avoid physical harm; the operator avoids preventable incidents, cost and loss of trust. If the manager ignores the evidence, the developer should escalate through an authorised channel in proportion to the risk.", "vi": "Reproducible failed test cho thấy foreseeable safety risk. Developer nên preserve evidence, report qua responsible safety/release channel và pause affected update tới khi routing constraint được fix và retest. Action này theo duty về competence, honesty và public interest. Driver, passenger và road user khác tránh physical harm; operator tránh preventable incident, cost và loss of trust. Nếu manager ignore evidence, developer nên escalate qua authorised channel tương xứng với risk." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q09-M1", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "Uses the reproducible failure as evidence of foreseeable safety risk.", "vi": "Dùng reproducible failure làm evidence của foreseeable safety risk." } },
+          { "id": "P1-CP07-Q09-M2", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "Chooses documentation/reporting and a pause/fix/retest action.", "vi": "Chọn action document/report và pause/fix/retest." } },
+          { "id": "P1-CP07-Q09-M3", "marks": 1, "requirementIds": ["REQ-7.1-01-01"], "point": { "en": "Links the action to competence, honesty, safety or public interest.", "vi": "Liên hệ action với competence, honesty, safety hoặc public interest." } },
+          { "id": "P1-CP07-Q09-M4", "marks": 1, "requirementIds": ["REQ-7.1-02-02"], "point": { "en": "Explains a physical-safety consequence for road users.", "vi": "Giải thích physical-safety consequence cho road user." } },
+          { "id": "P1-CP07-Q09-M5", "marks": 1, "requirementIds": ["REQ-7.1-02-02"], "point": { "en": "Explains a distinct cost, operation or trust consequence for the operator.", "vi": "Giải thích consequence riêng về cost, operation hoặc trust cho operator." } },
+          { "id": "P1-CP07-Q09-M6", "marks": 1, "requirementIds": ["REQ-7.1-02-01"], "point": { "en": "States an authorised and proportionate escalation route if the risk is ignored.", "vi": "Nêu authorised và proportionate escalation route nếu risk bị ignore." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept another defensible action only when it follows the facts and protects stakeholders.", "vi": "Chấm từng marking point độc lập; chỉ chấp nhận defensible action khác khi theo facts và bảo vệ stakeholder." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "professional-ethics", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q10", "level": "independent", "requirementIds": ["REQ-7.1-04-01", "REQ-7.1-04-02"], "objectiveIds": ["AC26-7.1-04"], "strandIds": ["7.1"], "ao": "AO2", "commandWord": "justify", "responseProduct": "structured-response", "novelContext": true, "marks": 6,
+      "prompt": { "en": "A rural clinic wants to inspect and adapt a scheduling program, share its improvements with other clinics and buy reliable deployment support. Justify a suitable licence approach and reject two weaker profiles.", "vi": "Rural clinic muốn inspect và adapt scheduling program, share improvement với clinic khác và mua reliable deployment support. Justify suitable licence approach và reject hai weaker profile." },
+      "hint": { "en": "Build the permission matrix, then separate licensing from the support business model.", "vi": "Lập permission matrix rồi tách licensing khỏi support business model." },
+      "solution": {
+        "modelAnswer": { "en": "The clinic needs source access, modification and redistribution, so an appropriate free-software or OSI-approved open-source licence is a strong fit. Paid deployment support can coexist with that licence. Shareware offers trial use but does not imply source or redistribution rights. A typical proprietary commercial licence may provide support but commonly restricts modification and sharing. The clinic must inspect the exact licence for attribution, source-sharing or other conditions.", "vi": "Clinic cần source access, modification và redistribution, nên appropriate free-software hoặc OSI-approved open-source licence là strong fit. Paid deployment support có thể coexist với licence đó. Shareware cung cấp trial use nhưng không imply source hoặc redistribution right. Typical proprietary commercial licence có thể provide support nhưng thường restrict modification và sharing. Clinic phải inspect exact licence về attribution, source-sharing hoặc condition khác." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q10-M1", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Extracts source inspection and modification needs.", "vi": "Rút ra source inspection và modification need." } },
+          { "id": "P1-CP07-Q10-M2", "marks": 1, "requirementIds": ["REQ-7.1-04-01"], "point": { "en": "Extracts redistribution and paid-support needs separately.", "vi": "Rút ra riêng redistribution và paid-support need." } },
+          { "id": "P1-CP07-Q10-M3", "marks": 1, "requirementIds": ["REQ-7.1-04-02"], "point": { "en": "Justifies a suitable free/open licence from the permission needs.", "vi": "Justify suitable free/open licence từ permission need." } },
+          { "id": "P1-CP07-Q10-M4", "marks": 1, "requirementIds": ["REQ-7.1-04-02"], "point": { "en": "Explains that paid support can coexist with free/open licensing.", "vi": "Giải thích paid support có thể coexist với free/open licensing." } },
+          { "id": "P1-CP07-Q10-M5", "marks": 1, "requirementIds": ["REQ-7.1-04-01", "REQ-7.1-04-02"], "point": { "en": "Rejects shareware and typical proprietary commercial profiles using missing/restricted permissions.", "vi": "Reject shareware và typical proprietary commercial profile bằng missing/restricted permission." } },
+          { "id": "P1-CP07-Q10-M6", "marks": 1, "requirementIds": ["REQ-7.1-04-02"], "point": { "en": "Preserves the exact-licence and compliance caveat.", "vi": "Giữ exact-licence và compliance caveat." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; a named licence is not required, but its claimed permissions must be accurate.", "vi": "Chấm từng marking point độc lập; không bắt buộc named licence, nhưng claimed permission phải chính xác." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "copyright-licences", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q11", "level": "independent", "requirementIds": ["REQ-7.1-05-01"], "objectiveIds": ["AC26-7.1-05"], "strandIds": ["7.1"], "ao": "AO2", "commandWord": "explain", "responseProduct": "structured-response", "novelContext": true, "marks": 6,
+      "prompt": { "en": "A warehouse wants an AI system to detect damaged packages before dispatch. Explain a complete application from data collection to operational use, including two boundaries.", "vi": "Warehouse muốn AI system detect damaged package trước dispatch. Giải thích complete application từ data collection tới operational use, gồm hai boundary." },
+      "hint": { "en": "Trace training data, new input, model processing, output, action and human/error boundary.", "vi": "Trace training data, new input, model processing, output, action và human/error boundary." },
+      "solution": {
+        "modelAnswer": { "en": "Images labelled damaged or undamaged are used to train and test a model. A camera captures each new package. The model compares learned visual patterns and outputs a class or damage score. Packages above a chosen threshold are diverted for human inspection before dispatch. Staff set or review the threshold and handle uncertain cases. Image conditions, incomplete labels and false positives or negatives limit reliability, so the output should be monitored rather than treated as proof.", "vi": "Image được label damaged hoặc undamaged dùng để train và test model. Camera capture mỗi new package. Model compare learned visual pattern và output class hoặc damage score. Package trên chosen threshold được divert để human inspection trước dispatch. Staff set hoặc review threshold và handle uncertain case. Image condition, incomplete label và false positive hoặc negative giới hạn reliability, nên output cần được monitor thay vì coi là proof." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q11-M1", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "States labelled package images as training/testing data.", "vi": "Nêu labelled package image là training/testing data." } },
+          { "id": "P1-CP07-Q11-M2", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "States a captured new package image as input.", "vi": "Nêu captured new package image là input." } },
+          { "id": "P1-CP07-Q11-M3", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "Explains model pattern processing rather than merely naming AI.", "vi": "Giải thích model pattern processing thay vì chỉ nêu AI." } },
+          { "id": "P1-CP07-Q11-M4", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "States a class/score output and threshold-based operational use.", "vi": "Nêu class/score output và threshold-based operational use." } },
+          { "id": "P1-CP07-Q11-M5", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "Explains a human review or threshold-setting boundary.", "vi": "Giải thích human review hoặc threshold-setting boundary." } },
+          { "id": "P1-CP07-Q11-M6", "marks": 1, "requirementIds": ["REQ-7.1-05-01"], "point": { "en": "Explains an image/data/error limitation and need for monitoring.", "vi": "Giải thích image/data/error limitation và need for monitoring." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; accept another technically coherent inspection pipeline.", "vi": "Chấm từng marking point độc lập; chấp nhận inspection pipeline khác nếu coherent về kỹ thuật." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "ai-impacts", "origin": "original", "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP07-Q12", "level": "independent", "requirementIds": ["REQ-7.1-05-02"], "objectiveIds": ["AC26-7.1-05"], "strandIds": ["7.1"], "ao": "AO2", "commandWord": "evaluate", "responseProduct": "structured-response", "novelContext": true, "marks": 6,
+      "prompt": { "en": "A city introduces AI-controlled traffic signals that predict congestion from road sensors. Evaluate social, economic and environmental impacts, including conditions that affect the outcome.", "vi": "City triển khai AI-controlled traffic signal predict congestion từ road sensor. Evaluate social, economic và environmental impact, gồm condition ảnh hưởng outcome." },
+      "hint": { "en": "For each dimension, use mechanism → affected stakeholder/resource → consequence; balance benefit and counter-effect.", "vi": "Với mỗi dimension, dùng mechanism → affected stakeholder/resource → consequence; balance benefit và counter-effect." },
+      "solution": {
+        "modelAnswer": { "en": "Adaptive signal timing may shorten waits and improve emergency access if sensor coverage and predictions are reliable, but failures or unequal coverage can shift delays and pollution to other neighbourhoods. Businesses and travellers may save time and fuel, while the city pays for sensors, integration, maintenance, oversight and staff training. Smoother traffic may reduce idling emissions, but sensors, networks, model operation and hardware replacement consume energy and materials; induced traffic can offset savings. The net result depends on data quality, geographic coverage, energy source, scale, monitoring and how users change behaviour.", "vi": "Adaptive signal timing có thể shorten wait và improve emergency access nếu sensor coverage cùng prediction reliable, nhưng failure hoặc unequal coverage có thể shift delay và pollution sang neighbourhood khác. Business và traveller có thể save time cùng fuel, còn city trả cost cho sensor, integration, maintenance, oversight và staff training. Smoother traffic có thể giảm idling emission, nhưng sensor, network, model operation và hardware replacement consume energy cùng material; induced traffic có thể offset saving. Net result phụ thuộc data quality, geographic coverage, energy source, scale, monitoring và user behaviour change." },
+        "markingPoints": [
+          { "id": "P1-CP07-Q12-M1", "marks": 1, "requirementIds": ["REQ-7.1-05-02"], "point": { "en": "Explains a social benefit through signal timing and access/waiting.", "vi": "Giải thích social benefit qua signal timing và access/waiting." } },
+          { "id": "P1-CP07-Q12-M2", "marks": 1, "requirementIds": ["REQ-7.1-05-02"], "point": { "en": "Explains a social counter-effect such as shifted delay, pollution or unequal coverage.", "vi": "Giải thích social counter-effect như shifted delay, pollution hoặc unequal coverage." } },
+          { "id": "P1-CP07-Q12-M3", "marks": 1, "requirementIds": ["REQ-7.1-05-02"], "point": { "en": "Explains an economic saving from time, fuel or productivity.", "vi": "Giải thích economic saving từ time, fuel hoặc productivity." } },
+          { "id": "P1-CP07-Q12-M4", "marks": 1, "requirementIds": ["REQ-7.1-05-02"], "point": { "en": "Explains an implementation, maintenance, oversight or training cost.", "vi": "Giải thích implementation, maintenance, oversight hoặc training cost." } },
+          { "id": "P1-CP07-Q12-M5", "marks": 1, "requirementIds": ["REQ-7.1-05-02"], "point": { "en": "Balances reduced idling/resource use against computing, network, hardware or induced-demand effects.", "vi": "Balance reduced idling/resource use với computing, network, hardware hoặc induced-demand effect." } },
+          { "id": "P1-CP07-Q12-M6", "marks": 1, "requirementIds": ["REQ-7.1-05-02"], "point": { "en": "States a condition such as data quality, coverage, energy source, scale or monitoring.", "vi": "Nêu condition như data quality, coverage, energy source, scale hoặc monitoring." } }
+        ],
+        "rubric": [{ "en": "Award each marking point independently; do not require an invented statistic or a single universal verdict.", "vi": "Chấm từng marking point độc lập; không yêu cầu invented statistic hoặc single universal verdict." }, { "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.", "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức." }], "alternatives": []
+      },
+      "revisitLessonSlug": "ai-impacts", "origin": "original", "claim_kind": "algocore_guidance"
+    }
+  ]
+}

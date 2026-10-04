@@ -41,6 +41,9 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "threats-protection": () => import("@/content/paper1/lessons/threats-protection.json"),
   "validation": () => import("@/content/paper1/lessons/validation.json"),
   "verification-transfer": () => import("@/content/paper1/lessons/verification-transfer.json"),
+  "professional-ethics": () => import("@/content/paper1/lessons/professional-ethics.json"),
+  "copyright-licences": () => import("@/content/paper1/lessons/copyright-licences.json"),
+  "ai-impacts": () => import("@/content/paper1/lessons/ai-impacts.json"),
 };
 
 export async function getPaper1Lesson(slug: string): Promise<Paper1Lesson | undefined> {

@@ -79,6 +79,7 @@ check(expectedRequirements.size === 26, `validator fixture must contain 26 requi
 
 const catalog = readRequired("content/paper1/catalog.json");
 const manifest = readRequired("content/paper1/release-manifest.json");
+const releaseChapter = Number(manifest?.releaseId?.match(/^paper1-chapter(\d+)-/i)?.[1]);
 const practice = readRequired("content/paper1/practice/chapter-2.json");
 const visualOracles = readRequired("content/paper1/chapter2-visual-oracles.json");
 const visualDefinitions = readRequired("content/paper1/visual-definitions.json");
@@ -95,7 +96,7 @@ if (catalog) {
   localized(section2?.summary, "catalog Section 2 summary");
   localized(section2?.question, "catalog Section 2 question");
   check(catalog.sections?.find((entry) => entry.id === "1")?.status === "available", "catalog: Section 1 regression; it must remain available");
-  check(["4", "5", "6"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.filter((entry) => ["7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 4–6 must be available and Sections 7–8 must remain planned in the cumulative candidate");
+  check(["4", "5", "6", "7"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.find((entry) => entry.id === "8")?.status === (releaseChapter >= 8 ? "available" : "planned"), "catalog: Sections 4–7 must remain available; Section 8 must be planned through Chapter 7 and available from Chapter 8");
 
   const section2Strands = catalog.strands?.filter((entry) => entry.sectionId === "2") ?? [];
   check(section2Strands.length === 1 && section2Strands[0]?.id === "2.1", "catalog: Chapter 2 must expose exactly strand 2.1");
@@ -126,7 +127,7 @@ if (catalog) {
 
 if (manifest) {
   check(manifest.schemaVersion === 1 && manifest.courseId === "CAIE-9618-P1-2026", "release manifest identity mismatch");
-  check(nonEmpty(manifest.releaseId) && /chapter-?[23456]/i.test(manifest.releaseId), "release manifest ID must identify a cumulative candidate containing Chapter 2");
+  check(nonEmpty(manifest.releaseId) && /^paper1-chapter(?:[2-9]|[1-9]\d)-/i.test(manifest.releaseId), "release manifest ID must identify Chapter 2 or a later cumulative candidate");
   const chapter2Entries = manifest.lessons?.filter((entry) => expectedLessonIds.has(entry.lessonId)) ?? [];
   check(chapter2Entries.length === 10, `release manifest: expected 10 Chapter 2 entries, got ${chapter2Entries.length}`);
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lessonId");
