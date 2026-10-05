@@ -1,0 +1,1338 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP08",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "8",
+  "title": {
+    "en": "Chapter 8 practice · Databases",
+    "vi": "Luyện tập Chapter 8 · Database"
+  },
+  "intro": {
+    "en": "Twelve AlgoCore-original questions test relational design, normalisation, DBMS features and the declared SQL subset. Attempt each response before revealing the marking guide.",
+    "vi": "Mười hai câu AlgoCore tự biên soạn kiểm tra relational design, normalisation, DBMS feature và declared SQL subset. Hãy làm trước khi mở marking guide."
+  },
+  "timing": {
+    "timedMinutes": 72,
+    "untimedAvailable": true
+  },
+  "totalMarks": 60,
+  "aoBlueprint": {
+    "AO1": 36,
+    "AO2": 24,
+    "note": {
+      "en": "Approximate Paper 1 weighting: AO1 60%, AO2 40%.",
+      "vi": "Xấp xỉ weighting Paper 1: AO1 60%, AO2 40%."
+    }
+  },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §§8.1–8.3, printed/PDF pp. 25–27",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original assessment material",
+        "vi": "Học liệu đánh giá gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-CP08 · Chapter 8 assessment 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 196–216; PDF pp. 212–232",
+      "kind": "coursebook"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP08-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-8.1-01-01",
+        "REQ-8.1-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-8.1-01",
+        "AC26-8.1-02"
+      ],
+      "strandIds": [
+        "8.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A repair company stores each customer's address separately in booking, invoice and support files. Explain two file-based limitations and how a relational design addresses them without guaranteeing perfect data.",
+        "vi": "Repair company lưu address của mỗi customer riêng trong booking, invoice và support file. Giải thích hai file-based limitation và relational design xử lý chúng thế nào mà không guarantee perfect data."
+      },
+      "hint": {
+        "en": "Name mechanism and consequence for each point.",
+        "vi": "Nêu mechanism và consequence cho mỗi point."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Separate files duplicate the address and a missed update creates inconsistent retrieval. File formats embedded in separate programs also make combined queries dependent on program changes. A CUSTOMER table identified by CustomerID supplies one controlled fact referenced by other records, reducing unnecessary duplication, inconsistency and program–data dependence. Incorrect input or operations remain possible.",
+          "vi": "Separate file duplicate address và missed update tạo inconsistent retrieval. File format trong separate program cũng làm combined query phụ thuộc program change. CUSTOMER table identify bằng CustomerID cung cấp một controlled fact được record khác reference, giảm unnecessary duplication, inconsistency và program–data dependence. Incorrect input hoặc operation vẫn có thể xảy ra."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-01-01"
+            ],
+            "point": {
+              "en": "Explains duplicated address/redundancy.",
+              "vi": "Giải thích duplicated address/redundancy."
+            }
+          },
+          {
+            "id": "P1-CP08-Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-01-01"
+            ],
+            "point": {
+              "en": "Explains inconsistency after a missed update.",
+              "vi": "Giải thích inconsistency sau missed update."
+            }
+          },
+          {
+            "id": "P1-CP08-Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-01-01"
+            ],
+            "point": {
+              "en": "Explains program–data dependence for retrieval.",
+              "vi": "Giải thích program–data dependence khi retrieval."
+            }
+          },
+          {
+            "id": "P1-CP08-Q01-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-02-01"
+            ],
+            "point": {
+              "en": "Explains one authoritative keyed customer row and references.",
+              "vi": "Giải thích một authoritative keyed customer row và reference."
+            }
+          },
+          {
+            "id": "P1-CP08-Q01-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-02-01"
+            ],
+            "point": {
+              "en": "Qualifies the benefit: errors remain possible.",
+              "vi": "Qualify benefit: error vẫn có thể xảy ra."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "relational-foundations",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q02",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-8.1-03-01",
+        "REQ-8.1-03-02"
+      ],
+      "objectiveIds": [
+        "AC26-8.1-03"
+      ],
+      "strandIds": [
+        "8.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "For STUDENT(StudentID, Email, Name), distinguish entity, table, tuple and attribute, then classify StudentID, Email and Name as possible key types when StudentID and Email are each unique.",
+        "vi": "Với STUDENT(StudentID, Email, Name), phân biệt entity, table, tuple và attribute, rồi classify StudentID, Email và Name theo possible key type khi StudentID và Email đều unique."
+      },
+      "hint": {
+        "en": "Use Cambridge terminology for candidate, primary and secondary keys.",
+        "vi": "Dùng Cambridge terminology cho candidate, primary và secondary key."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A student is the entity type and STUDENT is its table/relation. One row is a tuple/record; each named column is an attribute/field. StudentID and Email are candidate keys if each uniquely and minimally identifies a row. If StudentID is selected as primary, Email is a secondary/alternative candidate key. Name is not a key unless uniqueness is guaranteed.",
+          "vi": "Student là entity type và STUDENT là table/relation. Một row là tuple/record; mỗi named column là attribute/field. StudentID và Email là candidate key nếu mỗi field uniquely và minimally identify row. Nếu StudentID được chọn làm primary, Email là secondary/alternative candidate key. Name không phải key trừ khi uniqueness được guarantee."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-01"
+            ],
+            "point": {
+              "en": "Identifies student as entity and STUDENT as table.",
+              "vi": "Identify student là entity và STUDENT là table."
+            }
+          },
+          {
+            "id": "P1-CP08-Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-01"
+            ],
+            "point": {
+              "en": "Distinguishes tuple/record from attribute/field.",
+              "vi": "Phân biệt tuple/record với attribute/field."
+            }
+          },
+          {
+            "id": "P1-CP08-Q02-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-02"
+            ],
+            "point": {
+              "en": "Identifies StudentID and Email as candidate keys.",
+              "vi": "Identify StudentID và Email là candidate key."
+            }
+          },
+          {
+            "id": "P1-CP08-Q02-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-02"
+            ],
+            "point": {
+              "en": "Selects StudentID as primary and Email as secondary/alternative.",
+              "vi": "Chọn StudentID làm primary và Email làm secondary/alternative."
+            }
+          },
+          {
+            "id": "P1-CP08-Q02-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-02"
+            ],
+            "point": {
+              "en": "Rejects Name unless uniqueness is guaranteed.",
+              "vi": "Reject Name trừ khi uniqueness được guarantee."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "keys-relationships",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q03",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-8.1-03-03",
+        "REQ-8.1-03-04"
+      ],
+      "objectiveIds": [
+        "AC26-8.1-03"
+      ],
+      "strandIds": [
+        "8.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A member can attend many workshops and a workshop has many members. Explain the relationship design, referential integrity and one useful index.",
+        "vi": "Một member có thể attend nhiều workshop và một workshop có nhiều member. Giải thích relationship design, referential integrity và một useful index."
+      },
+      "hint": {
+        "en": "Resolve M:N, then test references and retrieval.",
+        "vi": "Resolve M:N rồi test reference và retrieval."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The relationship is many-to-many in both directions and is resolved by ATTENDANCE(MemberID, WorkshopID), whose two foreign keys commonly form a composite primary key. Each non-null MemberID and WorkshopID must match a referenced key. Repeated foreign keys are valid on the many side. An index on WorkshopID can support finding attendees, but does not change logical rows or guarantee every query is fast.",
+          "vi": "Relationship là many-to-many ở cả hai direction và được resolve bằng ATTENDANCE(MemberID, WorkshopID), trong đó hai foreign key thường tạo composite primary key. Mỗi non-null MemberID và WorkshopID phải match referenced key. Repeated foreign key hợp lệ ở many side. Index trên WorkshopID có thể hỗ trợ tìm attendee nhưng không change logical row hoặc guarantee mọi query nhanh."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-03"
+            ],
+            "point": {
+              "en": "Identifies the M:N relationship in both directions.",
+              "vi": "Identify M:N relationship ở cả hai direction."
+            }
+          },
+          {
+            "id": "P1-CP08-Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-03"
+            ],
+            "point": {
+              "en": "Introduces a junction table.",
+              "vi": "Đưa ra junction table."
+            }
+          },
+          {
+            "id": "P1-CP08-Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-03"
+            ],
+            "point": {
+              "en": "Uses two foreign keys/composite key coherently.",
+              "vi": "Dùng hai foreign key/composite key coherent."
+            }
+          },
+          {
+            "id": "P1-CP08-Q03-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-04"
+            ],
+            "point": {
+              "en": "Explains referential integrity for non-null foreign keys.",
+              "vi": "Giải thích referential integrity cho non-null foreign key."
+            }
+          },
+          {
+            "id": "P1-CP08-Q03-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-04"
+            ],
+            "point": {
+              "en": "Explains index purpose and boundary.",
+              "vi": "Giải thích index purpose và boundary."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "keys-relationships",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q04",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-8.1-05-01",
+        "REQ-8.1-05-02",
+        "REQ-8.1-05-03"
+      ],
+      "objectiveIds": [
+        "AC26-8.1-05"
+      ],
+      "strandIds": [
+        "8.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "Explain the exact conditions for 1NF, 2NF and 3NF, including why a single-column key does not guarantee 3NF.",
+        "vi": "Giải thích exact condition cho 1NF, 2NF và 3NF, gồm vì sao single-column key không guarantee 3NF."
+      },
+      "hint": {
+        "en": "Add one condition at each stage.",
+        "vi": "Thêm một condition ở mỗi stage."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "1NF requires atomic values and no repeating groups. 2NF is in 1NF and has no partial dependency of a non-key attribute on part of a composite key. 3NF is in 2NF and has no transitive dependency through a non-key attribute. A single-column key prevents partial dependency on part of that key, but a non-key attribute may still determine another non-key attribute.",
+          "vi": "1NF yêu cầu atomic value và không repeating group. 2NF ở 1NF và không có partial dependency của non-key attribute vào phần composite key. 3NF ở 2NF và không có transitive dependency qua non-key attribute. Single-column key ngăn partial dependency vào phần key đó nhưng non-key attribute vẫn có thể determine non-key attribute khác."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-01"
+            ],
+            "point": {
+              "en": "States atomic values.",
+              "vi": "Nêu atomic value."
+            }
+          },
+          {
+            "id": "P1-CP08-Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-01"
+            ],
+            "point": {
+              "en": "States no repeating groups.",
+              "vi": "Nêu no repeating group."
+            }
+          },
+          {
+            "id": "P1-CP08-Q04-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-02"
+            ],
+            "point": {
+              "en": "States the whole-composite-key/no-partial-dependency condition.",
+              "vi": "Nêu whole-composite-key/no-partial-dependency condition."
+            }
+          },
+          {
+            "id": "P1-CP08-Q04-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-03"
+            ],
+            "point": {
+              "en": "States the no-transitive/non-key-dependency condition.",
+              "vi": "Nêu no-transitive/non-key-dependency condition."
+            }
+          },
+          {
+            "id": "P1-CP08-Q04-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-03"
+            ],
+            "point": {
+              "en": "Explains why a simple key may still leave a 3NF violation.",
+              "vi": "Giải thích vì sao simple key vẫn có thể để lại 3NF violation."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "normalisation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q05",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-8.2-01-01",
+        "REQ-8.2-01-02",
+        "REQ-8.2-01-03",
+        "REQ-8.2-01-04"
+      ],
+      "objectiveIds": [
+        "AC26-8.2-01"
+      ],
+      "strandIds": [
+        "8.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "For each request—inspect field definitions, view the logical table design, reject an unmatched key, restore after disk failure—name and explain the DBMS feature or procedure.",
+        "vi": "Với mỗi request—inspect field definition, view logical table design, reject unmatched key, restore sau disk failure—nêu và giải thích DBMS feature hoặc procedure."
+      },
+      "hint": {
+        "en": "Use dictionary, schema, integrity control and backup.",
+        "vi": "Dùng dictionary, schema, integrity control và backup."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The data dictionary stores field/type/key metadata. The logical schema describes tables, attributes, keys and relationships independently of physical storage. A foreign-key constraint supports integrity by rejecting an unmatched reference but cannot prove all facts are true. A tested backup supports recovery after failure; it is separate from access control and prevention.",
+          "vi": "Data dictionary lưu field/type/key metadata. Logical schema mô tả table, attribute, key và relationship độc lập với physical storage. Foreign-key constraint hỗ trợ integrity bằng cách reject unmatched reference nhưng không prove mọi fact đúng. Tested backup hỗ trợ recovery sau failure; nó tách khỏi access control và prevention."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.2-01-01"
+            ],
+            "point": {
+              "en": "Explains dictionary metadata.",
+              "vi": "Giải thích dictionary metadata."
+            }
+          },
+          {
+            "id": "P1-CP08-Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.2-01-02"
+            ],
+            "point": {
+              "en": "Explains logical schema/model.",
+              "vi": "Giải thích logical schema/model."
+            }
+          },
+          {
+            "id": "P1-CP08-Q05-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.2-01-03"
+            ],
+            "point": {
+              "en": "Explains integrity constraint and boundary.",
+              "vi": "Giải thích integrity constraint và boundary."
+            }
+          },
+          {
+            "id": "P1-CP08-Q05-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.2-01-04"
+            ],
+            "point": {
+              "en": "Explains backup as recovery, distinct from access rights.",
+              "vi": "Giải thích backup là recovery, tách khỏi access right."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "dbms",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q06",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-8.2-02-01",
+        "REQ-8.2-02-02",
+        "REQ-8.3-01-01",
+        "REQ-8.3-02-01",
+        "REQ-8.3-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-8.2-02",
+        "AC26-8.3-01",
+        "AC26-8.3-02",
+        "AC26-8.3-03"
+      ],
+      "strandIds": [
+        "8.2",
+        "8.3"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain how a developer interface and query processor handle SQL, and distinguish DDL from DML within the SQL standard/dialect boundary.",
+        "vi": "Giải thích developer interface và query processor handle SQL thế nào, rồi phân biệt DDL với DML trong SQL standard/dialect boundary."
+      },
+      "hint": {
+        "en": "Trace submission, interpretation/execution and purpose.",
+        "vi": "Trace submission, interpretation/execution và purpose."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A developer interface lets developers define, inspect and manipulate objects or submit SQL. The query processor accepts, interprets/compiles and executes SQL and returns/applies a result. DDL creates or modifies structure; DML queries or maintains stored rows. SQL is an industry standard for both, but vendor dialect details vary.",
+          "vi": "Developer interface cho developer define, inspect và manipulate object hoặc submit SQL. Query processor nhận, interpret/compile và execute SQL rồi return/apply result. DDL tạo hoặc modify structure; DML query hoặc maintain stored row. SQL là industry standard cho cả hai nhưng vendor dialect detail khác nhau."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.2-02-01"
+            ],
+            "point": {
+              "en": "Explains developer-interface actions.",
+              "vi": "Giải thích developer-interface action."
+            }
+          },
+          {
+            "id": "P1-CP08-Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.2-02-02"
+            ],
+            "point": {
+              "en": "Explains query processor input, execution and result.",
+              "vi": "Giải thích query processor input, execution và result."
+            }
+          },
+          {
+            "id": "P1-CP08-Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-01-01",
+              "REQ-8.3-02-01"
+            ],
+            "point": {
+              "en": "Distinguishes DDL structure from DML data.",
+              "vi": "Phân biệt DDL structure với DML data."
+            }
+          },
+          {
+            "id": "P1-CP08-Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-03-01"
+            ],
+            "point": {
+              "en": "States SQL standard and vendor-dialect boundary.",
+              "vi": "Nêu SQL standard và vendor-dialect boundary."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sql-foundations",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-8.3-04-01",
+        "REQ-8.3-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-8.3-04"
+      ],
+      "strandIds": [
+        "8.3"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "Interpret UPDATE BOOKING SET Status = 'Closed' WHERE EventID = 6 against a declared BOOKING table.",
+        "vi": "Interpret UPDATE BOOKING SET Status = 'Closed' WHERE EventID = 6 dựa trên BOOKING table đã khai báo."
+      },
+      "hint": {
+        "en": "Class, target, assignment, condition and affected-row boundary.",
+        "vi": "Class, target, assignment, condition và affected-row boundary."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "This is DML targeting BOOKING. It sets Status to text value 'Closed' for every row whose EventID equals 6. Rows with other EventID values and the table structure are unchanged.",
+          "vi": "Đây là DML target BOOKING. Nó set Status thành text value 'Closed' cho mọi row có EventID bằng 6. Row có EventID khác và table structure không đổi."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-04-01"
+            ],
+            "point": {
+              "en": "Classifies the statement as DML.",
+              "vi": "Classify statement là DML."
+            }
+          },
+          {
+            "id": "P1-CP08-Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-04-01"
+            ],
+            "point": {
+              "en": "Identifies BOOKING and Status = 'Closed'.",
+              "vi": "Identify BOOKING và Status = 'Closed'."
+            }
+          },
+          {
+            "id": "P1-CP08-Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-04-01"
+            ],
+            "point": {
+              "en": "Applies the EventID = 6 condition to all matching rows.",
+              "vi": "Apply condition EventID = 6 cho mọi matching row."
+            }
+          },
+          {
+            "id": "P1-CP08-Q07-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-04-01"
+            ],
+            "point": {
+              "en": "Preserves other rows and structure.",
+              "vi": "Giữ row khác và structure."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sql-foundations",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q08",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-8.3-05-02",
+        "REQ-8.3-05-04",
+        "REQ-8.3-05-05"
+      ],
+      "objectiveIds": [
+        "AC26-8.3-05"
+      ],
+      "strandIds": [
+        "8.3"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "Choose types for a fixed code, variable title and event date; then write primary- and foreign-key constraints for EVENT(EventID, OrganiserID) referencing ORGANISER.",
+        "vi": "Chọn type cho fixed code, variable title và event date; rồi viết primary- và foreign-key constraint cho EVENT(EventID, OrganiserID) reference ORGANISER."
+      },
+      "hint": {
+        "en": "Use the declared syllabus types and parenthesised constraints.",
+        "vi": "Dùng declared syllabus type và constraint có parentheses."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use CHARACTER for a fixed code, VARCHAR(n) for a variable title and DATE for the event date. Write PRIMARY KEY (EventID) and FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID), after the referenced key is defined.",
+          "vi": "Dùng CHARACTER cho fixed code, VARCHAR(n) cho variable title và DATE cho event date. Viết PRIMARY KEY (EventID) và FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID), sau khi referenced key được define."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-02"
+            ],
+            "point": {
+              "en": "Chooses CHARACTER, VARCHAR(n) and DATE appropriately.",
+              "vi": "Chọn CHARACTER, VARCHAR(n) và DATE phù hợp."
+            }
+          },
+          {
+            "id": "P1-CP08-Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-04"
+            ],
+            "point": {
+              "en": "Writes PRIMARY KEY (EventID).",
+              "vi": "Viết PRIMARY KEY (EventID)."
+            }
+          },
+          {
+            "id": "P1-CP08-Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-05"
+            ],
+            "point": {
+              "en": "Writes the complete FOREIGN KEY ... REFERENCES form.",
+              "vi": "Viết complete FOREIGN KEY ... REFERENCES form."
+            }
+          },
+          {
+            "id": "P1-CP08-Q08-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-05"
+            ],
+            "point": {
+              "en": "States referenced key/type must already be compatible and defined.",
+              "vi": "Nêu referenced key/type phải compatible và đã define."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sql-ddl",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q09",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-8.1-04-01",
+        "REQ-8.1-03-02",
+        "REQ-8.1-03-03",
+        "REQ-8.1-03-04"
+      ],
+      "objectiveIds": [
+        "AC26-8.1-03",
+        "AC26-8.1-04"
+      ],
+      "strandIds": [
+        "8.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "construct",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "Design an E-R solution for doctors treating many patients where each patient may see many doctors. Include keys, cardinality and referential-integrity evidence.",
+        "vi": "Design E-R solution cho doctor điều trị nhiều patient, nơi mỗi patient có thể gặp nhiều doctor. Gồm key, cardinality và referential-integrity evidence."
+      },
+      "hint": {
+        "en": "Resolve the M:N relationship with an associative entity.",
+        "vi": "Resolve M:N relationship bằng associative entity."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use DOCTOR(DoctorID PK), PATIENT(PatientID PK) and CONSULTATION(DoctorID PK/FK, PatientID PK/FK, ConsultDate ...). DOCTOR 1:M CONSULTATION and PATIENT 1:M CONSULTATION resolve the original M:N. Each consultation foreign key must match its referenced key; repeated values are valid on each many side.",
+          "vi": "Dùng DOCTOR(DoctorID PK), PATIENT(PatientID PK) và CONSULTATION(DoctorID PK/FK, PatientID PK/FK, ConsultDate ...). DOCTOR 1:M CONSULTATION và PATIENT 1:M CONSULTATION resolve M:N ban đầu. Mỗi consultation foreign key phải match referenced key; repeated value hợp lệ ở mỗi many side."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-04-01"
+            ],
+            "point": {
+              "en": "Identifies DOCTOR and PATIENT entities.",
+              "vi": "Identify DOCTOR và PATIENT entity."
+            }
+          },
+          {
+            "id": "P1-CP08-Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-03"
+            ],
+            "point": {
+              "en": "Identifies original M:N cardinality.",
+              "vi": "Identify original M:N cardinality."
+            }
+          },
+          {
+            "id": "P1-CP08-Q09-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-03"
+            ],
+            "point": {
+              "en": "Adds CONSULTATION as a junction entity.",
+              "vi": "Add CONSULTATION làm junction entity."
+            }
+          },
+          {
+            "id": "P1-CP08-Q09-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-02"
+            ],
+            "point": {
+              "en": "Declares coherent primary and foreign keys.",
+              "vi": "Declare coherent primary và foreign key."
+            }
+          },
+          {
+            "id": "P1-CP08-Q09-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-04-01"
+            ],
+            "point": {
+              "en": "Shows two correct 1:M relationships/cardinalities.",
+              "vi": "Show hai correct 1:M relationship/cardinality."
+            }
+          },
+          {
+            "id": "P1-CP08-Q09-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-03-04"
+            ],
+            "point": {
+              "en": "Explains valid referenced-key matching.",
+              "vi": "Giải thích valid referenced-key matching."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "keys-relationships",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q10",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-8.1-05-01",
+        "REQ-8.1-05-02",
+        "REQ-8.1-05-03",
+        "REQ-8.1-06-01",
+        "REQ-8.1-07-01"
+      ],
+      "objectiveIds": [
+        "AC26-8.1-05",
+        "AC26-8.1-06",
+        "AC26-8.1-07"
+      ],
+      "strandIds": [
+        "8.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "Given ENROLMENT(StudentID, CourseID, StudentName, CourseTitle, TutorID, TutorName, Mark), key (StudentID, CourseID), and stated dependencies StudentID→StudentName, CourseID→CourseTitle,TutorID, TutorID→TutorName, decide 3NF and produce a valid design.",
+        "vi": "Với ENROLMENT(StudentID, CourseID, StudentName, CourseTitle, TutorID, TutorName, Mark), key (StudentID, CourseID), và dependency đã nêu StudentID→StudentName, CourseID→CourseTitle,TutorID, TutorID→TutorName, decide 3NF và tạo valid design."
+      },
+      "hint": {
+        "en": "Use only the declared dependencies; preserve Mark on the composite key.",
+        "vi": "Chỉ dùng declared dependency; giữ Mark trên composite key."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The table is not in 2NF because StudentName and course facts depend on only part of the composite key; TutorName is also transitively dependent through TutorID, so it is not in 3NF. A valid design is STUDENT(StudentID PK, StudentName), TUTOR(TutorID PK, TutorName), COURSE(CourseID PK, CourseTitle, TutorID FK), ENROLMENT(StudentID PK/FK, CourseID PK/FK, Mark).",
+          "vi": "Table không ở 2NF vì StudentName và course fact chỉ phụ thuộc một phần composite key; TutorName cũng transitive dependent qua TutorID nên không ở 3NF. Valid design là STUDENT(StudentID PK, StudentName), TUTOR(TutorID PK, TutorName), COURSE(CourseID PK, CourseTitle, TutorID FK), ENROLMENT(StudentID PK/FK, CourseID PK/FK, Mark)."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-01"
+            ],
+            "point": {
+              "en": "Recognises rows are atomic/1NF under the stated fixture.",
+              "vi": "Recognise row atomic/1NF trong stated fixture."
+            }
+          },
+          {
+            "id": "P1-CP08-Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-02",
+              "REQ-8.1-06-01"
+            ],
+            "point": {
+              "en": "Identifies partial dependencies and 2NF failure.",
+              "vi": "Identify partial dependency và 2NF failure."
+            }
+          },
+          {
+            "id": "P1-CP08-Q10-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-05-03",
+              "REQ-8.1-06-01"
+            ],
+            "point": {
+              "en": "Identifies TutorID → TutorName transitive dependency.",
+              "vi": "Identify TutorID → TutorName transitive dependency."
+            }
+          },
+          {
+            "id": "P1-CP08-Q10-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-07-01"
+            ],
+            "point": {
+              "en": "Creates separate STUDENT and TUTOR relations with keys.",
+              "vi": "Tạo STUDENT và TUTOR relation riêng với key."
+            }
+          },
+          {
+            "id": "P1-CP08-Q10-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-07-01"
+            ],
+            "point": {
+              "en": "Creates COURSE with TutorID FK and ENROLMENT with composite key.",
+              "vi": "Tạo COURSE có TutorID FK và ENROLMENT có composite key."
+            }
+          },
+          {
+            "id": "P1-CP08-Q10-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.1-07-01"
+            ],
+            "point": {
+              "en": "Preserves Mark and all stated facts/relationships.",
+              "vi": "Preserve Mark và mọi stated fact/relationship."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "normalisation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q11",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-8.3-05-01",
+        "REQ-8.3-05-02",
+        "REQ-8.3-05-03",
+        "REQ-8.3-05-04",
+        "REQ-8.3-05-05"
+      ],
+      "objectiveIds": [
+        "AC26-8.3-05"
+      ],
+      "strandIds": [
+        "8.3"
+      ],
+      "ao": "AO2",
+      "commandWord": "construct",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "Create database VenueDB, then write a complete DDL script for VENUE(VenueID, Name, Indoor) and SESSION(SessionID, VenueID, StartDate, StartTime, Fee), and finally add Capacity INTEGER to VENUE.",
+        "vi": "Create database VenueDB, rồi viết complete DDL script cho VENUE(VenueID, Name, Indoor) và SESSION(SessionID, VenueID, StartDate, StartTime, Fee), cuối cùng add Capacity INTEGER vào VENUE."
+      },
+      "hint": {
+        "en": "Create the referenced table first; use corrected parenthesised constraints.",
+        "vi": "Create referenced table trước; dùng constraint có parentheses đúng."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "CREATE DATABASE VenueDB; CREATE TABLE VENUE (VenueID INTEGER, Name VARCHAR(80), Indoor BOOLEAN, PRIMARY KEY (VenueID)); CREATE TABLE SESSION (SessionID INTEGER, VenueID INTEGER, StartDate DATE, StartTime TIME, Fee REAL, PRIMARY KEY (SessionID), FOREIGN KEY (VenueID) REFERENCES VENUE (VenueID)); ALTER TABLE VENUE ADD Capacity INTEGER;",
+          "vi": "CREATE DATABASE VenueDB; CREATE TABLE VENUE (VenueID INTEGER, Name VARCHAR(80), Indoor BOOLEAN, PRIMARY KEY (VenueID)); CREATE TABLE SESSION (SessionID INTEGER, VenueID INTEGER, StartDate DATE, StartTime TIME, Fee REAL, PRIMARY KEY (SessionID), FOREIGN KEY (VenueID) REFERENCES VENUE (VenueID)); ALTER TABLE VENUE ADD Capacity INTEGER;"
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-01"
+            ],
+            "point": {
+              "en": "Creates complete VENUE structure.",
+              "vi": "Tạo complete VENUE structure."
+            }
+          },
+          {
+            "id": "P1-CP08-Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-01",
+              "REQ-8.3-05-02"
+            ],
+            "point": {
+              "en": "Creates complete SESSION with appropriate types.",
+              "vi": "Tạo complete SESSION với appropriate type."
+            }
+          },
+          {
+            "id": "P1-CP08-Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-04"
+            ],
+            "point": {
+              "en": "Declares both primary keys correctly.",
+              "vi": "Declare đúng cả hai primary key."
+            }
+          },
+          {
+            "id": "P1-CP08-Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-05"
+            ],
+            "point": {
+              "en": "Declares complete compatible foreign-key reference.",
+              "vi": "Declare complete compatible foreign-key reference."
+            }
+          },
+          {
+            "id": "P1-CP08-Q11-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-03"
+            ],
+            "point": {
+              "en": "Writes ALTER TABLE ... ADD Capacity INTEGER.",
+              "vi": "Viết ALTER TABLE ... ADD Capacity INTEGER."
+            }
+          },
+          {
+            "id": "P1-CP08-Q11-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-05-01"
+            ],
+            "point": {
+              "en": "Creates VenueDB and uses complete punctuation and dependency order.",
+              "vi": "Tạo VenueDB và dùng complete punctuation cùng dependency order."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sql-ddl",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP08-Q12",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-8.3-06-01",
+        "REQ-8.3-06-02",
+        "REQ-8.3-06-03",
+        "REQ-8.3-06-04"
+      ],
+      "objectiveIds": [
+        "AC26-8.3-06"
+      ],
+      "strandIds": [
+        "8.3"
+      ],
+      "ao": "AO2",
+      "commandWord": "construct",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "EVENT(EventID, Title) contains (1, 'Algorithms Lab'), (2, 'Data Evening'), (3, 'Robotics Fair'). BOOKING(BookingID, EventID, Seats, Status) contains (90, 1, 2, 'Confirmed'), (91, 1, 3, 'Confirmed'), (92, 2, 4, 'Confirmed'), (93, 2, 1, 'Cancelled'), (94, 3, 5, 'Pending'). First write and trace a query for confirmed total seats per title in title order. Then, in sequence, insert (95, 3, 2, 'Confirmed'), update only booking 91 to 'Cancelled', and delete only booking 93. Give each affected ID and exact after-state.",
+        "vi": "EVENT(EventID, Title) chứa (1, 'Algorithms Lab'), (2, 'Data Evening'), (3, 'Robotics Fair'). BOOKING(BookingID, EventID, Seats, Status) chứa (90, 1, 2, 'Confirmed'), (91, 1, 3, 'Confirmed'), (92, 2, 4, 'Confirmed'), (93, 2, 1, 'Cancelled'), (94, 3, 5, 'Pending'). Trước tiên viết và trace query cho confirmed total seat theo title theo title order. Sau đó theo sequence, insert (95, 3, 2, 'Confirmed'), update riêng booking 91 thành 'Cancelled' và delete riêng booking 93. Nêu từng affected ID và exact after-state."
+      },
+      "hint": {
+        "en": "Use INNER JOIN, quoted text, GROUP BY, SUM and ORDER BY; evaluate the SELECT before the three maintenance statements, then trace IDs 95, 91 and 93.",
+        "vi": "Dùng INNER JOIN, quoted text, GROUP BY, SUM và ORDER BY; evaluate SELECT trước ba maintenance statement rồi trace ID 95, 91 và 93."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "SELECT EVENT.Title, SUM(BOOKING.Seats) FROM EVENT INNER JOIN BOOKING ON EVENT.EventID = BOOKING.EventID WHERE BOOKING.Status = 'Confirmed' GROUP BY EVENT.Title ORDER BY EVENT.Title; Its exact result before maintenance is ('Algorithms Lab', 5), ('Data Evening', 4), and it changes no rows. INSERT INTO BOOKING (BookingID, EventID, Seats, Status) VALUES (95, 3, 2, 'Confirmed'); creates exactly row (95, 3, 2, 'Confirmed'). UPDATE BOOKING SET Status = 'Cancelled' WHERE BookingID = 91; affects only ID 91, producing (91, 1, 3, 'Cancelled'). DELETE FROM BOOKING WHERE BookingID = 93; removes only ID 93. The final BookingID set is {90, 91, 92, 94, 95}; rows 90, 92 and 94 retain their initial values.",
+          "vi": "SELECT EVENT.Title, SUM(BOOKING.Seats) FROM EVENT INNER JOIN BOOKING ON EVENT.EventID = BOOKING.EventID WHERE BOOKING.Status = 'Confirmed' GROUP BY EVENT.Title ORDER BY EVENT.Title; Exact result trước maintenance là ('Algorithms Lab', 5), ('Data Evening', 4), và query không change row. INSERT INTO BOOKING (BookingID, EventID, Seats, Status) VALUES (95, 3, 2, 'Confirmed'); tạo đúng row (95, 3, 2, 'Confirmed'). UPDATE BOOKING SET Status = 'Cancelled' WHERE BookingID = 91; chỉ affect ID 91, tạo (91, 1, 3, 'Cancelled'). DELETE FROM BOOKING WHERE BookingID = 93; chỉ remove ID 93. Final BookingID set là {90, 91, 92, 94, 95}; row 90, 92 và 94 giữ initial value."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP08-Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-06-01"
+            ],
+            "point": {
+              "en": "Selects Title and SUM(Seats) with confirmed WHERE condition.",
+              "vi": "Select Title và SUM(Seats) với confirmed WHERE condition."
+            }
+          },
+          {
+            "id": "P1-CP08-Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-06-02"
+            ],
+            "point": {
+              "en": "Uses correct two-table INNER JOIN ... ON.",
+              "vi": "Dùng đúng two-table INNER JOIN ... ON."
+            }
+          },
+          {
+            "id": "P1-CP08-Q12-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-06-02",
+              "REQ-8.3-06-03"
+            ],
+            "point": {
+              "en": "Groups by Title, orders by Title and gives the exact result ('Algorithms Lab', 5), ('Data Evening', 4).",
+              "vi": "Group theo Title, order theo Title và nêu exact result ('Algorithms Lab', 5), ('Data Evening', 4)."
+            }
+          },
+          {
+            "id": "P1-CP08-Q12-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-06-04"
+            ],
+            "point": {
+              "en": "Writes the INSERT and states affected ID 95 with exact after-row (95, 3, 2, 'Confirmed').",
+              "vi": "Viết INSERT và nêu affected ID 95 với exact after-row (95, 3, 2, 'Confirmed')."
+            }
+          },
+          {
+            "id": "P1-CP08-Q12-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-06-04"
+            ],
+            "point": {
+              "en": "Writes the selective UPDATE and states only ID 91 changes to (91, 1, 3, 'Cancelled').",
+              "vi": "Viết selective UPDATE và nêu chỉ ID 91 change thành (91, 1, 3, 'Cancelled')."
+            }
+          },
+          {
+            "id": "P1-CP08-Q12-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-8.3-06-04"
+            ],
+            "point": {
+              "en": "Writes the selective DELETE, states only ID 93 is removed and gives final IDs {90, 91, 92, 94, 95}.",
+              "vi": "Viết selective DELETE, nêu chỉ ID 93 bị remove và cho final ID {90, 91, 92, 94, 95}."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording or SQL within the declared subset.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt hoặc SQL tương đương về kỹ thuật trong declared subset."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "sql-dml",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

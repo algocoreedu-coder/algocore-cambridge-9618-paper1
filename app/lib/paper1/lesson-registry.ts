@@ -44,6 +44,13 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "professional-ethics": () => import("@/content/paper1/lessons/professional-ethics.json"),
   "copyright-licences": () => import("@/content/paper1/lessons/copyright-licences.json"),
   "ai-impacts": () => import("@/content/paper1/lessons/ai-impacts.json"),
+  "relational-foundations": () => import("@/content/paper1/lessons/relational-foundations.json"),
+  "keys-relationships": () => import("@/content/paper1/lessons/keys-relationships.json"),
+  "normalisation": () => import("@/content/paper1/lessons/normalisation.json"),
+  "dbms": () => import("@/content/paper1/lessons/dbms.json"),
+  "sql-foundations": () => import("@/content/paper1/lessons/sql-foundations.json"),
+  "sql-ddl": () => import("@/content/paper1/lessons/sql-ddl.json"),
+  "sql-dml": () => import("@/content/paper1/lessons/sql-dml.json"),
 };
 
 export async function getPaper1Lesson(slug: string): Promise<Paper1Lesson | undefined> {

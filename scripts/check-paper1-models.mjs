@@ -6,6 +6,7 @@ import { BRANCH_PROGRAM, LOAD_STORE_PROGRAM, PERFORMANCE_CASES, addressModel, ad
 import { DEFRAG_AFTER, DEFRAG_BEFORE, OS_CASES, TRANSLATOR_CASES, UTILITY_CASES, ideFrames, orderedPredictionChoices, osRequestFrames, translatorFrames, utilityFrames } from "../app/lib/paper1/chapter5-models.ts";
 import { SECURITY_INCIDENTS, THREAT_PATHS, VALIDATION_FIXTURES, VERIFICATION_FIXTURES, securityIncidentFrames, threatProtectionFrames, validationFrames, verificationFacts, verificationFrames } from "../app/lib/paper1/chapter6-models.ts";
 import { AI_IMPACT_DIMENSIONS, AI_USE_CASES, ETHICS_ACTIONS, ETHICS_SCENARIOS, LICENCE_PROFILES, LICENCE_SCENARIOS, aiImpactFrames, licenceFitFrames, professionalEthicsFrames } from "../app/lib/paper1/chapter7-models.ts";
+import { L44_RECORD_CHANGES, L44_STORAGE_MODELS, L45_KEY_CHOICES, L45_RECORD_OPERATIONS, L45_SCHEMA_FIXTURES, L46_DATASETS, L46_DEPENDENCY_CHOICES, L47_PACKETS, L48_STATEMENT_FIXTURES, L49_DDL_FAMILIES, L49_VALIDITY_VARIANTS, L50_STATEMENT_PACKETS, chapter8SemanticText, chapter8UnmappedVietnameseTokens, l44RelationalProofbenchFrames, l45KeyRelationFrames, l46NormalisationFrames, l47DbmsControlFrames, l48SqlRoleFrames, l49DdlSchemaFrames, l50DmlTraceFrames } from "../app/lib/paper1/chapter8-models.ts";
 
 const checks = [];
 const run = (name, test) => { test(); checks.push(name); };
@@ -295,6 +296,46 @@ const chapter4Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapt
 const chapter5Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter5-visual-oracles.json", import.meta.url), "utf8"));
 const chapter6Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter6-visual-oracles.json", import.meta.url), "utf8"));
 const chapter7Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter7-visual-oracles.json", import.meta.url), "utf8"));
+const chapter8Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter8-visual-oracles.json", import.meta.url), "utf8"));
+
+function assertChapter8RevealProgression(frames, path) {
+  const revealKeys = ["source", "operation", "result", "ledgerFields", "tableFields"];
+  const snapshots = frames.map((frame, frameIndex) => {
+    const reveal = frame.state?.reveal;
+    assert.ok(reveal && typeof reveal === "object" && !Array.isArray(reveal), `${path}.${frame.id}: reveal map missing`);
+    assert.deepEqual(Object.keys(reveal), revealKeys, `${path}.${frame.id}: reveal map keys`);
+    for (const channel of ["source", "operation", "result"]) {
+      assert.ok(typeof reveal[channel] === "string" && reveal[channel].trim(), `${path}.${frame.id}: reveal.${channel} missing`);
+    }
+    for (const channel of ["ledgerFields", "tableFields"]) {
+      const fields = reveal[channel];
+      assert.ok(Array.isArray(fields), `${path}.${frame.id}: reveal.${channel} must be an array`);
+      assert.ok(fields.every((field) => typeof field === "string" && field.trim()), `${path}.${frame.id}: reveal.${channel} must contain non-empty stable IDs`);
+      assert.equal(new Set(fields).size, fields.length, `${path}.${frame.id}: reveal.${channel} contains duplicates`);
+    }
+    assert.equal(frame.state.phase, frame.id, `${path}.${frame.id}: state phase must equal the ordered frame ID`);
+    assert.match(frame.ticket, new RegExp(`${frameIndex + 1}$`), `${path}.${frame.id}: ticket must advance exactly one authored transition`);
+    return structuredClone(reveal);
+  });
+  for (let index = 1; index < snapshots.length; index += 1) {
+    const before = snapshots[index - 1];
+    const after = snapshots[index];
+    assert.notDeepEqual(after, before, `${path}: frame ${index + 1} must reveal one new semantic transition`);
+    for (const channel of ["ledgerFields", "tableFields"]) {
+      for (const field of before[channel]) assert.ok(after[channel].includes(field), `${path}: Back/Next reveal must be monotonic; ${channel} dropped ${field}`);
+    }
+    for (const channel of ["source", "operation", "result"]) {
+      if (before[channel] !== "not-revealed") assert.notEqual(after[channel], "not-revealed", `${path}: ${channel} became hidden after being revealed`);
+    }
+    assert.deepEqual(snapshots[index - 1], frames[index - 1].state.reveal, `${path}: Back must restore the exact prior reveal snapshot`);
+  }
+  const final = snapshots.at(-1);
+  for (const snapshot of snapshots) {
+    for (const channel of ["ledgerFields", "tableFields"]) {
+      for (const field of snapshot[channel]) assert.ok(final[channel].includes(field), `${path}: early frame contains a field absent from the final authored reveal map`);
+    }
+  }
+}
 const projectDeclared = (actual, declared, path = "fixture") => {
   if (Array.isArray(declared)) {
     assert.ok(Array.isArray(actual), `${path} must be an array`);
@@ -472,7 +513,6 @@ run("Chapter 6 exhaustive visual-oracle parity", () => {
     assert.deepEqual({ selector: entry.selector, frameId: actual.id, ticket: actual.ticket, activeIds: actual.activeIds, state: actual.state }, entry, `${path}.${entry.frameId}`);
     assert.ok(actual.activeIds.length <= 3, `${path}.${entry.frameId} highlights more than three semantic objects`);
   };
-
   assert.deepEqual(Object.keys(SECURITY_INCIDENTS), ["stranger-read", "purpose-overshare", "mark-transposition"]);
   for (const entry of oracle["P1-L37"].states) compare("P1-L37", entry, securityIncidentFrames(entry.selector.incident), `P1-L37.${entry.selector.incident}`);
   assert.deepEqual(SECURITY_INCIDENTS["stranger-read"].affectedProperties, ["security", "privacy"]);
@@ -609,4 +649,138 @@ run("Chapter 7 exhaustive visual-oracle parity", () => {
   }
 });
 
-console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapters 4–7 JSON fixtures compared; Chapter 7 covers 124 deterministic professional ethics, licensing and AI impact states)`);
+run("Chapter 8 exhaustive visual-oracle parity", () => {
+  const lessonOrder = ["P1-L44", "P1-L45", "P1-L46", "P1-L47", "P1-L48", "P1-L49", "P1-L50"];
+  const stateCounts = [24, 48, 30, 24, 32, 40, 50];
+  const selectorCounts = { "P1-L44": 6, "P1-L45": 12, "P1-L46": 6, "P1-L47": 6, "P1-L48": 8, "P1-L49": 10, "P1-L50": 10 };
+  assert.deepEqual(chapter8Oracles.map((entry) => entry.lessonId), lessonOrder);
+  assert.deepEqual(chapter8Oracles.map((entry) => entry.stateCount), stateCounts);
+  assert.equal(chapter8Oracles.reduce((sum, entry) => sum + entry.stateCount, 0), 248);
+  for (const entry of chapter8Oracles) {
+    assert.equal(entry.states.length, entry.stateCount, `${entry.lessonId} oracle state cardinality`);
+    const stateKeys = entry.states.map((state) => `${JSON.stringify(state.selector)}::${state.frameId}`);
+    assert.equal(new Set(stateKeys).size, entry.stateCount, `${entry.lessonId} selector/frame records must be unique`);
+    assert.equal(new Set(entry.states.map((state) => JSON.stringify(state.selector))).size, selectorCounts[entry.lessonId], `${entry.lessonId} selector cardinality`);
+  }
+
+  let localizedEvidenceValueCount = 0;
+  for (const lesson of chapter8Oracles) for (const entry of lesson.states) {
+    const reveal = entry.state.reveal;
+    const visibleEvidence = [
+      ["reveal.source", reveal.source],
+      ["reveal.operation", reveal.operation],
+      ["reveal.result", reveal.result],
+      ...[...reveal.ledgerFields, ...reveal.tableFields].map((field) => [`state.${field}`, entry.state[field]]),
+    ];
+    for (const [field, value] of visibleEvidence) {
+      const path = `${lesson.lessonId}.${entry.frameId}.${field}`;
+      localizedEvidenceValueCount += 1;
+      assert.deepEqual(chapter8UnmappedVietnameseTokens(value), [], `${path}: Vietnamese semantic evidence has unmapped raw tokens`);
+      assert.ok(!chapter8SemanticText("vi", value).includes("_"), `${path}: Vietnamese semantic evidence exposes an underscore slug`);
+    }
+  }
+  assert.ok(localizedEvidenceValueCount >= 2000, "Chapter 8 localization audit must exhaustively cover all visible reveal, ledger and table projections");
+
+  const oracle = Object.fromEntries(chapter8Oracles.map((entry) => [entry.lessonId, entry]));
+  const compare = (lessonId, entry, frames, path) => {
+    assert.deepEqual(frames.map((frame) => frame.id), oracle[lessonId].frameIds, `${path}.frameIds`);
+    const actual = frames.find((frame) => frame.id === entry.frameId);
+    assert.ok(actual, `${path}.${entry.frameId} missing`);
+    assert.deepEqual({ selector: entry.selector, frameId: actual.id, ticket: actual.ticket, activeIds: actual.activeIds, state: actual.state }, entry, `${path}.${entry.frameId}`);
+    assert.ok(actual.activeIds.length <= 3, `${path}.${entry.frameId} highlights more than three semantic objects`);
+  };
+
+  assert.deepEqual(L44_RECORD_CHANGES, ["employee_contact_change", "customer_address_change", "new_cross_function_enquiry"]);
+  assert.deepEqual(L44_STORAGE_MODELS, ["file_based", "relational"]);
+  for (const entry of oracle["P1-L44"].states) compare("P1-L44", entry, l44RelationalProofbenchFrames(entry.selector.recordChange, entry.selector.storageModel), `P1-L44.${entry.selector.recordChange}.${entry.selector.storageModel}`);
+  for (const recordChange of L44_RECORD_CHANGES) for (const storageModel of L44_STORAGE_MODELS) {
+    const frames = l44RelationalProofbenchFrames(recordChange, storageModel);
+    assertChapter8RevealProgression(frames, `P1-L44.${recordChange}.${storageModel}`);
+    const conclusion = frames.at(-1).state;
+    assert.equal(conclusion.allErrorsEliminated, false, `${recordChange}.${storageModel}: relational model must not claim all errors are eliminated`);
+    assert.match(conclusion.limitation, /does-not-eliminate-bad-input-poor-design-or-unauthorised-access/, `${recordChange}.${storageModel}: relational limitation`);
+  }
+
+  assert.equal(L45_SCHEMA_FIXTURES.length, 3); assert.equal(L45_KEY_CHOICES.length, 2); assert.equal(L45_RECORD_OPERATIONS.length, 2);
+  for (const entry of oracle["P1-L45"].states) compare("P1-L45", entry, l45KeyRelationFrames(entry.selector.schemaFixture, entry.selector.keyChoice, entry.selector.recordOperation), `P1-L45.${entry.selector.schemaFixture}.${entry.selector.keyChoice}.${entry.selector.recordOperation}`);
+  for (const fixture of L45_SCHEMA_FIXTURES) for (const keyChoice of L45_KEY_CHOICES) for (const operation of L45_RECORD_OPERATIONS) {
+    const frames = l45KeyRelationFrames(fixture, keyChoice, operation);
+    assertChapter8RevealProgression(frames, `P1-L45.${fixture}.${keyChoice}.${operation}`);
+    const conclusion = frames.at(-1).state;
+    assert.equal(conclusion.indexControlsIntegrity, false, `${fixture}: index must not enforce referential integrity`);
+    if (fixture === "student_subject_enrolment") assert.match(conclusion.cardinality, /many-to-many.*Enrolment/, "many-to-many relationship must use a junction relation");
+    if (operation === "violating_operation") assert.equal(conclusion.committed, false, `${fixture}: orphan operation must not commit`);
+  }
+
+  assert.equal(L46_DATASETS.length, 3); assert.equal(L46_DEPENDENCY_CHOICES.length, 2);
+  for (const entry of oracle["P1-L46"].states) compare("P1-L46", entry, l46NormalisationFrames(entry.selector.dataset, entry.selector.dependencyChoice), `P1-L46.${entry.selector.dataset}.${entry.selector.dependencyChoice}`);
+  for (const dataset of L46_DATASETS) for (const dependencyChoice of L46_DEPENDENCY_CHOICES) {
+    const frames = l46NormalisationFrames(dataset, dependencyChoice);
+    assertChapter8RevealProgression(frames, `P1-L46.${dataset}.${dependencyChoice}`);
+    assert.ok(frames[0].state.functionalDependencies.length > 0, `${dataset}: dependencies must be declared before diagnosis`);
+    const conclusion = frames.at(-1).state;
+    assert.deepEqual(conclusion.reconstructedFacts, conclusion.sourceFacts, `${dataset}: normalisation must preserve represented facts`);
+    assert.equal(conclusion.teacherIdsUnique, true); assert.equal(conclusion.subjectRowsConsistent, true); assert.equal(conclusion.classIdRetainedWhenRequired, true);
+  }
+
+  assert.equal(L47_PACKETS.length, 6);
+  for (const entry of oracle["P1-L47"].states) compare("P1-L47", entry, l47DbmsControlFrames(entry.selector.packet), `P1-L47.${entry.selector.packet}`);
+  for (const packet of L47_PACKETS) {
+    const frames = l47DbmsControlFrames(packet);
+    assertChapter8RevealProgression(frames, `P1-L47.${packet}`);
+    const conclusion = frames.at(-1).state;
+    assert.ok(conclusion.limitation.length > 0 && conclusion.revealedEvidence.includes(conclusion.limitation), `${packet}: DBMS limitation must remain visible`);
+  }
+  assert.match(l47DbmsControlFrames("dba_backup_restore_test").at(-1).state.limitation, /backup-alone-does-not-prove-recoverability/, "backup alone must not guarantee recovery");
+
+  assert.equal(L48_STATEMENT_FIXTURES.length, 8);
+  for (const entry of oracle["P1-L48"].states) compare("P1-L48", entry, l48SqlRoleFrames(entry.selector.statementFixture), `P1-L48.${entry.selector.statementFixture}`);
+  for (const fixture of L48_STATEMENT_FIXTURES) {
+    const frames = l48SqlRoleFrames(fixture);
+    assertChapter8RevealProgression(frames, `P1-L48.${fixture}`);
+    assert.equal(frames[0].state.revealedLanguageRole, "not-revealed", `${fixture}: SQL role must be prediction-locked initially`);
+    assert.match(frames.at(-1).state.dialect, /dialects-vary/, `${fixture}: dialect limitation`);
+    assert.ok(frames.at(-1).state.structureBefore.length > 0 || fixture === "create_database", `${fixture}: exact structure fixture required`);
+  }
+
+  assert.equal(L49_DDL_FAMILIES.length, 5); assert.equal(L49_VALIDITY_VARIANTS.length, 2);
+  for (const entry of oracle["P1-L49"].states) compare("P1-L49", entry, l49DdlSchemaFrames(entry.selector.ddlFamily, entry.selector.validityVariant), `P1-L49.${entry.selector.ddlFamily}.${entry.selector.validityVariant}`);
+  for (const family of L49_DDL_FAMILIES) for (const validity of L49_VALIDITY_VARIANTS) {
+    const frames = l49DdlSchemaFrames(family, validity);
+    assertChapter8RevealProgression(frames, `P1-L49.${family}.${validity}`);
+    const conclusion = frames.at(-1).state;
+    assert.match(conclusion.dialect, /not-a-universal-vendor-validator/, `${family}: DDL dialect boundary`);
+    if (validity === "invalid") {
+      assert.notEqual(conclusion.errorReason, "none", `${family}: invalid DDL must expose its finite-fixture reason`);
+      assert.deepEqual(conclusion.declaredFaults, [conclusion.errorReason], `${family}: invalid DDL must declare exactly one isolated fault`);
+    } else {
+      assert.deepEqual(conclusion.declaredFaults, [], `${family}: valid DDL must declare no faults`);
+    }
+  }
+  for (const family of L49_DDL_FAMILIES) {
+    const valid = l49DdlSchemaFrames(family, "valid").at(-1).state;
+    const invalid = l49DdlSchemaFrames(family, "invalid").at(-1).state;
+    const [fault, repair] = invalid.faultRepair;
+    assert.equal(invalid.statement.split(fault).length, 2, `${family}: invalid DDL must contain its one declared fault exactly once`);
+    assert.equal(invalid.statement.replace(fault, repair), valid.statement, `${family}: repairing the declared fault must produce the exact valid candidate`);
+    assert.deepEqual(invalid.schemaBefore, valid.schemaBefore, `${family}: valid and invalid candidates must start from the same schema`);
+    assert.deepEqual(invalid.schemaAfter, invalid.schemaBefore, `${family}: rejected DDL must leave committed schema unchanged`);
+  }
+  assert.deepEqual(l49DdlSchemaFrames("create_table_types", "valid").at(-1).state.dataTypes, ["CHARACTER", "VARCHAR(n)", "BOOLEAN", "INTEGER", "REAL", "DATE", "TIME"]);
+
+  assert.equal(L50_STATEMENT_PACKETS.length, 10);
+  for (const entry of oracle["P1-L50"].states) compare("P1-L50", entry, l50DmlTraceFrames(entry.selector.statementPacket), `P1-L50.${entry.selector.statementPacket}`);
+  for (const packet of L50_STATEMENT_PACKETS) {
+    const frames = l50DmlTraceFrames(packet);
+    assertChapter8RevealProgression(frames, `P1-L50.${packet}`);
+    const conclusion = frames.at(-1).state;
+    assert.equal(conclusion.logicalTeachingOrder, true); assert.equal(conclusion.hiddenThirdTable, false);
+    assert.ok(conclusion.sourceTables.length <= 2, `${packet}: SQL trace exceeds two-table syllabus scope`);
+    assert.match(conclusion.dialect, /physical-plans-vary/, `${packet}: teaching trace must not claim a physical execution plan`);
+  }
+  const deleteAll = l50DmlTraceFrames("delete_without_where").at(-1).state;
+  assert.deepEqual(deleteAll.rowsAfter, [], "DELETE without WHERE removes every row in the finite fixture");
+  assert.ok(deleteAll.schemaAfter.some((entry) => entry.startsWith("Booking(")), "DELETE without WHERE must preserve table schema");
+});
+
+console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapters 4–8 JSON fixtures compared; Chapter 8 covers 248 deterministic relational database, normalisation, DBMS and SQL states)`);

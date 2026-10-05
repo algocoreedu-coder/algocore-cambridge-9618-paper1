@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "CAIE-9618-P1-2026",
-  "releaseId": "paper1-chapter7-2026.10.04-v1.0.0",
+  "releaseId": "paper1-chapter8-2026.10.04-v1.0.0",
   "lessons": [
     {
       "lessonId": "P1-L01",
@@ -367,6 +367,62 @@
       "modelVersions": [
         "VIS-P1-L43@1"
       ],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L44",
+      "slug": "relational-foundations",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L44@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L45",
+      "slug": "keys-relationships",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L45@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L46",
+      "slug": "normalisation",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L46@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L47",
+      "slug": "dbms",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L47@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L48",
+      "slug": "sql-foundations",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L48@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L49",
+      "slug": "sql-ddl",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L49@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L50",
+      "slug": "sql-dml",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L50@1"],
       "assessmentVersion": "1.0.0"
     }
   ]

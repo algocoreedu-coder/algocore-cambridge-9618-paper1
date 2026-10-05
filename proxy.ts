@@ -18,21 +18,28 @@ export function proxy(request: NextRequest) {
 
   const sessionToken = request.cookies.get(STUDENT_SESSION_COOKIE)?.value;
   const hasValidSession = verifyStudentSessionToken(sessionToken);
+  const publicPreview = process.env.ALGOCORE_PUBLIC_PREVIEW === "true";
+
+  const withProgressScope = (response: NextResponse) => {
+    const progressScope = request.cookies.get(STUDENT_PROGRESS_SCOPE_COOKIE)?.value;
+    if (!isValidStudentProgressScope(progressScope)) {
+      response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, createStudentProgressScope(), studentProgressScopeCookieOptions);
+    }
+    return response;
+  };
 
   if (request.nextUrl.pathname === "/login") {
-    if (hasValidSession) {
+    if (hasValidSession || publicPreview) {
       const redirectTo = safeLearningPath(request.nextUrl.searchParams.get("next"), locale);
-      const response = NextResponse.redirect(new URL(redirectTo, request.url));
-      const progressScope = request.cookies.get(STUDENT_PROGRESS_SCOPE_COOKIE)?.value;
-      if (!isValidStudentProgressScope(progressScope)) {
-        response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, createStudentProgressScope(), studentProgressScopeCookieOptions);
-      }
-      return response;
+      return withProgressScope(NextResponse.redirect(new URL(redirectTo, request.url)));
     }
     return NextResponse.next({ request: { headers: requestHeaders } });
   }
 
   if (!hasValidSession) {
+    if (publicPreview) {
+      return withProgressScope(NextResponse.next({ request: { headers: requestHeaders } }));
+    }
     const loginUrl = new URL("/login", request.url);
     const requestedPath = safeLearningPath(`${request.nextUrl.pathname}${request.nextUrl.search}`, locale);
     loginUrl.searchParams.set("next", requestedPath);
@@ -43,12 +50,7 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  const response = NextResponse.next({ request: { headers: requestHeaders } });
-  const progressScope = request.cookies.get(STUDENT_PROGRESS_SCOPE_COOKIE)?.value;
-  if (!isValidStudentProgressScope(progressScope)) {
-    response.cookies.set(STUDENT_PROGRESS_SCOPE_COOKIE, createStudentProgressScope(), studentProgressScopeCookieOptions);
-  }
-  return response;
+  return withProgressScope(NextResponse.next({ request: { headers: requestHeaders } }));
 }
 
 export const config = {

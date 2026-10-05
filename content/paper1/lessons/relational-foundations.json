@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L44",
+  "slug": "relational-foundations",
+  "sectionId": "8",
+  "strandId": "8.1",
+  "title": {
+    "en": "File-based and relational databases",
+    "vi": "File-based và relational database"
+  },
+  "question": {
+    "en": "How does a relational design reduce the storage and retrieval problems caused by separate application files?",
+    "vi": "Relational design giảm các problem về storage và retrieval do separate application file gây ra thế nào?"
+  },
+  "opening": {
+    "en": "Trace one fact through two storage designs. The evidence comes from where it is stored, what must change and what each application retrieves.",
+    "vi": "Trace một fact qua hai storage design. Evidence đến từ nơi fact được lưu, phần phải đổi và dữ liệu mỗi application retrieve."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.1-01",
+      "text": {
+        "en": "Explain limitations of file-based storage and retrieval.",
+        "vi": "Giải thích limitation của file-based storage và retrieval."
+      }
+    },
+    {
+      "id": "AC26-8.1-02",
+      "text": {
+        "en": "Explain how relational database features address those limitations.",
+        "vi": "Giải thích relational database feature xử lý các limitation đó thế nào."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.1-01-01",
+    "REQ-8.1-02-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L44-theory-1",
+      "title": {
+        "en": "Why separate files create problems",
+        "vi": "Vì sao các file riêng tạo ra vấn đề"
+      },
+      "paragraphs": [
+        {
+          "en": "A file-based system often stores data for one application in its own file. The same customer address may therefore appear in ordering, support and delivery files. This duplication is data redundancy.",
+          "vi": "File-based system thường lưu dữ liệu của từng application trong file riêng. Vì vậy cùng một customer address có thể xuất hiện trong ordering, support và delivery file. Sự lặp này là data redundancy."
+        },
+        {
+          "en": "If one copy changes and another does not, the files become inconsistent. A new combined query may also require program changes because file formats and access logic are embedded in separate programs; this is program-data dependence.",
+          "vi": "Nếu một copy được đổi còn copy khác không đổi, các file trở nên inconsistent. Một combined query mới cũng có thể đòi hỏi sửa program vì file format và access logic nằm trong các program riêng; đây là program-data dependence."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Always link the named limitation to an observable storage or retrieval consequence.",
+          "vi": "Luôn liên hệ limitation được nêu với consequence cụ thể về storage hoặc retrieval."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L44-theory-2",
+      "title": {
+        "en": "Relational structure and shared control",
+        "vi": "Relational structure và shared control"
+      },
+      "paragraphs": [
+        {
+          "en": "A relational database organises data logically into tables. Each row is a record or tuple, each column is a field or attribute, and keys and relationships connect facts held in different tables.",
+          "vi": "Relational database tổ chức dữ liệu một cách logic thành các table. Mỗi row là record hoặc tuple, mỗi column là field hoặc attribute, còn key và relationship kết nối facts trong các table khác nhau."
+        },
+        {
+          "en": "A shared definition lets several applications use the same structured data. Updating an address in its authoritative row can reduce unnecessary duplication and inconsistent copies, while applications remain less dependent on a private file layout.",
+          "vi": "Shared definition cho phép nhiều application dùng cùng structured data. Update address trong authoritative row có thể giảm duplication không cần thiết và inconsistent copy, đồng thời application ít phụ thuộc hơn vào private file layout."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Relationships are logical links through matching key values; this lesson does not require physical internal pointers.",
+          "vi": "Relationship là logical link qua matching key value; bài này không yêu cầu physical internal pointer."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L44-theory-3",
+      "title": {
+        "en": "Benefits have boundaries",
+        "vi": "Benefit có giới hạn"
+      },
+      "paragraphs": [
+        {
+          "en": "Relational design supports controlled definitions, validation and consistent updates, but it does not automatically remove every error. Incorrect input, weak keys, poor relationships or an incorrect update can still damage data.",
+          "vi": "Relational design hỗ trợ controlled definition, validation và consistent update, nhưng không tự động loại bỏ mọi error. Incorrect input, weak key, poor relationship hoặc incorrect update vẫn có thể làm hỏng data."
+        },
+        {
+          "en": "A precise comparison names the mechanism: one authoritative fact, structured tables, declared keys and relationships, or separation between logical structure and application code. It then states the particular limitation that mechanism reduces.",
+          "vi": "Một comparison chính xác phải nêu mechanism: một authoritative fact, structured table, declared key và relationship, hoặc tách logical structure khỏi application code. Sau đó nêu limitation cụ thể mà mechanism làm giảm."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Use reduce or control, not guarantee or eliminate, when describing relational benefits.",
+          "vi": "Dùng reduce hoặc control, không dùng guarantee hoặc eliminate, khi mô tả relational benefit."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Change one customer address",
+      "vi": "Thay đổi một customer address"
+    },
+    "prompt": {
+      "en": "Compare an address update across separate orders/support files and a relational design.",
+      "vi": "Compare address update qua separate orders/support file và relational design."
+    },
+    "steps": [
+      {
+        "id": "P1-L44-worked-1",
+        "action": {
+          "en": "Locate the duplicated fact.",
+          "vi": "Xác định fact bị lặp."
+        },
+        "result": {
+          "en": "Customer C104's address appears in the orders file and the support file.",
+          "vi": "Address của customer C104 xuất hiện trong orders file và support file."
+        }
+      },
+      {
+        "id": "P1-L44-worked-2",
+        "action": {
+          "en": "Trace a missed update.",
+          "vi": "Trace một missed update."
+        },
+        "result": {
+          "en": "Only the orders copy is changed, so two applications now return different addresses.",
+          "vi": "Chỉ copy trong orders được đổi, nên hai application trả về address khác nhau."
+        }
+      },
+      {
+        "id": "P1-L44-worked-3",
+        "action": {
+          "en": "Rebuild the same fact relationally.",
+          "vi": "Dựng lại cùng fact theo relational model."
+        },
+        "result": {
+          "en": "CUSTOMER stores one address row identified by CustomerID; ORDER and SUPPORT_CASE refer to that key.",
+          "vi": "CUSTOMER lưu một address row được identify bằng CustomerID; ORDER và SUPPORT_CASE refer tới key đó."
+        }
+      },
+      {
+        "id": "P1-L44-worked-4",
+        "action": {
+          "en": "Qualify the result.",
+          "vi": "Nêu giới hạn của kết quả."
+        },
+        "result": {
+          "en": "One controlled update reduces redundant address copies and inconsistency, but validation and correct operations are still needed.",
+          "vi": "Một controlled update làm giảm redundant address copy và inconsistency, nhưng vẫn cần validation cùng correct operation."
+        }
+      }
+    ],
+    "result": {
+      "en": "The relational design provides one controlled fact and logical relationships. It reduces unnecessary duplication and inconsistent retrieval without promising perfect data.",
+      "vi": "Relational design cung cấp một controlled fact và logical relationship. Nó giảm duplication không cần thiết cùng inconsistent retrieval mà không hứa perfect data."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Ask where the same fact is stored and how many updates are required.",
+        "vi": "Hỏi cùng fact được lưu ở đâu và cần bao nhiêu update."
+      },
+      {
+        "en": "Separate duplicated data from program dependence on file layout.",
+        "vi": "Tách duplicated data khỏi program dependence vào file layout."
+      }
+    ],
+    "method": [
+      {
+        "en": "Trace the same change through every file/application.",
+        "vi": "Trace cùng change qua mọi file/application."
+      },
+      {
+        "en": "Match each relational mechanism to a named limitation and state the boundary.",
+        "vi": "Match mỗi relational mechanism với named limitation rồi nêu boundary."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A relational database removes all duplication and errors.",
+          "vi": "Relational database loại bỏ mọi duplication và error."
+        },
+        "correction": {
+          "en": "Good design reduces unnecessary duplication and supports control; incorrect input and poor operations remain possible.",
+          "vi": "Good design giảm duplication không cần thiết và hỗ trợ control; incorrect input cùng poor operation vẫn có thể xảy ra."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A database and a DBMS are the same object.",
+          "vi": "Database và DBMS là cùng một object."
+        },
+        "correction": {
+          "en": "The database is the organised data and structure; the DBMS is software that manages it.",
+          "vi": "Database là organised data cùng structure; DBMS là software quản lý nó."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Relationships must be physical pointers.",
+          "vi": "Relationship bắt buộc là physical pointer."
+        },
+        "correction": {
+          "en": "At this level, relationships are logical links through matching keys.",
+          "vi": "Ở mức này, relationship là logical link qua matching key."
+        }
+      },
+      {
+        "mistake": {
+          "en": "More copies always improve availability without a cost.",
+          "vi": "Nhiều copy luôn cải thiện availability mà không có cost."
+        },
+        "correction": {
+          "en": "Uncontrolled copies create update work and inconsistency; managed replication is a separate design topic.",
+          "vi": "Uncontrolled copy tạo update work và inconsistency; managed replication là design topic khác."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L44-recognise-1",
+        "title": {
+          "en": "Two addresses for one customer",
+          "vi": "Hai address cho một customer"
+        },
+        "setup": {
+          "en": "Ordering shows 18 Lake Road while support shows 81 Lake Road for C104.",
+          "vi": "Ordering hiển thị 18 Lake Road còn support hiển thị 81 Lake Road cho C104."
+        },
+        "prompt": {
+          "en": "Name the file-based limitation and its consequence.",
+          "vi": "Nêu file-based limitation và consequence."
+        },
+        "expectedEvidence": {
+          "en": "Duplicated copies were updated separately, causing inconsistency and unreliable retrieval.",
+          "vi": "Các duplicated copy được update riêng, gây inconsistency và retrieval không đáng tin cậy."
+        }
+      },
+      {
+        "id": "P1-L44-recognise-2",
+        "title": {
+          "en": "A new cross-file report",
+          "vi": "Report mới từ nhiều file"
+        },
+        "setup": {
+          "en": "A manager requests one report combining delivery status and support priority, but each application owns a different format.",
+          "vi": "Manager yêu cầu report kết hợp delivery status và support priority, nhưng mỗi application sở hữu format khác."
+        },
+        "prompt": {
+          "en": "Explain the dependency problem.",
+          "vi": "Giải thích dependency problem."
+        },
+        "expectedEvidence": {
+          "en": "The report needs new program logic tied to both file structures, showing program-data dependence.",
+          "vi": "Report cần program logic mới gắn với cả hai file structure, cho thấy program-data dependence."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L44-CHECK-REQ-8.1-01-01",
+      "requirementId": "REQ-8.1-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain three limitations of separate application files using one customer-address example.",
+        "vi": "Giải thích ba limitation của separate application file bằng một customer-address example."
+      },
+      "hint": {
+        "en": "Use redundancy, inconsistency and program-data dependence, each with a consequence.",
+        "vi": "Dùng redundancy, inconsistency và program-data dependence, mỗi ý kèm consequence."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The address is duplicated in several files, increasing storage and update work. If only one copy changes, retrieval becomes inconsistent. Because each program embeds its file format and access logic, a new combined query requires program changes, showing program-data dependence.",
+          "vi": "Address bị duplicate trong nhiều file, làm tăng storage và update work. Nếu chỉ một copy đổi, retrieval trở nên inconsistent. Vì mỗi program nhúng file format và access logic, combined query mới cần sửa program, cho thấy program-data dependence."
+        },
+        "rubric": [
+          {
+            "en": "Credit each limitation only when its concrete consequence is explained.",
+            "vi": "Chỉ chấm mỗi limitation khi consequence cụ thể được giải thích."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "file-based",
+        "redundancy",
+        "inconsistency",
+        "program-data-dependence"
+      ]
+    },
+    {
+      "id": "P1-L44-CHECK-REQ-8.1-02-01",
+      "requirementId": "REQ-8.1-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a relational design can address the customer-address problem, and state one limitation of the improvement.",
+        "vi": "Giải thích relational design xử lý customer-address problem thế nào và nêu một limitation của improvement."
+      },
+      "hint": {
+        "en": "Name the shared table, key relationship and controlled update.",
+        "vi": "Nêu shared table, key relationship và controlled update."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Store the customer once in a CUSTOMER table identified by CustomerID, and let order and support records reference that key. One controlled address update reduces redundant copies and inconsistency, while shared logical definitions reduce dependence on private file formats. The design does not guarantee truthful input or error-free operations.",
+          "vi": "Lưu customer một lần trong CUSTOMER table được identify bằng CustomerID, rồi cho order và support record reference key đó. Một controlled address update làm giảm redundant copy và inconsistency, còn shared logical definition làm giảm phụ thuộc vào private file format. Design không guarantee truthful input hoặc error-free operation."
+        },
+        "rubric": [
+          {
+            "en": "Require a relational mechanism, the matched file-based limitation and a qualified boundary.",
+            "vi": "Yêu cầu relational mechanism, file-based limitation tương ứng và qualified boundary."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "relational-database",
+        "shared-tables",
+        "data-independence"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Name the three file-based limitations and one relational mechanism for each.",
+      "vi": "Nêu ba file-based limitation và một relational mechanism cho mỗi limitation."
+    },
+    "answerPoints": [
+      {
+        "en": "Redundancy and inconsistency are reduced by one authoritative structured fact and controlled updates; program-data dependence is reduced by shared logical definitions and relationships.",
+        "vi": "Redundancy và inconsistency được giảm bằng một authoritative structured fact cùng controlled update; program-data dependence được giảm bằng shared logical definition và relationship."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "file-based system",
+      "meaning": {
+        "en": "Storage in separate application-owned files with program-specific formats and access logic.",
+        "vi": "Storage trong separate application-owned file với program-specific format và access logic."
+      }
+    },
+    {
+      "term": "data redundancy",
+      "meaning": {
+        "en": "Unnecessary duplication of the same fact.",
+        "vi": "Duplication không cần thiết của cùng một fact."
+      }
+    },
+    {
+      "term": "data inconsistency",
+      "meaning": {
+        "en": "Conflicting values for what should be the same fact.",
+        "vi": "Các value conflict cho cùng một fact."
+      }
+    },
+    {
+      "term": "program-data dependence",
+      "meaning": {
+        "en": "A program depends on a particular file structure or access method.",
+        "vi": "Program phụ thuộc vào file structure hoặc access method cụ thể."
+      }
+    },
+    {
+      "term": "relational database",
+      "meaning": {
+        "en": "Data organised logically into related tables using keys and declared structure.",
+        "vi": "Data được tổ chức logic thành related table bằng key và declared structure."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "keys-relationships",
+    "dbms"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.1, printed/PDF p. 25",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L44 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 197–200; PDF pp. 213–216",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L44",
+  "contractCoverage": {
+    "B01": [
+      "P1-L44-objectives"
+    ],
+    "B02": [
+      "P1-L44-theory-1",
+      "P1-L44-theory-2",
+      "P1-L44-theory-3"
+    ],
+    "B03": [
+      "P1-L44-theory-1",
+      "P1-L44-theory-2",
+      "P1-L44-theory-3"
+    ],
+    "B04": [
+      "P1-L44-recognise-1",
+      "P1-L44-recognise-2"
+    ],
+    "B05": [
+      "P1-L44-worked-1",
+      "P1-L44-worked-2",
+      "P1-L44-worked-3",
+      "P1-L44-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L44"
+    ],
+    "B07": [
+      "P1-L44-CHECK-REQ-8.1-01-01",
+      "P1-L44-CHECK-REQ-8.1-02-01"
+    ],
+    "B08": [
+      "P1-L44-recognise-1",
+      "P1-L44-recognise-2"
+    ],
+    "B09": [
+      "P1-L44-recall"
+    ],
+    "B10": [
+      "P1-L44-glossary"
+    ],
+    "B11": [
+      "P1-L44-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

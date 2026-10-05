@@ -1,0 +1,618 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L45",
+  "slug": "keys-relationships",
+  "sectionId": "8",
+  "strandId": "8.1",
+  "title": {
+    "en": "Keys, relationships and E-R diagrams",
+    "vi": "Key, relationship và E-R diagram"
+  },
+  "question": {
+    "en": "How do keys, cardinalities and constraints turn a scenario into a valid relational design?",
+    "vi": "Key, cardinality và constraint biến scenario thành valid relational design thế nào?"
+  },
+  "opening": {
+    "en": "A correct diagram is a claim about identity and allowed relationships. Test that claim with rows and operations.",
+    "vi": "Correct diagram là một claim về identity và allowed relationship. Hãy test claim bằng row và operation."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.1-03",
+      "text": {
+        "en": "Use relational terminology, keys, relationships, referential integrity and indexing accurately.",
+        "vi": "Dùng chính xác relational terminology, key, relationship, referential integrity và indexing."
+      }
+    },
+    {
+      "id": "AC26-8.1-04",
+      "text": {
+        "en": "Read, complete and produce E-R diagrams with correct cardinality.",
+        "vi": "Đọc, hoàn thành và tạo E-R diagram với correct cardinality."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.1-03-01",
+    "REQ-8.1-03-02",
+    "REQ-8.1-03-03",
+    "REQ-8.1-03-04",
+    "REQ-8.1-04-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L44"
+  ],
+  "theory": [
+    {
+      "id": "P1-L45-theory-1",
+      "title": {
+        "en": "Rows, columns and keys",
+        "vi": "Row, column và key"
+      },
+      "paragraphs": [
+        {
+          "en": "An entity is a kind of real-world thing about which data is stored. In a relation or table, a tuple or record is one row, while an attribute or field is one named column.",
+          "vi": "Entity là một loại real-world thing được lưu data. Trong relation hoặc table, tuple hoặc record là một row, còn attribute hoặc field là một named column."
+        },
+        {
+          "en": "A candidate key is a minimal attribute set that the business rules declare unique. One candidate is selected as the primary key. In the Cambridge coursebook usage, another candidate can be a secondary key. A foreign key stores values that reference a suitable key in another relation.",
+          "vi": "Candidate key là minimal attribute set được business rule khai báo unique. Một candidate được chọn làm primary key. Theo cách dùng trong Cambridge coursebook, candidate khác có thể là secondary key. Foreign key lưu value reference tới suitable key trong relation khác."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A few unique sample values do not prove that an attribute is a candidate key; use the stated domain rule.",
+          "vi": "Một vài sample value unique không chứng minh attribute là candidate key; phải dùng stated domain rule."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L45-theory-2",
+      "title": {
+        "en": "Relationships, cardinality and integrity",
+        "vi": "Relationship, cardinality và integrity"
+      },
+      "paragraphs": [
+        {
+          "en": "Cardinality states how many instances can be related: one-to-one, one-to-many or many-to-many. Read every relationship in both directions because the wording may change the cardinality.",
+          "vi": "Cardinality nêu bao nhiêu instance có thể relate: one-to-one, one-to-many hoặc many-to-many. Đọc mỗi relationship theo cả hai hướng vì wording có thể đổi cardinality."
+        },
+        {
+          "en": "A many-to-many relationship is implemented relationally with a junction table containing foreign keys to both parent tables, often forming a composite primary key. Referential integrity requires every non-null foreign-key value to match a referenced key.",
+          "vi": "Many-to-many relationship được implement theo relational model bằng junction table chứa foreign key tới cả hai parent table, thường tạo composite primary key. Referential integrity yêu cầu mỗi non-null foreign-key value match một referenced key."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Repeated foreign-key values are expected on the many side; the foreign key itself need not be unique.",
+          "vi": "Repeated foreign-key value là bình thường ở many side; foreign key không cần unique."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L45-theory-3",
+      "title": {
+        "en": "E-R diagrams and indexes",
+        "vi": "E-R diagram và index"
+      },
+      "paragraphs": [
+        {
+          "en": "An E-R diagram shows entities, their relationships and cardinalities. Entity names, relationship lines and cardinality marks must express the scenario rules. A consistent standard notation is acceptable; drawing geometry is not the evidence.",
+          "vi": "E-R diagram hiển thị entity, relationship và cardinality. Entity name, relationship line và cardinality mark phải thể hiện scenario rule. Standard notation nhất quán được chấp nhận; drawing geometry không phải evidence."
+        },
+        {
+          "en": "An index is an additional access structure built on one or more fields to support retrieval. It can improve suitable searches, but it does not enforce foreign keys, change the logical rows, guarantee speed for every query or establish output order.",
+          "vi": "Index là additional access structure trên một hoặc nhiều field để hỗ trợ retrieval. Nó có thể cải thiện suitable search, nhưng không enforce foreign key, không đổi logical row, không guarantee speed cho mọi query và không xác lập output order."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Choose an index from a stated retrieval need, not merely because a field exists.",
+          "vi": "Chọn index từ stated retrieval need, không chỉ vì field tồn tại."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Design a service-booking database",
+      "vi": "Design service-booking database"
+    },
+    "prompt": {
+      "en": "Customers can book many services and each service can be booked by many customers. Build and test the design.",
+      "vi": "Customer có thể book nhiều service và mỗi service có thể được nhiều customer book. Hãy build và test design."
+    },
+    "steps": [
+      {
+        "id": "P1-L45-worked-1",
+        "action": {
+          "en": "Identify entities and candidate keys.",
+          "vi": "Xác định entity và candidate key."
+        },
+        "result": {
+          "en": "CUSTOMER(CustomerID, Email, Name) and SERVICE(ServiceID, Name) have declared candidate keys; CustomerID and ServiceID are selected as primary keys.",
+          "vi": "CUSTOMER(CustomerID, Email, Name) và SERVICE(ServiceID, Name) có declared candidate key; CustomerID và ServiceID được chọn làm primary key."
+        }
+      },
+      {
+        "id": "P1-L45-worked-2",
+        "action": {
+          "en": "Resolve the many-to-many rule.",
+          "vi": "Resolve many-to-many rule."
+        },
+        "result": {
+          "en": "A customer can book many services and a service can be booked by many customers, so BOOKING(CustomerID, ServiceID, StartTime) is introduced.",
+          "vi": "Một customer có thể book nhiều service và một service có thể được nhiều customer book, nên thêm BOOKING(CustomerID, ServiceID, StartTime)."
+        }
+      },
+      {
+        "id": "P1-L45-worked-3",
+        "action": {
+          "en": "Set keys and test integrity.",
+          "vi": "Đặt key và test integrity."
+        },
+        "result": {
+          "en": "BOOKING uses a composite primary key and two foreign keys. A booking for missing CustomerID C999 is rejected and does not create an orphan.",
+          "vi": "BOOKING dùng composite primary key và hai foreign key. Booking cho CustomerID C999 không tồn tại bị reject và không tạo orphan."
+        }
+      },
+      {
+        "id": "P1-L45-worked-4",
+        "action": {
+          "en": "Add retrieval support and draw the E-R design.",
+          "vi": "Thêm retrieval support và vẽ E-R design."
+        },
+        "result": {
+          "en": "An index on StartTime supports date/time searches. The diagram shows CUSTOMER 1:M BOOKING and SERVICE 1:M BOOKING.",
+          "vi": "Index trên StartTime hỗ trợ search theo date/time. Diagram hiển thị CUSTOMER 1:M BOOKING và SERVICE 1:M BOOKING."
+        }
+      }
+    ],
+    "result": {
+      "en": "The associative BOOKING relation resolves M:N, foreign keys preserve references, and the E-R diagram records both 1:M relationships.",
+      "vi": "Associative BOOKING relation resolve M:N, foreign key preserve reference, và E-R diagram ghi lại cả hai 1:M relationship."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Find declared identifiers before selecting keys.",
+        "vi": "Tìm declared identifier trước khi chọn key."
+      },
+      {
+        "en": "Translate each scenario sentence into a relationship read in both directions.",
+        "vi": "Chuyển mỗi scenario sentence thành relationship được đọc theo cả hai hướng."
+      }
+    ],
+    "method": [
+      {
+        "en": "List entities and attributes, then mark candidate and chosen primary keys.",
+        "vi": "List entity và attribute, rồi mark candidate cùng chosen primary key."
+      },
+      {
+        "en": "Resolve M:N, test a foreign-key operation and add cardinality labels.",
+        "vi": "Resolve M:N, test foreign-key operation và thêm cardinality label."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A primary key identifies the table.",
+          "vi": "Primary key identify table."
+        },
+        "correction": {
+          "en": "A primary key uniquely identifies each tuple in the relation.",
+          "vi": "Primary key uniquely identify mỗi tuple trong relation."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Every unique sample field is a candidate key.",
+          "vi": "Mọi sample field unique là candidate key."
+        },
+        "correction": {
+          "en": "Candidacy follows a declared minimal uniqueness rule, not accidental sample values.",
+          "vi": "Candidate status theo declared minimal uniqueness rule, không theo accidental sample value."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A foreign key must be unique.",
+          "vi": "Foreign key phải unique."
+        },
+        "correction": {
+          "en": "Repeated foreign keys implement the many side of a 1:M relationship.",
+          "vi": "Repeated foreign key implement many side của 1:M relationship."
+        }
+      },
+      {
+        "mistake": {
+          "en": "An index enforces referential integrity.",
+          "vi": "Index enforce referential integrity."
+        },
+        "correction": {
+          "en": "A constraint enforces the reference; an index supports retrieval.",
+          "vi": "Constraint enforce reference; index support retrieval."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L45-recognise-1",
+        "title": {
+          "en": "Unique in the sample",
+          "vi": "Unique trong sample"
+        },
+        "setup": {
+          "en": "Every current customer name is different, but the business permits two customers with the same name.",
+          "vi": "Mọi customer name hiện tại đều khác nhau, nhưng business cho phép hai customer trùng name."
+        },
+        "prompt": {
+          "en": "Can Name be declared a candidate key from this sample?",
+          "vi": "Có thể declare Name là candidate key từ sample này không?"
+        },
+        "expectedEvidence": {
+          "en": "No. Sample uniqueness is not a domain guarantee; use a declared minimal identifier such as CustomerID or a guaranteed unique Email.",
+          "vi": "Không. Sample uniqueness không phải domain guarantee; dùng declared minimal identifier như CustomerID hoặc guaranteed unique Email."
+        }
+      },
+      {
+        "id": "P1-L45-recognise-2",
+        "title": {
+          "en": "Repeated service foreign key",
+          "vi": "Service foreign key bị lặp"
+        },
+        "setup": {
+          "en": "Three BOOKING rows contain ServiceID S07.",
+          "vi": "Ba BOOKING row chứa ServiceID S07."
+        },
+        "prompt": {
+          "en": "Is referential integrity broken?",
+          "vi": "Referential integrity có bị vi phạm không?"
+        },
+        "expectedEvidence": {
+          "en": "Not if S07 exists in SERVICE. Repetition represents the many side and is valid.",
+          "vi": "Không nếu S07 tồn tại trong SERVICE. Repetition biểu diễn many side và là valid."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L45-CHECK-REQ-8.1-03-01",
+      "requirementId": "REQ-8.1-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Use entity, table, record, field, tuple and attribute correctly for a CUSTOMER relation.",
+        "vi": "Dùng đúng entity, table, record, field, tuple và attribute cho CUSTOMER relation."
+      },
+      "hint": {
+        "en": "Map the real-world type, row and column terms.",
+        "vi": "Match real-world type, row và column term."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Customer is the entity type represented by the CUSTOMER table or relation. One customer row is a record or tuple. CustomerID and Name are fields or attributes, represented as columns.",
+          "vi": "Customer là entity type được CUSTOMER table hoặc relation biểu diễn. Một customer row là record hoặc tuple. CustomerID và Name là field hoặc attribute, được biểu diễn thành column."
+        },
+        "rubric": [
+          {
+            "en": "Require correct row-column distinctions and the entity represented.",
+            "vi": "Yêu cầu phân biệt đúng row-column và entity được biểu diễn."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "entity",
+        "relation",
+        "tuple",
+        "attribute"
+      ]
+    },
+    {
+      "id": "P1-L45-CHECK-REQ-8.1-03-02",
+      "requirementId": "REQ-8.1-03-02",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish candidate, primary, secondary and foreign keys in the booking design.",
+        "vi": "Phân biệt candidate, primary, secondary và foreign key trong booking design."
+      },
+      "hint": {
+        "en": "State selection and reference roles, not only uniqueness.",
+        "vi": "Nêu selection và reference role, không chỉ uniqueness."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Candidate keys are minimal declared unique identifiers. The chosen candidate is the primary key; another candidate is a secondary key in the Cambridge usage. A foreign key stores values that reference a key in another relation, such as BOOKING.CustomerID referencing CUSTOMER.CustomerID.",
+          "vi": "Candidate key là minimal declared unique identifier. Candidate được chọn là primary key; candidate khác là secondary key theo Cambridge usage. Foreign key lưu value reference key trong relation khác, như BOOKING.CustomerID reference CUSTOMER.CustomerID."
+        },
+        "rubric": [
+          {
+            "en": "Do not credit a definition that treats every sample-unique field as a key.",
+            "vi": "Không chấm definition coi mọi sample-unique field là key."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "candidate-key",
+        "primary-key",
+        "secondary-key",
+        "foreign-key"
+      ]
+    },
+    {
+      "id": "P1-L45-CHECK-REQ-8.1-03-03",
+      "requirementId": "REQ-8.1-03-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain 1:1, 1:M and M:N, then show how to implement the booking M:N relationship.",
+        "vi": "Giải thích 1:1, 1:M và M:N, rồi cho biết cách implement booking M:N relationship."
+      },
+      "hint": {
+        "en": "Read each relationship both ways and use a junction table for M:N.",
+        "vi": "Đọc mỗi relationship theo cả hai hướng và dùng junction table cho M:N."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "In 1:1 each instance links to at most one on the other side. In 1:M one parent can link to many children while each child links to one parent. In M:N each side can link to many on the other. CUSTOMER and SERVICE M:N is implemented with BOOKING containing foreign keys to both, commonly as a composite primary key.",
+          "vi": "Trong 1:1 mỗi instance link tối đa một instance phía kia. Trong 1:M một parent có thể link nhiều child còn mỗi child link một parent. Trong M:N mỗi phía có thể link nhiều instance phía kia. CUSTOMER và SERVICE M:N được implement bằng BOOKING chứa foreign key tới cả hai, thường làm composite primary key."
+        },
+        "rubric": [
+          {
+            "en": "Require the junction mechanism as well as cardinality definitions.",
+            "vi": "Yêu cầu junction mechanism cùng cardinality definition."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "cardinality",
+        "junction-table",
+        "many-to-many"
+      ]
+    },
+    {
+      "id": "P1-L45-CHECK-REQ-8.1-03-04",
+      "requirementId": "REQ-8.1-03-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain referential integrity and indexing using BOOKING.CustomerID and a search by StartTime.",
+        "vi": "Giải thích referential integrity và indexing bằng BOOKING.CustomerID cùng search theo StartTime."
+      },
+      "hint": {
+        "en": "Separate integrity enforcement from retrieval support.",
+        "vi": "Tách integrity enforcement khỏi retrieval support."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Referential integrity requires each non-null BOOKING.CustomerID to match a CUSTOMER key, preventing orphan bookings. An index on StartTime provides an access structure that may speed suitable time searches. It does not enforce the foreign key, reorder logical rows or guarantee every query is faster.",
+          "vi": "Referential integrity yêu cầu mỗi non-null BOOKING.CustomerID match CUSTOMER key, ngăn orphan booking. Index trên StartTime cung cấp access structure có thể tăng tốc suitable time search. Nó không enforce foreign key, reorder logical row hoặc guarantee mọi query nhanh hơn."
+        },
+        "rubric": [
+          {
+            "en": "Credit both mechanisms only when their different purposes and one index boundary are clear.",
+            "vi": "Chỉ chấm cả hai mechanism khi purpose khác nhau và một index boundary rõ ràng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "referential-integrity",
+        "indexing"
+      ]
+    },
+    {
+      "id": "P1-L45-CHECK-REQ-8.1-04-01",
+      "requirementId": "REQ-8.1-04-01",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "Produce an E-R design for customers booking services, including entities, relationships and cardinality.",
+        "vi": "Tạo E-R design cho customer booking service, gồm entity, relationship và cardinality."
+      },
+      "hint": {
+        "en": "Resolve the M:N relationship and label both 1:M links.",
+        "vi": "Resolve M:N relationship và label cả hai 1:M link."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Use CUSTOMER 1:M BOOKING and SERVICE 1:M BOOKING. BOOKING is the associative entity with CustomerID and ServiceID foreign keys. Equivalent names and consistent standard cardinality notation are acceptable when the scenario rules are preserved.",
+          "vi": "Dùng CUSTOMER 1:M BOOKING và SERVICE 1:M BOOKING. BOOKING là associative entity với CustomerID và ServiceID foreign key. Equivalent name và consistent standard cardinality notation được chấp nhận khi giữ scenario rule."
+        },
+        "rubric": [
+          {
+            "en": "Review entities, key links and cardinalities semantically; do not mark by drawing position.",
+            "vi": "Review entity, key link và cardinality theo semantics; không chấm theo drawing position."
+          }
+        ],
+        "alternatives": [
+          {
+            "en": "A direct CUSTOMER M:N SERVICE conceptual diagram is acceptable only if the relational implementation also introduces BOOKING.",
+            "vi": "Direct CUSTOMER M:N SERVICE conceptual diagram chỉ được chấp nhận nếu relational implementation cũng thêm BOOKING."
+          }
+        ]
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "er-diagram",
+        "cardinality",
+        "associative-entity"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "How do candidate, primary, foreign and indexed fields differ?",
+      "vi": "Candidate, primary, foreign và indexed field khác nhau thế nào?"
+    },
+    "answerPoints": [
+      {
+        "en": "Candidate keys are minimal declared identifiers; one becomes primary. A foreign key references another relation. An index is an access structure for retrieval, not an integrity rule.",
+        "vi": "Candidate key là minimal declared identifier; một key trở thành primary. Foreign key reference relation khác. Index là access structure cho retrieval, không phải integrity rule."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "candidate key",
+      "meaning": {
+        "en": "A minimal attribute set declared to identify each tuple uniquely.",
+        "vi": "Minimal attribute set được declare để identify unique mỗi tuple."
+      }
+    },
+    {
+      "term": "primary key",
+      "meaning": {
+        "en": "The candidate key selected as the main tuple identifier.",
+        "vi": "Candidate key được chọn làm main tuple identifier."
+      }
+    },
+    {
+      "term": "foreign key",
+      "meaning": {
+        "en": "Attribute set whose non-null values reference a suitable key in another relation.",
+        "vi": "Attribute set có non-null value reference suitable key trong relation khác."
+      }
+    },
+    {
+      "term": "referential integrity",
+      "meaning": {
+        "en": "The rule that a non-null foreign-key value must match a referenced key.",
+        "vi": "Rule yêu cầu non-null foreign-key value phải match referenced key."
+      }
+    },
+    {
+      "term": "index",
+      "meaning": {
+        "en": "An additional access structure that can support retrieval by selected fields.",
+        "vi": "Additional access structure có thể hỗ trợ retrieval theo selected field."
+      }
+    },
+    {
+      "term": "cardinality",
+      "meaning": {
+        "en": "The number of instances allowed to relate across a relationship.",
+        "vi": "Số instance được phép relate qua một relationship."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "relational-foundations",
+    "normalisation"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.1, printed/PDF p. 25",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L45 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 199–202; PDF pp. 215–218",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L45",
+  "contractCoverage": {
+    "B01": [
+      "P1-L45-objectives"
+    ],
+    "B02": [
+      "P1-L45-theory-1",
+      "P1-L45-theory-2",
+      "P1-L45-theory-3"
+    ],
+    "B03": [
+      "P1-L45-theory-1",
+      "P1-L45-theory-2",
+      "P1-L45-theory-3"
+    ],
+    "B04": [
+      "P1-L45-recognise-1",
+      "P1-L45-recognise-2"
+    ],
+    "B05": [
+      "P1-L45-worked-1",
+      "P1-L45-worked-2",
+      "P1-L45-worked-3",
+      "P1-L45-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L45"
+    ],
+    "B07": [
+      "P1-L45-CHECK-REQ-8.1-03-01",
+      "P1-L45-CHECK-REQ-8.1-03-02",
+      "P1-L45-CHECK-REQ-8.1-03-03",
+      "P1-L45-CHECK-REQ-8.1-03-04",
+      "P1-L45-CHECK-REQ-8.1-04-01"
+    ],
+    "B08": [
+      "P1-L45-recognise-1",
+      "P1-L45-recognise-2"
+    ],
+    "B09": [
+      "P1-L45-recall"
+    ],
+    "B10": [
+      "P1-L45-glossary"
+    ],
+    "B11": [
+      "P1-L45-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}
