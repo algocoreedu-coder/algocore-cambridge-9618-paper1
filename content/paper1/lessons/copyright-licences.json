@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L42",
+  "slug": "copyright-licences",
+  "sectionId": "7",
+  "strandId": "7.1",
+  "title": { "en": "Copyright and software licences", "vi": "Copyright và software licence" },
+  "question": { "en": "How do copyright and licence permissions shape what a user may do with software?", "vi": "Copyright và licence permission định hình việc user được làm gì với software thế nào?" },
+  "opening": { "en": "Copyright gives creators legal control over protected work, while a licence grants selected permissions. Exam answers must compare actual permissions and user needs rather than rely on category labels alone.", "vi": "Copyright cho creator legal control đối với protected work, còn licence cấp selected permission. Exam answer phải compare actual permission với user need thay vì chỉ dựa vào category label." },
+  "objectives": [
+    { "id": "AC26-7.1-03", "text": { "en": "Explain the need for copyright legislation.", "vi": "Giải thích nhu cầu có copyright legislation." } },
+    { "id": "AC26-7.1-04", "text": { "en": "Compare free software, open-source software, shareware and commercial software licences and justify a suitable licence for a situation.", "vi": "Compare free software, open-source software, shareware và commercial software licence, rồi justify licence phù hợp cho situation." } }
+  ],
+  "requirementIds": ["REQ-7.1-03-01", "REQ-7.1-04-01", "REQ-7.1-04-02"],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L42-theory-1",
+      "title": { "en": "Why copyright legislation is needed", "vi": "Vì sao cần copyright legislation" },
+      "paragraphs": [
+        { "en": "Software, documentation, media and other creative works can be copied and distributed quickly. Copyright legislation gives rights holders legal control over uses such as copying, adaptation and distribution, subject to the law that applies in the jurisdiction.", "vi": "Software, documentation, media và creative work khác có thể bị copy và distribute nhanh. Copyright legislation trao cho rights holder legal control đối với các use như copying, adaptation và distribution, tuỳ theo law áp dụng trong jurisdiction." },
+        { "en": "This control supports recognition, licensing income and investment in creating and maintaining work, and supplies remedies for unauthorised use. A licence is the rights holder's permission for stated uses; it does not remove copyright automatically.", "vi": "Control này hỗ trợ recognition, licensing income và investment để tạo và maintain work, đồng thời cung cấp remedy cho unauthorised use. Licence là permission của rights holder cho stated use; nó không tự động xoá copyright." }
+      ],
+      "bullets": [
+        { "en": "Do not claim that copyright always requires registration or give jurisdiction-specific legal advice unless a named law and place are supplied.", "vi": "Không khẳng định copyright luôn cần registration hoặc đưa jurisdiction-specific legal advice khi chưa có named law và place." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    },
+    {
+      "id": "P1-L42-theory-2",
+      "title": { "en": "Four Cambridge licence profiles", "vi": "Bốn Cambridge licence profile" },
+      "paragraphs": [
+        { "en": "Free software, in the Free Software Foundation sense, protects freedoms to run, study, change and redistribute software. Open-source software uses source-available licences meeting criteria such as redistribution and derived works. These descriptions overlap, but FSF and OSI are organisations and definitions, not mutually exclusive licence types.", "vi": "Free software theo nghĩa Free Software Foundation bảo vệ freedom để run, study, change và redistribute software. Open-source software dùng source-available licence đáp ứng criteria như redistribution và derived work. Hai description này có overlap, nhưng FSF và OSI là organisation và definition, không phải licence type loại trừ nhau." },
+        { "en": "Shareware is usually proprietary software offered for trial, time-limited or feature-limited use before payment; it does not mean source code is shared. In the Cambridge comparison, commercial software commonly means paid proprietary software with restricted copying, modification or redistribution and possibly vendor support.", "vi": "Shareware thường là proprietary software được cung cấp để trial, time-limited hoặc feature-limited use trước khi trả tiền; nó không có nghĩa source code được share. Trong Cambridge comparison, commercial software thường chỉ paid proprietary software với restriction về copying, modification hoặc redistribution và có thể có vendor support." }
+      ],
+      "bullets": [
+        { "en": "Free refers to freedom, not necessarily zero price.", "vi": "Free nói về freedom, không nhất thiết là zero price." },
+        { "en": "Free or open-source software can be sold or used in a commercial business model.", "vi": "Free hoặc open-source software có thể được sell hoặc dùng trong commercial business model." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    },
+    {
+      "id": "P1-L42-theory-3",
+      "title": { "en": "Choose by permission and need", "vi": "Chọn theo permission và need" },
+      "paragraphs": [
+        { "en": "Translate the scenario into needs: inspect source, modify it, redistribute copies, collaborate publicly, install on several devices, try before buying, protect a revenue model, receive updates or obtain support. Then compare each need with the permissions and restrictions of a candidate licence.", "vi": "Chuyển scenario thành các need: inspect source, modify, redistribute copy, collaborate publicly, install trên nhiều device, try before buying, protect revenue model, nhận update hoặc support. Sau đó compare từng need với permission và restriction của candidate licence." },
+        { "en": "A category is not enough to determine every right. The exact licence may require attribution, disclosure of modified source, preservation of notices or other conditions. A justified answer states the fit, one limitation and why an alternative fits less well.", "vi": "Category không đủ để xác định mọi right. Exact licence có thể yêu cầu attribution, disclosure of modified source, preservation of notice hoặc condition khác. Justified answer nêu fit, một limitation và vì sao alternative kém phù hợp hơn." }
+      ],
+      "bullets": [
+        { "en": "Use: stated need → relevant permission/restriction → justified fit → licence-specific caveat.", "vi": "Dùng: stated need → relevant permission/restriction → justified fit → licence-specific caveat." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    }
+  ],
+  "workedExample": {
+    "title": { "en": "Licence a community accessibility tool", "vi": "Cấp licence cho community accessibility tool" },
+    "prompt": { "en": "A charity wants schools to inspect, adapt and redistribute a screen-reader tool. A partner may charge for training and hosted support. Select and justify a licence profile.", "vi": "Charity muốn school inspect, adapt và redistribute screen-reader tool. Partner có thể charge cho training và hosted support. Hãy chọn và justify licence profile." },
+    "steps": [
+      { "id": "P1-L42-worked-1", "action": { "en": "Extract the stated needs.", "vi": "Rút ra stated need." }, "result": { "en": "Schools need source access, permission to modify and permission to redistribute; the partner needs a paid support model.", "vi": "School cần source access, permission to modify và permission to redistribute; partner cần paid support model." } },
+      { "id": "P1-L42-worked-2", "action": { "en": "Reject weak fits.", "vi": "Loại weak fit." }, "result": { "en": "Shareware trial access and a typical proprietary commercial licence do not normally meet the stated inspect-and-redistribute needs.", "vi": "Shareware trial access và typical proprietary commercial licence thường không đáp ứng stated need về inspect và redistribute." } },
+      { "id": "P1-L42-worked-3", "action": { "en": "Select a strong profile.", "vi": "Chọn strong profile." }, "result": { "en": "A suitable FSF-aligned free-software or OSI-approved open-source licence can grant the required source, modification and redistribution permissions.", "vi": "FSF-aligned free-software hoặc OSI-approved open-source licence phù hợp có thể cấp source, modification và redistribution permission cần thiết." } },
+      { "id": "P1-L42-worked-4", "action": { "en": "State compatibility and caveat.", "vi": "Nêu compatibility và caveat." }, "result": { "en": "Charging for training or hosting can be compatible with free/open licensing. The charity must still choose and comply with an exact licence, including attribution or source-sharing conditions where applicable.", "vi": "Charging cho training hoặc hosting có thể compatible với free/open licensing. Charity vẫn phải chọn và comply với exact licence, gồm attribution hoặc source-sharing condition khi applicable." } }
+    ],
+    "result": { "en": "The justification follows the permission matrix; it does not assume that open means no copyright or that paid means closed source.", "vi": "Justification đi theo permission matrix; không assume open nghĩa là no copyright hoặc paid nghĩa là closed source." }
+  },
+  "recognition": {
+    "cues": [
+      { "en": "Underline verbs that describe the required rights: run, inspect, change, copy, redistribute, trial, sell or support.", "vi": "Gạch dưới verb mô tả required right: run, inspect, change, copy, redistribute, trial, sell hoặc support." },
+      { "en": "Treat price, source access and redistribution as separate dimensions.", "vi": "Xét price, source access và redistribution như các dimension riêng." }
+    ],
+    "method": [
+      { "en": "Build a need-to-permission table before naming a category.", "vi": "Lập need-to-permission table trước khi nêu category." },
+      { "en": "Justify the best fit, reject one alternative and state that exact rights depend on the licence.", "vi": "Justify best fit, reject một alternative và nêu exact right phụ thuộc licence." }
+    ],
+    "misconceptions": [
+      { "mistake": { "en": "Open-source software is public domain and has no copyright.", "vi": "Open-source software là public domain và không có copyright." }, "correction": { "en": "Open-source software is commonly copyrighted and distributed under a licence that grants permissions under conditions.", "vi": "Open-source software thường vẫn có copyright và được distribute theo licence cấp permission kèm condition." } },
+      { "mistake": { "en": "Free software must cost nothing.", "vi": "Free software bắt buộc không có cost." }, "correction": { "en": "Free software concerns user freedoms; charging for copies, services or support can be compatible with those freedoms.", "vi": "Free software liên quan user freedom; charging cho copy, service hoặc support có thể compatible với các freedom đó." } },
+      { "mistake": { "en": "Shareware means that source code is shared.", "vi": "Shareware nghĩa là source code được share." }, "correction": { "en": "Shareware usually describes proprietary trial or limited distribution before payment, not source-code access.", "vi": "Shareware thường mô tả proprietary trial hoặc limited distribution trước payment, không phải source-code access." } },
+      { "mistake": { "en": "Commercial and open-source can never overlap.", "vi": "Commercial và open-source không bao giờ overlap." }, "correction": { "en": "An open-source product or service may be sold; commercial describes a business activity, while open-source describes licence permissions.", "vi": "Open-source product hoặc service có thể được sell; commercial mô tả business activity, còn open-source mô tả licence permission." } }
+    ],
+    "items": [
+      { "id": "P1-L42-recognise-1", "title": { "en": "A 21-day limited tool", "vi": "Tool giới hạn 21 ngày" }, "setup": { "en": "A proprietary editor works for 21 days, then requires payment. No source code is supplied.", "vi": "Proprietary editor hoạt động 21 ngày rồi yêu cầu payment. Không cung cấp source code." }, "prompt": { "en": "Identify the profile and one fact that must not be inferred.", "vi": "Xác định profile và một fact không được infer." }, "expectedEvidence": { "en": "This is shareware because use is a time-limited trial before payment; the label gives no reason to infer source access or modification rights.", "vi": "Đây là shareware vì use là time-limited trial trước payment; label không cho phép infer source access hoặc modification right." } },
+      { "id": "P1-L42-recognise-2", "title": { "en": "Paid hosting for open-source code", "vi": "Paid hosting cho open-source code" }, "setup": { "en": "A company publishes code under an OSI-approved licence and charges customers for managed hosting and support.", "vi": "Company publish code theo OSI-approved licence và charge customer cho managed hosting cùng support." }, "prompt": { "en": "Explain why the payment does not make the code non-open-source.", "vi": "Giải thích vì sao payment không làm code trở thành non-open-source." }, "expectedEvidence": { "en": "The licence determines open-source permissions; the company can use a commercial service model while preserving the licence conditions.", "vi": "Licence quyết định open-source permission; company có thể dùng commercial service model trong khi vẫn giữ licence condition." } }
+    ]
+  },
+  "assessments": [
+    { "id": "P1-L42-CHECK-REQ-7.1-03-01", "requirementId": "REQ-7.1-03-01", "kind": "explain", "level": "independent", "prompt": { "en": "Explain why copyright legislation is needed for software and other digital work.", "vi": "Giải thích vì sao copyright legislation cần cho software và digital work khác." }, "hint": { "en": "Connect easy copying to control, incentive and remedy.", "vi": "Liên hệ easy copying với control, incentive và remedy." }, "solution": { "steps": [], "modelAnswer": { "en": "Digital work can be copied and distributed quickly. Copyright legislation gives rights holders legal control over specified uses, supports recognition, licensing income and investment, and provides remedies for unauthorised copying or distribution. Exact rights and exceptions depend on the applicable law.", "vi": "Digital work có thể bị copy và distribute nhanh. Copyright legislation cho rights holder legal control đối với specified use, hỗ trợ recognition, licensing income và investment, đồng thời cung cấp remedy cho unauthorised copying hoặc distribution. Exact right và exception phụ thuộc applicable law." }, "rubric": [{ "en": "Credit explained purposes, not a bare statement that copying is wrong.", "vi": "Chấm purpose đã được giải thích, không chấm bare statement rằng copying là sai." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["copyright", "legislation"] },
+    { "id": "P1-L42-CHECK-REQ-7.1-04-01", "requirementId": "REQ-7.1-04-01", "kind": "compare", "level": "independent", "prompt": { "en": "Compare free software, open-source software, shareware and proprietary commercial software. Include one important overlap or caveat.", "vi": "Compare free software, open-source software, shareware và proprietary commercial software. Bao gồm một overlap hoặc caveat quan trọng." }, "hint": { "en": "Compare freedoms, source access, trial/payment and restrictions separately.", "vi": "Compare riêng freedom, source access, trial/payment và restriction." }, "solution": { "steps": [], "modelAnswer": { "en": "Free software protects freedoms to run, study, change and redistribute; open source supplies source and permissions that meet open criteria. Shareware is usually proprietary trial or limited use before payment. The Cambridge commercial contrast is commonly paid proprietary software with restricted copying, modification or redistribution. Free/open can overlap and can also be commercial; exact rights depend on the licence.", "vi": "Free software bảo vệ freedom để run, study, change và redistribute; open source cung cấp source và permission đáp ứng open criteria. Shareware thường là proprietary trial hoặc limited use trước payment. Cambridge commercial contrast thường là paid proprietary software với restricted copying, modification hoặc redistribution. Free/open có thể overlap và cũng có thể commercial; exact right phụ thuộc licence." }, "rubric": [{ "en": "Require distinctions based on permissions and one accurate overlap/limitation.", "vi": "Yêu cầu distinction dựa trên permission và một overlap/limitation chính xác." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["free-software", "open-source", "shareware", "commercial"] },
+    { "id": "P1-L42-CHECK-REQ-7.1-04-02", "requirementId": "REQ-7.1-04-02", "kind": "justify", "level": "independent", "prompt": { "en": "A community accessibility project needs schools to inspect, modify and redistribute its software, while a partner charges for support. Justify a suitable licence profile and reject one weaker alternative.", "vi": "Community accessibility project cần school inspect, modify và redistribute software, còn partner charge cho support. Hãy justify suitable licence profile và reject một weaker alternative." }, "hint": { "en": "Match each need to a permission and preserve the exact-licence caveat.", "vi": "Match từng need với permission và giữ exact-licence caveat." }, "solution": { "steps": [], "modelAnswer": { "en": "An FSF-aligned free-software or OSI-approved open-source licence is a strong fit because it can grant source access, modification and redistribution. Paid support can coexist with these permissions. Shareware is weaker because trial use does not imply source or redistribution rights. The project must select and comply with an exact licence and its conditions.", "vi": "FSF-aligned free-software hoặc OSI-approved open-source licence là strong fit vì có thể cấp source access, modification và redistribution. Paid support có thể coexist với các permission này. Shareware yếu hơn vì trial use không imply source hoặc redistribution right. Project phải chọn và comply với exact licence cùng các condition." }, "rubric": [{ "en": "Credit the recommendation only when it is linked to stated needs and includes a licence-specific boundary.", "vi": "Chỉ chấm recommendation khi liên hệ stated need và có licence-specific boundary." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["licence-choice", "permission-matrix"] }
+  ],
+  "recall": { "prompt": { "en": "What four dimensions should be separated when comparing software licences?", "vi": "Bốn dimension nào cần tách khi compare software licence?" }, "answerPoints": [{ "en": "Price/business model, source access, permission to modify and permission to redistribute; exact conditions come from the named licence.", "vi": "Price/business model, source access, permission to modify và permission to redistribute; exact condition đến từ named licence." }] },
+  "glossary": [
+    { "term": "copyright", "meaning": { "en": "Legal rights controlling specified uses of protected creative work, subject to applicable law.", "vi": "Legal right kiểm soát specified use của protected creative work, tuỳ applicable law." } },
+    { "term": "software licence", "meaning": { "en": "Permission from a rights holder stating how software may be used, copied, changed or distributed.", "vi": "Permission từ rights holder nêu software được use, copy, change hoặc distribute thế nào." } },
+    { "term": "free software", "meaning": { "en": "Software licensed to preserve freedoms to run, study, modify and redistribute it.", "vi": "Software được license để giữ freedom run, study, modify và redistribute." } },
+    { "term": "open source", "meaning": { "en": "Software distributed with source and permissions meeting open-source criteria.", "vi": "Software được distribute kèm source và permission đáp ứng open-source criteria." } },
+    { "term": "shareware", "meaning": { "en": "Usually proprietary software offered for trial or limited use before payment.", "vi": "Thường là proprietary software được trial hoặc limited use trước payment." } },
+    { "term": "proprietary commercial software", "meaning": { "en": "The Cambridge comparison profile of paid software whose owner restricts copying, modification or redistribution.", "vi": "Cambridge comparison profile của paid software mà owner restrict copying, modification hoặc redistribution." } }
+  ],
+  "relatedSlugs": ["professional-ethics", "ai-impacts"],
+  "sources": [
+    { "id": "SYL-2026", "title": { "en": "Cambridge International AS & A Level Computer Science 9618 syllabus", "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618" }, "locator": "2026 syllabus v2 §7.1, printed/PDF p. 25", "kind": "syllabus" },
+    { "id": "ALG-P1", "title": { "en": "AlgoCore original learning material", "vi": "Học liệu gốc do AlgoCore biên soạn" }, "locator": "Paper 1 · P1-L42 · Chapter 7 content 1.0", "kind": "algocore" },
+    { "id": "BOOK-C07", "title": { "en": "A Level Computer Science coursebook", "vi": "Sách A Level Computer Science" }, "locator": "Coursebook Chapter 7, printed pp. 186–189; PDF pp. 202–205", "kind": "coursebook" }
+  ],
+  "visualId": "VIS-P1-L42",
+  "contractCoverage": {
+    "B01": ["P1-L42-objectives"], "B02": ["P1-L42-theory-1", "P1-L42-theory-2", "P1-L42-theory-3"], "B03": ["P1-L42-theory-1", "P1-L42-theory-2", "P1-L42-theory-3"],
+    "B04": ["P1-L42-recognise-1", "P1-L42-recognise-2"], "B05": ["P1-L42-worked-1", "P1-L42-worked-2", "P1-L42-worked-3", "P1-L42-worked-4"], "B06": ["VIS-P1-L42"],
+    "B07": ["P1-L42-CHECK-REQ-7.1-03-01", "P1-L42-CHECK-REQ-7.1-04-01", "P1-L42-CHECK-REQ-7.1-04-02"], "B08": ["P1-L42-recognise-1", "P1-L42-recognise-2"], "B09": ["P1-L42-recall"], "B10": ["P1-L42-glossary"], "B11": ["P1-L42-sources"]
+  },
+  "assessmentVersion": "1.0.0"
+}

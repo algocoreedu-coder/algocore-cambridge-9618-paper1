@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L41",
+  "slug": "professional-ethics",
+  "sectionId": "7",
+  "strandId": "7.1",
+  "title": { "en": "Ethics and professional practice", "vi": "Ethics và professional practice" },
+  "question": {
+    "en": "How should a computing professional decide what to do when a technical choice can affect other people?",
+    "vi": "Computing professional nên quyết định thế nào khi một lựa chọn kỹ thuật có thể ảnh hưởng tới người khác?"
+  },
+  "opening": {
+    "en": "Professional ethics turns technical knowledge into responsible action. A strong answer identifies the facts, a relevant professional principle, the affected stakeholders and the likely consequence.",
+    "vi": "Professional ethics biến technical knowledge thành responsible action. Một câu trả lời tốt xác định facts, professional principle liên quan, stakeholder bị ảnh hưởng và likely consequence."
+  },
+  "objectives": [
+    { "id": "AC26-7.1-01", "text": { "en": "Explain the need for professional codes of conduct and the importance of belonging to a professional body.", "vi": "Giải thích nhu cầu có professional code of conduct và tầm quan trọng của việc tham gia professional body." } },
+    { "id": "AC26-7.1-02", "text": { "en": "Explain how ethical issues affect the use and development of computer systems.", "vi": "Giải thích ethical issue ảnh hưởng thế nào tới việc sử dụng và phát triển computer system." } }
+  ],
+  "requirementIds": ["REQ-7.1-01-01", "REQ-7.1-01-02", "REQ-7.1-02-01", "REQ-7.1-02-02"],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L41-theory-1",
+      "title": { "en": "Why professional ethics is needed", "vi": "Vì sao cần professional ethics" },
+      "paragraphs": [
+        { "en": "Computing decisions can affect safety, privacy, opportunity, money, public services and the environment. A professional code states shared duties such as competence, honesty, confidentiality, respect for others and concern for the public interest.", "vi": "Computing decision có thể ảnh hưởng safety, privacy, opportunity, money, public service và environment. Professional code nêu các duty chung như competence, honesty, confidentiality, respect for others và concern for public interest." },
+        { "en": "A code helps a professional recognise a conflict, explain a decision and challenge harmful practice. It guides judgement; it does not mechanically produce one answer for every situation.", "vi": "Code giúp professional nhận ra conflict, giải thích decision và challenge harmful practice. Code hướng dẫn judgement; nó không tự động tạo một đáp án cho mọi situation." }
+      ],
+      "bullets": [
+        { "en": "Ethical and legal tests are distinct: an action can be lawful yet irresponsible, or prohibited by law as well as unethical.", "vi": "Ethical test và legal test là hai test riêng: action có thể lawful nhưng irresponsible, hoặc vừa bị law cấm vừa unethical." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    },
+    {
+      "id": "P1-L41-theory-2",
+      "title": { "en": "Why join a professional body", "vi": "Vì sao tham gia professional body" },
+      "paragraphs": [
+        { "en": "Bodies such as BCS and IEEE publish professional guidance and codes, provide continuing professional development, share technical standards and connect members to communities of practice.", "vi": "Các body như BCS và IEEE công bố professional guidance và code, cung cấp continuing professional development, chia sẻ technical standard và kết nối member với community of practice." },
+        { "en": "Membership can give a professional current guidance, training, advice, peer support and a framework for accountability. Membership supports responsible practice but does not prove that every action by a member is ethical.", "vi": "Membership có thể cung cấp current guidance, training, advice, peer support và framework for accountability. Membership hỗ trợ responsible practice nhưng không chứng minh mọi action của member đều ethical." }
+      ],
+      "bullets": [
+        { "en": "In an exam answer, name a concrete benefit and explain how it improves professional practice.", "vi": "Trong exam answer, hãy nêu concrete benefit và giải thích benefit đó cải thiện professional practice thế nào." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    },
+    {
+      "id": "P1-L41-theory-3",
+      "title": { "en": "Reason from facts to consequences", "vi": "Lập luận từ facts tới consequences" },
+      "paragraphs": [
+        { "en": "Begin with verifiable facts: what the system does, what is known, what remains uncertain and who has authority. Select an action, connect it to a professional principle and explain the effect on named stakeholders.", "vi": "Bắt đầu bằng verifiable facts: system làm gì, điều gì đã biết, điều gì còn uncertain và ai có authority. Chọn action, liên hệ với professional principle và giải thích effect lên stakeholder cụ thể." },
+        { "en": "A justified response may include documenting evidence, reporting through an appropriate channel, pausing an unsafe release, protecting confidential information or correcting a misleading claim. The context determines which action is proportionate.", "vi": "Justified response có thể gồm document evidence, report qua appropriate channel, pause unsafe release, protect confidential information hoặc correct misleading claim. Context quyết định action nào proportionate." }
+      ],
+      "bullets": [
+        { "en": "Use the chain: fact → action → professional principle → stakeholder consequence.", "vi": "Dùng chain: fact → action → professional principle → stakeholder consequence." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    }
+  ],
+  "workedExample": {
+    "title": { "en": "A known access-control defect before release", "vi": "Access-control defect đã biết trước release" },
+    "prompt": { "en": "A developer finds that some students can open records belonging to other classes. A manager wants to release the platform today and fix the defect later. Decide and justify a professional response.", "vi": "Developer phát hiện một số student có thể mở record của class khác. Manager muốn release platform hôm nay và sửa defect sau. Hãy quyết định và justify professional response." },
+    "steps": [
+      { "id": "P1-L41-worked-1", "action": { "en": "Establish the facts.", "vi": "Xác lập facts." }, "result": { "en": "The defect is reproducible and exposes records outside their authorised class; the release has not yet occurred.", "vi": "Defect có thể reproduce và expose record ngoài authorised class; release chưa xảy ra." } },
+      { "id": "P1-L41-worked-2", "action": { "en": "Identify duties and stakeholders.", "vi": "Xác định duty và stakeholder." }, "result": { "en": "Students and the school face privacy and trust harm. The developer has duties of competence, honesty, confidentiality and public interest.", "vi": "Student và school đối mặt privacy và trust harm. Developer có duty về competence, honesty, confidentiality và public interest." } },
+      { "id": "P1-L41-worked-3", "action": { "en": "Choose and communicate the action.", "vi": "Chọn và communicate action." }, "result": { "en": "Document the evidence, report it through the responsible security/release channel, and pause the affected release until the access control is fixed and retested.", "vi": "Document evidence, report qua responsible security/release channel, và pause affected release tới khi access control được fix và retest." } },
+      { "id": "P1-L41-worked-4", "action": { "en": "Explain the consequence and boundary.", "vi": "Giải thích consequence và boundary." }, "result": { "en": "A delay creates cost, but it reduces foreseeable disclosure. Escalation should remain proportionate, evidence-based and within appropriate channels.", "vi": "Delay tạo cost nhưng giảm foreseeable disclosure. Escalation cần proportionate, evidence-based và qua appropriate channel." } }
+    ],
+    "result": { "en": "The justified decision follows evidence and professional duties; it is more than a personal opinion or the label 'unethical'.", "vi": "Justified decision đi theo evidence và professional duty; nó không chỉ là personal opinion hay label 'unethical'." }
+  },
+  "recognition": {
+    "cues": [
+      { "en": "Look for a conflict involving safety, confidentiality, honesty, competence, fairness or public interest.", "vi": "Tìm conflict liên quan safety, confidentiality, honesty, competence, fairness hoặc public interest." },
+      { "en": "Name who is affected and how the proposed action changes their risk or opportunity.", "vi": "Nêu ai bị ảnh hưởng và proposed action thay đổi risk hoặc opportunity của họ thế nào." }
+    ],
+    "method": [
+      { "en": "Separate known facts from assumptions and identify the professional's responsibility.", "vi": "Tách known fact khỏi assumption và xác định responsibility của professional." },
+      { "en": "Choose an action, cite a relevant principle and trace a stakeholder consequence.", "vi": "Chọn action, nêu relevant principle và trace stakeholder consequence." }
+    ],
+    "misconceptions": [
+      { "mistake": { "en": "If an action is legal, it must be ethical.", "vi": "Nếu action legal thì chắc chắn ethical." }, "correction": { "en": "Law and professional ethics are distinct tests; a legal action may still breach professional duties or harm the public interest.", "vi": "Law và professional ethics là hai test riêng; legal action vẫn có thể vi phạm professional duty hoặc gây hại public interest." } },
+      { "mistake": { "en": "Any personal opinion earns an ethics mark.", "vi": "Bất kỳ personal opinion nào cũng được điểm ethics." }, "correction": { "en": "A creditworthy answer uses facts, a defensible principle and a consequence for a relevant stakeholder.", "vi": "Câu trả lời có thể được credit phải dùng facts, defensible principle và consequence cho relevant stakeholder." } },
+      { "mistake": { "en": "Professional-body membership guarantees ethical behaviour.", "vi": "Professional-body membership bảo đảm ethical behaviour." }, "correction": { "en": "Membership supplies guidance, learning, community and accountability; each professional must still exercise judgement and act responsibly.", "vi": "Membership cung cấp guidance, learning, community và accountability; mỗi professional vẫn phải judgement và act responsibly." } }
+    ],
+    "items": [
+      { "id": "P1-L41-recognise-1", "title": { "en": "Confidential code in a side project", "vi": "Confidential code trong side project" }, "setup": { "en": "A developer copies confidential employer code into a paid personal project without permission.", "vi": "Developer copy confidential employer code vào paid personal project mà không có permission." }, "prompt": { "en": "Identify the ethical concern and one justified action.", "vi": "Xác định ethical concern và một justified action." }, "expectedEvidence": { "en": "The copying breaches confidentiality and trust; the developer should stop using the code, report the conflict appropriately and create or obtain authorised code instead.", "vi": "Việc copy vi phạm confidentiality và trust; developer nên dừng dùng code, report conflict đúng kênh và tự tạo hoặc xin authorised code thay thế." } },
+      { "id": "P1-L41-recognise-2", "title": { "en": "Membership is not proof", "vi": "Membership không phải bằng chứng" }, "setup": { "en": "A manager says, 'The developer is an IEEE member, so every decision they make is ethical.'", "vi": "Manager nói: 'Developer là IEEE member nên mọi decision của họ đều ethical.'" }, "prompt": { "en": "Evaluate the claim.", "vi": "Evaluate claim." }, "expectedEvidence": { "en": "Reject the guarantee: membership offers codes, standards, development and community, but the decision still needs evidence, judgement and accountability.", "vi": "Bác bỏ guarantee: membership cung cấp code, standard, development và community, nhưng decision vẫn cần evidence, judgement và accountability." } }
+    ]
+  },
+  "assessments": [
+    { "id": "P1-L41-CHECK-REQ-7.1-01-01", "requirementId": "REQ-7.1-01-01", "kind": "explain", "level": "independent", "prompt": { "en": "Explain why computing professionals need a code of conduct.", "vi": "Giải thích vì sao computing professional cần code of conduct." }, "hint": { "en": "Link shared duties to decisions and stakeholder protection.", "vi": "Liên hệ shared duty với decision và stakeholder protection." }, "solution": { "steps": [], "modelAnswer": { "en": "A code states shared duties and standards, helping professionals recognise conflicts, justify decisions and protect stakeholders when technical work affects safety, privacy, fairness or public interest. It guides judgement rather than replacing it.", "vi": "Code nêu shared duty và standard, giúp professional nhận ra conflict, justify decision và bảo vệ stakeholder khi technical work ảnh hưởng safety, privacy, fairness hoặc public interest. Code hướng dẫn chứ không thay thế judgement." }, "rubric": [{ "en": "Credit precise links among a code, professional decision-making and a stakeholder consequence.", "vi": "Chấm các liên hệ chính xác giữa code, professional decision-making và stakeholder consequence." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["professional-ethics", "code-of-conduct"] },
+    { "id": "P1-L41-CHECK-REQ-7.1-01-02", "requirementId": "REQ-7.1-01-02", "kind": "explain", "level": "independent", "prompt": { "en": "Explain two ways that belonging to BCS or IEEE can improve a computing professional's practice.", "vi": "Giải thích hai cách việc tham gia BCS hoặc IEEE có thể cải thiện practice của computing professional." }, "hint": { "en": "Name each resource or benefit, then its effect on practice.", "vi": "Nêu từng resource hoặc benefit rồi effect lên practice." }, "solution": { "steps": [], "modelAnswer": { "en": "A professional body supplies codes and current guidance that help a member judge conduct, and provides continuing development or professional networks that update knowledge and expose decisions to peer advice. Membership supports but does not guarantee ethical conduct.", "vi": "Professional body cung cấp code và current guidance giúp member judge conduct, đồng thời cung cấp continuing development hoặc professional network để update knowledge và nhận peer advice. Membership hỗ trợ nhưng không bảo đảm ethical conduct." }, "rubric": [{ "en": "Award only benefits whose effect on responsible or competent practice is explained.", "vi": "Chỉ chấm benefit khi đã giải thích effect lên responsible hoặc competent practice." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["professional-body", "BCS", "IEEE"] },
+    { "id": "P1-L41-CHECK-REQ-7.1-02-01", "requirementId": "REQ-7.1-02-01", "kind": "justify", "level": "independent", "prompt": { "en": "A team discovers a reproducible access-control defect before release. Justify an ethical action the developer should take.", "vi": "Team phát hiện reproducible access-control defect trước release. Hãy justify ethical action developer nên thực hiện." }, "hint": { "en": "Use fact → action → principle.", "vi": "Dùng fact → action → principle." }, "solution": { "steps": [], "modelAnswer": { "en": "The developer should document and report the defect through the responsible channel and pause the affected release until it is fixed and retested. This responds to known evidence and duties of competence, honesty, confidentiality and public interest.", "vi": "Developer nên document và report defect qua responsible channel rồi pause affected release tới khi được fix và retest. Action này đáp lại known evidence và duty về competence, honesty, confidentiality và public interest." }, "rubric": [{ "en": "Accept another proportionate action when it is tied to the facts and a defensible professional principle.", "vi": "Chấp nhận action proportionate khác khi action gắn với facts và defensible professional principle." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["ethical-action", "access-control"] },
+    { "id": "P1-L41-CHECK-REQ-7.1-02-02", "requirementId": "REQ-7.1-02-02", "kind": "explain", "level": "independent", "prompt": { "en": "Explain two stakeholder impacts if a known record-disclosure defect is hidden and the system is released.", "vi": "Giải thích hai stakeholder impact nếu record-disclosure defect đã biết bị che giấu và system được release." }, "hint": { "en": "Name each stakeholder, mechanism and consequence.", "vi": "Nêu từng stakeholder, mechanism và consequence." }, "solution": { "steps": [], "modelAnswer": { "en": "Learners may have confidential records viewed by unauthorised people, causing privacy and welfare harm. The organisation may make decisions using a system it wrongly believes is safe, creating remediation cost, loss of trust and disruption when the defect emerges.", "vi": "Learner có thể bị unauthorised people xem confidential record, gây privacy và welfare harm. Organisation có thể ra decision bằng system mà họ tưởng nhầm là safe, tạo remediation cost, loss of trust và disruption khi defect lộ ra." }, "rubric": [{ "en": "Credit a consequence only when its stakeholder and causal mechanism are clear.", "vi": "Chỉ chấm consequence khi stakeholder và causal mechanism rõ ràng." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["stakeholder", "ethical-impact"] }
+  ],
+  "recall": { "prompt": { "en": "State the four-part chain used to justify a professional ethics decision.", "vi": "Nêu chain bốn phần dùng để justify professional ethics decision." }, "answerPoints": [{ "en": "Fact → action → professional principle → stakeholder consequence.", "vi": "Fact → action → professional principle → stakeholder consequence." }] },
+  "glossary": [
+    { "term": "professional ethics", "meaning": { "en": "Principles and duties used to judge responsible conduct in professional work.", "vi": "Principle và duty dùng để judge responsible conduct trong professional work." } },
+    { "term": "code of conduct", "meaning": { "en": "A published set of expected standards and duties for members of a profession or organisation.", "vi": "Tập expected standard và duty được công bố cho member của profession hoặc organisation." } },
+    { "term": "professional body", "meaning": { "en": "An organisation that supports a profession through standards, guidance, development and community.", "vi": "Organisation hỗ trợ profession qua standard, guidance, development và community." } },
+    { "term": "stakeholder", "meaning": { "en": "A person or group affected by, responsible for or interested in a system or decision.", "vi": "Person hoặc group bị ảnh hưởng, chịu responsibility hoặc có interest trong system hay decision." } },
+    { "term": "public interest", "meaning": { "en": "The safety, rights and wider welfare of people affected by professional work.", "vi": "Safety, right và wider welfare của people bị ảnh hưởng bởi professional work." } }
+  ],
+  "relatedSlugs": ["copyright-licences", "ai-impacts"],
+  "sources": [
+    { "id": "SYL-2026", "title": { "en": "Cambridge International AS & A Level Computer Science 9618 syllabus", "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618" }, "locator": "2026 syllabus v2 §7.1, printed/PDF p. 25", "kind": "syllabus" },
+    { "id": "ALG-P1", "title": { "en": "AlgoCore original learning material", "vi": "Học liệu gốc do AlgoCore biên soạn" }, "locator": "Paper 1 · P1-L41 · Chapter 7 content 1.0", "kind": "algocore" },
+    { "id": "BOOK-C07", "title": { "en": "A Level Computer Science coursebook", "vi": "Sách A Level Computer Science" }, "locator": "Coursebook Chapter 7, printed pp. 178–185; PDF pp. 194–201", "kind": "coursebook" }
+  ],
+  "visualId": "VIS-P1-L41",
+  "contractCoverage": {
+    "B01": ["P1-L41-objectives"], "B02": ["P1-L41-theory-1", "P1-L41-theory-2", "P1-L41-theory-3"], "B03": ["P1-L41-theory-1", "P1-L41-theory-2", "P1-L41-theory-3"],
+    "B04": ["P1-L41-recognise-1", "P1-L41-recognise-2"], "B05": ["P1-L41-worked-1", "P1-L41-worked-2", "P1-L41-worked-3", "P1-L41-worked-4"], "B06": ["VIS-P1-L41"],
+    "B07": ["P1-L41-CHECK-REQ-7.1-01-01", "P1-L41-CHECK-REQ-7.1-01-02", "P1-L41-CHECK-REQ-7.1-02-01", "P1-L41-CHECK-REQ-7.1-02-02"], "B08": ["P1-L41-recognise-1", "P1-L41-recognise-2"], "B09": ["P1-L41-recall"], "B10": ["P1-L41-glossary"], "B11": ["P1-L41-sources"]
+  },
+  "assessmentVersion": "1.0.0"
+}

@@ -1,0 +1,467 @@
+export type ModelFrame<T> = Readonly<{
+  id: string;
+  state: T;
+  activeIds: readonly string[];
+  ticket: string;
+}>;
+
+export type EthicsScenario = "unsafe-release" | "confidential-code-reuse" | "known-bias-error";
+export type EthicsAction =
+  | "report-and-delay"
+  | "conceal-and-release"
+  | "permission-or-reimplement"
+  | "copy-without-permission"
+  | "document-and-escalate"
+  | "suppress-evidence";
+
+export const ETHICS_SCENARIOS = Object.freeze(["unsafe-release", "confidential-code-reuse", "known-bias-error"] as const);
+
+export type EthicsFacts = Readonly<{
+  scenario: EthicsScenario;
+  action: EthicsAction;
+  role: string;
+  scenarioFacts: readonly string[];
+  stakeholders: readonly string[];
+  immediateChange: string;
+  professionalDuty: readonly string[];
+  bodyContext: string;
+  professionalBodyContribution: string;
+  stakeholderEffects: readonly string[];
+  legalStatusBoundary: string;
+  legalEvidenceNeeded: string;
+  professionalEthicsRelation: "supports-duty" | "conflicts-with-duty";
+  professionalEthicsEvidence: string;
+  supportsOrConflicts: "supports-duty" | "conflicts-with-duty";
+  evidenceStatement: string;
+  condition: string;
+  modelArgument: string;
+  rubricPoints: readonly string[];
+}>;
+
+const ETHICS_SHARED = {
+  bodyContext: "bcs-and-ieee-provide-codes-guidance-development-community-and-accountability-membership-does-not-guarantee-conduct",
+  professionalBodyContribution: "bcs-and-ieee-provide-codes-guidance-development-community-and-accountability-membership-does-not-guarantee-conduct",
+  rubricPoints: ["name-the-action", "link-a-professional-duty", "explain-one-stakeholder-effect", "qualify-the-conclusion"],
+} as const;
+
+export const ETHICS_ACTIONS: Readonly<Record<EthicsScenario, readonly [EthicsAction, EthicsAction]>> = {
+  "unsafe-release": ["report-and-delay", "conceal-and-release"],
+  "confidential-code-reuse": ["permission-or-reimplement", "copy-without-permission"],
+  "known-bias-error": ["document-and-escalate", "suppress-evidence"],
+};
+
+export const ETHICS_FIXTURES: Readonly<Record<EthicsScenario, Readonly<Record<string, EthicsFacts>>>> = {
+  "unsafe-release": {
+    "report-and-delay": {
+      ...ETHICS_SHARED,
+      scenario: "unsafe-release",
+      action: "report-and-delay",
+      role: "release-engineer",
+      scenarioFacts: ["unresolved-safety-defect-found", "manager-requests-release-before-deadline", "users-depend-on-safe-operation"],
+      stakeholders: ["public-users", "client-and-employer", "engineering-team"],
+      immediateChange: "defect-documented-release-paused-and-retest-requested",
+      professionalDuty: ["public-interest-and-safety", "competence-and-integrity", "honest-reporting"],
+      stakeholderEffects: ["users-avoid-known-unresolved-risk", "client-receives-accurate-status", "team-can-retest-and-correct"],
+      legalStatusBoundary: "applicable-safety-regulation-contract-and-release-authority-require-context-specific-review",
+      legalEvidenceNeeded: "the-known-defect-and-documented-escalation-are-facts-for-authorised-legal-or-contract-review-no-legal-verdict-is-inferred",
+      professionalEthicsRelation: "supports-duty",
+      professionalEthicsEvidence: "the-action-discloses-the-known-defect-and-protects-public-interest-before-release",
+      supportsOrConflicts: "supports-duty",
+      evidenceStatement: "the-action-discloses-the-known-defect-and-protects-public-interest-before-release",
+      condition: "delay-has-costs-but-deadline-pressure-does-not-remove-the-duty-to-report-known-risk",
+      modelArgument: "reporting-and-pausing-supports-professional-duty-because-the-known-risk-is-documented-for-users-client-and-team-before-release",
+    },
+    "conceal-and-release": {
+      ...ETHICS_SHARED,
+      scenario: "unsafe-release",
+      action: "conceal-and-release",
+      role: "release-engineer",
+      scenarioFacts: ["unresolved-safety-defect-found", "manager-requests-release-before-deadline", "users-depend-on-safe-operation"],
+      stakeholders: ["public-users", "client-and-employer", "engineering-team"],
+      immediateChange: "defect-omitted-from-report-and-release-approved",
+      professionalDuty: ["public-interest-and-safety", "competence-and-integrity", "honest-reporting"],
+      stakeholderEffects: ["users-face-an-undisclosed-known-risk", "client-receives-incomplete-status", "team-loses-the-chance-to-retest-before-release"],
+      legalStatusBoundary: "applicable-safety-regulation-contract-and-release-authority-require-context-specific-review",
+      legalEvidenceNeeded: "the-known-defect-and-omitted-report-are-facts-for-authorised-legal-or-contract-review-no-legal-verdict-is-inferred",
+      professionalEthicsRelation: "conflicts-with-duty",
+      professionalEthicsEvidence: "the-action-hides-material-safety-evidence-and-exposes-stakeholders-to-an-undisclosed-risk",
+      supportsOrConflicts: "conflicts-with-duty",
+      evidenceStatement: "the-action-hides-material-safety-evidence-and-exposes-stakeholders-to-an-undisclosed-risk",
+      condition: "meeting-a-deadline-does-not-make-the-known-defect-safe-or-remove-accountability",
+      modelArgument: "concealing-and-releasing-conflicts-with-professional-duty-because-material-risk-is-hidden-from-affected-stakeholders",
+    },
+  },
+  "confidential-code-reuse": {
+    "permission-or-reimplement": {
+      ...ETHICS_SHARED,
+      scenario: "confidential-code-reuse",
+      action: "permission-or-reimplement",
+      role: "software-developer",
+      scenarioFacts: ["employer-code-is-confidential", "developer-wants-similar-function-in-a-side-project", "no-permission-has-yet-been-granted"],
+      stakeholders: ["employer-and-client", "colleagues", "developer-and-profession"],
+      immediateChange: "permission-requested-or-independent-licensed-implementation-selected",
+      professionalDuty: ["duty-to-employer-and-client", "respect-for-intellectual-property", "honesty-and-credit"],
+      stakeholderEffects: ["employer-retains-control-of-confidential-work", "colleague-contributions-are-not-misappropriated", "developer-can-show-an-auditable-origin"],
+      legalStatusBoundary: "ownership-confidentiality-contract-and-specific-licence-terms-require-context-specific-review",
+      legalEvidenceNeeded: "the-request-for-permission-or-independent-licensed-origin-is-recorded-for-authorised-review-no-legal-verdict-is-inferred",
+      professionalEthicsRelation: "supports-duty",
+      professionalEthicsEvidence: "the-action-respects-authorisation-and-keeps-the-side-project-origin-auditable",
+      supportsOrConflicts: "supports-duty",
+      evidenceStatement: "the-action-respects-authorisation-and-keeps-the-side-project-origin-auditable",
+      condition: "permission-and-the-applicable-licence-terms-must-be-checked-rather-than-assumed",
+      modelArgument: "seeking-permission-or-reimplementing-supports-professional-duty-because-confidential-work-and-contributions-remain-authorised-and-credited",
+    },
+    "copy-without-permission": {
+      ...ETHICS_SHARED,
+      scenario: "confidential-code-reuse",
+      action: "copy-without-permission",
+      role: "software-developer",
+      scenarioFacts: ["employer-code-is-confidential", "developer-wants-similar-function-in-a-side-project", "no-permission-has-yet-been-granted"],
+      stakeholders: ["employer-and-client", "colleagues", "developer-and-profession"],
+      immediateChange: "confidential-code-copied-into-side-project-without-permission-or-credit",
+      professionalDuty: ["duty-to-employer-and-client", "respect-for-intellectual-property", "honesty-and-credit"],
+      stakeholderEffects: ["employer-loses-control-of-confidential-work", "colleague-contributions-are-used-without-credit", "developer-and-profession-face-loss-of-trust"],
+      legalStatusBoundary: "ownership-confidentiality-contract-and-specific-licence-terms-require-context-specific-review",
+      legalEvidenceNeeded: "the-absence-of-permission-and-the-recorded-code-origin-are-facts-for-authorised-review-no-legal-verdict-is-inferred",
+      professionalEthicsRelation: "conflicts-with-duty",
+      professionalEthicsEvidence: "the-action-uses-confidential-work-without-authorisation-and-claims-an-unsupported-origin",
+      supportsOrConflicts: "conflicts-with-duty",
+      evidenceStatement: "the-action-uses-confidential-work-without-authorisation-and-claims-an-unsupported-origin",
+      condition: "a-technical-ability-to-copy-does-not-create-permission-to-use-or-distribute",
+      modelArgument: "copying-without-permission-conflicts-with-professional-duty-because-it-disregards-authorisation-credit-and-employer-trust",
+    },
+  },
+  "known-bias-error": {
+    "document-and-escalate": {
+      ...ETHICS_SHARED,
+      scenario: "known-bias-error",
+      action: "document-and-escalate",
+      role: "model-evaluation-analyst",
+      scenarioFacts: ["repeatable-bias-or-error-evidence-found", "system-affects-applicant-ranking", "team-has-not-yet-reviewed-the-evidence"],
+      stakeholders: ["affected-applicants", "client-and-employer", "public-and-profession"],
+      immediateChange: "evidence-recorded-limitation-disclosed-and-independent-review-requested",
+      professionalDuty: ["honesty-and-realistic-claims", "fair-treatment", "public-interest"],
+      stakeholderEffects: ["affected-applicants-gain-a-review-path", "client-receives-a-qualified-claim", "profession-retains-an-auditable-correction-process"],
+      legalStatusBoundary: "applicable-equality-data-protection-sector-rules-and-contracts-require-context-specific-review",
+      legalEvidenceNeeded: "the-repeatable-test-evidence-ranking-use-and-disclosure-status-are-recorded-for-authorised-review-no-legal-verdict-is-inferred",
+      professionalEthicsRelation: "supports-duty",
+      professionalEthicsEvidence: "the-action-preserves-repeatable-evidence-and-opens-the-result-to-review-before-an-absolute-claim",
+      supportsOrConflicts: "supports-duty",
+      evidenceStatement: "the-action-preserves-repeatable-evidence-and-opens-the-result-to-review-before-an-absolute-claim",
+      condition: "escalation-does-not-prove-the-system-fair-it-enables-investigation-and-accountability",
+      modelArgument: "documenting-and-escalating-supports-professional-duty-because-the-known-limitation-is-open-to-review-and-correction",
+    },
+    "suppress-evidence": {
+      ...ETHICS_SHARED,
+      scenario: "known-bias-error",
+      action: "suppress-evidence",
+      role: "model-evaluation-analyst",
+      scenarioFacts: ["repeatable-bias-or-error-evidence-found", "system-affects-applicant-ranking", "team-has-not-yet-reviewed-the-evidence"],
+      stakeholders: ["affected-applicants", "client-and-employer", "public-and-profession"],
+      immediateChange: "evidence-removed-and-system-described-as-having-no-known-issue",
+      professionalDuty: ["honesty-and-realistic-claims", "fair-treatment", "public-interest"],
+      stakeholderEffects: ["affected-applicants-lose-a-review-path", "client-receives-an-unqualified-claim", "public-and-profession-lose-auditable-evidence"],
+      legalStatusBoundary: "applicable-equality-data-protection-sector-rules-and-contracts-require-context-specific-review",
+      legalEvidenceNeeded: "the-repeatable-test-evidence-ranking-use-and-suppression-status-are-facts-for-authorised-review-no-legal-verdict-is-inferred",
+      professionalEthicsRelation: "conflicts-with-duty",
+      professionalEthicsEvidence: "the-action-removes-known-counter-evidence-and-misstates-the-current-evaluation-status",
+      supportsOrConflicts: "conflicts-with-duty",
+      evidenceStatement: "the-action-removes-known-counter-evidence-and-misstates-the-current-evaluation-status",
+      condition: "commercial-or-schedule-pressure-does-not-turn-an-unsupported-claim-into-evidence",
+      modelArgument: "suppressing-evidence-conflicts-with-professional-duty-because-known-limitations-are-hidden-from-decision-makers-and-affected-users",
+    },
+  },
+};
+
+export type EthicsState = EthicsFacts & Readonly<{
+  phase: "facts" | "action" | "effects" | "argument";
+  observedAction: string;
+  revealedDuty: readonly string[];
+  revealedEffects: readonly string[];
+  revealedLegalStatusBoundary: string;
+  revealedLegalEvidenceNeeded: string;
+  revealedProfessionalEthicsRelation: string;
+  revealedProfessionalEthicsEvidence: string;
+  revealedRelation: string;
+  revealedArgument: string;
+}>;
+
+export function ethicsFrames(scenario: EthicsScenario, action: EthicsAction): readonly ModelFrame<EthicsState>[] {
+  const facts = ETHICS_FIXTURES[scenario][action];
+  if (!facts) throw new Error(`Action ${action} is not valid for ethics scenario ${scenario}`);
+  const state = (phase: EthicsState["phase"]): EthicsState => ({
+    ...facts,
+    phase,
+    observedAction: phase === "facts" ? "not-applied" : facts.immediateChange,
+    revealedDuty: phase === "effects" || phase === "argument" ? facts.professionalDuty : [],
+    revealedEffects: phase === "effects" || phase === "argument" ? facts.stakeholderEffects : [],
+    revealedLegalStatusBoundary: phase === "facts" ? "not-revealed" : facts.legalStatusBoundary,
+    revealedLegalEvidenceNeeded: phase === "facts" ? "not-revealed" : facts.legalEvidenceNeeded,
+    revealedProfessionalEthicsRelation: phase === "argument" ? facts.professionalEthicsRelation : "not-revealed",
+    revealedProfessionalEthicsEvidence: phase === "argument" ? facts.professionalEthicsEvidence : "not-revealed",
+    revealedRelation: phase === "argument" ? facts.supportsOrConflicts : "not-revealed",
+    revealedArgument: phase === "argument" ? facts.modelArgument : "not-revealed",
+  });
+  return [
+    { id: "facts", state: state("facts"), activeIds: ["scenario"], ticket: "01" },
+    { id: "action", state: state("action"), activeIds: ["action", "legal-boundary"], ticket: "02" },
+    { id: "effects", state: state("effects"), activeIds: ["principle", "stakeholder"], ticket: "03" },
+    { id: "argument", state: state("argument"), activeIds: ["professional-evidence", "conclusion"], ticket: "04" },
+  ];
+}
+
+export type LicenceScenario = "community-accessibility" | "collaborative-library" | "classroom-trial" | "payroll-deployment";
+export type LicenceProfile = "fsf-free-software" | "osi-open-source" | "shareware-trial" | "proprietary-commercial";
+export type LicenceFit = "strong-match" | "possible-with-terms" | "does-not-meet-stated-needs";
+
+export const LICENCE_SCENARIOS = Object.freeze(["community-accessibility", "collaborative-library", "classroom-trial", "payroll-deployment"] as const);
+export const LICENCE_PROFILES = Object.freeze(["fsf-free-software", "osi-open-source", "shareware-trial", "proprietary-commercial"] as const);
+
+export type LicenceProfileFacts = Readonly<{
+  profile: LicenceProfile;
+  permissions: readonly string[];
+  conditions: readonly string[];
+  overlapCaveat: string;
+}>;
+
+export const LICENCE_PROFILE_FACTS: Readonly<Record<LicenceProfile, LicenceProfileFacts>> = {
+  "fsf-free-software": {
+    profile: "fsf-free-software",
+    permissions: ["run-for-any-purpose", "study-source", "modify", "redistribute-original-and-modified-copies"],
+    conditions: ["specific-free-software-licence-terms-still-apply", "freedom-does-not-mean-zero-price"],
+    overlapCaveat: "free-software-can-also-be-open-source-and-sold-commercially",
+  },
+  "osi-open-source": {
+    profile: "osi-open-source",
+    permissions: ["source-available-under-approved-licence", "redistribution", "derived-works", "collaborative-development"],
+    conditions: ["specific-osi-approved-licence-terms-still-apply", "source-visibility-alone-is-not-the-whole-definition"],
+    overlapCaveat: "open-source-software-can-also-be-free-software-and-sold-commercially",
+  },
+  "shareware-trial": {
+    profile: "shareware-trial",
+    permissions: ["evaluate-for-declared-trial-or-feature-limit", "continue-or-unlock-after-payment-if-terms-allow"],
+    conditions: ["normally-proprietary-and-copyrighted", "no-source-modification-or-redistribution-right-is-implied"],
+    overlapCaveat: "a-trial-permission-does-not-by-itself-grant-production-deployment-rights",
+  },
+  "proprietary-commercial": {
+    profile: "proprietary-commercial",
+    permissions: ["use-under-paid-device-user-or-site-terms", "vendor-support-or-service-when-contract-includes-it"],
+    conditions: ["source-and-modification-rights-are-not-assumed", "deployment-count-must-match-the-purchased-licence"],
+    overlapCaveat: "commercial-is-a-business-model-but-this-finite-profile-is-the-proprietary-cambridge-contrast",
+  },
+};
+
+export type LicenceScenarioFacts = Readonly<{
+  scenario: LicenceScenario;
+  rightsHolder: string;
+  usageNeeds: readonly string[];
+  copyrightPurpose: string;
+}>;
+
+export const LICENCE_SCENARIO_FACTS: Readonly<Record<LicenceScenario, LicenceScenarioFacts>> = {
+  "community-accessibility": {
+    scenario: "community-accessibility",
+    rightsHolder: "community-accessibility-tool-authors",
+    usageNeeds: ["run", "inspect-source", "modify", "redistribute-adaptations", "user-freedom-priority"],
+    copyrightPurpose: "protects-rightsholder-control-while-a-licence-grants-declared-copy-use-modification-and-distribution-permissions",
+  },
+  "collaborative-library": {
+    scenario: "collaborative-library",
+    rightsHolder: "cross-organisation-library-contributors",
+    usageNeeds: ["source-access", "derived-works", "redistribution", "cross-organisation-contribution", "paid-support-allowed"],
+    copyrightPurpose: "lets-contributors-authorise-collaboration-and-distribution-through-declared-licence-terms",
+  },
+  "classroom-trial": {
+    scenario: "classroom-trial",
+    rightsHolder: "classroom-utility-vendor",
+    usageNeeds: ["evaluate-for-30-days", "full-features-after-payment", "no-source-change-required", "classroom-use-terms-required"],
+    copyrightPurpose: "protects-the-work-while-the-licence-defines-evaluation-payment-and-continuing-use",
+  },
+  "payroll-deployment": {
+    scenario: "payroll-deployment",
+    rightsHolder: "payroll-package-rightsholder",
+    usageNeeds: ["80-authorised-staff", "paid-accountable-support", "no-source-change-required", "multi-user-deployment-rights"],
+    copyrightPurpose: "protects-rightsholder-control-while-the-deployment-licence-defines-users-devices-and-support",
+  },
+};
+
+type LicenceAssessment = Readonly<{
+  fitClass: LicenceFit;
+  matchedNeeds: readonly string[];
+  unresolvedTerms: readonly string[];
+  evidenceStatement: string;
+}>;
+
+const LICENCE_MATRIX: Readonly<Record<LicenceScenario, Readonly<Record<LicenceProfile, LicenceAssessment>>>> = {
+  "community-accessibility": {
+    "fsf-free-software": { fitClass: "strong-match", matchedNeeds: ["run", "inspect-source", "modify", "redistribute-adaptations"], unresolvedTerms: ["check-specific-free-software-licence-obligations"], evidenceStatement: "declared-freedoms-directly-match-run-study-modify-and-redistribute-needs" },
+    "osi-open-source": { fitClass: "strong-match", matchedNeeds: ["inspect-source", "modify", "redistribute-adaptations", "collaboration"], unresolvedTerms: ["check-specific-osi-approved-licence-obligations"], evidenceStatement: "approved-open-source-permissions-directly-match-source-modification-and-redistribution-needs" },
+    "shareware-trial": { fitClass: "does-not-meet-stated-needs", matchedNeeds: ["temporary-evaluation-only"], unresolvedTerms: ["no-inspection-right-established", "no-modification-right-established", "no-redistribution-right-established"], evidenceStatement: "trial-use-does-not-supply-the-required-source-modification-and-redistribution-freedoms" },
+    "proprietary-commercial": { fitClass: "possible-with-terms", matchedNeeds: ["use-if-purchased"], unresolvedTerms: ["source-access", "modification-permission", "redistribution-permission"], evidenceStatement: "payment-can-authorise-use-but-the-profile-alone-does-not-establish-the-required-source-freedoms" },
+  },
+  "collaborative-library": {
+    "fsf-free-software": { fitClass: "possible-with-terms", matchedNeeds: ["source-access", "derived-works", "redistribution"], unresolvedTerms: ["collaboration-process", "paid-support-contract"], evidenceStatement: "free-software-freedoms-support-reuse-but-collaboration-and-support-terms-remain-to-be-chosen" },
+    "osi-open-source": { fitClass: "strong-match", matchedNeeds: ["source-access", "derived-works", "redistribution", "cross-organisation-contribution"], unresolvedTerms: ["choose-an-approved-licence-and-contribution-process"], evidenceStatement: "the-open-source-profile-directly-supports-derived-works-redistribution-and-collaboration" },
+    "shareware-trial": { fitClass: "does-not-meet-stated-needs", matchedNeeds: ["temporary-evaluation-only"], unresolvedTerms: ["source-access", "derived-works", "redistribution", "contribution-rights"], evidenceStatement: "a-proprietary-trial-does-not-establish-the-collaboration-permissions" },
+    "proprietary-commercial": { fitClass: "possible-with-terms", matchedNeeds: ["paid-support-can-be-contracted"], unresolvedTerms: ["source-access", "derived-works", "redistribution", "contribution-process"], evidenceStatement: "commercial-support-can-fit-but-the-proprietary-profile-alone-does-not-grant-collaboration-rights" },
+  },
+  "classroom-trial": {
+    "fsf-free-software": { fitClass: "possible-with-terms", matchedNeeds: ["classroom-use-can-be-allowed"], unresolvedTerms: ["30-day-evaluation-model", "feature-unlock-after-payment", "support-and-deployment-terms"], evidenceStatement: "free-software-can-be-used-or-sold-but-the-profile-does-not-itself-create-the-requested-trial-model" },
+    "osi-open-source": { fitClass: "possible-with-terms", matchedNeeds: ["classroom-use-can-be-allowed"], unresolvedTerms: ["30-day-evaluation-model", "feature-unlock-after-payment", "support-and-deployment-terms"], evidenceStatement: "open-source-can-be-commercial-but-the-profile-does-not-itself-create-the-requested-trial-model" },
+    "shareware-trial": { fitClass: "strong-match", matchedNeeds: ["evaluate-for-30-days", "full-features-after-payment", "no-source-change-required"], unresolvedTerms: ["confirm-classroom-and-device-count-terms"], evidenceStatement: "the-declared-trial-then-payment-pattern-directly-matches-the-evaluation-need" },
+    "proprietary-commercial": { fitClass: "possible-with-terms", matchedNeeds: ["paid-full-version", "no-source-change-required"], unresolvedTerms: ["30-day-trial", "classroom-device-count"], evidenceStatement: "paid-proprietary-use-can-fit-deployment-but-the-trial-and-user-count-must-be-confirmed" },
+  },
+  "payroll-deployment": {
+    "fsf-free-software": { fitClass: "possible-with-terms", matchedNeeds: ["multi-user-use-can-be-permitted", "commercial-support-can-coexist"], unresolvedTerms: ["accountable-support-contract", "deployment-and-data-responsibility"], evidenceStatement: "free-software-can-be-commercially-supported-but-the-software-licence-alone-does-not-supply-the-support-contract" },
+    "osi-open-source": { fitClass: "possible-with-terms", matchedNeeds: ["multi-user-use-can-be-permitted", "commercial-support-can-coexist"], unresolvedTerms: ["accountable-support-contract", "deployment-and-data-responsibility"], evidenceStatement: "open-source-can-be-commercially-supported-but-the-approved-licence-alone-does-not-supply-the-support-contract" },
+    "shareware-trial": { fitClass: "possible-with-terms", matchedNeeds: ["evaluation-before-purchase"], unresolvedTerms: ["80-user-production-rights", "accountable-paid-support", "continuing-use-after-trial"], evidenceStatement: "shareware-may-support-evaluation-but-does-not-by-itself-establish-production-deployment-rights" },
+    "proprietary-commercial": { fitClass: "strong-match", matchedNeeds: ["80-authorised-staff", "paid-accountable-support", "no-source-change-required", "multi-user-deployment-rights"], unresolvedTerms: ["verify-the-contract-covers-exact-users-devices-support-and-data-obligations"], evidenceStatement: "a-paid-multi-user-proprietary-contract-directly-matches-the-declared-deployment-and-support-needs" },
+  },
+};
+
+export type LicenceFacts = LicenceScenarioFacts & LicenceProfileFacts & LicenceAssessment & Readonly<{
+  modelArgument: string;
+  rubricPoints: readonly string[];
+}>;
+
+export function licenceFacts(scenario: LicenceScenario, profile: LicenceProfile): LicenceFacts {
+  const use = LICENCE_SCENARIO_FACTS[scenario];
+  const reference = LICENCE_PROFILE_FACTS[profile];
+  const assessment = LICENCE_MATRIX[scenario][profile];
+  return {
+    ...use,
+    ...reference,
+    ...assessment,
+    modelArgument: `${profile}-${assessment.fitClass}-for-${scenario}-because-${assessment.evidenceStatement}`,
+    rubricPoints: ["state-the-scenario-needs", "cite-two-permissions-or-conditions", "justify-relative-fit", "include-actual-licence-and-overlap-caveat"],
+  };
+}
+
+export type LicenceState = LicenceFacts & Readonly<{
+  phase: "needs" | "profile" | "compare" | "verdict";
+  revealedPermissions: readonly string[];
+  revealedComparison: boolean;
+  revealedFit: string;
+  revealedArgument: string;
+}>;
+
+export function licenceFrames(scenario: LicenceScenario, profile: LicenceProfile): readonly ModelFrame<LicenceState>[] {
+  const facts = licenceFacts(scenario, profile);
+  const state = (phase: LicenceState["phase"]): LicenceState => ({
+    ...facts,
+    phase,
+    revealedPermissions: phase === "needs" ? [] : facts.permissions,
+    revealedComparison: phase === "compare" || phase === "verdict",
+    revealedFit: phase === "verdict" ? facts.fitClass : "not-revealed",
+    revealedArgument: phase === "verdict" ? facts.modelArgument : "not-revealed",
+  });
+  return [
+    { id: "needs", state: state("needs"), activeIds: ["needs"], ticket: "01" },
+    { id: "profile", state: state("profile"), activeIds: ["needs", "profile"], ticket: "02" },
+    { id: "compare", state: state("compare"), activeIds: ["permissions", "comparison"], ticket: "03" },
+    { id: "verdict", state: state("verdict"), activeIds: ["comparison", "verdict"], ticket: "04" },
+  ];
+}
+
+export type AiUseCase = "medical-triage" | "adaptive-learning" | "traffic-routing";
+export type AiDimension = "social" | "economic" | "environmental";
+
+export const AI_USE_CASES = Object.freeze(["medical-triage", "adaptive-learning", "traffic-routing"] as const);
+export const AI_IMPACT_DIMENSIONS = Object.freeze(["social", "economic", "environmental"] as const);
+
+export type AiApplicationFacts = Readonly<{
+  useCase: AiUseCase;
+  inputData: string;
+  aiTask: string;
+  output: string;
+  oversight: string;
+}>;
+
+export const AI_APPLICATIONS: Readonly<Record<AiUseCase, AiApplicationFacts>> = {
+  "medical-triage": { useCase: "medical-triage", inputData: "medical-images-and-reviewed-training-examples", aiTask: "detect-patterns-and-prioritise-images-for-review", output: "priority-flag-with-confidence-and-reason-code", oversight: "clinician-reviews-the-image-and-decides-care" },
+  "adaptive-learning": { useCase: "adaptive-learning", inputData: "learner-responses-topic-history-and-declared-access-needs", aiTask: "estimate-current-learning-need-and-select-next-practice", output: "recommended-task-and-feedback-sequence", oversight: "teacher-reviews-progress-recommendations-and-intervenes" },
+  "traffic-routing": { useCase: "traffic-routing", inputData: "current-travel-times-capacity-incidents-and-route-constraints", aiTask: "compare-routes-against-the-declared-transport-objective", output: "route-or-timetable-adjustment", oversight: "operator-monitors-safety-equity-and-network-effects" },
+};
+
+export type AiImpactFacts = Readonly<{
+  stakeholders: readonly string[];
+  benefitMechanism: string;
+  riskMechanism: string;
+  timeHorizon: string;
+  conditions: readonly string[];
+  evidenceStatement: string;
+}>;
+
+export const AI_IMPACTS: Readonly<Record<AiUseCase, Readonly<Record<AiDimension, AiImpactFacts>>>> = {
+  "medical-triage": {
+    social: { stakeholders: ["patients", "clinicians"], benefitMechanism: "pattern-flag-can-prioritise-a-case-for-earlier-clinician-review", riskMechanism: "biased-or-incorrect-output-with-weak-oversight-can-delay-or-misdirect-care-and-affect-privacy", timeHorizon: "immediate-and-medium-term", conditions: ["representative-reviewed-data", "clinician-oversight", "privacy-controls"], evidenceStatement: "triage-support-changes-review-order-but-does-not-replace-clinical-judgement" },
+    economic: { stakeholders: ["healthcare-provider", "patients", "clinical-workforce"], benefitMechanism: "prioritisation-can-use-limited-specialist-review-time-more-efficiently", riskMechanism: "acquisition-validation-training-monitoring-and-quality-assurance-add-cost", timeHorizon: "medium-term", conditions: ["workflow-integration", "validated-performance", "staff-training"], evidenceStatement: "time-savings-depend-on-safe-integration-and-must-be-weighed-against-lifecycle-cost" },
+    environmental: { stakeholders: ["provider", "patients", "community-and-environment"], benefitMechanism: "fewer-unnecessary-repeat-journeys-may-reduce-resource-use-when-the-workflow-actually-substitutes-travel", riskMechanism: "model-computation-devices-and-replacement-use-energy-and-materials", timeHorizon: "conditional-medium-term", conditions: ["actual-travel-substitution", "efficient-compute", "device-lifecycle-management"], evidenceStatement: "environmental-direction-depends-on-net-resource-change-not-on-the-ai-label" },
+  },
+  "adaptive-learning": {
+    social: { stakeholders: ["learners", "teachers", "families"], benefitMechanism: "recommendations-can-adjust-pace-and-offer-timely-practice", riskMechanism: "surveillance-bias-or-unequal-device-and-network-access-can-disadvantage-learners", timeHorizon: "immediate-and-medium-term", conditions: ["teacher-oversight", "accessible-alternatives", "data-minimisation"], evidenceStatement: "personalisation-benefits-depend-on-fair-access-and-reviewed-recommendations" },
+    economic: { stakeholders: ["school", "teachers", "families"], benefitMechanism: "automated-feedback-may-free-some-teacher-time-and-scale-practice", riskMechanism: "subscriptions-training-devices-and-support-create-cost-and-change-work-roles", timeHorizon: "medium-term", conditions: ["teacher-time-is-actually-reallocated", "total-cost-is-monitored", "staff-are-supported"], evidenceStatement: "role-change-is-context-dependent-and-does-not-prove-that-teaching-jobs-disappear" },
+    environmental: { stakeholders: ["school", "learners", "community-and-environment"], benefitMechanism: "digital-distribution-may-reduce-some-paper-and-travel-when-it-substitutes-for-them", riskMechanism: "devices-networking-computation-and-e-waste-use-energy-and-materials", timeHorizon: "conditional-medium-term", conditions: ["real-paper-or-travel-substitution", "device-reuse", "efficient-hosting"], evidenceStatement: "the-net-effect-requires-both-avoided-and-added-resource-use" },
+  },
+  "traffic-routing": {
+    social: { stakeholders: ["passengers", "drivers", "neighbourhoods"], benefitMechanism: "current-data-can-reduce-waiting-and-improve-network-coordination", riskMechanism: "poor-data-outages-or-narrow-objectives-can-redirect-congestion-or-exclude-some-users", timeHorizon: "immediate", conditions: ["reliable-data", "safety-constraints", "equity-monitoring"], evidenceStatement: "a-faster-average-route-can-still-shift-cost-to-a-particular-community" },
+    economic: { stakeholders: ["transport-operator", "workers", "customers"], benefitMechanism: "better-fleet-use-may-reduce-idle-time-and-operating-waste", riskMechanism: "sensors-integration-maintenance-and-retraining-require-investment", timeHorizon: "short-and-medium-term", conditions: ["system-reliability", "maintenance-capacity", "worker-retraining"], evidenceStatement: "operating-benefit-must-be-compared-with-implementation-and-transition-cost" },
+    environmental: { stakeholders: ["residents", "transport-users", "environment"], benefitMechanism: "reduced-idling-or-distance-can-lower-energy-use-under-the-fixture-assumptions", riskMechanism: "induced-demand-rebound-and-sensor-compute-infrastructure-can-offset-savings", timeHorizon: "conditional-medium-and-long-term", conditions: ["measured-net-distance-or-idling-reduction", "no-offsetting-induced-demand", "efficient-infrastructure"], evidenceStatement: "environmental-benefit-is-conditional-on-net-system-resource-use" },
+  },
+};
+
+export type AiFacts = AiApplicationFacts & AiImpactFacts & Readonly<{
+  dimension: AiDimension;
+  modelArgument: string;
+  rubricPoints: readonly string[];
+}>;
+
+export function aiFacts(useCase: AiUseCase, dimension: AiDimension): AiFacts {
+  const application = AI_APPLICATIONS[useCase];
+  const impact = AI_IMPACTS[useCase][dimension];
+  return {
+    ...application,
+    ...impact,
+    dimension,
+    modelArgument: `${useCase}-${dimension}-impact-requires-${impact.benefitMechanism}-balanced-with-${impact.riskMechanism}`,
+    rubricPoints: ["explain-input-processing-output-and-use", "name-the-stakeholder-or-resource-change", "link-one-benefit-causally", "link-one-risk-and-condition-causally"],
+  };
+}
+
+export type AiState = AiFacts & Readonly<{
+  phase: "application" | "dimension" | "causal-paths" | "conclusion";
+  revealedDimension: string;
+  revealedBenefit: string;
+  revealedRisk: string;
+  revealedConclusion: string;
+}>;
+
+export function aiFrames(useCase: AiUseCase, dimension: AiDimension): readonly ModelFrame<AiState>[] {
+  const facts = aiFacts(useCase, dimension);
+  const state = (phase: AiState["phase"]): AiState => ({
+    ...facts,
+    phase,
+    revealedDimension: phase === "application" ? "not-revealed" : facts.dimension,
+    revealedBenefit: phase === "causal-paths" || phase === "conclusion" ? facts.benefitMechanism : "not-revealed",
+    revealedRisk: phase === "causal-paths" || phase === "conclusion" ? facts.riskMechanism : "not-revealed",
+    revealedConclusion: phase === "conclusion" ? facts.modelArgument : "not-revealed",
+  });
+  return [
+    { id: "application", state: state("application"), activeIds: ["application"], ticket: "01" },
+    { id: "dimension", state: state("dimension"), activeIds: ["application", "dimension"], ticket: "02" },
+    { id: "causal-paths", state: state("causal-paths"), activeIds: ["benefit", "risk"], ticket: "03" },
+    { id: "conclusion", state: state("conclusion"), activeIds: ["risk", "conclusion"], ticket: "04" },
+  ];
+}
+
+export function professionalEthicsFrames(scenario: EthicsScenario, action: EthicsAction) {
+  return ethicsFrames(scenario, action);
+}
+
+export function licenceFitFrames(scenario: LicenceScenario, profile: LicenceProfile) {
+  return licenceFrames(scenario, profile);
+}
+
+export function aiImpactFrames(useCase: AiUseCase, dimension: AiDimension) {
+  return aiFrames(useCase, dimension);
+}

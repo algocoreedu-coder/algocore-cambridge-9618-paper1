@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "CAIE-9618-P1-2026",
-  "releaseId": "paper1-chapter6-2026.10.04-v1.0.0",
+  "releaseId": "paper1-chapter7-2026.10.04-v1.0.0",
   "lessons": [
     {
       "lessonId": "P1-L01",
@@ -337,6 +337,36 @@
       "state": "available",
       "contentVersion": "1.0.0",
       "modelVersions": ["VIS-P1-L40@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L41",
+      "slug": "professional-ethics",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": [
+        "VIS-P1-L41@1"
+      ],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L42",
+      "slug": "copyright-licences",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": [
+        "VIS-P1-L42@1"
+      ],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L43",
+      "slug": "ai-impacts",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": [
+        "VIS-P1-L43@1"
+      ],
       "assessmentVersion": "1.0.0"
     }
   ]

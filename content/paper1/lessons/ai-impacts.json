@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L43",
+  "slug": "ai-impacts",
+  "sectionId": "7",
+  "strandId": "7.1",
+  "title": { "en": "Applications and impacts of artificial intelligence", "vi": "Ứng dụng và impact của artificial intelligence" },
+  "question": { "en": "How does an AI application produce a useful output, and what social, economic and environmental effects may follow?", "vi": "AI application tạo useful output thế nào, và social, economic cùng environmental effect nào có thể xảy ra?" },
+  "opening": { "en": "A complete AI answer describes a mechanism before judging an impact. Trace input or data through AI processing to an output and its use, then explain who or what changes as a result.", "vi": "Một AI answer đầy đủ mô tả mechanism trước khi judge impact. Hãy trace input hoặc data qua AI processing tới output và use, rồi giải thích ai hoặc điều gì thay đổi do kết quả đó." },
+  "objectives": [
+    { "id": "AC26-7.1-05", "text": { "en": "Explain applications of artificial intelligence and their social, economic and environmental impacts.", "vi": "Giải thích application của artificial intelligence cùng social, economic và environmental impact." } }
+  ],
+  "requirementIds": ["REQ-7.1-05-01", "REQ-7.1-05-02"],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L43-theory-1",
+      "title": { "en": "Explain the application mechanism", "vi": "Giải thích application mechanism" },
+      "paragraphs": [
+        { "en": "An AI application receives input data, applies a trained model or other AI method to identify patterns or choose an action, and produces an output such as a classification, prediction, recommendation or control signal. That output is then used by a person or another system.", "vi": "AI application nhận input data, áp dụng trained model hoặc AI method khác để identify pattern hay choose action, rồi tạo output như classification, prediction, recommendation hoặc control signal. Output sau đó được person hoặc system khác sử dụng." },
+        { "en": "The answer should state the human boundary: who selects data, sets a threshold, reviews an output, makes the final decision or handles an exception. Naming a field such as 'AI in medicine' is not enough without the data-to-use chain.", "vi": "Câu trả lời cần nêu human boundary: ai select data, set threshold, review output, make final decision hoặc handle exception. Chỉ nêu field như 'AI in medicine' là chưa đủ nếu thiếu data-to-use chain." }
+      ],
+      "bullets": [
+        { "en": "Use: input/data → AI processing → output → decision or action → human/system boundary.", "vi": "Dùng: input/data → AI processing → output → decision hoặc action → human/system boundary." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    },
+    {
+      "id": "P1-L43-theory-2",
+      "title": { "en": "Social and economic impacts", "vi": "Social và economic impact" },
+      "paragraphs": [
+        { "en": "Social effects can include quicker access to a service, more consistent assistance or improved accessibility. They can also include exclusion caused by unrepresentative data, reduced privacy, over-reliance on an output or unclear responsibility for harm.", "vi": "Social effect có thể gồm access service nhanh hơn, assistance consistent hơn hoặc accessibility tốt hơn. Chúng cũng có thể gồm exclusion do unrepresentative data, reduced privacy, over-reliance vào output hoặc unclear responsibility khi có harm." },
+        { "en": "Economic effects can include lower cost per task, new products, higher productivity or demand for new skills. They may also include job redesign or loss, retraining cost, implementation cost and concentration of advantage among organisations with data and computing resources.", "vi": "Economic effect có thể gồm lower cost per task, new product, higher productivity hoặc demand cho new skill. Chúng cũng có thể gồm job redesign hoặc loss, retraining cost, implementation cost và concentration of advantage ở organisation có data cùng computing resource." }
+      ],
+      "bullets": [
+        { "en": "Avoid absolutes: the effect depends on design, data, deployment, oversight, scale and the affected stakeholder.", "vi": "Tránh absolute claim: effect phụ thuộc design, data, deployment, oversight, scale và affected stakeholder." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    },
+    {
+      "id": "P1-L43-theory-3",
+      "title": { "en": "Environmental impacts and trade-offs", "vi": "Environmental impact và trade-off" },
+      "paragraphs": [
+        { "en": "AI can reduce resource use when it improves routing, controls energy demand, detects waste or enables preventive maintenance. The benefit must be explained through a mechanism, such as fewer vehicle kilometres or less equipment downtime.", "vi": "AI có thể giảm resource use khi cải thiện routing, control energy demand, detect waste hoặc enable preventive maintenance. Benefit phải được giải thích qua mechanism, như fewer vehicle kilometre hoặc less equipment downtime." },
+        { "en": "Training and running models also consume electricity, network capacity and hardware; producing and replacing devices uses materials and can create electronic waste. The net effect depends on workload, energy source, hardware lifetime, scale and whether efficiency changes behaviour.", "vi": "Training và running model cũng consume electricity, network capacity và hardware; producing cùng replacing device dùng material và có thể tạo electronic waste. Net effect phụ thuộc workload, energy source, hardware lifetime, scale và việc efficiency có thay đổi behaviour hay không." }
+      ],
+      "bullets": [
+        { "en": "A balanced answer states a benefit, a counter-effect and the condition that decides their relative size.", "vi": "Balanced answer nêu một benefit, một counter-effect và condition quyết định relative size của chúng." }
+      ],
+      "sourceIds": ["SYL-2026", "ALG-P1", "BOOK-C07"]
+    }
+  ],
+  "workedExample": {
+    "title": { "en": "Evaluate an adaptive learning system", "vi": "Evaluate adaptive learning system" },
+    "prompt": { "en": "A learning platform analyses student responses and recommends the next activity. Explain its mechanism and one social, economic and environmental effect.", "vi": "Learning platform analyse student response và recommend next activity. Hãy giải thích mechanism cùng một social, economic và environmental effect." },
+    "steps": [
+      { "id": "P1-L43-worked-1", "action": { "en": "Trace the application.", "vi": "Trace application." }, "result": { "en": "Responses, errors and timing are inputs; a model finds patterns; the output is a predicted need or activity recommendation; a learner or teacher uses it.", "vi": "Response, error và timing là input; model tìm pattern; output là predicted need hoặc activity recommendation; learner hoặc teacher sử dụng output." } },
+      { "id": "P1-L43-worked-2", "action": { "en": "Explain a social effect.", "vi": "Giải thích social effect." }, "result": { "en": "Targeted practice may improve access to timely support, but weak or biased training data may repeatedly direct some learners to unsuitable work unless teachers review recommendations.", "vi": "Targeted practice có thể improve access tới timely support, nhưng weak hoặc biased training data có thể liên tục đưa một số learner tới unsuitable work nếu teacher không review recommendation." } },
+      { "id": "P1-L43-worked-3", "action": { "en": "Explain an economic effect.", "vi": "Giải thích economic effect." }, "result": { "en": "Automated recommendations can reduce routine allocation time, but purchase, integration, training and correction of errors create costs and change staff tasks.", "vi": "Automated recommendation có thể giảm routine allocation time, nhưng purchase, integration, training và correction of error tạo cost và thay đổi staff task." } },
+      { "id": "P1-L43-worked-4", "action": { "en": "Explain an environmental trade-off.", "vi": "Giải thích environmental trade-off." }, "result": { "en": "Digital delivery may reduce some printing or travel, while model inference, networking and devices consume energy and materials; scale and energy source affect the net result.", "vi": "Digital delivery có thể giảm một phần printing hoặc travel, trong khi model inference, networking và device consume energy cùng material; scale và energy source ảnh hưởng net result." } }
+    ],
+    "result": { "en": "The evaluation is conditional and mechanism-based; it neither treats AI as automatically beneficial nor assumes every deployment has the same effect.", "vi": "Evaluation mang tính conditional và mechanism-based; không coi AI tự động beneficial hoặc assume mọi deployment có cùng effect." }
+  },
+  "recognition": {
+    "cues": [
+      { "en": "For an application, look for the input, model operation, output and user of the output.", "vi": "Với application, tìm input, model operation, output và user của output." },
+      { "en": "For an impact, name the stakeholder or resource and the mechanism that changes it.", "vi": "Với impact, nêu stakeholder hoặc resource và mechanism làm nó thay đổi." }
+    ],
+    "method": [
+      { "en": "Trace input → processing → output → use before evaluating the effect.", "vi": "Trace input → processing → output → use trước khi evaluate effect." },
+      { "en": "State one consequence, one counter-effect or limitation, and a condition where useful.", "vi": "Nêu một consequence, một counter-effect hoặc limitation, và condition khi hữu ích." }
+    ],
+    "misconceptions": [
+      { "mistake": { "en": "AI applications must be physical robots.", "vi": "AI application bắt buộc là physical robot." }, "correction": { "en": "Many applications are software services that classify, predict, recommend or support decisions without a robot body.", "vi": "Nhiều application là software service thực hiện classify, predict, recommend hoặc support decision mà không có robot body." } },
+      { "mistake": { "en": "Naming an application is a complete explanation.", "vi": "Nêu tên application là explanation đầy đủ." }, "correction": { "en": "Explain the input, AI processing, output and how the output is used.", "vi": "Giải thích input, AI processing, output và output được use thế nào." } },
+      { "mistake": { "en": "AI always removes jobs and saves money.", "vi": "AI luôn remove job và save money." }, "correction": { "en": "Effects depend on the task, deployment and organisation; jobs may be created, removed or redesigned, and implementation has costs.", "vi": "Effect phụ thuộc task, deployment và organisation; job có thể được create, remove hoặc redesign, và implementation có cost." } },
+      { "mistake": { "en": "Software has no environmental footprint.", "vi": "Software không có environmental footprint." }, "correction": { "en": "Models require electricity, networks and hardware, while some uses may reduce transport, waste or other resource demand.", "vi": "Model cần electricity, network và hardware, trong khi một số use có thể giảm transport, waste hoặc resource demand khác." } }
+    ],
+    "items": [
+      { "id": "P1-L43-recognise-1", "title": { "en": "Repair a vague medical example", "vi": "Sửa medical example mơ hồ" }, "setup": { "en": "A student writes only, 'AI is used in medicine.'", "vi": "Student chỉ viết: 'AI được dùng trong medicine.'" }, "prompt": { "en": "Add the missing mechanism and human boundary.", "vi": "Thêm missing mechanism và human boundary." }, "expectedEvidence": { "en": "For example, labelled medical images train a model; a new image is input; the model outputs a region or risk score; a clinician reviews it with other evidence and makes the clinical decision.", "vi": "Ví dụ, labelled medical image train model; new image là input; model output region hoặc risk score; clinician review cùng evidence khác và make clinical decision." } },
+      { "id": "P1-L43-recognise-2", "title": { "en": "Routing environmental trade-off", "vi": "Routing environmental trade-off" }, "setup": { "en": "An AI route planner predicts congestion and assigns delivery routes.", "vi": "AI route planner predict congestion và assign delivery route." }, "prompt": { "en": "Give one environmental benefit, one counter-effect and one condition.", "vi": "Nêu một environmental benefit, một counter-effect và một condition." }, "expectedEvidence": { "en": "Shorter routes may reduce fuel use, while servers, communication and devices consume electricity; the net effect depends on scale, route savings, energy source and whether extra deliveries offset efficiency.", "vi": "Shorter route có thể giảm fuel use, còn server, communication và device consume electricity; net effect phụ thuộc scale, route saving, energy source và việc extra delivery có offset efficiency hay không." } }
+    ]
+  },
+  "assessments": [
+    { "id": "P1-L43-CHECK-REQ-7.1-05-01", "requirementId": "REQ-7.1-05-01", "kind": "explain", "level": "independent", "prompt": { "en": "Explain how an AI medical-image triage application works, including the role of a clinician.", "vi": "Giải thích AI medical-image triage application hoạt động thế nào, gồm role của clinician." }, "hint": { "en": "Trace data → model → output → use → human boundary.", "vi": "Trace data → model → output → use → human boundary." }, "solution": { "steps": [], "modelAnswer": { "en": "A trained model receives a new medical image, identifies learned patterns and outputs a classification, highlighted region or priority score. The system can place higher-risk cases earlier for review, but a clinician interprets the output with other evidence and makes the clinical decision or handles exceptions.", "vi": "Trained model nhận new medical image, identify learned pattern rồi output classification, highlighted region hoặc priority score. System có thể đưa higher-risk case lên trước để review, nhưng clinician interpret output cùng evidence khác và make clinical decision hoặc handle exception." }, "rubric": [{ "en": "Require an explicit input, AI processing, output, use and human boundary.", "vi": "Yêu cầu explicit input, AI processing, output, use và human boundary." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["AI-application", "medical-triage"] },
+    { "id": "P1-L43-CHECK-REQ-7.1-05-02", "requirementId": "REQ-7.1-05-02", "kind": "explain", "level": "independent", "prompt": { "en": "Explain one social, one economic and one environmental impact of AI traffic routing. Make each impact conditional on the scenario.", "vi": "Giải thích một social, một economic và một environmental impact của AI traffic routing. Làm mỗi impact conditional theo scenario." }, "hint": { "en": "For each dimension, name a mechanism, affected stakeholder/resource and consequence.", "vi": "Với mỗi dimension, nêu mechanism, affected stakeholder/resource và consequence." }, "solution": { "steps": [], "modelAnswer": { "en": "If predictions are accurate, commuters may face shorter delays, but rerouting can shift traffic and noise into residential streets. Operators may lower fuel and scheduling cost, while paying for data, integration and oversight. Shorter routes may reduce emissions, but computing and network energy plus induced extra journeys can offset the saving; scale and energy source determine the balance.", "vi": "Nếu prediction accurate, commuter có thể gặp shorter delay, nhưng rerouting có thể shift traffic và noise vào residential street. Operator có thể giảm fuel cùng scheduling cost, đồng thời phải trả cho data, integration và oversight. Shorter route có thể giảm emission, nhưng computing, network energy và induced extra journey có thể offset saving; scale và energy source quyết định balance." }, "rubric": [{ "en": "Credit each dimension only when a causal mechanism and scenario condition are stated.", "vi": "Chỉ chấm mỗi dimension khi có causal mechanism và scenario condition." }], "alternatives": [] }, "origin": "original", "claim_kind": "algocore_guidance", "semanticTags": ["AI-impact", "social", "economic", "environmental"] }
+  ],
+  "recall": { "prompt": { "en": "State the application chain and the impact chain for an AI exam answer.", "vi": "Nêu application chain và impact chain cho AI exam answer." }, "answerPoints": [{ "en": "Application: input/data → AI processing → output → use/human boundary. Impact: mechanism → stakeholder or resource change → consequence, with a condition or limitation where relevant.", "vi": "Application: input/data → AI processing → output → use/human boundary. Impact: mechanism → stakeholder hoặc resource change → consequence, kèm condition hoặc limitation khi relevant." }] },
+  "glossary": [
+    { "term": "artificial intelligence", "meaning": { "en": "Computer methods that perform tasks associated with pattern recognition, prediction, recommendation or decision-making.", "vi": "Computer method thực hiện task liên quan pattern recognition, prediction, recommendation hoặc decision-making." } },
+    { "term": "application", "meaning": { "en": "A defined use in which data is processed to produce an output used for a task or decision.", "vi": "Defined use trong đó data được process để tạo output dùng cho task hoặc decision." } },
+    { "term": "social impact", "meaning": { "en": "An effect on people, rights, access, relationships, wellbeing or society.", "vi": "Effect lên people, right, access, relationship, wellbeing hoặc society." } },
+    { "term": "economic impact", "meaning": { "en": "An effect on cost, productivity, employment, skills, income or market activity.", "vi": "Effect lên cost, productivity, employment, skill, income hoặc market activity." } },
+    { "term": "environmental impact", "meaning": { "en": "An effect on energy, emissions, materials, waste or other environmental resources.", "vi": "Effect lên energy, emission, material, waste hoặc environmental resource khác." } },
+    { "term": "decision support", "meaning": { "en": "A system output that informs a human decision without replacing responsibility for that decision.", "vi": "System output cung cấp information cho human decision mà không thay responsibility cho decision đó." } }
+  ],
+  "relatedSlugs": ["professional-ethics", "copyright-licences"],
+  "sources": [
+    { "id": "SYL-2026", "title": { "en": "Cambridge International AS & A Level Computer Science 9618 syllabus", "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618" }, "locator": "2026 syllabus v2 §7.1, printed/PDF p. 25", "kind": "syllabus" },
+    { "id": "ALG-P1", "title": { "en": "AlgoCore original learning material", "vi": "Học liệu gốc do AlgoCore biên soạn" }, "locator": "Paper 1 · P1-L43 · Chapter 7 content 1.0", "kind": "algocore" },
+    { "id": "BOOK-C07", "title": { "en": "A Level Computer Science coursebook", "vi": "Sách A Level Computer Science" }, "locator": "Coursebook Chapter 7, printed pp. 189–195; PDF pp. 205–211", "kind": "coursebook" }
+  ],
+  "visualId": "VIS-P1-L43",
+  "contractCoverage": {
+    "B01": ["P1-L43-objectives"], "B02": ["P1-L43-theory-1", "P1-L43-theory-2", "P1-L43-theory-3"], "B03": ["P1-L43-theory-1", "P1-L43-theory-2", "P1-L43-theory-3"],
+    "B04": ["P1-L43-recognise-1", "P1-L43-recognise-2"], "B05": ["P1-L43-worked-1", "P1-L43-worked-2", "P1-L43-worked-3", "P1-L43-worked-4"], "B06": ["VIS-P1-L43"],
+    "B07": ["P1-L43-CHECK-REQ-7.1-05-01", "P1-L43-CHECK-REQ-7.1-05-02"], "B08": ["P1-L43-recognise-1", "P1-L43-recognise-2"], "B09": ["P1-L43-recall"], "B10": ["P1-L43-glossary"], "B11": ["P1-L43-sources"]
+  },
+  "assessmentVersion": "1.0.0"
+}
