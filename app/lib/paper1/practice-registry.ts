@@ -3,6 +3,7 @@ import type { Paper1ChapterPractice } from "./types";
 const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "1": () => import("@/content/paper1/practice/chapter-1.json"),
   "2": () => import("@/content/paper1/practice/chapter-2.json"),
+  "3": () => import("@/content/paper1/practice/chapter-3.json"),
 };
 
 export async function getPaper1ChapterPractice(chapterId = "1"): Promise<Paper1ChapterPractice | undefined> {

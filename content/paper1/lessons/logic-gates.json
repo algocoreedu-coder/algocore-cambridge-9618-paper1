@@ -1,0 +1,436 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L23",
+  "slug": "logic-gates",
+  "sectionId": "3",
+  "strandId": "3.2",
+  "title": {
+    "en": "Logic gates and truth tables",
+    "vi": "Logic gates và truth tables"
+  },
+  "question": {
+    "en": "How does each gate turn binary inputs into one exact output?",
+    "vi": "Mỗi gate biến binary input thành một output chính xác như thế nào?"
+  },
+  "opening": {
+    "en": "Logic gates implement Boolean decisions. NOT has one input; AND, OR, NAND, NOR and XOR have two inputs for this syllabus. A truth table lists every possible input combination exactly once.",
+    "vi": "Logic gate thực hiện Boolean decision. NOT có một input; AND, OR, NAND, NOR và XOR có hai input trong syllabus này. Truth table liệt kê mỗi input combination đúng một lần."
+  },
+  "objectives": [
+    {
+      "id": "AC26-3.2-01",
+      "text": {
+        "en": "Use the standard symbols and define NOT, AND, OR, NAND, NOR and XOR gates.",
+        "vi": "Dùng standard symbol và định nghĩa NOT, AND, OR, NAND, NOR và XOR gate."
+      }
+    },
+    {
+      "id": "AC26-3.2-02",
+      "text": {
+        "en": "Construct the truth table for each specified gate.",
+        "vi": "Lập truth table cho mỗi gate được chỉ định."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-3.2-01-01",
+    "REQ-3.2-01-02",
+    "REQ-3.2-02-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L23-theory-1",
+      "title": {
+        "en": "Read the symbol before the label",
+        "vi": "Đọc symbol trước label"
+      },
+      "paragraphs": [
+        {
+          "en": "NOT is a triangle with an inversion bubble. AND has a flat input side and curved output side. OR has a curved input side and pointed output. XOR adds a second curved line at the input side.",
+          "vi": "NOT là triangle có inversion bubble. AND có input side phẳng và output side cong. OR có input side cong và output nhọn. XOR thêm đường cong thứ hai ở input side."
+        },
+        {
+          "en": "NAND is AND plus an output bubble; NOR is OR plus an output bubble. The bubble means invert the output of the underlying gate.",
+          "vi": "NAND là AND cộng output bubble; NOR là OR cộng output bubble. Bubble nghĩa là invert output của gate gốc."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L23-theory-2",
+      "title": {
+        "en": "Define the six functions",
+        "vi": "Định nghĩa sáu function"
+      },
+      "paragraphs": [
+        {
+          "en": "NOT outputs the opposite bit. AND outputs 1 only when both inputs are 1. OR outputs 1 when at least one input is 1. XOR outputs 1 when the two inputs differ.",
+          "vi": "NOT output bit đối lập. AND output 1 chỉ khi cả hai input là 1. OR output 1 khi ít nhất một input là 1. XOR output 1 khi hai input khác nhau."
+        },
+        {
+          "en": "NAND is NOT AND, so it outputs 0 only for 1,1. NOR is NOT OR, so it outputs 1 only for 0,0.",
+          "vi": "NAND là NOT AND nên output 0 chỉ với 1,1. NOR là NOT OR nên output 1 chỉ với 0,0."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "XOR means exactly one of two inputs is 1, not simply 'one or more'.",
+          "vi": "XOR nghĩa là đúng một trong hai input là 1, không phải 'một hoặc nhiều'."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    },
+    {
+      "id": "P1-L23-theory-3",
+      "title": {
+        "en": "Construct truth tables systematically",
+        "vi": "Lập truth table có hệ thống"
+      },
+      "paragraphs": [
+        {
+          "en": "A one-input NOT table has 2 rows. A two-input gate has 2² = 4 rows: 00, 01, 10, 11. Keep that row order, apply the definition and fill one output per row.",
+          "vi": "Truth table NOT một input có 2 row. Gate hai input có 2² = 4 row: 00, 01, 10, 11. Giữ row order này, áp dụng definition và điền một output mỗi row."
+        },
+        {
+          "en": "The table is complete only when all combinations appear; swapping A and B does not create extra rows for these symmetric gates.",
+          "vi": "Table chỉ hoàn chỉnh khi có mọi combination; đổi A và B không tạo thêm row cho các gate đối xứng này."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C03"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Build a NAND truth table",
+      "vi": "Lập NAND truth table"
+    },
+    "prompt": {
+      "en": "NAND is an AND gate followed by inversion.",
+      "vi": "NAND là AND gate theo sau bởi inversion."
+    },
+    "steps": [
+      {
+        "id": "P1-L23-worked-1",
+        "action": {
+          "en": "List all input pairs.",
+          "vi": "Liệt kê mọi input pair."
+        },
+        "result": {
+          "en": "Use 00, 01, 10 and 11.",
+          "vi": "Dùng 00, 01, 10 và 11."
+        }
+      },
+      {
+        "id": "P1-L23-worked-2",
+        "action": {
+          "en": "Evaluate AND.",
+          "vi": "Tính AND."
+        },
+        "result": {
+          "en": "The intermediate AND outputs are 0, 0, 0, 1.",
+          "vi": "Intermediate AND output là 0, 0, 0, 1."
+        }
+      },
+      {
+        "id": "P1-L23-worked-3",
+        "action": {
+          "en": "Invert each result.",
+          "vi": "Invert từng kết quả."
+        },
+        "result": {
+          "en": "NAND outputs 1, 1, 1, 0.",
+          "vi": "NAND output 1, 1, 1, 0."
+        }
+      }
+    ],
+    "result": {
+      "en": "The output bubble converts the AND truth column into its complement.",
+      "vi": "Output bubble đổi truth column AND thành complement của nó."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "A small circle on an output means inversion; a second input curve distinguishes XOR from OR.",
+        "vi": "Circle nhỏ ở output nghĩa là inversion; đường cong input thứ hai phân biệt XOR với OR."
+      }
+    ],
+    "method": [
+      {
+        "en": "Count inputs and inspect the symbol shape.",
+        "vi": "Đếm input và quan sát shape của symbol."
+      },
+      {
+        "en": "State the Boolean condition for output 1.",
+        "vi": "Nêu Boolean condition để output 1."
+      },
+      {
+        "en": "Enumerate all rows before calculating outputs.",
+        "vi": "Liệt kê mọi row trước khi tính output."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "OR and XOR have the same output for 1,1.",
+          "vi": "OR và XOR có cùng output với 1,1."
+        },
+        "correction": {
+          "en": "OR outputs 1 for 1,1 because at least one input is 1; XOR outputs 0 because the inputs do not differ.",
+          "vi": "OR output 1 với 1,1 vì ít nhất một input là 1; XOR output 0 vì hai input không khác nhau."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L23-recognise-1",
+        "title": {
+          "en": "Recognise the inversion",
+          "vi": "Nhận diện inversion"
+        },
+        "setup": {
+          "en": "A symbol has the AND outline with a small circle at its output.",
+          "vi": "Symbol có outline AND và circle nhỏ ở output."
+        },
+        "prompt": {
+          "en": "Name the gate and state its only output-0 input row.",
+          "vi": "Gọi tên gate và nêu input row duy nhất output 0."
+        },
+        "expectedEvidence": {
+          "en": "It is NAND; only A=1, B=1 gives output 0.",
+          "vi": "Đó là NAND; chỉ A=1, B=1 cho output 0."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L23-CHECK-REQ-3.2-01-01",
+      "requirementId": "REQ-3.2-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "For each of NOT, AND, OR, NAND, NOR and XOR, state the condition that makes its output 1 and identify the defining symbol cue.",
+        "vi": "Với NOT, AND, OR, NAND, NOR và XOR, nêu condition làm output bằng 1 và symbol cue đặc trưng."
+      },
+      "hint": {
+        "en": "Use inversion bubbles and the extra XOR curve.",
+        "vi": "Dùng inversion bubble và đường cong thêm của XOR."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "NOT inverts and uses a triangle plus bubble; AND is 1 only for 11; OR is 1 for at least one 1; NAND is inverted AND and has a bubble; NOR is inverted OR and has a bubble; XOR is 1 when inputs differ and has the extra input curve.",
+          "vi": "NOT invert và dùng triangle cộng bubble; AND bằng 1 chỉ cho 11; OR bằng 1 khi ít nhất một input là 1; NAND là AND đảo có bubble; NOR là OR đảo có bubble; XOR bằng 1 khi input khác nhau và có input curve thêm."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "logic-symbols",
+        "logic-functions"
+      ]
+    },
+    {
+      "id": "P1-L23-CHECK-REQ-3.2-01-02",
+      "requirementId": "REQ-3.2-01-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why input B is ignored for a NOT gate but required for the other five syllabus gates.",
+        "vi": "Giải thích vì sao input B bị bỏ qua với NOT gate nhưng cần cho năm gate còn lại trong syllabus."
+      },
+      "hint": {
+        "en": "State the syllabus input arity.",
+        "vi": "Nêu số input theo syllabus."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "NOT is a unary gate: its single output is the complement of A. AND, OR, NAND, NOR and XOR are binary gates in this syllabus, so their output condition depends on the combination of both A and B.",
+          "vi": "NOT là unary gate: output duy nhất là complement của A. AND, OR, NAND, NOR và XOR là binary gate trong syllabus nên output phụ thuộc combination của cả A và B."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "gate-inputs"
+      ]
+    },
+    {
+      "id": "P1-L23-CHECK-REQ-3.2-02-01",
+      "requirementId": "REQ-3.2-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Construct the complete truth table for XOR and explain the 1,1 row.",
+        "vi": "Lập truth table hoàn chỉnh cho XOR và giải thích row 1,1."
+      },
+      "hint": {
+        "en": "Use rows 00, 01, 10, 11.",
+        "vi": "Dùng row 00, 01, 10, 11."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "XOR outputs are 0, 1, 1, 0 for 00, 01, 10, 11. The 1,1 row outputs 0 because XOR is true only when exactly one input is 1, so the two inputs must differ.",
+          "vi": "XOR output là 0, 1, 1, 0 cho 00, 01, 10, 11. Row 1,1 output 0 vì XOR chỉ true khi đúng một input bằng 1, tức hai input phải khác nhau."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word; each claimed effect must be linked to its mechanism.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word; mỗi hệ quả phải được liên hệ với cơ chế tạo ra nó."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "truth-table",
+        "XOR"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the output-1 condition for all six gates and the row count for one and two inputs.",
+      "vi": "Nêu condition output 1 cho cả sáu gate và số row cho một, hai input."
+    },
+    "answerPoints": [
+      {
+        "en": "NOT opposite; AND both; OR at least one; NAND not both; NOR neither; XOR different. One input gives 2 rows; two inputs give 4.",
+        "vi": "NOT đối lập; AND cả hai; OR ít nhất một; NAND không phải cả hai; NOR không input nào; XOR khác nhau. Một input có 2 row; hai input có 4."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "logic gate",
+      "meaning": {
+        "en": "A circuit that applies a Boolean function to binary input values.",
+        "vi": "Circuit áp dụng Boolean function cho binary input."
+      }
+    },
+    {
+      "term": "truth table",
+      "meaning": {
+        "en": "A table listing every input combination and its output.",
+        "vi": "Table liệt kê mọi input combination và output tương ứng."
+      }
+    },
+    {
+      "term": "inversion bubble",
+      "meaning": {
+        "en": "A small circle showing that a signal is logically negated.",
+        "vi": "Circle nhỏ cho biết signal bị phủ định logic."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "logic-design",
+    "signed-arithmetic"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §3.2, p. 18",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L23 · Chapter 3 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C03",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 3, pp. 89–92",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L23",
+  "contractCoverage": {
+    "B01": [
+      "P1-L23-objectives"
+    ],
+    "B02": [
+      "P1-L23-theory-1",
+      "P1-L23-theory-2",
+      "P1-L23-theory-3"
+    ],
+    "B03": [
+      "P1-L23-rules"
+    ],
+    "B04": [
+      "P1-L23-recognise-1"
+    ],
+    "B05": [
+      "P1-L23-worked-1",
+      "P1-L23-worked-2",
+      "P1-L23-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L23"
+    ],
+    "B07": [
+      "P1-L23-CHECK-REQ-3.2-01-01",
+      "P1-L23-CHECK-REQ-3.2-01-02",
+      "P1-L23-CHECK-REQ-3.2-02-01"
+    ],
+    "B08": [
+      "P1-L23-misconceptions"
+    ],
+    "B09": [
+      "P1-L23-recall"
+    ],
+    "B10": [
+      "P1-L23-glossary"
+    ],
+    "B11": [
+      "P1-L23-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

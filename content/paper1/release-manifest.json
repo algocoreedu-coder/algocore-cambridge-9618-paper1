@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "CAIE-9618-P1-2026",
-  "releaseId": "paper1-chapter2-2026.10.03-v1.0.0",
+  "releaseId": "paper1-chapter3-2026.10.03-v1.0.0",
   "lessons": [
     {
       "lessonId": "P1-L01",
@@ -161,6 +161,54 @@
       "state": "available",
       "contentVersion": "1.0.0",
       "modelVersions": ["VIS-P1-L18@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L19",
+      "slug": "computer-organisation",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L19@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L20",
+      "slug": "device-principles",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L20@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L21",
+      "slug": "embedded-control",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L21@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L22",
+      "slug": "memory-technologies",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L22@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L23",
+      "slug": "logic-gates",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L23@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L24",
+      "slug": "logic-design",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L24@1"],
       "assessmentVersion": "1.0.0"
     }
   ]
