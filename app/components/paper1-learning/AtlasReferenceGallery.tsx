@@ -45,6 +45,14 @@ const sourcePointerContracts = ((placementData as unknown as {
   readonly sourcePointerLessons?: readonly SourcePointerContract[];
 }).sourcePointerLessons ?? []);
 
+const lessonSourceNoteDispositions = new Set([
+  "INLINE_UNDERSTAND",
+  "INLINE_OBSERVE_SCENE",
+  "INLINE_WORKED_EXAMPLE",
+  "INLINE_RECOGNISE",
+  "LESSON_REFERENCE_DISCLOSURE",
+]);
+
 function getSourcePointerContract(lessonId: string) {
   return sourcePointerContracts.find((entry) => entry.lessonId === lessonId);
 }
@@ -157,6 +165,7 @@ export function TeacherSourceAuditDisclosure({ lessonId, locale }: { readonly le
   const contract = getSourcePointerContract(lessonId);
   if (!contract) return null;
   const placements = [...contract.instructionalPlacements, ...contract.referencePlacements]
+    .filter((placement) => lessonSourceNoteDispositions.has(placement.disposition))
     .toSorted((left, right) => (left.stage ?? "reference").localeCompare(right.stage ?? "reference") || left.order - right.order);
   if (!placements.length) return null;
   return <aside className={styles.lessonReferences} aria-labelledby={`${lessonId}-source-audit`} data-teacher-source-audit={lessonId}>

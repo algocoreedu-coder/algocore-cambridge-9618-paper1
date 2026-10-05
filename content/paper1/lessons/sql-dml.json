@@ -1,0 +1,549 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L50",
+  "slug": "sql-dml",
+  "sectionId": "8",
+  "strandId": "8.3",
+  "title": {
+    "en": "Queries, joins, aggregation and data maintenance",
+    "vi": "Query, join, aggregation và data maintenance"
+  },
+  "question": {
+    "en": "How do you write and trace DML over at most two tables, including exact query results and affected rows?",
+    "vi": "Bạn viết và trace DML trên tối đa hai table, gồm exact query result và affected row thế nào?"
+  },
+  "opening": {
+    "en": "Use a declared two-table fixture. Trace FROM/JOIN, WHERE, grouping, aggregate and ordering, then verify every inserted, updated or deleted row.",
+    "vi": "Dùng declared two-table fixture. Trace FROM/JOIN, WHERE, grouping, aggregate và ordering, rồi verify mọi inserted, updated hoặc deleted row."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.3-06",
+      "text": {
+        "en": "Write DML for one or two tables.",
+        "vi": "Viết DML cho một hoặc hai table."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.3-06-01",
+    "REQ-8.3-06-02",
+    "REQ-8.3-06-03",
+    "REQ-8.3-06-04"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L48"
+  ],
+  "theory": [
+    {
+      "id": "P1-L50-theory-1",
+      "title": {
+        "en": "Select and filter rows",
+        "vi": "Select và filter row"
+      },
+      "paragraphs": [
+        {
+          "en": "SELECT names output fields and FROM names source tables. WHERE keeps rows satisfying operators such as =, <, >, <=, >= or <>.",
+          "vi": "SELECT nêu output field và FROM nêu source table. WHERE giữ row thoả operator như =, <, >, <=, >= hoặc <>."
+        },
+        {
+          "en": "Quote text and date literals in the declared teaching subset. Use a comma between selected expressions, never AND.",
+          "vi": "Quote text và date literal trong declared teaching subset. Dùng comma giữa selected expression, không dùng AND."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "First identify source rows, then apply the condition, then project selected fields.",
+          "vi": "Đầu tiên identify source row, rồi apply condition, rồi project selected field."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L50-theory-2",
+      "title": {
+        "en": "Join, group, aggregate and order",
+        "vi": "Join, group, aggregate và order"
+      },
+      "paragraphs": [
+        {
+          "en": "INNER JOIN ... ON combines matching rows from two tables. This chapter's required tasks use at most two tables.",
+          "vi": "INNER JOIN ... ON combine matching row từ hai table. Required task của chapter này dùng tối đa hai table."
+        },
+        {
+          "en": "GROUP BY forms groups for SUM, COUNT or AVG. ORDER BY sorts the returned result; it does not promise a permanent physical row order.",
+          "vi": "GROUP BY tạo group cho SUM, COUNT hoặc AVG. ORDER BY sort returned result; nó không promise permanent physical row order."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Trace join matches before grouping and calculate aggregates from the declared values.",
+          "vi": "Trace join match trước grouping và calculate aggregate từ declared value."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L50-theory-3",
+      "title": {
+        "en": "Insert, update and delete safely",
+        "vi": "Insert, update và delete an toàn"
+      },
+      "paragraphs": [
+        {
+          "en": "INSERT INTO adds a row with quoted text/date values as required. UPDATE changes fields in rows matching WHERE. DELETE FROM removes matching rows.",
+          "vi": "INSERT INTO add row với quoted text/date value khi cần. UPDATE change field trong row match WHERE. DELETE FROM remove matching row."
+        },
+        {
+          "en": "Omitting WHERE from UPDATE or DELETE affects all rows. DELETE FROM Table without WHERE removes every row but leaves the table structure.",
+          "vi": "Bỏ WHERE khỏi UPDATE hoặc DELETE sẽ affect mọi row. DELETE FROM Table không WHERE remove mọi row nhưng giữ table structure."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Before execution, predict the exact affected-row set and after state.",
+          "vi": "Trước execution, predict exact affected-row set và after state."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace an event-booking fixture",
+      "vi": "Trace event-booking fixture"
+    },
+    "prompt": {
+      "en": "Use EVENT rows (1, 'Algorithms Lab'), (2, 'Data Evening'), (3, 'Robotics Fair') and BOOKING rows (90, 1, 2, 'Confirmed'), (91, 1, 3, 'Confirmed'), (92, 2, 4, 'Confirmed'), (93, 2, 1, 'Cancelled'), (94, 3, 5, 'Pending'). Query confirmed seats per title, then insert booking 95, update booking 91 and delete booking 93.",
+      "vi": "Dùng EVENT row (1, 'Algorithms Lab'), (2, 'Data Evening'), (3, 'Robotics Fair') và BOOKING row (90, 1, 2, 'Confirmed'), (91, 1, 3, 'Confirmed'), (92, 2, 4, 'Confirmed'), (93, 2, 1, 'Cancelled'), (94, 3, 5, 'Pending'). Query confirmed seat theo title, rồi insert booking 95, update booking 91 và delete booking 93."
+    },
+    "steps": [
+      {
+        "id": "P1-L50-worked-1",
+        "action": {
+          "en": "Join matching rows.",
+          "vi": "Join matching row."
+        },
+        "result": {
+        "en": "SELECT EVENT.Title, SUM(BOOKING.Seats) FROM EVENT INNER JOIN BOOKING ON EVENT.EventID = BOOKING.EventID WHERE BOOKING.Status = 'Confirmed' GROUP BY EVENT.Title ORDER BY EVENT.Title; Before grouping, the confirmed joined rows are ('Algorithms Lab', 2), ('Algorithms Lab', 3) and ('Data Evening', 4).",
+        "vi": "SELECT EVENT.Title, SUM(BOOKING.Seats) FROM EVENT INNER JOIN BOOKING ON EVENT.EventID = BOOKING.EventID WHERE BOOKING.Status = 'Confirmed' GROUP BY EVENT.Title ORDER BY EVENT.Title; Trước grouping, confirmed joined row là ('Algorithms Lab', 2), ('Algorithms Lab', 3) và ('Data Evening', 4)."
+        }
+      },
+      {
+        "id": "P1-L50-worked-2",
+        "action": {
+          "en": "Filter and aggregate.",
+          "vi": "Filter và aggregate."
+        },
+        "result": {
+        "en": "The exact ordered result is ('Algorithms Lab', 5), then ('Data Evening', 4). 'Robotics Fair' is absent because its only initial booking is Pending; SELECT changes no stored row.",
+        "vi": "Exact ordered result là ('Algorithms Lab', 5), rồi ('Data Evening', 4). 'Robotics Fair' không xuất hiện vì initial booking duy nhất có Status Pending; SELECT không change stored row."
+        }
+      },
+      {
+        "id": "P1-L50-worked-3",
+        "action": {
+        "en": "Insert and trace one row.",
+        "vi": "Insert và trace một row."
+        },
+        "result": {
+        "en": "INSERT INTO BOOKING (BookingID, EventID, Seats, Status) VALUES (95, 3, 2, 'Confirmed'); affects new BookingID 95. Its exact after-state is (95, 3, 2, 'Confirmed'); existing rows 90–94 are unchanged.",
+        "vi": "INSERT INTO BOOKING (BookingID, EventID, Seats, Status) VALUES (95, 3, 2, 'Confirmed'); affect new BookingID 95. Exact after-state là (95, 3, 2, 'Confirmed'); existing row 90–94 không đổi."
+        }
+      },
+      {
+        "id": "P1-L50-worked-4",
+        "action": {
+        "en": "Update, delete and verify exact states.",
+        "vi": "Update, delete và verify exact state."
+        },
+        "result": {
+        "en": "UPDATE BOOKING SET Status = 'Cancelled' WHERE BookingID = 91; affects only ID 91, whose after-state is (91, 1, 3, 'Cancelled'). DELETE FROM BOOKING WHERE BookingID = 93; removes only ID 93. The final BookingID set is {90, 91, 92, 94, 95}; rows 90, 92 and 94 retain their initial values, row 91 has the updated status and row 95 has the inserted values.",
+        "vi": "UPDATE BOOKING SET Status = 'Cancelled' WHERE BookingID = 91; chỉ affect ID 91, có after-state (91, 1, 3, 'Cancelled'). DELETE FROM BOOKING WHERE BookingID = 93; chỉ remove ID 93. Final BookingID set là {90, 91, 92, 94, 95}; row 90, 92 và 94 giữ initial value, row 91 có updated status và row 95 có inserted value."
+        }
+      }
+    ],
+    "result": {
+      "en": "The fixed fixture proves every result: the query returns exactly two ordered groups without changing data; INSERT affects ID 95, UPDATE affects ID 91 and DELETE affects ID 93, leaving IDs 90, 91, 92, 94 and 95 in their stated after-states.",
+      "vi": "Fixed fixture prove mọi result: query return đúng hai ordered group mà không change data; INSERT affect ID 95, UPDATE affect ID 91 và DELETE affect ID 93, để lại ID 90, 91, 92, 94 và 95 ở stated after-state."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "At most two tables; join with INNER JOIN ... ON and select expressions separated by commas.",
+        "vi": "Tối đa hai table; join bằng INNER JOIN ... ON và selected expression tách bằng comma."
+      },
+      {
+        "en": "For UPDATE/DELETE, inspect WHERE before predicting affected rows.",
+        "vi": "Với UPDATE/DELETE, inspect WHERE trước khi predict affected row."
+      }
+    ],
+    "method": [
+      {
+        "en": "Trace FROM/JOIN → WHERE → GROUP BY/aggregate → selected output → ORDER BY.",
+        "vi": "Trace FROM/JOIN → WHERE → GROUP BY/aggregate → selected output → ORDER BY."
+      },
+      {
+        "en": "For maintenance, list matching primary keys and compare the exact before/after rows.",
+        "vi": "Với maintenance, list matching primary key và compare exact before/after row."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Use AND between two selected fields.",
+          "vi": "Dùng AND giữa hai selected field."
+        },
+        "correction": {
+          "en": "Separate selected expressions with a comma; AND combines Boolean conditions.",
+          "vi": "Tách selected expression bằng comma; AND combine Boolean condition."
+        }
+      },
+      {
+        "mistake": {
+          "en": "DELETE FROM EVENT removes the table definition.",
+          "vi": "DELETE FROM EVENT remove table definition."
+        },
+        "correction": {
+          "en": "It removes all rows and leaves the structure.",
+          "vi": "Nó remove mọi row và giữ structure."
+        }
+      },
+      {
+        "mistake": {
+          "en": "ORDER BY permanently rearranges stored rows.",
+          "vi": "ORDER BY permanently rearrange stored row."
+        },
+        "correction": {
+          "en": "It orders only the returned result.",
+          "vi": "Nó chỉ order returned result."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L50-recognise-1",
+        "title": {
+          "en": "Two-table total",
+          "vi": "Total trên hai table"
+        },
+        "setup": {
+          "en": "Each confirmed booking references one event and stores Seats.",
+          "vi": "Mỗi confirmed booking reference một event và lưu Seats."
+        },
+        "prompt": {
+          "en": "Which operations produce confirmed seats per event?",
+          "vi": "Operation nào tạo confirmed seat theo event?"
+        },
+        "expectedEvidence": {
+          "en": "INNER JOIN on EventID, WHERE Status = 'Confirmed', GROUP BY event/title, SUM(Seats).",
+          "vi": "INNER JOIN trên EventID, WHERE Status = 'Confirmed', GROUP BY event/title, SUM(Seats)."
+        }
+      },
+      {
+        "id": "P1-L50-recognise-2",
+        "title": {
+          "en": "All rows or structure?",
+          "vi": "Mọi row hay structure?"
+        },
+        "setup": {
+          "en": "DELETE FROM BOOKING; has no WHERE.",
+          "vi": "DELETE FROM BOOKING; không có WHERE."
+        },
+        "prompt": {
+          "en": "Predict the effect.",
+          "vi": "Predict effect."
+        },
+        "expectedEvidence": {
+          "en": "All BOOKING rows are deleted; BOOKING fields, keys and table structure remain.",
+          "vi": "Mọi BOOKING row bị delete; BOOKING field, key và table structure vẫn còn."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L50-CHECK-REQ-8.3-06-01",
+      "requirementId": "REQ-8.3-06-01",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write SQL to return Title from EVENT where StartsOn = '2026-11-12'.",
+        "vi": "Viết SQL return Title từ EVENT nơi StartsOn = '2026-11-12'."
+      },
+      "hint": {
+        "en": "Quote the date literal.",
+        "vi": "Quote date literal."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "SELECT Title FROM EVENT WHERE StartsOn = '2026-11-12';",
+          "vi": "SELECT Title FROM EVENT WHERE StartsOn = '2026-11-12';"
+        },
+        "rubric": [
+          {
+            "en": "Require correct field, table, comparison and quoted date.",
+            "vi": "Yêu cầu đúng field, table, comparison và quoted date."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "SELECT",
+        "WHERE"
+      ]
+    },
+    {
+      "id": "P1-L50-CHECK-REQ-8.3-06-02",
+      "requirementId": "REQ-8.3-06-02",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write a two-table query that returns each event Title with its total booked Seats, grouped by Title and ordered by Title.",
+        "vi": "Viết two-table query return mỗi event Title cùng total booked Seats, grouped by Title và ordered by Title."
+      },
+      "hint": {
+        "en": "Use comma, INNER JOIN ... ON and ORDER BY.",
+        "vi": "Dùng comma, INNER JOIN ... ON và ORDER BY."
+      },
+      "solution": {
+        "steps": [],
+      "modelAnswer": {
+          "en": "SELECT EVENT.Title, SUM(BOOKING.Seats) FROM EVENT INNER JOIN BOOKING ON EVENT.EventID = BOOKING.EventID GROUP BY EVENT.Title ORDER BY EVENT.Title;",
+          "vi": "SELECT EVENT.Title, SUM(BOOKING.Seats) FROM EVENT INNER JOIN BOOKING ON EVENT.EventID = BOOKING.EventID GROUP BY EVENT.Title ORDER BY EVENT.Title;"
+        },
+        "rubric": [
+          {
+            "en": "Do not accept AND between selected fields.",
+            "vi": "Không chấp nhận AND giữa selected field."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "INNER-JOIN",
+        "ORDER-BY"
+      ]
+    },
+    {
+      "id": "P1-L50-CHECK-REQ-8.3-06-03",
+      "requirementId": "REQ-8.3-06-03",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write three queries over BOOKING: total Seats, number of bookings and average Seats per booking.",
+        "vi": "Viết ba query trên BOOKING: total Seats, number of booking và average Seats mỗi booking."
+      },
+      "hint": {
+        "en": "Use one scalar aggregate per query: SUM, COUNT and AVG. No GROUP BY is needed because each query returns one overall value.",
+        "vi": "Dùng một scalar aggregate cho mỗi query: SUM, COUNT và AVG. Không cần GROUP BY vì mỗi query return một overall value."
+      },
+      "solution": {
+        "steps": [],
+      "modelAnswer": {
+          "en": "SELECT SUM(Seats) FROM BOOKING; SELECT COUNT(BookingID) FROM BOOKING; SELECT AVG(Seats) FROM BOOKING;",
+          "vi": "SELECT SUM(Seats) FROM BOOKING; SELECT COUNT(BookingID) FROM BOOKING; SELECT AVG(Seats) FROM BOOKING;"
+        },
+        "rubric": [
+          {
+            "en": "Require three valid scalar aggregate queries over appropriate fields; accept equivalent COUNT(*) for the booking count. Do not require GROUP BY.",
+            "vi": "Yêu cầu ba scalar aggregate query hợp lệ trên appropriate field; chấp nhận COUNT(*) tương đương cho booking count. Không yêu cầu GROUP BY."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "SUM",
+        "COUNT",
+        "AVG"
+      ]
+    },
+    {
+      "id": "P1-L50-CHECK-REQ-8.3-06-04",
+      "requirementId": "REQ-8.3-06-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Write an INSERT for booking 91, event 4, two seats, status 'Confirmed'; update only booking 91 to 'Cancelled'; then explain DELETE FROM BOOKING without WHERE.",
+        "vi": "Viết INSERT cho booking 91, event 4, hai seat, status 'Confirmed'; update riêng booking 91 thành 'Cancelled'; rồi explain DELETE FROM BOOKING không WHERE."
+      },
+      "hint": {
+        "en": "Quote text and distinguish rows from structure.",
+        "vi": "Quote text và phân biệt row với structure."
+      },
+      "solution": {
+        "steps": [],
+      "modelAnswer": {
+          "en": "INSERT INTO BOOKING (BookingID, EventID, Seats, Status) VALUES (91, 4, 2, 'Confirmed'); UPDATE BOOKING SET Status = 'Cancelled' WHERE BookingID = 91; the update affects only row 91. DELETE FROM BOOKING removes every row but leaves the BOOKING table structure.",
+          "vi": "INSERT INTO BOOKING (BookingID, EventID, Seats, Status) VALUES (91, 4, 2, 'Confirmed'); UPDATE BOOKING SET Status = 'Cancelled' WHERE BookingID = 91; update chỉ affect row 91. DELETE FROM BOOKING remove mọi row nhưng giữ BOOKING table structure."
+        },
+        "rubric": [
+          {
+          "en": "Require complete INSERT values, a selective UPDATE with an exact affected-row trace, and the delete-all-rows boundary.",
+          "vi": "Yêu cầu complete INSERT value, selective UPDATE với exact affected-row trace và delete-all-rows boundary."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "INSERT",
+        "DELETE",
+        "UPDATE"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the query trace order and the effect of DELETE FROM Table without WHERE.",
+      "vi": "Nêu query trace order và effect của DELETE FROM Table không WHERE."
+    },
+    "answerPoints": [
+      {
+        "en": "Trace FROM/JOIN, WHERE, GROUP BY/aggregates, selected output and ORDER BY; DELETE removes all rows but retains structure.",
+        "vi": "Trace FROM/JOIN, WHERE, GROUP BY/aggregate, selected output và ORDER BY; DELETE remove mọi row nhưng giữ structure."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "INNER JOIN",
+      "meaning": {
+        "en": "A join returning rows whose ON condition matches in both tables.",
+        "vi": "Join return row có ON condition match ở cả hai table."
+      }
+    },
+    {
+      "term": "WHERE",
+      "meaning": {
+        "en": "A condition selecting rows for a query or data change.",
+        "vi": "Condition chọn row cho query hoặc data change."
+      }
+    },
+    {
+      "term": "GROUP BY",
+      "meaning": {
+        "en": "A clause forming groups for aggregate calculation.",
+        "vi": "Clause tạo group cho aggregate calculation."
+      }
+    },
+    {
+      "term": "aggregate",
+      "meaning": {
+        "en": "A calculation such as SUM, COUNT or AVG over rows or groups.",
+        "vi": "Calculation như SUM, COUNT hoặc AVG trên row hoặc group."
+      }
+    },
+    {
+      "term": "affected rows",
+      "meaning": {
+        "en": "Rows selected by a maintenance statement's condition.",
+        "vi": "Row được chọn bởi condition của maintenance statement."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "sql-foundations",
+    "sql-ddl"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.3, printed/PDF pp. 26–27",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L50 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 213–216; PDF pp. 229–232",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L50",
+  "contractCoverage": {
+    "B01": [
+      "P1-L50-objectives"
+    ],
+    "B02": [
+      "P1-L50-theory-1",
+      "P1-L50-theory-2",
+      "P1-L50-theory-3"
+    ],
+    "B03": [
+      "P1-L50-theory-1",
+      "P1-L50-theory-2",
+      "P1-L50-theory-3"
+    ],
+    "B04": [
+      "P1-L50-recognise-1",
+      "P1-L50-recognise-2"
+    ],
+    "B05": [
+      "P1-L50-worked-1",
+      "P1-L50-worked-2",
+      "P1-L50-worked-3",
+      "P1-L50-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L50"
+    ],
+    "B07": [
+      "P1-L50-CHECK-REQ-8.3-06-01",
+      "P1-L50-CHECK-REQ-8.3-06-02",
+      "P1-L50-CHECK-REQ-8.3-06-03",
+      "P1-L50-CHECK-REQ-8.3-06-04"
+    ],
+    "B08": [
+      "P1-L50-recognise-1",
+      "P1-L50-recognise-2"
+    ],
+    "B09": [
+      "P1-L50-recall"
+    ],
+    "B10": [
+      "P1-L50-glossary"
+    ],
+    "B11": [
+      "P1-L50-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

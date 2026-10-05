@@ -1,0 +1,597 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L46",
+  "slug": "normalisation",
+  "sectionId": "8",
+  "strandId": "8.1",
+  "title": {
+    "en": "From unnormalised data to 3NF",
+    "vi": "Từ dữ liệu chưa chuẩn hoá đến 3NF"
+  },
+  "question": {
+    "en": "How do declared functional dependencies guide a lossless design through 1NF, 2NF and 3NF?",
+    "vi": "Các functional dependency đã nêu định hướng một design bảo toàn dữ liệu qua 1NF, 2NF và 3NF thế nào?"
+  },
+  "opening": {
+    "en": "Normalisation is a dependency argument, not a visual tidy-up. State the business rules, identify the key, then remove one kind of dependency at each stage.",
+    "vi": "Normalisation là lập luận về dependency, không chỉ là sắp xếp table cho gọn. Hãy nêu business rule, xác định key rồi loại từng loại dependency ở mỗi stage."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.1-05",
+      "text": {
+        "en": "Understand first, second and third normal form.",
+        "vi": "Hiểu first, second và third normal form."
+      }
+    },
+    {
+      "id": "AC26-8.1-06",
+      "text": {
+        "en": "Explain whether a table is in 3NF.",
+        "vi": "Giải thích một table có ở 3NF hay không."
+      }
+    },
+    {
+      "id": "AC26-8.1-07",
+      "text": {
+        "en": "Produce a normalised database design.",
+        "vi": "Tạo một database design đã được normalise."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.1-05-01",
+    "REQ-8.1-05-02",
+    "REQ-8.1-05-03",
+    "REQ-8.1-06-01",
+    "REQ-8.1-07-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L45"
+  ],
+  "theory": [
+    {
+      "id": "P1-L46-theory-1",
+      "title": {
+        "en": "1NF: atomic values",
+        "vi": "1NF: atomic value"
+      },
+      "paragraphs": [
+        {
+          "en": "First normal form has atomic values and no repeating groups. A cell contains one value from its domain rather than a list such as S12,S18.",
+          "vi": "First normal form có atomic value và không có repeating group. Mỗi cell chứa một value thuộc domain thay vì list như S12,S18."
+        },
+        {
+          "en": "Choose a key that identifies each row after repeating data is expanded. A primary key alone does not prove 1NF if repeating groups remain.",
+          "vi": "Chọn key identify mỗi row sau khi repeating data được mở rộng. Chỉ có primary key chưa chứng minh 1NF nếu repeating group vẫn còn."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Test the shape of every value, then state the row key.",
+          "vi": "Kiểm tra shape của từng value rồi nêu row key."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L46-theory-2",
+      "title": {
+        "en": "2NF: remove partial dependencies",
+        "vi": "2NF: loại partial dependency"
+      },
+      "paragraphs": [
+        {
+          "en": "A table is in 2NF when it is already in 1NF and every non-key attribute depends on the whole candidate key, not only part of a composite key.",
+          "vi": "Table ở 2NF khi đã ở 1NF và mọi non-key attribute phụ thuộc vào toàn bộ candidate key, không chỉ một phần composite key."
+        },
+        {
+          "en": "If the key is (OrderID, ProductID) but ProductName depends only on ProductID, move product facts to PRODUCT and retain ProductID as a foreign key.",
+          "vi": "Nếu key là (OrderID, ProductID) nhưng ProductName chỉ phụ thuộc ProductID, hãy chuyển product fact sang PRODUCT và giữ ProductID làm foreign key."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A single-column key cannot have a partial dependency, but the table may still fail 3NF.",
+          "vi": "Single-column key không thể có partial dependency, nhưng table vẫn có thể không đạt 3NF."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L46-theory-3",
+      "title": {
+        "en": "3NF: remove transitive dependencies",
+        "vi": "3NF: loại transitive dependency"
+      },
+      "paragraphs": [
+        {
+          "en": "A table is in 3NF when it is in 2NF and no non-key attribute depends on another non-key attribute. Non-key facts depend on the key, the whole key and nothing but the key.",
+          "vi": "Table ở 3NF khi đã ở 2NF và không có non-key attribute phụ thuộc vào non-key attribute khác. Non-key fact phụ thuộc vào key, toàn bộ key và không gì ngoài key."
+        },
+        {
+          "en": "Dependencies come from stated business rules, not coincidental values in a small sample. Decomposition must preserve every required fact and reconnect tables with keys.",
+          "vi": "Dependency xuất phát từ business rule đã nêu, không phải các value tình cờ giống nhau trong sample nhỏ. Decomposition phải bảo toàn mọi fact cần thiết và nối lại table bằng key."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Name the violated dependency and resulting update, insertion or deletion anomaly.",
+          "vi": "Nêu dependency bị vi phạm và update, insertion hoặc deletion anomaly tương ứng."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Normalise an order line data set",
+      "vi": "Normalise bộ dữ liệu order line"
+    },
+    "prompt": {
+      "en": "Given OrderID, OrderDate, CustomerID, CustomerName and repeating ProductID/ProductName/Quantity values, normalise to 3NF using the stated dependencies.",
+      "vi": "Với OrderID, OrderDate, CustomerID, CustomerName và các ProductID/ProductName/Quantity lặp, hãy normalise tới 3NF bằng dependency đã nêu."
+    },
+    "steps": [
+      {
+        "id": "P1-L46-worked-1",
+        "action": {
+          "en": "State keys and dependencies.",
+          "vi": "Nêu key và dependency."
+        },
+        "result": {
+          "en": "OrderID identifies OrderDate and CustomerID; CustomerID identifies CustomerName; ProductID identifies ProductName; (OrderID, ProductID) identifies Quantity.",
+          "vi": "OrderID identify OrderDate và CustomerID; CustomerID identify CustomerName; ProductID identify ProductName; (OrderID, ProductID) identify Quantity."
+        }
+      },
+      {
+        "id": "P1-L46-worked-2",
+        "action": {
+          "en": "Reach 1NF.",
+          "vi": "Đạt 1NF."
+        },
+        "result": {
+          "en": "Create one row per order-product pair so every field is atomic; use (OrderID, ProductID) as the composite row key.",
+          "vi": "Tạo một row cho mỗi order-product pair để mọi field atomic; dùng (OrderID, ProductID) làm composite row key."
+        }
+      },
+      {
+        "id": "P1-L46-worked-3",
+        "action": {
+          "en": "Reach 2NF.",
+          "vi": "Đạt 2NF."
+        },
+        "result": {
+          "en": "Move order-only facts to ORDER and product-only facts to PRODUCT; retain ORDER_LINE(OrderID, ProductID, Quantity).",
+          "vi": "Chuyển order-only fact sang ORDER và product-only fact sang PRODUCT; giữ ORDER_LINE(OrderID, ProductID, Quantity)."
+        }
+      },
+      {
+        "id": "P1-L46-worked-4",
+        "action": {
+          "en": "Reach 3NF and verify.",
+          "vi": "Đạt 3NF và verify."
+        },
+        "result": {
+          "en": "Move CustomerName to CUSTOMER because OrderID → CustomerID → CustomerName. Keep CustomerID as ORDER's foreign key and verify that every original fact remains representable.",
+          "vi": "Chuyển CustomerName sang CUSTOMER vì OrderID → CustomerID → CustomerName. Giữ CustomerID làm foreign key của ORDER và verify mọi fact ban đầu vẫn biểu diễn được."
+        }
+      }
+    ],
+    "result": {
+      "en": "CUSTOMER, ORDER, PRODUCT and ORDER_LINE form a valid 3NF design for the stated dependencies; equivalent names or decompositions are acceptable when facts and key links are preserved.",
+      "vi": "CUSTOMER, ORDER, PRODUCT và ORDER_LINE tạo design 3NF hợp lệ cho dependency đã nêu; chấp nhận tên hoặc decomposition tương đương khi bảo toàn fact và key link."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for lists/repeating groups, partial dependency on part of a composite key, then transitive dependency through a non-key attribute.",
+        "vi": "Tìm list/repeating group, partial dependency vào một phần composite key, rồi transitive dependency qua non-key attribute."
+      },
+      {
+        "en": "Do not infer a dependency from sample values; require a stated rule.",
+        "vi": "Không suy dependency từ sample value; phải có rule được nêu."
+      }
+    ],
+    "method": [
+      {
+        "en": "Write keys and functional dependencies before naming the normal form.",
+        "vi": "Viết key và functional dependency trước khi gọi tên normal form."
+      },
+      {
+        "en": "At each split, mark primary/foreign keys and check that no required fact is lost.",
+        "vi": "Ở mỗi bước tách, đánh dấu primary/foreign key và kiểm tra không mất fact cần thiết."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "1NF only means having a primary key.",
+          "vi": "1NF chỉ có nghĩa là có primary key."
+        },
+        "correction": {
+          "en": "1NF requires atomic values and no repeating groups in this teaching model.",
+          "vi": "1NF yêu cầu atomic value và không có repeating group trong teaching model này."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A single-column primary key guarantees 3NF.",
+          "vi": "Single-column primary key bảo đảm 3NF."
+        },
+        "correction": {
+          "en": "It prevents partial dependency on that key, but transitive non-key dependencies may remain.",
+          "vi": "Nó ngăn partial dependency trên key đó, nhưng transitive non-key dependency vẫn có thể tồn tại."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Matching sample values prove a dependency.",
+          "vi": "Sample value giống nhau chứng minh dependency."
+        },
+        "correction": {
+          "en": "Use declared business rules and keys; coincidences do not establish a functional dependency.",
+          "vi": "Dùng business rule và key đã nêu; coincidence không xác lập functional dependency."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L46-recognise-1",
+        "title": {
+          "en": "Composite key clue",
+          "vi": "Dấu hiệu composite key"
+        },
+        "setup": {
+          "en": "ENROLMENT has key (StudentID, CourseID), but StudentName depends only on StudentID.",
+          "vi": "ENROLMENT có key (StudentID, CourseID), nhưng StudentName chỉ phụ thuộc StudentID."
+        },
+        "prompt": {
+          "en": "Which normal-form condition is violated?",
+          "vi": "Normal-form condition nào bị vi phạm?"
+        },
+        "expectedEvidence": {
+          "en": "It violates 2NF because a non-key attribute has a partial dependency on part of the composite key.",
+          "vi": "Nó vi phạm 2NF vì non-key attribute có partial dependency vào một phần composite key."
+        }
+      },
+      {
+        "id": "P1-L46-recognise-2",
+        "title": {
+          "en": "Transitive rule",
+          "vi": "Transitive rule"
+        },
+        "setup": {
+          "en": "BookingID → RoomID and RoomID → RoomRate are stated rules.",
+          "vi": "BookingID → RoomID và RoomID → RoomRate là các rule đã nêu."
+        },
+        "prompt": {
+          "en": "Why can BOOKING fail 3NF if it stores RoomRate?",
+          "vi": "Vì sao BOOKING có thể không đạt 3NF nếu lưu RoomRate?"
+        },
+        "expectedEvidence": {
+          "en": "RoomRate depends on non-key RoomID, giving BookingID → RoomID → RoomRate.",
+          "vi": "RoomRate phụ thuộc non-key RoomID, tạo BookingID → RoomID → RoomRate."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L46-CHECK-REQ-8.1-05-01",
+      "requirementId": "REQ-8.1-05-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the 1NF condition and repair a field that stores three phone numbers.",
+        "vi": "Giải thích condition của 1NF và sửa field lưu ba phone number."
+      },
+      "hint": {
+        "en": "Use atomic values and no repeating groups.",
+        "vi": "Dùng atomic value và no repeating group."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "1NF requires atomic values and no repeating groups. Store each phone number in a separate related row, with a key linking it to the person.",
+          "vi": "1NF yêu cầu atomic value và không có repeating group. Lưu từng phone number trong related row riêng, với key liên kết tới person."
+        },
+        "rubric": [
+          {
+            "en": "Require both the condition and a relational repair.",
+            "vi": "Yêu cầu cả condition và relational repair."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "1NF",
+        "atomic-values"
+      ]
+    },
+    {
+      "id": "P1-L46-CHECK-REQ-8.1-05-02",
+      "requirementId": "REQ-8.1-05-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why ProductName must leave a table keyed by (OrderID, ProductID).",
+        "vi": "Giải thích vì sao ProductName phải rời table có key (OrderID, ProductID)."
+      },
+      "hint": {
+        "en": "State the partial dependency.",
+        "vi": "Nêu partial dependency."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "ProductName depends only on ProductID, part of the composite key, so keeping it violates 2NF. Move it to PRODUCT keyed by ProductID.",
+          "vi": "ProductName chỉ phụ thuộc ProductID, một phần composite key, nên giữ nó sẽ vi phạm 2NF. Chuyển sang PRODUCT có key ProductID."
+        },
+        "rubric": [
+          {
+            "en": "Credit the whole-key condition and correct decomposition.",
+            "vi": "Chấm whole-key condition và decomposition đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "2NF",
+        "partial-dependency"
+      ]
+    },
+    {
+      "id": "P1-L46-CHECK-REQ-8.1-05-03",
+      "requirementId": "REQ-8.1-05-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why CustomerName should not remain in ORDER when OrderID determines CustomerID and CustomerID determines CustomerName.",
+        "vi": "Giải thích vì sao CustomerName không nên ở lại ORDER khi OrderID determine CustomerID và CustomerID determine CustomerName."
+      },
+      "hint": {
+        "en": "Trace the transitive dependency.",
+        "vi": "Trace transitive dependency."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "CustomerName depends on non-key CustomerID, creating a transitive dependency from OrderID. Move customer facts to CUSTOMER and retain CustomerID as a foreign key in ORDER.",
+          "vi": "CustomerName phụ thuộc non-key CustomerID, tạo transitive dependency từ OrderID. Chuyển customer fact sang CUSTOMER và giữ CustomerID làm foreign key trong ORDER."
+        },
+        "rubric": [
+          {
+            "en": "Require the 3NF condition and preserved relationship.",
+            "vi": "Yêu cầu 3NF condition và relationship được bảo toàn."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "3NF",
+        "transitive-dependency"
+      ]
+    },
+    {
+      "id": "P1-L46-CHECK-REQ-8.1-06-01",
+      "requirementId": "REQ-8.1-06-01",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "A table has key BookingID and rules BookingID → RoomID, RoomID → RoomRate. Decide whether Booking(BookingID, RoomID, RoomRate) is in 3NF.",
+        "vi": "Table có key BookingID và rule BookingID → RoomID, RoomID → RoomRate. Decide Booking(BookingID, RoomID, RoomRate) có ở 3NF không."
+      },
+      "hint": {
+        "en": "Name the key, dependency and violated condition.",
+        "vi": "Nêu key, dependency và condition bị vi phạm."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "It is not in 3NF: RoomRate depends on non-key RoomID, so BookingID determines RoomRate transitively. A room-rate update could require multiple booking-row changes.",
+          "vi": "Nó không ở 3NF: RoomRate phụ thuộc non-key RoomID, nên BookingID determine RoomRate theo transitive path. Update room rate có thể phải đổi nhiều booking row."
+        },
+        "rubric": [
+          {
+            "en": "Do not accept a decision inferred only from sample values.",
+            "vi": "Không chấp nhận decision chỉ suy từ sample value."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "3NF",
+        "functional-dependency"
+      ]
+    },
+    {
+      "id": "P1-L46-CHECK-REQ-8.1-07-01",
+      "requirementId": "REQ-8.1-07-01",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "Produce a 3NF design for orders, products, customers and quantities using the stated dependencies in the worked example.",
+        "vi": "Tạo 3NF design cho order, product, customer và quantity bằng dependency trong worked example."
+      },
+      "hint": {
+        "en": "Show tables, primary keys, foreign keys and preserved facts.",
+        "vi": "Nêu table, primary key, foreign key và fact được bảo toàn."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "CUSTOMER(CustomerID PK, CustomerName); ORDER(OrderID PK, OrderDate, CustomerID FK); PRODUCT(ProductID PK, ProductName); ORDER_LINE(OrderID PK/FK, ProductID PK/FK, Quantity).",
+          "vi": "CUSTOMER(CustomerID PK, CustomerName); ORDER(OrderID PK, OrderDate, CustomerID FK); PRODUCT(ProductID PK, ProductName); ORDER_LINE(OrderID PK/FK, ProductID PK/FK, Quantity)."
+        },
+        "rubric": [
+          {
+            "en": "Accept an equivalent valid decomposition when dependencies, facts and links are preserved.",
+            "vi": "Chấp nhận decomposition hợp lệ tương đương khi dependency, fact và link được bảo toàn."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "normalisation",
+        "3NF-design"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the extra condition added at each step from 1NF to 3NF.",
+      "vi": "Nêu condition bổ sung ở mỗi bước từ 1NF đến 3NF."
+    },
+    "answerPoints": [
+      {
+        "en": "1NF: atomic/no repeating groups; 2NF: no partial dependency on part of a composite key; 3NF: no transitive/non-key dependency.",
+        "vi": "1NF: atomic/no repeating group; 2NF: không partial dependency vào phần composite key; 3NF: không transitive/non-key dependency."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "functional dependency",
+      "meaning": {
+        "en": "A rule in which one attribute set determines another.",
+        "vi": "Rule trong đó một attribute set determine attribute set khác."
+      }
+    },
+    {
+      "term": "1NF",
+      "meaning": {
+        "en": "Atomic values and no repeating groups.",
+        "vi": "Atomic value và không repeating group."
+      }
+    },
+    {
+      "term": "2NF",
+      "meaning": {
+        "en": "1NF plus no partial dependency of a non-key attribute on part of a composite key.",
+        "vi": "1NF cộng không partial dependency của non-key attribute vào phần composite key."
+      }
+    },
+    {
+      "term": "3NF",
+      "meaning": {
+        "en": "2NF plus no transitive dependency of non-key attributes.",
+        "vi": "2NF cộng không transitive dependency của non-key attribute."
+      }
+    },
+    {
+      "term": "anomaly",
+      "meaning": {
+        "en": "An insertion, update or deletion problem caused by a poor dependency design.",
+        "vi": "Insertion, update hoặc deletion problem do dependency design kém."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "keys-relationships",
+    "sql-ddl"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.1, printed/PDF p. 25",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L46 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 203–208; PDF pp. 219–224",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L46",
+  "contractCoverage": {
+    "B01": [
+      "P1-L46-objectives"
+    ],
+    "B02": [
+      "P1-L46-theory-1",
+      "P1-L46-theory-2",
+      "P1-L46-theory-3"
+    ],
+    "B03": [
+      "P1-L46-theory-1",
+      "P1-L46-theory-2",
+      "P1-L46-theory-3"
+    ],
+    "B04": [
+      "P1-L46-recognise-1",
+      "P1-L46-recognise-2"
+    ],
+    "B05": [
+      "P1-L46-worked-1",
+      "P1-L46-worked-2",
+      "P1-L46-worked-3",
+      "P1-L46-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L46"
+    ],
+    "B07": [
+      "P1-L46-CHECK-REQ-8.1-05-01",
+      "P1-L46-CHECK-REQ-8.1-05-02",
+      "P1-L46-CHECK-REQ-8.1-05-03",
+      "P1-L46-CHECK-REQ-8.1-06-01",
+      "P1-L46-CHECK-REQ-8.1-07-01"
+    ],
+    "B08": [
+      "P1-L46-recognise-1",
+      "P1-L46-recognise-2"
+    ],
+    "B09": [
+      "P1-L46-recall"
+    ],
+    "B10": [
+      "P1-L46-glossary"
+    ],
+    "B11": [
+      "P1-L46-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

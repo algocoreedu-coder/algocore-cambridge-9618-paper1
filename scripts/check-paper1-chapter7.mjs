@@ -51,6 +51,7 @@ check(expected.reduce((sum, entry) => sum + entry.stateCount, 0) === 124, "valid
 
 const catalog = read("content/paper1/catalog.json");
 const manifest = read("content/paper1/release-manifest.json");
+const releaseChapter = Number(manifest?.releaseId?.match(/^paper1-chapter(\d+)-/i)?.[1]);
 const definitions = read("content/paper1/visual-definitions.json");
 const atlasAudit = read("content/paper1/chapter7-atlas-audit.json");
 const visualPlacements = read("content/paper1/visual-placements.json");
@@ -62,18 +63,19 @@ if (catalog) {
   const section = catalog.sections?.find((entry) => entry.id === "7");
   check(section?.status === "available", "catalog: Section 7 must be available");
   localized(section?.title, "catalog Section 7 title"); localized(section?.summary, "catalog Section 7 summary"); localized(section?.question, "catalog Section 7 question");
-  check(catalog.sections?.find((entry) => entry.id === "8")?.status === "planned", "catalog: Section 8 must remain planned");
+  check(catalog.sections?.find((entry) => entry.id === "8")?.status === (releaseChapter >= 8 ? "available" : "planned"), "catalog: Section 8 must be planned through Chapter 7 and available from Chapter 8");
   const strands = catalog.strands?.filter((entry) => entry.sectionId === "7") ?? [];
   check(same(strands.map((entry) => entry.id), ["7.1"]), "catalog: Chapter 7 must expose exactly strand 7.1");
   strands.forEach((entry) => localized(entry.title, `catalog strand ${entry.id}`));
   const topics = catalog.topics?.filter((entry) => entry.sectionId === "7") ?? [];
   check(topics.length === 3, `catalog: expected 3 Chapter 7 topics, got ${topics.length}`);
-  check(catalog.topics?.length === 43, `catalog: cumulative topic count must be 43, got ${catalog.topics?.length ?? 0}`);
+  const chapter7Prefix = catalog.topics?.filter((entry) => Number.isInteger(entry.order) && entry.order <= 43) ?? [];
+  check(chapter7Prefix.length === 43, `catalog: Chapter 1–7 prefix topic count must be 43, got ${chapter7Prefix.length}`);
   unique(catalog.topics?.map((entry) => entry.lessonId) ?? [], "catalog lesson IDs"); unique(catalog.topics?.map((entry) => entry.slug) ?? [], "catalog slugs");
-  const cumulativeObjectives = new Set(catalog.topics?.flatMap((entry) => entry.objectiveIds ?? []) ?? []);
-  const cumulativeRequirements = new Set(catalog.topics?.flatMap((entry) => entry.requirementIds ?? []) ?? []);
-  check(cumulativeObjectives.size === 84, `catalog: cumulative objective count must be 84, got ${cumulativeObjectives.size}`);
-  check(cumulativeRequirements.size === 174, `catalog: cumulative requirement count must be 174, got ${cumulativeRequirements.size}`);
+  const cumulativeObjectives = new Set(chapter7Prefix.flatMap((entry) => entry.objectiveIds ?? []));
+  const cumulativeRequirements = new Set(chapter7Prefix.flatMap((entry) => entry.requirementIds ?? []));
+  check(cumulativeObjectives.size === 84, `catalog: Chapter 1–7 prefix objective count must be 84, got ${cumulativeObjectives.size}`);
+  check(cumulativeRequirements.size === 174, `catalog: Chapter 1–7 prefix requirement count must be 174, got ${cumulativeRequirements.size}`);
   for (const item of expected) {
     const topic = topics.find((entry) => entry.lessonId === item.lessonId);
     check(Boolean(topic), `catalog: ${item.lessonId} missing`); if (!topic) continue;
@@ -89,10 +91,11 @@ if (catalog) {
 }
 
 if (manifest) {
-  check(/^paper1-chapter7-/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 7");
-  check(manifest.lessons?.length === 43, `release manifest must contain 43 lessons, got ${manifest.lessons?.length ?? 0}`);
+  check(/^paper1-chapter(?:[7-9]|[1-9]\d)-/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 7 or a later cumulative candidate");
+  const manifestPrefix = manifest.lessons?.filter((entry) => /^P1-L\d+$/.test(entry.lessonId) && Number(entry.lessonId.slice(4)) <= 43) ?? [];
+  check(manifestPrefix.length === 43, `release manifest Chapter 1–7 prefix must contain 43 lessons, got ${manifestPrefix.length}`);
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lesson IDs");
-  check(manifest.lessons?.every((entry) => entry.state === "available"), "release manifest: all 43 released lessons must be available");
+  check(manifestPrefix.every((entry) => entry.state === "available"), "release manifest: all Chapter 1–7 prefix lessons must remain available");
   for (const item of expected) {
     const released = manifest.lessons?.find((entry) => entry.lessonId === item.lessonId);
     check(released?.slug === item.slug && released?.state === "available", `${item.lessonId}: manifest availability mismatch`);

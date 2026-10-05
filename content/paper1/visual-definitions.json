@@ -1693,5 +1693,493 @@
       "P1-L43-traffic-routing-environmental-conclusion"
     ],
     "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+{
+    "visualId": "VIS-P1-L44",
+    "lessonId": "P1-L44",
+    "title": {
+      "en": "Relational proofbench",
+      "vi": "Bàn chứng minh relational"
+    },
+    "learnerAction": {
+      "en": "Choose a record change and storage model, commit a prediction, then trace duplicates, update propagation and integrity evidence.",
+      "vi": "Chọn record change và storage model, chốt dự đoán rồi trace duplicate, update propagation và integrity evidence."
+    },
+    "observableOutcome": {
+      "en": "Compare file-based duplication and program–data dependence with a controlled relational design while retaining its limits.",
+      "vi": "So sánh duplication cùng program–data dependence của file-based với relational design có kiểm soát, đồng thời giữ rõ limitation."
+    },
+    "modelScope": {
+      "en": "Three original record changes are compared across file-based and relational storage through four deterministic frames.",
+      "vi": "Ba record change gốc được so sánh giữa file-based và relational storage qua bốn frame xác định."
+    },
+    "modelLimitations": {
+      "en": "The model shows declared fixtures only; a relational database reduces redundancy and dependence but does not eliminate bad input, poor design or unauthorised access.",
+      "vi": "Model chỉ thể hiện fixture đã khai báo; relational database giảm redundancy và dependence nhưng không loại bỏ bad input, thiết kế kém hoặc truy cập trái phép."
+    },
+    "sceneIds": [
+      "P1-L44-employee_contact_change-file_based-observe-duplicate-files",
+      "P1-L44-employee_contact_change-file_based-apply-change",
+      "P1-L44-employee_contact_change-file_based-trace-propagation",
+      "P1-L44-employee_contact_change-file_based-compare-integrity",
+      "P1-L44-employee_contact_change-relational-observe-duplicate-files",
+      "P1-L44-employee_contact_change-relational-apply-change",
+      "P1-L44-employee_contact_change-relational-trace-propagation",
+      "P1-L44-employee_contact_change-relational-compare-integrity",
+      "P1-L44-customer_address_change-file_based-observe-duplicate-files",
+      "P1-L44-customer_address_change-file_based-apply-change",
+      "P1-L44-customer_address_change-file_based-trace-propagation",
+      "P1-L44-customer_address_change-file_based-compare-integrity",
+      "P1-L44-customer_address_change-relational-observe-duplicate-files",
+      "P1-L44-customer_address_change-relational-apply-change",
+      "P1-L44-customer_address_change-relational-trace-propagation",
+      "P1-L44-customer_address_change-relational-compare-integrity",
+      "P1-L44-new_cross_function_enquiry-file_based-observe-duplicate-files",
+      "P1-L44-new_cross_function_enquiry-file_based-apply-change",
+      "P1-L44-new_cross_function_enquiry-file_based-trace-propagation",
+      "P1-L44-new_cross_function_enquiry-file_based-compare-integrity",
+      "P1-L44-new_cross_function_enquiry-relational-observe-duplicate-files",
+      "P1-L44-new_cross_function_enquiry-relational-apply-change",
+      "P1-L44-new_cross_function_enquiry-relational-trace-propagation",
+      "P1-L44-new_cross_function_enquiry-relational-compare-integrity"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P198-F8-1",
+      "BOOK-C08-P199-F8-2",
+      "BOOK-C08-P199-T8-1",
+      "BOOK-C08-P200-T8-2",
+      "BOOK-C08-P201-T8-4",
+      "BOOK-C08-P201-T8-5"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L45",
+    "lessonId": "P1-L45",
+    "title": {
+      "en": "Key and relationship integrity lab",
+      "vi": "Lab key và relationship integrity"
+    },
+    "learnerAction": {
+      "en": "Inspect a declared schema, choose a key and record operation, predict validity, then verify cardinality and referential integrity.",
+      "vi": "Inspect schema đã khai báo, chọn key cùng record operation, dự đoán validity rồi verify cardinality và referential integrity."
+    },
+    "observableOutcome": {
+      "en": "Distinguish candidate, primary, secondary and foreign keys; resolve many-to-many relationships and test a finite integrity operation.",
+      "vi": "Phân biệt candidate, primary, secondary và foreign key; resolve relationship many-to-many và test integrity operation hữu hạn."
+    },
+    "modelScope": {
+      "en": "Three original schemas combine with two key choices and two operations across four deterministic frames.",
+      "vi": "Ba schema gốc kết hợp hai key choice cùng hai operation qua bốn frame xác định."
+    },
+    "modelLimitations": {
+      "en": "Key status follows declared domain rules, alternative valid E-R designs need rubric review, and an index does not enforce referential integrity.",
+      "vi": "Key status theo domain rule đã khai báo, E-R design hợp lệ khác cần rubric review và index không enforce referential integrity."
+    },
+    "sceneIds": [
+      "P1-L45-person_passport-valid_minimal-valid_reference-inspect-schema",
+      "P1-L45-person_passport-valid_minimal-valid_reference-declare-key",
+      "P1-L45-person_passport-valid_minimal-valid_reference-apply-operation",
+      "P1-L45-person_passport-valid_minimal-valid_reference-verify-relationship",
+      "P1-L45-person_passport-valid_minimal-violating_operation-inspect-schema",
+      "P1-L45-person_passport-valid_minimal-violating_operation-declare-key",
+      "P1-L45-person_passport-valid_minimal-violating_operation-apply-operation",
+      "P1-L45-person_passport-valid_minimal-violating_operation-verify-relationship",
+      "P1-L45-person_passport-invalid_or_non_minimal-valid_reference-inspect-schema",
+      "P1-L45-person_passport-invalid_or_non_minimal-valid_reference-declare-key",
+      "P1-L45-person_passport-invalid_or_non_minimal-valid_reference-apply-operation",
+      "P1-L45-person_passport-invalid_or_non_minimal-valid_reference-verify-relationship",
+      "P1-L45-person_passport-invalid_or_non_minimal-violating_operation-inspect-schema",
+      "P1-L45-person_passport-invalid_or_non_minimal-violating_operation-declare-key",
+      "P1-L45-person_passport-invalid_or_non_minimal-violating_operation-apply-operation",
+      "P1-L45-person_passport-invalid_or_non_minimal-violating_operation-verify-relationship",
+      "P1-L45-class_student-valid_minimal-valid_reference-inspect-schema",
+      "P1-L45-class_student-valid_minimal-valid_reference-declare-key",
+      "P1-L45-class_student-valid_minimal-valid_reference-apply-operation",
+      "P1-L45-class_student-valid_minimal-valid_reference-verify-relationship",
+      "P1-L45-class_student-valid_minimal-violating_operation-inspect-schema",
+      "P1-L45-class_student-valid_minimal-violating_operation-declare-key",
+      "P1-L45-class_student-valid_minimal-violating_operation-apply-operation",
+      "P1-L45-class_student-valid_minimal-violating_operation-verify-relationship",
+      "P1-L45-class_student-invalid_or_non_minimal-valid_reference-inspect-schema",
+      "P1-L45-class_student-invalid_or_non_minimal-valid_reference-declare-key",
+      "P1-L45-class_student-invalid_or_non_minimal-valid_reference-apply-operation",
+      "P1-L45-class_student-invalid_or_non_minimal-valid_reference-verify-relationship",
+      "P1-L45-class_student-invalid_or_non_minimal-violating_operation-inspect-schema",
+      "P1-L45-class_student-invalid_or_non_minimal-violating_operation-declare-key",
+      "P1-L45-class_student-invalid_or_non_minimal-violating_operation-apply-operation",
+      "P1-L45-class_student-invalid_or_non_minimal-violating_operation-verify-relationship",
+      "P1-L45-student_subject_enrolment-valid_minimal-valid_reference-inspect-schema",
+      "P1-L45-student_subject_enrolment-valid_minimal-valid_reference-declare-key",
+      "P1-L45-student_subject_enrolment-valid_minimal-valid_reference-apply-operation",
+      "P1-L45-student_subject_enrolment-valid_minimal-valid_reference-verify-relationship",
+      "P1-L45-student_subject_enrolment-valid_minimal-violating_operation-inspect-schema",
+      "P1-L45-student_subject_enrolment-valid_minimal-violating_operation-declare-key",
+      "P1-L45-student_subject_enrolment-valid_minimal-violating_operation-apply-operation",
+      "P1-L45-student_subject_enrolment-valid_minimal-violating_operation-verify-relationship",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-valid_reference-inspect-schema",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-valid_reference-declare-key",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-valid_reference-apply-operation",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-valid_reference-verify-relationship",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-violating_operation-inspect-schema",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-violating_operation-declare-key",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-violating_operation-apply-operation",
+      "P1-L45-student_subject_enrolment-invalid_or_non_minimal-violating_operation-verify-relationship"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P199-T8-1",
+      "BOOK-C08-P200-T8-2",
+      "BOOK-C08-P201-T8-4",
+      "BOOK-C08-P201-T8-5",
+      "BOOK-C08-P200-T8-3",
+      "BOOK-C08-P201-T8-6",
+      "BOOK-C08-P202-F8-3",
+      "BOOK-C08-P202-F8-4",
+      "BOOK-C08-P216-EXAM-SCHOOL-SCHEMA"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L46",
+    "lessonId": "P1-L46",
+    "title": {
+      "en": "Dependency-led normalisation ladder",
+      "vi": "Thang normalisation theo dependency"
+    },
+    "learnerAction": {
+      "en": "Choose a dataset and dependency diagnosis, predict the next normal form, then trace 1NF, 2NF, 3NF and fact reconstruction.",
+      "vi": "Chọn dataset cùng dependency diagnosis, dự đoán normal form tiếp theo rồi trace 1NF, 2NF, 3NF và reconstruction của fact."
+    },
+    "observableOutcome": {
+      "en": "Use declared functional dependencies to identify repeating groups, partial dependencies and transitive dependencies while preserving facts and links.",
+      "vi": "Dùng functional dependency đã khai báo để xác định repeating group, partial dependency và transitive dependency trong khi bảo toàn fact cùng link."
+    },
+    "modelScope": {
+      "en": "Three original datasets and two diagnoses form five-frame deterministic normalisation traces.",
+      "vi": "Ba dataset gốc và hai diagnosis tạo trace normalisation xác định gồm năm frame."
+    },
+    "modelLimitations": {
+      "en": "Dependencies are declared rather than inferred from sample rows; alternative valid decompositions require evidence-based rubric review.",
+      "vi": "Dependency được khai báo chứ không suy từ sample row; decomposition hợp lệ khác cần rubric review dựa trên evidence."
+    },
+    "sceneIds": [
+      "P1-L46-club_member_contacts-correct_declared_set-declare-dependencies",
+      "P1-L46-club_member_contacts-correct_declared_set-reach-1nf",
+      "P1-L46-club_member_contacts-correct_declared_set-reach-2nf",
+      "P1-L46-club_member_contacts-correct_declared_set-reach-3nf",
+      "P1-L46-club_member_contacts-correct_declared_set-verify-lossless-links",
+      "P1-L46-club_member_contacts-incorrect_diagnosis-declare-dependencies",
+      "P1-L46-club_member_contacts-incorrect_diagnosis-reach-1nf",
+      "P1-L46-club_member_contacts-incorrect_diagnosis-reach-2nf",
+      "P1-L46-club_member_contacts-incorrect_diagnosis-reach-3nf",
+      "P1-L46-club_member_contacts-incorrect_diagnosis-verify-lossless-links",
+      "P1-L46-order_product_lines-correct_declared_set-declare-dependencies",
+      "P1-L46-order_product_lines-correct_declared_set-reach-1nf",
+      "P1-L46-order_product_lines-correct_declared_set-reach-2nf",
+      "P1-L46-order_product_lines-correct_declared_set-reach-3nf",
+      "P1-L46-order_product_lines-correct_declared_set-verify-lossless-links",
+      "P1-L46-order_product_lines-incorrect_diagnosis-declare-dependencies",
+      "P1-L46-order_product_lines-incorrect_diagnosis-reach-1nf",
+      "P1-L46-order_product_lines-incorrect_diagnosis-reach-2nf",
+      "P1-L46-order_product_lines-incorrect_diagnosis-reach-3nf",
+      "P1-L46-order_product_lines-incorrect_diagnosis-verify-lossless-links",
+      "P1-L46-course_class_teacher-correct_declared_set-declare-dependencies",
+      "P1-L46-course_class_teacher-correct_declared_set-reach-1nf",
+      "P1-L46-course_class_teacher-correct_declared_set-reach-2nf",
+      "P1-L46-course_class_teacher-correct_declared_set-reach-3nf",
+      "P1-L46-course_class_teacher-correct_declared_set-verify-lossless-links",
+      "P1-L46-course_class_teacher-incorrect_diagnosis-declare-dependencies",
+      "P1-L46-course_class_teacher-incorrect_diagnosis-reach-1nf",
+      "P1-L46-course_class_teacher-incorrect_diagnosis-reach-2nf",
+      "P1-L46-course_class_teacher-incorrect_diagnosis-reach-3nf",
+      "P1-L46-course_class_teacher-incorrect_diagnosis-verify-lossless-links"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P203-T8-7",
+      "BOOK-C08-P204-T8-8",
+      "BOOK-C08-P204-T8-9",
+      "BOOK-C08-P205-T8-10",
+      "BOOK-C08-P206-T8-11",
+      "BOOK-C08-P207-T8-12",
+      "BOOK-C08-P215-EXAM-PROGDEV",
+      "BOOK-C08-P215-EXAM-PROGRAMMER-TABLES"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L47",
+    "lessonId": "P1-L47",
+    "title": {
+      "en": "DBMS responsibility router",
+      "vi": "Bộ định tuyến trách nhiệm DBMS"
+    },
+    "learnerAction": {
+      "en": "Choose an authored request, predict the responsible role and tool, then inspect metadata, control and verification evidence.",
+      "vi": "Chọn request đã soạn, dự đoán role cùng tool chịu trách nhiệm rồi inspect metadata, control và verification evidence."
+    },
+    "observableOutcome": {
+      "en": "Separate developer, administrator and authorised-user responsibilities and distinguish schemas, data dictionaries, security, integrity and recovery.",
+      "vi": "Tách trách nhiệm developer, administrator và authorised user, đồng thời phân biệt schema, data dictionary, security, integrity cùng recovery."
+    },
+    "modelScope": {
+      "en": "Six coherent request-role packets are traced through four deterministic frames without a false role/tool Cartesian product.",
+      "vi": "Sáu request-role packet nhất quán được trace qua bốn frame xác định, không tạo tích Descartes role/tool sai."
+    },
+    "modelLimitations": {
+      "en": "The data dictionary stores metadata; backup supports tested recovery but does not by itself guarantee integrity, availability or security.",
+      "vi": "Data dictionary lưu metadata; backup hỗ trợ recovery đã kiểm thử nhưng tự nó không bảo đảm integrity, availability hoặc security."
+    },
+    "sceneIds": [
+      "P1-L47-developer_schema_change-inspect-request",
+      "P1-L47-developer_schema_change-route-responsibility",
+      "P1-L47-developer_schema_change-invoke-dbms-tool",
+      "P1-L47-developer_schema_change-verify-control",
+      "P1-L47-developer_complex_query-inspect-request",
+      "P1-L47-developer_complex_query-route-responsibility",
+      "P1-L47-developer_complex_query-invoke-dbms-tool",
+      "P1-L47-developer_complex_query-verify-control",
+      "P1-L47-dba_role_access-inspect-request",
+      "P1-L47-dba_role_access-route-responsibility",
+      "P1-L47-dba_role_access-invoke-dbms-tool",
+      "P1-L47-dba_role_access-verify-control",
+      "P1-L47-dba_integrity_constraint-inspect-request",
+      "P1-L47-dba_integrity_constraint-route-responsibility",
+      "P1-L47-dba_integrity_constraint-invoke-dbms-tool",
+      "P1-L47-dba_integrity_constraint-verify-control",
+      "P1-L47-dba_backup_restore_test-inspect-request",
+      "P1-L47-dba_backup_restore_test-route-responsibility",
+      "P1-L47-dba_backup_restore_test-invoke-dbms-tool",
+      "P1-L47-dba_backup_restore_test-verify-control",
+      "P1-L47-authorised_analyst_query-inspect-request",
+      "P1-L47-authorised_analyst_query-route-responsibility",
+      "P1-L47-authorised_analyst_query-invoke-dbms-tool",
+      "P1-L47-authorised_analyst_query-verify-control"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P199-F8-2"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L48",
+    "lessonId": "P1-L48",
+    "title": {
+      "en": "SQL role and effect tracer",
+      "vi": "Bộ trace vai trò và effect của SQL"
+    },
+    "learnerAction": {
+      "en": "Read a supplied statement, predict DDL or DML, then trace its target and exact finite-fixture effect.",
+      "vi": "Đọc statement được cho, dự đoán DDL hoặc DML rồi trace target cùng effect chính xác trong finite fixture."
+    },
+    "observableOutcome": {
+      "en": "Classify SQL language roles and distinguish structure, stored-row and query-result effects.",
+      "vi": "Phân loại vai trò ngôn ngữ SQL và phân biệt effect lên structure, stored row cùng query result."
+    },
+    "modelScope": {
+      "en": "Eight original statement fixtures cover the declared 2026 DDL and DML families across four frames.",
+      "vi": "Tám statement fixture gốc cover nhóm DDL và DML được khai báo trong 2026 qua bốn frame."
+    },
+    "modelLimitations": {
+      "en": "The model uses the declared syllabus subset; SQL dialects vary and the displayed stages are not a physical DBMS execution plan.",
+      "vi": "Model dùng subset trong syllabus đã khai báo; SQL dialect khác nhau và stage hiển thị không phải physical execution plan của DBMS."
+    },
+    "sceneIds": [
+      "P1-L48-create_database-read-statement",
+      "P1-L48-create_database-predict-language-role",
+      "P1-L48-create_database-trace-target",
+      "P1-L48-create_database-verify-effect",
+      "P1-L48-create_table-read-statement",
+      "P1-L48-create_table-predict-language-role",
+      "P1-L48-create_table-trace-target",
+      "P1-L48-create_table-verify-effect",
+      "P1-L48-alter_table-read-statement",
+      "P1-L48-alter_table-predict-language-role",
+      "P1-L48-alter_table-trace-target",
+      "P1-L48-alter_table-verify-effect",
+      "P1-L48-select_where-read-statement",
+      "P1-L48-select_where-predict-language-role",
+      "P1-L48-select_where-trace-target",
+      "P1-L48-select_where-verify-effect",
+      "P1-L48-inner_join-read-statement",
+      "P1-L48-inner_join-predict-language-role",
+      "P1-L48-inner_join-trace-target",
+      "P1-L48-inner_join-verify-effect",
+      "P1-L48-insert_row-read-statement",
+      "P1-L48-insert_row-predict-language-role",
+      "P1-L48-insert_row-trace-target",
+      "P1-L48-insert_row-verify-effect",
+      "P1-L48-update_where-read-statement",
+      "P1-L48-update_where-predict-language-role",
+      "P1-L48-update_where-trace-target",
+      "P1-L48-update_where-verify-effect",
+      "P1-L48-delete_where-read-statement",
+      "P1-L48-delete_where-predict-language-role",
+      "P1-L48-delete_where-trace-target",
+      "P1-L48-delete_where-verify-effect"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P212-T8-13",
+      "BOOK-C08-P213-T8-15"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L49",
+    "lessonId": "P1-L49",
+    "title": {
+      "en": "DDL schema builder",
+      "vi": "Bộ dựng DDL schema"
+    },
+    "learnerAction": {
+      "en": "Choose a DDL family and valid or invalid variant, predict the schema change, then inspect syntax and constraint evidence.",
+      "vi": "Chọn DDL family cùng variant valid hoặc invalid, dự đoán schema change rồi inspect syntax và constraint evidence."
+    },
+    "observableOutcome": {
+      "en": "Build and check database, table, type, alteration, primary-key and foreign-key structures in the declared teaching dialect.",
+      "vi": "Build và check database, table, type, alteration, primary key cùng foreign key structure trong teaching dialect đã khai báo."
+    },
+    "modelScope": {
+      "en": "Five DDL families each provide one valid and one invalid original fixture through four frames.",
+      "vi": "Năm DDL family, mỗi family có một fixture valid và một invalid gốc qua bốn frame."
+    },
+    "modelLimitations": {
+      "en": "The checker covers only the finite authored statements and is not a universal vendor parser or SQL-equivalence engine.",
+      "vi": "Checker chỉ cover statement hữu hạn đã soạn, không phải universal vendor parser hoặc SQL-equivalence engine."
+    },
+    "sceneIds": [
+      "P1-L49-create_database-valid-inspect-requirement",
+      "P1-L49-create_database-valid-assemble-ddl",
+      "P1-L49-create_database-valid-apply-schema-change",
+      "P1-L49-create_database-valid-verify-constraint",
+      "P1-L49-create_database-invalid-inspect-requirement",
+      "P1-L49-create_database-invalid-assemble-ddl",
+      "P1-L49-create_database-invalid-apply-schema-change",
+      "P1-L49-create_database-invalid-verify-constraint",
+      "P1-L49-create_table_types-valid-inspect-requirement",
+      "P1-L49-create_table_types-valid-assemble-ddl",
+      "P1-L49-create_table_types-valid-apply-schema-change",
+      "P1-L49-create_table_types-valid-verify-constraint",
+      "P1-L49-create_table_types-invalid-inspect-requirement",
+      "P1-L49-create_table_types-invalid-assemble-ddl",
+      "P1-L49-create_table_types-invalid-apply-schema-change",
+      "P1-L49-create_table_types-invalid-verify-constraint",
+      "P1-L49-alter_table-valid-inspect-requirement",
+      "P1-L49-alter_table-valid-assemble-ddl",
+      "P1-L49-alter_table-valid-apply-schema-change",
+      "P1-L49-alter_table-valid-verify-constraint",
+      "P1-L49-alter_table-invalid-inspect-requirement",
+      "P1-L49-alter_table-invalid-assemble-ddl",
+      "P1-L49-alter_table-invalid-apply-schema-change",
+      "P1-L49-alter_table-invalid-verify-constraint",
+      "P1-L49-primary_key-valid-inspect-requirement",
+      "P1-L49-primary_key-valid-assemble-ddl",
+      "P1-L49-primary_key-valid-apply-schema-change",
+      "P1-L49-primary_key-valid-verify-constraint",
+      "P1-L49-primary_key-invalid-inspect-requirement",
+      "P1-L49-primary_key-invalid-assemble-ddl",
+      "P1-L49-primary_key-invalid-apply-schema-change",
+      "P1-L49-primary_key-invalid-verify-constraint",
+      "P1-L49-foreign_key_references-valid-inspect-requirement",
+      "P1-L49-foreign_key_references-valid-assemble-ddl",
+      "P1-L49-foreign_key_references-valid-apply-schema-change",
+      "P1-L49-foreign_key_references-valid-verify-constraint",
+      "P1-L49-foreign_key_references-invalid-inspect-requirement",
+      "P1-L49-foreign_key_references-invalid-assemble-ddl",
+      "P1-L49-foreign_key_references-invalid-apply-schema-change",
+      "P1-L49-foreign_key_references-invalid-verify-constraint"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P212-T8-13",
+      "BOOK-C08-P212-T8-14",
+      "BOOK-C08-P212-DDL-ANNOTATED"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L50",
+    "lessonId": "P1-L50",
+    "title": {
+      "en": "DML result and row-effect tracer",
+      "vi": "Bộ trace DML result và row effect"
+    },
+    "learnerAction": {
+      "en": "Choose one coherent SQL packet, predict the result or affected rows, then trace parse, source, match, transform and result.",
+      "vi": "Chọn một SQL packet nhất quán, dự đoán result hoặc row bị ảnh hưởng rồi trace parse, source, match, transform và result."
+    },
+    "observableOutcome": {
+      "en": "Verify selection, ordering, grouping, aggregation, two-table joins and maintenance statements against displayed rows.",
+      "vi": "Verify selection, ordering, grouping, aggregation, join hai table và maintenance statement trên row hiển thị."
+    },
+    "modelScope": {
+      "en": "Ten authored statement packets provide exact row and schema effects across five deterministic frames.",
+      "vi": "Mười statement packet đã soạn cung cấp row cùng schema effect chính xác qua năm frame xác định."
+    },
+    "modelLimitations": {
+      "en": "The logical teaching trace is not a physical execution plan; the fixture uses at most two tables, explicit dialect limits and no NULL-dependent result.",
+      "vi": "Logical teaching trace không phải physical execution plan; fixture dùng tối đa hai table, giới hạn dialect rõ ràng và không có result phụ thuộc NULL."
+    },
+    "sceneIds": [
+      "P1-L50-select_from_where-parse",
+      "P1-L50-select_from_where-source",
+      "P1-L50-select_from_where-match",
+      "P1-L50-select_from_where-transform",
+      "P1-L50-select_from_where-result",
+      "P1-L50-order_by-parse",
+      "P1-L50-order_by-source",
+      "P1-L50-order_by-match",
+      "P1-L50-order_by-transform",
+      "P1-L50-order_by-result",
+      "P1-L50-group_by_count-parse",
+      "P1-L50-group_by_count-source",
+      "P1-L50-group_by_count-match",
+      "P1-L50-group_by_count-transform",
+      "P1-L50-group_by_count-result",
+      "P1-L50-sum_avg-parse",
+      "P1-L50-sum_avg-source",
+      "P1-L50-sum_avg-match",
+      "P1-L50-sum_avg-transform",
+      "P1-L50-sum_avg-result",
+      "P1-L50-inner_join_two_tables-parse",
+      "P1-L50-inner_join_two_tables-source",
+      "P1-L50-inner_join_two_tables-match",
+      "P1-L50-inner_join_two_tables-transform",
+      "P1-L50-inner_join_two_tables-result",
+      "P1-L50-insert_full_row-parse",
+      "P1-L50-insert_full_row-source",
+      "P1-L50-insert_full_row-match",
+      "P1-L50-insert_full_row-transform",
+      "P1-L50-insert_full_row-result",
+      "P1-L50-insert_explicit_columns-parse",
+      "P1-L50-insert_explicit_columns-source",
+      "P1-L50-insert_explicit_columns-match",
+      "P1-L50-insert_explicit_columns-transform",
+      "P1-L50-insert_explicit_columns-result",
+      "P1-L50-update_where-parse",
+      "P1-L50-update_where-source",
+      "P1-L50-update_where-match",
+      "P1-L50-update_where-transform",
+      "P1-L50-update_where-result",
+      "P1-L50-delete_where-parse",
+      "P1-L50-delete_where-source",
+      "P1-L50-delete_where-match",
+      "P1-L50-delete_where-transform",
+      "P1-L50-delete_where-result",
+      "P1-L50-delete_without_where-parse",
+      "P1-L50-delete_without_where-source",
+      "P1-L50-delete_without_where-match",
+      "P1-L50-delete_without_where-transform",
+      "P1-L50-delete_without_where-result"
+    ],
+    "atlasIds": [
+      "BOOK-C08-P213-T8-15",
+      "BOOK-C08-P213-SQL-SELECT",
+      "BOOK-C08-P213-SQL-JOIN",
+      "BOOK-C08-P214-SQL-INSERT",
+      "BOOK-C08-P214-SQL-INSERT-COLUMNS",
+      "BOOK-C08-P214-SQL-DELETE",
+      "BOOK-C08-P214-SQL-SUM",
+      "BOOK-C08-P216-EXAM-SCHOOL-SCHEMA"
+    ],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]

@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L49",
+  "slug": "sql-ddl",
+  "sectionId": "8",
+  "strandId": "8.3",
+  "title": {
+    "en": "Creating and modifying table structures with SQL",
+    "vi": "Tạo và sửa table structure bằng SQL"
+  },
+  "question": {
+    "en": "How do you write complete DDL for two related tables using the syllabus data types and constraint forms?",
+    "vi": "Bạn viết DDL hoàn chỉnh cho hai related table bằng syllabus data type và constraint form thế nào?"
+  },
+  "opening": {
+    "en": "Build in dependency order: create the database, create the referenced table, create the referencing table, then alter only a declared structure.",
+    "vi": "Build theo dependency order: create database, create referenced table, create referencing table, rồi alter đúng structure đã nêu."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.3-05",
+      "text": {
+        "en": "Understand and write simple SQL DDL statements.",
+        "vi": "Hiểu và viết simple SQL DDL statement."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.3-05-01",
+    "REQ-8.3-05-02",
+    "REQ-8.3-05-03",
+    "REQ-8.3-05-04",
+    "REQ-8.3-05-05"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L48"
+  ],
+  "theory": [
+    {
+      "id": "P1-L49-theory-1",
+      "title": {
+        "en": "Create complete structures",
+        "vi": "Tạo structure hoàn chỉnh"
+      },
+      "paragraphs": [
+        {
+          "en": "CREATE DATABASE names a database in the declared teaching subset. CREATE TABLE encloses complete field definitions and constraints in parentheses.",
+          "vi": "CREATE DATABASE đặt tên database trong declared teaching subset. CREATE TABLE đặt complete field definition và constraint trong parentheses."
+        },
+        {
+          "en": "Create a referenced table before a table whose foreign key refers to it. Use identifiers without unquoted spaces and terminate each statement clearly.",
+          "vi": "Tạo referenced table trước table có foreign key refer tới nó. Dùng identifier không có unquoted space và terminate từng statement rõ ràng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Completeness includes field names, types, sizes where required, commas, constraints and references.",
+          "vi": "Completeness gồm field name, type, size khi cần, comma, constraint và reference."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L49-theory-2",
+      "title": {
+        "en": "Choose the declared data type",
+        "vi": "Chọn declared data type"
+      },
+      "paragraphs": [
+        {
+          "en": "Use CHARACTER for fixed-length text, VARCHAR(n) for variable-length text up to n characters, BOOLEAN for true/false, INTEGER for whole numbers, REAL for fractional numbers, DATE for dates and TIME for times.",
+          "vi": "Dùng CHARACTER cho fixed-length text, VARCHAR(n) cho variable-length text tối đa n character, BOOLEAN cho true/false, INTEGER cho whole number, REAL cho fractional number, DATE cho date và TIME cho time."
+        },
+        {
+          "en": "Type choice follows the value domain, not its visual appearance. Telephone numbers and codes may need text because arithmetic is meaningless and leading zeros matter.",
+          "vi": "Type choice theo value domain, không theo visual appearance. Phone number và code có thể cần text vì arithmetic vô nghĩa và leading zero quan trọng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "State the teaching dialect boundary: vendors may spell or support types differently.",
+          "vi": "Nêu teaching dialect boundary: vendor có thể spell hoặc support type khác nhau."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L49-theory-3",
+      "title": {
+        "en": "Keys, references and ALTER",
+        "vi": "Key, reference và ALTER"
+      },
+      "paragraphs": [
+        {
+          "en": "Use PRIMARY KEY (field) to identify each row. Use FOREIGN KEY (field) REFERENCES Table (Field) after the referenced table/key exists.",
+          "vi": "Dùng PRIMARY KEY (field) để identify mỗi row. Dùng FOREIGN KEY (field) REFERENCES Table (Field) sau khi referenced table/key tồn tại."
+        },
+        {
+          "en": "ALTER TABLE changes a declared structure, for example ADD Email VARCHAR(80). It does not update an existing row value.",
+          "vi": "ALTER TABLE change declared structure, ví dụ ADD Email VARCHAR(80). Nó không update existing row value."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Foreign-key type/domain must be compatible with the referenced key.",
+          "vi": "Foreign-key type/domain phải compatible với referenced key."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Create a two-table workshop database",
+      "vi": "Tạo two-table workshop database"
+    },
+    "prompt": {
+      "en": "Write a complete script for WorkshopDB. ORGANISER has OrganiserID, a one-character Code and Name. EVENT has EventID, StartsOn, StartsAt, Fee, Online and OrganiserID. Create the referenced table first, then add Venue to EVENT.",
+      "vi": "Viết complete script cho WorkshopDB. ORGANISER có OrganiserID, Code một character và Name. EVENT có EventID, StartsOn, StartsAt, Fee, Online và OrganiserID. Tạo referenced table trước rồi add Venue vào EVENT."
+    },
+    "steps": [
+      {
+        "id": "P1-L49-worked-1",
+        "action": {
+          "en": "Create the database and referenced table.",
+          "vi": "Create database và referenced table."
+        },
+        "result": {
+        "en": "CREATE DATABASE WorkshopDB;\n\nCREATE TABLE ORGANISER (OrganiserID INTEGER, Code CHARACTER, Name VARCHAR(60), PRIMARY KEY (OrganiserID));",
+        "vi": "CREATE DATABASE WorkshopDB;\n\nCREATE TABLE ORGANISER (OrganiserID INTEGER, Code CHARACTER, Name VARCHAR(60), PRIMARY KEY (OrganiserID));"
+        }
+      },
+      {
+        "id": "P1-L49-worked-2",
+        "action": {
+          "en": "Create the referencing table.",
+          "vi": "Create referencing table."
+        },
+        "result": {
+        "en": "CREATE TABLE EVENT (EventID INTEGER, StartsOn DATE, StartsAt TIME, Fee REAL, Online BOOLEAN, OrganiserID INTEGER, PRIMARY KEY (EventID), FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID));",
+        "vi": "CREATE TABLE EVENT (EventID INTEGER, StartsOn DATE, StartsAt TIME, Fee REAL, Online BOOLEAN, OrganiserID INTEGER, PRIMARY KEY (EventID), FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID));"
+        }
+      },
+      {
+        "id": "P1-L49-worked-3",
+        "action": {
+          "en": "Add constraints completely.",
+          "vi": "Add constraint hoàn chỉnh."
+        },
+        "result": {
+        "en": "The complete CREATE TABLE statements declare PRIMARY KEY (OrganiserID), PRIMARY KEY (EventID) and FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID). ORGANISER exists before the reference is created, and both key fields use INTEGER.",
+        "vi": "Các complete CREATE TABLE statement declare PRIMARY KEY (OrganiserID), PRIMARY KEY (EventID) và FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID). ORGANISER tồn tại trước khi reference được tạo và cả hai key field dùng INTEGER."
+        }
+      },
+      {
+        "id": "P1-L49-worked-4",
+        "action": {
+          "en": "Alter one structure.",
+          "vi": "Alter một structure."
+        },
+        "result": {
+          "en": "ALTER TABLE EVENT ADD Venue VARCHAR(80); changes the schema without claiming to populate existing values.",
+          "vi": "ALTER TABLE EVENT ADD Venue VARCHAR(80); change schema mà không claim populate existing value."
+        }
+      }
+    ],
+    "result": {
+      "en": "The four displayed SQL statements form the complete dependency-ordered script. Together the two table definitions expose CHARACTER, VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE and TIME, with corrected parenthesised key syntax; ALTER TABLE changes structure without inventing row values.",
+      "vi": "Bốn SQL statement được hiển thị tạo complete script theo dependency order. Hai table definition dùng CHARACTER, VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE và TIME với parenthesised key syntax đã sửa đúng; ALTER TABLE change structure mà không invent row value."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for missing parentheses, commas, sizes, quotes in identifiers, or a reference to an undefined table/key.",
+        "vi": "Tìm missing parentheses, comma, size, quote trong identifier hoặc reference tới undefined table/key."
+      },
+      {
+        "en": "Choose types from meaning: arithmetic, fixed/variable text, truth value, date or time.",
+        "vi": "Chọn type từ meaning: arithmetic, fixed/variable text, truth value, date hoặc time."
+      }
+    ],
+    "method": [
+      {
+        "en": "List structures in dependency order before writing SQL.",
+        "vi": "List structure theo dependency order trước khi viết SQL."
+      },
+      {
+        "en": "Trace every foreign key to an already declared compatible key.",
+        "vi": "Trace mỗi foreign key tới compatible key đã declare."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Any number-looking value should be INTEGER.",
+          "vi": "Value trông như number luôn nên là INTEGER."
+        },
+        "correction": {
+          "en": "Codes and phone numbers may require text because arithmetic is meaningless and zeros matter.",
+          "vi": "Code và phone number có thể cần text vì arithmetic vô nghĩa và zero quan trọng."
+        }
+      },
+      {
+        "mistake": {
+          "en": "FOREIGN KEY OrganiserID REFERENCES ORGANISER OrganiserID is the required form.",
+          "vi": "FOREIGN KEY OrganiserID REFERENCES ORGANISER OrganiserID là required form."
+        },
+        "correction": {
+          "en": "Use FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID).",
+          "vi": "Dùng FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID)."
+        }
+      },
+      {
+        "mistake": {
+          "en": "ALTER TABLE changes row values.",
+          "vi": "ALTER TABLE change row value."
+        },
+        "correction": {
+          "en": "ALTER TABLE changes structure; UPDATE changes row values.",
+          "vi": "ALTER TABLE change structure; UPDATE change row value."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L49-recognise-1",
+        "title": {
+          "en": "Type a product code",
+          "vi": "Chọn type cho product code"
+        },
+        "setup": {
+          "en": "Codes are exactly eight characters and may start with 0.",
+          "vi": "Code dài đúng tám character và có thể bắt đầu bằng 0."
+        },
+        "prompt": {
+          "en": "Choose a type and justify it.",
+          "vi": "Chọn type và justify."
+        },
+        "expectedEvidence": {
+          "en": "CHARACTER(8) or the project's declared fixed-character form preserves leading zeros; arithmetic is not needed.",
+          "vi": "CHARACTER(8) hoặc fixed-character form đã declare giữ leading zero; không cần arithmetic."
+        }
+      },
+      {
+        "id": "P1-L49-recognise-2",
+        "title": {
+          "en": "Reference direction",
+          "vi": "Reference direction"
+        },
+        "setup": {
+          "en": "EVENT.OrganiserID points to ORGANISER.OrganiserID.",
+          "vi": "EVENT.OrganiserID point tới ORGANISER.OrganiserID."
+        },
+        "prompt": {
+          "en": "Which table must exist first?",
+          "vi": "Table nào phải tồn tại trước?"
+        },
+        "expectedEvidence": {
+          "en": "ORGANISER and its referenced key must be defined before the foreign-key constraint is created.",
+          "vi": "ORGANISER và referenced key phải được define trước khi foreign-key constraint được tạo."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L49-CHECK-REQ-8.3-05-01",
+      "requirementId": "REQ-8.3-05-01",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write CREATE DATABASE ClubDB and a complete CREATE TABLE MEMBER with MemberID INTEGER and Name VARCHAR(60).",
+        "vi": "Viết CREATE DATABASE ClubDB và complete CREATE TABLE MEMBER có MemberID INTEGER cùng Name VARCHAR(60)."
+      },
+      "hint": {
+        "en": "Include punctuation and primary key.",
+        "vi": "Gồm punctuation và primary key."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "CREATE DATABASE ClubDB; CREATE TABLE MEMBER (MemberID INTEGER, Name VARCHAR(60), PRIMARY KEY (MemberID));",
+          "vi": "CREATE DATABASE ClubDB; CREATE TABLE MEMBER (MemberID INTEGER, Name VARCHAR(60), PRIMARY KEY (MemberID));"
+        },
+        "rubric": [
+          {
+            "en": "Require complete statements; accept equivalent formatting in the declared subset.",
+            "vi": "Yêu cầu complete statement; chấp nhận formatting tương đương trong declared subset."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "CREATE-DATABASE",
+        "CREATE-TABLE"
+      ]
+    },
+    {
+      "id": "P1-L49-CHECK-REQ-8.3-05-02",
+      "requirementId": "REQ-8.3-05-02",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Choose types for a fixed two-letter code, variable name, active flag, count, price, date and start time.",
+        "vi": "Chọn type cho fixed two-letter code, variable name, active flag, count, price, date và start time."
+      },
+      "hint": {
+        "en": "Use all seven syllabus types.",
+        "vi": "Dùng cả bảy syllabus type."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "CHARACTER(2), VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE and TIME respectively.",
+          "vi": "Lần lượt là CHARACTER(2), VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE và TIME."
+        },
+        "rubric": [
+          {
+            "en": "Credit type choice only when it matches the stated value domain.",
+            "vi": "Chỉ chấm type choice khi match stated value domain."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "SQL-types",
+        "DDL"
+      ]
+    },
+    {
+      "id": "P1-L49-CHECK-REQ-8.3-05-03",
+      "requirementId": "REQ-8.3-05-03",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write SQL to add Email VARCHAR(80) to MEMBER.",
+        "vi": "Viết SQL add Email VARCHAR(80) vào MEMBER."
+      },
+      "hint": {
+        "en": "Use ALTER TABLE and ADD.",
+        "vi": "Dùng ALTER TABLE và ADD."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "ALTER TABLE MEMBER ADD Email VARCHAR(80);",
+          "vi": "ALTER TABLE MEMBER ADD Email VARCHAR(80);"
+        },
+        "rubric": [
+          {
+            "en": "Accept dialect-equivalent ADD COLUMN only if identified as a dialect variation.",
+            "vi": "Chấp nhận dialect-equivalent ADD COLUMN nếu được identify là dialect variation."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "ALTER-TABLE",
+        "schema"
+      ]
+    },
+    {
+      "id": "P1-L49-CHECK-REQ-8.3-05-04",
+      "requirementId": "REQ-8.3-05-04",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write the table-level primary-key constraint for EventID.",
+        "vi": "Viết table-level primary-key constraint cho EventID."
+      },
+      "hint": {
+        "en": "Use the syllabus parentheses.",
+        "vi": "Dùng syllabus parentheses."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "PRIMARY KEY (EventID)",
+          "vi": "PRIMARY KEY (EventID)"
+        },
+        "rubric": [
+          {
+            "en": "Require the field inside parentheses.",
+            "vi": "Yêu cầu field trong parentheses."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "PRIMARY-KEY",
+        "constraint"
+      ]
+    },
+    {
+      "id": "P1-L49-CHECK-REQ-8.3-05-05",
+      "requirementId": "REQ-8.3-05-05",
+      "kind": "construct",
+      "level": "independent",
+      "prompt": {
+        "en": "Write the foreign-key constraint from EVENT.OrganiserID to ORGANISER.OrganiserID.",
+        "vi": "Viết foreign-key constraint từ EVENT.OrganiserID tới ORGANISER.OrganiserID."
+      },
+      "hint": {
+        "en": "Use both parenthesised field names.",
+        "vi": "Dùng cả hai field name trong parentheses."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID)",
+          "vi": "FOREIGN KEY (OrganiserID) REFERENCES ORGANISER (OrganiserID)"
+        },
+        "rubric": [
+          {
+            "en": "Require a defined referenced table/key and compatible type.",
+            "vi": "Yêu cầu referenced table/key đã define và type compatible."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "FOREIGN-KEY",
+        "REFERENCES"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the DDL build order and seven data types.",
+      "vi": "Nêu DDL build order và bảy data type."
+    },
+    "answerPoints": [
+      {
+        "en": "Database → referenced table/key → referencing table/foreign key → alteration; CHARACTER, VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE, TIME.",
+        "vi": "Database → referenced table/key → referencing table/foreign key → alteration; CHARACTER, VARCHAR(n), BOOLEAN, INTEGER, REAL, DATE, TIME."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "CREATE TABLE",
+      "meaning": {
+        "en": "DDL that defines a new table structure.",
+        "vi": "DDL define table structure mới."
+      }
+    },
+    {
+      "term": "ALTER TABLE",
+      "meaning": {
+        "en": "DDL that changes an existing table structure.",
+        "vi": "DDL change existing table structure."
+      }
+    },
+    {
+      "term": "VARCHAR(n)",
+      "meaning": {
+        "en": "Variable-length text with a declared maximum length.",
+        "vi": "Variable-length text có maximum length đã declare."
+      }
+    },
+    {
+      "term": "PRIMARY KEY",
+      "meaning": {
+        "en": "A constraint selecting the key that uniquely identifies each row.",
+        "vi": "Constraint chọn key uniquely identify mỗi row."
+      }
+    },
+    {
+      "term": "FOREIGN KEY",
+      "meaning": {
+        "en": "A constraint requiring a reference to a key in another relation.",
+        "vi": "Constraint yêu cầu reference tới key trong relation khác."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "sql-foundations",
+    "sql-dml"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.3, printed/PDF pp. 26–27",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L49 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 211–212; PDF pp. 227–228",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L49",
+  "contractCoverage": {
+    "B01": [
+      "P1-L49-objectives"
+    ],
+    "B02": [
+      "P1-L49-theory-1",
+      "P1-L49-theory-2",
+      "P1-L49-theory-3"
+    ],
+    "B03": [
+      "P1-L49-theory-1",
+      "P1-L49-theory-2",
+      "P1-L49-theory-3"
+    ],
+    "B04": [
+      "P1-L49-recognise-1",
+      "P1-L49-recognise-2"
+    ],
+    "B05": [
+      "P1-L49-worked-1",
+      "P1-L49-worked-2",
+      "P1-L49-worked-3",
+      "P1-L49-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L49"
+    ],
+    "B07": [
+      "P1-L49-CHECK-REQ-8.3-05-01",
+      "P1-L49-CHECK-REQ-8.3-05-02",
+      "P1-L49-CHECK-REQ-8.3-05-03",
+      "P1-L49-CHECK-REQ-8.3-05-04",
+      "P1-L49-CHECK-REQ-8.3-05-05"
+    ],
+    "B08": [
+      "P1-L49-recognise-1",
+      "P1-L49-recognise-2"
+    ],
+    "B09": [
+      "P1-L49-recall"
+    ],
+    "B10": [
+      "P1-L49-glossary"
+    ],
+    "B11": [
+      "P1-L49-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

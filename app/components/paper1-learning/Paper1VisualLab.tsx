@@ -10,6 +10,7 @@ import { Chapter4VisualLab } from "./Chapter4VisualLab";
 import { Chapter5VisualLab } from "./Chapter5VisualLab";
 import { Chapter6VisualLab } from "./Chapter6VisualLab";
 import { Chapter7VisualLab, chapter7VisualLessonIds } from "./Chapter7VisualLab";
+import { Chapter8VisualLab, chapter8VisualLessonIds } from "./Chapter8VisualLab";
 import {
   bitmapStorage,
   bitmapRleFixture,
@@ -363,5 +364,6 @@ export function Paper1VisualLab({ lessonId, locale }: { readonly lessonId: strin
   if (chapter5VisualLessonIds.includes(lessonId)) return <Chapter5VisualLab lessonId={lessonId} locale={locale} />;
   if (chapter6VisualLessonIds.includes(lessonId)) return <Chapter6VisualLab lessonId={lessonId} locale={locale} />;
   if (chapter7VisualLessonIds.includes(lessonId)) return <Chapter7VisualLab lessonId={lessonId} locale={locale} />;
+  if (chapter8VisualLessonIds.includes(lessonId)) return <Chapter8VisualLab lessonId={lessonId} locale={locale} />;
   return <p className={styles.unavailable} role="status">{copy(locale, "This Paper 1 visual is not available.", "Minh họa Paper 1 này chưa có.")}</p>;
 }

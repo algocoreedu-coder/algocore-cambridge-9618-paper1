@@ -1,0 +1,583 @@
+{
+  "schemaVersion": 1,
+  "auditId": "P1-C08-ATLAS-AUDIT-2026-10-04",
+  "chapterId": "8",
+  "syllabus": "Cambridge International AS & A Level Computer Science 9618, examination 2026",
+  "authority": {
+    "syllabusLocator": "2026 syllabus, Paper 1 Sections 8.1–8.3, printed/PDF pp25–27",
+    "coursebookLocator": "Coursebook Chapter 8, printed pages 196–216 / PDF pages 212–232",
+    "learnerVisualOrigin": "AlgoCore-original"
+  },
+  "taxonomy": {
+    "allowedDispositions": [
+      "INLINE_UNDERSTAND",
+      "INLINE_OBSERVE_SCENE",
+      "INLINE_WORKED_EXAMPLE",
+      "INLINE_RECOGNISE",
+      "LESSON_REFERENCE_DISCLOSURE",
+      "CHAPTER_ATLAS_ONLY",
+      "DUPLICATE_OR_REMOVE"
+    ],
+    "renderStatuses": [
+      "not-rendered-source-pointer"
+    ],
+    "referenceStatuses": [
+      "mapped-to-original-learner-visual"
+    ]
+  },
+  "copyrightBoundary": {
+    "en": "Every BOOK-C08 ID is a source/audit pointer only. Public tables, diagrams, records, SQL, labels and transitions are AlgoCore-original and do not reproduce coursebook or legacy examination data, wording, values, artwork or layouts.",
+    "vi": "Mỗi BOOK-C08 ID chỉ là pointer nguồn/audit. Bảng, diagram, record, SQL, nhãn và transition trên public runtime là sản phẩm gốc AlgoCore; không sao chép dữ liệu, wording, giá trị, artwork hay bố cục trong coursebook hoặc đề thi cũ."
+  },
+  "inventory": {
+    "totalIds": 29,
+    "uniqueIds": 29,
+    "mappingCount": 37,
+    "lessonMappingCounts": {
+      "P1-L44": 6,
+      "P1-L45": 9,
+      "P1-L46": 8,
+      "P1-L47": 1,
+      "P1-L48": 2,
+      "P1-L49": 3,
+      "P1-L50": 8
+    },
+    "dispositionCounts": {
+      "INLINE_UNDERSTAND": 10,
+      "INLINE_OBSERVE_SCENE": 4,
+      "INLINE_WORKED_EXAMPLE": 9,
+      "INLINE_RECOGNISE": 1,
+      "LESSON_REFERENCE_DISCLOSURE": 2,
+      "CHAPTER_ATLAS_ONLY": 0,
+      "DUPLICATE_OR_REMOVE": 3
+    },
+    "zeroAtlasLessonIds": []
+  },
+  "items": [
+    {
+      "atlasId": "BOOK-C08-P198-F8-1",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L44",
+          "replacementVisualId": "VIS-P1-L44"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 8, Figure 8.1, print p198 / PDF p214",
+      "rationale": {
+        "en": "Separate programs and duplicate files provide the causal starting scene for redundancy, inconsistent updates and data dependence. Rebuild with new organisations and records.",
+        "vi": "Các chương trình/tệp riêng tạo cảnh nguyên nhân cho redundancy, cập nhật không nhất quán và data dependence. Dựng lại bằng tổ chức/dữ liệu mới."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P199-F8-2",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L44",
+          "replacementVisualId": "VIS-P1-L44"
+        },
+        {
+          "lessonId": "P1-L47",
+          "replacementVisualId": "VIS-P1-L47"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Figure 8.2, print p199 / PDF p215",
+      "rationale": {
+        "en": "The shared-database/application structure anchors the relational comparison and later DBMS roles. It must not imply that a DBMS guarantees correctness or security.",
+        "vi": "Cấu trúc ứng dụng dùng chung database là anchor cho so sánh relational và vai trò DBMS; không ngụ ý DBMS bảo đảm correctness/security."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P199-T8-1",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L44",
+          "replacementVisualId": "VIS-P1-L44"
+        },
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.1, print p199 / PDF p215",
+      "rationale": {
+        "en": "Record/field vocabulary is required before relation, tuple and attribute work. Use an original two-dimensional table and labelled text equivalent.",
+        "vi": "Từ vựng record/field cần có trước relation, tuple và attribute. Dùng bảng hai chiều gốc và text equivalent có nhãn."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P200-T8-2",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L44",
+          "replacementVisualId": "VIS-P1-L44"
+        },
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.2, print p200 / PDF p216",
+      "rationale": {
+        "en": "Entity/relation/tuple/attribute equivalences prevent row/column misconceptions. Present as terminology, not as proof that every physical table is the relational model.",
+        "vi": "Entity/relation/tuple/attribute sửa nhầm row/column. Trình bày như từ vựng, không coi mọi bảng vật lý là relational model."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P201-T8-4",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L44",
+          "replacementVisualId": "VIS-P1-L44"
+        },
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.4, print p201 / PDF p217",
+      "rationale": {
+        "en": "A primary-key table is a compact structural anchor. The public example states the domain rule and does not infer key status from a small sample.",
+        "vi": "Bảng primary key là anchor cấu trúc ngắn. Ví dụ public nêu domain rule, không suy key chỉ từ sample nhỏ."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P201-T8-5",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L44",
+          "replacementVisualId": "VIS-P1-L44"
+        },
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.5, print p201 / PDF p217",
+      "rationale": {
+        "en": "The foreign-key column becomes meaningful only when a tagged value can be followed to its parent key. Co-display with T8-6 using original rows.",
+        "vi": "Cột foreign key chỉ rõ nghĩa khi truy vết giá trị có tag tới parent key. Hiển thị cùng T8-6 bằng row mới."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P200-T8-3",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.3, print p200 / PDF p216",
+      "rationale": {
+        "en": "Candidate, primary and secondary-key selection is core vocabulary. Public content states minimal uniqueness and Cambridge's alternative-candidate usage of secondary key.",
+        "vi": "Candidate/primary/secondary key là từ vựng cốt lõi. Nội dung nêu minimal uniqueness và cách Cambridge dùng secondary key."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P201-T8-6",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.6, print p201 / PDF p217",
+      "rationale": {
+        "en": "The parent relation completes the FK→referenced-key evidence and enables a valid/orphan operation. It must be paired with T8-5.",
+        "vi": "Parent relation hoàn chỉnh bằng chứng FK→referenced key và thao tác valid/orphan; phải ghép với T8-5."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P202-F8-3",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 8, Figure 8.3, print p202 / PDF p218",
+      "rationale": {
+        "en": "The two-entity E-R example lets the learner observe how a declared scenario rule becomes a relationship and cardinality. Layout, entities and data are reconstructed.",
+        "vi": "Ví dụ E-R hai entity cho học sinh quan sát cách scenario rule trở thành relationship và cardinality. Bố cục, entity và dữ liệu được dựng mới."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P202-F8-4",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        }
+      ],
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 8, Figure 8.4, print p202 / PDF p218",
+      "rationale": {
+        "en": "Six cardinality/optionality marks are best used as a recognition checkpoint. Consistent standard notation is accepted; optionality is not invented as a new atomic requirement.",
+        "vi": "Sáu ký hiệu cardinality/optionality phù hợp checkpoint nhận biết. Chấp nhận notation chuẩn nhất quán; không biến optionality thành requirement mới."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P203-T8-7",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.7, print p203 / PDF p219",
+      "rationale": {
+        "en": "Repeated teacher/class details provide an optional anomaly precursor after the required ladder. The reconstruction uses unique teacher IDs and new values and does not interrupt the core transformation.",
+        "vi": "Chi tiết teacher/class lặp là anomaly precursor tùy chọn sau ladder bắt buộc. Bản dựng dùng teacher ID duy nhất và giá trị mới, không ngắt core transformation."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P204-T8-8",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.8, print p204 / PDF p220",
+      "rationale": {
+        "en": "The unnormalised repeating-subject structure is the worked ladder's explicit source state with declared business rules. It is rebuilt with original rows and provenance tags.",
+        "vi": "Cấu trúc subject lặp ở UNF là source state rõ ràng của worked ladder với business rule đã khai báo. Dựng bằng row gốc và provenance tag."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P204-T8-9",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.9, print pp204–205 / PDF pp220–221",
+      "rationale": {
+        "en": "The 1NF transformation shows atomic values/no repeating groups and a composite-key consequence. Rebuild with provenance-preserving rows.",
+        "vi": "Chuyển sang 1NF cho thấy giá trị atomic/không repeating group và hệ quả composite key. Dựng bằng row giữ provenance."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P205-T8-10",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.10, print p205 / PDF p221",
+      "rationale": {
+        "en": "The 2NF step is useful only with an explicit composite key and declared partial dependencies. Original relations and values replace the book table.",
+        "vi": "Bước 2NF chỉ có ý nghĩa khi nêu composite key và partial dependency. Dùng relation/value gốc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P206-T8-11",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.11, print pp206–207 / PDF pp222–223",
+      "rationale": {
+        "en": "The 3NF step is reconstructed with corrected unique teacher IDs, consistent subject data and the required `ClassID` link.",
+        "vi": "Bước 3NF được dựng lại với teacher ID duy nhất, subject nhất quán và link `ClassID` cần thiết."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P207-T8-12",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.12, print p207 / PDF p223",
+      "rationale": {
+        "en": "The alternative employee/contact structure is consolidated into a compact normalised-schema summary. It reinforces PK/FK and separated relations without creating a second ladder or gallery card.",
+        "vi": "Cấu trúc employee/contact thay thế được hợp nhất thành summary ngắn về schema đã normalise. Nó củng cố PK/FK và relation tách riêng mà không tạo ladder/card gallery thứ hai."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P212-T8-13",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L48",
+          "replacementVisualId": "VIS-P1-L48"
+        },
+        {
+          "lessonId": "P1-L49",
+          "replacementVisualId": "VIS-P1-L49"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.13, print p212 / PDF p228",
+      "rationale": {
+        "en": "The DDL command/constraint family anchors structure-changing language. Public syntax follows the declared syllabus subset, not the book's defective typography.",
+        "vi": "Nhóm lệnh/constraint DDL làm anchor cho thay đổi structure. Syntax public theo syllabus subset, không theo lỗi typography của sách."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P212-T8-14",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L49",
+          "replacementVisualId": "VIS-P1-L49"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.14, print p212 / PDF p228",
+      "rationale": {
+        "en": "All seven syllabus data types need a compact selection reference tied to field purposes. It is not a vendor compatibility table.",
+        "vi": "Bảy data type trong syllabus cần reference ngắn gắn với mục đích field; không phải bảng tương thích vendor."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P212-DDL-ANNOTATED",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L49",
+          "replacementVisualId": "VIS-P1-L49"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, Annotated DDL, print p212 / PDF p228",
+      "rationale": {
+        "en": "The worked DDL must repair `CHARACTER`, invalid spaced identifiers and FK parentheses, then verify the schema effect.",
+        "vi": "Worked DDL phải sửa `CHARACTER`, identifier có space không hợp lệ và ngoặc FK, rồi kiểm chứng schema effect."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P213-T8-15",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L48",
+          "replacementVisualId": "VIS-P1-L48"
+        },
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Table 8.15, print p213 / PDF p229",
+      "rationale": {
+        "en": "The DML query/maintenance families provide the shared statement-role index before exact row tracing.",
+        "vi": "Nhóm DML query/maintenance tạo index chung về vai trò câu lệnh trước khi trace row chính xác."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P213-SQL-SELECT",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, SELECT example, print p213 / PDF p229",
+      "rationale": {
+        "en": "Rebuild selection/filter/order with original data, quoted literals and an independently computed result.",
+        "vi": "Dựng lại select/filter/order bằng dữ liệu gốc, literal có quote và result được tính độc lập."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P213-SQL-JOIN",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, INNER JOIN example, print p213 / PDF p229",
+      "rationale": {
+        "en": "Correct the selected-column separator and trace at most two tables through `INNER JOIN ... ON ...`.",
+        "vi": "Sửa dấu phân cách selected column và trace tối đa hai bảng qua `INNER JOIN ... ON ...`."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P214-SQL-INSERT",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, INSERT example, print p214 / PDF p230",
+      "rationale": {
+        "en": "Quote string/date literals and show the exact inserted row and after-state on original data.",
+        "vi": "Quote string/date literal và hiển thị chính xác row thêm cùng after-state trên dữ liệu gốc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P214-SQL-INSERT-COLUMNS",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 8, Explicit-column INSERT, print p214 / PDF p230",
+      "rationale": {
+        "en": "Explicit-column INSERT is a useful variant after the required insertion trace; it does not need a second core animation.",
+        "vi": "INSERT ghi rõ cột là biến thể hữu ích sau trace bắt buộc; không cần core animation thứ hai."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P214-SQL-DELETE",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 8, DELETE example, print p214 / PDF p230",
+      "rationale": {
+        "en": "The reconstruction traces affected rows and explicitly shows that no-WHERE deletes all rows while preserving schema.",
+        "vi": "Bản dựng trace row bị ảnh hưởng và chỉ rõ thiếu WHERE xóa mọi row nhưng giữ schema."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P214-SQL-SUM",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 8, Aggregate example, print p214 / PDF p230",
+      "rationale": {
+        "en": "A compact aggregate-family anchor distinguishes `SUM`, `COUNT` and `AVG`; the dynamic packets then compute independently verified inputs/results without introducing NULL semantics.",
+        "vi": "Anchor ngắn về aggregate phân biệt `SUM`, `COUNT`, `AVG`; các packet động sau đó tính input/result đã kiểm chứng mà không thêm NULL semantics."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P215-EXAM-PROGDEV",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 8, Legacy end-of-chapter examination context, print p215 / PDF p231",
+      "rationale": {
+        "en": "The source is an old examination activity and is unnecessary after the original dependency-guided ladder. Keep only as an audit locator.",
+        "vi": "Nguồn là hoạt động đề thi cũ và không cần sau ladder gốc theo dependency. Chỉ giữ locator cho audit."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P215-EXAM-PROGRAMMER-TABLES",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L46",
+          "replacementVisualId": "VIS-P1-L46"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 8, Legacy examination table layout, print p215 / PDF p231",
+      "rationale": {
+        "en": "The answer-table scaffold belongs to the same legacy item and adds no independent teaching evidence.",
+        "vi": "Khung answer table thuộc cùng câu cũ và không thêm bằng chứng dạy học độc lập."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C08-P216-EXAM-SCHOOL-SCHEMA",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L45",
+          "replacementVisualId": "VIS-P1-L45"
+        },
+        {
+          "lessonId": "P1-L50",
+          "replacementVisualId": "VIS-P1-L50"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 8, Legacy 9608 examination schema, print p216 / PDF p232",
+      "rationale": {
+        "en": "The school schema/question supplies assessment-pattern evidence only. Reusing its entities, data or layout would copy the legacy task and blur L45/L50 ownership.",
+        "vi": "Schema/câu hỏi school chỉ cung cấp assessment pattern. Dùng lại entity/data/layout sẽ sao chép bài cũ và làm mờ ownership L45/L50."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L47",
+  "slug": "dbms",
+  "sectionId": "8",
+  "strandId": "8.2",
+  "title": {
+    "en": "DBMS, schemas, dictionaries and tools",
+    "vi": "DBMS, schema, dictionary và tool"
+  },
+  "question": {
+    "en": "How does DBMS software manage structure, integrity, security, queries and recovery without guaranteeing perfect data?",
+    "vi": "DBMS software quản lý structure, integrity, security, query và recovery thế nào mà không bảo đảm perfect data?"
+  },
+  "opening": {
+    "en": "Route each request to the correct DBMS component or control, then state what that mechanism can and cannot guarantee.",
+    "vi": "Route mỗi request tới đúng DBMS component hoặc control rồi nêu mechanism đó có thể và không thể guarantee điều gì."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.2-01",
+      "text": {
+        "en": "Explain DBMS features that address file-based issues.",
+        "vi": "Giải thích DBMS feature xử lý file-based issue."
+      }
+    },
+    {
+      "id": "AC26-8.2-02",
+      "text": {
+        "en": "Explain DBMS software tools used in practice.",
+        "vi": "Giải thích DBMS software tool được dùng trong thực tế."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.2-01-01",
+    "REQ-8.2-01-02",
+    "REQ-8.2-01-03",
+    "REQ-8.2-01-04",
+    "REQ-8.2-02-01",
+    "REQ-8.2-02-02"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L44"
+  ],
+  "theory": [
+    {
+      "id": "P1-L47-theory-1",
+      "title": {
+        "en": "Data management and metadata",
+        "vi": "Data management và metadata"
+      },
+      "paragraphs": [
+        {
+          "en": "A DBMS manages database objects and data. Its data dictionary stores metadata: table and field definitions, data types, keys, relationships, validation rules and indexes.",
+          "vi": "DBMS quản lý database object và data. Data dictionary lưu metadata: định nghĩa table và field, data type, key, relationship, validation rule và index."
+        },
+        {
+          "en": "The dictionary does not store the organisation's business records. A logical schema describes the database structure independently of a particular physical implementation.",
+          "vi": "Dictionary không lưu business record của organisation. Logical schema mô tả database structure độc lập với một physical implementation cụ thể."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Distinguish data, metadata, logical design and physical storage.",
+          "vi": "Phân biệt data, metadata, logical design và physical storage."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L47-theory-2",
+      "title": {
+        "en": "Integrity, security and recovery",
+        "vi": "Integrity, security và recovery"
+      },
+      "paragraphs": [
+        {
+          "en": "Types, validation, constraints and controlled updates support integrity. They can reject an invalid format or unmatched key but cannot prove that every plausible value is factually true.",
+          "vi": "Type, validation, constraint và controlled update hỗ trợ integrity. Chúng có thể reject invalid format hoặc unmatched key nhưng không chứng minh mọi plausible value đều đúng sự thật."
+        },
+        {
+          "en": "Authentication and individual/group access rights control permitted actions. Backup procedures preserve recoverable copies after failure; backup neither prevents the incident nor grants access rights.",
+          "vi": "Authentication và individual/group access right control action được phép. Backup procedure giữ recoverable copy sau failure; backup không ngăn incident và không cấp access right."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Security limits access; backup supports recovery. Treat them as separate controls.",
+          "vi": "Security giới hạn access; backup hỗ trợ recovery. Xem chúng là các control riêng."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L47-theory-3",
+      "title": {
+        "en": "Developer interface and query processor",
+        "vi": "Developer interface và query processor"
+      },
+      "paragraphs": [
+        {
+          "en": "A developer interface lets a developer define, create, inspect and manipulate database objects or submit SQL while building and testing a system.",
+          "vi": "Developer interface cho developer define, create, inspect và manipulate database object hoặc submit SQL khi build và test system."
+        },
+        {
+          "en": "The query processor accepts SQL, interprets or compiles it, executes the command and returns or applies a result. Saying only that it processes queries does not explain its role.",
+          "vi": "Query processor nhận SQL, interpret hoặc compile, execute command rồi return hoặc apply result. Chỉ nói nó process query chưa giải thích đủ vai trò."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Describe input, processing and observable result for each tool.",
+          "vi": "Mô tả input, processing và observable result cho mỗi tool."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Route four requests through a DBMS",
+      "vi": "Route bốn request qua DBMS"
+    },
+    "prompt": {
+      "en": "A library needs a structural change, a query, an access decision and recovery after failure.",
+      "vi": "Library cần structural change, query, access decision và recovery sau failure."
+    },
+    "steps": [
+      {
+        "id": "P1-L47-worked-1",
+        "action": {
+          "en": "Change the schema.",
+          "vi": "Thay đổi schema."
+        },
+        "result": {
+          "en": "A developer uses the developer interface to submit DDL; dictionary metadata records the revised field definition.",
+          "vi": "Developer dùng developer interface submit DDL; dictionary metadata record field definition đã sửa."
+        }
+      },
+      {
+        "id": "P1-L47-worked-2",
+        "action": {
+          "en": "Run a query.",
+          "vi": "Chạy query."
+        },
+        "result": {
+          "en": "The query processor interprets the SELECT, checks named objects and permissions, executes it and returns matching rows.",
+          "vi": "Query processor interpret SELECT, check named object và permission, execute rồi return matching row."
+        }
+      },
+      {
+        "id": "P1-L47-worked-3",
+        "action": {
+          "en": "Control access and integrity.",
+          "vi": "Control access và integrity."
+        },
+        "result": {
+          "en": "A librarian group may update loans while a visitor group may only read catalogue data; constraints reject unmatched foreign keys.",
+          "vi": "Librarian group có thể update loan còn visitor group chỉ read catalogue data; constraint reject unmatched foreign key."
+        }
+      },
+      {
+        "id": "P1-L47-worked-4",
+        "action": {
+          "en": "Recover after failure.",
+          "vi": "Recover sau failure."
+        },
+        "result": {
+          "en": "An authorised restore uses a tested backup. It restores recoverable state but does not prevent the original failure or replace access control.",
+          "vi": "Authorised restore dùng tested backup. Nó restore recoverable state nhưng không ngăn original failure hoặc thay access control."
+        }
+      }
+    ],
+    "result": {
+      "en": "Each request maps to a distinct feature, tool or procedure with a defined boundary.",
+      "vi": "Mỗi request map tới một feature, tool hoặc procedure riêng với boundary xác định."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Ask whether the request concerns metadata, schema, records, permissions, query execution or recovery.",
+        "vi": "Hỏi request liên quan metadata, schema, record, permission, query execution hay recovery."
+      },
+      {
+        "en": "State what enters the component and what result it produces.",
+        "vi": "Nêu input vào component và result nó tạo."
+      }
+    ],
+    "method": [
+      {
+        "en": "Classify the request before naming the DBMS feature.",
+        "vi": "Classify request trước khi gọi tên DBMS feature."
+      },
+      {
+        "en": "Explain the mechanism and one boundary; avoid absolute guarantees.",
+        "vi": "Giải thích mechanism và một boundary; tránh absolute guarantee."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "The data dictionary contains all business records.",
+          "vi": "Data dictionary chứa mọi business record."
+        },
+        "correction": {
+          "en": "It contains metadata about structures and controls.",
+          "vi": "Nó chứa metadata về structure và control."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Validation guarantees factual correctness.",
+          "vi": "Validation guarantee factual correctness."
+        },
+        "correction": {
+          "en": "It enforces declared rules; a plausible but false value can pass.",
+          "vi": "Nó enforce rule đã khai báo; plausible nhưng false value vẫn có thể pass."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Backup is an access-control feature.",
+          "vi": "Backup là access-control feature."
+        },
+        "correction": {
+          "en": "Backup supports recovery; access rights and authentication control access.",
+          "vi": "Backup hỗ trợ recovery; access right và authentication control access."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L47-recognise-1",
+        "title": {
+          "en": "Metadata or data?",
+          "vi": "Metadata hay data?"
+        },
+        "setup": {
+          "en": "The DBMS records that MemberID is INTEGER and the primary key.",
+          "vi": "DBMS record MemberID là INTEGER và primary key."
+        },
+        "prompt": {
+          "en": "Where does this definition belong?",
+          "vi": "Definition này thuộc đâu?"
+        },
+        "expectedEvidence": {
+          "en": "It is metadata in the data dictionary/logical schema, not a member business record.",
+          "vi": "Đó là metadata trong data dictionary/logical schema, không phải member business record."
+        }
+      },
+      {
+        "id": "P1-L47-recognise-2",
+        "title": {
+          "en": "Who executes SQL?",
+          "vi": "Ai execute SQL?"
+        },
+        "setup": {
+          "en": "A SELECT statement arrives from an application.",
+          "vi": "SELECT statement đến từ application."
+        },
+        "prompt": {
+          "en": "Explain the query processor's role.",
+          "vi": "Giải thích role của query processor."
+        },
+        "expectedEvidence": {
+          "en": "It interprets/compiles the SQL, checks objects and permissions, executes it and returns the result.",
+          "vi": "Nó interpret/compile SQL, check object và permission, execute rồi return result."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L47-CHECK-REQ-8.2-01-01",
+      "requirementId": "REQ-8.2-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain what a data dictionary stores and give three examples.",
+        "vi": "Giải thích data dictionary lưu gì và nêu ba example."
+      },
+      "hint": {
+        "en": "Use metadata, not business records.",
+        "vi": "Dùng metadata, không phải business record."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "It stores metadata such as table/field definitions, data types, keys, relationships, validation rules and indexes; it does not store the ordinary business rows themselves.",
+          "vi": "Nó lưu metadata như table/field definition, data type, key, relationship, validation rule và index; nó không lưu ordinary business row."
+        },
+        "rubric": [
+          {
+            "en": "Require metadata plus three valid examples and the data boundary.",
+            "vi": "Yêu cầu metadata, ba example đúng và data boundary."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "DBMS",
+        "data-dictionary"
+      ]
+    },
+    {
+      "id": "P1-L47-CHECK-REQ-8.2-01-02",
+      "requirementId": "REQ-8.2-01-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the purpose of a logical schema in data modelling.",
+        "vi": "Giải thích purpose của logical schema trong data modelling."
+      },
+      "hint": {
+        "en": "Describe structure and independence from physical implementation.",
+        "vi": "Mô tả structure và independence khỏi physical implementation."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A logical schema specifies tables, attributes, keys and relationships as the database design, independently of a particular file layout or storage engine.",
+          "vi": "Logical schema chỉ rõ table, attribute, key và relationship như database design, độc lập với file layout hoặc storage engine cụ thể."
+        },
+        "rubric": [
+          {
+            "en": "Credit both structural model and logical/physical separation.",
+            "vi": "Chấm cả structural model và logical/physical separation."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "schema",
+        "data-modelling"
+      ]
+    },
+    {
+      "id": "P1-L47-CHECK-REQ-8.2-01-03",
+      "requirementId": "REQ-8.2-01-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a DBMS supports integrity and state one limitation.",
+        "vi": "Giải thích DBMS hỗ trợ integrity thế nào và nêu một limitation."
+      },
+      "hint": {
+        "en": "Use definitions, constraints, validation and controlled updates.",
+        "vi": "Dùng definition, constraint, validation và controlled update."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Central definitions, types, validation, key constraints and controlled updates reject many invalid or inconsistent states. They cannot prove that every plausible entered value is factually correct.",
+          "vi": "Central definition, type, validation, key constraint và controlled update reject nhiều invalid hoặc inconsistent state. Chúng không thể chứng minh mọi plausible value nhập vào đều đúng sự thật."
+        },
+        "rubric": [
+          {
+            "en": "Require a mechanism and qualified boundary.",
+            "vi": "Yêu cầu mechanism và qualified boundary."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "integrity",
+        "constraints"
+      ]
+    },
+    {
+      "id": "P1-L47-CHECK-REQ-8.2-01-04",
+      "requirementId": "REQ-8.2-01-04",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare access rights with backup procedures.",
+        "vi": "Compare access right với backup procedure."
+      },
+      "hint": {
+        "en": "State purpose and boundary of each.",
+        "vi": "Nêu purpose và boundary của mỗi loại."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Individual/group access rights limit who can read or change data. Backups preserve recoverable copies after failure. Backup does not prevent unauthorised access, and access control does not by itself restore lost data.",
+          "vi": "Individual/group access right giới hạn ai có thể read hoặc change data. Backup giữ recoverable copy sau failure. Backup không ngăn unauthorised access, còn access control tự nó không restore lost data."
+        },
+        "rubric": [
+          {
+            "en": "Credit both controls and their distinct boundaries.",
+            "vi": "Chấm cả hai control và boundary riêng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "security",
+        "backup"
+      ]
+    },
+    {
+      "id": "P1-L47-CHECK-REQ-8.2-02-01",
+      "requirementId": "REQ-8.2-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a developer interface is used when building a database system.",
+        "vi": "Giải thích developer interface được dùng thế nào khi build database system."
+      },
+      "hint": {
+        "en": "Name actions and an observable result.",
+        "vi": "Nêu action và observable result."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "It lets a developer define, create, inspect and alter database objects or submit SQL during development and testing, then view definitions, diagnostics or results.",
+          "vi": "Nó cho developer define, create, inspect và alter database object hoặc submit SQL khi development và testing, rồi view definition, diagnostic hoặc result."
+        },
+        "rubric": [
+          {
+            "en": "Do not award a vague reference to programming without a database action.",
+            "vi": "Không chấm reference mơ hồ tới programming nếu thiếu database action."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "developer-interface",
+        "DBMS-tools"
+      ]
+    },
+    {
+      "id": "P1-L47-CHECK-REQ-8.2-02-02",
+      "requirementId": "REQ-8.2-02-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain what a query processor does with a submitted SQL command.",
+        "vi": "Giải thích query processor làm gì với SQL command được submit."
+      },
+      "hint": {
+        "en": "Follow input → interpretation/compilation → execution → result.",
+        "vi": "Theo input → interpretation/compilation → execution → result."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "It accepts SQL, interprets or compiles it, checks referenced objects and permissions, executes the command and returns or applies the resulting rows or change.",
+          "vi": "Nó nhận SQL, interpret hoặc compile, check referenced object và permission, execute command rồi return hoặc apply resulting row/change."
+        },
+        "rubric": [
+          {
+            "en": "'Processes queries' alone is insufficient.",
+            "vi": "Chỉ nói 'process query' là chưa đủ."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "query-processor",
+        "SQL"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Match dictionary, logical schema, developer interface, query processor, access rights and backup to their roles.",
+      "vi": "Match dictionary, logical schema, developer interface, query processor, access right và backup với role."
+    },
+    "answerPoints": [
+      {
+        "en": "Dictionary stores metadata; schema models structure; interface supports development; processor executes SQL; rights control access; backup supports recovery.",
+        "vi": "Dictionary lưu metadata; schema model structure; interface hỗ trợ development; processor execute SQL; right control access; backup hỗ trợ recovery."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "DBMS",
+      "meaning": {
+        "en": "Software used to define, manage, secure and query a database.",
+        "vi": "Software dùng để define, manage, secure và query database."
+      }
+    },
+    {
+      "term": "data dictionary",
+      "meaning": {
+        "en": "A store of metadata about database objects and controls.",
+        "vi": "Store metadata về database object và control."
+      }
+    },
+    {
+      "term": "logical schema",
+      "meaning": {
+        "en": "A logical description of tables, attributes, keys and relationships.",
+        "vi": "Mô tả logic của table, attribute, key và relationship."
+      }
+    },
+    {
+      "term": "developer interface",
+      "meaning": {
+        "en": "A tool for developers to define, inspect and manipulate database objects.",
+        "vi": "Tool cho developer define, inspect và manipulate database object."
+      }
+    },
+    {
+      "term": "query processor",
+      "meaning": {
+        "en": "DBMS software that interprets/compiles and executes SQL.",
+        "vi": "DBMS software interpret/compile và execute SQL."
+      }
+    },
+    {
+      "term": "backup",
+      "meaning": {
+        "en": "A recoverable copy made under a recovery procedure.",
+        "vi": "Recoverable copy được tạo theo recovery procedure."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "relational-foundations",
+    "sql-foundations"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.2, printed/PDF p. 26",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L47 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 208–210; PDF pp. 224–226",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L47",
+  "contractCoverage": {
+    "B01": [
+      "P1-L47-objectives"
+    ],
+    "B02": [
+      "P1-L47-theory-1",
+      "P1-L47-theory-2",
+      "P1-L47-theory-3"
+    ],
+    "B03": [
+      "P1-L47-theory-1",
+      "P1-L47-theory-2",
+      "P1-L47-theory-3"
+    ],
+    "B04": [
+      "P1-L47-recognise-1",
+      "P1-L47-recognise-2"
+    ],
+    "B05": [
+      "P1-L47-worked-1",
+      "P1-L47-worked-2",
+      "P1-L47-worked-3",
+      "P1-L47-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L47"
+    ],
+    "B07": [
+      "P1-L47-CHECK-REQ-8.2-01-01",
+      "P1-L47-CHECK-REQ-8.2-01-02",
+      "P1-L47-CHECK-REQ-8.2-01-03",
+      "P1-L47-CHECK-REQ-8.2-01-04",
+      "P1-L47-CHECK-REQ-8.2-02-01",
+      "P1-L47-CHECK-REQ-8.2-02-02"
+    ],
+    "B08": [
+      "P1-L47-recognise-1",
+      "P1-L47-recognise-2"
+    ],
+    "B09": [
+      "P1-L47-recall"
+    ],
+    "B10": [
+      "P1-L47-glossary"
+    ],
+    "B11": [
+      "P1-L47-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

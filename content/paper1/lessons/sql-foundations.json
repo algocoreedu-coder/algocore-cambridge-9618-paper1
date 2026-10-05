@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L48",
+  "slug": "sql-foundations",
+  "sectionId": "8",
+  "strandId": "8.3",
+  "title": {
+    "en": "DDL, DML and reading SQL statements",
+    "vi": "DDL, DML và đọc SQL statement"
+  },
+  "question": {
+    "en": "How can you classify an SQL statement and trace its exact effect on a declared schema or data fixture?",
+    "vi": "Bạn classify SQL statement và trace exact effect trên schema hoặc data fixture đã khai báo thế nào?"
+  },
+  "opening": {
+    "en": "Read SQL from the outside in: identify the command, target, clauses or constraints, then compare the declared before and after state.",
+    "vi": "Đọc SQL từ ngoài vào: identify command, target, clause hoặc constraint, rồi compare before và after state đã khai báo."
+  },
+  "objectives": [
+    {
+      "id": "AC26-8.3-01",
+      "text": {
+        "en": "Understand the purpose of DDL.",
+        "vi": "Hiểu purpose của DDL."
+      }
+    },
+    {
+      "id": "AC26-8.3-02",
+      "text": {
+        "en": "Understand the purpose of DML.",
+        "vi": "Hiểu purpose của DML."
+      }
+    },
+    {
+      "id": "AC26-8.3-03",
+      "text": {
+        "en": "Understand SQL as an industry-standard language.",
+        "vi": "Hiểu SQL là industry-standard language."
+      }
+    },
+    {
+      "id": "AC26-8.3-04",
+      "text": {
+        "en": "Read and interpret SQL statements.",
+        "vi": "Đọc và interpret SQL statement."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-8.3-01-01",
+    "REQ-8.3-02-01",
+    "REQ-8.3-03-01",
+    "REQ-8.3-04-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L47"
+  ],
+  "theory": [
+    {
+      "id": "P1-L48-theory-1",
+      "title": {
+        "en": "DDL defines structure",
+        "vi": "DDL define structure"
+      },
+      "paragraphs": [
+        {
+          "en": "Data Definition Language creates or changes database structure: databases, tables, fields, data types and constraints.",
+          "vi": "Data Definition Language tạo hoặc đổi database structure: database, table, field, data type và constraint."
+        },
+        {
+          "en": "A DDL statement changes schema metadata, not an ordinary business row. CREATE and ALTER are the core Chapter 8 examples.",
+          "vi": "DDL statement đổi schema metadata, không phải ordinary business row. CREATE và ALTER là core example của Chapter 8."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Ask what structural object exists or changes after the statement.",
+          "vi": "Hỏi structural object nào tồn tại hoặc thay đổi sau statement."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L48-theory-2",
+      "title": {
+        "en": "DML queries and maintains data",
+        "vi": "DML query và maintain data"
+      },
+      "paragraphs": [
+        {
+          "en": "Data Manipulation Language retrieves and changes rows stored inside the defined structure. SELECT queries; INSERT, UPDATE and DELETE maintain data.",
+          "vi": "Data Manipulation Language retrieve và change row được lưu trong structure đã define. SELECT query; INSERT, UPDATE và DELETE maintain data."
+        },
+        {
+          "en": "DELETE FROM Table without WHERE removes all rows but leaves the table structure. Deleting a table structure is a different DDL operation outside the required core statement set.",
+          "vi": "DELETE FROM Table không có WHERE remove mọi row nhưng giữ table structure. Xoá table structure là DDL operation khác ngoài required core statement set."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Separate row effects from schema effects.",
+          "vi": "Tách row effect khỏi schema effect."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    },
+    {
+      "id": "P1-L48-theory-3",
+      "title": {
+        "en": "SQL standard and dialect boundary",
+        "vi": "SQL standard và dialect boundary"
+      },
+      "paragraphs": [
+        {
+          "en": "SQL is the industry-standard language used for both DDL and DML. DBMS products implement dialects, so details such as CREATE DATABASE, BOOLEAN and quoting can differ.",
+          "vi": "SQL là industry-standard language dùng cho cả DDL và DML. DBMS product implement dialect khác nhau, nên detail như CREATE DATABASE, BOOLEAN và quoting có thể khác."
+        },
+        {
+          "en": "This course uses a declared teaching subset: CREATE DATABASE/TABLE, ALTER TABLE, the seven syllabus data types, PRIMARY/FOREIGN KEY, SELECT/WHERE/ORDER BY/GROUP BY/INNER JOIN, SUM/COUNT/AVG, INSERT/UPDATE/DELETE. It is not a validator for every SQL dialect.",
+          "vi": "Course này dùng declared teaching subset: CREATE DATABASE/TABLE, ALTER TABLE, bảy syllabus data type, PRIMARY/FOREIGN KEY, SELECT/WHERE/ORDER BY/GROUP BY/INNER JOIN, SUM/COUNT/AVG, INSERT/UPDATE/DELETE. Đây không phải validator cho mọi SQL dialect."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Interpret against the declared schema and fixture, not an imagined database.",
+          "vi": "Interpret dựa trên declared schema và fixture, không dựa trên database tưởng tượng."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C08"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Classify and trace two statements",
+      "vi": "Classify và trace hai statement"
+    },
+    "prompt": {
+      "en": "Read ALTER TABLE MEMBER ADD Email VARCHAR(80); and UPDATE MEMBER SET Active = FALSE WHERE MemberID = 17;",
+      "vi": "Đọc ALTER TABLE MEMBER ADD Email VARCHAR(80); và UPDATE MEMBER SET Active = FALSE WHERE MemberID = 17;"
+    },
+    "steps": [
+      {
+        "id": "P1-L48-worked-1",
+        "action": {
+          "en": "Identify each command class.",
+          "vi": "Xác định command class."
+        },
+        "result": {
+          "en": "ALTER TABLE is DDL; UPDATE is DML.",
+          "vi": "ALTER TABLE là DDL; UPDATE là DML."
+        }
+      },
+      {
+        "id": "P1-L48-worked-2",
+        "action": {
+          "en": "Name the target.",
+          "vi": "Nêu target."
+        },
+        "result": {
+          "en": "Both target MEMBER, but ALTER targets its schema while UPDATE targets matching rows.",
+          "vi": "Cả hai target MEMBER, nhưng ALTER target schema còn UPDATE target matching row."
+        }
+      },
+      {
+        "id": "P1-L48-worked-3",
+        "action": {
+          "en": "Read clauses and values.",
+          "vi": "Đọc clause và value."
+        },
+        "result": {
+          "en": "ADD creates Email with VARCHAR(80); SET assigns BOOLEAN FALSE where MemberID equals 17.",
+          "vi": "ADD tạo Email với VARCHAR(80); SET assign BOOLEAN FALSE nơi MemberID bằng 17."
+        }
+      },
+      {
+        "id": "P1-L48-worked-4",
+        "action": {
+          "en": "State exact effects.",
+          "vi": "Nêu exact effect."
+        },
+        "result": {
+          "en": "The schema gains a field; then only the row whose MemberID is 17 has Active changed. Other rows and the table definition otherwise remain.",
+          "vi": "Schema có thêm field; sau đó chỉ row có MemberID 17 đổi Active. Các row khác và phần còn lại của table definition giữ nguyên."
+        }
+      }
+    ],
+    "result": {
+      "en": "Classification, target and exact before/after effect give a complete interpretation.",
+      "vi": "Classification, target và exact before/after effect tạo complete interpretation."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "CREATE/ALTER usually signal DDL; SELECT/INSERT/UPDATE/DELETE signal DML in this subset.",
+        "vi": "CREATE/ALTER thường signal DDL; SELECT/INSERT/UPDATE/DELETE signal DML trong subset này."
+      },
+      {
+        "en": "Find the command, object, clauses/constraints and affected schema or rows.",
+        "vi": "Tìm command, object, clause/constraint và schema hoặc row bị ảnh hưởng."
+      }
+    ],
+    "method": [
+      {
+        "en": "Classify before interpreting details.",
+        "vi": "Classify trước khi interpret detail."
+      },
+      {
+        "en": "Use a declared before state and state only the proven after/result state.",
+        "vi": "Dùng declared before state và chỉ nêu after/result state đã prove."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "All SQL changes data rows.",
+          "vi": "Mọi SQL đều change data row."
+        },
+        "correction": {
+          "en": "DDL changes structure; DML queries or maintains stored rows.",
+          "vi": "DDL change structure; DML query hoặc maintain stored row."
+        }
+      },
+      {
+        "mistake": {
+          "en": "DELETE FROM MEMBER deletes the table.",
+          "vi": "DELETE FROM MEMBER xoá table."
+        },
+        "correction": {
+          "en": "It deletes all rows and leaves the structure.",
+          "vi": "Nó delete mọi row và giữ structure."
+        }
+      },
+      {
+        "mistake": {
+          "en": "One syntax works identically in every DBMS.",
+          "vi": "Một syntax chạy giống nhau trên mọi DBMS."
+        },
+        "correction": {
+          "en": "SQL is standardised, but vendor dialects differ.",
+          "vi": "SQL được standardise nhưng vendor dialect khác nhau."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L48-recognise-1",
+        "title": {
+          "en": "Structure or data?",
+          "vi": "Structure hay data?"
+        },
+        "setup": {
+          "en": "CREATE TABLE BOOK (...);",
+          "vi": "CREATE TABLE BOOK (...);"
+        },
+        "prompt": {
+          "en": "Classify and state its target.",
+          "vi": "Classify và nêu target."
+        },
+        "expectedEvidence": {
+          "en": "DDL; it creates the BOOK table structure.",
+          "vi": "DDL; nó tạo BOOK table structure."
+        }
+      },
+      {
+        "id": "P1-L48-recognise-2",
+        "title": {
+          "en": "Rows remain structured",
+          "vi": "Row vẫn có structure"
+        },
+        "setup": {
+          "en": "DELETE FROM LOAN;",
+          "vi": "DELETE FROM LOAN;"
+        },
+        "prompt": {
+          "en": "What exactly changes?",
+          "vi": "Điều gì đổi chính xác?"
+        },
+        "expectedEvidence": {
+          "en": "All LOAN rows are removed, but the LOAN table structure remains.",
+          "vi": "Mọi LOAN row bị remove nhưng LOAN table structure vẫn còn."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L48-CHECK-REQ-8.3-01-01",
+      "requirementId": "REQ-8.3-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the purpose of DDL and give two core commands.",
+        "vi": "Giải thích purpose của DDL và nêu hai core command."
+      },
+      "hint": {
+        "en": "Focus on schema structure.",
+        "vi": "Tập trung schema structure."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "DDL creates or modifies database structure/schema; CREATE TABLE defines a new table and ALTER TABLE changes an existing table definition.",
+          "vi": "DDL tạo hoặc modify database structure/schema; CREATE TABLE define table mới và ALTER TABLE change existing table definition."
+        },
+        "rubric": [
+          {
+            "en": "Require structural purpose and two valid commands.",
+            "vi": "Yêu cầu structural purpose và hai command đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "DDL",
+        "schema"
+      ]
+    },
+    {
+      "id": "P1-L48-CHECK-REQ-8.3-02-01",
+      "requirementId": "REQ-8.3-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the purpose of DML and distinguish SELECT from UPDATE.",
+        "vi": "Giải thích purpose của DML và phân biệt SELECT với UPDATE."
+      },
+      "hint": {
+        "en": "Both act on data rows but produce different effects.",
+        "vi": "Cả hai act trên data row nhưng có effect khác."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "DML queries and maintains stored data. SELECT returns matching rows without changing them; UPDATE changes field values in matching rows.",
+          "vi": "DML query và maintain stored data. SELECT return matching row mà không đổi chúng; UPDATE change field value trong matching row."
+        },
+        "rubric": [
+          {
+            "en": "Require data purpose plus query/change distinction.",
+            "vi": "Yêu cầu data purpose và query/change distinction."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "DML",
+        "rows"
+      ]
+    },
+    {
+      "id": "P1-L48-CHECK-REQ-8.3-03-01",
+      "requirementId": "REQ-8.3-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why SQL is described as an industry-standard language and state one boundary.",
+        "vi": "Giải thích vì sao SQL được mô tả là industry-standard language và nêu một boundary."
+      },
+      "hint": {
+        "en": "Mention DDL, DML and dialects.",
+        "vi": "Nêu DDL, DML và dialect."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "SQL is the widely standardised language used to define structures and query/maintain data. DBMS vendors implement dialect differences, so some types, quoting and commands vary.",
+          "vi": "SQL là language được standardise rộng rãi để define structure và query/maintain data. DBMS vendor implement dialect difference nên một số type, quoting và command khác nhau."
+        },
+        "rubric": [
+          {
+            "en": "Do not accept a claim of identical vendor syntax.",
+            "vi": "Không chấp nhận claim mọi vendor syntax giống nhau."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "SQL",
+        "dialect"
+      ]
+    },
+    {
+      "id": "P1-L48-CHECK-REQ-8.3-04-01",
+      "requirementId": "REQ-8.3-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Interpret UPDATE MEMBER SET Active = FALSE WHERE MemberID = 17 against the declared MEMBER table.",
+        "vi": "Interpret UPDATE MEMBER SET Active = FALSE WHERE MemberID = 17 dựa trên MEMBER table đã khai báo."
+      },
+      "hint": {
+        "en": "Class, target, assignment, condition, effect.",
+        "vi": "Class, target, assignment, condition, effect."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "It is DML targeting MEMBER. It sets Active to BOOLEAN FALSE only for the row whose MemberID equals 17; other rows and the table structure are unchanged.",
+          "vi": "Đây là DML target MEMBER. Nó set Active thành BOOLEAN FALSE chỉ cho row có MemberID bằng 17; row khác và table structure không đổi."
+        },
+        "rubric": [
+          {
+            "en": "Require exact condition and affected-row boundary.",
+            "vi": "Yêu cầu exact condition và affected-row boundary."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "SQL-reading",
+        "UPDATE"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Give the DDL/DML decision rule and the four parts of SQL interpretation.",
+      "vi": "Nêu DDL/DML decision rule và bốn phần của SQL interpretation."
+    },
+    "answerPoints": [
+      {
+        "en": "DDL changes structure; DML queries/maintains rows. Identify class, target, clauses/constraints and exact effect.",
+        "vi": "DDL change structure; DML query/maintain row. Identify class, target, clause/constraint và exact effect."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "DDL",
+      "meaning": {
+        "en": "SQL statements that define or modify database structure.",
+        "vi": "SQL statement define hoặc modify database structure."
+      }
+    },
+    {
+      "term": "DML",
+      "meaning": {
+        "en": "SQL statements that query or maintain stored data.",
+        "vi": "SQL statement query hoặc maintain stored data."
+      }
+    },
+    {
+      "term": "SQL",
+      "meaning": {
+        "en": "An industry-standard language for relational database definition and manipulation.",
+        "vi": "Industry-standard language cho relational database definition và manipulation."
+      }
+    },
+    {
+      "term": "dialect",
+      "meaning": {
+        "en": "A DBMS product's variation of standard SQL syntax or behaviour.",
+        "vi": "Variation về standard SQL syntax hoặc behaviour của DBMS product."
+      }
+    },
+    {
+      "term": "statement",
+      "meaning": {
+        "en": "A complete SQL command.",
+        "vi": "Một SQL command hoàn chỉnh."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "dbms",
+    "sql-ddl",
+    "sql-dml"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §8.3, printed/PDF pp. 26–27",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L48 · Chapter 8 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C08",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 8, printed pp. 211–214; PDF pp. 227–230",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L48",
+  "contractCoverage": {
+    "B01": [
+      "P1-L48-objectives"
+    ],
+    "B02": [
+      "P1-L48-theory-1",
+      "P1-L48-theory-2",
+      "P1-L48-theory-3"
+    ],
+    "B03": [
+      "P1-L48-theory-1",
+      "P1-L48-theory-2",
+      "P1-L48-theory-3"
+    ],
+    "B04": [
+      "P1-L48-recognise-1",
+      "P1-L48-recognise-2"
+    ],
+    "B05": [
+      "P1-L48-worked-1",
+      "P1-L48-worked-2",
+      "P1-L48-worked-3",
+      "P1-L48-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L48"
+    ],
+    "B07": [
+      "P1-L48-CHECK-REQ-8.3-01-01",
+      "P1-L48-CHECK-REQ-8.3-02-01",
+      "P1-L48-CHECK-REQ-8.3-03-01",
+      "P1-L48-CHECK-REQ-8.3-04-01"
+    ],
+    "B08": [
+      "P1-L48-recognise-1",
+      "P1-L48-recognise-2"
+    ],
+    "B09": [
+      "P1-L48-recall"
+    ],
+    "B10": [
+      "P1-L48-glossary"
+    ],
+    "B11": [
+      "P1-L48-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}
