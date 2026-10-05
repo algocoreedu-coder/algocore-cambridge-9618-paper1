@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { binaryPlaceValueFixture, bitmapRleFixture, bitmapStorage, characterEncoding, numberRepresentation, pcmStorage, rleComparison, rleDecode, sampleAndQuantiseFixture, signedArithmetic, unitConversion, vectorDrawing } from "../app/lib/paper1/models.ts";
 import { bufferOccupancy, circuitRows, controlDecision, evaluateLogicCircuit, logicGateOutput, logicGateRows, memoryEventOutcome, memoryFacts } from "../app/lib/paper1/chapter3-models.ts";
 import { BRANCH_PROGRAM, LOAD_STORE_PROGRAM, PERFORMANCE_CASES, addressModel, addressingFrames, assembleFixture, branchPacketFrames, cpuPacketFrames, cpuTransferFrames, loadStorePacketFrames, mask8, normalizeBoundedInteger, performanceFrames, shift8 } from "../app/lib/paper1/chapter4-models.ts";
+import { DEFRAG_AFTER, DEFRAG_BEFORE, OS_CASES, TRANSLATOR_CASES, UTILITY_CASES, ideFrames, orderedPredictionChoices, osRequestFrames, translatorFrames, utilityFrames } from "../app/lib/paper1/chapter5-models.ts";
 
 const checks = [];
 const run = (name, test) => { test(); checks.push(name); };
@@ -181,7 +182,115 @@ run("Chapter 4 exhaustive one-hot mask invariants", () => {
   }
 });
 
+run("Chapter 5 OS request cases and bounded emphasis", () => {
+  assert.deepEqual(Object.keys(OS_CASES), ["memory", "file", "security", "hardware", "process"]);
+  for (const caseId of Object.keys(OS_CASES)) {
+    const frames = osRequestFrames(caseId);
+    assert.deepEqual(frames.map((frame) => frame.id), ["request", "classify", "handle", "receipt"]);
+    assert.ok(frames.every((frame) => frame.activeIds.length <= 3));
+    assert.deepEqual(osRequestFrames(caseId), frames, `${caseId} must be deterministic`);
+  }
+  assert.equal(OS_CASES.security.result, "confidentiality-preserved");
+  assert.equal(OS_CASES.hardware.resourceStateAfter, "job-queued-not-physically-printed");
+  assert.equal(OS_CASES.process.limitation, "no-specific-scheduling-algorithm-modelled");
+});
+run("Chapter 5 utility and reusable-code cases", () => {
+  assert.deepEqual(Object.keys(UTILITY_CASES), ["format", "virus", "defragment", "repair", "compression", "backup", "library", "dll"]);
+  for (const caseId of Object.keys(UTILITY_CASES)) {
+    const frames = utilityFrames(caseId);
+    assert.deepEqual(frames.map((frame) => frame.id), ["inspect", "select", "apply", "receipt"]);
+    assert.ok(frames.every((frame) => frame.activeIds.length <= 3));
+    assert.deepEqual(utilityFrames(caseId), frames, `${caseId} must be deterministic`);
+  }
+  assert.deepEqual([...DEFRAG_BEFORE].sort(), [...DEFRAG_AFTER].sort(), "defragmentation must preserve every fixture block");
+  assert.match(UTILITY_CASES.format.invariant, /no-disk-operation/);
+  assert.match(UTILITY_CASES.repair.invariant, /never-invented/);
+  assert.match(UTILITY_CASES.dll.limitation, /missing-incompatible-corrupt-or-malicious/);
+});
+run("Chapter 5 utility choices alter guarded traces", () => {
+  const wrong = utilityFrames("format", "virus-checker", "blank-disk").at(-1).state;
+  assert.equal(wrong.proposedService, "virus-checker");
+  assert.equal(wrong.choiceCorrect, false);
+  assert.equal(wrong.operationExecuted, false);
+  assert.equal(wrong.traceOperation, "stop-before-operation-wrong-service");
+  const usedDisk = utilityFrames("format", "disk-formatter", "used-disk").at(-1).state;
+  assert.equal(usedDisk.outcomeKind, "guarded");
+  assert.equal(usedDisk.traceArtifact, "destructive-format-warning");
+  const outdated = utilityFrames("virus", "virus-checker", "definitions-outdated").at(-1).state;
+  assert.equal(outdated.traceArtifact, "definition-update-required");
+  const falsePositive = utilityFrames("virus", "virus-checker", "false-positive").at(-1).state;
+  assert.equal(falsePositive.traceArtifact, "possible-false-positive-quarantine-record");
+  for (const scenario of ["missing", "incompatible", "corrupt"]) {
+    const dll = utilityFrames("dll", "dynamic-link-library", scenario).at(-1).state;
+    assert.equal(dll.outcomeKind, "failure");
+    assert.equal(dll.operationExecuted, false);
+    assert.match(dll.traceArtifact, new RegExp(`^${scenario}-dll-link-failure$`));
+  }
+});
+run("Chapter 5 prediction order is deterministic and varied", () => {
+  const first = orderedPredictionChoices("correct", ["wrong-a", "wrong-b"], 0);
+  const middle = orderedPredictionChoices("correct", ["wrong-a", "wrong-b"], 1);
+  const last = orderedPredictionChoices("correct", ["wrong-a", "wrong-b"], 2);
+  assert.deepEqual(first, ["correct", "wrong-a", "wrong-b"]);
+  assert.deepEqual(middle, ["wrong-a", "correct", "wrong-b"]);
+  assert.deepEqual(last, ["wrong-a", "wrong-b", "correct"]);
+  assert.deepEqual(orderedPredictionChoices("correct", ["wrong-a", "wrong-b"], 2), last);
+});
+run("Chapter 5 translator pipelines and diagnostic boundaries", () => {
+  assert.deepEqual(Object.keys(TRANSLATOR_CASES), ["assembler", "compiler", "interpreter", "java-hybrid"]);
+  for (const model of Object.keys(TRANSLATOR_CASES)) {
+    const facts = TRANSLATOR_CASES[model];
+    const frames = translatorFrames(model, "none");
+    assert.deepEqual(frames.map((frame) => frame.id), ["source", "translate", "artifact", "execute"]);
+    assert.ok(frames.every((frame) => frame.activeIds.length <= 3));
+    assert.deepEqual(translatorFrames(model, "none"), frames, `${model} must be deterministic`);
+    const diagnostic = translatorFrames(model, "translation-diagnostic");
+    assert.equal(diagnostic[2].state.artifactKind, "no-successful-artifact");
+    assert.equal(diagnostic[2].state.artifactStored, false);
+    const runtimeFailure = translatorFrames(model, "runtime-failure");
+    assert.equal(runtimeFailure[3].state.errorLocation, "runtime-stage");
+    assert.equal(runtimeFailure[3].state.diagnostic, "translation-succeeded-runtime-failure-declared");
+    assert.equal(runtimeFailure[3].state.artifactKind, facts.artifactKind);
+    assert.equal(runtimeFailure[3].state.artifactStored, facts.artifactStored);
+    assert.equal(runtimeFailure[3].state.executionStage, "runtime-failure-before-declared-completion");
+    for (const scenario of ["none", "translation-diagnostic", "runtime-failure", "logic-error"]) {
+      const scenarioFrames = translatorFrames(model, scenario);
+      assert.ok(scenarioFrames.every((frame) => frame.activeIds.length <= 3));
+      assert.deepEqual(translatorFrames(model, scenario), scenarioFrames, `${model}/${scenario} must be deterministic`);
+    }
+  }
+  assert.equal(TRANSLATOR_CASES.interpreter.artifactStored, false);
+  assert.equal(TRANSLATOR_CASES.interpreter.translatorRequiredAtRun, true);
+  assert.equal(TRANSLATOR_CASES.compiler.translatorRequiredAtRun, false);
+  assert.equal(TRANSLATOR_CASES["java-hybrid"].artifactKind, "stored-bytecode-intermediate-code");
+  assert.equal(TRANSLATOR_CASES["java-hybrid"].runtimeComponent, "virtual-machine-interpreter");
+});
+run("Chapter 5 IDE authoring and breakpoint execution boundary", () => {
+  const authoring = ideFrames("authoring", "collapsed");
+  assert.deepEqual(authoring.map((frame) => frame.id), ["cursor", "prompt", "diagnostic", "presentation"]);
+  assert.equal(authoring[2].state.diagnostic, "missing-closing-parenthesis");
+  assert.equal(authoring[3].state.presentationState, "prettyprinted-collapsed");
+  assert.deepEqual(authoring[3].state.sourceLines, authoring[0].state.sourceLines, "collapse must not delete source lines");
+  const debugging = ideFrames("debugging");
+  assert.deepEqual(debugging.map((frame) => frame.id), ["set-breakpoint", "pause-before-line", "single-step-line-three", "single-step-line-four", "report"]);
+  assert.deepEqual(debugging[1].state.variables, { length: 4, width: 3, area: "undefined" });
+  assert.equal(debugging[1].state.toolFeedback, "line-three-has-not-executed");
+  assert.deepEqual(debugging[2].state.variables, { length: 4, width: 3, area: 7 });
+  assert.equal(debugging[2].state.stepsCompleted, 1);
+  assert.equal(debugging[3].state.stepsCompleted, 2);
+  assert.equal(debugging[3].state.programOutput, "7");
+  assert.equal(debugging[3].state.currentLine, 5);
+  assert.equal(debugging[3].state.executionPaused, true);
+  assert.equal(debugging[3].state.toolFeedback, "line-four-executed-paused-before-report");
+  assert.equal(debugging[4].state.watchValue, 12);
+  assert.equal(debugging[4].state.stepsCompleted, 2);
+  assert.equal(debugging[4].state.currentLine, 5);
+  assert.equal(debugging[4].state.executionPaused, false);
+  assert.ok([...authoring, ...debugging].every((frame) => frame.activeIds.length <= 3));
+});
+
 const chapter4Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter4-visual-oracles.json", import.meta.url), "utf8"));
+const chapter5Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter5-visual-oracles.json", import.meta.url), "utf8"));
 const projectDeclared = (actual, declared, path = "fixture") => {
   if (Array.isArray(declared)) {
     assert.ok(Array.isArray(actual), `${path} must be an array`);
@@ -240,4 +349,103 @@ run("Chapter 4 declared visual-oracle parity", () => {
   }
 });
 
-console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapter 4 JSON fixtures compared plus exhaustive shift/mask domains)`);
+run("Chapter 5 declared visual-oracle parity", () => {
+  assert.deepEqual(chapter5Oracles.map((entry) => entry.lessonId), ["P1-L33", "P1-L34", "P1-L35", "P1-L36"]);
+  const oracle = Object.fromEntries(chapter5Oracles.map((entry) => [entry.lessonId, entry]));
+
+  const osOracle = oracle["P1-L33"];
+  assert.deepEqual(Object.keys(osOracle.cases), Object.keys(OS_CASES));
+  for (const [caseId, declared] of Object.entries(osOracle.cases)) {
+    const frames = osRequestFrames(caseId);
+    assert.deepEqual(frames.map((frame) => frame.id), osOracle.frameIds, `P1-L33.${caseId}.frameIds`);
+    const facts = OS_CASES[caseId];
+    assertDeclared({ manager: facts.manager, action: facts.managementAction, result: facts.result, finalState: facts.resourceStateAfter }, declared, `P1-L33.${caseId}`);
+  }
+
+  const utilityOracle = oracle["P1-L34"];
+  assert.deepEqual(Object.keys(utilityOracle.cases), Object.keys(UTILITY_CASES));
+  for (const [caseId, declared] of Object.entries(utilityOracle.cases)) {
+    const frames = utilityFrames(caseId);
+    assert.deepEqual(frames.map((frame) => frame.id), utilityOracle.frameIds, `P1-L34.${caseId}.frameIds`);
+    const facts = UTILITY_CASES[caseId];
+    assertDeclared({ service: facts.selectedService, artifact: facts.artifact, finalState: facts.stateAfter, limit: facts.limitation, invariant: facts.invariant, beforeBlocks: facts.beforeBlocks, afterBlocks: facts.afterBlocks }, declared, `P1-L34.${caseId}`);
+  }
+  const usedDisk = utilityFrames("format", "disk-formatter", "used-disk").at(-1).state;
+  assertDeclared({ operationExecuted: usedDisk.operationExecuted, outcomeKind: usedDisk.outcomeKind, artifact: usedDisk.traceArtifact, finalState: usedDisk.traceStateAfter, warning: usedDisk.warning }, utilityOracle.scenarioBranches.format["used-disk"], "P1-L34.format.used-disk");
+  for (const scenario of ["definitions-outdated", "false-positive"]) {
+    const state = utilityFrames("virus", "virus-checker", scenario).at(-1).state;
+    assertDeclared({ operationExecuted: state.operationExecuted, artifact: state.traceArtifact, finalState: state.traceStateAfter, warning: state.warning }, utilityOracle.scenarioBranches.virus[scenario], `P1-L34.virus.${scenario}`);
+  }
+  for (const scenario of ["missing", "incompatible", "corrupt"]) {
+    const state = utilityFrames("dll", "dynamic-link-library", scenario).at(-1).state;
+    assertDeclared({ operationExecuted: state.operationExecuted, artifact: state.traceArtifact, warning: state.warning }, utilityOracle.scenarioBranches.dll[scenario], `P1-L34.dll.${scenario}`);
+  }
+  const wrongChoice = utilityFrames("format", "virus-checker", "blank-disk").at(-1).state;
+  assert.equal(wrongChoice.traceOperation, utilityOracle.choiceContract.wrongChoiceOutcome, "P1-L34 wrong learner choice must change the trace");
+  assert.equal(wrongChoice.choiceCorrect, false, "P1-L34 wrong learner choice must be classified false");
+
+  const translatorOracle = oracle["P1-L35"];
+  assert.deepEqual(Object.keys(translatorOracle.models), Object.keys(TRANSLATOR_CASES));
+  assert.deepEqual(Object.keys(translatorOracle.errorScenarios), ["none", "translation-diagnostic", "runtime-failure", "logic-error"]);
+  assert.equal(translatorOracle.combinationCount, Object.keys(translatorOracle.models).length * Object.keys(translatorOracle.errorScenarios).length);
+  assert.deepEqual(translatorOracle.errorScenarios, {
+    none: {
+      errorLocation: "none",
+      diagnostic: "no-declared-error",
+      artifactRule: "use-the-selected-model-artifact",
+      executionRule: "use-the-selected-model-execution-stage",
+    },
+    "translation-diagnostic": {
+      errorLocationRule: "current-statement-for-interpreter-otherwise-translation-stage",
+      diagnostic: "translation-diagnostic-reported",
+      artifactKind: "no-successful-artifact",
+      artifactStored: false,
+      executionStage: "execution-blocked-or-paused-at-diagnostic",
+    },
+    "runtime-failure": {
+      errorLocation: "runtime-stage",
+      diagnostic: "translation-succeeded-runtime-failure-declared",
+      artifactRule: "preserve-the-selected-model-artifact-and-its-stored-flag-where-applicable",
+      executionStage: "runtime-failure-before-declared-completion",
+    },
+    "logic-error": {
+      errorLocation: "program-behaviour",
+      diagnostic: "no-translation-diagnostic-logic-error-remains",
+      artifactRule: "preserve-the-selected-model-artifact-and-its-stored-flag",
+      executionRule: "translation-and-execution-can-complete-with-wrong-program-behaviour",
+    },
+  }, "P1-L35 error scenario contract");
+  for (const [model, declared] of Object.entries(translatorOracle.models)) {
+    const facts = TRANSLATOR_CASES[model];
+    assertDeclared(facts, declared, `P1-L35.${model}`);
+    for (const scenario of Object.keys(translatorOracle.errorScenarios)) {
+      const frames = translatorFrames(model, scenario);
+      assert.deepEqual(frames.map((frame) => frame.id), translatorOracle.frameIds, `P1-L35.${model}.${scenario}.frameIds`);
+      const state = frames.at(-1).state;
+      if (scenario === "none") {
+        assertDeclared(state, { errorLocation: "none", diagnostic: "no-declared-error", artifactKind: facts.artifactKind, artifactStored: facts.artifactStored, executionStage: facts.executionStage }, `P1-L35.${model}.none`);
+      } else if (scenario === "translation-diagnostic") {
+        assertDeclared(state, { errorLocation: model === "interpreter" ? "current-statement" : "translation-stage", diagnostic: "translation-diagnostic-reported", artifactKind: "no-successful-artifact", artifactStored: false, executionStage: "execution-blocked-or-paused-at-diagnostic" }, `P1-L35.${model}.translation-diagnostic`);
+      } else if (scenario === "runtime-failure") {
+        assertDeclared(state, { errorLocation: "runtime-stage", diagnostic: "translation-succeeded-runtime-failure-declared", artifactKind: facts.artifactKind, artifactStored: facts.artifactStored, executionStage: "runtime-failure-before-declared-completion" }, `P1-L35.${model}.runtime-failure`);
+      } else {
+        assertDeclared(state, { errorLocation: "program-behaviour", diagnostic: "no-translation-diagnostic-logic-error-remains", artifactKind: facts.artifactKind, artifactStored: facts.artifactStored, executionStage: facts.executionStage }, `P1-L35.${model}.logic-error`);
+      }
+    }
+  }
+
+  const ideOracle = oracle["P1-L36"];
+  assert.deepEqual(Object.keys(ideOracle.packets), ["authoring", "debugging"]);
+  const authoring = ideFrames("authoring", "prettyprint");
+  const collapsed = ideFrames("authoring", "collapsed");
+  const presentationRule = "prettyprint-or-collapse-changes-presentation-without-fixing-or-deleting-code";
+  assert.deepEqual(authoring.at(-1).state.sourceLines, authoring[0].state.sourceLines, "P1-L36 prettyprint preserves source");
+  assert.deepEqual(collapsed.at(-1).state.sourceLines, collapsed[0].state.sourceLines, "P1-L36 collapse preserves source");
+  assert.notEqual(authoring.at(-1).state.presentationState, collapsed.at(-1).state.presentationState, "P1-L36 presentation controls remain distinct");
+  const authoringActual = authoring.map((frame) => ({ id: frame.id, ...frame.state, ...(frame.id === "presentation" ? { presentationRule } : {}) }));
+  assertDeclared(authoringActual, ideOracle.packets.authoring, "P1-L36.authoring");
+  const debuggingActual = ideFrames("debugging").map((frame) => ({ id: frame.id, ...frame.state }));
+  assertDeclared(debuggingActual, ideOracle.packets.debugging, "P1-L36.debugging");
+});
+
+console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapter 4 and Chapter 5 JSON fixtures compared plus exhaustive shift/mask domains; Chapter 5 finite OS, utility, translator and IDE domains checked)`);

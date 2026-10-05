@@ -5,10 +5,10 @@ const username = process.env.STUDENT_LOGIN_USERNAME ?? process.env.ALGOCORE_STUD
 const password = process.env.STUDENT_LOGIN_PASSWORD ?? process.env.ALGOCORE_STUDENT_PASSWORD;
 if (!username || !password) throw new Error("Paper 1 HTTP check requires local test credentials; values are never printed.");
 const catalog = JSON.parse(fs.readFileSync("content/paper1/catalog.json", "utf8"));
-const chapter4Section = catalog.sections.find((section) => section.id === "4");
-const chapter4Topics = catalog.topics.filter((topic) => topic.sectionId === "4");
-if (chapter4Section?.status !== "available" || chapter4Topics.length !== 8) throw new Error(`Chapter 4 HTTP fixture mismatch: status=${chapter4Section?.status ?? "missing"}, topics=${chapter4Topics.length}`);
-if (!catalog.sections.filter((section) => ["5", "6", "7", "8"].includes(section.id)).every((section) => section.status === "planned")) throw new Error("Sections 5–8 must remain planned during the Chapter 4 release");
+const chapter5Section = catalog.sections.find((section) => section.id === "5");
+const chapter5Topics = catalog.topics.filter((topic) => topic.sectionId === "5");
+if (chapter5Section?.status !== "available" || chapter5Topics.length !== 4) throw new Error(`Chapter 5 HTTP fixture mismatch: status=${chapter5Section?.status ?? "missing"}, topics=${chapter5Topics.length}`);
+if (!catalog.sections.filter((section) => ["6", "7", "8"].includes(section.id)).every((section) => section.status === "planned")) throw new Error("Sections 6–8 must remain planned during the Chapter 5 release");
 const practiceChapters = catalog.sections.filter((section) => section.status === "available").map((section) => {
   const practicePath = `content/paper1/practice/chapter-${section.id}.json`;
   if (!fs.existsSync(practicePath)) throw new Error(`Available Section ${section.id} has no chapter-practice payload`);
@@ -52,4 +52,6 @@ if (unknownPractice.status !== 404) failures.push(`/paper-1/practice/99: expecte
 const retired = await fetch(`${baseUrl}/paper-1/atlas?lang=en&visual=BOOK-C03-P082-RGB-PIXEL`, { headers: { cookie } });
 if (retired.status !== 404) failures.push(`/paper-1/atlas retired visual: expected 404, got ${retired.status}`);
 if (failures.length) { console.error(`Paper 1 HTTP routes: FAIL (${failures.length})`); failures.forEach((entry) => console.error(`- ${entry}`)); process.exit(1); }
-console.log(`Paper 1 HTTP routes: PASS (${2 * (3 + practiceChapters.length + catalog.sections.length + catalog.topics.length)} explicit EN/VI pages + English default route; Atlas + legacy practice + ${practiceChapters.length} chapter practice routes; Chapter 4 Section/P1-CP04/8 lesson routes included; ${catalog.topics.length}/${catalog.topics.length} topics with six anchors and visual IDs; unknown topic/practice and retired Atlas item 404)`);
+const explicitLocalizedPages = 2 * (3 + practiceChapters.length + catalog.sections.length + catalog.topics.length);
+if (explicitLocalizedPages !== 104) throw new Error(`Chapter 5 route count mismatch: expected 104 explicit EN/VI pages, got ${explicitLocalizedPages}`);
+console.log(`Paper 1 HTTP routes: PASS (${explicitLocalizedPages} explicit EN/VI pages + English default route; Atlas + legacy practice + ${practiceChapters.length} chapter practice routes; Chapter 5 Section/P1-CP05/4 lesson routes included; ${catalog.topics.length}/${catalog.topics.length} topics with six anchors and visual IDs; unknown topic/practice and retired Atlas item 404)`);

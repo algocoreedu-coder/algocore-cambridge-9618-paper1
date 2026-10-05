@@ -1,0 +1,294 @@
+[
+  {
+    "lessonId": "P1-L33",
+    "visualId": "VIS-P1-L33",
+    "frameIds": ["request", "classify", "handle", "receipt"],
+    "cases": {
+      "memory": {
+        "manager": "memory-management",
+        "action": "allocate-and-protect-blocks",
+        "result": "memory-allocated",
+        "finalState": "three-blocks-owned-no-overlap"
+      },
+      "file": {
+        "manager": "file-management",
+        "action": "check-name-path-rights-and-update-directory",
+        "result": "file-saved",
+        "finalState": "report-entry-and-storage-metadata-recorded"
+      },
+      "security": {
+        "manager": "security-management",
+        "action": "check-identity-and-access-rights",
+        "result": "confidentiality-preserved",
+        "finalState": "access-denied-file-unchanged"
+      },
+      "hardware": {
+        "manager": "hardware-management",
+        "action": "use-driver-then-queue-and-buffer-job",
+        "result": "print-request-accepted",
+        "finalState": "job-queued-not-physically-printed"
+      },
+      "process": {
+        "manager": "process-management",
+        "action": "record-wait-and-keep-process-states-coherent",
+        "result": "resource-conflict-managed",
+        "finalState": "process-b-waiting-request-recorded"
+      }
+    },
+    "invariants": [
+      "the operating system classifies each request before applying the selected management action",
+      "a queued print request is never presented as physical printing",
+      "saving a file is never presented as creating a backup",
+      "each frame emphasizes at most three semantic objects"
+    ]
+  },
+  {
+    "lessonId": "P1-L34",
+    "visualId": "VIS-P1-L34",
+    "frameIds": ["inspect", "select", "apply", "receipt"],
+    "choiceContract": {
+      "fields": ["proposedService", "choiceCorrect"],
+      "wrongChoiceOutcome": "stop-before-operation-wrong-service",
+      "choiceMustChangeTrace": true
+    },
+    "scenarioBranches": {
+      "format": {
+        "used-disk": {
+          "operationExecuted": false,
+          "outcomeKind": "guarded",
+          "artifact": "destructive-format-warning",
+          "finalState": "used-disk-unchanged",
+          "warning": "formatting-used-disk-may-destroy-existing-data"
+        }
+      },
+      "virus": {
+        "definitions-outdated": {
+          "operationExecuted": false,
+          "artifact": "definition-update-required",
+          "warning": "outdated-definitions-can-miss-new-malware"
+        },
+        "false-positive": {
+          "operationExecuted": true,
+          "artifact": "possible-false-positive-quarantine-record",
+          "finalState": "file-isolated-pending-review",
+          "warning": "signature-match-does-not-prove-malware"
+        }
+      },
+      "dll": {
+        "missing": { "operationExecuted": false, "artifact": "missing-dll-link-failure", "warning": "missing-dll-must-not-be-loaded" },
+        "incompatible": { "operationExecuted": false, "artifact": "incompatible-dll-link-failure", "warning": "incompatible-dll-must-not-be-loaded" },
+        "corrupt": { "operationExecuted": false, "artifact": "corrupt-dll-link-failure", "warning": "corrupt-dll-must-not-be-loaded" }
+      }
+    },
+    "cases": {
+      "format": {
+        "service": "disk-formatter",
+        "artifact": "partition-directory-and-toc-map",
+        "finalState": "fixture-recognised-for-file-storage",
+        "limit": "formatting-a-used-disk-may-destroy-data"
+      },
+      "virus": {
+        "service": "virus-checker",
+        "artifact": "quarantine-record-for-review",
+        "finalState": "file-isolated-not-deleted-automatically",
+        "limit": "false-positives-and-undetected-malware-remain-possible"
+      },
+      "defragment": {
+        "service": "defragmentation-software",
+        "beforeBlocks": ["A", "A", "·", "B", "B", "·", "A", "·", "C", "C", "A", "·"],
+        "afterBlocks": ["A", "A", "A", "A", "B", "B", "C", "C", "·", "·", "·", "·"],
+        "invariant": "file-counts-a4-b2-c2-free4-preserved",
+        "limit": "ssd-has-no-mechanical-head-benefit"
+      },
+      "repair": {
+        "service": "disk-analysis-and-repair",
+        "artifact": "usage-report-and-remap-record",
+        "finalState": "bad-sector-avoided-future-writes",
+        "limit": "repair-cannot-guarantee-corrupted-data-recovery"
+      },
+      "compression": {
+        "service": "file-compression",
+        "artifact": "seven-block-compressed-fixture",
+        "invariant": "fixture-round-trip-equals-original",
+        "limit": "displayed-ratio-is-not-universal"
+      },
+      "backup": {
+        "service": "backup-and-restore",
+        "artifact": "restored-copy-of-v2",
+        "finalState": "selected-v2-content-is-current",
+        "limit": "backup-supports-recovery-it-does-not-prevent-deletion"
+      },
+      "library": {
+        "service": "program-library",
+        "artifact": "linked-call-to-reusable-routine",
+        "finalState": "program-reuses-library-behaviour",
+        "limit": "tested-does-not-mean-error-free"
+      },
+      "dll": {
+        "service": "dynamic-link-library",
+        "artifact": "runtime-linked-shared-routine",
+        "invariant": "main-program-and-dll-remain-separate-files",
+        "limit": "missing-incompatible-corrupt-or-malicious-dll-can-fail"
+      }
+    },
+    "invariants": [
+      "all operations apply only to declared finite fixtures and never to the learner device or file system",
+      "defragmentation preserves A4, B2, C2 and four free blocks",
+      "the displayed compression result belongs only to the reviewed fixture",
+      "each frame emphasizes at most three semantic objects"
+    ]
+  },
+  {
+    "lessonId": "P1-L35",
+    "visualId": "VIS-P1-L35",
+    "frameIds": ["source", "translate", "artifact", "execute"],
+    "models": {
+      "assembler": {
+        "sourceLanguage": "assembly-language",
+        "artifactKind": "target-machine-object-program",
+        "artifactStored": true,
+        "runtimeComponent": "compatible-loader-and-processor",
+        "translatorRequiredAtRun": false
+      },
+      "compiler": {
+        "sourceLanguage": "high-level-language",
+        "artifactKind": "stored-object-or-executable-program",
+        "artifactStored": true,
+        "runtimeComponent": "compatible-loader-and-runtime",
+        "translatorRequiredAtRun": false
+      },
+      "interpreter": {
+        "sourceLanguage": "high-level-language",
+        "artifactKind": "no-standalone-object-program",
+        "artifactStored": false,
+        "runtimeComponent": "interpreter-with-source-program",
+        "translatorRequiredAtRun": true
+      },
+      "java-hybrid": {
+        "sourceLanguage": "java-high-level-source",
+        "artifactKind": "stored-bytecode-intermediate-code",
+        "artifactStored": true,
+        "runtimeComponent": "virtual-machine-interpreter",
+        "translatorRequiredAtRun": true
+      }
+    },
+    "errorScenarios": {
+      "none": {
+        "errorLocation": "none",
+        "diagnostic": "no-declared-error",
+        "artifactRule": "use-the-selected-model-artifact",
+        "executionRule": "use-the-selected-model-execution-stage"
+      },
+      "translation-diagnostic": {
+        "errorLocationRule": "current-statement-for-interpreter-otherwise-translation-stage",
+        "diagnostic": "translation-diagnostic-reported",
+        "artifactKind": "no-successful-artifact",
+        "artifactStored": false,
+        "executionStage": "execution-blocked-or-paused-at-diagnostic"
+      },
+      "runtime-failure": {
+        "errorLocation": "runtime-stage",
+        "diagnostic": "translation-succeeded-runtime-failure-declared",
+        "artifactRule": "preserve-the-selected-model-artifact-and-its-stored-flag-where-applicable",
+        "executionStage": "runtime-failure-before-declared-completion"
+      },
+      "logic-error": {
+        "errorLocation": "program-behaviour",
+        "diagnostic": "no-translation-diagnostic-logic-error-remains",
+        "artifactRule": "preserve-the-selected-model-artifact-and-its-stored-flag",
+        "executionRule": "translation-and-execution-can-complete-with-wrong-program-behaviour"
+      }
+    },
+    "combinationCount": 16,
+    "invariants": [
+      "source, translation, artifact and execution are separate stages",
+      "translation-diagnostic, runtime-failure and logic-error are distinct failure locations",
+      "a runtime failure follows successful translation and retains the artifact where the selected model has one",
+      "Java bytecode is intermediate code interpreted by a virtual machine and is never labelled native machine code",
+      "an interpreter does not produce a standalone stored object program",
+      "each frame emphasizes at most three semantic objects"
+    ]
+  },
+  {
+    "lessonId": "P1-L36",
+    "visualId": "VIS-P1-L36",
+    "packets": {
+      "authoring": [
+        {
+          "id": "cursor",
+          "currentLine": 3,
+          "diagnostic": "not-checked",
+          "toolFeedback": "cursor-after-incomplete-token-pri"
+        },
+        {
+          "id": "prompt",
+          "currentLine": 3,
+          "diagnostic": "not-checked",
+          "toolFeedback": "context-prompt-offers-print"
+        },
+        {
+          "id": "diagnostic",
+          "currentLine": 3,
+          "diagnostic": "missing-closing-parenthesis",
+          "toolFeedback": "dynamic-syntax-check-before-execution"
+        },
+        {
+          "id": "presentation",
+          "currentLine": 3,
+          "diagnostic": "missing-closing-parenthesis-remains",
+          "presentationRule": "prettyprint-or-collapse-changes-presentation-without-fixing-or-deleting-code"
+        }
+      ],
+      "debugging": [
+        {
+          "id": "set-breakpoint",
+          "breakpointLine": 3,
+          "executionPaused": false,
+          "toolFeedback": "breakpoint-set-before-line-three"
+        },
+        {
+          "id": "pause-before-line",
+          "currentLine": 3,
+          "executionPaused": true,
+          "variables": { "length": 4, "width": 3, "area": "undefined" },
+          "toolFeedback": "line-three-has-not-executed"
+        },
+        {
+          "id": "single-step-line-three",
+          "currentLine": 4,
+          "executionPaused": true,
+          "variables": { "length": 4, "width": 3, "area": 7 },
+          "stepsCompleted": 1,
+          "toolFeedback": "exactly-line-three-executed"
+        },
+        {
+          "id": "single-step-line-four",
+          "currentLine": 5,
+          "executionPaused": true,
+          "variables": { "length": 4, "width": 3, "area": 7 },
+          "stepsCompleted": 2,
+          "programOutput": "7",
+          "toolFeedback": "line-four-executed-paused-before-report"
+        },
+        {
+          "id": "report",
+          "currentLine": 5,
+          "executionPaused": false,
+          "variables": { "length": 4, "width": 3, "area": 7 },
+          "watchExpression": "length * width",
+          "watchValue": 12,
+          "stepsCompleted": 2,
+          "programOutput": "7",
+          "toolFeedback": "watch-value-exposes-wrong-operator"
+        }
+      ]
+    },
+    "invariants": [
+      "the breakpoint pauses before line three executes",
+      "area is undefined at the pause, equals seven after the first step, and line four is executed by a second single-step before the report",
+      "the watch expression equals twelve and exposes the deliberate plus-versus-multiply logic error",
+      "prettyprinting or collapsing a block changes presentation and never silently repairs source code",
+      "each frame emphasizes at most three semantic objects"
+    ]
+  }
+]

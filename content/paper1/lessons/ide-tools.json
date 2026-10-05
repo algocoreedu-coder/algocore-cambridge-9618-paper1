@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L36",
+  "slug": "ide-tools",
+  "sectionId": "5",
+  "strandId": "5.2",
+  "title": {
+    "en": "IDE features and debugging tools",
+    "vi": "IDE feature và debugging tool"
+  },
+  "question": {
+    "en": "Which IDE feature supports coding, syntax, presentation or debugging at this moment?",
+    "vi": "IDE feature nào hỗ trợ coding, syntax, presentation hoặc debugging ở thời điểm này?"
+  },
+  "opening": {
+    "en": "An IDE combines tools, but each feature solves a different problem. The learner must connect the feature to a visible action and outcome.",
+    "vi": "IDE kết hợp nhiều tool nhưng mỗi feature giải quyết problem khác nhau. Học sinh phải liên hệ feature với action và outcome quan sát được."
+  },
+  "objectives": [
+    {
+      "id": "AC26-5.2-04",
+      "text": {
+        "en": "Describe coding, initial error-detection, presentation and debugging features found in a typical IDE.",
+        "vi": "Mô tả coding, initial error-detection, presentation và debugging feature trong typical IDE."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-5.2-04-01",
+    "REQ-5.2-04-02",
+    "REQ-5.2-04-03",
+    "REQ-5.2-04-04"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L36-theory-1",
+      "title": {
+        "en": "Coding prompts and early syntax checks",
+        "vi": "Coding prompt và early syntax check"
+      },
+      "paragraphs": [
+        {
+          "en": "Context-sensitive prompts suggest identifiers, reserved words or parameters valid at the current cursor position. They reduce typing and recall effort but do not choose the intended algorithm.",
+          "vi": "Context-sensitive prompt suggest identifier, reserved word hoặc parameter hợp lệ tại cursor position hiện tại. Chúng giảm typing và recall effort nhưng không chọn intended algorithm."
+        },
+        {
+          "en": "Dynamic syntax checking flags possible grammar errors while code is edited, before or without a full run. It cannot establish that the program's logic or output is correct.",
+          "vi": "Dynamic syntax checking flag possible grammar error khi code đang edit, trước hoặc không cần full run. Nó không thể xác nhận logic hoặc output của program đúng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Syntax concerns valid form; logic concerns whether the program solves the problem.",
+          "vi": "Syntax liên quan valid form; logic liên quan program có giải problem hay không."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L36-theory-2",
+      "title": {
+        "en": "Presentation reveals structure",
+        "vi": "Presentation làm rõ structure"
+      },
+      "paragraphs": [
+        {
+          "en": "Prettyprint uses indentation, spacing and colour conventions to expose program structure. Expand/collapse controls hide or reveal complete blocks without changing their code.",
+          "vi": "Prettyprint dùng indentation, spacing và colour convention để làm rõ program structure. Expand/collapse control ẩn hoặc hiện complete block mà không đổi code."
+        },
+        {
+          "en": "Presentation features help a programmer navigate large source files. They are distinct from error detection and debugging.",
+          "vi": "Presentation feature giúp programmer navigate source file lớn. Chúng khác error detection và debugging."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A presentation answer must name how readability or focus changes.",
+          "vi": "Câu trả lời presentation phải nêu readability hoặc focus thay đổi ra sao."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L36-theory-3",
+      "title": {
+        "en": "Debug by observing state",
+        "vi": "Debug bằng cách quan sát state"
+      },
+      "paragraphs": [
+        {
+          "en": "A breakpoint pauses execution at a declared point. Single stepping executes one source statement or declared instruction at a time, allowing the programmer to follow control flow.",
+          "vi": "Breakpoint pause execution tại declared point. Single stepping execute từng source statement hoặc declared instruction, cho phép programmer theo control flow."
+        },
+        {
+          "en": "A report or watch window shows current variable values and evaluated expressions. Comparing predicted and observed state after each step helps locate the first logic error.",
+          "vi": "Report hoặc watch window hiển thị current variable value và evaluated expression. So predicted với observed state sau mỗi step giúp tìm logic error đầu tiên."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "In this course model, a breakpoint stops before the marked line executes.",
+          "vi": "Trong course model này, breakpoint dừng trước khi marked line execute."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace a faulty total",
+      "vi": "Trace total bị lỗi"
+    },
+    "prompt": {
+      "en": "The fixed fixture is: line 1 x←2; line 2 y←3; line 3 total←x−y. The intended operation is addition. A breakpoint stops before line 3.",
+      "vi": "Fixed fixture: line 1 x←2; line 2 y←3; line 3 total←x−y. Intended operation là addition. Breakpoint dừng trước line 3."
+    },
+    "steps": [
+      {
+        "id": "P1-L36-worked-1",
+        "action": {
+          "en": "Reach the breakpoint.",
+          "vi": "Tới breakpoint."
+        },
+        "result": {
+          "en": "Lines 1–2 have executed; the report window shows x=2 and y=3, while total is not yet assigned.",
+          "vi": "Line 1–2 đã execute; report window cho x=2 và y=3, còn total chưa được assign."
+        }
+      },
+      {
+        "id": "P1-L36-worked-2",
+        "action": {
+          "en": "Predict the intended state.",
+          "vi": "Dự đoán intended state."
+        },
+        "result": {
+          "en": "The programmer expects total=5 after line 3.",
+          "vi": "Programmer kỳ vọng total=5 sau line 3."
+        }
+      },
+      {
+        "id": "P1-L36-worked-3",
+        "action": {
+          "en": "Single-step line 3.",
+          "vi": "Single-step line 3."
+        },
+        "result": {
+          "en": "The report window changes to total=−1 because subtraction executed.",
+          "vi": "Report window đổi thành total=−1 vì subtraction đã execute."
+        }
+      },
+      {
+        "id": "P1-L36-worked-4",
+        "action": {
+          "en": "Diagnose and correct.",
+          "vi": "Chẩn đoán và sửa."
+        },
+        "result": {
+          "en": "The first divergence occurs at line 3, so the programmer changes − to + and reruns the test.",
+          "vi": "Divergence đầu tiên xảy ra tại line 3 nên programmer đổi − thành + rồi rerun test."
+        }
+      }
+    ],
+    "result": {
+      "en": "The debugger exposed state; the programmer used evidence to locate and repair the logic error.",
+      "vi": "Debugger làm lộ state; programmer dùng evidence để tìm và repair logic error."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Identify whether the need is entry, grammar, readability or run-time state.",
+        "vi": "Xác định need là entry, grammar, readability hay run-time state."
+      }
+    ],
+    "method": [
+      {
+        "en": "Choose the feature group.",
+        "vi": "Chọn feature group."
+      },
+      {
+        "en": "Describe the observable action and its limitation.",
+        "vi": "Mô tả observable action và limitation."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Dynamic syntax checking detects every logic error.",
+          "vi": "Dynamic syntax checking detect mọi logic error."
+        },
+        "correction": {
+          "en": "It flags possible grammar errors; logic requires execution, testing and tracing.",
+          "vi": "Nó flag possible grammar error; logic cần execution, testing và tracing."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A breakpoint fixes the faulty line.",
+          "vi": "Breakpoint sửa faulty line."
+        },
+        "correction": {
+          "en": "It pauses execution so the programmer can inspect state and decide what to change.",
+          "vi": "Nó pause execution để programmer inspect state và quyết định cần đổi gì."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Prettyprint and autocomplete are debugging tools.",
+          "vi": "Prettyprint và autocomplete là debugging tool."
+        },
+        "correction": {
+          "en": "Prettyprint supports presentation; prompts support coding; watches and stepping support debugging.",
+          "vi": "Prettyprint hỗ trợ presentation; prompt hỗ trợ coding; watch và stepping hỗ trợ debugging."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L36-recognise-1",
+        "title": {
+          "en": "Classify the feature",
+          "vi": "Phân loại feature"
+        },
+        "setup": {
+          "en": "The editor underlines a missing closing bracket while code is typed.",
+          "vi": "Editor underline missing closing bracket khi code được type."
+        },
+        "prompt": {
+          "en": "Name the feature group and its limit.",
+          "vi": "Nêu feature group và limit."
+        },
+        "expectedEvidence": {
+          "en": "Dynamic syntax checking provides initial error detection; it does not prove the algorithm is correct.",
+          "vi": "Dynamic syntax checking cung cấp initial error detection; nó không chứng minh algorithm đúng."
+        }
+      },
+      {
+        "id": "P1-L36-recognise-2",
+        "title": {
+          "en": "Read the paused state",
+          "vi": "Đọc paused state"
+        },
+        "setup": {
+          "en": "A breakpoint stops before line 4 and the report shows count=3.",
+          "vi": "Breakpoint dừng trước line 4 và report cho count=3."
+        },
+        "prompt": {
+          "en": "What does one single step reveal?",
+          "vi": "Một single step làm lộ điều gì?"
+        },
+        "expectedEvidence": {
+          "en": "It executes line 4 and exposes the resulting control flow and updated variable or expression values.",
+          "vi": "Nó execute line 4 và làm lộ resulting control flow cùng updated variable hoặc expression value."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L36-CHECK-REQ-5.2-04-01",
+      "requirementId": "REQ-5.2-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how context-sensitive prompts support a programmer while coding.",
+        "vi": "Giải thích context-sensitive prompt hỗ trợ programmer khi coding như thế nào."
+      },
+      "hint": {
+        "en": "Describe what is suggested and why context matters.",
+        "vi": "Mô tả điều được suggest và vì sao context quan trọng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The editor uses the current language and cursor context to suggest valid identifiers, parameters or reserved words. Selecting an appropriate suggestion reduces typing, spelling errors and the need to remember every name, but the programmer still chooses the correct logic.",
+          "vi": "Editor dùng language hiện tại và cursor context để suggest identifier, parameter hoặc reserved word hợp lệ. Chọn suggestion phù hợp giảm typing, spelling error và nhu cầu nhớ mọi name, nhưng programmer vẫn phải chọn logic đúng."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "IDE",
+        "context-sensitive-prompt",
+        "coding"
+      ]
+    },
+    {
+      "id": "P1-L36-CHECK-REQ-5.2-04-02",
+      "requirementId": "REQ-5.2-04-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain what dynamic syntax checking can and cannot detect.",
+        "vi": "Giải thích dynamic syntax checking có thể và không thể detect điều gì."
+      },
+      "hint": {
+        "en": "Separate grammar from program meaning.",
+        "vi": "Tách grammar khỏi program meaning."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Dynamic syntax checking analyses code while it is edited and flags possible violations of language grammar, such as a missing delimiter or invalid construction. It may give an early location and message, but passing the check does not prove the algorithm or result is logically correct.",
+          "vi": "Dynamic syntax checking phân tích code khi đang edit và flag khả năng vi phạm language grammar như thiếu delimiter hoặc construction không hợp lệ. Nó có thể chỉ early location cùng message nhưng pass check không chứng minh algorithm hoặc result đúng logic."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "dynamic-syntax-check",
+        "syntax-error",
+        "logic-error"
+      ]
+    },
+    {
+      "id": "P1-L36-CHECK-REQ-5.2-04-03",
+      "requirementId": "REQ-5.2-04-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how prettyprint and expand/collapse features improve program presentation.",
+        "vi": "Mô tả prettyprint và expand/collapse feature cải thiện program presentation như thế nào."
+      },
+      "hint": {
+        "en": "Link formatting and visible scope to readability.",
+        "vi": "Liên hệ formatting và visible scope với readability."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Prettyprint applies consistent indentation, spacing and often colour so structure is easier to read. Expand/collapse hides or reveals whole code blocks, letting the programmer focus on the relevant part without deleting code. These are presentation features, not proof that the code is correct.",
+          "vi": "Prettyprint áp dụng indentation, spacing nhất quán và thường có colour để structure dễ đọc. Expand/collapse ẩn hoặc hiện cả code block, cho programmer tập trung phần liên quan mà không delete code. Đây là presentation feature, không phải bằng chứng code đúng."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "prettyprint",
+        "expand-collapse",
+        "presentation"
+      ]
+    },
+    {
+      "id": "P1-L36-CHECK-REQ-5.2-04-04",
+      "requirementId": "REQ-5.2-04-04",
+      "kind": "trace",
+      "level": "independent",
+      "prompt": {
+        "en": "A breakpoint is set before line 3 of a fixed program. Explain how single stepping and a report window help identify a logic error.",
+        "vi": "Breakpoint được đặt trước line 3 của fixed program. Giải thích single stepping và report window giúp tìm logic error như thế nào."
+      },
+      "hint": {
+        "en": "Use the declared stop-before-line convention and compare predicted with actual values.",
+        "vi": "Dùng convention stop-before-line đã công bố và so predicted với actual value."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Execution pauses before line 3, so the report window shows variables and expressions after line 2. The programmer predicts the next values, executes line 3 with one single step and compares the updated watch values with the prediction. The first divergence identifies the statement or state that needs investigation; the debugger does not repair it automatically.",
+          "vi": "Execution pause trước line 3 nên report window hiển thị variable và expression sau line 2. Programmer dự đoán next value, execute line 3 bằng một single step rồi so updated watch value với prediction. Divergence đầu tiên xác định statement hoặc state cần investigate; debugger không tự repair."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "breakpoint",
+        "single-step",
+        "report-window",
+        "watch"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State one IDE feature for coding, syntax, presentation and debugging, with its effect.",
+      "vi": "Nêu một IDE feature cho coding, syntax, presentation và debugging cùng effect."
+    },
+    "answerPoints": [
+      {
+        "en": "Context prompts suggest; dynamic checks flag grammar; prettyprint/collapse expose structure; breakpoints/steps/watch expose run-time state.",
+        "vi": "Context prompt suggest; dynamic check flag grammar; prettyprint/collapse làm rõ structure; breakpoint/step/watch làm lộ run-time state."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "IDE",
+      "meaning": {
+        "en": "An integrated suite for writing, running, testing and debugging programs.",
+        "vi": "Integrated suite dùng để viết, run, test và debug program."
+      }
+    },
+    {
+      "term": "context-sensitive prompt",
+      "meaning": {
+        "en": "A suggestion based on the current language and cursor context.",
+        "vi": "Suggestion dựa trên language và cursor context hiện tại."
+      }
+    },
+    {
+      "term": "dynamic syntax checking",
+      "meaning": {
+        "en": "Checking source grammar while code is being edited.",
+        "vi": "Kiểm tra source grammar khi code đang được edit."
+      }
+    },
+    {
+      "term": "prettyprint",
+      "meaning": {
+        "en": "Consistent visual formatting that exposes code structure.",
+        "vi": "Visual formatting nhất quán làm rõ code structure."
+      }
+    },
+    {
+      "term": "breakpoint",
+      "meaning": {
+        "en": "A declared point where execution pauses for inspection.",
+        "vi": "Declared point nơi execution pause để inspect."
+      }
+    },
+    {
+      "term": "report window",
+      "meaning": {
+        "en": "A debugger view of current variables and evaluated expressions.",
+        "vi": "Debugger view hiển thị current variable và evaluated expression."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "translators",
+    "operating-systems"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §5.1–5.2, p. 23",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L36 · Chapter 5 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C05",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 5, pp. 153–156",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L36",
+  "contractCoverage": {
+    "B01": [
+      "P1-L36-objectives"
+    ],
+    "B02": [
+      "P1-L36-theory-1",
+      "P1-L36-theory-2",
+      "P1-L36-theory-3"
+    ],
+    "B03": [
+      "P1-L36-theory-1",
+      "P1-L36-theory-2",
+      "P1-L36-theory-3"
+    ],
+    "B04": [
+      "P1-L36-recognise-1",
+      "P1-L36-recognise-2"
+    ],
+    "B05": [
+      "P1-L36-worked-1",
+      "P1-L36-worked-2",
+      "P1-L36-worked-3",
+      "P1-L36-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L36"
+    ],
+    "B07": [
+      "P1-L36-CHECK-REQ-5.2-04-01",
+      "P1-L36-CHECK-REQ-5.2-04-02",
+      "P1-L36-CHECK-REQ-5.2-04-03",
+      "P1-L36-CHECK-REQ-5.2-04-04"
+    ],
+    "B08": [
+      "P1-L36-recognise-1",
+      "P1-L36-recognise-2"
+    ],
+    "B09": [
+      "P1-L36-recall"
+    ],
+    "B10": [
+      "P1-L36-glossary"
+    ],
+    "B11": [
+      "P1-L36-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

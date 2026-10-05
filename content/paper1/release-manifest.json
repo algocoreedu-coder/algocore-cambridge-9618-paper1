@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "courseId": "CAIE-9618-P1-2026",
-  "releaseId": "paper1-chapter4-2026.10.04-v1.0.0",
+  "releaseId": "paper1-chapter5-2026.10.04-v1.0.0",
   "lessons": [
     {
       "lessonId": "P1-L01",
@@ -273,6 +273,38 @@
       "state": "available",
       "contentVersion": "1.0.0",
       "modelVersions": ["VIS-P1-L32@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L33",
+      "slug": "operating-systems",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L33@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L34",
+      "slug": "utilities-libraries",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L34@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L35",
+      "slug": "translators",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L35@1"],
+      "assessmentVersion": "1.0.0"
+    },
+    {
+      "lessonId": "P1-L36",
+      "slug": "ide-tools",
+      "state": "available",
+      "contentVersion": "1.0.0",
+      "modelVersions": ["VIS-P1-L36@1"],
       "assessmentVersion": "1.0.0"
     }
   ]

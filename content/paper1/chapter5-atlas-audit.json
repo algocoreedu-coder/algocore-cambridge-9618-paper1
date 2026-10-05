@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "auditId": "P1-C05-ATLAS-AUDIT-2026-10-04",
+  "chapterId": "5",
+  "syllabus": "Cambridge International AS & A Level Computer Science 9618, examination 2026",
+  "authority": {
+    "syllabusLocator": "2026 syllabus, Paper 1 Sections 5.1–5.2",
+    "coursebookLocator": "Coursebook Chapter 5, printed pages 136–158",
+    "learnerVisualOrigin": "AlgoCore-original"
+  },
+  "taxonomy": {
+    "allowedDispositions": [
+      "INLINE_UNDERSTAND",
+      "INLINE_OBSERVE_SCENE",
+      "INLINE_WORKED_EXAMPLE",
+      "INLINE_RECOGNISE",
+      "LESSON_REFERENCE_DISCLOSURE",
+      "CHAPTER_ATLAS_ONLY",
+      "DUPLICATE_OR_REMOVE"
+    ],
+    "renderStatuses": [
+      "not-rendered-source-pointer"
+    ],
+    "referenceStatuses": [
+      "mapped-to-original-learner-visual"
+    ]
+  },
+  "copyrightBoundary": {
+    "en": "Every BOOK-C05 ID is a source and audit pointer only. Public interactive service diagrams, code fixtures, receipts, labels and transitions are AlgoCore-original and do not reproduce coursebook scans, product screenshots, character art, code listings or exam diagrams.",
+    "vi": "Mỗi BOOK-C05 ID chỉ là pointer phục vụ nguồn và audit. Service diagram tương tác, code fixture, receipt, nhãn và transition trên public runtime là sản phẩm gốc của AlgoCore; không sao chép scan, screenshot sản phẩm, nhân vật, code listing hoặc exam diagram từ coursebook."
+  },
+  "inventory": {
+    "totalIds": 26,
+    "uniqueIds": 26,
+    "lessonCounts": {
+      "P1-L33": 6,
+      "P1-L34": 9,
+      "P1-L35": 5,
+      "P1-L36": 6
+    },
+    "dispositionCounts": {
+      "INLINE_UNDERSTAND": 4,
+      "INLINE_OBSERVE_SCENE": 4,
+      "INLINE_WORKED_EXAMPLE": 5,
+      "INLINE_RECOGNISE": 3,
+      "LESSON_REFERENCE_DISCLOSURE": 6,
+      "CHAPTER_ATLAS_ONLY": 3,
+      "DUPLICATE_OR_REMOVE": 1
+    },
+    "zeroAtlasLessonIds": []
+  },
+  "items": [
+    {
+      "atlasId": "BOOK-C05-P138-F5-1",
+      "lessonId": "P1-L33",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.1, p138",
+      "rationale": {
+        "en": "Historical keyboard computer/cassette loading contextualises early OS start-up but is not a 2026 section 5 outcome. Keep it outside the required lesson and do not copy the photograph.",
+        "vi": "Máy tính bàn phím/cassette là bối cảnh lịch sử về khởi động OS, không phải outcome cốt lõi của section 5 năm 2026. Chỉ giữ trong Atlas và không sao chép ảnh."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L33"
+    },
+    {
+      "atlasId": "BOOK-C05-P139-CLI-ICON",
+      "lessonId": "P1-L33",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 5, Unnumbered CLI/icon comparison, p139",
+      "rationale": {
+        "en": "The command-to-icon contrast can reinforce the OS interface role after the core flow, but GUI/CLI recognition must not displace the five assessed management tasks.",
+        "vi": "Đối chiếu command–icon có thể củng cố vai trò interface sau flow cốt lõi, nhưng không được lấn át năm management task cần thi."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L33"
+    },
+    {
+      "atlasId": "BOOK-C05-P139-F5-2",
+      "lessonId": "P1-L33",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.2, p139",
+      "rationale": {
+        "en": "The vendor-era WIMP screenshot is historical/product-specific and not needed to prove current syllabus coverage.",
+        "vi": "Screenshot WIMP mang tính lịch sử/sản phẩm và không cần để chứng minh coverage syllabus hiện tại."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L33"
+    },
+    {
+      "atlasId": "BOOK-C05-P140-F5-3",
+      "lessonId": "P1-L33",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.3, p140",
+      "rationale": {
+        "en": "The five OS management branches map directly to syllabus 5.1 and anchor the original dispatcher before any request is traced.",
+        "vi": "Năm nhánh quản lý OS khớp trực tiếp syllabus 5.1 và khóa thuật ngữ trước khi trace request trong dispatcher gốc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L33"
+    },
+    {
+      "atlasId": "BOOK-C05-P141-F5-4",
+      "lessonId": "P1-L33",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.4, p141",
+      "rationale": {
+        "en": "Memory boundaries support a causal allocation/protection case. The runtime uses different block values and a simplified original map without teaching out-of-scope paging algorithms.",
+        "vi": "Ranh giới bộ nhớ hỗ trợ case allocation/protection có quan hệ nhân quả. Runtime dùng giá trị block và bản đồ gốc khác, không dạy thuật toán paging ngoài scope."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L33"
+    },
+    {
+      "atlasId": "BOOK-C05-P158-EXAM-OS",
+      "lessonId": "P1-L33",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 5, Legacy end-of-chapter diagram, p158",
+      "rationale": {
+        "en": "The matching structure supports a post-model classification check, but its old question wording and task set are not copied. A new five-task scenario uses current syllabus language.",
+        "vi": "Cấu trúc nối cặp phù hợp checkpoint phân loại sau model, nhưng không sao chép câu hỏi cũ. Tình huống mới dùng đúng năm task và ngôn ngữ syllabus hiện hành."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L33"
+    },
+    {
+      "atlasId": "BOOK-C05-P143-T5-1",
+      "lessonId": "P1-L34",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 5, Table 5.1, p143",
+      "rationale": {
+        "en": "Hard/soft bad-sector causes are useful repair context but exceed the minimum utility-selection path. Keep a concise optional disclosure without reproducing the table.",
+        "vi": "Nguyên nhân bad sector cứng/mềm hữu ích cho ngữ cảnh repair nhưng vượt flow chọn utility tối thiểu. Giữ disclosure ngắn, không sao chép bảng."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P144-F5-5",
+      "lessonId": "P1-L34",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.5, p144",
+      "rationale": {
+        "en": "This is the starting state of a four-state HDD fragmentation explanation. The public case uses a new 12-block arrangement and explicit file-count invariants.",
+        "vi": "Đây là state đầu của diễn giải phân mảnh HDD bốn bước. Case public dùng bố trí 12 block mới và invariant số block từng file."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P145-F5-6",
+      "lessonId": "P1-L34",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.6, p145",
+      "rationale": {
+        "en": "Deletion and file extension explain how non-contiguous gaps appear. It becomes one original transition, not a copied track diagram.",
+        "vi": "Xoá và mở rộng file giải thích cách khoảng trống không liên tục xuất hiện. Nội dung được dựng thành transition gốc, không copy track diagram."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P145-F5-7",
+      "lessonId": "P1-L34",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.7, p145",
+      "rationale": {
+        "en": "Cross-track fragmentation supplies the causal “before” evidence for extra HDD head movement; exact book sectors are not reused.",
+        "vi": "Phân mảnh sang track khác cung cấp bằng chứng “before” cho việc HDD head di chuyển nhiều; không tái dùng sector của sách."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P145-F5-8",
+      "lessonId": "P1-L34",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.8, p145",
+      "rationale": {
+        "en": "The contiguous “after” state completes the worked trace and must preserve every file’s block count. It includes the HDD/SSD limitation.",
+        "vi": "State liên tục “after” hoàn tất worked trace và phải giữ nguyên số block của từng file. Có ghi rõ giới hạn HDD/SSD."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P146-F5-9",
+      "lessonId": "P1-L34",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.9, p146",
+      "rationale": {
+        "en": "A product-specific backup dialog is not a mechanism model. Keep the source as optional context while the public lesson uses version/copy/restore states.",
+        "vi": "Dialog backup của sản phẩm không phải mechanism model. Giữ nguồn làm context tuỳ chọn; bài public dùng state version/copy/restore."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P147-F5-10",
+      "lessonId": "P1-L34",
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.10, p147",
+      "rationale": {
+        "en": "The character/game artwork adds no independent library mechanism beyond Figure 5.11 and creates a direct illustration-copy risk. It should not appear in the public lesson.",
+        "vi": "Hình nhân vật/game không thêm cơ chế library độc lập so với Figure 5.11 và có rủi ro sao chép minh hoạ. Không dùng trong bài public."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P147-F5-11",
+      "lessonId": "P1-L34",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.11, p147",
+      "rationale": {
+        "en": "A program calling reusable routines directly supports program-library benefits. The public scene uses an original non-game example and visible call/return ownership.",
+        "vi": "Chương trình gọi routine tái sử dụng hỗ trợ trực tiếp lợi ích program library. Scene public dùng ví dụ không phải game và thể hiện call/return rõ ràng."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P148-T5-2",
+      "lessonId": "P1-L34",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 5, Table 5.2, p148",
+      "rationale": {
+        "en": "DLL benefits and dependencies are core syllabus content. Reconstruct them as conditional runtime-link states rather than a copied pros/cons table or unconditional speed claim.",
+        "vi": "Lợi ích và phụ thuộc DLL là nội dung core. Dựng lại thành state link runtime có điều kiện, không copy bảng pros/cons hoặc khẳng định tăng tốc tuyệt đối."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L34"
+    },
+    {
+      "atlasId": "BOOK-C05-P150-PIC-CODE",
+      "lessonId": "P1-L35",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 5, Unnumbered PIC listing, p150",
+      "rationale": {
+        "en": "The listing illustrates target-specific assembly but is an extension example and copyrighted code. Keep an optional concept note; use an original tiny fixture if code is needed.",
+        "vi": "Listing minh hoạ assembly phụ thuộc target nhưng là ví dụ mở rộng và code có bản quyền. Chỉ giữ concept note; nếu cần code phải dùng fixture gốc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L35"
+    },
+    {
+      "atlasId": "BOOK-C05-P151-T5-3",
+      "lessonId": "P1-L35",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 5, Table 5.3, p151",
+      "rationale": {
+        "en": "The source-language, output-artifact and execution distinctions anchor the three translator paths. The public model corrects oversimplified portability wording.",
+        "vi": "Khác biệt về source language, output artifact và execution khóa ba translator path. Model public sửa wording portability bị đơn giản hoá."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L35"
+    },
+    {
+      "atlasId": "BOOK-C05-P151-T5-4",
+      "lessonId": "P1-L35",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 5, Table 5.4, pp151–152",
+      "rationale": {
+        "en": "Compiler/interpreter trade-offs are assessed, but several absolute book statements are misleading. Use a post-model misconception check with conditional wording.",
+        "vi": "Trade-off compiler/interpreter cần thi, nhưng một số phát biểu tuyệt đối trong sách gây hiểu sai. Dùng checkpoint sau model với wording có điều kiện."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L35"
+    },
+    {
+      "atlasId": "BOOK-C05-P152-JAVA-BYTECODE",
+      "lessonId": "P1-L35",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 5, Source/bytecode listing, pp152–153",
+      "rationale": {
+        "en": "Java is the current syllabus example for partial compiling/interpreting. Reconstruct the conceptual path with original labels and no copied source or bytecode.",
+        "vi": "Java là ví dụ hiện hành của syllabus cho partial compiling/interpreting. Dựng lại conceptual path bằng nhãn gốc, không copy source/bytecode."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L35"
+    },
+    {
+      "atlasId": "BOOK-C05-P153-PYTHON-BYTECODE",
+      "lessonId": "P1-L35",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 5, Source/bytecode listing, p153",
+      "rationale": {
+        "en": "Python bytecode is useful extension context but Java console mode is the specified syllabus example. Keep it outside the required trace and avoid implementation-generalisation.",
+        "vi": "Python bytecode là context mở rộng hữu ích nhưng Java console mode là ví dụ syllabus quy định. Giữ ngoài trace bắt buộc và không khái quát mọi implementation."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L35"
+    },
+    {
+      "atlasId": "BOOK-C05-P154-F5-12",
+      "lessonId": "P1-L36",
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.12, p154",
+      "rationale": {
+        "en": "Context-sensitive prompting is a named syllabus feature. The public model uses a generic editor and original completion fixture, not the product screenshot.",
+        "vi": "Context-sensitive prompt là feature được syllabus nêu tên. Model public dùng editor chung và fixture completion gốc, không dùng screenshot sản phẩm."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L36"
+    },
+    {
+      "atlasId": "BOOK-C05-P154-F5-13",
+      "lessonId": "P1-L36",
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.13, p154",
+      "rationale": {
+        "en": "A dynamic syntax diagnostic supports recognition of early error detection and the misconception that it also proves logic correctness.",
+        "vi": "Dynamic syntax diagnostic hỗ trợ nhận diện initial error detection và sửa ngộ nhận rằng nó chứng minh logic đúng."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L36"
+    },
+    {
+      "atlasId": "BOOK-C05-P155-F5-14",
+      "lessonId": "P1-L36",
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.14, p155",
+      "rationale": {
+        "en": "The side-by-side editor/output layout is useful orientation but does not add a separate assessed mechanism. Keep it as optional reinforcement.",
+        "vi": "Bố cục editor/output hữu ích để định hướng nhưng không thêm cơ chế thi riêng. Giữ làm reinforcement tuỳ chọn."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L36"
+    },
+    {
+      "atlasId": "BOOK-C05-P155-F5-15",
+      "lessonId": "P1-L36",
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.15, pp155–156",
+      "rationale": {
+        "en": "Single stepping, breakpoint state and variable values form the core causal debugger trace. The public fixture uses original code and exact before/after variables.",
+        "vi": "Single stepping, breakpoint và giá trị biến tạo core debugger trace. Fixture public dùng code gốc và biến before/after chính xác."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L36"
+    },
+    {
+      "atlasId": "BOOK-C05-P156-F5-16",
+      "lessonId": "P1-L36",
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.16, p156",
+      "rationale": {
+        "en": "A watched expression provides concrete evidence for locating a logic error. Reconstruct it with the original `length*width` fixture.",
+        "vi": "Watched expression cung cấp bằng chứng cụ thể để tìm logic error. Dựng lại bằng fixture gốc `length*width`."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L36"
+    },
+    {
+      "atlasId": "BOOK-C05-P157-F5-17",
+      "lessonId": "P1-L36",
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 5, Figure 5.17, p157",
+      "rationale": {
+        "en": "Auto-documentation is contextual coursebook material but is not one of the four feature groups explicitly listed in the 2026 notes. Keep it outside the required path.",
+        "vi": "Auto-documentation là context trong coursebook nhưng không thuộc bốn nhóm feature được notes 2026 nêu rõ. Giữ ngoài flow bắt buộc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual",
+      "replacementVisualId": "VIS-P1-L36"
+    }
+  ]
+}

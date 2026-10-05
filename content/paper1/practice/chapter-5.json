@@ -1,0 +1,1322 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP05",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "5",
+  "title": {
+    "en": "Chapter 5 mixed practice: System software",
+    "vi": "Bài luyện tổng hợp Chapter 5: System software"
+  },
+  "intro": {
+    "en": "Twelve AlgoCore-original questions cover all 8 Chapter 5 objectives and 24 atomic requirements. Attempt each response before revealing guidance.",
+    "vi": "Mười hai câu AlgoCore tự biên soạn bao phủ đủ 8 objective và 24 atomic requirement của Chapter 5. Hãy làm trước khi mở hướng dẫn."
+  },
+  "timing": {
+    "timedMinutes": 75,
+    "untimedAvailable": true
+  },
+  "totalMarks": 60,
+  "aoBlueprint": {
+    "AO1": 36,
+    "AO2": 24,
+    "note": {
+      "en": "The 60:40 split mirrors the Paper 1 AO weighting for rehearsal; this is an AlgoCore chapter blueprint, not an official Cambridge paper.",
+      "vi": "Tỉ lệ 60:40 mô phỏng weighting AO của Paper 1 để luyện tập; đây là blueprint Chapter do AlgoCore biên soạn, không phải Cambridge paper chính thức."
+    }
+  },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "kind": "syllabus",
+      "locator": "Cambridge 9618 syllabus for 2026 v2, §§5.1–5.2, p. 23"
+    },
+    {
+      "id": "BOOK-C05",
+      "kind": "coursebook",
+      "locator": "Coursebook Chapter 5, pp. 136–158"
+    },
+    {
+      "id": "ALG-P1",
+      "kind": "algocore",
+      "locator": "P1-CP05 original assessment set v1.0"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP05-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-5.1-01-01",
+        "REQ-5.1-02-01",
+        "REQ-5.1-02-02",
+        "REQ-5.1-02-03",
+        "REQ-5.1-02-04",
+        "REQ-5.1-02-05"
+      ],
+      "objectiveIds": [
+        "AC26-5.1-01",
+        "AC26-5.1-02"
+      ],
+      "strandIds": [
+        "5.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 8,
+      "prompt": {
+      "en": "Explain why a computer needs an OS. For each of the five key management tasks, give one action and link it to a consequence. Conclude with one example of two managers cooperating.",
+      "vi": "Giải thích vì sao computer cần OS. Với mỗi trong năm key management task, nêu một action và liên hệ action đó với một consequence. Kết luận bằng một ví dụ hai manager phối hợp với nhau."
+      },
+      "hint": {
+      "en": "Use purpose plus memory, file, security, hardware and process management. For every manager, connect what it does to why that matters.",
+      "vi": "Dùng purpose cùng memory, file, security, hardware và process management. Với từng manager, nối việc nó làm với lý do action đó quan trọng."
+      },
+      "solution": {
+        "modelAnswer": {
+        "en": "The OS provides an environment and interface for applications and coordinates shared resources so programs do not conflict. Memory management allocates and protects memory so one process cannot overwrite another. File management organises names, locations and permissions so data can be stored and retrieved safely. Security management authenticates users and enforces access rights so unauthorised users cannot use protected resources. Hardware management uses drivers, queues, buffers and interrupts so devices can be shared safely. Process management allocates processor time and resources so several programs can make progress. For example, file management locates a protected report while security management checks that the user may open it.",
+        "vi": "OS cung cấp environment và interface cho application, đồng thời phối hợp shared resource để các program không conflict. Memory management cấp và bảo vệ memory để process này không ghi đè process khác. File management tổ chức tên, vị trí và permission để data được lưu và truy xuất an toàn. Security management xác thực user và thực thi access right để user không được phép không thể dùng protected resource. Hardware management dùng driver, queue, buffer và interrupt để device được chia sẻ an toàn. Process management cấp processor time và resource để nhiều program cùng tiến triển. Ví dụ, file management tìm protected report trong khi security management kiểm tra user có quyền mở file đó hay không."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-01-01"
+            ],
+            "point": {
+              "en": "Explains an application environment or hardware/resource abstraction.",
+              "vi": "Giải thích application environment hoặc hardware/resource abstraction."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-01-01"
+            ],
+            "point": {
+              "en": "Explains coordination of shared resources or prevention of conflicts.",
+              "vi": "Giải thích coordination của shared resource hoặc ngăn conflict."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-01"
+            ],
+            "point": {
+            "en": "Links a valid memory allocation, tracking or protection action to its consequence.",
+            "vi": "Liên hệ memory allocation, tracking hoặc protection action hợp lệ với consequence của action đó."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-02"
+            ],
+            "point": {
+            "en": "Links a valid file or directory management action to its consequence.",
+            "vi": "Liên hệ file hoặc directory management action hợp lệ với consequence của action đó."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-03"
+            ],
+            "point": {
+            "en": "Links a valid authentication, access-right or recovery action to its consequence.",
+            "vi": "Liên hệ authentication, access-right hoặc recovery action hợp lệ với consequence của action đó."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-04"
+            ],
+            "point": {
+            "en": "Links a valid device-driver, queue, buffer or interrupt action to its consequence.",
+            "vi": "Liên hệ device-driver, queue, buffer hoặc interrupt action hợp lệ với consequence của action đó."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M7",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-05"
+            ],
+            "point": {
+            "en": "Links a valid process resource-allocation or coordination action to its consequence.",
+            "vi": "Liên hệ process resource-allocation hoặc coordination action hợp lệ với consequence của action đó."
+            }
+          },
+          {
+            "id": "P1-CP05-Q01-M8",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-01-01",
+              "REQ-5.1-02-01",
+              "REQ-5.1-02-02",
+              "REQ-5.1-02-03",
+              "REQ-5.1-02-04",
+              "REQ-5.1-02-05"
+            ],
+            "point": {
+            "en": "Explains one valid example of two OS managers cooperating in the same scenario.",
+            "vi": "Giải thích một ví dụ hợp lệ về hai OS manager phối hợp trong cùng một scenario."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "operating-systems",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q02",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-5.1-03-01",
+        "REQ-5.1-03-02",
+        "REQ-5.1-03-03",
+        "REQ-5.1-03-04",
+        "REQ-5.1-03-05",
+        "REQ-5.1-03-06"
+      ],
+      "objectiveIds": [
+        "AC26-5.1-03"
+      ],
+      "strandIds": [
+        "5.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "identify",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 8,
+      "prompt": {
+        "en": "For each need, identify and explain the utility: prepare a new disk, detect malware, reorganise a fragmented HDD, diagnose disk use/inconsistency, reduce an attachment, and recover an older file version.",
+        "vi": "Với mỗi need, identify và giải thích utility: chuẩn bị disk mới, detect malware, sắp lại fragmented HDD, chẩn đoán disk use/inconsistency, giảm attachment và recover file version cũ."
+      },
+      "hint": {
+        "en": "Use each of the six syllabus utility categories once.",
+        "vi": "Dùng mỗi trong sáu syllabus utility category một lần."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use a disk formatter, virus checker, defragmenter, disk analysis/repair utility, file compression and backup respectively. Defragmentation is an HDD mechanism; backup supports restore and is not antivirus.",
+          "vi": "Lần lượt dùng disk formatter, virus checker, defragmenter, disk analysis/repair utility, file compression và backup. Defragmentation là HDD mechanism; backup hỗ trợ restore và không phải antivirus."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-01"
+            ],
+            "point": {
+              "en": "Selects formatting and explains preparation of disk/file-system structures.",
+              "vi": "Chọn formatting và giải thích chuẩn bị disk/file-system structure."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-02"
+            ],
+            "point": {
+              "en": "Selects virus checking and explains detection or quarantine.",
+              "vi": "Chọn virus checking và giải thích detection hoặc quarantine."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-03"
+            ],
+            "point": {
+              "en": "Selects defragmentation and explains contiguous HDD blocks or reduced seeking.",
+              "vi": "Chọn defragmentation và giải thích contiguous HDD block hoặc reduced seeking."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-04"
+            ],
+            "point": {
+              "en": "Selects disk analysis/repair and explains diagnosis or repair.",
+              "vi": "Chọn disk analysis/repair và giải thích diagnosis hoặc repair."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-05"
+            ],
+            "point": {
+              "en": "Selects compression and explains reduced storage or transfer size.",
+              "vi": "Chọn compression và giải thích reduced storage hoặc transfer size."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-06"
+            ],
+            "point": {
+              "en": "Selects backup and explains restoration from a separate copy/version.",
+              "vi": "Chọn backup và giải thích restoration từ separate copy/version."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M7",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-03"
+            ],
+            "point": {
+              "en": "States that HDD seek-time reasoning does not apply to SSDs.",
+              "vi": "Nêu HDD seek-time reasoning không áp dụng cho SSD."
+            }
+          },
+          {
+            "id": "P1-CP05-Q02-M8",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-06"
+            ],
+            "point": {
+              "en": "States that backup does not detect or prevent malware by itself.",
+              "vi": "Nêu backup không tự detect hoặc prevent malware."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "utilities-libraries",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q03",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-5.1-04-01",
+        "REQ-5.1-04-02"
+      ],
+      "objectiveIds": [
+        "AC26-5.1-04"
+      ],
+      "strandIds": [
+        "5.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 5,
+      "prompt": {
+        "en": "Explain benefits of reusing a program-library routine and of using a DLL, including one DLL risk.",
+        "vi": "Giải thích benefit của reuse program-library routine và dùng DLL, gồm một DLL risk."
+      },
+      "hint": {
+        "en": "Separate ordinary code reuse from dynamic linking at run time.",
+        "vi": "Tách ordinary code reuse khỏi dynamic linking tại run time."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A pre-written, tested routine reduces new coding, time and testing effort. A DLL stays separate and is loaded or linked at run time, so applications can share it and executables can be smaller. The correct compatible DLL must be available and trusted.",
+          "vi": "Pre-written, tested routine giảm new coding, time và testing effort. DLL vẫn riêng và được load hoặc link tại run time nên application có thể share và executable nhỏ hơn. Compatible DLL đúng phải available và trusted."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-01"
+            ],
+            "point": {
+              "en": "Explains reuse of existing callable code.",
+              "vi": "Giải thích reuse existing callable code."
+            }
+          },
+          {
+            "id": "P1-CP05-Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-01"
+            ],
+            "point": {
+              "en": "Links reuse to reduced development or testing effort.",
+              "vi": "Liên hệ reuse với reduced development hoặc testing effort."
+            }
+          },
+          {
+            "id": "P1-CP05-Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-02"
+            ],
+            "point": {
+              "en": "Explains run-time linking or loading of a DLL.",
+              "vi": "Giải thích run-time linking hoặc loading của DLL."
+            }
+          },
+          {
+            "id": "P1-CP05-Q03-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-02"
+            ],
+            "point": {
+              "en": "Explains a sharing, executable-size or independent-update benefit.",
+              "vi": "Giải thích sharing, executable-size hoặc independent-update benefit."
+            }
+          },
+          {
+            "id": "P1-CP05-Q03-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-02"
+            ],
+            "point": {
+              "en": "Explains a missing, incompatible, changed or malicious DLL risk.",
+              "vi": "Giải thích risk DLL bị thiếu, incompatible, changed hoặc malicious."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "utilities-libraries",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q04",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-5.2-01-01",
+        "REQ-5.2-01-02",
+        "REQ-5.2-01-03"
+      ],
+      "objectiveIds": [
+        "AC26-5.2-01"
+      ],
+      "strandIds": [
+        "5.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 5,
+      "prompt": {
+        "en": "Distinguish assembler, compiler and interpreter by source, output and execution.",
+        "vi": "Phân biệt assembler, compiler và interpreter theo source, output và execution."
+      },
+      "hint": {
+        "en": "Do not describe compilation as execution.",
+        "vi": "Không mô tả compilation là execution."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "An assembler translates assembly language to target machine/object code. A compiler translates a high-level program to stored target/object code before later execution. An interpreter translates and executes a high-level program under its control and is needed again on later runs.",
+          "vi": "Assembler dịch assembly language thành target machine/object code. Compiler dịch high-level program thành stored target/object code trước execution sau đó. Interpreter dịch và execute high-level program dưới sự điều khiển của nó và cần lại ở later run."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-01-01"
+            ],
+            "point": {
+              "en": "Gives assembler source and target correctly.",
+              "vi": "Nêu đúng assembler source và target."
+            }
+          },
+          {
+            "id": "P1-CP05-Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-01-02"
+            ],
+            "point": {
+              "en": "Gives compiler source and stored target/object code.",
+              "vi": "Nêu compiler source và stored target/object code."
+            }
+          },
+          {
+            "id": "P1-CP05-Q04-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-01-03"
+            ],
+            "point": {
+              "en": "Gives interpreter-controlled translation and execution.",
+              "vi": "Nêu interpreter-controlled translation và execution."
+            }
+          },
+          {
+            "id": "P1-CP05-Q04-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-01-02"
+            ],
+            "point": {
+              "en": "Separates compilation from later program execution.",
+              "vi": "Tách compilation khỏi program execution sau đó."
+            }
+          },
+          {
+            "id": "P1-CP05-Q04-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-01-03"
+            ],
+            "point": {
+              "en": "Explains why later interpreted runs need the interpreter/translation again.",
+              "vi": "Giải thích vì sao later interpreted run cần interpreter/translation lại."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "translators",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q05",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-5.1-02-01",
+        "REQ-5.1-02-03",
+        "REQ-5.1-02-04",
+        "REQ-5.1-02-05"
+      ],
+      "objectiveIds": [
+        "AC26-5.1-02"
+      ],
+      "strandIds": [
+        "5.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "apply",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A hospital workstation runs two applications, prints labels and protects patient records. Apply four OS management tasks to this context.",
+        "vi": "Hospital workstation chạy hai application, in label và bảo vệ patient record. Áp dụng bốn OS management task vào context này."
+      },
+      "hint": {
+        "en": "Give one scenario-specific action for each manager.",
+        "vi": "Nêu một scenario-specific action cho mỗi manager."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Memory management separates application memory; security management authenticates staff and enforces record permissions; hardware management drives and queues the label printer; process management allocates processor time/resources to both applications.",
+          "vi": "Memory management tách application memory; security management xác thực staff và thực thi record permission; hardware management drive và queue label printer; process management cấp processor time/resource cho cả hai application."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-01"
+            ],
+            "point": {
+              "en": "Applies memory allocation/protection to the two applications.",
+              "vi": "Áp dụng memory allocation/protection cho hai application."
+            }
+          },
+          {
+            "id": "P1-CP05-Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-03"
+            ],
+            "point": {
+              "en": "Applies authentication or permissions to patient records.",
+              "vi": "Áp dụng authentication hoặc permission cho patient record."
+            }
+          },
+          {
+            "id": "P1-CP05-Q05-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-04"
+            ],
+            "point": {
+              "en": "Applies driver/queue/error handling to the printer.",
+              "vi": "Áp dụng driver/queue/error handling cho printer."
+            }
+          },
+          {
+            "id": "P1-CP05-Q05-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-05"
+            ],
+            "point": {
+              "en": "Applies processor/resource coordination to the running processes.",
+              "vi": "Áp dụng processor/resource coordination cho running process."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "operating-systems",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q06",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-5.1-03-03",
+        "REQ-5.1-03-05",
+        "REQ-5.1-03-06",
+        "REQ-5.1-04-02"
+      ],
+      "objectiveIds": [
+        "AC26-5.1-03",
+        "AC26-5.1-04"
+      ],
+      "strandIds": [
+        "5.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A studio has a fragmented HDD, must email a project, needs rollback after accidental deletion and loads one shared export routine at run time. Justify four tools.",
+        "vi": "Studio có fragmented HDD, cần email project, cần rollback sau accidental deletion và load shared export routine tại run time. Biện minh bốn tool."
+      },
+      "hint": {
+        "en": "Name each tool and connect its mechanism to the need.",
+        "vi": "Nêu mỗi tool và liên hệ mechanism với need."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use HDD defragmentation to reduce head seeking, compression to reduce transfer size, versioned backup to restore an earlier copy, and a compatible DLL for the run-time shared export routine while managing its dependency.",
+          "vi": "Dùng HDD defragmentation để giảm head seeking, compression để giảm transfer size, versioned backup để restore earlier copy và compatible DLL cho shared export routine tại run time đồng thời quản lý dependency."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-03"
+            ],
+            "point": {
+              "en": "Justifies defragmentation for the HDD.",
+              "vi": "Biện minh defragmentation cho HDD."
+            }
+          },
+          {
+            "id": "P1-CP05-Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-05"
+            ],
+            "point": {
+              "en": "Justifies file compression for transfer.",
+              "vi": "Biện minh file compression cho transfer."
+            }
+          },
+          {
+            "id": "P1-CP05-Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-06"
+            ],
+            "point": {
+              "en": "Justifies versioned backup for rollback.",
+              "vi": "Biện minh versioned backup cho rollback."
+            }
+          },
+          {
+            "id": "P1-CP05-Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-02"
+            ],
+            "point": {
+              "en": "Justifies DLL use and recognises the run-time dependency.",
+              "vi": "Biện minh DLL use và nhận ra run-time dependency."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "utilities-libraries",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-5.2-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-5.2-02"
+      ],
+      "strandIds": [
+        "5.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "Compare compiler and interpreter use during development and after release.",
+        "vi": "So sánh compiler và interpreter khi development và sau release."
+      },
+      "hint": {
+        "en": "Use matched points rather than two unrelated lists.",
+        "vi": "Dùng matched point thay vì hai list không liên quan."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "An interpreter gives immediate feedback and supports partial testing but repeats translation and needs source/runtime. A compiler requires a successful translation and recompilation after changes, but produces target code that runs repeatedly, generally faster, and can be distributed without source or compiler.",
+          "vi": "Interpreter cho immediate feedback và hỗ trợ partial testing nhưng lặp translation và cần source/runtime. Compiler cần translation thành công và recompile sau change nhưng tạo target code run nhiều lần, thường nhanh hơn và có thể distribute không cần source hoặc compiler."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-01"
+            ],
+            "point": {
+              "en": "Compares development feedback/partial testing.",
+              "vi": "So sánh development feedback/partial testing."
+            }
+          },
+          {
+            "id": "P1-CP05-Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-01"
+            ],
+            "point": {
+              "en": "Compares error-reporting or edit/restart behaviour.",
+              "vi": "So sánh error-reporting hoặc edit/restart behaviour."
+            }
+          },
+          {
+            "id": "P1-CP05-Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-01"
+            ],
+            "point": {
+              "en": "Compares repeated execution speed/translation work.",
+              "vi": "So sánh repeated execution speed/translation work."
+            }
+          },
+          {
+            "id": "P1-CP05-Q07-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-01"
+            ],
+            "point": {
+              "en": "Compares source visibility or distribution.",
+              "vi": "So sánh source visibility hoặc distribution."
+            }
+          },
+          {
+            "id": "P1-CP05-Q07-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-01"
+            ],
+            "point": {
+              "en": "Compares compiler versus interpreter/runtime dependency.",
+              "vi": "So sánh compiler với interpreter/runtime dependency."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "translators",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q08",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-5.2-04-01",
+        "REQ-5.2-04-02",
+        "REQ-5.2-04-03",
+        "REQ-5.2-04-04"
+      ],
+      "objectiveIds": [
+        "AC26-5.2-04"
+      ],
+      "strandIds": [
+        "5.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "Describe one IDE feature for coding, initial error detection, presentation and debugging, and classify each correctly.",
+        "vi": "Mô tả một IDE feature cho coding, initial error detection, presentation và debugging rồi classify đúng mỗi feature."
+      },
+      "hint": {
+        "en": "Use context prompts, syntax checks, prettyprint/collapse and breakpoint/step/watch tools.",
+        "vi": "Dùng context prompt, syntax check, prettyprint/collapse và breakpoint/step/watch tool."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Context prompts suggest suitable identifiers while coding. Dynamic syntax checks flag possible grammar errors during editing. Prettyprint or collapse improves structure and focus. Breakpoints, single stepping and report/watch windows expose run-time state for debugging.",
+          "vi": "Context prompt suggest identifier phù hợp khi coding. Dynamic syntax check flag possible grammar error khi edit. Prettyprint hoặc collapse cải thiện structure và focus. Breakpoint, single stepping cùng report/watch window làm lộ run-time state để debugging."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-01"
+            ],
+            "point": {
+              "en": "Describes a context-sensitive coding prompt and effect.",
+              "vi": "Mô tả context-sensitive coding prompt và effect."
+            }
+          },
+          {
+            "id": "P1-CP05-Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-02"
+            ],
+            "point": {
+              "en": "Describes dynamic syntax checking and its grammar boundary.",
+              "vi": "Mô tả dynamic syntax checking và grammar boundary."
+            }
+          },
+          {
+            "id": "P1-CP05-Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-03"
+            ],
+            "point": {
+              "en": "Describes prettyprint or expand/collapse and readability/focus.",
+              "vi": "Mô tả prettyprint hoặc expand/collapse và readability/focus."
+            }
+          },
+          {
+            "id": "P1-CP05-Q08-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-04"
+            ],
+            "point": {
+              "en": "Describes a breakpoint/step/watch feature and run-time state.",
+              "vi": "Mô tả breakpoint/step/watch feature và run-time state."
+            }
+          },
+          {
+            "id": "P1-CP05-Q08-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-01",
+              "REQ-5.2-04-02",
+              "REQ-5.2-04-03",
+              "REQ-5.2-04-04"
+            ],
+            "point": {
+              "en": "Keeps the four feature purposes distinct.",
+              "vi": "Giữ bốn feature purpose tách biệt."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "ide-tools",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q09",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-5.2-02-02"
+      ],
+      "objectiveIds": [
+        "AC26-5.2-02"
+      ],
+      "strandIds": [
+        "5.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A team is testing incomplete modules today and will distribute a stable closed-source application tomorrow. Justify one translator model for each stage.",
+        "vi": "Team đang test incomplete module hôm nay và sẽ distribute stable closed-source application ngày mai. Biện minh một translator model cho mỗi stage."
+      },
+      "hint": {
+        "en": "Every benefit must refer to the stage constraint.",
+        "vi": "Mỗi benefit phải đề cập stage constraint."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use an interpreter during development for immediate feedback and partial testing/correction. Compile the stable release so users run target code repeatedly without the compiler, usually faster, while source need not be distributed. Language/runtime constraints may alter the exact implementation.",
+          "vi": "Dùng interpreter khi development để có immediate feedback và partial testing/correction. Compile stable release để user run target code nhiều lần không cần compiler, thường nhanh hơn, trong khi không cần distribute source. Language/runtime constraint có thể thay đổi implementation cụ thể."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-02"
+            ],
+            "point": {
+              "en": "Chooses interpreter for incomplete development work.",
+              "vi": "Chọn interpreter cho incomplete development work."
+            }
+          },
+          {
+            "id": "P1-CP05-Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-02"
+            ],
+            "point": {
+              "en": "Justifies that choice with immediate feedback or partial testing.",
+              "vi": "Biện minh choice bằng immediate feedback hoặc partial testing."
+            }
+          },
+          {
+            "id": "P1-CP05-Q09-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-02"
+            ],
+            "point": {
+              "en": "Chooses compiler for the stable distributed release.",
+              "vi": "Chọn compiler cho stable distributed release."
+            }
+          },
+          {
+            "id": "P1-CP05-Q09-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-02-02"
+            ],
+            "point": {
+              "en": "Justifies the release choice with repeated execution, speed or source protection.",
+              "vi": "Biện minh release choice bằng repeated execution, speed hoặc source protection."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "translators",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q10",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-5.2-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-5.2-03"
+      ],
+      "strandIds": [
+        "5.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "trace",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A high-level source file becomes portable bytecode, then runs on two different processor types. Trace the hybrid pipeline and explain the portability.",
+        "vi": "High-level source file trở thành portable bytecode rồi chạy trên hai processor type khác nhau. Trace hybrid pipeline và giải thích portability."
+      },
+      "hint": {
+        "en": "Separate compile time from run time.",
+        "vi": "Tách compile time khỏi run time."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "At compile time, a compiler translates source into machine-independent bytecode. Each platform supplies a compatible virtual-machine runtime that interprets or further compiles the bytecode into instructions for its processor. The same bytecode is portable because platform-specific translation occurs in the runtime.",
+          "vi": "Tại compile time, compiler dịch source thành machine-independent bytecode. Mỗi platform cung cấp compatible virtual-machine runtime interpret hoặc further compile bytecode thành instruction cho processor của nó. Cùng bytecode portable vì platform-specific translation xảy ra trong runtime."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-03-01"
+            ],
+            "point": {
+              "en": "Places source before a compiler.",
+              "vi": "Đặt source trước compiler."
+            }
+          },
+          {
+            "id": "P1-CP05-Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-03-01"
+            ],
+            "point": {
+              "en": "Identifies bytecode/intermediate code as compiler output.",
+              "vi": "Xác định bytecode/intermediate code là compiler output."
+            }
+          },
+          {
+            "id": "P1-CP05-Q10-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-03-01"
+            ],
+            "point": {
+              "en": "Uses a platform runtime/VM to interpret or further compile at run time.",
+              "vi": "Dùng platform runtime/VM để interpret hoặc further compile tại run time."
+            }
+          },
+          {
+            "id": "P1-CP05-Q10-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-03-01"
+            ],
+            "point": {
+              "en": "Explains portability through platform-specific runtimes rather than splitting source lines.",
+              "vi": "Giải thích portability qua platform-specific runtime thay vì chia source line."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "translators",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q11",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-5.2-04-02",
+        "REQ-5.2-04-04"
+      ],
+      "objectiveIds": [
+        "AC26-5.2-04"
+      ],
+      "strandIds": [
+        "5.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "trace",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A program passes dynamic syntax checking. A breakpoint stops before line 3 after x=2 and y=3; line 3 is total←x−y, but total should be 5. Trace how the IDE reveals the error.",
+        "vi": "Program pass dynamic syntax checking. Breakpoint dừng trước line 3 sau x=2 và y=3; line 3 là total←x−y nhưng total phải là 5. Trace cách IDE làm lộ error."
+      },
+      "hint": {
+        "en": "The course convention stops before the marked line.",
+        "vi": "Course convention dừng trước marked line."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Passing syntax checking only shows no detected grammar error. At the breakpoint, x=2 and y=3 and total is unset. Predict total=5, single-step line 3 and observe total=−1 in the report window. The first divergence identifies line 3; the programmer changes the operator and retests.",
+          "vi": "Pass syntax checking chỉ cho thấy không detected grammar error. Tại breakpoint, x=2 và y=3 còn total chưa set. Dự đoán total=5, single-step line 3 rồi quan sát total=−1 trong report window. Divergence đầu tiên xác định line 3; programmer đổi operator rồi retest."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-02"
+            ],
+            "point": {
+              "en": "States that syntax checking does not prove logical correctness.",
+              "vi": "Nêu syntax checking không chứng minh logical correctness."
+            }
+          },
+          {
+            "id": "P1-CP05-Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-04"
+            ],
+            "point": {
+              "en": "Records the stop-before-line state correctly.",
+              "vi": "Ghi đúng stop-before-line state."
+            }
+          },
+          {
+            "id": "P1-CP05-Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-04"
+            ],
+            "point": {
+              "en": "Predicts 5 and observes −1 after one step.",
+              "vi": "Dự đoán 5 và quan sát −1 sau một step."
+            }
+          },
+          {
+            "id": "P1-CP05-Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.2-04-04"
+            ],
+            "point": {
+              "en": "Uses the first divergence to locate, correct and retest the logic error.",
+              "vi": "Dùng divergence đầu tiên để locate, correct và retest logic error."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "ide-tools",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP05-Q12",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-5.1-02-02",
+        "REQ-5.1-02-03",
+        "REQ-5.1-03-06",
+        "REQ-5.1-04-02"
+      ],
+      "objectiveIds": [
+        "AC26-5.1-02",
+        "AC26-5.1-03",
+        "AC26-5.1-04"
+      ],
+      "strandIds": [
+        "5.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "evaluate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A school app saves protected reports and relies on a DLL. After an unauthorised DLL update, reports become corrupted. Recommend four system-software actions with reasons.",
+        "vi": "School app save protected report và phụ thuộc DLL. Sau unauthorised DLL update, report bị corrupted. Đề xuất bốn system-software action kèm reason."
+      },
+      "hint": {
+        "en": "Use file management, security management, backup and the DLL dependency.",
+        "vi": "Dùng file management, security management, backup và DLL dependency."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use file management metadata and permissions to protect and locate reports; security management should restrict software updates to authenticated authorised users and log the incident; restore clean report versions from backup; replace or roll back to the trusted compatible DLL and test the dependency before returning the app to service.",
+          "vi": "Dùng file management metadata và permission để protect và locate report; security management phải giới hạn software update cho authenticated authorised user và log incident; restore clean report version từ backup; replace hoặc rollback trusted compatible DLL rồi test dependency trước khi đưa app hoạt động lại."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP05-Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-02"
+            ],
+            "point": {
+              "en": "Applies file management or permissions to protected reports.",
+              "vi": "Áp dụng file management hoặc permission cho protected report."
+            }
+          },
+          {
+            "id": "P1-CP05-Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-02-03"
+            ],
+            "point": {
+              "en": "Applies authentication, update permissions or logging to the unauthorised change.",
+              "vi": "Áp dụng authentication, update permission hoặc logging cho unauthorised change."
+            }
+          },
+          {
+            "id": "P1-CP05-Q12-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-03-06"
+            ],
+            "point": {
+              "en": "Uses a clean backup/version for report recovery.",
+              "vi": "Dùng clean backup/version để recover report."
+            }
+          },
+          {
+            "id": "P1-CP05-Q12-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-5.1-04-02"
+            ],
+            "point": {
+              "en": "Rolls back or replaces the DLL with a trusted compatible version and tests the dependency.",
+              "vi": "Rollback hoặc replace DLL bằng trusted compatible version rồi test dependency."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "utilities-libraries",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L34",
+  "slug": "utilities-libraries",
+  "sectionId": "5",
+  "strandId": "5.1",
+  "title": {
+    "en": "Utilities, program libraries and DLLs",
+    "vi": "Utility, program library và DLL"
+  },
+  "question": {
+    "en": "Which system tool solves the stated problem, and what is its limit?",
+    "vi": "System tool nào giải quyết problem đã nêu và limit của nó là gì?"
+  },
+  "opening": {
+    "en": "Utilities solve specific maintenance and protection needs. Program libraries solve a different problem: reusing code during software development.",
+    "vi": "Utility giải quyết maintenance và protection need cụ thể. Program library giải quyết problem khác: reuse code khi phát triển software."
+  },
+  "objectives": [
+    {
+      "id": "AC26-5.1-03",
+      "text": {
+        "en": "Explain the need for disk formatting, virus checking, defragmentation, disk analysis or repair, file compression and backup utilities.",
+        "vi": "Giải thích nhu cầu disk formatting, virus checking, defragmentation, disk analysis/repair, file compression và backup utility."
+      }
+    },
+    {
+      "id": "AC26-5.1-04",
+      "text": {
+        "en": "Explain program-library reuse and developer benefits of library files, including DLL files.",
+        "vi": "Giải thích program-library reuse và developer benefit của library file, gồm DLL file."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-5.1-03-01",
+    "REQ-5.1-03-02",
+    "REQ-5.1-03-03",
+    "REQ-5.1-03-04",
+    "REQ-5.1-03-05",
+    "REQ-5.1-03-06",
+    "REQ-5.1-04-01",
+    "REQ-5.1-04-02"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L34-theory-1",
+      "title": {
+        "en": "Choose a utility by its need",
+        "vi": "Chọn utility theo need"
+      },
+      "paragraphs": [
+        {
+          "en": "Formatting prepares storage structures; virus checking detects and contains malware; disk analysis or repair diagnoses use and inconsistencies; compression reduces file size; backup creates recoverable copies.",
+          "vi": "Formatting chuẩn bị storage structure; virus checking detect và contain malware; disk analysis/repair chẩn đoán use và inconsistency; compression giảm file size; backup tạo recoverable copy."
+        },
+        {
+          "en": "A valid choice explains why the mechanism fits the given failure or goal. A utility name alone does not answer an explain question.",
+          "vi": "Lựa chọn hợp lệ phải giải thích vì sao mechanism phù hợp failure hoặc goal. Chỉ nêu tên utility không trả lời được câu explain."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Backup recovers data; it does not replace antivirus.",
+          "vi": "Backup recover data; nó không thay antivirus."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L34-theory-2",
+      "title": {
+        "en": "Defragment HDDs with care",
+        "vi": "Defragment HDD cẩn thận"
+      },
+      "paragraphs": [
+        {
+          "en": "Deleting and extending files can scatter their blocks across an HDD. Defragmentation moves blocks into more contiguous regions so the mechanical head makes fewer seeks.",
+          "vi": "Delete và extend file có thể làm block rải rác trên HDD. Defragmentation chuyển block vào vùng contiguous hơn để mechanical head seek ít hơn."
+        },
+        {
+          "en": "An SSD accesses flash cells without a moving head, so HDD seek-time reasoning does not transfer. Disk repair and formatting also have different purposes from defragmentation.",
+          "vi": "SSD access flash cell không có moving head nên HDD seek-time reasoning không áp dụng. Disk repair và formatting cũng có purpose khác defragmentation."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Name the device type and the exact problem before choosing defragmentation.",
+          "vi": "Nêu device type và problem chính xác trước khi chọn defragmentation."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L34-theory-3",
+      "title": {
+        "en": "Reuse code through libraries",
+        "vi": "Reuse code qua library"
+      },
+      "paragraphs": [
+        {
+          "en": "A program library stores reusable routines. Calling an existing tested routine can reduce new coding, development time and testing effort while supporting modular development.",
+          "vi": "Program library lưu reusable routine. Call routine đã test có thể giảm new coding, development time và testing effort đồng thời hỗ trợ modular development."
+        },
+        {
+          "en": "A DLL remains separate and is linked or loaded at run time. Sharing and independent compatible updates can save memory or maintenance effort, but the application depends on the correct file and version being available and trustworthy.",
+          "vi": "DLL vẫn riêng và được link hoặc load tại run time. Sharing và independent compatible update có thể tiết kiệm memory hoặc maintenance effort, nhưng application phụ thuộc file cùng version đúng phải có mặt và đáng tin."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Not every library is dynamically linked, and reused code still needs integration testing.",
+          "vi": "Không phải library nào cũng dynamically linked và reused code vẫn cần integration testing."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Select tools for a media project",
+      "vi": "Chọn tool cho media project"
+    },
+    "prompt": {
+      "en": "A team stores large videos on an HDD, exchanges project archives and reuses an image-decoding routine.",
+      "vi": "Một team lưu video lớn trên HDD, trao đổi project archive và reuse image-decoding routine."
+    },
+    "steps": [
+      {
+        "id": "P1-L34-worked-1",
+        "action": {
+          "en": "Diagnose slow HDD access.",
+          "vi": "Chẩn đoán HDD access chậm."
+        },
+        "result": {
+          "en": "If files are fragmented, defragmentation may reduce head movement; disk analysis first confirms the storage problem.",
+          "vi": "Nếu file bị fragmented, defragmentation có thể giảm head movement; disk analysis trước hết xác nhận storage problem."
+        }
+      },
+      {
+        "id": "P1-L34-worked-2",
+        "action": {
+          "en": "Prepare files for transfer.",
+          "vi": "Chuẩn bị file để transfer."
+        },
+        "result": {
+          "en": "File compression packages the project and may reduce transfer size; the receiver must decompress it.",
+          "vi": "File compression đóng gói project và có thể giảm transfer size; người nhận phải decompress."
+        }
+      },
+      {
+        "id": "P1-L34-worked-3",
+        "action": {
+          "en": "Protect the working copy.",
+          "vi": "Bảo vệ working copy."
+        },
+        "result": {
+          "en": "Scheduled versioned backup creates restore points on separate storage; antivirus remains a separate control.",
+          "vi": "Scheduled versioned backup tạo restore point trên storage riêng; antivirus vẫn là control riêng."
+        }
+      },
+      {
+        "id": "P1-L34-worked-4",
+        "action": {
+          "en": "Reuse image code.",
+          "vi": "Reuse image code."
+        },
+        "result": {
+          "en": "The team calls a tested library routine, or a compatible DLL at run time, then tests the integration and dependency.",
+          "vi": "Team call tested library routine hoặc compatible DLL tại run time rồi test integration và dependency."
+        }
+      }
+    ],
+    "result": {
+      "en": "Each choice follows problem → mechanism → benefit → limitation.",
+      "vi": "Mỗi lựa chọn theo problem → mechanism → benefit → limitation."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for the failure, storage medium, recovery need or code-reuse need.",
+        "vi": "Tìm failure, storage medium, recovery need hoặc code-reuse need."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the utility or library mechanism.",
+        "vi": "Nêu utility hoặc library mechanism."
+      },
+      {
+        "en": "Explain why it fits and state one boundary.",
+        "vi": "Giải thích vì sao phù hợp và nêu một boundary."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Formatting and defragmentation perform the same task.",
+          "vi": "Formatting và defragmentation thực hiện cùng task."
+        },
+        "correction": {
+          "en": "Formatting prepares a file system; defragmentation rearranges existing HDD blocks.",
+          "vi": "Formatting chuẩn bị file system; defragmentation sắp xếp existing HDD block."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Backup prevents malware infection.",
+          "vi": "Backup ngăn malware infection."
+        },
+        "correction": {
+          "en": "Backup supports recovery; virus checking detects and contains malware.",
+          "vi": "Backup hỗ trợ recovery; virus checking detect và contain malware."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Every program library is a safe DLL.",
+          "vi": "Mọi program library đều là DLL an toàn."
+        },
+        "correction": {
+          "en": "DLL is one run-time linking model and introduces availability, compatibility and security dependencies.",
+          "vi": "DLL là một run-time linking model và tạo dependency về availability, compatibility và security."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L34-recognise-1",
+        "title": {
+          "en": "Do not confuse the tools",
+          "vi": "Không nhầm tool"
+        },
+        "setup": {
+          "en": "An HDD has scattered file blocks but no file-system errors.",
+          "vi": "HDD có file block rải rác nhưng không có file-system error."
+        },
+        "prompt": {
+          "en": "Select and justify a utility.",
+          "vi": "Chọn và biện minh utility."
+        },
+        "expectedEvidence": {
+          "en": "Defragmentation rearranges blocks into more contiguous regions and can reduce mechanical seeking.",
+          "vi": "Defragmentation sắp block vào vùng contiguous hơn và có thể giảm mechanical seeking."
+        }
+      },
+      {
+        "id": "P1-L34-recognise-2",
+        "title": {
+          "en": "Library or DLL",
+          "vi": "Library hay DLL"
+        },
+        "setup": {
+          "en": "Two applications call the same graphics routine only when exporting.",
+          "vi": "Hai application call cùng graphics routine chỉ khi export."
+        },
+        "prompt": {
+          "en": "Explain a DLL benefit and dependency.",
+          "vi": "Giải thích DLL benefit và dependency."
+        },
+        "expectedEvidence": {
+          "en": "A shared run-time routine can keep executables smaller, but the correct compatible DLL must be present and trusted.",
+          "vi": "Shared run-time routine có thể làm executable nhỏ hơn nhưng compatible DLL đúng phải có mặt và đáng tin."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-03-01",
+      "requirementId": "REQ-5.1-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why a new storage disk may need a disk-formatting utility.",
+        "vi": "Giải thích vì sao storage disk mới có thể cần disk-formatting utility."
+      },
+      "hint": {
+        "en": "Describe preparation of a file system rather than rearranging existing files.",
+        "vi": "Mô tả việc chuẩn bị file system thay vì sắp xếp lại file hiện có."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A formatter prepares the disk for storage by creating the required file-system structures, such as partitions, directories or allocation information, so the OS can store and locate files. Formatting is not defragmentation and can destroy existing data.",
+          "vi": "Formatter chuẩn bị disk để lưu trữ bằng cách tạo file-system structure cần thiết như partition, directory hoặc allocation information để OS lưu và tìm file. Formatting không phải defragmentation và có thể làm mất data hiện có."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "disk-formatter",
+        "file-system"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-03-02",
+      "requirementId": "REQ-5.1-03-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why a computer needs an up-to-date virus checker.",
+        "vi": "Giải thích vì sao computer cần virus checker được cập nhật."
+      },
+      "hint": {
+        "en": "Link detection or quarantine to changing malware.",
+        "vi": "Liên hệ detection hoặc quarantine với malware thay đổi."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A virus checker scans files and behaviour for known or suspicious malware, then blocks, quarantines or removes threats. Its signatures and detection rules must be updated because new malware appears and a false positive may require review.",
+          "vi": "Virus checker scan file và behaviour để tìm malware đã biết hoặc đáng ngờ rồi block, quarantine hoặc remove threat. Signature và detection rule phải được update vì malware mới xuất hiện và false positive có thể cần review."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "virus-checker",
+        "malware",
+        "quarantine"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-03-03",
+      "requirementId": "REQ-5.1-03-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why defragmentation can improve access time on a fragmented HDD and why the same reasoning does not apply to an SSD.",
+        "vi": "Giải thích vì sao defragmentation có thể tăng access time trên fragmented HDD và vì sao reasoning đó không áp dụng cho SSD."
+      },
+      "hint": {
+        "en": "Use contiguous blocks and mechanical head movement.",
+        "vi": "Dùng contiguous block và mechanical head movement."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A defragmenter reorganises separated blocks of an HDD file into contiguous regions, reducing read/write-head movement and seek time. An SSD has no mechanical head, so this access-time mechanism does not apply and routine defragmentation creates unnecessary writes.",
+          "vi": "Defragmenter sắp xếp các block rời của file trên HDD thành vùng contiguous, giảm chuyển động read/write head và seek time. SSD không có mechanical head nên mechanism tăng access time này không áp dụng và routine defragmentation tạo write không cần thiết."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "defragmentation",
+        "HDD",
+        "SSD"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-03-04",
+      "requirementId": "REQ-5.1-03-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "A disk reports file-system inconsistencies and the user also needs to identify folders using most space. Explain which utility category is needed.",
+        "vi": "Disk báo file-system inconsistency và user còn cần xác định folder dùng nhiều space nhất. Giải thích utility category cần dùng."
+      },
+      "hint": {
+        "en": "Distinguish analysis from repair while keeping both in the syllabus category.",
+        "vi": "Phân biệt analysis với repair nhưng giữ cả hai trong syllabus category."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Disk-content analysis shows space usage by files and folders so unwanted data can be found. Disk-repair tools check structures or sectors for inconsistencies and attempt repairs or mark unusable areas; repair cannot guarantee recovery of every corrupted file.",
+          "vi": "Disk-content analysis hiển thị space usage theo file và folder để tìm data không cần. Disk-repair tool kiểm tra structure hoặc sector để tìm inconsistency rồi thử repair hoặc đánh dấu vùng không dùng được; repair không bảo đảm recover mọi corrupted file."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "disk-analysis",
+        "disk-repair"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-03-05",
+      "requirementId": "REQ-5.1-03-05",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why file compression is useful before emailing a large folder and state one limitation.",
+        "vi": "Giải thích vì sao file compression hữu ích trước khi email folder lớn và nêu một limitation."
+      },
+      "hint": {
+        "en": "Connect reduced size to storage or transmission and mention decompression.",
+        "vi": "Liên hệ reduced size với storage hoặc transmission và đề cập decompression."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Compression encodes the files using fewer bits, reducing storage space and transfer time. The receiver must have compatible software to decompress the archive, and already compressed files may shrink very little.",
+          "vi": "Compression encode file bằng ít bit hơn, giảm storage space và transfer time. Người nhận cần software tương thích để decompress archive và file đã compressed có thể giảm rất ít."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "file-compression",
+        "transmission"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-03-06",
+      "requirementId": "REQ-5.1-03-06",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why scheduled versioned backups are needed for a student's project.",
+        "vi": "Giải thích vì sao scheduled versioned backup cần cho project của học sinh."
+      },
+      "hint": {
+        "en": "Use loss, corruption or accidental deletion and a restore point.",
+        "vi": "Dùng loss, corruption hoặc accidental deletion và restore point."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Backup software creates recoverable copies at scheduled times. Multiple versions let the student restore a state before accidental deletion or corruption; a separate or remote copy also protects against failure of the working drive. Backup does not detect malware by itself.",
+          "vi": "Backup software tạo recoverable copy theo schedule. Nhiều version cho phép học sinh restore state trước accidental deletion hoặc corruption; copy riêng hoặc remote còn bảo vệ trước failure của working drive. Backup không tự detect malware."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "backup",
+        "restore",
+        "versioning"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-04-01",
+      "requirementId": "REQ-5.1-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two developer benefits of calling a tested sorting routine from a program library.",
+        "vi": "Giải thích hai developer benefit khi call tested sorting routine từ program library."
+      },
+      "hint": {
+        "en": "Use a benefit and a because clause for each point.",
+        "vi": "Dùng benefit và because clause cho mỗi ý."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The developer writes less new code because the sorting routine already exists, reducing development time and cost. A previously tested, documented routine can also reduce testing effort and support modular work, although integration still needs testing.",
+          "vi": "Developer viết ít code mới hơn vì sorting routine đã tồn tại, giảm development time và cost. Routine đã test và document còn có thể giảm testing effort và hỗ trợ modular work, dù integration vẫn cần test."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "program-library",
+        "reuse",
+        "developer-benefit"
+      ]
+    },
+    {
+      "id": "P1-L34-CHECK-REQ-5.1-04-02",
+      "requirementId": "REQ-5.1-04-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two benefits and one risk of using a Dynamic Link Library file.",
+        "vi": "Giải thích hai benefit và một risk khi dùng Dynamic Link Library file."
+      },
+      "hint": {
+        "en": "State what is linked at run time and why the dependency matters.",
+        "vi": "Nêu điều gì được link tại run time và vì sao dependency quan trọng."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The main executable can be smaller because the DLL routine remains separate and is loaded when needed. Several applications may share one DLL in memory, and a compatible DLL can be updated independently. The program depends on the correct DLL being present and compatible; a missing, changed or malicious DLL can cause errors or compromise the program.",
+          "vi": "Main executable có thể nhỏ hơn vì DLL routine vẫn riêng và chỉ load khi cần. Nhiều application có thể share một DLL trong memory và DLL tương thích có thể update độc lập. Program phụ thuộc DLL đúng phải có mặt và compatible; DLL bị thiếu, đổi hoặc độc hại có thể gây error hoặc compromise program."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "DLL",
+        "dynamic-link",
+        "runtime-dependency"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Match each named utility and library type to one need and one limit.",
+      "vi": "Match mỗi utility và library type với một need và một limit."
+    },
+    "answerPoints": [
+      {
+        "en": "Format prepares; antivirus detects; defrag reorganises HDD blocks; analysis/repair diagnoses; compression reduces size; backup restores; libraries reuse; DLLs link at run time.",
+        "vi": "Format chuẩn bị; antivirus detect; defrag sắp lại HDD block; analysis/repair chẩn đoán; compression giảm size; backup restore; library reuse; DLL link tại run time."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "utility software",
+      "meaning": {
+        "en": "System software performing a specific maintenance, protection or storage task.",
+        "vi": "System software thực hiện maintenance, protection hoặc storage task cụ thể."
+      }
+    },
+    {
+      "term": "disk formatter",
+      "meaning": {
+        "en": "A utility that prepares disk structures for storing and locating files.",
+        "vi": "Utility chuẩn bị disk structure để lưu và tìm file."
+      }
+    },
+    {
+      "term": "defragmentation",
+      "meaning": {
+        "en": "Reorganisation of fragmented HDD file blocks into more contiguous regions.",
+        "vi": "Sắp xếp fragmented HDD file block thành vùng contiguous hơn."
+      }
+    },
+    {
+      "term": "backup",
+      "meaning": {
+        "en": "A recoverable copy or version stored separately from the working data.",
+        "vi": "Recoverable copy hoặc version lưu riêng khỏi working data."
+      }
+    },
+    {
+      "term": "program library",
+      "meaning": {
+        "en": "A collection of reusable code routines for software development.",
+        "vi": "Collection các reusable code routine dùng khi phát triển software."
+      }
+    },
+    {
+      "term": "DLL",
+      "meaning": {
+        "en": "A library file linked or loaded by a program at run time.",
+        "vi": "Library file được program link hoặc load tại run time."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "operating-systems",
+    "translators"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §5.1–5.2, p. 23",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L34 · Chapter 5 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C05",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 5, pp. 143–148",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L34",
+  "contractCoverage": {
+    "B01": [
+      "P1-L34-objectives"
+    ],
+    "B02": [
+      "P1-L34-theory-1",
+      "P1-L34-theory-2",
+      "P1-L34-theory-3"
+    ],
+    "B03": [
+      "P1-L34-theory-1",
+      "P1-L34-theory-2",
+      "P1-L34-theory-3"
+    ],
+    "B04": [
+      "P1-L34-recognise-1",
+      "P1-L34-recognise-2"
+    ],
+    "B05": [
+      "P1-L34-worked-1",
+      "P1-L34-worked-2",
+      "P1-L34-worked-3",
+      "P1-L34-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L34"
+    ],
+    "B07": [
+      "P1-L34-CHECK-REQ-5.1-03-01",
+      "P1-L34-CHECK-REQ-5.1-03-02",
+      "P1-L34-CHECK-REQ-5.1-03-03",
+      "P1-L34-CHECK-REQ-5.1-03-04",
+      "P1-L34-CHECK-REQ-5.1-03-05",
+      "P1-L34-CHECK-REQ-5.1-03-06",
+      "P1-L34-CHECK-REQ-5.1-04-01",
+      "P1-L34-CHECK-REQ-5.1-04-02"
+    ],
+    "B08": [
+      "P1-L34-recognise-1",
+      "P1-L34-recognise-2"
+    ],
+    "B09": [
+      "P1-L34-recall"
+    ],
+    "B10": [
+      "P1-L34-glossary"
+    ],
+    "B11": [
+      "P1-L34-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

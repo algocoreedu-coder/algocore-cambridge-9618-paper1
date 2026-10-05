@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L35",
+  "slug": "translators",
+  "sectionId": "5",
+  "strandId": "5.2",
+  "title": {
+    "en": "Assembler, compiler and interpreter",
+    "vi": "Assembler, compiler và interpreter"
+  },
+  "question": {
+    "en": "What is translated, what artefact remains, and when does execution occur?",
+    "vi": "Điều gì được dịch, artefact nào còn lại và execution xảy ra khi nào?"
+  },
+  "opening": {
+    "en": "A translator choice is about source language, output, execution and context. Translation and execution must remain separate unless the chosen model explicitly combines them.",
+    "vi": "Translator choice liên quan source language, output, execution và context. Translation và execution phải tách biệt trừ khi model đã chọn kết hợp chúng một cách rõ ràng."
+  },
+  "objectives": [
+    {
+      "id": "AC26-5.2-01",
+      "text": {
+        "en": "Explain the need for assembler, compiler and interpreter software.",
+        "vi": "Giải thích nhu cầu assembler, compiler và interpreter software."
+      }
+    },
+    {
+      "id": "AC26-5.2-02",
+      "text": {
+        "en": "Compare compiler and interpreter benefits and drawbacks and justify their use.",
+        "vi": "So sánh benefit và drawback của compiler với interpreter và biện minh cách dùng."
+      }
+    },
+    {
+      "id": "AC26-5.2-03",
+      "text": {
+        "en": "Recognise that a high-level program may be partially compiled and partially interpreted.",
+        "vi": "Nhận biết high-level program có thể partially compiled và partially interpreted."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-5.2-01-01",
+    "REQ-5.2-01-02",
+    "REQ-5.2-01-03",
+    "REQ-5.2-02-01",
+    "REQ-5.2-02-02",
+    "REQ-5.2-03-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L35-theory-1",
+      "title": {
+        "en": "Three translators, different source models",
+        "vi": "Ba translator, source model khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "An assembler translates assembly language for a target processor. A compiler translates a high-level source program into target or object code. An interpreter translates and executes a high-level program under interpreter control.",
+          "vi": "Assembler dịch assembly language cho target processor. Compiler dịch high-level source program thành target hoặc object code. Interpreter dịch và execute high-level program dưới interpreter control."
+        },
+        {
+          "en": "Machine code is what the processor executes. A loader or runtime may still be needed after translation, so producing target code and executing it are separate events.",
+          "vi": "Machine code là thứ processor execute. Loader hoặc runtime vẫn có thể cần sau translation nên tạo target code và execute là hai event riêng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "State source, translator, output and execution for every comparison.",
+          "vi": "Nêu source, translator, output và execution cho mọi so sánh."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L35-theory-2",
+      "title": {
+        "en": "Choose by context",
+        "vi": "Chọn theo context"
+      },
+      "paragraphs": [
+        {
+          "en": "Interpretation supports rapid feedback and testing of incomplete code because the developer can run a part and inspect the first encountered problem. Repeated execution still needs the interpreter and repeated translation work.",
+          "vi": "Interpretation hỗ trợ rapid feedback và test incomplete code vì developer có thể run một phần rồi inspect problem đầu tiên. Repeated execution vẫn cần interpreter và translation work lặp lại."
+        },
+        {
+          "en": "Compilation can optimise and produce distributable target code that runs repeatedly without the compiler, but source changes require recompilation and a program with blocking compile errors cannot run. Neither method guarantees logic is correct.",
+          "vi": "Compilation có thể optimise và tạo distributable target code run nhiều lần không cần compiler, nhưng source change cần recompile và program có blocking compile error không run. Không method nào bảo đảm logic đúng."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A justification must refer to the development or distribution condition in the question.",
+          "vi": "Justification phải đề cập development hoặc distribution condition trong câu hỏi."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    },
+    {
+      "id": "P1-L35-theory-3",
+      "title": {
+        "en": "Hybrid translation uses an intermediate form",
+        "vi": "Hybrid translation dùng intermediate form"
+      },
+      "paragraphs": [
+        {
+          "en": "Some high-level programs are compiled to machine-independent intermediate code or bytecode. A virtual machine then interprets or further compiles that form for the current machine.",
+          "vi": "Một số high-level program được compile thành machine-independent intermediate code hoặc bytecode. Virtual machine sau đó interpret hoặc further compile form này cho machine hiện tại."
+        },
+        {
+          "en": "This approach can combine portability with run-time adaptation. It does not mean that random source lines are split between two translators.",
+          "vi": "Cách này có thể kết hợp portability với run-time adaptation. Nó không có nghĩa các source line ngẫu nhiên bị chia cho hai translator."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Declare the hybrid pipeline used by the example; real implementations vary.",
+          "vi": "Công bố hybrid pipeline dùng trong example; implementation thực tế có thể khác."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C05"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace four translation paths",
+      "vi": "Trace bốn translation path"
+    },
+    "prompt": {
+      "en": "Compare a controller routine, a desktop release, a development script and a Java-style program.",
+      "vi": "So sánh controller routine, desktop release, development script và Java-style program."
+    },
+    "steps": [
+      {
+        "id": "P1-L35-worked-1",
+        "action": {
+          "en": "Assembly controller source.",
+          "vi": "Assembly controller source."
+        },
+        "result": {
+          "en": "Assembler → processor-specific object/machine code → load → execute.",
+          "vi": "Assembler → processor-specific object/machine code → load → execute."
+        }
+      },
+      {
+        "id": "P1-L35-worked-2",
+        "action": {
+          "en": "High-level desktop release.",
+          "vi": "High-level desktop release."
+        },
+        "result": {
+          "en": "Compiler → stored target/executable code → later repeated execution without the compiler.",
+          "vi": "Compiler → stored target/executable code → later repeated execution without compiler."
+        }
+      },
+      {
+        "id": "P1-L35-worked-3",
+        "action": {
+          "en": "Unfinished development script.",
+          "vi": "Development script chưa hoàn tất."
+        },
+        "result": {
+          "en": "Interpreter translates and executes the tested path, stopping near a detected error; later runs require the interpreter again.",
+          "vi": "Interpreter dịch và execute tested path, dừng gần detected error; later run cần interpreter lại."
+        }
+      },
+      {
+        "id": "P1-L35-worked-4",
+        "action": {
+          "en": "Java-style source.",
+          "vi": "Java-style source."
+        },
+        "result": {
+          "en": "Compiler → bytecode → virtual-machine runtime → interpretation or further compilation → execution.",
+          "vi": "Compiler → bytecode → virtual-machine runtime → interpretation hoặc further compilation → execution."
+        }
+      }
+    ],
+    "result": {
+      "en": "The correct comparison follows artefacts and phases instead of treating every translator as a synonym.",
+      "vi": "So sánh đúng phải theo artefact và phase thay vì xem mọi translator là từ đồng nghĩa."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for source language, repeated runs, development stage, distribution and runtime availability.",
+        "vi": "Tìm source language, repeated run, development stage, distribution và runtime availability."
+      }
+    ],
+    "method": [
+      {
+        "en": "Draw source → translator → output/runtime → execution.",
+        "vi": "Vẽ source → translator → output/runtime → execution."
+      },
+      {
+        "en": "For a choice, compare the same dimension in both alternatives.",
+        "vi": "Với choice, so sánh cùng dimension ở cả hai alternative."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A compiler executes the source while translating it.",
+          "vi": "Compiler execute source khi đang dịch."
+        },
+        "correction": {
+          "en": "Compilation produces target code; later execution is a separate phase.",
+          "vi": "Compilation tạo target code; execution sau đó là phase riêng."
+        }
+      },
+      {
+        "mistake": {
+          "en": "An interpreter is always faster because it starts immediately.",
+          "vi": "Interpreter luôn nhanh hơn vì start ngay."
+        },
+        "correction": {
+          "en": "Development feedback may be quicker, while repeated interpreted execution is generally slower than already translated target code.",
+          "vi": "Development feedback có thể nhanh hơn, còn repeated interpreted execution thường chậm hơn target code đã dịch."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Partial compilation means half the source lines are compiled.",
+          "vi": "Partial compilation nghĩa là một nửa source line được compile."
+        },
+        "correction": {
+          "en": "The program is usually compiled to an intermediate representation handled by a run-time system.",
+          "vi": "Program thường được compile thành intermediate representation do run-time system xử lý."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L35-recognise-1",
+        "title": {
+          "en": "Name the artefact",
+          "vi": "Nêu artefact"
+        },
+        "setup": {
+          "en": "A source program becomes bytecode that runs on a virtual machine.",
+          "vi": "Source program trở thành bytecode chạy trên virtual machine."
+        },
+        "prompt": {
+          "en": "Explain why the model is hybrid.",
+          "vi": "Giải thích vì sao model là hybrid."
+        },
+        "expectedEvidence": {
+          "en": "A compiler creates intermediate code; the VM interprets or further compiles it for execution.",
+          "vi": "Compiler tạo intermediate code; VM interpret hoặc further compile nó để execute."
+        }
+      },
+      {
+        "id": "P1-L35-recognise-2",
+        "title": {
+          "en": "Justify the stage",
+          "vi": "Biện minh stage"
+        },
+        "setup": {
+          "en": "A developer is testing an unfinished function.",
+          "vi": "Developer đang test function chưa hoàn tất."
+        },
+        "prompt": {
+          "en": "Justify an interpreter without merely defining it.",
+          "vi": "Biện minh interpreter mà không chỉ định nghĩa."
+        },
+        "expectedEvidence": {
+          "en": "It gives immediate feedback on the tested path and allows correction before continuing, which suits incomplete development work.",
+          "vi": "Nó cho immediate feedback trên tested path và cho phép sửa trước khi tiếp tục, phù hợp incomplete development work."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L35-CHECK-REQ-5.2-01-01",
+      "requirementId": "REQ-5.2-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why an assembler is needed for an assembly-language program.",
+        "vi": "Giải thích vì sao assembler cần cho assembly-language program."
+      },
+      "hint": {
+        "en": "State the source and target forms.",
+        "vi": "Nêu source và target form."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A processor executes machine code, not assembly mnemonics. The assembler translates assembly-language instructions and operands into target machine/object code for the processor; the translated code can then be loaded and executed.",
+          "vi": "Processor execute machine code chứ không phải assembly mnemonic. Assembler dịch assembly-language instruction và operand thành target machine/object code cho processor; translated code sau đó có thể load và execute."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "assembler",
+        "assembly-language",
+        "machine-code"
+      ]
+    },
+    {
+      "id": "P1-L35-CHECK-REQ-5.2-01-02",
+      "requirementId": "REQ-5.2-01-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of a compiler and distinguish compilation from later execution.",
+        "vi": "Giải thích vai trò compiler và phân biệt compilation với execution sau đó."
+      },
+      "hint": {
+        "en": "Identify the source, output and when translation repeats.",
+        "vi": "Xác định source, output và khi nào translation lặp lại."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A compiler translates a high-level source program into target/object code and reports detected errors. If compilation succeeds, the object or executable form can be stored and run later without recompiling unchanged source; execution is a separate phase.",
+          "vi": "Compiler dịch high-level source program thành target/object code và báo detected error. Nếu compile thành công, object hoặc executable form có thể lưu và run sau mà không compile lại unchanged source; execution là phase riêng."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "compiler",
+        "object-code",
+        "execution"
+      ]
+    },
+    {
+      "id": "P1-L35-CHECK-REQ-5.2-01-03",
+      "requirementId": "REQ-5.2-01-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of an interpreter when a high-level program runs.",
+        "vi": "Giải thích vai trò interpreter khi high-level program chạy."
+      },
+      "hint": {
+        "en": "Connect translation with immediate execution and later runs.",
+        "vi": "Liên hệ translation với immediate execution và later run."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "An interpreter analyses and translates a high-level program under its control and executes each translated part. It does not use the same standalone stored executable model, so the source needs the interpreter and is translated again on a later run.",
+          "vi": "Interpreter phân tích và dịch high-level program dưới sự điều khiển của nó rồi execute từng phần đã dịch. Nó không dùng cùng standalone stored executable model nên source cần interpreter và được dịch lại ở lần run sau."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "interpreter",
+        "translation",
+        "execution"
+      ]
+    },
+    {
+      "id": "P1-L35-CHECK-REQ-5.2-02-01",
+      "requirementId": "REQ-5.2-02-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare compiler and interpreter use for developing and distributing a program.",
+        "vi": "So sánh việc dùng compiler và interpreter để develop và distribute program."
+      },
+      "hint": {
+        "en": "Use matched dimensions: feedback, errors, execution and source/runtime needs.",
+        "vi": "Dùng matched dimension: feedback, error, execution và source/runtime need."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "An interpreter can execute tested parts and stop near an error, giving immediate feedback during development, but translation repeats and execution is generally slower. A compiler reports detected errors across the source and produces target code that can run faster without the compiler, but a failed build cannot run and editing requires recompilation. A compiled executable can hide source from the end user; interpreted distribution normally requires source and a compatible interpreter/runtime.",
+          "vi": "Interpreter có thể execute phần đang test và dừng gần error, cho feedback ngay khi development, nhưng translation lặp lại và execution thường chậm hơn. Compiler báo detected error trên source và tạo target code có thể run nhanh hơn không cần compiler, nhưng failed build không run và edit cần recompile. Compiled executable có thể giấu source khỏi end user; interpreted distribution thường cần source và interpreter/runtime tương thích."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "compiler",
+        "interpreter",
+        "comparison"
+      ]
+    },
+    {
+      "id": "P1-L35-CHECK-REQ-5.2-02-02",
+      "requirementId": "REQ-5.2-02-02",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "A programmer is testing unfinished modules, then will distribute the stable program to many users. Justify a translator choice at each stage.",
+        "vi": "Programmer đang test module chưa hoàn tất rồi sẽ distribute stable program cho nhiều user. Biện minh translator choice ở mỗi stage."
+      },
+      "hint": {
+        "en": "Tie each benefit to the stated stage instead of only defining the translator.",
+        "vi": "Gắn mỗi benefit với stage đã nêu thay vì chỉ định nghĩa translator."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "During development, an interpreter is suitable because it gives immediate feedback, supports testing parts of the source and allows correction before continuing. For the stable release, a compiler is suitable because translation happens before distribution, the target code can execute repeatedly with no compiler, usually faster, and source need not be supplied. The exact choice remains conditional on the language and runtime.",
+          "vi": "Khi development, interpreter phù hợp vì cho immediate feedback, hỗ trợ test từng phần source và cho phép sửa trước khi tiếp tục. Với stable release, compiler phù hợp vì translation xảy ra trước distribution, target code có thể execute nhiều lần không cần compiler, thường nhanh hơn và không cần cung cấp source. Lựa chọn cụ thể vẫn phụ thuộc language và runtime."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "translator-choice",
+        "development",
+        "distribution"
+      ]
+    },
+    {
+      "id": "P1-L35-CHECK-REQ-5.2-03-01",
+      "requirementId": "REQ-5.2-03-01",
+      "kind": "trace",
+      "level": "independent",
+      "prompt": {
+        "en": "Trace a Java-style hybrid from source code to execution and explain why it is both compiled and interpreted.",
+        "vi": "Trace Java-style hybrid từ source code tới execution và giải thích vì sao vừa compiled vừa interpreted."
+      },
+      "hint": {
+        "en": "Use an intermediate machine-independent representation.",
+        "vi": "Dùng intermediate machine-independent representation."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A compiler first translates source code into intermediate bytecode. At run time, a virtual-machine runtime interprets or further compiles that bytecode for the current processor. The split is between representations and stages, not an arbitrary half of the source lines.",
+          "vi": "Compiler trước hết dịch source code thành intermediate bytecode. Tại run time, virtual-machine runtime interpret hoặc further compile bytecode đó cho processor hiện tại. Sự phân chia nằm giữa representation và stage, không phải một nửa tùy ý các source line."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi cơ chế, so sánh hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bytecode",
+        "virtual-machine",
+        "hybrid-translation"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "For assembler, compiler, interpreter and a hybrid, state source, output and execution relationship.",
+      "vi": "Với assembler, compiler, interpreter và hybrid, nêu source, output và execution relationship."
+    },
+    "answerPoints": [
+      {
+        "en": "Assembler maps assembly to target code; compiler stores target code; interpreter controls translation and execution; hybrid compiles to intermediate code handled by a runtime.",
+        "vi": "Assembler map assembly thành target code; compiler lưu target code; interpreter điều khiển translation và execution; hybrid compile thành intermediate code do runtime xử lý."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "assembler",
+      "meaning": {
+        "en": "Software translating assembly language into target machine/object code.",
+        "vi": "Software dịch assembly language thành target machine/object code."
+      }
+    },
+    {
+      "term": "compiler",
+      "meaning": {
+        "en": "Software translating a high-level source program into target/object code before execution.",
+        "vi": "Software dịch high-level source program thành target/object code trước execution."
+      }
+    },
+    {
+      "term": "interpreter",
+      "meaning": {
+        "en": "Software that translates and executes a high-level program under its control.",
+        "vi": "Software dịch và execute high-level program dưới sự điều khiển của nó."
+      }
+    },
+    {
+      "term": "object code",
+      "meaning": {
+        "en": "Translated target code produced from a source program.",
+        "vi": "Translated target code được tạo từ source program."
+      }
+    },
+    {
+      "term": "bytecode",
+      "meaning": {
+        "en": "Intermediate code designed for a virtual-machine runtime.",
+        "vi": "Intermediate code được thiết kế cho virtual-machine runtime."
+      }
+    },
+    {
+      "term": "virtual machine",
+      "meaning": {
+        "en": "A run-time environment that executes an intermediate instruction set.",
+        "vi": "Run-time environment execute intermediate instruction set."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "assembly-translation",
+    "ide-tools"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §5.1–5.2, p. 23",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L35 · Chapter 5 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C05",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 5, pp. 149–153",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L35",
+  "contractCoverage": {
+    "B01": [
+      "P1-L35-objectives"
+    ],
+    "B02": [
+      "P1-L35-theory-1",
+      "P1-L35-theory-2",
+      "P1-L35-theory-3"
+    ],
+    "B03": [
+      "P1-L35-theory-1",
+      "P1-L35-theory-2",
+      "P1-L35-theory-3"
+    ],
+    "B04": [
+      "P1-L35-recognise-1",
+      "P1-L35-recognise-2"
+    ],
+    "B05": [
+      "P1-L35-worked-1",
+      "P1-L35-worked-2",
+      "P1-L35-worked-3",
+      "P1-L35-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L35"
+    ],
+    "B07": [
+      "P1-L35-CHECK-REQ-5.2-01-01",
+      "P1-L35-CHECK-REQ-5.2-01-02",
+      "P1-L35-CHECK-REQ-5.2-01-03",
+      "P1-L35-CHECK-REQ-5.2-02-01",
+      "P1-L35-CHECK-REQ-5.2-02-02",
+      "P1-L35-CHECK-REQ-5.2-03-01"
+    ],
+    "B08": [
+      "P1-L35-recognise-1",
+      "P1-L35-recognise-2"
+    ],
+    "B09": [
+      "P1-L35-recall"
+    ],
+    "B10": [
+      "P1-L35-glossary"
+    ],
+    "B11": [
+      "P1-L35-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}
