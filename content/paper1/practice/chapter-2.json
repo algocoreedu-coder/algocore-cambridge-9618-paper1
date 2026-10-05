@@ -1,0 +1,1444 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP02",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "2",
+  "title": {
+    "en": "Chapter 2 mixed practice: Communication",
+    "vi": "Bài luyện tổng hợp Chapter 2: Communication"
+  },
+  "intro": {
+    "en": "Fifteen original questions cover every Chapter 2 objective and atomic requirement. Attempt before revealing guidance.",
+    "vi": "Mười lăm câu tự biên soạn bao phủ mọi objective và atomic requirement của Chapter 2. Hãy làm trước khi mở hướng dẫn."
+  },
+  "timing": {
+    "timedMinutes": 75,
+    "untimedAvailable": true
+  },
+  "totalMarks": 60,
+  "aoBlueprint": {
+    "AO1": 36,
+    "AO2": 24,
+    "note": {
+      "en": "The 60:40 split mirrors the Paper 1 AO weighting for rehearsal; this is an AlgoCore chapter blueprint, not an official Cambridge paper.",
+      "vi": "Tỉ lệ 60:40 mô phỏng weighting AO của Paper 1 để luyện tập; đây là blueprint Chapter do AlgoCore biên soạn, không phải Cambridge paper chính thức."
+    }
+  },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "kind": "syllabus",
+      "locator": "Cambridge 9618 syllabus for 2026 v2, §2.1, pp. 16–17"
+    },
+    {
+      "id": "BOOK-C02",
+      "kind": "coursebook",
+      "locator": "Coursebook Chapter 2, pp. 27–67"
+    },
+    {
+      "id": "ALG-P1",
+      "kind": "algocore",
+      "locator": "P1-CP02 original assessment set v1.0"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP02-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-2.1-01-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-01"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain four benefits of networking devices in a school, linking each benefit to a network mechanism.",
+        "vi": "Giải thích bốn lợi ích của việc nối mạng thiết bị trong trường, gắn mỗi lợi ích với cơ chế network."
+      },
+      "hint": {
+        "en": "Use sharing, central administration, communication and backup.",
+        "vi": "Dùng sharing, central administration, communication và backup."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The network can share printers, provide common files, centralise backup/access rights and support messaging or collaboration. Each benefit follows from connected resources or central services.",
+          "vi": "Network có thể chia sẻ máy in, cung cấp tệp chung, tập trung backup/access right và hỗ trợ messaging hoặc collaboration. Mỗi lợi ích xuất phát từ tài nguyên kết nối hoặc central service."
+        },
+        "markingPoints": [
+          {
+            "id": "Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-01-01"
+            ],
+            "point": {
+              "en": "Explains shared hardware with a consequence.",
+              "vi": "Giải thích shared hardware cùng hệ quả."
+            }
+          },
+          {
+            "id": "Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-01-01"
+            ],
+            "point": {
+              "en": "Explains shared data/services.",
+              "vi": "Giải thích shared data/service."
+            }
+          },
+          {
+            "id": "Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-01-01"
+            ],
+            "point": {
+              "en": "Explains central administration or backup.",
+              "vi": "Giải thích central administration hoặc backup."
+            }
+          },
+          {
+            "id": "Q01-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-01-01"
+            ],
+            "point": {
+              "en": "Explains a communication/collaboration benefit.",
+              "vi": "Giải thích lợi ích communication/collaboration."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-foundations",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q02",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-2.1-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-02"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Compare a LAN and a WAN using scope, management of infrastructure and one example of each.",
+        "vi": "So sánh LAN và WAN theo scope, quản lý infrastructure và một ví dụ mỗi loại."
+      },
+      "hint": {
+        "en": "Avoid one arbitrary distance threshold.",
+        "vi": "Tránh dùng một ngưỡng khoảng cách tùy ý."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A LAN covers a limited locally managed site, such as one school campus. A WAN connects networks across wider areas using carrier, public or leased links, such as offices in different cities.",
+          "vi": "LAN bao phủ địa điểm giới hạn được quản lý local, như một school campus. WAN nối các network trên vùng rộng hơn qua carrier, public hoặc leased link, như văn phòng ở các thành phố khác nhau."
+        },
+        "markingPoints": [
+          {
+            "id": "Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-02-01"
+            ],
+            "point": {
+              "en": "States a LAN characteristic.",
+              "vi": "Nêu đặc trưng LAN."
+            }
+          },
+          {
+            "id": "Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-02-01"
+            ],
+            "point": {
+              "en": "States a WAN characteristic.",
+              "vi": "Nêu đặc trưng WAN."
+            }
+          },
+          {
+            "id": "Q02-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-02-01"
+            ],
+            "point": {
+              "en": "Makes a direct infrastructure/scope comparison.",
+              "vi": "So sánh trực tiếp infrastructure/scope."
+            }
+          },
+          {
+            "id": "Q02-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-02-01"
+            ],
+            "point": {
+              "en": "Gives suitable examples of both.",
+              "vi": "Nêu ví dụ phù hợp cho cả hai."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-foundations",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q03",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-2.1-03-01",
+        "REQ-2.1-03-02",
+        "REQ-2.1-03-03"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-03"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A 60-user clinic needs central accounts, controlled records and daily backup. Choose client–server or peer-to-peer and justify the choice with one residual risk.",
+        "vi": "Phòng khám 60 user cần tài khoản tập trung, hồ sơ được kiểm soát và backup hằng ngày. Chọn client–server hoặc peer-to-peer và biện minh, gồm một rủi ro còn lại."
+      },
+      "hint": {
+        "en": "Link every point to a stated requirement.",
+        "vi": "Gắn mọi ý với yêu cầu đã nêu."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Client–server is justified because dedicated server roles can centralise authentication, authoritative records and backup for many users. It needs administration and resilient servers because a failed central service can affect many clients.",
+          "vi": "Client–server hợp lý vì dedicated server role có thể tập trung authentication, hồ sơ chuẩn và backup cho nhiều user. Nó cần quản trị và resilient server vì central service hỏng có thể ảnh hưởng nhiều client."
+        },
+        "markingPoints": [
+          {
+            "id": "Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-03-03"
+            ],
+            "point": {
+              "en": "Chooses client–server from the scenario.",
+              "vi": "Chọn client–server từ tình huống."
+            }
+          },
+          {
+            "id": "Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-03-01"
+            ],
+            "point": {
+              "en": "Explains client and server roles.",
+              "vi": "Giải thích vai trò client và server."
+            }
+          },
+          {
+            "id": "Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-03-02",
+              "REQ-2.1-03-03"
+            ],
+            "point": {
+              "en": "Links central control/backup to the choice.",
+              "vi": "Liên hệ central control/backup với lựa chọn."
+            }
+          },
+          {
+            "id": "Q03-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-03-02"
+            ],
+            "point": {
+              "en": "States a relevant drawback or risk.",
+              "vi": "Nêu hạn chế hoặc rủi ro phù hợp."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-models",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q04",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-2.1-04-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-04"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Compare thin and thick clients using processing location, local software/storage, network dependence and offline use.",
+        "vi": "So sánh thin và thick client theo vị trí xử lý, phần mềm/lưu trữ local, phụ thuộc network và offline use."
+      },
+      "hint": {
+        "en": "Thin/thick does not describe physical case size.",
+        "vi": "Thin/thick không mô tả kích thước vỏ máy."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Thin clients rely more on server processing, applications or storage and have limited offline use. Thick clients perform and store more locally, often work partly offline, but require stronger local hardware and maintenance.",
+          "vi": "Thin client dựa nhiều hơn vào server processing, application hoặc storage và offline use hạn chế. Thick client thực hiện và lưu nhiều hơn local, thường làm được một phần offline nhưng cần local hardware và maintenance mạnh hơn."
+        },
+        "markingPoints": [
+          {
+            "id": "Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-04-01"
+            ],
+            "point": {
+              "en": "Compares processing location.",
+              "vi": "So sánh vị trí xử lý."
+            }
+          },
+          {
+            "id": "Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-04-01"
+            ],
+            "point": {
+              "en": "Compares local software/storage.",
+              "vi": "So sánh phần mềm/lưu trữ local."
+            }
+          },
+          {
+            "id": "Q04-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-04-01"
+            ],
+            "point": {
+              "en": "Compares network/offline dependence.",
+              "vi": "So sánh phụ thuộc network/offline."
+            }
+          },
+          {
+            "id": "Q04-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-04-01"
+            ],
+            "point": {
+              "en": "States one consequence for hardware or maintenance.",
+              "vi": "Nêu một hệ quả cho hardware hoặc maintenance."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-models",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q05",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-2.1-05-01",
+        "REQ-2.1-05-02",
+        "REQ-2.1-05-03"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-05"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "justify",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A data centre can fund extra links and needs critical nodes to remain connected after one link failure. Choose a topology, trace how an alternate path helps, and state one cost.",
+        "vi": "Data centre có thể chi cho link bổ sung và cần critical node vẫn kết nối sau khi một link hỏng. Chọn topology, lần cách alternate path giúp và nêu một cost."
+      },
+      "hint": {
+        "en": "Use the shown requirement for resilience; do not claim a topology is always best.",
+        "vi": "Dùng yêu cầu resilience; không nói topology luôn tốt nhất."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A partial/full mesh among critical nodes is defensible. Multiple links allow routing through an alternate path after one link fails. The extra cabling, ports, configuration and monitoring increase cost and complexity.",
+          "vi": "Partial/full mesh giữa critical node là hợp lý. Nhiều link cho phép routing qua alternate path sau khi một link hỏng. Cabling, port, configuration và monitoring thêm làm tăng cost và complexity."
+        },
+        "markingPoints": [
+          {
+            "id": "Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-05-03"
+            ],
+            "point": {
+              "en": "Selects mesh for stated resilience.",
+              "vi": "Chọn mesh cho resilience đã nêu."
+            }
+          },
+          {
+            "id": "Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-05-01"
+            ],
+            "point": {
+              "en": "Describes multiple interconnections.",
+              "vi": "Mô tả nhiều interconnection."
+            }
+          },
+          {
+            "id": "Q05-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-05-02"
+            ],
+            "point": {
+              "en": "Explains packet rerouting through an alternate path.",
+              "vi": "Giải thích packet reroute qua alternate path."
+            }
+          },
+          {
+            "id": "Q05-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-05-03"
+            ],
+            "point": {
+              "en": "States a relevant cost/complexity consequence.",
+              "vi": "Nêu hệ quả cost/complexity phù hợp."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-topologies",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q06",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-2.1-06-01",
+        "REQ-2.1-06-02"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-06"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "evaluate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A startup has unpredictable demand and little capital, while a hospital requires dedicated governance of sensitive records. Recommend a cloud deployment for each and evaluate one risk per choice.",
+        "vi": "Startup có nhu cầu khó dự đoán và ít vốn, còn bệnh viện cần governance riêng cho hồ sơ nhạy cảm. Đề xuất cloud deployment cho mỗi bên và đánh giá một risk mỗi lựa chọn."
+      },
+      "hint": {
+        "en": "Public/private describes deployment control, not public/private files.",
+        "vi": "Public/private mô tả deployment control, không phải file công khai/riêng tư."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Public cloud suits the startup through elastic capacity and low upfront hardware cost, with provider/network dependence as a risk. Private cloud is defensible for the hospital’s dedicated control boundary, but still needs skilled administration, resilience and correct security configuration.",
+          "vi": "Public cloud phù hợp startup nhờ capacity co giãn và hardware cost ban đầu thấp, với risk phụ thuộc provider/network. Private cloud hợp lý cho ranh giới control riêng của bệnh viện nhưng vẫn cần quản trị có kỹ năng, resilience và security configuration đúng."
+        },
+        "markingPoints": [
+          {
+            "id": "Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-06-01"
+            ],
+            "point": {
+              "en": "Correctly distinguishes and selects public/private deployments.",
+              "vi": "Phân biệt và chọn đúng public/private deployment."
+            }
+          },
+          {
+            "id": "Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-06-02"
+            ],
+            "point": {
+              "en": "Explains startup benefit.",
+              "vi": "Giải thích lợi ích startup."
+            }
+          },
+          {
+            "id": "Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-06-02"
+            ],
+            "point": {
+              "en": "Explains hospital benefit.",
+              "vi": "Giải thích lợi ích bệnh viện."
+            }
+          },
+          {
+            "id": "Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-06-02"
+            ],
+            "point": {
+              "en": "Evaluates one relevant risk for each or a shared risk precisely.",
+              "vi": "Đánh giá một risk phù hợp cho mỗi bên hoặc shared risk chính xác."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "cloud-computing",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-2.1-07-01",
+        "REQ-2.1-07-02"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-07"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Describe copper, fibre, radio/WiFi, terrestrial microwave and satellite links, then state one wired/wireless implication.",
+        "vi": "Mô tả copper, fibre, radio/WiFi, terrestrial microwave và satellite link, rồi nêu một hệ quả wired/wireless."
+      },
+      "hint": {
+        "en": "Cover signal form or defining link property.",
+        "vi": "Bao phủ dạng tín hiệu hoặc property xác định của link."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Copper carries electrical signals; fibre carries light; WiFi uses local radio; terrestrial microwave is directional and often line-of-sight; satellite relays microwave for wide coverage with delay. Wired links require cabling; wireless supports mobility but has range/interference/security constraints.",
+          "vi": "Copper mang tín hiệu điện; fibre mang ánh sáng; WiFi dùng radio local; terrestrial microwave có hướng và thường line-of-sight; satellite chuyển tiếp microwave cho coverage rộng nhưng có delay. Wired link cần cabling; wireless hỗ trợ mobility nhưng có constraint về range/interference/security."
+        },
+        "markingPoints": [
+          {
+            "id": "Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-07-02"
+            ],
+            "point": {
+              "en": "Correctly describes copper and fibre.",
+              "vi": "Mô tả đúng copper và fibre."
+            }
+          },
+          {
+            "id": "Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-07-02"
+            ],
+            "point": {
+              "en": "Correctly describes radio/WiFi.",
+              "vi": "Mô tả đúng radio/WiFi."
+            }
+          },
+          {
+            "id": "Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-07-02"
+            ],
+            "point": {
+              "en": "Correctly describes microwave and satellite.",
+              "vi": "Mô tả đúng microwave và satellite."
+            }
+          },
+          {
+            "id": "Q07-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-07-01"
+            ],
+            "point": {
+              "en": "Explains a wired/wireless implication.",
+              "vi": "Giải thích một wired/wireless implication."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "transmission-media",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q08",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-2.1-08-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-08"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain the role of switch, server, NIC/WNIC, WAP, cable, bridge and repeater in a LAN.",
+        "vi": "Giải thích vai trò switch, server, NIC/WNIC, WAP, cable, bridge và repeater trong LAN."
+      },
+      "hint": {
+        "en": "Keep forwarding, service, interface, medium and regeneration separate.",
+        "vi": "Tách forwarding, service, interface, medium và regeneration."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A switch forwards frames within the LAN; a server provides services; NIC/WNIC provide wired/wireless interfaces; WAP connects wireless clients; cable carries signals; bridge joins compatible segments; repeater regenerates or retransmits weakened signals.",
+          "vi": "Switch forward frame trong LAN; server cung cấp service; NIC/WNIC cung cấp interface có dây/không dây; WAP nối wireless client; cable mang tín hiệu; bridge nối compatible segment; repeater tái tạo hoặc phát lại tín hiệu yếu."
+        },
+        "markingPoints": [
+          {
+            "id": "Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-08-01"
+            ],
+            "point": {
+              "en": "Explains switch and server roles.",
+              "vi": "Giải thích vai trò switch và server."
+            }
+          },
+          {
+            "id": "Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-08-01"
+            ],
+            "point": {
+              "en": "Explains NIC/WNIC and WAP.",
+              "vi": "Giải thích NIC/WNIC và WAP."
+            }
+          },
+          {
+            "id": "Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-08-01"
+            ],
+            "point": {
+              "en": "Explains cable and bridge.",
+              "vi": "Giải thích cable và bridge."
+            }
+          },
+          {
+            "id": "Q08-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-08-01"
+            ],
+            "point": {
+              "en": "Explains repeater without assigning routing to it.",
+              "vi": "Giải thích repeater mà không gán routing cho nó."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-hardware",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q09",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-09-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-09"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "A host sends a packet to an address outside its LAN. Explain four stages involving the router.",
+        "vi": "Host gửi packet tới address ngoài LAN. Giải thích bốn stage có router."
+      },
+      "hint": {
+        "en": "Use destination network and next hop.",
+        "vi": "Dùng destination network và next hop."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The host recognises the destination as non-local and sends to its default router. The router reads destination IP/network information, consults routing information, selects a next hop/interface and forwards the packet across the network boundary.",
+          "vi": "Host nhận ra destination không local và gửi tới default router. Router đọc destination IP/network, tra routing information, chọn next hop/interface và forward packet qua network boundary."
+        },
+        "markingPoints": [
+          {
+            "id": "Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-09-01"
+            ],
+            "point": {
+              "en": "States host sends non-local traffic to router.",
+              "vi": "Nêu host gửi non-local traffic tới router."
+            }
+          },
+          {
+            "id": "Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-09-01"
+            ],
+            "point": {
+              "en": "Router examines destination network information.",
+              "vi": "Router xem destination network information."
+            }
+          },
+          {
+            "id": "Q09-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-09-01"
+            ],
+            "point": {
+              "en": "Router selects route/next hop/interface.",
+              "vi": "Router chọn route/next hop/interface."
+            }
+          },
+          {
+            "id": "Q09-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-09-01"
+            ],
+            "point": {
+              "en": "Router forwards across network boundary.",
+              "vi": "Router forward qua network boundary."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-hardware",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q10",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-10-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-10"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain CSMA/CD from carrier sense through a collision and retry, and state its Ethernet scope.",
+        "vi": "Giải thích CSMA/CD từ carrier sense qua collision và retry, rồi nêu phạm vi Ethernet."
+      },
+      "hint": {
+        "en": "Include propagation delay and random backoff.",
+        "vi": "Gồm propagation delay và random backoff."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "On shared half-duplex Ethernet, two stations may both sense idle before signals arrive. They transmit, monitor, detect collision, stop/signal, wait independently random backoff intervals, sense again and retry. Switched full-duplex links normally do not use this collision process.",
+          "vi": "Trên shared half-duplex Ethernet, hai station có thể cùng sense rảnh trước khi tín hiệu tới. Chúng transmit, monitor, detect collision, stop/signal, chờ random backoff interval độc lập, sense lại và retry. Switched full-duplex link thường không dùng quy trình collision này."
+        },
+        "markingPoints": [
+          {
+            "id": "Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-10-01"
+            ],
+            "point": {
+              "en": "Explains carrier sense and simultaneous transmission.",
+              "vi": "Giải thích carrier sense và transmission đồng thời."
+            }
+          },
+          {
+            "id": "Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-10-01"
+            ],
+            "point": {
+              "en": "Explains collision detection and stopping.",
+              "vi": "Giải thích collision detection và dừng."
+            }
+          },
+          {
+            "id": "Q10-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-10-01"
+            ],
+            "point": {
+              "en": "Explains random backoff and retry.",
+              "vi": "Giải thích random backoff và retry."
+            }
+          },
+          {
+            "id": "Q10-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-10-01"
+            ],
+            "point": {
+              "en": "States the shared half-duplex scope.",
+              "vi": "Nêu phạm vi shared half-duplex."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "ethernet",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q11",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-11-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-11"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "analyse",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A live stream consumes 6 Mb/s, receives 5 Mb/s and starts with a 12 Mb buffer. Analyse what happens and one continuity/latency trade-off.",
+        "vi": "Live stream consume 6 Mb/s, nhận 5 Mb/s và bắt đầu với buffer 12 Mb. Phân tích điều xảy ra và một trade-off continuity/latency."
+      },
+      "hint": {
+        "en": "Track arrival minus consumption each second.",
+        "vi": "Theo dõi arrival trừ consumption mỗi giây."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The buffer loses 1 Mb/s and empties after 12 seconds if rates persist, causing a stall or quality reduction. A larger initial buffer delays exhaustion but increases start-up delay and live latency.",
+          "vi": "Buffer mất 1 Mb/s và cạn sau 12 giây nếu rate kéo dài, gây stall hoặc giảm quality. Initial buffer lớn trì hoãn cạn nhưng tăng start-up delay và live latency."
+        },
+        "markingPoints": [
+          {
+            "id": "Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-11-01"
+            ],
+            "point": {
+              "en": "Identifies real-time/live context.",
+              "vi": "Xác định context real-time/live."
+            }
+          },
+          {
+            "id": "Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-11-01"
+            ],
+            "point": {
+              "en": "Calculates −1 Mb/s buffer change.",
+              "vi": "Tính buffer change −1 Mb/s."
+            }
+          },
+          {
+            "id": "Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-11-01"
+            ],
+            "point": {
+              "en": "Predicts exhaustion after 12 seconds and consequence.",
+              "vi": "Dự đoán cạn sau 12 giây và hệ quả."
+            }
+          },
+          {
+            "id": "Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-11-01"
+            ],
+            "point": {
+              "en": "Explains the continuity/latency trade-off.",
+              "vi": "Giải thích continuity/latency trade-off."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "streaming",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q12",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-12-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-12"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Distinguish the internet from the WWW and name two non-Web internet services.",
+        "vi": "Phân biệt internet với WWW và nêu hai internet service không phải Web."
+      },
+      "hint": {
+        "en": "Use infrastructure versus service.",
+        "vi": "Dùng infrastructure so với service."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The internet is the interconnected network infrastructure carrying data. The WWW is one service of linked resources accessed from web servers through browsers, usually using HTTP/HTTPS. Email and file transfer or internet telephony are other services.",
+          "vi": "Internet là interconnected network infrastructure mang dữ liệu. WWW là một service gồm linked resource được truy cập từ web server qua browser, thường dùng HTTP/HTTPS. Email và file transfer hoặc internet telephony là service khác."
+        },
+        "markingPoints": [
+          {
+            "id": "Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-12-01"
+            ],
+            "point": {
+              "en": "Defines internet infrastructure.",
+              "vi": "Định nghĩa internet infrastructure."
+            }
+          },
+          {
+            "id": "Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-12-01"
+            ],
+            "point": {
+              "en": "Defines the WWW as a service.",
+              "vi": "Định nghĩa WWW như service."
+            }
+          },
+          {
+            "id": "Q12-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-12-01"
+            ],
+            "point": {
+              "en": "Names one valid non-Web service.",
+              "vi": "Nêu một non-Web service hợp lệ."
+            }
+          },
+          {
+            "id": "Q12-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-12-01"
+            ],
+            "point": {
+              "en": "Names a second valid non-Web service.",
+              "vi": "Nêu non-Web service thứ hai hợp lệ."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "web-url-dns",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q13",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-13-01"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-13"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Describe the access role of a modem, PSTN, a dedicated line and a cellular network.",
+        "vi": "Mô tả access role của modem, PSTN, dedicated line và cellular network."
+      },
+      "hint": {
+        "en": "Do not imply every connection uses all four.",
+        "vi": "Không ngụ ý mọi connection dùng cả bốn."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A modem adapts data to an access link’s signalling; PSTN provides telephone-network infrastructure; a dedicated/leased line provides a reserved link; a cellular network supplies mobile radio access through an operator.",
+          "vi": "Modem thích nghi dữ liệu với signalling của access link; PSTN cung cấp telephone-network infrastructure; dedicated/leased line cung cấp link dành riêng; cellular network cung cấp mobile radio access qua operator."
+        },
+        "markingPoints": [
+          {
+            "id": "Q13-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-13-01"
+            ],
+            "point": {
+              "en": "Describes modem role.",
+              "vi": "Mô tả vai trò modem."
+            }
+          },
+          {
+            "id": "Q13-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-13-01"
+            ],
+            "point": {
+              "en": "Describes PSTN role.",
+              "vi": "Mô tả vai trò PSTN."
+            }
+          },
+          {
+            "id": "Q13-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-13-01"
+            ],
+            "point": {
+              "en": "Describes dedicated line.",
+              "vi": "Mô tả dedicated line."
+            }
+          },
+          {
+            "id": "Q13-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-13-01"
+            ],
+            "point": {
+              "en": "Describes cellular access.",
+              "vi": "Mô tả cellular access."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "network-hardware",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q14",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-14-01",
+        "REQ-2.1-14-02",
+        "REQ-2.1-14-03",
+        "REQ-2.1-14-04",
+        "REQ-2.1-14-05"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-14"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "analyse",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A laptop receives 192.168.20.44/24 by DHCP; its school router has a stable public address. Analyse format, subnet, assignment, scope/security and persistence.",
+        "vi": "Laptop nhận 192.168.20.44/24 bằng DHCP; school router có stable public address. Phân tích format, subnet, assignment, scope/security và persistence."
+      },
+      "hint": {
+        "en": "Classify each property separately.",
+        "vi": "Phân loại từng property riêng."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The laptop address is 32-bit IPv4 in dotted decimal; /24 identifies the subnet prefix. DHCP dynamically leases the private address to its interface. Private scope is not globally routed directly but is not automatic security. The router’s stable public address is internet-routable and needs controlled service exposure/firewalling.",
+          "vi": "Laptop address là IPv4 32-bit dạng dotted decimal; /24 xác định subnet prefix. DHCP lease dynamic private address cho interface. Private scope không được route trực tiếp toàn cầu nhưng không tự động an toàn. Stable public address của router được route trên internet và cần controlled service exposure/firewall."
+        },
+        "markingPoints": [
+          {
+            "id": "Q14-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-14-01",
+              "REQ-2.1-14-02"
+            ],
+            "point": {
+              "en": "Identifies IPv4 format and /24 subnet role.",
+              "vi": "Xác định IPv4 format và vai trò subnet /24."
+            }
+          },
+          {
+            "id": "Q14-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-14-03",
+              "REQ-2.1-14-05"
+            ],
+            "point": {
+              "en": "Explains DHCP dynamic association.",
+              "vi": "Giải thích DHCP dynamic association."
+            }
+          },
+          {
+            "id": "Q14-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-14-04"
+            ],
+            "point": {
+              "en": "Classifies private scope and correct security implication.",
+              "vi": "Phân loại private scope và security implication đúng."
+            }
+          },
+          {
+            "id": "Q14-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-14-04",
+              "REQ-2.1-14-05"
+            ],
+            "point": {
+              "en": "Classifies router address as stable public and states exposure control.",
+              "vi": "Phân loại router address là stable public và nêu exposure control."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "ip-addressing",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP02-Q15",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-2.1-15-01",
+        "REQ-2.1-15-02"
+      ],
+      "objectiveIds": [
+        "AC26-2.1-15"
+      ],
+      "strandIds": [
+        "2.1"
+      ],
+      "ao": "AO2",
+      "commandWord": "trace",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "Trace https://shop.example.com/items/7?currency=GBP from URL parsing through DNS and the web request.",
+        "vi": "Lần https://shop.example.com/items/7?currency=GBP từ phân tích URL qua DNS và web request."
+      },
+      "hint": {
+        "en": "DNS resolves the host only.",
+        "vi": "DNS chỉ resolve host."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The browser parses https as scheme, shop.example.com as host, /items/7 as path and currency=GBP as query. The resolver checks cache or queries DNS for the host and receives an IP address. The browser connects to that address using HTTPS and requests the retained path/query.",
+          "vi": "Browser parse https là scheme, shop.example.com là host, /items/7 là path và currency=GBP là query. Resolver kiểm cache hoặc query DNS cho host và nhận IP address. Browser connect tới address bằng HTTPS và request path/query đã giữ."
+        },
+        "markingPoints": [
+          {
+            "id": "Q15-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-15-01"
+            ],
+            "point": {
+              "en": "Correctly parses scheme and host.",
+              "vi": "Parse đúng scheme và host."
+            }
+          },
+          {
+            "id": "Q15-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-15-01"
+            ],
+            "point": {
+              "en": "Correctly identifies path and query.",
+              "vi": "Xác định đúng path và query."
+            }
+          },
+          {
+            "id": "Q15-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-15-02"
+            ],
+            "point": {
+              "en": "Explains cache/query name-to-IP resolution.",
+              "vi": "Giải thích cache/query name-to-IP resolution."
+            }
+          },
+          {
+            "id": "Q15-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-2.1-15-01",
+              "REQ-2.1-15-02"
+            ],
+            "point": {
+              "en": "Preserves path/query for the HTTPS request after DNS.",
+              "vi": "Giữ path/query cho HTTPS request sau DNS."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "Do not award a bare term where the point asks for a mechanism, consequence or justification.",
+            "vi": "Không chấm thuật ngữ đơn lẻ khi marking point yêu cầu cơ chế, hệ quả hoặc biện minh."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "web-url-dns",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

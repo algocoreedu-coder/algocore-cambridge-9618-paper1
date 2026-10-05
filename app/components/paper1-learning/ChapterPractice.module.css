@@ -42,6 +42,7 @@
 .solution label span { display: grid; grid-template-columns: 28px 1fr; gap: 8px; line-height: 1.5; }
 .solution a { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; margin-top: 16px; color: var(--alg-text-link); font-weight: 800; }
 .pager { justify-content: space-between; margin-top: 24px; }
+.finishGate { margin: 18px 0 0; border-left: 4px solid var(--alg-state-warning); background: var(--alg-state-warning-surface); padding: 12px 14px; line-height: 1.55; }
 .reset { display: flex; justify-content: center; margin-top: 18px; }
 @media (max-width: 620px) { .page { padding-inline: 16px; } .toolbar { align-items: flex-start; flex-direction: column; } .item { padding: 18px; } .item > header { grid-template-columns: 1fr; } .actions button, .pager button { flex: 1 1 100%; } }
 @media (prefers-reduced-motion: reduce) { .page *, .page *::before, .page *::after { animation: none !important; transition: none !important; } }

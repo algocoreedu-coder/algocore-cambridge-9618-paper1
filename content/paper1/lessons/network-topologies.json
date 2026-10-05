@@ -1,0 +1,425 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L11",
+  "slug": "network-topologies",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Bus, star, mesh and hybrid topologies",
+    "vi": "Topology bus, star, mesh và hybrid"
+  },
+  "question": {
+    "en": "How does physical or logical connection shape packet paths and failures?",
+    "vi": "Cách kết nối vật lý hoặc logic định hình đường packet và sự cố ra sao?"
+  },
+  "opening": {
+    "en": "A topology describes how network nodes and links are arranged. To reason about it, trace the path between hosts and then test a link or device failure.",
+    "vi": "Topology mô tả cách sắp xếp node và link của network. Để suy luận, hãy lần đường giữa hai host rồi thử sự cố link hoặc thiết bị."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-05",
+      "text": {
+        "en": "Describe, trace and select network topologies.",
+        "vi": "Mô tả, lần đường và lựa chọn network topology."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-05-01",
+    "REQ-2.1-05-02",
+    "REQ-2.1-05-03"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L09"
+  ],
+  "theory": [
+    {
+      "id": "P1-L11-theory-1",
+      "title": {
+        "en": "Recognise the connection pattern",
+        "vi": "Nhận diện mẫu kết nối"
+      },
+      "paragraphs": [
+        {
+          "en": "A bus attaches hosts to a shared backbone. A star connects each host to a central device. A mesh provides multiple interconnections and possible routes. A hybrid combines topology types.",
+          "vi": "Bus gắn host vào backbone dùng chung. Star nối mỗi host với thiết bị trung tâm. Mesh có nhiều kết nối và đường thay thế. Hybrid kết hợp các loại topology."
+        },
+        {
+          "en": "Topology diagrams are models: identify nodes and links shown before claiming a route or fault consequence.",
+          "vi": "Sơ đồ topology là mô hình: hãy xác định node và link được vẽ trước khi kết luận đường đi hoặc hệ quả sự cố."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L11-theory-2",
+      "title": {
+        "en": "Trace paths and justify choices",
+        "vi": "Lần đường và biện minh lựa chọn"
+      },
+      "paragraphs": [
+        {
+          "en": "In a star, communication between two hosts passes through the central device. In a bus, frames share the backbone. In a mesh, routing can select an available path; it is not guaranteed that every node connects directly to every other unless the mesh is full.",
+          "vi": "Trong star, liên lạc giữa hai host đi qua thiết bị trung tâm. Trong bus, frame dùng chung backbone. Trong mesh, routing có thể chọn đường khả dụng; không bảo đảm mọi node nối trực tiếp với nhau trừ full mesh."
+        },
+        {
+          "en": "A justified choice weighs cost and cabling against fault isolation, resilience, expansion and performance for the stated scenario.",
+          "vi": "Lựa chọn có lý do cân nhắc chi phí và cáp với fault isolation, resilience, mở rộng và performance trong tình huống đã cho."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace a star failure",
+      "vi": "Lần theo sự cố star"
+    },
+    "prompt": {
+      "en": "Hosts A and B connect to switch S; host C connects to S on another link.",
+      "vi": "Host A và B nối với switch S; host C nối với S qua link khác."
+    },
+    "steps": [
+      {
+        "id": "P1-L11-worked-1",
+        "action": {
+          "en": "Trace A to B.",
+          "vi": "Lần đường A đến B."
+        },
+        "result": {
+          "en": "A → S → B.",
+          "vi": "A → S → B."
+        }
+      },
+      {
+        "id": "P1-L11-worked-2",
+        "action": {
+          "en": "Break the C–S link.",
+          "vi": "Ngắt link C–S."
+        },
+        "result": {
+          "en": "C is isolated; A and B can still communicate through S.",
+          "vi": "C bị cô lập; A và B vẫn liên lạc qua S."
+        }
+      },
+      {
+        "id": "P1-L11-worked-3",
+        "action": {
+          "en": "Fail S.",
+          "vi": "Làm S hỏng."
+        },
+        "result": {
+          "en": "All attached hosts lose communication through the star.",
+          "vi": "Mọi host gắn vào star mất liên lạc qua star."
+        }
+      }
+    ],
+    "result": {
+      "en": "A single edge-link failure isolates one host, while failure of the central device affects the entire star.",
+      "vi": "Sự cố một edge link cô lập một host, còn hỏng thiết bị trung tâm ảnh hưởng toàn star."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Trace before evaluating.",
+        "vi": "Lần đường trước khi đánh giá."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name nodes and links.",
+        "vi": "Gọi tên node và link."
+      },
+      {
+        "en": "Trace sender to receiver.",
+        "vi": "Lần từ sender tới receiver."
+      },
+      {
+        "en": "Change one component and re-check reachability.",
+        "vi": "Thay đổi một component rồi kiểm lại reachability."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Mesh always means every node has a direct link to every other node.",
+          "vi": "Mesh luôn nghĩa mỗi node nối trực tiếp với mọi node khác."
+        },
+        "correction": {
+          "en": "That is a full mesh; a partial mesh has multiple routes without every possible link.",
+          "vi": "Đó là full mesh; partial mesh có nhiều đường nhưng không có mọi link có thể."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L11-recognise",
+        "title": {
+          "en": "Choose for a temporary site",
+          "vi": "Chọn cho địa điểm tạm thời"
+        },
+        "setup": {
+          "en": "A temporary event needs 12 desks, easy expansion and quick isolation of one failed cable; budget is limited.",
+          "vi": "Sự kiện tạm thời cần 12 bàn, dễ mở rộng và nhanh cô lập một cáp hỏng; ngân sách hạn chế."
+        },
+        "prompt": {
+          "en": "Choose a topology and justify it with two requirements and one limitation.",
+          "vi": "Chọn topology và biện minh bằng hai yêu cầu cùng một hạn chế."
+        },
+        "expectedEvidence": {
+          "en": "A star is defensible because desks can be added as switch ports allow and one edge-cable failure isolates one desk; the central switch remains a shared dependency and cabling is required.",
+          "vi": "Star hợp lý vì có thể thêm bàn khi switch còn port và hỏng một edge cable chỉ cô lập một bàn; central switch vẫn là phụ thuộc dùng chung và cần nhiều cáp."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L11-CHECK-REQ-2.1-05-01",
+      "requirementId": "REQ-2.1-05-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe bus, star, mesh and hybrid topologies by their connection patterns.",
+        "vi": "Mô tả topology bus, star, mesh và hybrid theo mẫu kết nối."
+      },
+      "hint": {
+        "en": "State what links nodes in each topology.",
+        "vi": "Nêu cấu trúc nối node trong mỗi topology."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Bus uses a shared backbone; star uses separate links to a central device; mesh provides multiple inter-node links and routes; hybrid combines two or more topology forms.",
+          "vi": "Bus dùng backbone chung; star dùng link riêng tới thiết bị trung tâm; mesh cung cấp nhiều link và route giữa node; hybrid kết hợp từ hai dạng topology."
+        },
+        "rubric": [
+          {
+            "en": "Correctly describes all four patterns.",
+            "vi": "Mô tả đúng cả bốn mẫu."
+          },
+          {
+            "en": "Does not confuse star centralisation with client–server roles.",
+            "vi": "Không nhầm sự tập trung của star với vai trò client–server."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "bus",
+        "star",
+        "mesh",
+        "hybrid"
+      ]
+    },
+    {
+      "id": "P1-L11-CHECK-REQ-2.1-05-02",
+      "requirementId": "REQ-2.1-05-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "In a star with hosts A and B connected to switch S, explain the path of a packet from A to B and the effect if B’s link fails.",
+        "vi": "Trong star có host A và B nối với switch S, giải thích đường packet từ A đến B và tác động nếu link của B hỏng."
+      },
+      "hint": {
+        "en": "Follow only the links shown.",
+        "vi": "Chỉ theo các link được vẽ."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The packet travels A → S → B. If B’s link fails, B is isolated, while other hosts with working links can still use S.",
+          "vi": "Packet đi A → S → B. Nếu link của B hỏng, B bị cô lập, còn host khác có link hoạt động vẫn dùng S."
+        },
+        "rubric": [
+          {
+            "en": "Traces the packet through the central device.",
+            "vi": "Lần packet qua thiết bị trung tâm."
+          },
+          {
+            "en": "Explains the local effect of the failed edge link.",
+            "vi": "Giải thích tác động cục bộ của edge link hỏng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "packet-path",
+        "failure"
+      ]
+    },
+    {
+      "id": "P1-L11-CHECK-REQ-2.1-05-03",
+      "requirementId": "REQ-2.1-05-03",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "A hospital needs high availability between critical network nodes and can fund extra links. Choose and justify a topology, including one cost consequence.",
+        "vi": "Bệnh viện cần availability cao giữa các network node quan trọng và có thể chi cho link bổ sung. Chọn và biện minh topology, gồm một hệ quả chi phí."
+      },
+      "hint": {
+        "en": "Use redundancy and fault paths, then acknowledge cabling or management.",
+        "vi": "Dùng redundancy và đường khi có sự cố, rồi nêu cabling hoặc quản lý."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A partial or full mesh among critical nodes is defensible because alternate routes can maintain connectivity after a link failure. Extra links increase cabling, ports, configuration and cost.",
+          "vi": "Partial hoặc full mesh giữa các node quan trọng là lựa chọn hợp lý vì đường thay thế có thể giữ connectivity khi một link hỏng. Link bổ sung làm tăng cáp, port, cấu hình và chi phí."
+        },
+        "rubric": [
+          {
+            "en": "Chooses a topology consistent with availability.",
+            "vi": "Chọn topology phù hợp availability."
+          },
+          {
+            "en": "Links redundancy to alternate paths.",
+            "vi": "Liên hệ redundancy với đường thay thế."
+          },
+          {
+            "en": "States a relevant cost or complexity consequence.",
+            "vi": "Nêu hệ quả chi phí hoặc độ phức tạp phù hợp."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "topology-choice",
+        "resilience"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the connection pattern and one failure fact for bus, star and mesh.",
+      "vi": "Nêu mẫu kết nối và một dữ kiện sự cố cho bus, star và mesh."
+    },
+    "answerPoints": [
+      {
+        "en": "Bus shares a backbone; star uses a central device; mesh offers multiple links/routes.",
+        "vi": "Bus dùng chung backbone; star dùng thiết bị trung tâm; mesh có nhiều link/route."
+      },
+      {
+        "en": "Failure consequences depend on the exact failed component and diagram.",
+        "vi": "Hệ quả sự cố phụ thuộc component cụ thể bị hỏng và sơ đồ."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "topology",
+      "meaning": {
+        "en": "The arrangement of network nodes and links.",
+        "vi": "Cách sắp xếp node và link của network."
+      }
+    },
+    {
+      "term": "backbone",
+      "meaning": {
+        "en": "A shared main communication link.",
+        "vi": "Liên kết truyền thông chính dùng chung."
+      }
+    },
+    {
+      "term": "mesh",
+      "meaning": {
+        "en": "A topology with multiple interconnections and possible routes.",
+        "vi": "Topology có nhiều kết nối và đường có thể."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-foundations",
+    "network-hardware"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L11 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 37–39: bus, star, mesh and hybrid topologies",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L11",
+  "contractCoverage": {
+    "B01": [
+      "P1-L11-objectives"
+    ],
+    "B02": [
+      "P1-L11-theory-1",
+      "P1-L11-theory-2"
+    ],
+    "B03": [
+      "P1-L11-rules"
+    ],
+    "B04": [
+      "P1-L11-recognise"
+    ],
+    "B05": [
+      "P1-L11-worked-1",
+      "P1-L11-worked-2",
+      "P1-L11-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L11"
+    ],
+    "B07": [
+      "P1-L11-CHECK-REQ-2.1-05-01",
+      "P1-L11-CHECK-REQ-2.1-05-02",
+      "P1-L11-CHECK-REQ-2.1-05-03"
+    ],
+    "B08": [
+      "P1-L11-misconceptions"
+    ],
+    "B09": [
+      "P1-L11-recall"
+    ],
+    "B10": [
+      "P1-L11-glossary"
+    ],
+    "B11": [
+      "P1-L11-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L14",
+  "slug": "network-hardware",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "LAN and internet connection hardware",
+    "vi": "Phần cứng LAN và kết nối internet"
+  },
+  "question": {
+    "en": "Which device acts at each step from a host to another network?",
+    "vi": "Thiết bị nào hoạt động ở từng bước từ host tới network khác?"
+  },
+  "opening": {
+    "en": "Network devices have different roles. Trace a frame within a LAN and a packet between networks instead of treating every box as an interchangeable connector.",
+    "vi": "Thiết bị network có vai trò khác nhau. Hãy lần frame trong LAN và packet giữa các network thay vì xem mọi hộp như connector giống nhau."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-08",
+      "text": {
+        "en": "Describe LAN hardware roles.",
+        "vi": "Mô tả vai trò phần cứng LAN."
+      }
+    },
+    {
+      "id": "AC26-2.1-09",
+      "text": {
+        "en": "Explain the role and function of a router.",
+        "vi": "Giải thích vai trò và chức năng router."
+      }
+    },
+    {
+      "id": "AC26-2.1-13",
+      "text": {
+        "en": "Describe hardware and links supporting internet access.",
+        "vi": "Mô tả phần cứng và liên kết hỗ trợ internet access."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-08-01",
+    "REQ-2.1-09-01",
+    "REQ-2.1-13-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L09"
+  ],
+  "theory": [
+    {
+      "id": "P1-L14-theory-1",
+      "title": {
+        "en": "Build a LAN from distinct roles",
+        "vi": "Xây LAN từ các vai trò khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "A NIC or WNIC gives a device a wired or wireless network interface. A switch connects devices in a LAN and forwards frames toward the appropriate port. A server provides services; cable or radio carries signals; a WAP bridges wireless clients into the LAN.",
+          "vi": "NIC hoặc WNIC cung cấp network interface có dây hoặc không dây cho thiết bị. Switch nối thiết bị trong LAN và forward frame tới port phù hợp. Server cung cấp dịch vụ; cable hoặc radio mang tín hiệu; WAP nối wireless client vào LAN."
+        },
+        {
+          "en": "A bridge joins LAN segments using compatible link-layer technology. A repeater regenerates or retransmits a weakened signal; it does not decide an internet route.",
+          "vi": "Bridge nối các LAN segment dùng công nghệ link-layer tương thích. Repeater tái tạo hoặc phát lại tín hiệu suy yếu; nó không quyết định internet route."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L14-theory-2",
+      "title": {
+        "en": "Routers connect networks",
+        "vi": "Router kết nối các network"
+      },
+      "paragraphs": [
+        {
+          "en": "A router examines the destination IP network and forwards a packet to an appropriate next network or next hop. It separates network boundaries; it is not simply a larger switch.",
+          "vi": "Router xem destination IP network và forward packet tới network hoặc next hop phù hợp. Nó phân tách network boundary; không chỉ là switch lớn hơn."
+        },
+        {
+          "en": "Internet access may use a modem suited to the access link, PSTN infrastructure, a dedicated/leased line or a cellular network. The exact modem conversion depends on the transmission system, so it should not be described universally as only analogue-to-digital conversion.",
+          "vi": "Internet access có thể dùng modem phù hợp access link, hạ tầng PSTN, dedicated/leased line hoặc cellular network. Chuyển đổi cụ thể của modem phụ thuộc hệ thống truyền nên không nên mô tả phổ quát chỉ là analog-to-digital."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace a packet to a website",
+      "vi": "Lần packet tới website"
+    },
+    "prompt": {
+      "en": "A wireless laptop sends data to a website outside its school LAN.",
+      "vi": "Laptop wireless gửi dữ liệu tới website ngoài school LAN."
+    },
+    "steps": [
+      {
+        "id": "P1-L14-worked-1",
+        "action": {
+          "en": "Enter the LAN.",
+          "vi": "Đi vào LAN."
+        },
+        "result": {
+          "en": "The WNIC sends radio to the WAP, which connects the device to the LAN.",
+          "vi": "WNIC gửi radio tới WAP, nối thiết bị vào LAN."
+        }
+      },
+      {
+        "id": "P1-L14-worked-2",
+        "action": {
+          "en": "Cross the local infrastructure.",
+          "vi": "Đi qua hạ tầng local."
+        },
+        "result": {
+          "en": "The switch forwards LAN traffic toward the router.",
+          "vi": "Switch forward traffic trong LAN tới router."
+        }
+      },
+      {
+        "id": "P1-L14-worked-3",
+        "action": {
+          "en": "Leave the LAN.",
+          "vi": "Rời LAN."
+        },
+        "result": {
+          "en": "The router forwards the IP packet toward the ISP through the access link/modem equipment.",
+          "vi": "Router forward IP packet tới ISP qua access link/modem equipment."
+        }
+      }
+    ],
+    "result": {
+      "en": "WNIC, WAP, switch, router and access equipment perform different steps.",
+      "vi": "WNIC, WAP, switch, router và access equipment thực hiện các bước khác nhau."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Ask whether the action is interface, LAN forwarding, network routing, service provision or signal regeneration.",
+        "vi": "Hỏi action là interface, LAN forwarding, network routing, service provision hay signal regeneration."
+      }
+    ],
+    "method": [
+      {
+        "en": "Mark source and destination networks.",
+        "vi": "Đánh dấu source và destination network."
+      },
+      {
+        "en": "Name each boundary crossed.",
+        "vi": "Gọi tên mỗi boundary được đi qua."
+      },
+      {
+        "en": "Assign one precise role to each device.",
+        "vi": "Gán một vai trò chính xác cho mỗi thiết bị."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A switch and router do the same job.",
+          "vi": "Switch và router làm cùng một việc."
+        },
+        "correction": {
+          "en": "A switch forwards within a LAN; a router forwards between IP networks.",
+          "vi": "Switch forward trong LAN; router forward giữa các IP network."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A repeater selects the best route.",
+          "vi": "Repeater chọn route tốt nhất."
+        },
+        "correction": {
+          "en": "A repeater regenerates/retransmits signals; routing is a router function.",
+          "vi": "Repeater tái tạo/phát lại tín hiệu; routing là chức năng router."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L14-recognise",
+        "title": {
+          "en": "Diagnose a coverage problem",
+          "vi": "Chẩn đoán vấn đề coverage"
+        },
+        "setup": {
+          "en": "A wired LAN works, but wireless devices in a distant room receive no usable signal.",
+          "vi": "LAN có dây hoạt động nhưng thiết bị wireless ở phòng xa không nhận tín hiệu dùng được."
+        },
+        "prompt": {
+          "en": "Select a relevant device change and distinguish it from routing.",
+          "vi": "Chọn thay đổi thiết bị phù hợp và phân biệt với routing."
+        },
+        "expectedEvidence": {
+          "en": "A suitably connected WAP or repeater may extend wireless coverage; replacing the router is not automatically the fix because the failure is local radio reach, not selection between networks.",
+          "vi": "WAP được kết nối phù hợp hoặc repeater có thể mở rộng wireless coverage; thay router không tự động sửa lỗi vì vấn đề là radio reach local, không phải chọn giữa các network."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L14-CHECK-REQ-2.1-08-01",
+      "requirementId": "REQ-2.1-08-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "State the role of each: switch, server, NIC, WNIC, WAP, cable, bridge and repeater.",
+        "vi": "Nêu vai trò của từng thiết bị: switch, server, NIC, WNIC, WAP, cable, bridge và repeater."
+      },
+      "hint": {
+        "en": "Use one precise action per item.",
+        "vi": "Dùng một action chính xác cho mỗi item."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A switch forwards within a LAN; a server supplies services; NIC/WNIC provide wired/wireless interfaces; a WAP connects wireless devices to the LAN; cable carries guided signals; a bridge joins LAN segments; a repeater regenerates or retransmits a signal.",
+          "vi": "Switch forward trong LAN; server cung cấp dịch vụ; NIC/WNIC cung cấp interface có dây/không dây; WAP nối thiết bị wireless vào LAN; cable mang tín hiệu được dẫn; bridge nối LAN segment; repeater tái tạo hoặc phát lại tín hiệu."
+        },
+        "rubric": [
+          {
+            "en": "Covers all eight named items.",
+            "vi": "Bao phủ đủ tám item."
+          },
+          {
+            "en": "Keeps forwarding, routing and signal regeneration distinct.",
+            "vi": "Phân biệt forwarding, routing và signal regeneration."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "LAN-hardware"
+      ]
+    },
+    {
+      "id": "P1-L14-CHECK-REQ-2.1-09-01",
+      "requirementId": "REQ-2.1-09-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of a router when a host sends a packet to a different network.",
+        "vi": "Giải thích vai trò router khi host gửi packet tới network khác."
+      },
+      "hint": {
+        "en": "Refer to destination network and next hop.",
+        "vi": "Nêu destination network và next hop."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The router reads destination IP information, selects an appropriate route or next hop and forwards the packet across a network boundary toward its destination.",
+          "vi": "Router đọc thông tin destination IP, chọn route hoặc next hop phù hợp và forward packet qua network boundary về phía đích."
+        },
+        "rubric": [
+          {
+            "en": "States that the router connects/forwards between networks.",
+            "vi": "Nêu router nối/forward giữa các network."
+          },
+          {
+            "en": "Links the decision to destination IP/network information.",
+            "vi": "Liên hệ quyết định với thông tin destination IP/network."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "router",
+        "packet-forwarding"
+      ]
+    },
+    {
+      "id": "P1-L14-CHECK-REQ-2.1-13-01",
+      "requirementId": "REQ-2.1-13-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how a modem, PSTN, a dedicated line and a cellular network can support internet connectivity.",
+        "vi": "Mô tả cách modem, PSTN, dedicated line và cellular network có thể hỗ trợ internet connectivity."
+      },
+      "hint": {
+        "en": "Give the access role of each; avoid saying every connection uses all four.",
+        "vi": "Nêu vai trò access của từng loại; tránh nói mọi connection dùng cả bốn."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A modem adapts digital data to the signalling used by an access link and reverses the process. PSTN can provide access over telephone infrastructure; a dedicated/leased line supplies a reserved connection; a cellular network gives mobile radio access through a network operator.",
+          "vi": "Modem thích nghi dữ liệu digital với signalling của access link và thực hiện ngược lại. PSTN có thể cung cấp access qua hạ tầng telephone; dedicated/leased line cung cấp kết nối dành riêng; cellular network cho mobile radio access qua network operator."
+        },
+        "rubric": [
+          {
+            "en": "Describes all four support mechanisms.",
+            "vi": "Mô tả đủ bốn cơ chế hỗ trợ."
+          },
+          {
+            "en": "Does not imply one connection must contain all of them.",
+            "vi": "Không ngụ ý một connection phải chứa tất cả."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "modem",
+        "PSTN",
+        "dedicated-line",
+        "cellular"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Trace host interface → LAN → other network and name the device at each boundary.",
+      "vi": "Lần host interface → LAN → network khác và gọi tên thiết bị ở mỗi boundary."
+    },
+    "answerPoints": [
+      {
+        "en": "NIC/WNIC provides the interface; switch/WAP connects within the LAN.",
+        "vi": "NIC/WNIC cung cấp interface; switch/WAP kết nối trong LAN."
+      },
+      {
+        "en": "Router forwards between networks; access equipment links toward the provider.",
+        "vi": "Router forward giữa network; access equipment nối tới provider."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "switch",
+      "meaning": {
+        "en": "A device that forwards frames within a LAN.",
+        "vi": "Thiết bị forward frame trong LAN."
+      }
+    },
+    {
+      "term": "router",
+      "meaning": {
+        "en": "A device that forwards packets between IP networks.",
+        "vi": "Thiết bị forward packet giữa các IP network."
+      }
+    },
+    {
+      "term": "repeater",
+      "meaning": {
+        "en": "A device that regenerates or retransmits a signal.",
+        "vi": "Thiết bị tái tạo hoặc phát lại tín hiệu."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-topologies",
+    "ip-addressing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L14 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 46–50 and 54–57: LAN hardware, routers and internet connection hardware",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L14",
+  "contractCoverage": {
+    "B01": [
+      "P1-L14-objectives"
+    ],
+    "B02": [
+      "P1-L14-theory-1",
+      "P1-L14-theory-2"
+    ],
+    "B03": [
+      "P1-L14-rules"
+    ],
+    "B04": [
+      "P1-L14-recognise"
+    ],
+    "B05": [
+      "P1-L14-worked-1",
+      "P1-L14-worked-2",
+      "P1-L14-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L14"
+    ],
+    "B07": [
+      "P1-L14-CHECK-REQ-2.1-08-01",
+      "P1-L14-CHECK-REQ-2.1-09-01",
+      "P1-L14-CHECK-REQ-2.1-13-01"
+    ],
+    "B08": [
+      "P1-L14-misconceptions"
+    ],
+    "B09": [
+      "P1-L14-recall"
+    ],
+    "B10": [
+      "P1-L14-glossary"
+    ],
+    "B11": [
+      "P1-L14-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

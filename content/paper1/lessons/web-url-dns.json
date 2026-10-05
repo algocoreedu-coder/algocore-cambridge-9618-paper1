@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L18",
+  "slug": "web-url-dns",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Internet, WWW, URLs and DNS",
+    "vi": "Internet, WWW, URL và DNS"
+  },
+  "question": {
+    "en": "How does a human-readable URL lead to the correct web resource?",
+    "vi": "URL dễ đọc dẫn tới đúng web resource thế nào?"
+  },
+  "opening": {
+    "en": "The internet is the network infrastructure; the World Wide Web is one service using that infrastructure. A URL identifies a resource, while DNS resolves its host name to an IP address.",
+    "vi": "Internet là network infrastructure; World Wide Web là một service dùng hạ tầng đó. URL xác định resource, còn DNS resolve host name thành IP address."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-12",
+      "text": {
+        "en": "Distinguish the internet from the World Wide Web.",
+        "vi": "Phân biệt internet với World Wide Web."
+      }
+    },
+    {
+      "id": "AC26-2.1-15",
+      "text": {
+        "en": "Explain URL resource location and DNS name resolution.",
+        "vi": "Giải thích URL định vị resource và DNS name resolution."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-12-01",
+    "REQ-2.1-15-01",
+    "REQ-2.1-15-02"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L18-theory-1",
+      "title": {
+        "en": "Infrastructure and service",
+        "vi": "Hạ tầng và service"
+      },
+      "paragraphs": [
+        {
+          "en": "The internet is a global network of interconnected networks that moves data using agreed protocols. It supports many services, including the Web, email, file transfer and streaming.",
+          "vi": "Internet là global network gồm các network liên kết, di chuyển dữ liệu bằng protocol đã thống nhất. Nó hỗ trợ nhiều service gồm Web, email, file transfer và streaming."
+        },
+        {
+          "en": "The World Wide Web is a collection of linked resources delivered by web servers and accessed with browsers, normally using HTTP or HTTPS over the internet.",
+          "vi": "World Wide Web là tập hợp resource liên kết được web server cung cấp và browser truy cập, thường dùng HTTP hoặc HTTPS qua internet."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L18-theory-2",
+      "title": {
+        "en": "A URL identifies a resource",
+        "vi": "URL xác định resource"
+      },
+      "paragraphs": [
+        {
+          "en": "A URL contains a scheme such as https, a host name, and often a path; it may also contain a port, query and fragment. These parts identify how and where to request a resource.",
+          "vi": "URL chứa scheme như https, host name và thường có path; cũng có thể có port, query và fragment. Các phần này xác định cách và nơi request resource."
+        },
+        {
+          "en": "For https://learn.example.org/networks/lan?lang=vi, the scheme is https, the host is learn.example.org, the path is /networks/lan and the query is lang=vi.",
+          "vi": "Với https://learn.example.org/networks/lan?lang=vi, scheme là https, host là learn.example.org, path là /networks/lan và query là lang=vi."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L18-theory-3",
+      "title": {
+        "en": "DNS resolves the host, not the whole URL",
+        "vi": "DNS resolve host, không phải toàn URL"
+      },
+      "paragraphs": [
+        {
+          "en": "The resolver queries DNS for the host name. Cached or authoritative DNS data returns an IP address, possibly through several DNS servers.",
+          "vi": "Resolver query DNS cho host name. Dữ liệu DNS cached hoặc authoritative trả về IP address, có thể qua nhiều DNS server."
+        },
+        {
+          "en": "The client then connects toward that IP address and sends a web request containing the host and resource path. DNS does not translate the scheme, path, query or page contents.",
+          "vi": "Client sau đó connect tới IP address và gửi web request chứa host cùng resource path. DNS không dịch scheme, path, query hoặc page content."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace one URL request",
+      "vi": "Lần một URL request"
+    },
+    "prompt": {
+      "en": "A learner enters https://learn.example.org/networks/lan.",
+      "vi": "Học sinh nhập https://learn.example.org/networks/lan."
+    },
+    "steps": [
+      {
+        "id": "P1-L18-worked-1",
+        "action": {
+          "en": "Parse the URL.",
+          "vi": "Phân tích URL."
+        },
+        "result": {
+          "en": "Scheme = https; host = learn.example.org; path = /networks/lan.",
+          "vi": "Scheme = https; host = learn.example.org; path = /networks/lan."
+        }
+      },
+      {
+        "id": "P1-L18-worked-2",
+        "action": {
+          "en": "Resolve the host.",
+          "vi": "Resolve host."
+        },
+        "result": {
+          "en": "DNS returns an IP address for learn.example.org, using cache or further DNS queries.",
+          "vi": "DNS trả IP address cho learn.example.org bằng cache hoặc DNS query tiếp."
+        }
+      },
+      {
+        "id": "P1-L18-worked-3",
+        "action": {
+          "en": "Request the resource.",
+          "vi": "Request resource."
+        },
+        "result": {
+          "en": "The browser connects to the server address and requests the /networks/lan path using HTTPS.",
+          "vi": "Browser connect tới server address và request path /networks/lan bằng HTTPS."
+        }
+      },
+      {
+        "id": "P1-L18-worked-4",
+        "action": {
+          "en": "Receive and render.",
+          "vi": "Nhận và render."
+        },
+        "result": {
+          "en": "The web server returns a response; the browser interprets and displays the resource.",
+          "vi": "Web server trả response; browser diễn giải và hiển thị resource."
+        }
+      }
+    ],
+    "result": {
+      "en": "DNS supplied the host address; the URL path still selected the resource.",
+      "vi": "DNS cung cấp host address; URL path vẫn chọn resource."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Separate network infrastructure, web service, resource identifier and name resolution.",
+        "vi": "Tách network infrastructure, web service, resource identifier và name resolution."
+      }
+    ],
+    "method": [
+      {
+        "en": "Classify internet versus WWW.",
+        "vi": "Phân loại internet với WWW."
+      },
+      {
+        "en": "Parse scheme, host and path.",
+        "vi": "Phân tích scheme, host và path."
+      },
+      {
+        "en": "Send only the host name to DNS, then preserve the resource path.",
+        "vi": "Chỉ gửi host name tới DNS rồi giữ resource path."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "The internet and WWW are the same.",
+          "vi": "Internet và WWW giống nhau."
+        },
+        "correction": {
+          "en": "The Web is one service that uses internet infrastructure.",
+          "vi": "Web là một service dùng internet infrastructure."
+        }
+      },
+      {
+        "mistake": {
+          "en": "DNS converts the complete URL into an IP address.",
+          "vi": "DNS chuyển toàn bộ URL thành IP address."
+        },
+        "correction": {
+          "en": "DNS resolves the host name; the browser keeps scheme, path and other URL parts for the request.",
+          "vi": "DNS resolve host name; browser giữ scheme, path và các phần URL khác cho request."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L18-recognise",
+        "title": {
+          "en": "Recognise the DNS input",
+          "vi": "Nhận diện input của DNS"
+        },
+        "setup": {
+          "en": "URL: https://shop.example.com/items/7?currency=GBP",
+          "vi": "URL: https://shop.example.com/items/7?currency=GBP"
+        },
+        "prompt": {
+          "en": "State what is queried in DNS and what remains for the web request.",
+          "vi": "Nêu phần được query trong DNS và phần còn lại cho web request."
+        },
+        "expectedEvidence": {
+          "en": "DNS receives shop.example.com. HTTPS, /items/7 and currency=GBP remain part of locating/requesting the web resource.",
+          "vi": "DNS nhận shop.example.com. HTTPS, /items/7 và currency=GBP vẫn thuộc việc định vị/request web resource."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L18-CHECK-REQ-2.1-12-01",
+      "requirementId": "REQ-2.1-12-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish the internet from the World Wide Web and give one non-Web internet service.",
+        "vi": "Phân biệt internet với World Wide Web và nêu một internet service không phải Web."
+      },
+      "hint": {
+        "en": "Use infrastructure versus service.",
+        "vi": "Dùng infrastructure so với service."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The internet is the interconnected network infrastructure that carries data. The WWW is a service of linked resources accessed from web servers with browsers, usually over HTTP/HTTPS. Email, file transfer or internet telephony is another internet service.",
+          "vi": "Internet là infrastructure gồm các network liên kết để mang dữ liệu. WWW là service gồm resource liên kết được truy cập từ web server bằng browser, thường qua HTTP/HTTPS. Email, file transfer hoặc internet telephony là internet service khác."
+        },
+        "rubric": [
+          {
+            "en": "Defines internet infrastructure.",
+            "vi": "Định nghĩa internet infrastructure."
+          },
+          {
+            "en": "Defines the Web as a service.",
+            "vi": "Định nghĩa Web như service."
+          },
+          {
+            "en": "Gives a valid non-Web service.",
+            "vi": "Nêu một non-Web service hợp lệ."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "internet",
+        "WWW"
+      ]
+    },
+    {
+      "id": "P1-L18-CHECK-REQ-2.1-15-01",
+      "requirementId": "REQ-2.1-15-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how the parts of https://learn.example.org/networks/lan?lang=vi locate a resource.",
+        "vi": "Giải thích các phần của https://learn.example.org/networks/lan?lang=vi định vị resource thế nào."
+      },
+      "hint": {
+        "en": "Identify scheme, host, path and query.",
+        "vi": "Xác định scheme, host, path và query."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "https selects the HTTPS scheme; learn.example.org identifies the host; /networks/lan identifies the resource path; lang=vi is a query parameter refining the request. Together they tell the browser how and where to request the resource.",
+          "vi": "https chọn HTTPS scheme; learn.example.org xác định host; /networks/lan xác định resource path; lang=vi là query parameter tinh chỉnh request. Cùng nhau chúng cho browser biết cách và nơi request resource."
+        },
+        "rubric": [
+          {
+            "en": "Identifies all four URL parts.",
+            "vi": "Xác định đủ bốn phần URL."
+          },
+          {
+            "en": "Explains how they identify the request rather than only labelling them.",
+            "vi": "Giải thích cách chúng xác định request thay vì chỉ gắn nhãn."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "URL",
+        "scheme",
+        "host",
+        "path"
+      ]
+    },
+    {
+      "id": "P1-L18-CHECK-REQ-2.1-15-02",
+      "requirementId": "REQ-2.1-15-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of DNS after a browser receives a URL, including caching and the boundary of what DNS resolves.",
+        "vi": "Giải thích vai trò DNS sau khi browser nhận URL, gồm caching và ranh giới nội dung DNS resolve."
+      },
+      "hint": {
+        "en": "DNS input is the host name, not the path.",
+        "vi": "DNS input là host name, không phải path."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The resolver checks cached data or queries DNS servers to obtain an IP address for the URL host name. The client uses that address to reach the server. DNS resolves the host only; the browser retains the scheme, path and query for the web request.",
+          "vi": "Resolver kiểm tra cached data hoặc query DNS server để lấy IP address cho URL host name. Client dùng address đó để tới server. DNS chỉ resolve host; browser giữ scheme, path và query cho web request."
+        },
+        "rubric": [
+          {
+            "en": "Explains name-to-address resolution and cache/query.",
+            "vi": "Giải thích name-to-address resolution và cache/query."
+          },
+          {
+            "en": "States that DNS does not resolve the whole URL/path.",
+            "vi": "Nêu DNS không resolve toàn URL/path."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "DNS",
+        "name-resolution",
+        "cache"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Complete: infrastructure → resource identifier → name resolution → request.",
+      "vi": "Hoàn thành: infrastructure → resource identifier → name resolution → request."
+    },
+    "answerPoints": [
+      {
+        "en": "Internet infrastructure carries the Web service; URL identifies how/where to request a resource.",
+        "vi": "Internet infrastructure mang Web service; URL xác định cách/nơi request resource."
+      },
+      {
+        "en": "DNS resolves the host to an IP address; the browser requests the retained path/query from that host.",
+        "vi": "DNS resolve host thành IP address; browser request path/query được giữ từ host đó."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "internet",
+      "meaning": {
+        "en": "A global network of interconnected networks.",
+        "vi": "Global network gồm các network liên kết."
+      }
+    },
+    {
+      "term": "WWW",
+      "meaning": {
+        "en": "Linked web resources delivered over internet infrastructure.",
+        "vi": "Các web resource liên kết được delivery qua internet infrastructure."
+      }
+    },
+    {
+      "term": "URL",
+      "meaning": {
+        "en": "An identifier specifying how and where to request a resource.",
+        "vi": "Identifier chỉ cách và nơi request resource."
+      }
+    },
+    {
+      "term": "DNS",
+      "meaning": {
+        "en": "The distributed service that resolves domain host names to IP addresses.",
+        "vi": "Distributed service resolve domain host name thành IP address."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "streaming",
+    "ip-addressing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L18 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 54–56 and 61–62: internet/WWW, URL structure and DNS lookup",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L18",
+  "contractCoverage": {
+    "B01": [
+      "P1-L18-objectives"
+    ],
+    "B02": [
+      "P1-L18-theory-1",
+      "P1-L18-theory-2",
+      "P1-L18-theory-3"
+    ],
+    "B03": [
+      "P1-L18-rules"
+    ],
+    "B04": [
+      "P1-L18-recognise"
+    ],
+    "B05": [
+      "P1-L18-worked-1",
+      "P1-L18-worked-2",
+      "P1-L18-worked-3",
+      "P1-L18-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L18"
+    ],
+    "B07": [
+      "P1-L18-CHECK-REQ-2.1-12-01",
+      "P1-L18-CHECK-REQ-2.1-15-01",
+      "P1-L18-CHECK-REQ-2.1-15-02"
+    ],
+    "B08": [
+      "P1-L18-misconceptions"
+    ],
+    "B09": [
+      "P1-L18-recall"
+    ],
+    "B10": [
+      "P1-L18-glossary"
+    ],
+    "B11": [
+      "P1-L18-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

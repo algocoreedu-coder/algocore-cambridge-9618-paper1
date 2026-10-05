@@ -13,9 +13,10 @@ import styles from "./LessonPage.module.css";
 
 export function TopicLesson({ lesson, catalog, locale }: { readonly lesson: Paper1Lesson; readonly catalog: Paper1Catalog; readonly locale: Paper1Locale }) {
   const topic = catalog.topics.find((entry) => entry.lessonId === lesson.lessonId);
-  const index = catalog.topics.findIndex((entry) => entry.lessonId === lesson.lessonId);
-  const previous = catalog.topics[index - 1];
-  const next = catalog.topics[index + 1];
+  const sectionTopics = catalog.topics.filter((entry) => entry.sectionId === lesson.sectionId);
+  const index = sectionTopics.findIndex((entry) => entry.lessonId === lesson.lessonId);
+  const previous = sectionTopics[index - 1];
+  const next = sectionTopics[index + 1];
   const prerequisites = lesson.prerequisiteLessonIds.map((id) => catalog.topics.find((entry) => entry.lessonId === id)).filter(Boolean);
   const related = lesson.relatedSlugs.map((slug) => catalog.topics.find((entry) => entry.slug === slug)).filter(Boolean);
   const visual = getPaper1VisualDefinition(lesson.visualId);
@@ -24,7 +25,7 @@ export function TopicLesson({ lesson, catalog, locale }: { readonly lesson: Pape
 
   return <article className={styles.lesson} lang={locale} data-paper1-lesson={lesson.lessonId}>
     <Paper1LocaleBoundary locale={locale} />
-    <nav className={styles.breadcrumb} aria-label={locale === "vi" ? "Vị trí trong khóa học" : "Breadcrumb"}><Link href={paper1Href("/paper-1", locale)}><Map size={16} />{locale === "vi" ? "Bản đồ học tập" : "Study map"}</Link><span>/</span><Link href={paper1Href("/paper-1/sections/1", locale)}>Section 1</Link><span>/</span><span aria-current="page">{lesson.lessonId}</span></nav>
+    <nav className={styles.breadcrumb} aria-label={locale === "vi" ? "Vị trí trong khóa học" : "Breadcrumb"}><Link href={paper1Href("/paper-1", locale)}><Map size={16} />{locale === "vi" ? "Bản đồ học tập" : "Study map"}</Link><span>/</span><Link href={paper1Href(`/paper-1/sections/${lesson.sectionId}`, locale)}>Section {lesson.sectionId}</Link><span>/</span><span aria-current="page">{lesson.lessonId}</span></nav>
     <header className={styles.header}><div className={styles.eyebrow}><span>{lesson.lessonId}</span><span>§ {lesson.strandId}</span><span>{topic?.learningMode}</span></div><h1>{lesson.title[locale]}</h1><p className={styles.centralQuestion}>{lesson.question[locale]}</p><p>{lesson.opening[locale]}</p></header>
     <LessonStageRail lessonId={lesson.lessonId} locale={locale} />
 
@@ -50,7 +51,7 @@ export function TopicLesson({ lesson, catalog, locale }: { readonly lesson: Pape
 
     <section className={styles.referenceGrid}><div><h2>{locale === "vi" ? "Thuật ngữ" : "Glossary"}</h2><dl>{lesson.glossary.map((entry) => <div key={entry.term}><dt>{entry.term}</dt><dd>{entry.meaning[locale]}</dd></div>)}</dl></div><div><h2>{locale === "vi" ? "Nguồn và provenance" : "Sources and provenance"}</h2>{lesson.sources.map((source) => <div className={styles.source} key={source.id}><strong>{source.title[locale]}</strong><span>{source.locator}</span><small>{source.kind === "algocore" ? (locale === "vi" ? "AlgoCore biên soạn · không phải câu hỏi Cambridge chính thức" : "AlgoCore authored · not an official Cambridge question") : source.kind}</small></div>)}</div></section>
     {related.length > 0 && <nav className={styles.related} aria-label={locale === "vi" ? "Bài liên quan" : "Related lessons"}><strong>{locale === "vi" ? "Bài liên quan" : "Related lessons"}</strong>{related.map((entry) => <Link key={entry?.lessonId} href={paper1Href(`/paper-1/topics/${entry?.slug}`, locale)}>{entry?.title[locale]}<ArrowRight size={16} /></Link>)}</nav>}
-    <nav className={styles.lessonPager} aria-label={locale === "vi" ? "Chuyển bài" : "Lesson navigation"}>{previous ? <Link href={paper1Href(`/paper-1/topics/${previous.slug}`, locale)}><ArrowLeft size={18} /><span><small>{locale === "vi" ? "Bài trước" : "Previous"}</small>{previous.title[locale]}</span></Link> : <span />}{next ? <Link href={paper1Href(`/paper-1/topics/${next.slug}`, locale)}><span><small>{locale === "vi" ? "Bài tiếp" : "Next"}</small>{next.title[locale]}</span><ArrowRight size={18} /></Link> : <Link href={paper1Href("/paper-1/sections/1", locale)}><span><small>{locale === "vi" ? "Hoàn tất Chapter 1" : "Chapter 1 complete"}</small>{locale === "vi" ? "Về danh sách bài" : "Back to lesson list"}</span><ArrowRight size={18} /></Link>}</nav>
+    <nav className={styles.lessonPager} aria-label={locale === "vi" ? "Chuyển bài" : "Lesson navigation"}>{previous ? <Link href={paper1Href(`/paper-1/topics/${previous.slug}`, locale)}><ArrowLeft size={18} /><span><small>{locale === "vi" ? "Bài trước" : "Previous"}</small>{previous.title[locale]}</span></Link> : <span />}{next ? <Link href={paper1Href(`/paper-1/topics/${next.slug}`, locale)}><span><small>{locale === "vi" ? "Bài tiếp" : "Next"}</small>{next.title[locale]}</span><ArrowRight size={18} /></Link> : <Link href={paper1Href(`/paper-1/sections/${lesson.sectionId}`, locale)}><span><small>{locale === "vi" ? `Hoàn tất Chương ${lesson.sectionId}` : `Chapter ${lesson.sectionId} complete`}</small>{locale === "vi" ? "Về danh sách bài" : "Back to lesson list"}</span><ArrowRight size={18} /></Link>}</nav>
   </article>;
 }
 

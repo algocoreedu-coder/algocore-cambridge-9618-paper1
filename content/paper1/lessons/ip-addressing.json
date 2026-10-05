@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L17",
+  "slug": "ip-addressing",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "IPv4, IPv6, subnetting and address assignment",
+    "vi": "IPv4, IPv6, subnetting và cấp địa chỉ"
+  },
+  "question": {
+    "en": "Which part identifies the network, and how is the address assigned and exposed?",
+    "vi": "Phần nào xác định network, và address được cấp cùng exposed thế nào?"
+  },
+  "opening": {
+    "en": "An IP address identifies a network interface for routing at a point in time. Its format, network boundary, assignment method and public/private scope answer different questions.",
+    "vi": "IP address xác định một network interface để routing tại một thời điểm. Format, network boundary, assignment method và public/private scope trả lời các câu hỏi khác nhau."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-14",
+      "text": {
+        "en": "Explain IP formats, subnetting, assignment, public/private and static/dynamic addressing.",
+        "vi": "Giải thích IP format, subnetting, assignment, public/private và static/dynamic addressing."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-14-01",
+    "REQ-2.1-14-02",
+    "REQ-2.1-14-03",
+    "REQ-2.1-14-04",
+    "REQ-2.1-14-05"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L14"
+  ],
+  "theory": [
+    {
+      "id": "P1-L17-theory-1",
+      "title": {
+        "en": "Recognise address formats",
+        "vi": "Nhận diện address format"
+      },
+      "paragraphs": [
+        {
+          "en": "IPv4 is 32 bits, conventionally written as four denary octets from 0 to 255 separated by dots, for example 192.0.2.18.",
+          "vi": "IPv4 có 32 bit, thường viết thành bốn octet denary từ 0 đến 255, ngăn bằng dấu chấm, ví dụ 192.0.2.18."
+        },
+        {
+          "en": "IPv6 is 128 bits, conventionally written as eight groups of four hexadecimal digits separated by colons. Leading zeros in a group may be omitted and one consecutive zero run may be compressed with ::.",
+          "vi": "IPv6 có 128 bit, thường viết thành tám nhóm bốn chữ số hexadecimal ngăn bằng dấu hai chấm. Leading zero trong một nhóm có thể bỏ và một run zero liên tiếp có thể nén bằng ::."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L17-theory-2",
+      "title": {
+        "en": "Subnetting creates logical boundaries",
+        "vi": "Subnetting tạo logical boundary"
+      },
+      "paragraphs": [
+        {
+          "en": "A prefix or subnet mask separates network/subnet bits from host/interface bits. Devices use the boundary to decide whether a destination is local or should be sent to a router.",
+          "vi": "Prefix hoặc subnet mask tách network/subnet bit khỏi host/interface bit. Thiết bị dùng boundary để quyết định destination là local hay phải gửi tới router."
+        },
+        {
+          "en": "Subnetting divides an address block into smaller logical networks, reducing broadcast scope and supporting organisation, routing and access policy. It does not encrypt traffic by itself.",
+          "vi": "Subnetting chia address block thành logical network nhỏ hơn, giảm broadcast scope và hỗ trợ tổ chức, routing cùng access policy. Nó không tự mã hóa traffic."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L17-theory-3",
+      "title": {
+        "en": "Assignment, scope and persistence are separate",
+        "vi": "Assignment, scope và persistence là riêng biệt"
+      },
+      "paragraphs": [
+        {
+          "en": "An administrator may configure an address manually, or a service such as DHCP may lease a dynamic address. An ISP can assign a public address to an internet-facing router; a local DHCP service can assign private addresses to devices.",
+          "vi": "Administrator có thể cấu hình address thủ công, hoặc service như DHCP lease dynamic address. ISP có thể cấp public address cho router internet-facing; local DHCP service có thể cấp private address cho thiết bị."
+        },
+        {
+          "en": "Private addresses are not globally routable and are used inside private networks, often behind a router/NAT. Public addresses are globally routable, but actual reachability still depends on firewall, routing and exposed services. Static means stable configuration; dynamic means assignment can change.",
+          "vi": "Private address không được route toàn cầu và dùng trong private network, thường sau router/NAT. Public address được route toàn cầu, nhưng reachability thực tế vẫn phụ thuộc firewall, routing và service exposed. Static nghĩa là cấu hình ổn định; dynamic nghĩa là assignment có thể thay đổi."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Private does not mean automatically secure; public does not mean every port is reachable.",
+          "vi": "Private không nghĩa tự động an toàn; public không nghĩa mọi port đều reachable."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Classify an address plan",
+      "vi": "Phân loại address plan"
+    },
+    "prompt": {
+      "en": "A laptop receives 192.168.10.24/24 from the school DHCP service. The school router has a public address from its ISP.",
+      "vi": "Laptop nhận 192.168.10.24/24 từ school DHCP service. School router có public address do ISP cấp."
+    },
+    "steps": [
+      {
+        "id": "P1-L17-worked-1",
+        "action": {
+          "en": "Read the device address.",
+          "vi": "Đọc device address."
+        },
+        "result": {
+          "en": "It is IPv4; /24 declares the network prefix boundary.",
+          "vi": "Đây là IPv4; /24 khai báo network prefix boundary."
+        }
+      },
+      {
+        "id": "P1-L17-worked-2",
+        "action": {
+          "en": "Classify scope and assignment.",
+          "vi": "Phân loại scope và assignment."
+        },
+        "result": {
+          "en": "192.168.10.24 is private and dynamically leased in this scenario.",
+          "vi": "192.168.10.24 là private và được lease động trong tình huống này."
+        }
+      },
+      {
+        "id": "P1-L17-worked-3",
+        "action": {
+          "en": "Trace internet traffic.",
+          "vi": "Lần internet traffic."
+        },
+        "result": {
+          "en": "The laptop sends non-local packets to the router; the router forwards using its public-side connectivity, commonly with address translation.",
+          "vi": "Laptop gửi packet không local tới router; router forward bằng connectivity phía public, thường kèm address translation."
+        }
+      }
+    ],
+    "result": {
+      "en": "The device’s private address, the router’s public address and the DHCP lease perform different roles.",
+      "vi": "Private address của device, public address của router và DHCP lease có vai trò khác nhau."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Classify format, boundary, scope and assignment separately.",
+        "vi": "Phân loại format, boundary, scope và assignment riêng."
+      }
+    ],
+    "method": [
+      {
+        "en": "Recognise IPv4 or IPv6 notation.",
+        "vi": "Nhận diện notation IPv4 hoặc IPv6."
+      },
+      {
+        "en": "Read the prefix as the network boundary.",
+        "vi": "Đọc prefix như network boundary."
+      },
+      {
+        "en": "Ask who assigns it and whether it must remain stable.",
+        "vi": "Hỏi ai cấp và nó có phải ổn định không."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "An IP address permanently identifies a physical device.",
+          "vi": "IP address xác định vĩnh viễn một thiết bị vật lý."
+        },
+        "correction": {
+          "en": "It is associated with an interface for routing and may change; it is not an immutable device identity.",
+          "vi": "Nó gắn với interface để routing và có thể thay đổi; không phải identity bất biến của thiết bị."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A private IP guarantees security.",
+          "vi": "Private IP bảo đảm security."
+        },
+        "correction": {
+          "en": "Private scope reduces direct global routing, but firewall, updates, authentication and configuration are still required.",
+          "vi": "Private scope giảm direct global routing nhưng vẫn cần firewall, update, authentication và configuration."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L17-recognise",
+        "title": {
+          "en": "Recognise two addresses",
+          "vi": "Nhận diện hai address"
+        },
+        "setup": {
+          "en": "Compare 203.0.113.10 and 2001:db8::10.",
+          "vi": "So sánh 203.0.113.10 và 2001:db8::10."
+        },
+        "prompt": {
+          "en": "Identify family and representation without claiming either is private from notation alone.",
+          "vi": "Xác định family và representation, không kết luận address nào private chỉ từ notation."
+        },
+        "expectedEvidence": {
+          "en": "The first is dotted-decimal IPv4; the second is colon-separated hexadecimal IPv6 using zero compression. Public/private status needs range/context rather than the family alone.",
+          "vi": "Address đầu là IPv4 dotted-decimal; address sau là IPv6 hexadecimal ngăn bằng colon dùng zero compression. Public/private status cần range/context chứ không chỉ family."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L17-CHECK-REQ-2.1-14-01",
+      "requirementId": "REQ-2.1-14-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe the format of IPv4 and IPv6 addresses, including bit length and written notation.",
+        "vi": "Mô tả format IPv4 và IPv6, gồm bit length và written notation."
+      },
+      "hint": {
+        "en": "State groups, base and separators.",
+        "vi": "Nêu groups, base và separators."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "IPv4 is 32 bits written as four denary octets 0–255 separated by dots. IPv6 is 128 bits written as eight 16-bit hexadecimal groups separated by colons, with permitted shortening such as omitted leading zeros and one :: run.",
+          "vi": "IPv4 có 32 bit viết thành bốn denary octet 0–255 ngăn bằng dấu chấm. IPv6 có 128 bit viết thành tám nhóm hexadecimal 16-bit ngăn bằng colon, có thể rút gọn như bỏ leading zero và một run ::."
+        },
+        "rubric": [
+          {
+            "en": "Gives correct IPv4 length and notation.",
+            "vi": "Nêu đúng length và notation IPv4."
+          },
+          {
+            "en": "Gives correct IPv6 length and notation.",
+            "vi": "Nêu đúng length và notation IPv6."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "IPv4",
+        "IPv6",
+        "format"
+      ]
+    },
+    {
+      "id": "P1-L17-CHECK-REQ-2.1-14-02",
+      "requirementId": "REQ-2.1-14-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how subnetting divides a network and give two reasons for using it.",
+        "vi": "Giải thích subnetting chia network thế nào và nêu hai lý do sử dụng."
+      },
+      "hint": {
+        "en": "Use prefix/mask and logical smaller networks.",
+        "vi": "Dùng prefix/mask và logical network nhỏ hơn."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A subnet prefix or mask takes bits from an address block to identify smaller logical networks and leaves remaining bits for hosts/interfaces. Subnetting can reduce broadcast scope, organise departments, support routing and apply different access policies.",
+          "vi": "Subnet prefix hoặc mask dùng các bit của address block để xác định logical network nhỏ hơn và để bit còn lại cho host/interface. Subnetting có thể giảm broadcast scope, tổ chức department, hỗ trợ routing và áp access policy khác nhau."
+        },
+        "rubric": [
+          {
+            "en": "Explains the network/host boundary.",
+            "vi": "Giải thích network/host boundary."
+          },
+          {
+            "en": "Gives two valid purposes.",
+            "vi": "Nêu hai mục đích hợp lệ."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "subnetting",
+        "prefix"
+      ]
+    },
+    {
+      "id": "P1-L17-CHECK-REQ-2.1-14-03",
+      "requirementId": "REQ-2.1-14-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two ways an IP address can be associated with a device and identify the role of DHCP.",
+        "vi": "Giải thích hai cách IP address được gắn với device và xác định vai trò DHCP."
+      },
+      "hint": {
+        "en": "Contrast manual/static configuration with automatic leasing.",
+        "vi": "So manual/static configuration với automatic leasing."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "An administrator can manually configure an address, or a DHCP service can automatically lease configuration from an available pool. The address is associated with a network interface for routing and may change when a lease or network changes.",
+          "vi": "Administrator có thể cấu hình address thủ công, hoặc DHCP service tự động lease configuration từ pool khả dụng. Address gắn với network interface để routing và có thể thay đổi khi lease hoặc network thay đổi."
+        },
+        "rubric": [
+          {
+            "en": "Explains manual and automatic association.",
+            "vi": "Giải thích association thủ công và tự động."
+          },
+          {
+            "en": "States DHCP lease/pool role.",
+            "vi": "Nêu vai trò lease/pool của DHCP."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "IP-assignment",
+        "DHCP"
+      ]
+    },
+    {
+      "id": "P1-L17-CHECK-REQ-2.1-14-04",
+      "requirementId": "REQ-2.1-14-04",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare public and private IP addresses and explain one security implication of each.",
+        "vi": "So sánh public và private IP address và giải thích một security implication của mỗi loại."
+      },
+      "hint": {
+        "en": "Separate global routing from actual service exposure.",
+        "vi": "Tách global routing khỏi service exposure thực tế."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Public addresses are globally routable and can support internet-facing services, increasing the need for firewall and controlled exposure. Private addresses are used internally and are not globally routed directly, reducing direct exposure, but they do not replace authentication, firewalling, updates or secure configuration.",
+          "vi": "Public address được route toàn cầu và có thể hỗ trợ internet-facing service, làm tăng nhu cầu firewall cùng exposure có kiểm soát. Private address dùng nội bộ và không được route trực tiếp toàn cầu, giảm direct exposure nhưng không thay authentication, firewall, update hoặc secure configuration."
+        },
+        "rubric": [
+          {
+            "en": "Compares routing scope.",
+            "vi": "So sánh routing scope."
+          },
+          {
+            "en": "Explains a correct security implication without claiming automatic safety.",
+            "vi": "Giải thích security implication đúng mà không nói tự động an toàn."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "public-IP",
+        "private-IP",
+        "security"
+      ]
+    },
+    {
+      "id": "P1-L17-CHECK-REQ-2.1-14-05",
+      "requirementId": "REQ-2.1-14-05",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish static and dynamic IP addresses and give one suitable use for each.",
+        "vi": "Phân biệt static và dynamic IP address và nêu một use phù hợp cho mỗi loại."
+      },
+      "hint": {
+        "en": "Focus on persistence and assignment.",
+        "vi": "Tập trung persistence và assignment."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A static address is deliberately kept stable and suits a server or network device that must be found consistently. A dynamic address is leased automatically and may change, reducing manual administration for ordinary client devices.",
+          "vi": "Static address được giữ ổn định có chủ đích và phù hợp server hoặc network device cần được tìm nhất quán. Dynamic address được lease tự động và có thể thay đổi, giảm quản trị thủ công cho client device thông thường."
+        },
+        "rubric": [
+          {
+            "en": "Defines both address types.",
+            "vi": "Định nghĩa cả hai loại address."
+          },
+          {
+            "en": "Gives a use linked to each property.",
+            "vi": "Nêu use gắn với property của mỗi loại."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "static-IP",
+        "dynamic-IP"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State four independent classifications for an IP address.",
+      "vi": "Nêu bốn phân loại độc lập cho một IP address."
+    },
+    "answerPoints": [
+      {
+        "en": "Address family/format: IPv4 or IPv6; network boundary: prefix/subnet.",
+        "vi": "Family/format: IPv4 hoặc IPv6; network boundary: prefix/subnet."
+      },
+      {
+        "en": "Routing scope: public or private; persistence/assignment: static or dynamic.",
+        "vi": "Routing scope: public hoặc private; persistence/assignment: static hoặc dynamic."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "subnet",
+      "meaning": {
+        "en": "A logical smaller network within an address block.",
+        "vi": "Logical network nhỏ hơn trong address block."
+      }
+    },
+    {
+      "term": "DHCP",
+      "meaning": {
+        "en": "A service that leases network configuration to devices.",
+        "vi": "Service lease network configuration cho device."
+      }
+    },
+    {
+      "term": "public IP",
+      "meaning": {
+        "en": "An IP address routable on the public internet.",
+        "vi": "IP address được route trên public internet."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-hardware",
+    "web-url-dns"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L17 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 57–61: IPv4/IPv6, subnetting and public/private addresses; syllabus adds explicit assignment and static/dynamic requirements",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L17",
+  "contractCoverage": {
+    "B01": [
+      "P1-L17-objectives"
+    ],
+    "B02": [
+      "P1-L17-theory-1",
+      "P1-L17-theory-2",
+      "P1-L17-theory-3"
+    ],
+    "B03": [
+      "P1-L17-rules"
+    ],
+    "B04": [
+      "P1-L17-recognise"
+    ],
+    "B05": [
+      "P1-L17-worked-1",
+      "P1-L17-worked-2",
+      "P1-L17-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L17"
+    ],
+    "B07": [
+      "P1-L17-CHECK-REQ-2.1-14-01",
+      "P1-L17-CHECK-REQ-2.1-14-02",
+      "P1-L17-CHECK-REQ-2.1-14-03",
+      "P1-L17-CHECK-REQ-2.1-14-04",
+      "P1-L17-CHECK-REQ-2.1-14-05"
+    ],
+    "B08": [
+      "P1-L17-misconceptions"
+    ],
+    "B09": [
+      "P1-L17-recall"
+    ],
+    "B10": [
+      "P1-L17-glossary"
+    ],
+    "B11": [
+      "P1-L17-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

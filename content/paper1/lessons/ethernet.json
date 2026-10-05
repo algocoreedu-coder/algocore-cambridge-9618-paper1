@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L15",
+  "slug": "ethernet",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Ethernet collisions and CSMA/CD",
+    "vi": "Ethernet, collision và CSMA/CD"
+  },
+  "question": {
+    "en": "How can stations share one Ethernet medium without repeatedly talking over one another?",
+    "vi": "Các station chia sẻ một Ethernet medium thế nào mà không liên tục truyền chồng nhau?"
+  },
+  "opening": {
+    "en": "On classic shared half-duplex Ethernet, simultaneous transmissions can collide. CSMA/CD listens before transmission, detects a collision during transmission and delays retries.",
+    "vi": "Trên classic shared half-duplex Ethernet, transmission đồng thời có thể collision. CSMA/CD lắng nghe trước khi transmit, phát hiện collision khi transmit và trì hoãn retry."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-10",
+      "text": {
+        "en": "Explain Ethernet collisions and the CSMA/CD process.",
+        "vi": "Giải thích Ethernet collision và quy trình CSMA/CD."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-10-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L15-theory-1",
+      "title": {
+        "en": "Collision scope",
+        "vi": "Phạm vi collision"
+      },
+      "paragraphs": [
+        {
+          "en": "A collision is overlapping transmission on a shared half-duplex Ethernet medium, making frame signals unusable.",
+          "vi": "Collision là transmission chồng lấp trên shared half-duplex Ethernet medium làm tín hiệu frame không dùng được."
+        },
+        {
+          "en": "Modern switched full-duplex links normally remove the shared collision domain, but the shared-medium model remains required syllabus knowledge.",
+          "vi": "Switched full-duplex link hiện đại thường loại shared collision domain, nhưng mô hình shared medium vẫn là kiến thức syllabus bắt buộc."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L15-theory-2",
+      "title": {
+        "en": "Sense, detect and back off",
+        "vi": "Sense, detect và back off"
+      },
+      "paragraphs": [
+        {
+          "en": "A station senses the carrier. If the medium is busy it waits; if idle it transmits while monitoring for a collision.",
+          "vi": "Station sense carrier. Nếu medium bận nó chờ; nếu rảnh nó transmit trong khi theo dõi collision."
+        },
+        {
+          "en": "After detecting a collision, stations stop, signal it, wait independently selected random backoff intervals, sense again and retry. This reduces repeated collisions but cannot guarantee none occurs.",
+          "vi": "Sau khi phát hiện collision, station dừng, báo hiệu, chờ random backoff interval chọn độc lập, sense lại và retry. Cơ chế giảm collision lặp lại nhưng không bảo đảm không xảy ra."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Carrier sensing reduces collision probability; collision detection handles one that occurs.",
+          "vi": "Carrier sensing giảm xác suất collision; collision detection xử lý collision đã xảy ra."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Trace two simultaneous senders",
+      "vi": "Lần theo hai sender đồng thời"
+    },
+    "prompt": {
+      "en": "A and B both sense an idle shared Ethernet medium and transmit before either signal reaches the other.",
+      "vi": "A và B cùng sense shared Ethernet medium rảnh và transmit trước khi tín hiệu bên kia tới."
+    },
+    "steps": [
+      {
+        "id": "P1-L15-worked-1",
+        "action": {
+          "en": "Sense and transmit.",
+          "vi": "Sense và transmit."
+        },
+        "result": {
+          "en": "Both observe idle and start, so their signals overlap.",
+          "vi": "Cả hai thấy rảnh và bắt đầu nên tín hiệu chồng lấp."
+        }
+      },
+      {
+        "id": "P1-L15-worked-2",
+        "action": {
+          "en": "Detect and stop.",
+          "vi": "Detect và dừng."
+        },
+        "result": {
+          "en": "Both monitor the medium, detect collision and stop the damaged frame.",
+          "vi": "Cả hai theo dõi medium, phát hiện collision và dừng frame hỏng."
+        }
+      },
+      {
+        "id": "P1-L15-worked-3",
+        "action": {
+          "en": "Back off and retry.",
+          "vi": "Back off và retry."
+        },
+        "result": {
+          "en": "They wait different random intervals; the first to sense idle retries.",
+          "vi": "Chúng chờ random interval khác nhau; bên đầu tiên sense rảnh sẽ retry."
+        }
+      }
+    ],
+    "result": {
+      "en": "A successful retry completes; a further collision repeats the process with another backoff.",
+      "vi": "Retry thành công sẽ hoàn tất; collision tiếp theo lặp quy trình với backoff khác."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for a shared half-duplex Ethernet medium.",
+        "vi": "Tìm shared half-duplex Ethernet medium."
+      }
+    ],
+    "method": [
+      {
+        "en": "Sense the carrier.",
+        "vi": "Sense carrier."
+      },
+      {
+        "en": "Transmit while monitoring.",
+        "vi": "Transmit trong khi theo dõi."
+      },
+      {
+        "en": "On collision, stop, back off and retry.",
+        "vi": "Khi collision, dừng, back off và retry."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Carrier sense guarantees no collision.",
+          "vi": "Carrier sense bảo đảm không collision."
+        },
+        "correction": {
+          "en": "Propagation delay lets two stations both sense idle before either signal arrives.",
+          "vi": "Propagation delay cho phép hai station cùng sense rảnh trước khi tín hiệu tới."
+        }
+      },
+      {
+        "mistake": {
+          "en": "CSMA/CD is used on every modern Ethernet link.",
+          "vi": "Mọi Ethernet link hiện đại dùng CSMA/CD."
+        },
+        "correction": {
+          "en": "It models shared half-duplex Ethernet; switched full-duplex links normally do not collide.",
+          "vi": "Nó mô hình shared half-duplex Ethernet; switched full-duplex link thường không collision."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L15-recognise",
+        "title": {
+          "en": "Recognise the next state",
+          "vi": "Nhận diện trạng thái tiếp"
+        },
+        "setup": {
+          "en": "A station detected a collision and stopped.",
+          "vi": "Station phát hiện collision và đã dừng."
+        },
+        "prompt": {
+          "en": "State the next actions and purpose.",
+          "vi": "Nêu action tiếp theo và mục đích."
+        },
+        "expectedEvidence": {
+          "en": "Wait a random backoff to reduce simultaneous retry, then sense again before retransmitting.",
+          "vi": "Chờ random backoff để giảm retry đồng thời, rồi sense lại trước khi retransmit."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L15-CHECK-REQ-2.1-10-01",
+      "requirementId": "REQ-2.1-10-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a collision can occur on shared Ethernet and how CSMA/CD responds from carrier sensing to retry.",
+        "vi": "Giải thích collision xảy ra trên shared Ethernet thế nào và CSMA/CD phản ứng từ carrier sensing tới retry."
+      },
+      "hint": {
+        "en": "Include propagation delay, detection and random backoff.",
+        "vi": "Gồm propagation delay, detection và random backoff."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Two stations can both sense idle before the other signal arrives and transmit together. They detect the collision while monitoring, stop and signal it, wait independently selected random backoff intervals, then sense again and retry.",
+          "vi": "Hai station có thể cùng sense rảnh trước khi tín hiệu bên kia tới và transmit cùng lúc. Chúng phát hiện collision khi theo dõi, dừng và báo hiệu, chờ random backoff interval độc lập, rồi sense lại và retry."
+        },
+        "rubric": [
+          {
+            "en": "Explains simultaneous transmission.",
+            "vi": "Giải thích transmission đồng thời."
+          },
+          {
+            "en": "Orders sense, transmit, detect, stop, backoff and retry.",
+            "vi": "Sắp đúng sense, transmit, detect, stop, backoff và retry."
+          },
+          {
+            "en": "States the shared half-duplex boundary.",
+            "vi": "Nêu ranh giới shared half-duplex."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "Ethernet",
+        "collision",
+        "CSMA-CD"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Expand CSMA/CD and give its sequence.",
+      "vi": "Khai triển CSMA/CD và nêu chuỗi."
+    },
+    "answerPoints": [
+      {
+        "en": "Carrier Sense Multiple Access with Collision Detection.",
+        "vi": "Carrier Sense Multiple Access with Collision Detection."
+      },
+      {
+        "en": "Sense → transmit/monitor → detect → stop → random backoff → retry.",
+        "vi": "Sense → transmit/monitor → detect → stop → random backoff → retry."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "collision",
+      "meaning": {
+        "en": "Overlapping transmissions on a shared medium.",
+        "vi": "Transmission chồng lấp trên shared medium."
+      }
+    },
+    {
+      "term": "carrier sense",
+      "meaning": {
+        "en": "Listening to decide whether the medium is busy.",
+        "vi": "Lắng nghe để xác định medium bận hay không."
+      }
+    },
+    {
+      "term": "backoff",
+      "meaning": {
+        "en": "A delay before retrying.",
+        "vi": "Khoảng chờ trước khi retry."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-topologies",
+    "network-hardware"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L15 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 50–52: Ethernet, collisions and CSMA/CD",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L15",
+  "contractCoverage": {
+    "B01": [
+      "P1-L15-objectives"
+    ],
+    "B02": [
+      "P1-L15-theory-1",
+      "P1-L15-theory-2"
+    ],
+    "B03": [
+      "P1-L15-rules"
+    ],
+    "B04": [
+      "P1-L15-recognise"
+    ],
+    "B05": [
+      "P1-L15-worked-1",
+      "P1-L15-worked-2",
+      "P1-L15-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L15"
+    ],
+    "B07": [
+      "P1-L15-CHECK-REQ-2.1-10-01"
+    ],
+    "B08": [
+      "P1-L15-misconceptions"
+    ],
+    "B09": [
+      "P1-L15-recall"
+    ],
+    "B10": [
+      "P1-L15-glossary"
+    ],
+    "B11": [
+      "P1-L15-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

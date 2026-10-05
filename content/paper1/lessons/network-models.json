@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L10",
+  "slug": "network-models",
+  "sectionId": "2",
+  "strandId": "2.1",
+  "title": {
+    "en": "Client–server, peer-to-peer and client types",
+    "vi": "Client–server, peer-to-peer và loại client"
+  },
+  "question": {
+    "en": "Where are services, data and processing located in each network model?",
+    "vi": "Dịch vụ, dữ liệu và xử lý nằm ở đâu trong mỗi network model?"
+  },
+  "opening": {
+    "en": "A network model assigns roles. Client–server centralises selected services; peer-to-peer lets peers provide and consume resources. Thin and thick clients differ in how much processing and storage they perform locally.",
+    "vi": "Network model phân công vai trò. Client–server tập trung một số dịch vụ; peer-to-peer cho peer vừa cung cấp vừa dùng tài nguyên. Thin và thick client khác nhau ở mức xử lý và lưu trữ cục bộ."
+  },
+  "objectives": [
+    {
+      "id": "AC26-2.1-03",
+      "text": {
+        "en": "Explain and select client–server or peer-to-peer models.",
+        "vi": "Giải thích và lựa chọn client–server hoặc peer-to-peer model."
+      }
+    },
+    {
+      "id": "AC26-2.1-04",
+      "text": {
+        "en": "Distinguish thin clients from thick clients.",
+        "vi": "Phân biệt thin client và thick client."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-2.1-03-01",
+    "REQ-2.1-03-02",
+    "REQ-2.1-03-03",
+    "REQ-2.1-04-01"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L09"
+  ],
+  "theory": [
+    {
+      "id": "P1-L10-theory-1",
+      "title": {
+        "en": "Assign roles before comparing models",
+        "vi": "Phân vai trước khi so sánh model"
+      },
+      "paragraphs": [
+        {
+          "en": "In client–server, a client requests a service and a server provides or controls it, such as authentication, files or printing. A server role does not mean that one physical machine must provide every service.",
+          "vi": "Trong client–server, client yêu cầu dịch vụ và server cung cấp hoặc kiểm soát dịch vụ đó, như authentication, tệp hoặc in. Vai trò server không có nghĩa một máy vật lý phải cung cấp mọi dịch vụ."
+        },
+        {
+          "en": "In peer-to-peer, devices can act as both clients and servers for shared resources without a dedicated central server controlling all sharing.",
+          "vi": "Trong peer-to-peer, thiết bị có thể vừa là client vừa là server cho tài nguyên chia sẻ mà không có dedicated central server kiểm soát toàn bộ việc chia sẻ."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L10-theory-2",
+      "title": {
+        "en": "Trade-offs depend on the situation",
+        "vi": "Trade-off phụ thuộc tình huống"
+      },
+      "paragraphs": [
+        {
+          "en": "Client–server supports central accounts, security, backup and scalable administration, but server cost, management and service failure can be significant.",
+          "vi": "Client–server hỗ trợ tài khoản, bảo mật, backup và quản trị tập trung có thể mở rộng, nhưng chi phí server, quản lý và sự cố dịch vụ có thể đáng kể."
+        },
+        {
+          "en": "Peer-to-peer can be cheap and simple for a small group, but distributed security, backup, availability and version control become harder as the group grows.",
+          "vi": "Peer-to-peer có thể rẻ và đơn giản cho nhóm nhỏ, nhưng security, backup, availability và version control phân tán trở nên khó hơn khi nhóm lớn lên."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    },
+    {
+      "id": "P1-L10-theory-3",
+      "title": {
+        "en": "Thin and thick describe client responsibility",
+        "vi": "Thin và thick mô tả trách nhiệm của client"
+      },
+      "paragraphs": [
+        {
+          "en": "A thin client depends heavily on a server for processing, applications or storage and normally needs a network connection for useful work.",
+          "vi": "Thin client phụ thuộc nhiều vào server để xử lý, chạy ứng dụng hoặc lưu trữ và thường cần kết nối network để làm việc hữu ích."
+        },
+        {
+          "en": "A thick client performs more processing and stores more software or data locally, so it can often continue some work offline but needs stronger local hardware and maintenance.",
+          "vi": "Thick client thực hiện nhiều xử lý và lưu phần mềm hoặc dữ liệu cục bộ hơn, nên thường tiếp tục được một số việc khi offline nhưng cần phần cứng và bảo trì tại máy mạnh hơn."
+        }
+      ],
+      "bullets": [],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C02"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Choose a model for a design team",
+      "vi": "Chọn model cho đội thiết kế"
+    },
+    "prompt": {
+      "en": "A 40-person team needs controlled project files, daily backup and central user accounts.",
+      "vi": "Đội 40 người cần tệp dự án được kiểm soát, backup hằng ngày và tài khoản tập trung."
+    },
+    "steps": [
+      {
+        "id": "P1-L10-worked-1",
+        "action": {
+          "en": "Identify the decisive requirements.",
+          "vi": "Xác định yêu cầu quyết định."
+        },
+        "result": {
+          "en": "Central access control, authoritative files and backup are required.",
+          "vi": "Cần access control tập trung, tệp chuẩn và backup."
+        }
+      },
+      {
+        "id": "P1-L10-worked-2",
+        "action": {
+          "en": "Compare model consequences.",
+          "vi": "So hệ quả của model."
+        },
+        "result": {
+          "en": "Peer-to-peer distributes copies and administration; client–server centralises the required services.",
+          "vi": "Peer-to-peer phân tán bản sao và quản trị; client–server tập trung các dịch vụ cần thiết."
+        }
+      },
+      {
+        "id": "P1-L10-worked-3",
+        "action": {
+          "en": "State a justified choice and limitation.",
+          "vi": "Nêu lựa chọn có lý do và hạn chế."
+        },
+        "result": {
+          "en": "Choose client–server for central control, while planning server redundancy and administration.",
+          "vi": "Chọn client–server để kiểm soát tập trung, đồng thời lập kế hoạch redundancy và quản trị server."
+        }
+      }
+    ],
+    "result": {
+      "en": "Client–server is justified by the stated control and backup needs, not because it is always superior.",
+      "vi": "Client–server được biện minh bởi nhu cầu kiểm soát và backup đã nêu, không phải vì luôn tốt hơn."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Ask who requests and who provides each service.",
+        "vi": "Hỏi ai yêu cầu và ai cung cấp từng dịch vụ."
+      }
+    ],
+    "method": [
+      {
+        "en": "Mark client and server or peer roles.",
+        "vi": "Đánh dấu vai trò client và server hoặc peer."
+      },
+      {
+        "en": "Locate processing and storage.",
+        "vi": "Xác định vị trí xử lý và lưu trữ."
+      },
+      {
+        "en": "Tie the choice to scenario requirements.",
+        "vi": "Gắn lựa chọn với yêu cầu tình huống."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Peer-to-peer means devices cannot request services.",
+          "vi": "Peer-to-peer nghĩa là thiết bị không thể yêu cầu dịch vụ."
+        },
+        "correction": {
+          "en": "A peer can request one resource and provide another; its role can change by interaction.",
+          "vi": "Peer có thể yêu cầu một tài nguyên và cung cấp tài nguyên khác; vai trò thay đổi theo interaction."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Thin client means physically small client.",
+          "vi": "Thin client nghĩa là client có kích thước vật lý nhỏ."
+        },
+        "correction": {
+          "en": "Thin describes dependence on remote processing or storage, not case size.",
+          "vi": "Thin mô tả sự phụ thuộc vào xử lý hoặc lưu trữ từ xa, không phải kích thước vỏ máy."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L10-recognise",
+        "title": {
+          "en": "Trace one request",
+          "vi": "Lần theo một request"
+        },
+        "setup": {
+          "en": "A learner opens a centrally stored document from a thin client.",
+          "vi": "Học sinh mở tài liệu lưu tập trung từ thin client."
+        },
+        "prompt": {
+          "en": "Identify the requester, provider, processing/storage locations and response.",
+          "vi": "Xác định bên yêu cầu, bên cung cấp, vị trí xử lý/lưu trữ và response."
+        },
+        "expectedEvidence": {
+          "en": "The thin client sends a request; the server authenticates and provides the centrally stored resource, with most application work or storage remaining server-side.",
+          "vi": "Thin client gửi request; server authentication và cung cấp tài nguyên lưu tập trung, phần lớn ứng dụng hoặc lưu trữ nằm phía server."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L10-CHECK-REQ-2.1-03-01",
+      "requirementId": "REQ-2.1-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the roles of computers in client–server and peer-to-peer models.",
+        "vi": "Giải thích vai trò máy tính trong client–server và peer-to-peer model."
+      },
+      "hint": {
+        "en": "Describe both requesting and providing roles.",
+        "vi": "Mô tả cả vai trò yêu cầu và cung cấp."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "In client–server, clients request controlled services and dedicated server roles provide them. In peer-to-peer, each peer may provide and request shared resources without one dedicated central server controlling all sharing.",
+          "vi": "Trong client–server, client yêu cầu dịch vụ được kiểm soát và vai trò server chuyên dụng cung cấp chúng. Trong peer-to-peer, mỗi peer có thể cung cấp và yêu cầu tài nguyên chia sẻ mà không có một dedicated central server kiểm soát toàn bộ."
+        },
+        "rubric": [
+          {
+            "en": "Explains client and server roles.",
+            "vi": "Giải thích vai trò client và server."
+          },
+          {
+            "en": "Explains that peers can both provide and consume resources.",
+            "vi": "Giải thích peer có thể vừa cung cấp vừa dùng tài nguyên."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "client-server",
+        "peer-to-peer",
+        "roles"
+      ]
+    },
+    {
+      "id": "P1-L10-CHECK-REQ-2.1-03-02",
+      "requirementId": "REQ-2.1-03-02",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Compare two benefits and two drawbacks of client–server with peer-to-peer.",
+        "vi": "So sánh hai lợi ích và hai hạn chế của client–server với peer-to-peer."
+      },
+      "hint": {
+        "en": "Use central administration, cost, scale, availability or backup.",
+        "vi": "Dùng quản trị tập trung, chi phí, scale, availability hoặc backup."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Client–server supports central security and backup and scales administration, but needs server resources and skilled management and may create critical service dependencies. Peer-to-peer is cheaper and simple for a few devices, but distributed security, backup and availability are harder to control.",
+          "vi": "Client–server hỗ trợ security và backup tập trung, quản trị dễ scale, nhưng cần tài nguyên server và người quản trị, đồng thời có thể tạo phụ thuộc dịch vụ quan trọng. Peer-to-peer rẻ và đơn giản cho ít thiết bị nhưng khó kiểm soát security, backup và availability phân tán."
+        },
+        "rubric": [
+          {
+            "en": "Gives balanced benefits and drawbacks for both models.",
+            "vi": "Nêu cân bằng lợi ích và hạn chế của cả hai model."
+          },
+          {
+            "en": "Makes direct comparisons rather than isolated lists.",
+            "vi": "So sánh trực tiếp thay vì liệt kê tách rời."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "model-tradeoff"
+      ]
+    },
+    {
+      "id": "P1-L10-CHECK-REQ-2.1-03-03",
+      "requirementId": "REQ-2.1-03-03",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "A five-person temporary team needs quick local file sharing and has no administrator. Choose and justify a network model, including one risk.",
+        "vi": "Nhóm tạm thời năm người cần chia sẻ tệp cục bộ nhanh và không có administrator. Chọn và biện minh network model, gồm một rủi ro."
+      },
+      "hint": {
+        "en": "Match the size and administration need; acknowledge a consequence.",
+        "vi": "Ghép quy mô và nhu cầu quản trị; nêu một hệ quả."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Peer-to-peer is defensible because the group is small, temporary and needs low setup overhead without a dedicated administrator. A risk is inconsistent backups, permissions or file versions across peers.",
+          "vi": "Peer-to-peer hợp lý vì nhóm nhỏ, tạm thời và cần setup thấp khi không có administrator chuyên dụng. Rủi ro là backup, permission hoặc phiên bản tệp không nhất quán giữa các peer."
+        },
+        "rubric": [
+          {
+            "en": "Makes a defensible choice from the facts.",
+            "vi": "Đưa ra lựa chọn có thể biện minh từ dữ kiện."
+          },
+          {
+            "en": "Links at least two facts to model features.",
+            "vi": "Liên hệ ít nhất hai dữ kiện với đặc điểm model."
+          },
+          {
+            "en": "States one relevant limitation.",
+            "vi": "Nêu một hạn chế phù hợp."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "model-choice",
+        "scenario"
+      ]
+    },
+    {
+      "id": "P1-L10-CHECK-REQ-2.1-04-01",
+      "requirementId": "REQ-2.1-04-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish a thin client from a thick client using processing, local storage/software and offline operation.",
+        "vi": "Phân biệt thin client với thick client theo xử lý, lưu trữ/phần mềm cục bộ và hoạt động offline."
+      },
+      "hint": {
+        "en": "Thin and thick describe where work happens.",
+        "vi": "Thin và thick mô tả nơi công việc diễn ra."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A thin client relies mainly on a server for processing, applications or storage and normally has limited offline use. A thick client performs more work and stores more software or data locally, enabling some offline use but increasing local hardware and maintenance needs.",
+          "vi": "Thin client chủ yếu dựa vào server để xử lý, chạy ứng dụng hoặc lưu trữ và thường dùng offline hạn chế. Thick client làm nhiều việc và lưu nhiều phần mềm hoặc dữ liệu cục bộ hơn, cho phép một số hoạt động offline nhưng tăng nhu cầu phần cứng và bảo trì tại máy."
+        },
+        "rubric": [
+          {
+            "en": "Compares processing location.",
+            "vi": "So sánh vị trí xử lý."
+          },
+          {
+            "en": "Compares local storage/software and offline capability.",
+            "vi": "So sánh lưu trữ/phần mềm cục bộ và khả năng offline."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "thin-client",
+        "thick-client"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the role pattern of each model and one thin/thick distinction.",
+      "vi": "Nêu mẫu vai trò của mỗi model và một khác biệt thin/thick."
+    },
+    "answerPoints": [
+      {
+        "en": "Client–server separates requester and service-provider roles; peers may both provide and request.",
+        "vi": "Client–server tách vai trò yêu cầu và cung cấp dịch vụ; peer có thể vừa cung cấp vừa yêu cầu."
+      },
+      {
+        "en": "Thin clients depend more on server resources; thick clients perform more work locally.",
+        "vi": "Thin client phụ thuộc nhiều hơn vào tài nguyên server; thick client làm nhiều việc hơn tại máy."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "client",
+      "meaning": {
+        "en": "A device or program that requests a service.",
+        "vi": "Thiết bị hoặc chương trình yêu cầu dịch vụ."
+      }
+    },
+    {
+      "term": "server",
+      "meaning": {
+        "en": "A role that provides or controls a network service.",
+        "vi": "Vai trò cung cấp hoặc kiểm soát dịch vụ network."
+      }
+    },
+    {
+      "term": "peer",
+      "meaning": {
+        "en": "A device that can both provide and request shared resources.",
+        "vi": "Thiết bị có thể vừa cung cấp vừa yêu cầu tài nguyên chia sẻ."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "network-foundations",
+    "cloud-computing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §2.1, pp. 16–17",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L10 · Chapter 2 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C02",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 2, pp. 32–37: client–server, peer-to-peer, thin and thick clients",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L10",
+  "contractCoverage": {
+    "B01": [
+      "P1-L10-objectives"
+    ],
+    "B02": [
+      "P1-L10-theory-1",
+      "P1-L10-theory-2",
+      "P1-L10-theory-3"
+    ],
+    "B03": [
+      "P1-L10-rules"
+    ],
+    "B04": [
+      "P1-L10-recognise"
+    ],
+    "B05": [
+      "P1-L10-worked-1",
+      "P1-L10-worked-2",
+      "P1-L10-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L10"
+    ],
+    "B07": [
+      "P1-L10-CHECK-REQ-2.1-03-01",
+      "P1-L10-CHECK-REQ-2.1-03-02",
+      "P1-L10-CHECK-REQ-2.1-03-03",
+      "P1-L10-CHECK-REQ-2.1-04-01"
+    ],
+    "B08": [
+      "P1-L10-misconceptions"
+    ],
+    "B09": [
+      "P1-L10-recall"
+    ],
+    "B10": [
+      "P1-L10-glossary"
+    ],
+    "B11": [
+      "P1-L10-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}
