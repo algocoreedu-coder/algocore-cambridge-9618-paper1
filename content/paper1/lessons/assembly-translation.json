@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L28",
+  "slug": "assembly-translation",
+  "sectionId": "4",
+  "strandId": "4.2",
+  "title": {
+    "en": "Machine code and the two-pass assembler",
+    "vi": "Machine code và two-pass assembler"
+  },
+  "question": {
+    "en": "How does an assembler resolve a label that appears later in the source?",
+    "vi": "Assembler resolve label xuất hiện sau trong source như thế nào?"
+  },
+  "opening": {
+    "en": "Assembly source uses names; machine code uses processor encodings. Two passes let the assembler discover every label address before it must encode forward references.",
+    "vi": "Assembly source dùng tên; machine code dùng processor encoding. Hai pass giúp assembler tìm mọi label address trước khi phải encode forward reference."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.2-01",
+      "text": {
+        "en": "Explain the relationship between assembly language and machine code.",
+        "vi": "Giải thích quan hệ giữa assembly language và machine code."
+      }
+    },
+    {
+      "id": "AC26-4.2-02",
+      "text": {
+        "en": "Describe the stages of a two-pass assembler.",
+        "vi": "Mô tả các stage của two-pass assembler."
+      }
+    },
+    {
+      "id": "AC26-4.2-03",
+      "text": {
+        "en": "Apply the two-pass process to a simple program.",
+        "vi": "Áp dụng two-pass process cho simple program."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.2-01-01",
+    "REQ-4.2-02-01",
+    "REQ-4.2-03-01"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L28-theory-1",
+      "title": {
+        "en": "Source and object representations",
+        "vi": "Source và object representation"
+      },
+      "paragraphs": [
+        {
+          "en": "Assembly language expresses an instruction with a mnemonic opcode and operand. Machine code encodes the same processor operation as bits according to a particular instruction set.",
+          "vi": "Assembly language biểu diễn instruction bằng mnemonic opcode và operand. Machine code encode cùng processor operation thành bit theo instruction set cụ thể."
+        },
+        {
+          "en": "The assembler translates; it does not execute the resulting program.",
+          "vi": "Assembler thực hiện translation; nó không execute program kết quả."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Toy object codes in the visual are AlgoCore fixture values, not Cambridge CPU encodings.",
+          "vi": "Toy object code trong visual là AlgoCore fixture value, không phải Cambridge CPU encoding."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L28-theory-2",
+      "title": {
+        "en": "Pass 1 builds addresses",
+        "vi": "Pass 1 xây address"
+      },
+      "paragraphs": [
+        {
+          "en": "Pass 1 ignores comments, checks that each opcode is recognised, and uses a location counter to assign an address to each instruction or data row. Labels are entered into the symbol table with those addresses.",
+          "vi": "Pass 1 bỏ qua comment, kiểm tra mỗi opcode có được nhận diện hay không, rồi dùng location counter gán address cho từng instruction hoặc data row. Label được đưa vào symbol table cùng address đó."
+        },
+        {
+          "en": "A forward reference can be recorded even though its address has not yet been encountered.",
+          "vi": "Forward reference có thể được ghi nhận dù address của nó chưa xuất hiện."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "The symbol table maps label to address, not label to the data stored there.",
+          "vi": "Symbol table ánh xạ label tới address, không ánh xạ label tới data lưu tại đó."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L28-theory-3",
+      "title": {
+        "en": "Pass 2 resolves and encodes",
+        "vi": "Pass 2 resolve và encode"
+      },
+      "paragraphs": [
+        {
+          "en": "The assembler reads the source again, replaces symbolic operands using the complete symbol table, generates each machine-code instruction, and writes or saves the completed object code according to its output format.",
+          "vi": "Assembler đọc source lại, thay symbolic operand bằng complete symbol table, tạo từng machine-code instruction rồi ghi hoặc lưu object code hoàn chỉnh theo output format."
+        },
+        {
+          "en": "Errors such as an undefined label can be reported because the complete table now exists.",
+          "vi": "Error như undefined label có thể được báo vì complete table đã tồn tại."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Resolving a symbol is not the same as reading Memory[symbol address].",
+          "vi": "Resolve symbol không giống đọc Memory[symbol address]."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Resolve a forward jump",
+      "vi": "Resolve forward jump"
+    },
+    "prompt": {
+      "en": "The five-row fixture starts at address 100 and jumps to DONE before DONE is declared.",
+      "vi": "Fixture năm row bắt đầu ở address 100 và jump tới DONE trước khi DONE được khai báo."
+    },
+    "steps": [
+      {
+        "id": "P1-L28-worked-1",
+        "action": {
+          "en": "Run pass 1.",
+          "vi": "Chạy pass 1."
+        },
+        "result": {
+          "en": "Assign row addresses 100–104; record START=100, VALUE=102, DONE=103.",
+          "vi": "Gán row address 100–104; ghi START=100, VALUE=102, DONE=103."
+        }
+      },
+      {
+        "id": "P1-L28-worked-2",
+        "action": {
+          "en": "Locate the forward reference.",
+          "vi": "Xác định forward reference."
+        },
+        "result": {
+          "en": "JMP DONE at address 101 now has a symbol-table entry.",
+          "vi": "JMP DONE tại address 101 giờ có symbol-table entry."
+        }
+      },
+      {
+        "id": "P1-L28-worked-3",
+        "action": {
+          "en": "Run pass 2.",
+          "vi": "Chạy pass 2."
+        },
+        "result": {
+          "en": "Replace DONE with address 103 and encode each row using the declared toy table.",
+          "vi": "Thay DONE bằng address 103 và encode mỗi row theo toy table đã công bố."
+        }
+      }
+    ],
+    "result": {
+      "en": "The assembler has translated addresses and opcodes; the program has not run.",
+      "vi": "Assembler đã translate address và opcode; program chưa được chạy."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for labels used before their definitions or a request for a symbol table.",
+        "vi": "Tìm label được dùng trước definition hoặc yêu cầu symbol table."
+      }
+    ],
+    "method": [
+      {
+        "en": "Pass 1: assign addresses and record labels.",
+        "vi": "Pass 1: gán address và ghi label."
+      },
+      {
+        "en": "Pass 2: replace label operands and encode.",
+        "vi": "Pass 2: thay label operand và encode."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Pass 1 produces the complete final machine code.",
+          "vi": "Pass 1 tạo complete final machine code."
+        },
+        "correction": {
+          "en": "Pass 1 discovers addresses and symbols; pass 2 resolves operands and emits the complete encoding.",
+          "vi": "Pass 1 tìm address và symbol; pass 2 resolve operand và phát complete encoding."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A symbol-table entry stores the value of the labelled data.",
+          "vi": "Symbol-table entry lưu value của labelled data."
+        },
+        "correction": {
+          "en": "It stores the address associated with the label.",
+          "vi": "Nó lưu address liên kết với label."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L28-recognise-1",
+        "title": {
+          "en": "Recognise a forward reference",
+          "vi": "Nhận diện forward reference"
+        },
+        "setup": {
+          "en": "JMP FINISH appears before FINISH: END.",
+          "vi": "JMP FINISH xuất hiện trước FINISH: END."
+        },
+        "prompt": {
+          "en": "Explain why two passes help.",
+          "vi": "Giải thích vì sao hai pass hữu ích."
+        },
+        "expectedEvidence": {
+          "en": "Pass 1 later discovers FINISH's address; pass 2 can then encode the earlier JMP operand.",
+          "vi": "Pass 1 sau đó tìm address của FINISH; pass 2 có thể encode operand của JMP trước đó."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L28-CHECK-REQ-4.2-01-01",
+      "requirementId": "REQ-4.2-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the relationship between assembly language and machine code.",
+        "vi": "Giải thích mối quan hệ giữa assembly language và machine code."
+      },
+      "hint": {
+        "en": "Mention mnemonic source instructions, binary encodings and an assembler.",
+        "vi": "Nêu mnemonic source instruction, binary encoding và assembler."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Assembly language uses mnemonic opcodes, labels and operands that are easier for a programmer to read. An assembler translates them into machine-code bit patterns for a particular processor instruction set; those encodings are what the CPU can execute.",
+          "vi": "Assembly language dùng mnemonic opcode, label và operand dễ đọc hơn cho programmer. Assembler dịch chúng thành machine-code bit pattern cho instruction set của processor cụ thể; CPU execute các encoding đó."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "assembly-language",
+        "machine-code",
+        "assembler"
+      ]
+    },
+    {
+      "id": "P1-L28-CHECK-REQ-4.2-02-01",
+      "requirementId": "REQ-4.2-02-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe the work performed by pass 1 and pass 2 of a two-pass assembler.",
+        "vi": "Mô tả công việc của pass 1 và pass 2 trong two-pass assembler."
+      },
+      "hint": {
+        "en": "Focus on addresses, labels, the symbol table and resolving operands.",
+        "vi": "Tập trung address, label, symbol table và resolve operand."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Pass 1 scans the source, maintains a location counter, checks or records opcodes and builds a symbol table mapping labels to addresses, leaving forward references unresolved. Pass 2 scans again, uses the symbol table to replace symbolic operands and generates object or machine code according to the declared instruction encoding.",
+          "vi": "Pass 1 scan source, duy trì location counter, kiểm tra hoặc ghi opcode và xây symbol table ánh xạ label tới address, để forward reference chưa resolve. Pass 2 scan lại, dùng symbol table thay symbolic operand và tạo object hoặc machine code theo instruction encoding đã công bố."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "pass-1",
+        "pass-2",
+        "symbol-table"
+      ]
+    },
+    {
+      "id": "P1-L28-CHECK-REQ-4.2-03-01",
+      "requirementId": "REQ-4.2-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Apply two passes to START: LDM #7; JMP DONE; VALUE: 3; DONE: OUT; END, starting at address 100. Give the symbol table and resolved JMP operand.",
+        "vi": "Áp dụng hai pass cho START: LDM #7; JMP DONE; VALUE: 3; DONE: OUT; END, bắt đầu tại address 100. Cho symbol table và resolved JMP operand."
+      },
+      "hint": {
+        "en": "Assign one address to each source row before resolving DONE.",
+        "vi": "Gán một address cho mỗi source row trước khi resolve DONE."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Pass 1 assigns START=100, VALUE=102 and DONE=103. Pass 2 replaces operand DONE in JMP with 103; the other rows keep their literal or no operand under the declared toy fixture.",
+          "vi": "Pass 1 gán START=100, VALUE=102 và DONE=103. Pass 2 thay operand DONE trong JMP bằng 103; các row khác giữ literal hoặc không có operand theo toy fixture đã công bố."
+        },
+        "rubric": [
+          {
+            "en": "Pass 1 assigns START=100, VALUE=102 and DONE=103 by advancing the location counter once per source row.",
+            "vi": "Pass 1 gán START=100, VALUE=102 và DONE=103 bằng cách tăng location counter một lần cho mỗi source row."
+          },
+          {
+            "en": "Pass 2 resolves the forward reference so the JMP operand is 103; accept an equivalent symbol-table layout and explanation.",
+            "vi": "Pass 2 resolve forward reference để operand của JMP là 103; chấp nhận cách trình bày symbol table và giải thích tương đương."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "two-pass",
+        "forward-reference",
+        "symbol-table"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the main output of pass 1 and pass 2.",
+      "vi": "Nêu output chính của pass 1 và pass 2."
+    },
+    "answerPoints": [
+      {
+        "en": "Pass 1 creates addresses and the symbol table; pass 2 resolves symbolic operands and emits object code.",
+        "vi": "Pass 1 tạo address và symbol table; pass 2 resolve symbolic operand và phát object code."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "assembler",
+      "meaning": {
+        "en": "Translator from assembly source to machine/object code.",
+        "vi": "Translator từ assembly source sang machine/object code."
+      }
+    },
+    {
+      "term": "symbol table",
+      "meaning": {
+        "en": "Mapping from labels to assigned addresses.",
+        "vi": "Ánh xạ từ label tới address đã gán."
+      }
+    },
+    {
+      "term": "location counter",
+      "meaning": {
+        "en": "The address assigned to the current source row.",
+        "vi": "Address được gán cho current source row."
+      }
+    },
+    {
+      "term": "forward reference",
+      "meaning": {
+        "en": "Use of a label before its definition is encountered.",
+        "vi": "Dùng label trước khi gặp definition của nó."
+      }
+    },
+    {
+      "term": "object code",
+      "meaning": {
+        "en": "Translated processor encoding produced by the assembler.",
+        "vi": "Processor encoding đã translate do assembler tạo ra."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "addressing-modes",
+    "assembly-tracing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.2, pp. 20–21",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L28 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 121–123 and 126",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L28",
+  "contractCoverage": {
+    "B01": [
+      "P1-L28-objectives"
+    ],
+    "B02": [
+      "P1-L28-theory-1",
+      "P1-L28-theory-2",
+      "P1-L28-theory-3"
+    ],
+    "B03": [
+      "P1-L28-theory-1",
+      "P1-L28-theory-2",
+      "P1-L28-theory-3"
+    ],
+    "B04": [
+      "P1-L28-recognise-1"
+    ],
+    "B05": [
+      "P1-L28-worked-1",
+      "P1-L28-worked-2",
+      "P1-L28-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L28"
+    ],
+    "B07": [
+      "P1-L28-CHECK-REQ-4.2-01-01",
+      "P1-L28-CHECK-REQ-4.2-02-01",
+      "P1-L28-CHECK-REQ-4.2-03-01"
+    ],
+    "B08": [
+      "P1-L28-recognise-1"
+    ],
+    "B09": [
+      "P1-L28-recall"
+    ],
+    "B10": [
+      "P1-L28-glossary"
+    ],
+    "B11": [
+      "P1-L28-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

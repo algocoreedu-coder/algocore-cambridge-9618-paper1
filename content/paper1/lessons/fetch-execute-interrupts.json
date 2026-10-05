@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L27",
+  "slug": "fetch-execute-interrupts",
+  "sectionId": "4",
+  "strandId": "4.1",
+  "title": {
+    "en": "Fetch–decode–execute cycle and interrupts",
+    "vi": "Chu trình fetch–decode–execute và interrupt"
+  },
+  "question": {
+    "en": "What changes in each CPU microstep, and when may an interrupt take control?",
+    "vi": "Mỗi CPU microstep thay đổi gì và khi nào interrupt có thể nhận control?"
+  },
+  "opening": {
+    "en": "A correct CPU trace is an ordered state ledger. Every arrow must identify a source, destination and value; an interrupt begins only at the declared checking point.",
+    "vi": "CPU trace đúng là state ledger có thứ tự. Mỗi arrow phải xác định source, destination và value; interrupt chỉ bắt đầu tại checking point đã công bố."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.1-07",
+      "text": {
+        "en": "Describe and use RTN for the fetch–execute cycle.",
+        "vi": "Mô tả và dùng RTN cho fetch–execute cycle."
+      }
+    },
+    {
+      "id": "AC26-4.1-08",
+      "text": {
+        "en": "Explain interrupt purpose, causes, applications, ISR and handling.",
+        "vi": "Giải thích mục đích, nguyên nhân, application, ISR và cách xử lý interrupt."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.1-07-01",
+    "REQ-4.1-07-02",
+    "REQ-4.1-08-01",
+    "REQ-4.1-08-02",
+    "REQ-4.1-08-03",
+    "REQ-4.1-08-04"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L25"
+  ],
+  "theory": [
+    {
+      "id": "P1-L27-theory-1",
+      "title": {
+        "en": "Fetch under the M1 convention",
+        "vi": "Fetch theo convention M1"
+      },
+      "paragraphs": [
+        {
+          "en": "M1 uses MAR ← PC; PC ← PC + 1; MDR ← Memory[MAR] under READ; CIR ← MDR. This declared ordering keeps exact state checks reproducible.",
+          "vi": "M1 dùng MAR ← PC; PC ← PC + 1; MDR ← Memory[MAR] dưới READ; CIR ← MDR. Ordering đã công bố này giúp state check có thể tái lập chính xác."
+        },
+        {
+          "en": "PC and MAR contain addresses. MDR and CIR contain the instruction contents during fetch.",
+          "vi": "PC và MAR chứa address. MDR và CIR chứa instruction contents trong fetch."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "RTN arrows point from the value source to its destination.",
+          "vi": "RTN arrow chỉ từ source của value tới destination."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L27-theory-2",
+      "title": {
+        "en": "Decode and execute",
+        "vi": "Decode và execute"
+      },
+      "paragraphs": [
+        {
+          "en": "The Control Unit separates opcode and operand, then selects the transfers or ALU operation needed by that instruction.",
+          "vi": "Control Unit tách opcode và operand rồi chọn transfer hoặc ALU operation mà instruction yêu cầu."
+        },
+        {
+          "en": "For LDD 100, execute reads Memory[100] through MAR and MDR, then copies the value into ACC.",
+          "vi": "Với LDD 100, execute đọc Memory[100] qua MAR và MDR rồi sao chép value vào ACC."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Decode interprets; execute changes architectural state.",
+          "vi": "Decode diễn giải; execute thay đổi architectural state."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L27-theory-3",
+      "title": {
+        "en": "Interrupt dispatch and return",
+        "vi": "Interrupt dispatch và return"
+      },
+      "paragraphs": [
+        {
+          "en": "After the current instruction, the processor checks for an accepted pending request in the taught model. It saves enough context to resume correctly, then loads the ISR entry address.",
+          "vi": "Sau current instruction, processor kiểm tra accepted pending request trong mô hình đang học. Nó lưu đủ context để resume đúng rồi nạp ISR entry address."
+        },
+        {
+          "en": "The ISR services or acknowledges the cause. Return restores saved status, working state and PC so the interrupted program continues.",
+          "vi": "ISR xử lý hoặc acknowledge nguyên nhân. Return khôi phục saved status, working state và PC để interrupted program tiếp tục."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "An interrupt signal is not the ISR; the ISR is software.",
+          "vi": "Interrupt signal không phải ISR; ISR là software."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Fetch and execute LDD 100",
+      "vi": "Fetch và execute LDD 100"
+    },
+    "prompt": {
+      "en": "PC=200, Memory[200]=LDD 100 and Memory[100]=42.",
+      "vi": "PC=200, Memory[200]=LDD 100 và Memory[100]=42."
+    },
+    "steps": [
+      {
+        "id": "P1-L27-worked-1",
+        "action": {
+          "en": "Fetch the instruction.",
+          "vi": "Fetch instruction."
+        },
+        "result": {
+          "en": "MAR=200, PC=201, MDR=LDD 100, CIR=LDD 100.",
+          "vi": "MAR=200, PC=201, MDR=LDD 100, CIR=LDD 100."
+        }
+      },
+      {
+        "id": "P1-L27-worked-2",
+        "action": {
+          "en": "Decode it.",
+          "vi": "Decode instruction."
+        },
+        "result": {
+          "en": "The CU identifies opcode LDD and operand address 100; ACC is unchanged.",
+          "vi": "CU xác định opcode LDD và operand address 100; ACC chưa đổi."
+        }
+      },
+      {
+        "id": "P1-L27-worked-3",
+        "action": {
+          "en": "Execute it.",
+          "vi": "Execute instruction."
+        },
+        "result": {
+          "en": "MAR=100, MDR=42 and ACC=42 after the memory read.",
+          "vi": "MAR=100, MDR=42 và ACC=42 sau memory read."
+        }
+      },
+      {
+        "id": "P1-L27-worked-4",
+        "action": {
+          "en": "Check the boundary.",
+          "vi": "Kiểm tra boundary."
+        },
+        "result": {
+          "en": "Only now does the model check a pending interrupt before fetching from PC=201.",
+          "vi": "Chỉ lúc này mô hình mới kiểm tra pending interrupt trước khi fetch từ PC=201."
+        }
+      }
+    ],
+    "result": {
+      "en": "The trace keeps address 100, instruction LDD 100 and contents 42 distinct.",
+      "vi": "Trace tách rõ address 100, instruction LDD 100 và contents 42."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "A trace question gives initial register and memory values or asks for interrupt timing.",
+        "vi": "Trace question cho initial register/memory value hoặc hỏi interrupt timing."
+      }
+    ],
+    "method": [
+      {
+        "en": "Write one RTN transfer per line and update only its destination.",
+        "vi": "Viết một RTN transfer mỗi dòng và chỉ cập nhật destination của nó."
+      },
+      {
+        "en": "Complete execute before checking the interrupt in M1.",
+        "vi": "Hoàn thành execute trước khi kiểm tra interrupt trong M1."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Decode happens before CIR receives the instruction.",
+          "vi": "Decode xảy ra trước khi CIR nhận instruction."
+        },
+        "correction": {
+          "en": "CIR must receive the fetched instruction before the CU can decode it.",
+          "vi": "CIR phải nhận fetched instruction trước khi CU decode."
+        }
+      },
+      {
+        "mistake": {
+          "en": "An interrupt always stops an instruction halfway through.",
+          "vi": "Interrupt luôn dừng instruction giữa chừng."
+        },
+        "correction": {
+          "en": "In the taught model, the processor checks after the current instruction completes.",
+          "vi": "Trong mô hình đang học, processor kiểm tra sau khi current instruction hoàn thành."
+        }
+      },
+      {
+        "mistake": {
+          "en": "The interrupt signal itself performs the service.",
+          "vi": "Bản thân interrupt signal thực hiện service."
+        },
+        "correction": {
+          "en": "The signal requests attention; an ISR is software that performs the service.",
+          "vi": "Signal yêu cầu attention; ISR là software thực hiện service."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L27-recognise-1",
+        "title": {
+          "en": "Place the interrupt",
+          "vi": "Đặt interrupt đúng chỗ"
+        },
+        "setup": {
+          "en": "A device request arrives while ADD is executing.",
+          "vi": "Device request đến khi ADD đang execute."
+        },
+        "prompt": {
+          "en": "State when the M1 model dispatches the ISR and what must be saved.",
+          "vi": "Nêu khi nào M1 dispatch ISR và những gì phải lưu."
+        },
+        "expectedEvidence": {
+          "en": "Finish ADD, check the request, save return context including the next PC and relevant state, then load the ISR address.",
+          "vi": "Hoàn thành ADD, kiểm tra request, lưu return context gồm next PC và state liên quan rồi nạp ISR address."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L27-CHECK-REQ-4.1-07-01",
+      "requirementId": "REQ-4.1-07-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe the fetch, decode and execute stages in order.",
+        "vi": "Mô tả các stage fetch, decode và execute theo thứ tự."
+      },
+      "hint": {
+        "en": "Track the next-instruction address, current instruction and operation.",
+        "vi": "Theo dõi next-instruction address, current instruction và operation."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Fetch copies the next-instruction address from PC to MAR, reads Memory[MAR] through MDR, loads CIR and advances PC according to the declared model. Decode interprets the opcode and operand. Execute performs the required state change, then the cycle can continue.",
+          "vi": "Fetch sao chép next-instruction address từ PC sang MAR, đọc Memory[MAR] qua MDR, nạp CIR và tăng PC theo mô hình đã công bố. Decode diễn giải opcode và operand. Execute thực hiện state change cần thiết rồi cycle có thể tiếp tục."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "fetch",
+        "decode",
+        "execute"
+      ]
+    },
+    {
+      "id": "P1-L27-CHECK-REQ-4.1-07-02",
+      "requirementId": "REQ-4.1-07-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Write register-transfer notation for fetching an instruction when PC=200 and Memory[200] contains LDD 100.",
+        "vi": "Viết register-transfer notation để fetch instruction khi PC=200 và Memory[200] chứa LDD 100."
+      },
+      "hint": {
+        "en": "Use MAR, MDR, CIR and keep the address separate from the instruction.",
+        "vi": "Dùng MAR, MDR, CIR và tách address khỏi instruction."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "MAR ← PC; PC ← PC + 1; MDR ← Memory[MAR] under a READ control signal; CIR ← MDR. Therefore MAR=200, PC=201 and CIR holds LDD 100. Equivalent ordering is accepted only if the declared model and values remain consistent.",
+          "vi": "MAR ← PC; PC ← PC + 1; MDR ← Memory[MAR] dưới control signal READ; CIR ← MDR. Vì vậy MAR=200, PC=201 và CIR giữ LDD 100. Chỉ chấp nhận ordering tương đương khi mô hình công bố và các giá trị vẫn nhất quán."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "RTN",
+        "PC",
+        "MAR",
+        "MDR",
+        "CIR"
+      ]
+    },
+    {
+      "id": "P1-L27-CHECK-REQ-4.1-08-01",
+      "requirementId": "REQ-4.1-08-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why a processor uses interrupts.",
+        "vi": "Giải thích vì sao processor dùng interrupt."
+      },
+      "hint": {
+        "en": "Contrast attention on demand with continuous polling or waiting.",
+        "vi": "So sánh attention on demand với liên tục polling hoặc waiting."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "An interrupt signals that a device, timer, software event or fault needs attention. The processor can perform other work until the request is checked, then temporarily suspend the current program and service the event.",
+          "vi": "Interrupt báo device, timer, software event hoặc fault cần được chú ý. Processor có thể làm việc khác cho tới khi kiểm tra request, rồi tạm dừng current program để xử lý event."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "interrupt",
+        "purpose"
+      ]
+    },
+    {
+      "id": "P1-L27-CHECK-REQ-4.1-08-02",
+      "requirementId": "REQ-4.1-08-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe two possible interrupt causes and an application for each.",
+        "vi": "Mô tả hai nguyên nhân interrupt có thể xảy ra và một application cho mỗi nguyên nhân."
+      },
+      "hint": {
+        "en": "Choose from device readiness, timer, software request or fault.",
+        "vi": "Chọn từ device readiness, timer, software request hoặc fault."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A printer can interrupt when it needs paper or has completed a transfer, allowing the operating system to service the device. A timer interrupt can let the operating system regain control for scheduling. Hardware faults and software requests are also valid when their application is explained.",
+          "vi": "Printer có thể interrupt khi cần giấy hoặc đã hoàn tất transfer, cho phép operating system xử lý device. Timer interrupt có thể giúp operating system lấy lại control để scheduling. Hardware fault và software request cũng hợp lệ khi application được giải thích."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "interrupt-cause",
+        "application"
+      ]
+    },
+    {
+      "id": "P1-L27-CHECK-REQ-4.1-08-03",
+      "requirementId": "REQ-4.1-08-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain the role of an Interrupt Service Routine (ISR).",
+        "vi": "Giải thích vai trò của Interrupt Service Routine (ISR)."
+      },
+      "hint": {
+        "en": "It is software that services a particular request and returns control.",
+        "vi": "Đó là software xử lý request cụ thể rồi trả control."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The ISR is a routine selected for the interrupt type. After the processor saves the current context, the ISR identifies or services the cause, clears or acknowledges the request as appropriate, then returns so the saved program state can be restored.",
+          "vi": "ISR là routine được chọn cho interrupt type. Sau khi processor lưu current context, ISR xác định hoặc xử lý nguyên nhân, clear hoặc acknowledge request khi phù hợp, rồi return để khôi phục saved program state."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "ISR",
+        "interrupt-handler"
+      ]
+    },
+    {
+      "id": "P1-L27-CHECK-REQ-4.1-08-04",
+      "requirementId": "REQ-4.1-08-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain when an interrupt is detected in the taught fetch–execute model and how execution resumes.",
+        "vi": "Giải thích interrupt được phát hiện khi nào trong mô hình fetch–execute đang học và execution tiếp tục ra sao."
+      },
+      "hint": {
+        "en": "Finish the current instruction, save context, dispatch, service, restore.",
+        "vi": "Hoàn thành current instruction, save context, dispatch, service, restore."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The processor checks pending interrupts after the current instruction has executed in this model. If an accepted request exists, it saves the return context such as PC, ACC and status, loads the ISR address, runs the ISR, restores the saved context and resumes at the saved next-instruction address.",
+          "vi": "Trong mô hình này processor kiểm tra pending interrupt sau khi current instruction đã execute. Nếu có request được chấp nhận, nó lưu return context như PC, ACC và status, nạp ISR address, chạy ISR, khôi phục saved context rồi resume tại saved next-instruction address."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "interrupt-timing",
+        "context-save",
+        "resume"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Write the M1 fetch RTN and the five-part interrupt handling sequence.",
+      "vi": "Viết M1 fetch RTN và chuỗi xử lý interrupt gồm năm phần."
+    },
+    "answerPoints": [
+      {
+        "en": "Fetch: MAR←PC; PC←PC+1; MDR←Memory[MAR]; CIR←MDR. Interrupt: check, save, dispatch, service, restore/resume.",
+        "vi": "Fetch: MAR←PC; PC←PC+1; MDR←Memory[MAR]; CIR←MDR. Interrupt: check, save, dispatch, service, restore/resume."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "fetch",
+      "meaning": {
+        "en": "Load the next instruction from memory into the processor.",
+        "vi": "Nạp instruction tiếp theo từ memory vào processor."
+      }
+    },
+    {
+      "term": "decode",
+      "meaning": {
+        "en": "Interpret the opcode and operand of the current instruction.",
+        "vi": "Diễn giải opcode và operand của current instruction."
+      }
+    },
+    {
+      "term": "RTN",
+      "meaning": {
+        "en": "Notation that records transfers between registers or memory.",
+        "vi": "Ký pháp ghi transfer giữa register hoặc memory."
+      }
+    },
+    {
+      "term": "interrupt",
+      "meaning": {
+        "en": "A request for processor attention.",
+        "vi": "Yêu cầu processor chú ý."
+      }
+    },
+    {
+      "term": "ISR",
+      "meaning": {
+        "en": "Software routine that services an interrupt cause.",
+        "vi": "Software routine xử lý nguyên nhân interrupt."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "cpu-architecture",
+    "assembly-tracing"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.1, p. 19",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L27 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 116–120",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L27",
+  "contractCoverage": {
+    "B01": [
+      "P1-L27-objectives"
+    ],
+    "B02": [
+      "P1-L27-theory-1",
+      "P1-L27-theory-2",
+      "P1-L27-theory-3"
+    ],
+    "B03": [
+      "P1-L27-theory-1",
+      "P1-L27-theory-2",
+      "P1-L27-theory-3"
+    ],
+    "B04": [
+      "P1-L27-recognise-1"
+    ],
+    "B05": [
+      "P1-L27-worked-1",
+      "P1-L27-worked-2",
+      "P1-L27-worked-3",
+      "P1-L27-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L27"
+    ],
+    "B07": [
+      "P1-L27-CHECK-REQ-4.1-07-01",
+      "P1-L27-CHECK-REQ-4.1-07-02",
+      "P1-L27-CHECK-REQ-4.1-08-01",
+      "P1-L27-CHECK-REQ-4.1-08-02",
+      "P1-L27-CHECK-REQ-4.1-08-03",
+      "P1-L27-CHECK-REQ-4.1-08-04"
+    ],
+    "B08": [
+      "P1-L27-recognise-1"
+    ],
+    "B09": [
+      "P1-L27-recall"
+    ],
+    "B10": [
+      "P1-L27-glossary"
+    ],
+    "B11": [
+      "P1-L27-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

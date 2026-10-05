@@ -1,0 +1,1505 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP04",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "4",
+  "title": {
+    "en": "Chapter 4 mixed practice: Processor fundamentals",
+    "vi": "Bài luyện tổng hợp Chapter 4: Processor fundamentals"
+  },
+  "intro": {
+    "en": "Sixteen AlgoCore-original questions cover all 17 Chapter 4 objectives and 41 atomic requirements. Attempt each response before revealing guidance.",
+    "vi": "Mười sáu câu AlgoCore tự biên soạn bao phủ đủ 17 objective và 41 atomic requirement của Chapter 4. Hãy làm trước khi mở hướng dẫn."
+  },
+  "timing": {
+    "timedMinutes": 75,
+    "untimedAvailable": true
+  },
+  "totalMarks": 60,
+  "aoBlueprint": {
+    "AO1": 36,
+    "AO2": 24,
+    "note": {
+      "en": "The 60:40 split mirrors the Paper 1 AO weighting for rehearsal; this is an AlgoCore chapter blueprint, not an official Cambridge paper.",
+      "vi": "Tỉ lệ 60:40 mô phỏng weighting AO của Paper 1 để luyện tập; đây là blueprint Chapter do AlgoCore biên soạn, không phải Cambridge paper chính thức."
+    }
+  },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "kind": "syllabus",
+      "locator": "Cambridge 9618 syllabus for 2026 v2, §§4.1–4.3, pp. 19–22"
+    },
+    {
+      "id": "BOOK-C04",
+      "kind": "coursebook",
+      "locator": "Coursebook Chapter 4, pp. 107–132"
+    },
+    {
+      "id": "ALG-P1",
+      "kind": "algocore",
+      "locator": "P1-CP04 original assessment set v1.0"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP04-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-4.1-01-01",
+        "REQ-4.1-03-01",
+        "REQ-4.1-03-02"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-01",
+        "AC26-4.1-03"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Explain the stored-program concept and the roles of the ALU, Control Unit, system clock and IAS.",
+        "vi": "Giải thích stored-program concept và vai trò của ALU, Control Unit, system clock và IAS."
+      },
+      "hint": {
+        "en": "Separate storage, processing, coordination and timing.",
+        "vi": "Tách storage, processing, coordination và timing."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Instructions and data share memory. The ALU performs arithmetic/logic; the CU decodes and coordinates; the clock synchronises operations; IAS holds active programs and data for processor access.",
+          "vi": "Instruction và data dùng chung memory. ALU thực hiện arithmetic/logic; CU decode và phối hợp; clock đồng bộ operation; IAS giữ program và data đang hoạt động để processor truy cập."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-01-01"
+            ],
+            "point": {
+              "en": "Explains that instructions and data share memory.",
+              "vi": "Giải thích instruction và data dùng chung memory."
+            }
+          },
+          {
+            "id": "P1-CP04-Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-03-01"
+            ],
+            "point": {
+              "en": "Explains the ALU role.",
+              "vi": "Giải thích vai trò ALU."
+            }
+          },
+          {
+            "id": "P1-CP04-Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-03-01"
+            ],
+            "point": {
+              "en": "Explains the Control Unit role.",
+              "vi": "Giải thích vai trò Control Unit."
+            }
+          },
+          {
+            "id": "P1-CP04-Q01-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-03-02"
+            ],
+            "point": {
+              "en": "Explains both clock synchronisation and IAS active storage.",
+              "vi": "Giải thích cả clock synchronisation và IAS active storage."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "cpu-architecture",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q02",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-4.1-02-01",
+        "REQ-4.1-02-02"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-02"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "Distinguish general-purpose and special-purpose registers, then explain the roles of PC, MAR, MDR, CIR, ACC, IX and Status Register.",
+        "vi": "Phân biệt general-purpose và special-purpose register rồi giải thích vai trò PC, MAR, MDR, CIR, ACC, IX và Status Register."
+      },
+      "hint": {
+        "en": "Group address, content/instruction, working data, index and flag roles.",
+        "vi": "Nhóm vai trò address, content/instruction, working data, index và flag."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "ACC is the general working register; the others have defined roles. PC/MAR hold next/access addresses, MDR transfers memory contents, CIR holds the current instruction, IX supports indexed addressing and Status stores condition flags.",
+          "vi": "ACC là general working register; các register khác có vai trò xác định. PC/MAR giữ next/access address, MDR transfer memory contents, CIR giữ current instruction, IX hỗ trợ indexed addressing và Status giữ condition flag."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-02-01"
+            ],
+            "point": {
+              "en": "Distinguishes general-purpose from special-purpose use.",
+              "vi": "Phân biệt general-purpose với special-purpose use."
+            }
+          },
+          {
+            "id": "P1-CP04-Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-02-02"
+            ],
+            "point": {
+              "en": "Explains PC and MAR as address registers.",
+              "vi": "Giải thích PC và MAR là address register."
+            }
+          },
+          {
+            "id": "P1-CP04-Q02-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-02-02"
+            ],
+            "point": {
+              "en": "Explains MDR and CIR content/instruction roles.",
+              "vi": "Giải thích vai trò content/instruction của MDR và CIR."
+            }
+          },
+          {
+            "id": "P1-CP04-Q02-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-02-02"
+            ],
+            "point": {
+              "en": "Explains ACC, IX and Status roles.",
+              "vi": "Giải thích vai trò ACC, IX và Status."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "cpu-architecture",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q03",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-4.1-04-01",
+        "REQ-4.1-04-02",
+        "REQ-4.1-04-03"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-04"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 3,
+      "prompt": {
+        "en": "During a read of Memory[100]=42, explain what travels on each of the address, data and control buses.",
+        "vi": "Trong lần đọc Memory[100]=42, giải thích gì đi trên address, data và control bus."
+      },
+      "hint": {
+        "en": "Keep 100, 42 and READ separate.",
+        "vi": "Tách 100, 42 và READ."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Address 100 travels from MAR to memory on the address bus; READ travels on the control bus; contents 42 return from memory to MDR on the data bus.",
+          "vi": "Address 100 đi từ MAR tới memory trên address bus; READ đi trên control bus; contents 42 trở từ memory về MDR trên data bus."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-04-01"
+            ],
+            "point": {
+              "en": "Identifies address 100 on the address bus.",
+              "vi": "Xác định address 100 trên address bus."
+            }
+          },
+          {
+            "id": "P1-CP04-Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-04-02"
+            ],
+            "point": {
+              "en": "Identifies contents 42 on the data bus.",
+              "vi": "Xác định contents 42 trên data bus."
+            }
+          },
+          {
+            "id": "P1-CP04-Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-04-03"
+            ],
+            "point": {
+              "en": "Identifies READ on the control bus.",
+              "vi": "Xác định READ trên control bus."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "cpu-architecture",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q04",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-4.1-05-01",
+        "REQ-4.1-05-02",
+        "REQ-4.1-05-03",
+        "REQ-4.1-05-04"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-05"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "For processor type and number of cores, then for bus width, clock speed and cache, state a possible performance benefit and its condition or limit.",
+        "vi": "Với processor type và số core, rồi với bus width, clock speed và cache, nêu một possible performance benefit cùng điều kiện hoặc giới hạn."
+      },
+      "hint": {
+        "en": "Treat processor type and core count as separate mechanisms; avoid claiming guaranteed proportional speed-up.",
+        "vi": "Xem processor type và số core là hai cơ chế riêng; tránh khẳng định guaranteed proportional speed-up."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A processor type suited to the workload may complete more useful work per cycle, but software and other bottlenecks still matter; more cores help parallel work but not serial sections. Bus width can move or address more but needs compatible components; clock supplies more cycles but other bottlenecks remain; cache hits avoid slower memory but misses do not.",
+          "vi": "Processor type phù hợp với workload có thể hoàn thành nhiều useful work hơn mỗi cycle, nhưng software và bottleneck khác vẫn quan trọng; nhiều core giúp parallel work nhưng không giúp serial section. Bus width có thể transfer hoặc address nhiều hơn nhưng cần component tương thích; clock cung cấp nhiều cycle nhưng bottleneck khác vẫn còn; cache hit tránh memory chậm hơn còn miss thì không."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-05-01"
+            ],
+            "point": {
+              "en": "Explains a processor-type benefit and limit, plus a separate conditional benefit of additional cores.",
+              "vi": "Giải thích lợi ích và giới hạn của processor type, cùng một lợi ích có điều kiện riêng của core bổ sung."
+            }
+          },
+          {
+            "id": "P1-CP04-Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-05-02"
+            ],
+            "point": {
+              "en": "Explains a bus-width mechanism and limit.",
+              "vi": "Giải thích cơ chế và giới hạn của bus width."
+            }
+          },
+          {
+            "id": "P1-CP04-Q04-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-05-03"
+            ],
+            "point": {
+              "en": "Explains clock cycles and a limitation.",
+              "vi": "Giải thích clock cycle và một giới hạn."
+            }
+          },
+          {
+            "id": "P1-CP04-Q04-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-05-04"
+            ],
+            "point": {
+              "en": "Explains cache hit and cache miss.",
+              "vi": "Giải thích cache hit và cache miss."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "performance-ports",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q05",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-4.1-06-01",
+        "REQ-4.1-06-02",
+        "REQ-4.1-06-03"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-06"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 3,
+      "prompt": {
+        "en": "Choose and explain a suitable connection for (i) an external keyboard, (ii) a digital display with speakers and (iii) an older analogue monitor.",
+        "vi": "Chọn và giải thích connection phù hợp cho (i) external keyboard, (ii) digital display có speaker và (iii) older analogue monitor."
+      },
+      "hint": {
+        "en": "Use signal role, not version-specific speed.",
+        "vi": "Dùng signal role, không dùng speed riêng theo version."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "USB suits the keyboard as a serial peripheral connection; HDMI carries digital video and audio to the display; VGA carries analogue video to the older monitor and normally needs separate audio.",
+          "vi": "USB phù hợp keyboard như serial peripheral connection; HDMI mang digital video và audio tới display; VGA mang analogue video tới older monitor và thường cần audio riêng."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-06-01"
+            ],
+            "point": {
+              "en": "Selects and explains USB.",
+              "vi": "Chọn và giải thích USB."
+            }
+          },
+          {
+            "id": "P1-CP04-Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-06-02"
+            ],
+            "point": {
+              "en": "Selects and explains HDMI.",
+              "vi": "Chọn và giải thích HDMI."
+            }
+          },
+          {
+            "id": "P1-CP04-Q05-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-06-03"
+            ],
+            "point": {
+              "en": "Selects and explains VGA.",
+              "vi": "Chọn và giải thích VGA."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "performance-ports",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q06",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-4.1-07-01",
+        "REQ-4.1-07-02"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-07"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 4,
+      "prompt": {
+        "en": "For PC=200 and Memory[200]=LDD 100, write the ordered M1 fetch RTN and state the register contents at the end of fetch.",
+        "vi": "Với PC=200 và Memory[200]=LDD 100, viết ordered M1 fetch RTN và nêu register contents cuối fetch."
+      },
+      "hint": {
+        "en": "Use MAR, PC, MDR and CIR.",
+        "vi": "Dùng MAR, PC, MDR và CIR."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "MAR←PC; PC←PC+1; MDR←Memory[MAR] under READ; CIR←MDR. End state: MAR=200, PC=201, MDR=CIR=LDD 100.",
+          "vi": "MAR←PC; PC←PC+1; MDR←Memory[MAR] dưới READ; CIR←MDR. End state: MAR=200, PC=201, MDR=CIR=LDD 100."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-07-01"
+            ],
+            "point": {
+              "en": "Places fetch before decode and execute.",
+              "vi": "Đặt fetch trước decode và execute."
+            }
+          },
+          {
+            "id": "P1-CP04-Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-07-02"
+            ],
+            "point": {
+              "en": "Writes MAR←PC and PC increment.",
+              "vi": "Viết MAR←PC và PC increment."
+            }
+          },
+          {
+            "id": "P1-CP04-Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-07-02"
+            ],
+            "point": {
+              "en": "Writes memory read into MDR.",
+              "vi": "Viết memory read vào MDR."
+            }
+          },
+          {
+            "id": "P1-CP04-Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-07-02"
+            ],
+            "point": {
+              "en": "Writes CIR←MDR and correct end values.",
+              "vi": "Viết CIR←MDR và end value đúng."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "fetch-execute-interrupts",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-4.1-08-01",
+        "REQ-4.1-08-02",
+        "REQ-4.1-08-03",
+        "REQ-4.1-08-04"
+      ],
+      "objectiveIds": [
+        "AC26-4.1-08"
+      ],
+      "strandIds": [
+        "4.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A printer requests attention while an instruction is executing. Explain the interrupt purpose and handling sequence in the taught model.",
+        "vi": "Printer yêu cầu attention khi một instruction đang execute. Giải thích mục đích interrupt và handling sequence trong mô hình đang học."
+      },
+      "hint": {
+        "en": "Finish, check, save, ISR, restore.",
+        "vi": "Finish, check, save, ISR, restore."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The interrupt avoids constant waiting and reports a device event. After the instruction completes, the processor checks the request, saves context, dispatches the printer ISR, services/acknowledges it, then restores context and resumes.",
+          "vi": "Interrupt tránh constant waiting và báo device event. Sau khi instruction hoàn tất, processor kiểm tra request, save context, dispatch printer ISR, service/acknowledge rồi restore context và resume."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-08-01"
+            ],
+            "point": {
+              "en": "Explains the purpose of requesting attention.",
+              "vi": "Giải thích mục đích yêu cầu attention."
+            }
+          },
+          {
+            "id": "P1-CP04-Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-08-02"
+            ],
+            "point": {
+              "en": "Explains a valid printer cause/application.",
+              "vi": "Giải thích nguyên nhân/application printer hợp lệ."
+            }
+          },
+          {
+            "id": "P1-CP04-Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-08-03"
+            ],
+            "point": {
+              "en": "Explains the ISR role.",
+              "vi": "Giải thích vai trò ISR."
+            }
+          },
+          {
+            "id": "P1-CP04-Q07-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.1-08-04"
+            ],
+            "point": {
+              "en": "Explains detection after execute plus save/restore/resume.",
+              "vi": "Giải thích detection sau execute cùng save/restore/resume."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "fetch-execute-interrupts",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q08",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-4.2-01-01",
+        "REQ-4.2-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-4.2-01",
+        "AC26-4.2-02"
+      ],
+      "strandIds": [
+        "4.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 3,
+      "prompt": {
+        "en": "Explain the relationship between assembly and machine code, then describe pass 1 and pass 2.",
+        "vi": "Giải thích quan hệ assembly với machine code rồi mô tả pass 1 và pass 2."
+      },
+      "hint": {
+        "en": "Use mnemonic, symbol table and resolved operand.",
+        "vi": "Dùng mnemonic, symbol table và resolved operand."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "An assembler translates mnemonic assembly source into processor machine-code encodings. Pass 1 assigns addresses and builds label→address entries; pass 2 uses the complete table to resolve operands and emit object code.",
+          "vi": "Assembler dịch mnemonic assembly source thành machine-code encoding của processor. Pass 1 gán address và xây label→address entry; pass 2 dùng complete table resolve operand và phát object code."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-01-01"
+            ],
+            "point": {
+              "en": "Explains assembler translation to processor encoding.",
+              "vi": "Giải thích assembler translation sang processor encoding."
+            }
+          },
+          {
+            "id": "P1-CP04-Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-02-01"
+            ],
+            "point": {
+              "en": "Describes pass 1 and the symbol table.",
+              "vi": "Mô tả pass 1 và symbol table."
+            }
+          },
+          {
+            "id": "P1-CP04-Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-02-01"
+            ],
+            "point": {
+              "en": "Describes pass 2 resolution and output.",
+              "vi": "Mô tả pass 2 resolve và output."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "assembly-translation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q09",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-4.2-05-01",
+        "REQ-4.2-05-02",
+        "REQ-4.2-05-03",
+        "REQ-4.2-05-04",
+        "REQ-4.2-05-05"
+      ],
+      "objectiveIds": [
+        "AC26-4.2-05"
+      ],
+      "strandIds": [
+        "4.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "classify",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 5,
+      "prompt": {
+        "en": "Classify and explain one instruction from each required group: LDD, IN, ADD, JPE and CMP.",
+        "vi": "Phân loại và giải thích một instruction từ mỗi nhóm bắt buộc: LDD, IN, ADD, JPE và CMP."
+      },
+      "hint": {
+        "en": "Name the destination state each instruction affects.",
+        "vi": "Nêu destination state mà mỗi instruction ảnh hưởng."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "LDD is data movement into ACC; IN stores a keyed character's ASCII in ACC; ADD performs arithmetic into ACC; JPE conditionally changes PC after a true compare; CMP records comparison state while preserving ACC.",
+          "vi": "LDD là data movement vào ACC; IN lưu ASCII của keyed character vào ACC; ADD thực hiện arithmetic vào ACC; JPE conditionally đổi PC sau compare true; CMP ghi comparison state và giữ ACC."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-05-01"
+            ],
+            "point": {
+              "en": "Classifies and explains LDD.",
+              "vi": "Phân loại và giải thích LDD."
+            }
+          },
+          {
+            "id": "P1-CP04-Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-05-02"
+            ],
+            "point": {
+              "en": "Classifies and explains IN.",
+              "vi": "Phân loại và giải thích IN."
+            }
+          },
+          {
+            "id": "P1-CP04-Q09-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-05-03"
+            ],
+            "point": {
+              "en": "Classifies and explains ADD.",
+              "vi": "Phân loại và giải thích ADD."
+            }
+          },
+          {
+            "id": "P1-CP04-Q09-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-05-04"
+            ],
+            "point": {
+              "en": "Classifies and explains JPE.",
+              "vi": "Phân loại và giải thích JPE."
+            }
+          },
+          {
+            "id": "P1-CP04-Q09-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-05-05"
+            ],
+            "point": {
+              "en": "Classifies and explains CMP without changing ACC.",
+              "vi": "Phân loại và giải thích CMP không đổi ACC."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "assembly-tracing",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q10",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-4.3-01-01"
+      ],
+      "objectiveIds": [
+        "AC26-4.3-01"
+      ],
+      "strandIds": [
+        "4.3"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": false,
+      "marks": 2,
+      "prompt": {
+        "en": "Compare one-place logical-right, arithmetic-right and rotate-right shifts. State what enters the new leftmost position and what happens to the outgoing rightmost bit in each case.",
+        "vi": "So sánh logical-right, arithmetic-right và rotate-right một vị trí. Nêu bit nào đi vào vị trí ngoài cùng bên trái mới và điều gì xảy ra với outgoing bit ngoài cùng bên phải trong mỗi trường hợp."
+      },
+      "hint": {
+        "en": "Separate zero fill, sign extension and wrap-around.",
+        "vi": "Tách zero fill, sign extension và wrap-around."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Logical-right inserts 0 at the left and discards the outgoing rightmost bit. Arithmetic-right copies the previous sign bit into the left and discards the outgoing rightmost bit. Rotate-right moves the outgoing rightmost bit into the new leftmost position.",
+          "vi": "Logical-right chèn 0 ở bên trái và loại outgoing bit ngoài cùng bên phải. Arithmetic-right sao chép sign bit cũ vào bên trái và loại outgoing bit ngoài cùng bên phải. Rotate-right đưa outgoing bit ngoài cùng bên phải vào vị trí ngoài cùng bên trái mới."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-01-01"
+            ],
+            "point": {
+              "en": "Distinguishes logical-right zero fill from arithmetic-right sign extension; both discard the outgoing rightmost bit.",
+              "vi": "Phân biệt zero fill của logical-right với sign extension của arithmetic-right; cả hai đều loại outgoing bit ngoài cùng bên phải."
+            }
+          },
+          {
+            "id": "P1-CP04-Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-01-01"
+            ],
+            "point": {
+              "en": "Explains that rotate-right wraps the outgoing rightmost bit into the new leftmost position.",
+              "vi": "Giải thích rotate-right wrap outgoing bit ngoài cùng bên phải vào vị trí ngoài cùng bên trái mới."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "bit-shifts",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q11",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-4.2-03-01"
+      ],
+      "objectiveIds": [
+        "AC26-4.2-03"
+      ],
+      "strandIds": [
+        "4.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "apply",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "Apply a two-pass assembler to START: LDM #7; JMP DONE; VALUE: 3; DONE: OUT; END, starting at 100. Give row addresses, symbols and resolved JMP.",
+        "vi": "Áp dụng two-pass assembler cho START: LDM #7; JMP DONE; VALUE: 3; DONE: OUT; END, bắt đầu tại 100. Cho row address, symbol và resolved JMP."
+      },
+      "hint": {
+        "en": "Assign all addresses before resolving DONE.",
+        "vi": "Gán mọi address trước khi resolve DONE."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Rows receive 100–104. Symbols are START=100, VALUE=102, DONE=103. Pass 2 replaces DONE in JMP with 103; the output uses the declared toy encoding rather than executing the program.",
+          "vi": "Các row nhận 100–104. Symbol là START=100, VALUE=102, DONE=103. Pass 2 thay DONE trong JMP bằng 103; output dùng toy encoding đã công bố và không execute program."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-03-01"
+            ],
+            "point": {
+              "en": "Assigns correct row addresses.",
+              "vi": "Gán đúng row address."
+            }
+          },
+          {
+            "id": "P1-CP04-Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-03-01"
+            ],
+            "point": {
+              "en": "Builds the correct symbol table.",
+              "vi": "Xây symbol table đúng."
+            }
+          },
+          {
+            "id": "P1-CP04-Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-03-01"
+            ],
+            "point": {
+              "en": "Resolves forward operand DONE to 103.",
+              "vi": "Resolve forward operand DONE thành 103."
+            }
+          },
+          {
+            "id": "P1-CP04-Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-03-01"
+            ],
+            "point": {
+              "en": "Separates translation output from execution.",
+              "vi": "Tách translation output khỏi execution."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "assembly-translation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q12",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-4.2-06-01",
+        "REQ-4.2-06-02"
+      ],
+      "objectiveIds": [
+        "AC26-4.2-06"
+      ],
+      "strandIds": [
+        "4.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 3,
+      "prompt": {
+        "en": "Memory[100]=120. Compare the result and memory-read count for LDM #100 and LDD 100.",
+        "vi": "Memory[100]=120. So sánh result và memory-read count cho LDM #100 và LDD 100."
+      },
+      "hint": {
+        "en": "The # changes the operand role.",
+        "vi": "Dấu # thay đổi operand role."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "LDM #100 uses literal value 100 with no operand-memory dereference. LDD 100 uses effective address 100, reads Memory[100] once and loads 120.",
+          "vi": "LDM #100 dùng literal value 100 và không operand-memory dereference. LDD 100 dùng effective address 100, đọc Memory[100] một lần và nạp 120."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-01"
+            ],
+            "point": {
+              "en": "Gives immediate value 100 with zero dereferences.",
+              "vi": "Cho immediate value 100 với zero dereference."
+            }
+          },
+          {
+            "id": "P1-CP04-Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-02"
+            ],
+            "point": {
+              "en": "Gives direct EA 100.",
+              "vi": "Cho direct EA 100."
+            }
+          },
+          {
+            "id": "P1-CP04-Q12-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-02"
+            ],
+            "point": {
+              "en": "Gives fetched value 120 after one read.",
+              "vi": "Cho fetched value 120 sau một read."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "addressing-modes",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q13",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-4.2-06-03",
+        "REQ-4.2-06-04",
+        "REQ-4.2-06-05"
+      ],
+      "objectiveIds": [
+        "AC26-4.2-06"
+      ],
+      "strandIds": [
+        "4.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "Use Memory[100]=120, Memory[120]=77, IX=5, Memory[105]=42 and declared PC base=201. Trace indirect 100 and indexed 100, then calculate the target and control-flow effect of a relative branch with offset 2.",
+        "vi": "Dùng Memory[100]=120, Memory[120]=77, IX=5, Memory[105]=42 và PC base đã công bố=201. Trace indirect 100 và indexed 100, rồi tính target và control-flow effect của relative branch với offset 2."
+      },
+      "hint": {
+        "en": "Write the EA/value path for memory operands; for the relative branch, write its target equation and control-flow effect.",
+        "vi": "Viết EA/value path cho memory operand; với relative branch, viết target equation và control-flow effect."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Indirect: Memory[100]=120 gives EA120, then value77. Indexed: 100+IX5 gives EA105, then value42. Relative branch: PC base201+2 gives target203, then control transfers to address203; target calculation does not itself fetch a data value.",
+          "vi": "Indirect: Memory[100]=120 cho EA120 rồi value77. Indexed: 100+IX5 cho EA105 rồi value42. Relative branch: PC base201+2 cho target203 rồi control chuyển tới address203; phép tính target không tự fetch data value."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q13-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-03"
+            ],
+            "point": {
+              "en": "Finds indirect pointer/effective address 120.",
+              "vi": "Tìm indirect pointer/effective address 120."
+            }
+          },
+          {
+            "id": "P1-CP04-Q13-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-03"
+            ],
+            "point": {
+              "en": "Fetches indirect value 77.",
+              "vi": "Fetch indirect value 77."
+            }
+          },
+          {
+            "id": "P1-CP04-Q13-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-04"
+            ],
+            "point": {
+              "en": "Calculates indexed EA105 and value42.",
+              "vi": "Tính indexed EA105 và value42."
+            }
+          },
+          {
+            "id": "P1-CP04-Q13-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-05"
+            ],
+            "point": {
+              "en": "Calculates relative branch target203 from the stated PC base.",
+              "vi": "Tính relative branch target203 từ PC base đã nêu."
+            }
+          },
+          {
+            "id": "P1-CP04-Q13-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-06-05"
+            ],
+            "point": {
+              "en": "States that control transfers to target203 and does not treat target calculation as an automatic data fetch.",
+              "vi": "Nêu control chuyển tới target203 và không xem phép tính target là automatic data fetch."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "addressing-modes",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q14",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-4.2-04-01"
+      ],
+      "objectiveIds": [
+        "AC26-4.2-04"
+      ],
+      "strandIds": [
+        "4.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "trace",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "Trace IN; CMP #65; JPE 5; ADD #1; JMP 5; OUT; END for input ASCII 66. Give branch decisions and output.",
+        "vi": "Trace IN; CMP #65; JPE 5; ADD #1; JMP 5; OUT; END với input ASCII 66. Cho branch decision và output."
+      },
+      "hint": {
+        "en": "CMP preserves ACC; skipped rows do not execute.",
+        "vi": "CMP giữ ACC; skipped row không execute."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "IN sets ACC66. CMP leaves ACC66 and equal=false. JPE is not taken, so ADD makes ACC67. JMP selects OUT. OUT emits C and END returns control.",
+          "vi": "IN đặt ACC66. CMP giữ ACC66 và equal=false. JPE không taken nên ADD làm ACC67. JMP chọn OUT. OUT phát C và END trả control."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q14-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-04-01"
+            ],
+            "point": {
+              "en": "Records IN state ACC66.",
+              "vi": "Ghi state IN là ACC66."
+            }
+          },
+          {
+            "id": "P1-CP04-Q14-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-04-01"
+            ],
+            "point": {
+              "en": "Records CMP false without changing ACC.",
+              "vi": "Ghi CMP false mà không đổi ACC."
+            }
+          },
+          {
+            "id": "P1-CP04-Q14-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-04-01"
+            ],
+            "point": {
+              "en": "Records not-taken JPE and executed ADD.",
+              "vi": "Ghi JPE không taken và ADD được execute."
+            }
+          },
+          {
+            "id": "P1-CP04-Q14-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-04-01"
+            ],
+            "point": {
+              "en": "Records JMP target and skipped flow.",
+              "vi": "Ghi JMP target và skipped flow."
+            }
+          },
+          {
+            "id": "P1-CP04-Q14-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.2-04-01"
+            ],
+            "point": {
+              "en": "Outputs ASCII67 character C.",
+              "vi": "Xuất ASCII67 là character C."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "assembly-tracing",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q15",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-4.3-01-02",
+        "REQ-4.3-03-03"
+      ],
+      "objectiveIds": [
+        "AC26-4.3-01",
+        "AC26-4.3-03"
+      ],
+      "strandIds": [
+        "4.3"
+      ],
+      "ao": "AO2",
+      "commandWord": "calculate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 3,
+      "prompt": {
+        "en": "For 10010101₂, calculate one ASL and one ROL. State whether ASL overflows as signed 8-bit data. For original ACC=00101101₂, calculate LSL #2.",
+        "vi": "Với 10010101₂, tính một ASL và một ROL. Nêu ASL có overflow với signed 8-bit data hay không. Với original ACC=00101101₂, tính LSL #2."
+      },
+      "hint": {
+        "en": "Keep eight bits and show fill or wrap.",
+        "vi": "Giữ tám bit và chỉ ra fill hoặc wrap."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "ASL gives 00101010₂ and overflows because the signed result changes sign after the outgoing 1 is discarded. ROL gives 00101011₂ because that outgoing 1 wraps to the rightmost position. LSL #2 of 00101101₂ gives 10110100₂.",
+          "vi": "ASL cho 00101010₂ và overflow vì signed result đổi sign sau khi outgoing 1 bị loại. ROL cho 00101011₂ vì outgoing 1 đó wrap vào vị trí ngoài cùng bên phải. LSL #2 của 00101101₂ cho 10110100₂."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q15-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-01-02"
+            ],
+            "point": {
+              "en": "Calculates ASL result 00101010₂ and identifies signed overflow.",
+              "vi": "Tính ASL result 00101010₂ và xác định signed overflow."
+            }
+          },
+          {
+            "id": "P1-CP04-Q15-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-01-02"
+            ],
+            "point": {
+              "en": "Calculates ROL result 00101011₂ with wrap.",
+              "vi": "Tính ROL result 00101011₂ với wrap."
+            }
+          },
+          {
+            "id": "P1-CP04-Q15-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-03-03"
+            ],
+            "point": {
+              "en": "Calculates LSL #2 result 10110100₂.",
+              "vi": "Tính LSL #2 result 10110100₂."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "bit-shifts",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP04-Q16",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-4.3-03-01",
+        "REQ-4.3-03-02",
+        "REQ-4.3-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-4.3-02",
+        "AC26-4.3-03"
+      ],
+      "strandIds": [
+        "4.3"
+      ],
+      "ao": "AO2",
+      "commandWord": "apply",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A device register is 10010110₂. Bit 2 (LSB=bit 0) means an alarm request. Use mask 00000100₂ to test, set and toggle the bit, then explain one control action.",
+        "vi": "Device register là 10010110₂. Bit 2 (LSB=bit 0) nghĩa là alarm request. Dùng mask 00000100₂ để test, set và toggle bit rồi giải thích một control action."
+      },
+      "hint": {
+        "en": "AND tests, OR sets and XOR toggles.",
+        "vi": "AND test, OR set và XOR toggle."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Load the device value into ACC for each operation. AND places 00000100₂ in ACC, so the non-zero test shows the request is present; the input device register is unchanged. OR places 10010110₂ in ACC because the bit is already 1. XOR places 10010010₂ in ACC. Only an explicit store or output of the OR/XOR result changes the device register. The controller can use the AND result to activate an alarm output, then explicitly output the required clear or acknowledgement value under its defined policy.",
+          "vi": "Load device value vào ACC cho mỗi operation. AND đặt 00000100₂ vào ACC nên non-zero test cho biết request hiện diện; input device register không đổi. OR đặt 10010110₂ vào ACC vì bit đã là 1. XOR đặt 10010010₂ vào ACC. Chỉ khi store hoặc output OR/XOR result một cách tường minh thì device register mới thay đổi. Controller có thể dùng AND result để bật alarm output rồi output rõ ràng giá trị clear hoặc acknowledgement cần thiết theo policy đã định."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP04-Q16-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-03-01"
+            ],
+            "point": {
+              "en": "Calculates correct AND/OR/XOR results.",
+              "vi": "Tính đúng AND/OR/XOR result."
+            }
+          },
+          {
+            "id": "P1-CP04-Q16-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-03-02"
+            ],
+            "point": {
+              "en": "Explains that AND writes the test result to ACC while leaving the source or device register unchanged.",
+              "vi": "Giải thích AND ghi test result vào ACC nhưng giữ nguyên source hoặc device register."
+            }
+          },
+          {
+            "id": "P1-CP04-Q16-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-03-02"
+            ],
+            "point": {
+              "en": "Explains that OR sets and XOR toggles in ACC while preserving other bits, and that an explicit store or output is required to change the device register.",
+              "vi": "Giải thích OR set và XOR toggle trong ACC trong khi giữ bit khác, và cần store hoặc output tường minh để thay đổi device register."
+            }
+          },
+          {
+            "id": "P1-CP04-Q16-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-4.3-02-01"
+            ],
+            "point": {
+              "en": "Links the tested flag to a valid control action and an explicit output when the device state must change.",
+              "vi": "Liên hệ tested flag với control action hợp lệ và output tường minh khi cần thay đổi device state."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "bit-masking",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

@@ -54,12 +54,12 @@ if (catalog) {
     localized(topic.title, `${item.lessonId} catalog title`); localized(topic.summary, `${item.lessonId} catalog summary`);
     check(Array.isArray(topic.searchTerms) && topic.searchTerms.length > 0 && topic.searchTerms.every(text), `${item.lessonId}: search terms missing`);
   }
-  check(catalog.sections?.filter((entry) => ["4", "5", "6", "7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 4–8 must remain planned");
+  check(catalog.sections?.find((entry) => entry.id === "4")?.status === "available" && catalog.sections?.filter((entry) => ["5", "6", "7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Section 4 must be available and Sections 5–8 must remain planned");
   safe(catalog, "catalog");
 }
 
 if (manifest) {
-  check(/chapter-?3/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 3 candidate");
+  check(/chapter-?[34]/i.test(manifest.releaseId ?? ""), "release manifest must identify a cumulative candidate containing Chapter 3");
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lesson IDs");
   for (const item of expected) {
     const released = manifest.lessons?.find((entry) => entry.lessonId === item.lessonId);

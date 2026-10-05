@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L31",
+  "slug": "bit-shifts",
+  "sectionId": "4",
+  "strandId": "4.3",
+  "title": {
+    "en": "Logical, arithmetic and cyclic shifts",
+    "vi": "Logical, arithmetic và cyclic shift"
+  },
+  "question": {
+    "en": "Which bit enters the register, and which bit is lost or wrapped?",
+    "vi": "Bit nào đi vào register và bit nào bị mất hoặc được wrap?"
+  },
+  "opening": {
+    "en": "A shift is a fixed-width bit movement. Mark the outgoing edge, the inserted or wrapped bit and the word width before assigning a numerical meaning.",
+    "vi": "Shift là bit movement có fixed width. Hãy đánh dấu outgoing edge, inserted hoặc wrapped bit và word width trước khi gán numerical meaning."
+  },
+  "objectives": [
+    {
+      "id": "AC26-4.3-01",
+      "text": {
+        "en": "Explain and perform logical, arithmetic and cyclic left and right shifts.",
+        "vi": "Giải thích và thực hiện logical, arithmetic và cyclic left/right shift."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-4.3-01-01",
+    "REQ-4.3-01-02"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L02"
+  ],
+  "theory": [
+    {
+      "id": "P1-L31-theory-1",
+      "title": {
+        "en": "Fixed width controls the result",
+        "vi": "Fixed width quyết định result"
+      },
+      "paragraphs": [
+        {
+          "en": "In an 8-bit register, any bit shifted beyond an edge leaves the word unless the operation is cyclic. New positions need an operation-specific fill rule.",
+          "vi": "Trong 8-bit register, bit dịch qua edge sẽ rời word trừ khi operation là cyclic. Vị trí mới cần fill rule riêng của operation."
+        },
+        {
+          "en": "Always preserve eight positions in the result.",
+          "vi": "Luôn giữ tám vị trí trong result."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Label bit 7 as the most significant bit and bit 0 as the least significant bit.",
+          "vi": "Gắn nhãn bit 7 là most significant bit và bit 0 là least significant bit."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L31-theory-2",
+      "title": {
+        "en": "Logical and arithmetic shifts",
+        "vi": "Logical và arithmetic shift"
+      },
+      "paragraphs": [
+        {
+          "en": "Logical shifts insert zero. Arithmetic right repeats the previous sign bit. Arithmetic left moves bits like logical left but signed overflow can make the numerical shortcut invalid.",
+          "vi": "Logical shift chèn zero. Arithmetic right lặp sign bit cũ. Arithmetic left di chuyển bit như logical left nhưng signed overflow có thể làm numerical shortcut sai."
+        },
+        {
+          "en": "A left shift may resemble multiplication by two and a right shift division by two only when representation, sign and overflow conditions permit.",
+          "vi": "Left shift có thể giống nhân hai và right shift giống chia hai chỉ khi representation, sign và overflow condition cho phép."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Do not award ×2 or ÷2 without the fixed-width conditions.",
+          "vi": "Không chấm ×2 hoặc ÷2 nếu thiếu fixed-width condition."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    },
+    {
+      "id": "P1-L31-theory-3",
+      "title": {
+        "en": "Cyclic shifts wrap bits",
+        "vi": "Cyclic shift wrap bit"
+      },
+      "paragraphs": [
+        {
+          "en": "A rotate-left sends the outgoing MSB into bit 0. A rotate-right sends the outgoing LSB into bit 7, so no bit is discarded.",
+          "vi": "Rotate-left đưa outgoing MSB vào bit 0. Rotate-right đưa outgoing LSB vào bit 7, nên không bit nào bị loại."
+        },
+        {
+          "en": "The syllabus LSL and LSR instructions are logical; arithmetic and cyclic shifts remain conceptual unless a supplied table defines opcodes.",
+          "vi": "Instruction LSL và LSR trong syllabus là logical; arithmetic và cyclic shift vẫn là khái niệm trừ khi supplied table định nghĩa opcode."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Identical output words can result from different shift rules for a particular input.",
+          "vi": "Các shift rule khác nhau có thể cho output word giống nhau với input cụ thể."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C04"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Shift 10010101₂",
+      "vi": "Shift 10010101₂"
+    },
+    "prompt": {
+      "en": "Compare LSR, ASR and ROR by one position in an 8-bit register.",
+      "vi": "So sánh LSR, ASR và ROR một vị trí trong 8-bit register."
+    },
+    "steps": [
+      {
+        "id": "P1-L31-worked-1",
+        "action": {
+          "en": "Mark the edges.",
+          "vi": "Đánh dấu edge."
+        },
+        "result": {
+          "en": "Sign bit is 1 and outgoing right bit is 1.",
+          "vi": "Sign bit là 1 và outgoing right bit là 1."
+        }
+      },
+      {
+        "id": "P1-L31-worked-2",
+        "action": {
+          "en": "Choose the fill rule.",
+          "vi": "Chọn fill rule."
+        },
+        "result": {
+          "en": "LSR inserts 0; ASR inserts sign bit 1; ROR wraps outgoing 1.",
+          "vi": "LSR chèn 0; ASR chèn sign bit 1; ROR wrap outgoing 1."
+        }
+      },
+      {
+        "id": "P1-L31-worked-3",
+        "action": {
+          "en": "Write all eight result bits.",
+          "vi": "Viết đủ tám result bit."
+        },
+        "result": {
+          "en": "LSR=01001010₂; ASR=11001010₂; ROR=11001010₂.",
+          "vi": "LSR=01001010₂; ASR=11001010₂; ROR=11001010₂."
+        }
+      }
+    ],
+    "result": {
+      "en": "The two matching results must still be explained by different mechanisms.",
+      "vi": "Hai result trùng nhau vẫn phải được giải thích bằng cơ chế khác nhau."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Words such as logical, signed, preserve sign, rotate or wrap identify the rule.",
+        "vi": "Các từ logical, signed, preserve sign, rotate hoặc wrap xác định rule."
+      }
+    ],
+    "method": [
+      {
+        "en": "Write bit positions and mark outgoing bit.",
+        "vi": "Viết bit position và đánh dấu outgoing bit."
+      },
+      {
+        "en": "Apply fill/wrap rule, then check width and overflow.",
+        "vi": "Áp dụng fill/wrap rule rồi kiểm tra width và overflow."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Every left shift always multiplies by two and every right shift divides by two.",
+          "vi": "Mọi left shift luôn nhân hai và mọi right shift chia hai."
+        },
+        "correction": {
+          "en": "That shortcut depends on the representation, sign, discarded bits and absence of overflow.",
+          "vi": "Shortcut đó phụ thuộc representation, sign, discarded bit và không overflow."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Arithmetic right shift inserts zero.",
+          "vi": "Arithmetic right shift chèn zero."
+        },
+        "correction": {
+          "en": "It repeats the sign bit; only logical right always inserts zero.",
+          "vi": "Nó lặp sign bit; chỉ logical right luôn chèn zero."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A cyclic shift loses the outgoing bit.",
+          "vi": "Cyclic shift làm mất outgoing bit."
+        },
+        "correction": {
+          "en": "The outgoing bit wraps into the opposite end.",
+          "vi": "Outgoing bit vòng vào đầu đối diện."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L31-recognise-1",
+        "title": {
+          "en": "Identify the shift",
+          "vi": "Xác định shift"
+        },
+        "setup": {
+          "en": "10110001₂ becomes 11011000₂ after one right movement.",
+          "vi": "10110001₂ trở thành 11011000₂ sau một right movement."
+        },
+        "prompt": {
+          "en": "Name one possible shift and justify it from the inserted bit.",
+          "vi": "Nêu một shift có thể xảy ra và biện minh bằng inserted bit."
+        },
+        "expectedEvidence": {
+          "en": "ASR is valid because sign bit 1 is repeated. ROR is also valid for this input because outgoing LSB 1 wraps; more context is needed to distinguish them.",
+          "vi": "ASR hợp lệ vì sign bit 1 được lặp. ROR cũng hợp lệ với input này vì outgoing LSB 1 wrap; cần thêm context để phân biệt."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L31-CHECK-REQ-4.3-01-01",
+      "requirementId": "REQ-4.3-01-01",
+      "kind": "compare",
+      "level": "independent",
+      "prompt": {
+        "en": "Distinguish logical, arithmetic and cyclic shifts.",
+        "vi": "Phân biệt logical, arithmetic và cyclic shift."
+      },
+      "hint": {
+        "en": "Compare what enters the vacant position and what happens to the outgoing bit.",
+        "vi": "So sánh bit đi vào vị trí trống và điều xảy ra với outgoing bit."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A logical shift inserts zero and discards the outgoing bit. An arithmetic right shift repeats the sign bit to preserve the sign of a two's-complement value; arithmetic left uses the same bit movement as logical left but may overflow. A cyclic shift wraps the outgoing bit into the opposite end.",
+          "vi": "Logical shift chèn zero và bỏ outgoing bit. Arithmetic right shift lặp sign bit để giữ dấu của two's-complement value; arithmetic left có cùng bit movement như logical left nhưng có thể overflow. Cyclic shift đưa outgoing bit vòng về đầu đối diện."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "logical-shift",
+        "arithmetic-shift",
+        "cyclic-shift"
+      ]
+    },
+    {
+      "id": "P1-L31-CHECK-REQ-4.3-01-02",
+      "requirementId": "REQ-4.3-01-02",
+      "kind": "short-text",
+      "level": "independent",
+      "prompt": {
+        "en": "Perform one LSL, LSR, ASL, ASR, ROL and ROR on 10010101₂. Enter the six 8-bit results in that order.",
+        "vi": "Thực hiện một LSL, LSR, ASL, ASR, ROL và ROR trên 10010101₂. Nhập sáu result 8-bit theo thứ tự đó."
+      },
+      "hint": {
+        "en": "Apply the fill or wrap rule at the vacated end: right for left shifts and left for right shifts.",
+        "vi": "Áp dụng fill hoặc wrap rule ở đầu bị bỏ trống: bên phải cho left shift và bên trái cho right shift."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "LSL=00101010₂ and LSR=01001010₂ by zero fill. ASL=00101010₂ with signed overflow because the sign changes; ASR=11001010₂ by sign extension. ROL=00101011₂ and ROR=11001010₂ by wrapping the outgoing bit.",
+          "vi": "LSL=00101010₂ và LSR=01001010₂ bằng zero fill. ASL=00101010₂ với signed overflow vì sign thay đổi; ASR=11001010₂ bằng sign extension. ROL=00101011₂ và ROR=11001010₂ bằng cách wrap outgoing bit."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism or state change remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận cách diễn đạt tương đương khi cơ chế hoặc thay đổi trạng thái vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "acceptedAnswers": [
+        "00101010;01001010;00101010;11001010;00101011;11001010",
+        "LSL=00101010;LSR=01001010;ASL=00101010;ASR=11001010;ROL=00101011;ROR=11001010",
+        "LSL:00101010;LSR:01001010;ASL:00101010;ASR:11001010;ROL:00101011;ROR:11001010",
+        "B00101010;B01001010;B00101010;B11001010;B00101011;B11001010",
+        "0b00101010;0b01001010;0b00101010;0b11001010;0b00101011;0b11001010",
+        "00101010,01001010,00101010,11001010,00101011,11001010"
+      ],
+      "semanticTags": [
+        "LSL",
+        "LSR",
+        "ASL",
+        "ASR",
+        "ROL",
+        "ROR"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "State the fill or wrap rule for logical, arithmetic-right and cyclic shifts.",
+      "vi": "Nêu fill hoặc wrap rule cho logical, arithmetic-right và cyclic shift."
+    },
+    "answerPoints": [
+      {
+        "en": "Logical inserts 0; arithmetic right repeats the sign bit; cyclic wraps the outgoing bit.",
+        "vi": "Logical chèn 0; arithmetic right lặp sign bit; cyclic wrap outgoing bit."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "logical shift",
+      "meaning": {
+        "en": "Shift that inserts zero into each new position.",
+        "vi": "Shift chèn zero vào mỗi vị trí mới."
+      }
+    },
+    {
+      "term": "arithmetic shift",
+      "meaning": {
+        "en": "Shift designed to preserve signed interpretation, especially sign extension on right shift.",
+        "vi": "Shift nhằm giữ signed interpretation, đặc biệt sign extension khi right shift."
+      }
+    },
+    {
+      "term": "cyclic shift",
+      "meaning": {
+        "en": "Shift that wraps an outgoing bit to the opposite end.",
+        "vi": "Shift đưa outgoing bit vòng về đầu đối diện."
+      }
+    },
+    {
+      "term": "overflow",
+      "meaning": {
+        "en": "A result outside the range representable by the fixed word width.",
+        "vi": "Result nằm ngoài range biểu diễn được bởi fixed word width."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "number-systems",
+    "bit-masking"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §4.3, p. 22",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L31 · Chapter 4 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C04",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 4, pp. 130–131",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L31",
+  "contractCoverage": {
+    "B01": [
+      "P1-L31-objectives"
+    ],
+    "B02": [
+      "P1-L31-theory-1",
+      "P1-L31-theory-2",
+      "P1-L31-theory-3"
+    ],
+    "B03": [
+      "P1-L31-theory-1",
+      "P1-L31-theory-2",
+      "P1-L31-theory-3"
+    ],
+    "B04": [
+      "P1-L31-recognise-1"
+    ],
+    "B05": [
+      "P1-L31-worked-1",
+      "P1-L31-worked-2",
+      "P1-L31-worked-3"
+    ],
+    "B06": [
+      "VIS-P1-L31"
+    ],
+    "B07": [
+      "P1-L31-CHECK-REQ-4.3-01-01",
+      "P1-L31-CHECK-REQ-4.3-01-02"
+    ],
+    "B08": [
+      "P1-L31-recognise-1"
+    ],
+    "B09": [
+      "P1-L31-recall"
+    ],
+    "B10": [
+      "P1-L31-glossary"
+    ],
+    "B11": [
+      "P1-L31-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

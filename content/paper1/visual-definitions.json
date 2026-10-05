@@ -1001,5 +1001,101 @@
       "P1-L24-permission-4"
     ],
     "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L25",
+    "lessonId": "P1-L25",
+    "title": { "en": "Stored-program bus bench", "vi": "Bàn thực hành bus stored-program" },
+    "learnerAction": { "en": "Choose a memory read or write, predict the bus and changed component, then step through address, control and data transfers.", "vi": "Chọn memory read hoặc write, dự đoán bus và component thay đổi rồi step qua address, control và data transfer." },
+    "observableOutcome": { "en": "Distinguish an address from its contents and name the source, destination and direction of each bus transfer.", "vi": "Phân biệt address với contents và nêu source, destination, direction của mỗi bus transfer." },
+    "modelScope": { "en": "A finite 8-bit transfer fixture exposes CPU registers, memory and three labelled buses with exact before/after state.", "vi": "Fixture transfer 8-bit hữu hạn hiển thị CPU register, memory và ba bus có label cùng before/after state chính xác." },
+    "modelLimitations": { "en": "This model isolates one transfer at a time and does not simulate electrical timing or a complete physical CPU.", "vi": "Mô hình tách từng transfer và không mô phỏng electrical timing hay một CPU vật lý hoàn chỉnh." },
+    "atlasIds": ["BOOK-C04-P109-VON-NEUMANN", "BOOK-C04-P110-T4-1", "BOOK-C04-P111-FLAGS-POSITIVE", "BOOK-C04-P111-FLAGS-NEGATIVE", "BOOK-C04-P112-SYSTEM-BUSES"],
+    "sceneIds": ["P1-L25-read-inspect", "P1-L25-read-address", "P1-L25-read-control", "P1-L25-read-commit", "P1-L25-write-inspect", "P1-L25-write-address", "P1-L25-write-control", "P1-L25-write-commit"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L26",
+    "lessonId": "P1-L26",
+    "title": { "en": "Constraint comparison bench", "vi": "Bàn so sánh constraint" },
+    "learnerAction": { "en": "Select one workload or device need, predict the effect, and reveal one possible benefit plus its limiting condition.", "vi": "Chọn một workload hoặc device need, dự đoán effect rồi reveal một benefit có thể có cùng limiting condition." },
+    "observableOutcome": { "en": "Explain performance changes conditionally and match USB, HDMI and VGA to the required signal or use.", "vi": "Giải thích performance change có điều kiện và match USB, HDMI, VGA với signal hoặc use cần thiết." },
+    "modelScope": { "en": "Eight reviewed qualitative cases compare one factor at a time without invented benchmark scores.", "vi": "Tám case định tính đã review so sánh từng factor mà không tạo benchmark score." },
+    "modelLimitations": { "en": "Cases state general syllabus-level relationships and do not model connector versions, cable bandwidths or real hardware benchmarks.", "vi": "Các case nêu relation ở syllabus level và không mô phỏng connector version, cable bandwidth hay benchmark hardware thực." },
+    "atlasIds": ["BOOK-C04-P113-CORE-LINKS", "BOOK-C04-P114-PORT-CABLES", "BOOK-C04-P115-T4-2", "BOOK-C04-P116-T4-3", "BOOK-C04-P120-A4A-PORT-MATCH"],
+    "sceneIds": ["P1-L26-processor-need", "P1-L26-processor-change", "P1-L26-processor-effect", "P1-L26-processor-limit", "P1-L26-clock-need", "P1-L26-clock-change", "P1-L26-clock-effect", "P1-L26-clock-limit", "P1-L26-cores-need", "P1-L26-cores-change", "P1-L26-cores-effect", "P1-L26-cores-limit", "P1-L26-cache-need", "P1-L26-cache-change", "P1-L26-cache-effect", "P1-L26-cache-limit", "P1-L26-bus-need", "P1-L26-bus-change", "P1-L26-bus-effect", "P1-L26-bus-limit", "P1-L26-usb-need", "P1-L26-usb-change", "P1-L26-usb-effect", "P1-L26-usb-limit", "P1-L26-hdmi-need", "P1-L26-hdmi-change", "P1-L26-hdmi-effect", "P1-L26-hdmi-limit", "P1-L26-vga-need", "P1-L26-vga-change", "P1-L26-vga-effect", "P1-L26-vga-limit"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L27",
+    "lessonId": "P1-L27",
+    "title": { "en": "M1 CPU trace recorder", "vi": "Bộ ghi trace CPU M1" },
+    "learnerAction": { "en": "Choose fetch, execute, interrupt or return and predict the next register or control state before advancing each microstep.", "vi": "Chọn fetch, execute, interrupt hoặc return và dự đoán register hay control state tiếp theo trước mỗi microstep." },
+    "observableOutcome": { "en": "Write the ordered RTN, place PC increment correctly and explain when context is saved, dispatched and restored.", "vi": "Viết RTN theo thứ tự, đặt PC increment đúng và giải thích khi context được save, dispatch, restore." },
+    "modelScope": { "en": "The declared M1 convention uses four finite packets with exact PC, MAR, MDR, CIR, ACC and Status states.", "vi": "Convention M1 đã công bố dùng bốn packet hữu hạn với state PC, MAR, MDR, CIR, ACC và Status chính xác." },
+    "modelLimitations": { "en": "The ISR service step is illustrative; real processors differ in context, vectoring and timing conventions.", "vi": "Bước ISR service mang tính minh họa; processor thực khác nhau về context, vectoring và timing convention." },
+    "atlasIds": ["BOOK-C04-P117-FETCH-CYCLE", "BOOK-C04-P117-RTN", "BOOK-C04-P118-RTN-RISC", "BOOK-C04-P118-INTERRUPT-CYCLE"],
+    "sceneIds": ["P1-L27-fetch-mar-from-pc", "P1-L27-fetch-increment-pc", "P1-L27-fetch-instruction-to-mdr", "P1-L27-fetch-mdr-to-cir", "P1-L27-execute-decode", "P1-L27-execute-operand-address", "P1-L27-execute-operand-read", "P1-L27-execute-acc-from-mdr", "P1-L27-interrupt-interrupt-check", "P1-L27-interrupt-save-context", "P1-L27-interrupt-dispatch", "P1-L27-interrupt-service", "P1-L27-return-isr-complete", "P1-L27-return-restore-status", "P1-L27-return-restore-acc", "P1-L27-return-restore-pc"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L28",
+    "lessonId": "P1-L28",
+    "title": { "en": "Two-pass assembly ledger", "vi": "Ledger two-pass assembly" },
+    "learnerAction": { "en": "Choose a start address, predict the forward label, then inspect source, Pass 1 symbols, Pass 2 resolution and object rows.", "vi": "Chọn start address, dự đoán forward label rồi inspect source, symbol Pass 1, resolution Pass 2 và object row." },
+    "observableOutcome": { "en": "State what each pass produces and resolve a forward reference without claiming that the source has executed.", "vi": "Nêu output của mỗi pass và resolve forward reference mà không coi source đã execute." },
+    "modelScope": { "en": "A reviewed five-line program assigns one address per row and emits a declared toy opcode representation.", "vi": "Program năm dòng đã review gán một address mỗi row và emit toy opcode representation đã công bố." },
+    "modelLimitations": { "en": "Opcode numbers and one-word rows belong only to this AlgoCore fixture, not to a general assembler or Cambridge CPU encoding.", "vi": "Opcode number và row một word chỉ thuộc fixture AlgoCore này, không phải general assembler hay Cambridge CPU encoding." },
+    "atlasIds": ["BOOK-C04-P122-ASM-HEX-BINARY", "BOOK-C04-P122-OPCODE-OPERAND", "BOOK-C04-P122-LABEL-ADDRESS", "BOOK-C04-P123-ASSEMBLER-PASSES", "BOOK-C04-P123-ASSEMBLER-SYMBOLS", "BOOK-C04-P126-T4-9"],
+    "sceneIds": ["P1-L28-source", "P1-L28-pass1", "P1-L28-pass2", "P1-L28-object"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L29",
+    "lessonId": "P1-L29",
+    "title": { "en": "Effective-address route map", "vi": "Bản đồ route effective-address" },
+    "learnerAction": { "en": "Select an addressing mode, predict its literal value, fetched value or branch target and the data-memory read count, then follow the route step by step.", "vi": "Chọn addressing mode, dự đoán literal value, fetched value hoặc branch target cùng số data-memory read rồi theo route từng bước." },
+    "observableOutcome": { "en": "Write the correct route equation and distinguish a literal, address, pointer, fetched contents and control-flow target.", "vi": "Viết đúng route equation và phân biệt literal, address, pointer, fetched contents với control-flow target." },
+    "modelScope": { "en": "An AlgoCore-original fixed memory fixture covers immediate, direct, indirect, indexed and PC-relative paths deterministically.", "vi": "Fixture memory cố định do AlgoCore tự tạo cover immediate, direct, indirect, indexed và PC-relative path một cách xác định." },
+    "modelLimitations": { "en": "The fixture uses PC=201 after fetch and IX=5; it is not a general memory simulator and has no mapped coursebook Atlas item.", "vi": "Fixture dùng PC=201 sau fetch và IX=5; đây không phải general memory simulator và không có coursebook Atlas item được map." },
+    "atlasIds": [],
+    "sceneIds": ["P1-L29-immediate-inspect", "P1-L29-immediate-calculate", "P1-L29-immediate-dereference", "P1-L29-immediate-verify", "P1-L29-direct-inspect", "P1-L29-direct-calculate", "P1-L29-direct-dereference", "P1-L29-direct-verify", "P1-L29-indirect-inspect", "P1-L29-indirect-calculate", "P1-L29-indirect-dereference", "P1-L29-indirect-verify", "P1-L29-indexed-inspect", "P1-L29-indexed-calculate", "P1-L29-indexed-dereference", "P1-L29-indexed-verify", "P1-L29-relative-inspect", "P1-L29-relative-calculate", "P1-L29-relative-dereference", "P1-L29-relative-verify"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L30",
+    "lessonId": "P1-L30",
+    "title": { "en": "Assembly trace console", "vi": "Console assembly trace" },
+    "learnerAction": { "en": "Choose branch or load-store fixtures and advance one instruction at a time while auditing PC, ACC, flag, memory and output.", "vi": "Chọn fixture branch hoặc load-store và advance từng instruction trong khi audit PC, ACC, flag, memory và output." },
+    "observableOutcome": { "en": "Complete taken and not-taken traces, preserve CMP semantics and explain data movement, arithmetic, branching, I/O and END.", "vi": "Hoàn tất trace taken và not-taken, giữ đúng semantics CMP và giải thích data movement, arithmetic, branching, I/O, END." },
+    "modelScope": { "en": "Two reviewed finite programs expose branch outcomes and a load-store-arithmetic sequence with exact state ledgers.", "vi": "Hai program hữu hạn đã review hiển thị branch outcome và chuỗi load-store-arithmetic với state ledger chính xác." },
+    "modelLimitations": { "en": "This is a declared teaching instruction set; END returns control to the operating system and no post-END PC value is asserted.", "vi": "Đây là instruction set dạy học đã công bố; END trả control về operating system và không khẳng định PC sau END." },
+    "atlasIds": ["BOOK-C04-P124-T4-4", "BOOK-C04-P124-T4-5", "BOOK-C04-P124-T4-6", "BOOK-C04-P125-T4-7", "BOOK-C04-P125-T4-8", "BOOK-C04-P126-SUM-HIGHLEVEL", "BOOK-C04-P126-SUM-ASSEMBLY", "BOOK-C04-P127-SUM-SYMBOLS", "BOOK-C04-P127-SUM-TRACE", "BOOK-C04-P127-LOOP-HIGHLEVEL", "BOOK-C04-P127-LOOP-ASSEMBLY", "BOOK-C04-P128-LOOP-SYMBOLS", "BOOK-C04-P128-LOOP-TRACE", "BOOK-C04-P129-A4B-BRANCH"],
+    "sceneIds": ["P1-L30-decision-in", "P1-L30-decision-cmp", "P1-L30-decision-jpe", "P1-L30-decision-route", "P1-L30-completion-path-1", "P1-L30-completion-path-2", "P1-L30-completion-path-3", "P1-L30-completion-path-4", "P1-L30-load-store-0", "P1-L30-load-store-1", "P1-L30-load-store-2", "P1-L30-load-store-3", "P1-L30-add-finish-0", "P1-L30-add-finish-1", "P1-L30-add-finish-2", "P1-L30-add-finish-3"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L31",
+    "lessonId": "P1-L31",
+    "title": { "en": "Eight-bit shift rail", "vi": "Thanh dịch 8-bit" },
+    "learnerAction": { "en": "Choose an 8-bit value and shift, predict the result, then trace outgoing, inserted or wrapped bits and fixed-width interpretation.", "vi": "Chọn giá trị 8-bit và shift, dự đoán result rồi trace bit đi ra, bit chèn hoặc wrap và fixed-width interpretation." },
+    "observableOutcome": { "en": "Apply all six fill rules, retain the sign bit for ASR and detect the declared ASL overflow condition.", "vi": "Áp dụng đủ sáu fill rule, giữ sign bit cho ASR và phát hiện ASL overflow condition đã công bố." },
+    "modelScope": { "en": "One-place 8-bit LSL, LSR, ASL, ASR, ROL and ROR use exact integer formulas and before/after words.", "vi": "LSL, LSR, ASL, ASR, ROL, ROR một vị trí trên 8-bit dùng integer formula và before/after word chính xác." },
+    "modelLimitations": { "en": "The visual models one shift at a time and does not retain a hardware carry flag between operations.", "vi": "Visual mô phỏng từng shift và không giữ hardware carry flag giữa các operation." },
+    "atlasIds": ["BOOK-C04-P131-T4-10", "BOOK-C04-P132-A4C-BEFORE-AFTER"],
+    "sceneIds": ["P1-L31-edge", "P1-L31-rule", "P1-L31-move", "P1-L31-result"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
+  },
+  {
+    "visualId": "VIS-P1-L32",
+    "lessonId": "P1-L32",
+    "title": { "en": "Device-register mask bench", "vi": "Bàn mask device-register" },
+    "learnerAction": { "en": "Choose a source register, target bit and AND, OR or XOR operation; predict the ACC result, inspect all eight aligned bit columns and follow any explicit device commit.", "vi": "Chọn source register, target bit và operation AND, OR hoặc XOR; dự đoán ACC result, inspect tám bit column thẳng hàng và theo dõi explicit device commit nếu có." },
+    "observableOutcome": { "en": "Create the correct one-hot mask, show that the ALU result replaces ACC while the source remains unchanged, and distinguish an ACC test from an explicit device write.", "vi": "Tạo đúng one-hot mask, chỉ ra ALU result thay thế ACC trong khi source không đổi, và phân biệt ACC test với explicit device write." },
+    "modelScope": { "en": "All byte values and bit positions use deterministic one-hot AND, OR and XOR rules with an unchanged source register, an ACC result and an explicit device-commit path.", "vi": "Mọi byte value và bit position dùng rule one-hot AND, OR, XOR xác định với source register không đổi, ACC result và explicit device-commit path." },
+    "modelLimitations": { "en": "The interactive control selects one target bit at a time; the worked lesson separately demonstrates a calculated multi-bit mask.", "vi": "Interactive control chọn từng target bit; worked lesson riêng minh họa một phép tính multi-bit mask." },
+    "atlasIds": ["BOOK-C04-P130-AND-OR-XOR-TABLE", "BOOK-C04-P131-T4-11", "BOOK-C04-P132-SENSOR3-MASK", "BOOK-C04-P133-SENSOR-BIT-LAYOUT", "BOOK-C04-P134-Q5-ISA", "BOOK-C04-P134-Q5-PROGRAM", "BOOK-C04-P135-Q5-TRACE"],
+    "sceneIds": ["P1-L32-locate", "P1-L32-mask", "P1-L32-apply", "P1-L32-interpret"],
+    "reviewStatus": "model-reviewed-with-scope-limits"
   }
 ]

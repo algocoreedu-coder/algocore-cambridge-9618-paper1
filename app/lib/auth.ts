@@ -56,12 +56,14 @@ export function createStudentSessionToken(now = Date.now()) {
 }
 
 export function createStudentProgressScope() {
-  const configuration = readAuthConfiguration();
-  if (!configuration) throw new Error("Student authentication is not configured.");
-  return createHmac("sha256", configuration.sessionSecret)
-    .update(`progress:${configuration.username}`, "utf8")
-    .digest("base64url")
-    .slice(0, 22);
+  // The classroom credential can be shared. A fresh opaque scope per login
+  // prevents the next learner on the same browser from inheriting local work.
+  // It intentionally lasts only as long as the corresponding sign-in session.
+  return randomBytes(16).toString("base64url");
+}
+
+export function isValidStudentProgressScope(value: string | undefined) {
+  return typeof value === "string" && /^[A-Za-z0-9_-]{22}$/.test(value);
 }
 
 export function verifyStudentSessionToken(token: string | undefined, now = Date.now()) {

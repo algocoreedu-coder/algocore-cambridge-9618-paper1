@@ -2,9 +2,9 @@
 
 Interactive bilingual revision website for Cambridge International AS & A Level Computer Science (9618) Paper 1.
 
-The current release candidate contains Chapters 1–3: 24 bilingual lessons aligned to the 2026 syllabus, 24 interactive models, 75 requirement-level checks and three mixed revision sets. Chapter 1 also includes a 55-item learner visual Atlas. Sections 4–8 remain visibly marked as planned.
+The current release candidate contains Chapters 1–4: 32 bilingual lessons aligned to the 2026 syllabus, 32 interactive models, 116 requirement-level checks and four mixed revision sets. Chapter 1 also includes a 55-item learner visual Atlas. Chapter 4 classifies 43 coursebook Atlas source pointers while its learner models use original, deterministic diagrams. Sections 5–8 remain visibly marked as planned.
 
-Chapter 1 covers all 17 learning objectives and all 23 atomic requirements in syllabus Sections 1.1–1.3. Chapter 2 covers all 15 learning objectives and all 26 atomic requirements in syllabus Section 2.1. Chapter 3 covers all 13 learning objectives and all 26 atomic requirements in syllabus Sections 3.1–3.2. Each lesson follows the same six-stage teaching route: Understand, Observe, Worked example, Recognise, Check and Recall. Visuals used in the teaching route state the learner action and expected observation; supporting coursebook visuals appear after Chapter 1 lessons or in the separate Chapter 1 Atlas.
+Chapter 1 covers all 17 learning objectives and all 23 atomic requirements in syllabus Sections 1.1–1.3. Chapter 2 covers all 15 learning objectives and all 26 atomic requirements in syllabus Section 2.1. Chapter 3 covers all 13 learning objectives and all 26 atomic requirements in syllabus Sections 3.1–3.2. Chapter 4 covers all 17 learning objectives and all 41 atomic requirements in syllabus Sections 4.1–4.3. Each lesson follows the same six-stage teaching route: Understand, Observe, Worked example, Recognise, Check and Recall. Visuals used in the teaching route state the learner action and expected observation; supporting coursebook visuals appear after Chapter 1 lessons or in the separate Chapter 1 Atlas.
 
 Progress distinguishes lesson availability from learner activity. Opening a hint or solution never marks a lesson reviewed. Deterministic checks require a correct attempt, while open responses require a recorded answer and an explicit rubric review.
 
@@ -51,11 +51,13 @@ npm run check:paper1:http
 - `/paper-1/sections/1`
 - `/paper-1/sections/2`
 - `/paper-1/sections/3`
+- `/paper-1/sections/4`
 - `/paper-1/atlas`
 - `/paper-1/practice`
 - `/paper-1/practice/1`
 - `/paper-1/practice/2`
 - `/paper-1/practice/3`
+- `/paper-1/practice/4`
 - `/paper-1/topics/<lesson-slug>`
 
 Use `?lang=en` or `?lang=vi` for the learning language.
