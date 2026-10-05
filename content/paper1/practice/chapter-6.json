@@ -1,0 +1,1311 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "practiceId": "P1-CP06",
+  "courseId": "CAIE-9618-P1-2026",
+  "chapterId": "6",
+  "title": {
+    "en": "Chapter 6 practice · Security and data integrity",
+    "vi": "Luyện tập Chapter 6 · Security và data integrity"
+  },
+  "intro": {
+    "en": "Twelve AlgoCore-original questions test distinctions, threat paths, justified controls, validation rules and verification traces. Attempt each response before revealing the marking guide.",
+    "vi": "Mười hai câu AlgoCore tự biên soạn kiểm tra distinction, threat path, justified control, validation rule và verification trace. Hãy làm trước khi mở marking guide."
+  },
+  "timing": {
+    "timedMinutes": 72,
+    "untimedAvailable": true
+  },
+  "totalMarks": 60,
+  "aoBlueprint": {
+    "AO1": 36,
+    "AO2": 24,
+    "note": {
+      "en": "Approximate Paper 1 weighting: AO1 60%, AO2 40%.",
+      "vi": "Xấp xỉ weighting Paper 1: AO1 60%, AO2 40%."
+    }
+  },
+  "revealPolicy": "Attempt required before hint or solution; self-mark open responses against marking points.",
+  "provenance": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §6.1–6.2, printed/PDF p. 24",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original assessment material",
+        "vi": "Học liệu đánh giá gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-CP06 · Chapter 6 assessment 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C06",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 6, printed pp. 159–177; PDF pp. 175–193",
+      "kind": "coursebook"
+    }
+  ],
+  "items": [
+    {
+      "id": "P1-CP06-Q01",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-6.1-01-01",
+        "REQ-6.1-02-01"
+      ],
+      "objectiveIds": [
+        "AC26-6.1-01",
+        "AC26-6.1-02"
+      ],
+      "strandIds": [
+        "6.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A tutoring service stores learner profiles on an online platform. Distinguish security, privacy and integrity, then explain why both the profiles and the platform need protection.",
+        "vi": "Tutoring service lưu learner profile trên online platform. Phân biệt security, privacy và integrity, rồi giải thích vì sao cả profile lẫn platform cần protection."
+      },
+      "hint": {
+        "en": "Give three distinct properties, then one data need and one system need.",
+        "vi": "Nêu ba property riêng rồi một data need và một system need."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Security is the broad protection of data and systems from unauthorised access, damage or loss. Privacy controls authorised use and disclosure of learner profiles. Integrity keeps records complete, consistent and protected from unauthorised change. Profiles need protection from disclosure or alteration; the platform needs protection from disruption so authorised teaching remains available.",
+          "vi": "Security là bảo vệ rộng đối với data và system khỏi unauthorised access, damage hoặc loss. Privacy kiểm soát authorised use và disclosure của learner profile. Integrity giữ record complete, consistent và được bảo vệ khỏi unauthorised change. Profile cần protection khỏi disclosure hoặc alteration; platform cần protection khỏi disruption để authorised teaching vẫn available."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q01-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-01-01"
+            ],
+            "point": {
+              "en": "Defines security as the wider protection of data/systems.",
+              "vi": "Định nghĩa security là bảo vệ rộng đối với data/system."
+            }
+          },
+          {
+            "id": "P1-CP06-Q01-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-01-01"
+            ],
+            "point": {
+              "en": "Defines privacy through authorised access, use or disclosure.",
+              "vi": "Định nghĩa privacy qua authorised access, use hoặc disclosure."
+            }
+          },
+          {
+            "id": "P1-CP06-Q01-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-01-01"
+            ],
+            "point": {
+              "en": "Defines integrity through complete/consistent data and protection from unauthorised change.",
+              "vi": "Định nghĩa integrity qua complete/consistent data và protection khỏi unauthorised change."
+            }
+          },
+          {
+            "id": "P1-CP06-Q01-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-02-01"
+            ],
+            "point": {
+              "en": "Explains one concrete need to protect learner-profile data.",
+              "vi": "Giải thích một need cụ thể để bảo vệ learner-profile data."
+            }
+          },
+          {
+            "id": "P1-CP06-Q01-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-02-01"
+            ],
+            "point": {
+              "en": "Explains one distinct need to protect platform operation or availability.",
+              "vi": "Giải thích một need riêng để bảo vệ platform operation hoặc availability."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "security-foundations",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q02",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-6.1-03-01",
+        "REQ-6.1-03-02"
+      ],
+      "objectiveIds": [
+        "AC26-6.1-03"
+      ],
+      "strandIds": [
+        "6.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A design studio uses named accounts, passwords, fingerprint readers and signed update notices. Describe how these measures authenticate users or messages and where access rights act.",
+        "vi": "Design studio dùng named account, password, fingerprint reader và signed update notice. Mô tả các measure authenticate user hoặc message thế nào và access right hoạt động ở đâu."
+      },
+      "hint": {
+        "en": "Separate account identity, authentication evidence, biometric comparison, signature verification and authorisation.",
+        "vi": "Tách account identity, authentication evidence, biometric comparison, signature verification và authorisation."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Each account identifies a user; a password provides evidence used to authenticate the claimant. A fingerprint sample is compared with an enrolled template. A digital signature is verified cryptographically and its digest compared to authenticate the source and detect change. After authentication, access rights determine which files and operations that identity may use.",
+          "vi": "Mỗi account xác định user; password cung cấp evidence để authenticate claimant. Fingerprint sample được compare với enrolled template. Digital signature được verify bằng cryptography và digest được compare để authenticate source và detect change. Sau authentication, access right quyết định identity được dùng file và operation nào."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q02-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-01"
+            ],
+            "point": {
+              "en": "Links a named account to user identity.",
+              "vi": "Liên hệ named account với user identity."
+            }
+          },
+          {
+            "id": "P1-CP06-Q02-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-01"
+            ],
+            "point": {
+              "en": "Explains password or factor checking as authentication evidence.",
+              "vi": "Giải thích password hoặc factor checking là authentication evidence."
+            }
+          },
+          {
+            "id": "P1-CP06-Q02-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-01"
+            ],
+            "point": {
+              "en": "Places access rights after authentication and ties them to permitted operations.",
+              "vi": "Đặt access right sau authentication và liên hệ với permitted operation."
+            }
+          },
+          {
+            "id": "P1-CP06-Q02-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-02"
+            ],
+            "point": {
+              "en": "Explains biometric capture and enrolled-template comparison.",
+              "vi": "Giải thích biometric capture và enrolled-template comparison."
+            }
+          },
+          {
+            "id": "P1-CP06-Q02-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-02"
+            ],
+            "point": {
+              "en": "Explains cryptographic signature/digest verification rather than a scanned signature.",
+              "vi": "Giải thích cryptographic signature/digest verification thay vì scanned signature."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "threats-protection",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q03",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-6.1-03-03",
+        "REQ-6.1-03-04"
+      ],
+      "objectiveIds": [
+        "AC26-6.1-03"
+      ],
+      "strandIds": [
+        "6.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "describe",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A community server uses a firewall, anti-virus, anti-spyware and encrypted storage. Describe one distinct action of each control and one encryption boundary.",
+        "vi": "Community server dùng firewall, anti-virus, anti-spyware và encrypted storage. Mô tả một action riêng của mỗi control và một encryption boundary."
+      },
+      "hint": {
+        "en": "Use traffic rules, scanning/quarantine, monitoring detection and plaintext/ciphertext.",
+        "vi": "Dùng traffic rule, scanning/quarantine, monitoring detection và plaintext/ciphertext."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The firewall compares traffic with rules and allows, blocks or logs it. Anti-virus scans files or behaviour and quarantines suspected malware. Anti-spyware looks for hidden monitoring or exfiltration. Encryption transforms plaintext to ciphertext with a key so stolen storage is not intelligible without decryption, but it does not prevent copying or deletion.",
+          "vi": "Firewall compare traffic với rule rồi allow, block hoặc log. Anti-virus scan file hoặc behaviour và quarantine suspected malware. Anti-spyware tìm hidden monitoring hoặc exfiltration. Encryption biến plaintext thành ciphertext bằng key để stolen storage không intelligible nếu thiếu decryption, nhưng không prevent copying hoặc deletion."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q03-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-03"
+            ],
+            "point": {
+              "en": "Describes firewall comparison with configured traffic rules.",
+              "vi": "Mô tả firewall comparison với configured traffic rule."
+            }
+          },
+          {
+            "id": "P1-CP06-Q03-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-03"
+            ],
+            "point": {
+              "en": "States an allow/block/log consequence.",
+              "vi": "Nêu allow/block/log consequence."
+            }
+          },
+          {
+            "id": "P1-CP06-Q03-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-03"
+            ],
+            "point": {
+              "en": "Describes anti-virus scanning and quarantine/removal.",
+              "vi": "Mô tả anti-virus scanning và quarantine/removal."
+            }
+          },
+          {
+            "id": "P1-CP06-Q03-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-03"
+            ],
+            "point": {
+              "en": "Distinguishes anti-spyware monitoring/exfiltration detection.",
+              "vi": "Phân biệt anti-spyware monitoring/exfiltration detection."
+            }
+          },
+          {
+            "id": "P1-CP06-Q03-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-03-04"
+            ],
+            "point": {
+              "en": "Explains plaintext-to-ciphertext/key protection and one limitation.",
+              "vi": "Giải thích plaintext-to-ciphertext/key protection và một limitation."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "threats-protection",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q04",
+      "level": "guided",
+      "requirementIds": [
+        "REQ-6.1-04-01",
+        "REQ-6.1-04-02"
+      ],
+      "objectiveIds": [
+        "AC26-6.1-04"
+      ],
+      "strandIds": [
+        "6.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A media lab finds altered files, unexplained keystroke logs and an unauthorised remote session. Explain the malware and hacker threats evidenced by the incident.",
+        "vi": "Media lab phát hiện altered file, unexplained keystroke log và unauthorised remote session. Giải thích malware và hacker threat được chứng minh bởi incident."
+      },
+      "hint": {
+        "en": "Separate virus, spyware and unauthorised access.",
+        "vi": "Tách virus, spyware và unauthorised access."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A virus may replicate through a host and alter files or disrupt operation. Spyware can monitor keystrokes and send collected data away. The remote session is a hacker threat because an unauthorised person gained access and can view, copy, alter, delete or disrupt assets.",
+          "vi": "Virus có thể replicate qua host và alter file hoặc disrupt operation. Spyware có thể monitor keystroke và gửi collected data đi. Remote session là hacker threat vì unauthorised person gain access và có thể view, copy, alter, delete hoặc disrupt asset."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q04-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-01"
+            ],
+            "point": {
+              "en": "Defines a virus as malicious code that replicates through a host.",
+              "vi": "Định nghĩa virus là malicious code replicate qua host."
+            }
+          },
+          {
+            "id": "P1-CP06-Q04-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-01"
+            ],
+            "point": {
+              "en": "Links the virus to file or system damage.",
+              "vi": "Liên hệ virus với file hoặc system damage."
+            }
+          },
+          {
+            "id": "P1-CP06-Q04-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-01"
+            ],
+            "point": {
+              "en": "Explains spyware monitoring and sending collected data.",
+              "vi": "Giải thích spyware monitoring và gửi collected data."
+            }
+          },
+          {
+            "id": "P1-CP06-Q04-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-02"
+            ],
+            "point": {
+              "en": "Identifies unauthorised remote access as the hacker threat.",
+              "vi": "Xác định unauthorised remote access là hacker threat."
+            }
+          },
+          {
+            "id": "P1-CP06-Q04-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-02"
+            ],
+            "point": {
+              "en": "Explains a concrete view/copy/change/delete/disrupt consequence.",
+              "vi": "Giải thích concrete view/copy/change/delete/disrupt consequence."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "threats-protection",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q05",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-6.1-04-03",
+        "REQ-6.1-04-04",
+        "REQ-6.1-05-01"
+      ],
+      "objectiveIds": [
+        "AC26-6.1-04",
+        "AC26-6.1-05"
+      ],
+      "strandIds": [
+        "6.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "Compare two incidents: A is a message imitating a school payment service and asking for a login; B redirects a correctly typed school address to a false portal. Name each threat, explain the path, choose a control and state remaining risk.",
+        "vi": "Compare hai incident: A là message giả school payment service và yêu cầu login; B redirect correct school address tới false portal. Nêu mỗi threat, giải thích path, chọn control và nêu remaining risk."
+      },
+      "hint": {
+        "en": "A depends on a deceptive message/action; B depends on redirection.",
+        "vi": "A phụ thuộc deceptive message/action; B phụ thuộc redirection."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A is phishing: it impersonates a trusted sender and needs the recipient to follow the link or submit data. B is pharming: altered redirection or name-resolution data sends the user to a fraudulent site even when the expected address is typed. Filtering, awareness and stronger authentication reduce A; secure name resolution, browser warnings and anti-malware can reduce B. Convincing messages, compromised infrastructure or stolen factors leave residual risk.",
+          "vi": "A là phishing: nó impersonate trusted sender và cần recipient follow link hoặc submit data. B là pharming: altered redirection hoặc name-resolution data đưa user tới fraudulent site ngay cả khi nhập expected address. Filtering, awareness và stronger authentication giảm A; secure name resolution, browser warning và anti-malware có thể giảm B. Convincing message, compromised infrastructure hoặc stolen factor để lại residual risk."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q05-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-03"
+            ],
+            "point": {
+              "en": "Identifies phishing and explains trusted-source impersonation.",
+              "vi": "Xác định phishing và giải thích trusted-source impersonation."
+            }
+          },
+          {
+            "id": "P1-CP06-Q05-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-03"
+            ],
+            "point": {
+              "en": "States the recipient action in the phishing path.",
+              "vi": "Nêu recipient action trong phishing path."
+            }
+          },
+          {
+            "id": "P1-CP06-Q05-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-04"
+            ],
+            "point": {
+              "en": "Identifies pharming and explains fraudulent redirection.",
+              "vi": "Xác định pharming và giải thích fraudulent redirection."
+            }
+          },
+          {
+            "id": "P1-CP06-Q05-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-04-04"
+            ],
+            "point": {
+              "en": "Distinguishes pharming from the deceptive-message requirement.",
+              "vi": "Phân biệt pharming khỏi deceptive-message requirement."
+            }
+          },
+          {
+            "id": "P1-CP06-Q05-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-05-01"
+            ],
+            "point": {
+              "en": "Chooses a relevant control and explains where it interrupts a path.",
+              "vi": "Chọn relevant control và giải thích nơi nó interrupt path."
+            }
+          },
+          {
+            "id": "P1-CP06-Q05-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-05-01"
+            ],
+            "point": {
+              "en": "States a plausible remaining risk rather than claiming absolute protection.",
+              "vi": "Nêu plausible remaining risk thay vì claim absolute protection."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "threats-protection",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q06",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-6.1-06-01",
+        "REQ-6.1-06-02"
+      ],
+      "objectiveIds": [
+        "AC26-6.1-06"
+      ],
+      "strandIds": [
+        "6.1"
+      ],
+      "ao": "AO1",
+      "commandWord": "compare",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A clinic encrypts exported reports and assigns read/update/delete rights by role. Compare how encryption and access rights protect the data.",
+        "vi": "Clinic encrypt exported report và assign read/update/delete right theo role. Compare encryption và access right bảo vệ data thế nào."
+      },
+      "hint": {
+        "en": "One limits intelligibility; the other limits permitted operations.",
+        "vi": "Một control giới hạn intelligibility; control kia giới hạn permitted operation."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Encryption changes plaintext to ciphertext so intercepted or stolen reports are not intelligible without the decryption key. Access rights act after authentication and restrict each role to authorised records and operations. Encryption does not stop deletion, while access rights do not hide data if storage or a key is exposed, so the controls complement each other.",
+          "vi": "Encryption đổi plaintext thành ciphertext để intercepted hoặc stolen report không intelligible nếu thiếu decryption key. Access right hoạt động sau authentication và giới hạn mỗi role vào authorised record và operation. Encryption không ngăn deletion, còn access right không ẩn data nếu storage hoặc key bị expose, nên hai control bổ sung nhau."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q06-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-06-01"
+            ],
+            "point": {
+              "en": "Explains plaintext-to-ciphertext transformation.",
+              "vi": "Giải thích plaintext-to-ciphertext transformation."
+            }
+          },
+          {
+            "id": "P1-CP06-Q06-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-06-01"
+            ],
+            "point": {
+              "en": "Links intelligibility to possession of the decryption key and states a limit.",
+              "vi": "Liên hệ intelligibility với decryption key và nêu limit."
+            }
+          },
+          {
+            "id": "P1-CP06-Q06-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-06-02"
+            ],
+            "point": {
+              "en": "Places role permissions after authentication.",
+              "vi": "Đặt role permission sau authentication."
+            }
+          },
+          {
+            "id": "P1-CP06-Q06-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.1-06-02"
+            ],
+            "point": {
+              "en": "Explains restriction of read/update/delete operations.",
+              "vi": "Giải thích restriction của read/update/delete operation."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "threats-protection",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q07",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-6.2-01-01"
+      ],
+      "objectiveIds": [
+        "AC26-6.2-01"
+      ],
+      "strandIds": [
+        "6.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "explain",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A learner intended to enter age 26 but entered 62. The permitted range is 0–120. Explain the validation result, how verification could help, and why neither proves correctness.",
+        "vi": "Learner định nhập age 26 nhưng nhập 62. Permitted range là 0–120. Giải thích validation result, verification có thể giúp thế nào và vì sao cả hai không prove correctness."
+      },
+      "hint": {
+        "en": "62 is reasonable under the rule but differs from the source value.",
+        "vi": "62 reasonable theo rule nhưng khác source value."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "62 passes validation because it lies within 0–120, showing that validation checks only the declared rule. Visual verification against the source or an independent second entry of 26 would expose the mismatch. Both support integrity by detecting classes of error, but a wrong source or repeated identical error can still pass.",
+          "vi": "62 pass validation vì nằm trong 0–120, cho thấy validation chỉ check declared rule. Visual verification với source hoặc independent second entry 26 sẽ làm lộ mismatch. Cả hai hỗ trợ integrity bằng cách detect class of error, nhưng wrong source hoặc repeated identical error vẫn có thể pass."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q07-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-01-01"
+            ],
+            "point": {
+              "en": "States that validation tests the declared rule/reasonableness.",
+              "vi": "Nêu validation test declared rule/reasonableness."
+            }
+          },
+          {
+            "id": "P1-CP06-Q07-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-01-01"
+            ],
+            "point": {
+              "en": "Correctly concludes that 62 passes but can remain wrong.",
+              "vi": "Kết luận đúng rằng 62 pass nhưng vẫn có thể wrong."
+            }
+          },
+          {
+            "id": "P1-CP06-Q07-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-01-01"
+            ],
+            "point": {
+              "en": "Explains verification as comparison with a source or independent entry.",
+              "vi": "Giải thích verification là comparison với source hoặc independent entry."
+            }
+          },
+          {
+            "id": "P1-CP06-Q07-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-01-01"
+            ],
+            "point": {
+              "en": "Explains how both reduce integrity risk without guaranteeing correctness.",
+              "vi": "Giải thích cả hai giảm integrity risk nhưng không guarantee correctness."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "validation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q08",
+      "level": "faded",
+      "requirementIds": [
+        "REQ-6.2-02-01",
+        "REQ-6.2-02-02",
+        "REQ-6.2-02-03",
+        "REQ-6.2-02-04"
+      ],
+      "objectiveIds": [
+        "AC26-6.2-02"
+      ],
+      "strandIds": [
+        "6.2"
+      ],
+      "ao": "AO1",
+      "commandWord": "apply",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "A workshop form requires age 12–18 inclusive, code AA-9999, an eight-character member ID and a non-empty emergency contact. Name and apply the four validation checks to age 18, code A7-2048, ID AB204981 and a blank contact.",
+        "vi": "Workshop form yêu cầu age 12–18 inclusive, code AA-9999, member ID tám character và non-empty emergency contact. Nêu và apply bốn validation check cho age 18, code A7-2048, ID AB204981 và blank contact."
+      },
+      "hint": {
+        "en": "Use range, format, length and presence.",
+        "vi": "Dùng range, format, length và presence."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "Use an inclusive range check: 18 passes. Use a format check: A7-2048 fails because the second position is not an uppercase letter. Use a length check: AB204981 has eight characters and passes. Use a presence check: the blank contact fails. Passing these checks would still not prove the values are the intended real-world values.",
+          "vi": "Dùng inclusive range check: 18 pass. Dùng format check: A7-2048 fail vì position thứ hai không phải uppercase letter. Dùng length check: AB204981 có tám character và pass. Dùng presence check: blank contact fail. Pass các check này vẫn không prove value là intended real-world value."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q08-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-01"
+            ],
+            "point": {
+              "en": "Selects range check and applies the inclusive upper boundary correctly.",
+              "vi": "Chọn range check và apply inclusive upper boundary đúng."
+            }
+          },
+          {
+            "id": "P1-CP06-Q08-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-01"
+            ],
+            "point": {
+              "en": "States both lower and upper bounds for the range.",
+              "vi": "Nêu cả lower và upper bound cho range."
+            }
+          },
+          {
+            "id": "P1-CP06-Q08-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-02"
+            ],
+            "point": {
+              "en": "Selects format check and identifies the wrong second character.",
+              "vi": "Chọn format check và xác định wrong second character."
+            }
+          },
+          {
+            "id": "P1-CP06-Q08-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-03"
+            ],
+            "point": {
+              "en": "Selects length check and counts eight characters correctly.",
+              "vi": "Chọn length check và count đúng tám character."
+            }
+          },
+          {
+            "id": "P1-CP06-Q08-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-04"
+            ],
+            "point": {
+              "en": "Selects presence check and rejects the empty required field.",
+              "vi": "Chọn presence check và reject empty required field."
+            }
+          },
+          {
+            "id": "P1-CP06-Q08-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-04"
+            ],
+            "point": {
+              "en": "Keeps the valid-versus-correct limitation explicit.",
+              "vi": "Giữ valid-versus-correct limitation rõ ràng."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "validation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q09",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-6.2-02-05",
+        "REQ-6.2-02-06",
+        "REQ-6.2-02-07"
+      ],
+      "objectiveIds": [
+        "AC26-6.2-02"
+      ],
+      "strandIds": [
+        "6.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "apply",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 6,
+      "prompt": {
+        "en": "A library terminal accepts only member IDs stored in MEMBER, allows overdueCount ≤ 3, and validates identifier 4725 with weights 1,3,1,3 by appending the digit that makes the weighted sum a multiple of 10. Apply existence, limit and check-digit validation.",
+        "vi": "Library terminal chỉ nhận member ID có trong MEMBER, cho overdueCount ≤ 3, và validate identifier 4725 bằng weight 1,3,1,3 rồi append digit làm weighted sum thành multiple of 10. Apply existence, limit và check-digit validation."
+      },
+      "hint": {
+        "en": "Search membership, test one upper bound, then calculate 4×1+7×3+2×1+5×3.",
+        "vi": "Search membership, test một upper bound rồi calculate 4×1+7×3+2×1+5×3."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "An ID passes existence only if found in MEMBER. The upper-limit rule is overdueCount ≤ 3, so 3 passes and 4 fails; it is not a two-bound range. The weighted sum for 4725 is 42, so append 8 to reach 50 and form 47258. The check digit detects many entry errors but cannot prove this is the intended identifier.",
+          "vi": "ID chỉ pass existence nếu có trong MEMBER. Upper-limit rule là overdueCount ≤ 3, nên 3 pass và 4 fail; đây không phải two-bound range. Weighted sum cho 4725 là 42, nên append 8 để đạt 50 và tạo 47258. Check digit detect nhiều entry error nhưng không prove đây là intended identifier."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q09-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-05"
+            ],
+            "point": {
+              "en": "Explains existence as membership of the specified MEMBER data store.",
+              "vi": "Giải thích existence là membership của specified MEMBER data store."
+            }
+          },
+          {
+            "id": "P1-CP06-Q09-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-05"
+            ],
+            "point": {
+              "en": "States that existence does not prove a wider real-world claim.",
+              "vi": "Nêu existence không prove wider real-world claim."
+            }
+          },
+          {
+            "id": "P1-CP06-Q09-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-06"
+            ],
+            "point": {
+              "en": "Applies the one-sided upper limit: 3 passes and 4 fails.",
+              "vi": "Apply one-sided upper limit: 3 pass và 4 fail."
+            }
+          },
+          {
+            "id": "P1-CP06-Q09-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-06"
+            ],
+            "point": {
+              "en": "Distinguishes the one-sided limit from a two-bound range.",
+              "vi": "Phân biệt one-sided limit với two-bound range."
+            }
+          },
+          {
+            "id": "P1-CP06-Q09-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-07"
+            ],
+            "point": {
+              "en": "Calculates weighted sum 42 and check digit 8, giving 47258.",
+              "vi": "Calculate weighted sum 42 và check digit 8, tạo 47258."
+            }
+          },
+          {
+            "id": "P1-CP06-Q09-M6",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-02-07"
+            ],
+            "point": {
+              "en": "States the error-detection rather than correctness guarantee boundary.",
+              "vi": "Nêu error-detection boundary thay vì correctness guarantee."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "validation",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q10",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-6.2-03-01",
+        "REQ-6.2-03-02"
+      ],
+      "objectiveIds": [
+        "AC26-6.2-03"
+      ],
+      "strandIds": [
+        "6.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "evaluate",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 4,
+      "prompt": {
+        "en": "A source form shows AX-70419. The first entry is AX-70491 and an independent second entry is AX-70419. Explain how visual and double-entry verification respond and give one shared limitation.",
+        "vi": "Source form ghi AX-70419. First entry là AX-70491 và independent second entry là AX-70419. Giải thích visual và double-entry verification phản hồi thế nào và nêu một shared limitation."
+      },
+      "hint": {
+        "en": "Compare first with the source, then compare the two entries.",
+        "vi": "Compare first với source rồi compare hai entry."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "A visual check compares AX-70491 with the source AX-70419 and finds the transposed digits. Double entry compares AX-70491 with the independent AX-70419 and reports a mismatch, so the source must be checked. Either method can miss an error through inattention or the same wrong value being repeated.",
+          "vi": "Visual check compare AX-70491 với source AX-70419 và tìm transposed digit. Double entry compare AX-70491 với independent AX-70419 và report mismatch nên phải check source. Mỗi method có thể miss error do inattention hoặc cùng wrong value bị repeat."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q10-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-01"
+            ],
+            "point": {
+              "en": "Explains visual comparison with the original source.",
+              "vi": "Giải thích visual comparison với original source."
+            }
+          },
+          {
+            "id": "P1-CP06-Q10-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-01"
+            ],
+            "point": {
+              "en": "Identifies the transposed digits by visual checking.",
+              "vi": "Xác định transposed digit bằng visual checking."
+            }
+          },
+          {
+            "id": "P1-CP06-Q10-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-02"
+            ],
+            "point": {
+              "en": "Explains independent second entry and automatic mismatch comparison.",
+              "vi": "Giải thích independent second entry và automatic mismatch comparison."
+            }
+          },
+          {
+            "id": "P1-CP06-Q10-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-02"
+            ],
+            "point": {
+              "en": "States a repeated-error or human-attention limitation.",
+              "vi": "Nêu repeated-error hoặc human-attention limitation."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "verification-transfer",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q11",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-6.2-03-03"
+      ],
+      "objectiveIds": [
+        "AC26-6.2-03"
+      ],
+      "strandIds": [
+        "6.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "trace",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "Use even parity. First calculate the parity bit for data bits 1011001. Then a parity block reports wrong parity in row 2 and column 3 after exactly one bit changed. Locate it and evaluate the limit.",
+        "vi": "Dùng even parity. Trước hết calculate parity bit cho data bit 1011001. Sau đó parity block report wrong parity ở row 2 và column 3 sau exactly one bit change. Locate bit và evaluate limit."
+      },
+      "hint": {
+        "en": "There are four existing 1-bits; intersect the only wrong row and column.",
+        "vi": "Có bốn 1-bit; intersect wrong row và column duy nhất."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "1011001 contains four 1-bits, already even, so the parity bit is 0. In the block, the changed bit is at row 2, column 3 under the declared one-error model. Row and column checks provide the intersection. Even numbers or other multiple-bit changes can preserve parity or create ambiguity, so detection and correction are not guaranteed.",
+          "vi": "1011001 có bốn 1-bit, đã even, nên parity bit là 0. Trong block, changed bit ở row 2, column 3 theo declared one-error model. Row và column check tạo intersection. Even number hoặc multiple-bit change khác có thể preserve parity hoặc tạo ambiguity nên detection và correction không guaranteed."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q11-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-03"
+            ],
+            "point": {
+              "en": "Counts four 1-bits and gives parity bit 0.",
+              "vi": "Count bốn 1-bit và nêu parity bit 0."
+            }
+          },
+          {
+            "id": "P1-CP06-Q11-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-03"
+            ],
+            "point": {
+              "en": "Uses the wrong row to locate row 2.",
+              "vi": "Dùng wrong row để locate row 2."
+            }
+          },
+          {
+            "id": "P1-CP06-Q11-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-03"
+            ],
+            "point": {
+              "en": "Uses the wrong column to locate column 3.",
+              "vi": "Dùng wrong column để locate column 3."
+            }
+          },
+          {
+            "id": "P1-CP06-Q11-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-03"
+            ],
+            "point": {
+              "en": "Gives the row-2/column-3 intersection under the one-error model.",
+              "vi": "Nêu intersection row-2/column-3 theo one-error model."
+            }
+          },
+          {
+            "id": "P1-CP06-Q11-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-03"
+            ],
+            "point": {
+              "en": "Explains that multiple-bit changes may be ambiguous or undetected.",
+              "vi": "Giải thích multiple-bit change có thể ambiguous hoặc undetected."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "verification-transfer",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    },
+    {
+      "id": "P1-CP06-Q12",
+      "level": "independent",
+      "requirementIds": [
+        "REQ-6.2-03-04"
+      ],
+      "objectiveIds": [
+        "AC26-6.2-03"
+      ],
+      "strandIds": [
+        "6.2"
+      ],
+      "ao": "AO2",
+      "commandWord": "trace",
+      "responseProduct": "structured-response",
+      "novelContext": true,
+      "marks": 5,
+      "prompt": {
+        "en": "A teaching checksum is the sum of bytes modulo 256. The sender has 48, 73 and 126; during transfer 73 changes to 74. Trace sender and receiver checksums and explain the result and limitation.",
+        "vi": "Teaching checksum là sum của byte modulo 256. Sender có 48, 73 và 126; khi transfer 73 change thành 74. Trace sender và receiver checksum rồi giải thích result và limitation."
+      },
+      "hint": {
+        "en": "Sender sum is 247; receiver sum is 248.",
+        "vi": "Sender sum là 247; receiver sum là 248."
+      },
+      "solution": {
+        "modelAnswer": {
+          "en": "The sender calculates 48+73+126 = 247 and transmits the block plus checksum 247. The receiver calculates 48+74+126 = 248 and compares it with 247. The mismatch detects likely corruption and can trigger rejection or retransmission. A matching modulo-256 checksum would still not prove perfect transfer because different changes can cancel or collide.",
+          "vi": "Sender calculate 48+73+126 = 247 và transmit block cùng checksum 247. Receiver calculate 48+74+126 = 248 rồi compare với 247. Mismatch detect likely corruption và có thể trigger rejection hoặc retransmission. Matching modulo-256 checksum vẫn không prove perfect transfer vì different change có thể cancel hoặc collide."
+        },
+        "markingPoints": [
+          {
+            "id": "P1-CP06-Q12-M1",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-04"
+            ],
+            "point": {
+              "en": "Calculates sender checksum 247.",
+              "vi": "Calculate sender checksum 247."
+            }
+          },
+          {
+            "id": "P1-CP06-Q12-M2",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-04"
+            ],
+            "point": {
+              "en": "States that data and checksum 247 are transmitted.",
+              "vi": "Nêu data và checksum 247 được transmit."
+            }
+          },
+          {
+            "id": "P1-CP06-Q12-M3",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-04"
+            ],
+            "point": {
+              "en": "Calculates receiver checksum 248 with the changed byte.",
+              "vi": "Calculate receiver checksum 248 với changed byte."
+            }
+          },
+          {
+            "id": "P1-CP06-Q12-M4",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-04"
+            ],
+            "point": {
+              "en": "Compares 248 with 247 and detects likely corruption/retransmission need.",
+              "vi": "Compare 248 với 247 và detect likely corruption/retransmission need."
+            }
+          },
+          {
+            "id": "P1-CP06-Q12-M5",
+            "marks": 1,
+            "requirementIds": [
+              "REQ-6.2-03-04"
+            ],
+            "point": {
+              "en": "Explains checksum collision/cancelling-change limitation.",
+              "vi": "Giải thích checksum collision/cancelling-change limitation."
+            }
+          }
+        ],
+        "rubric": [
+          {
+            "en": "Award each marking point independently; accept technically equivalent wording.",
+            "vi": "Chấm từng marking point độc lập; chấp nhận diễn đạt tương đương và đúng kỹ thuật."
+          },
+          {
+            "en": "This is an AlgoCore-original question and marking guide, not an official Cambridge item.",
+            "vi": "Đây là câu hỏi và hướng dẫn chấm AlgoCore tự biên soạn, không phải câu Cambridge chính thức."
+          }
+        ],
+        "alternatives": []
+      },
+      "revisitLessonSlug": "verification-transfer",
+      "origin": "original",
+      "claim_kind": "algocore_guidance"
+    }
+  ]
+}

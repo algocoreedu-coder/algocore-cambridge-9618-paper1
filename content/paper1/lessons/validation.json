@@ -1,0 +1,692 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L39",
+  "slug": "validation",
+  "sectionId": "6",
+  "strandId": "6.2",
+  "title": {
+    "en": "Validation, limit checks and check digits",
+    "vi": "Validation, limit check và check digit"
+  },
+  "question": {
+    "en": "Which rule should test this input, and what does a pass actually prove?",
+    "vi": "Rule nào nên test input này, và pass thực sự prove điều gì?"
+  },
+  "opening": {
+    "en": "Validation is precise rule application. Choose the named method from the field and requirement, declare its parameters, apply it and keep the correctness boundary visible.",
+    "vi": "Validation là áp dụng rule chính xác. Chọn named method từ field và requirement, declare parameter, apply rồi giữ correctness boundary rõ ràng."
+  },
+  "objectives": [
+    {
+      "id": "AC26-6.2-01",
+      "text": {
+        "en": "Describe how validation and verification help protect data integrity.",
+        "vi": "Mô tả validation và verification giúp bảo vệ data integrity thế nào."
+      }
+    },
+    {
+      "id": "AC26-6.2-02",
+      "text": {
+        "en": "Describe and use the seven validation methods named in the 2026 syllabus.",
+        "vi": "Mô tả và dùng bảy validation method được nêu trong syllabus 2026."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-6.2-01-01",
+    "REQ-6.2-02-01",
+    "REQ-6.2-02-02",
+    "REQ-6.2-02-03",
+    "REQ-6.2-02-04",
+    "REQ-6.2-02-05",
+    "REQ-6.2-02-06",
+    "REQ-6.2-02-07"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L39-theory-1",
+      "title": {
+        "en": "Validation and verification protect integrity differently",
+        "vi": "Validation và verification bảo vệ integrity theo cách khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "Validation applies declared rules to input, checking that it has an acceptable form or value. Verification compares entered data with a source or checks data after transfer.",
+          "vi": "Validation áp dụng declared rule cho input, kiểm tra form hoặc value có acceptable không. Verification compare entered data với source hoặc check data sau transfer."
+        },
+        {
+          "en": "Both reduce errors and support integrity, but neither proves real-world correctness. An age of 62 can pass a valid range when the intended age was 26.",
+          "vi": "Cả hai giảm error và hỗ trợ integrity, nhưng không chứng minh real-world correctness. Age 62 có thể pass valid range khi intended age là 26."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "For the 2026 syllabus, check digit belongs to validation.",
+          "vi": "Theo syllabus 2026, check digit thuộc validation."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L39-theory-2",
+      "title": {
+        "en": "Four checks for shape and boundaries",
+        "vi": "Bốn check cho shape và boundary"
+      },
+      "paragraphs": [
+        {
+          "en": "A range check uses both lower and upper bounds. A format check tests an agreed pattern. A length check tests the number or permitted range of characters. A presence check rejects a required field that is empty.",
+          "vi": "Range check dùng cả lower và upper bound. Format check test agreed pattern. Length check test số hoặc permitted range của character. Presence check reject required field đang empty."
+        },
+        {
+          "en": "Rules need precise parameters: whether boundaries are inclusive, which characters occupy each position, how spaces count and which fields are mandatory.",
+          "vi": "Rule cần parameter chính xác: boundary có inclusive không, character nào ở mỗi position, space được count thế nào và field nào mandatory."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Displaying a date in a chosen style is presentation; rejecting input that breaks a pattern is validation.",
+          "vi": "Display date theo chosen style là presentation; reject input phá pattern là validation."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L39-theory-3",
+      "title": {
+        "en": "Existence, one-sided limits and check digits",
+        "vi": "Existence, one-sided limit và check digit"
+      },
+      "paragraphs": [
+        {
+          "en": "An existence check looks for a value or item in an authorised list or data store. A limit check tests one upper or lower bound, unlike a range with two bounds.",
+          "vi": "Existence check tìm value hoặc item trong authorised list hay data store. Limit check test một upper hoặc lower bound, khác range có hai bound."
+        },
+        {
+          "en": "A check digit is calculated from the other digits under a declared algorithm. Entry software recalculates and compares it. Matching catches many likely entry errors but does not guarantee that the identifier is the intended one.",
+          "vi": "Check digit được tính từ các digit khác theo declared algorithm. Entry software tính lại và compare. Matching bắt được nhiều likely entry error nhưng không guarantee identifier là intended one."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Type, consistency and uniqueness checks are useful enrichment, not part of the seven named 2026 methods here.",
+          "vi": "Type, consistency và uniqueness check là enrichment hữu ích, không thuộc bảy method được nêu trong syllabus 2026 ở đây."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Validate a workshop booking",
+      "vi": "Validate workshop booking"
+    },
+    "prompt": {
+      "en": "A form accepts a participant code, event code, age and emergency-contact field. Apply one declared rule at a time.",
+      "vi": "Form nhận participant code, event code, age và emergency-contact field. Áp dụng từng declared rule."
+    },
+    "steps": [
+      {
+        "id": "P1-L39-worked-1",
+        "action": {
+          "en": "Define the rules.",
+          "vi": "Định nghĩa rule."
+        },
+        "result": {
+          "en": "Age must be 12–18 inclusive; participant code must match AA-9999; emergency contact is required; event code must exist in the event table.",
+          "vi": "Age phải từ 12–18 inclusive; participant code phải match AA-9999; emergency contact là required; event code phải exist trong event table."
+        }
+      },
+      {
+        "id": "P1-L39-worked-2",
+        "action": {
+          "en": "Test boundaries and structure.",
+          "vi": "Test boundary và structure."
+        },
+        "result": {
+          "en": "Ages 12 and 18 pass the range; 11 and 19 fail. Code AB-4072 passes the format and length rules.",
+          "vi": "Age 12 và 18 pass range; 11 và 19 fail. Code AB-4072 pass format và length rule."
+        }
+      },
+      {
+        "id": "P1-L39-worked-3",
+        "action": {
+          "en": "Test presence and existence.",
+          "vi": "Test presence và existence."
+        },
+        "result": {
+          "en": "A blank emergency contact fails presence. Event E17 passes only if E17 is present in the authorised event table.",
+          "vi": "Blank emergency contact fail presence. Event E17 chỉ pass nếu E17 có trong authorised event table."
+        }
+      },
+      {
+        "id": "P1-L39-worked-4",
+        "action": {
+          "en": "State the correctness boundary.",
+          "vi": "Nêu correctness boundary."
+        },
+        "result": {
+          "en": "Age 16 can pass every declared rule even if the participant is actually 15, so validation does not prove correctness.",
+          "vi": "Age 16 có thể pass mọi declared rule dù participant thực sự 15, nên validation không chứng minh correctness."
+        }
+      }
+    ],
+    "result": {
+      "en": "A validation answer states the rule, parameters, test result and what the result cannot prove.",
+      "vi": "Validation answer nêu rule, parameter, test result và điều result không thể prove."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for two bounds, one bound, a pattern, a character count, an empty field, a reference list or a calculated digit.",
+        "vi": "Tìm two bound, one bound, pattern, character count, empty field, reference list hoặc calculated digit."
+      },
+      {
+        "en": "Use the exact input and declared parameters before deciding pass or fail.",
+        "vi": "Dùng exact input và declared parameter trước khi quyết định pass hay fail."
+      }
+    ],
+    "method": [
+      {
+        "en": "Name the most specific syllabus check and state its rule.",
+        "vi": "Nêu syllabus check cụ thể nhất và rule của nó."
+      },
+      {
+        "en": "Apply the rule, state pass/fail, then state the correctness boundary.",
+        "vi": "Apply rule, nêu pass/fail rồi nêu correctness boundary."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "A range check and a limit check are the same.",
+          "vi": "Range check và limit check giống nhau."
+        },
+        "correction": {
+          "en": "A range has lower and upper bounds; a limit check has one lower or upper bound.",
+          "vi": "Range có lower và upper bound; limit check có một lower hoặc upper bound."
+        }
+      },
+      {
+        "mistake": {
+          "en": "An existence check proves the person or claim is real.",
+          "vi": "Existence check chứng minh person hoặc claim là thật."
+        },
+        "correction": {
+          "en": "It only proves that the tested value appears in the specified list or data store.",
+          "vi": "Nó chỉ chứng minh tested value xuất hiện trong specified list hoặc data store."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A check digit is verification in the 2026 syllabus.",
+          "vi": "Check digit là verification trong syllabus 2026."
+        },
+        "correction": {
+          "en": "The current syllabus explicitly lists check digit under validation; visual and double entry are the named entry-verification methods.",
+          "vi": "Syllabus hiện hành nêu check digit dưới validation; visual và double entry là entry-verification method được nêu."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L39-recognise-1",
+        "title": {
+          "en": "One bound or two?",
+          "vi": "Một bound hay hai?"
+        },
+        "setup": {
+          "en": "A stock quantity must be no greater than 400; no lower bound is declared.",
+          "vi": "Stock quantity phải không lớn hơn 400; không declared lower bound."
+        },
+        "prompt": {
+          "en": "Choose range or limit and explain.",
+          "vi": "Chọn range hoặc limit và giải thích."
+        },
+        "expectedEvidence": {
+          "en": "Use an upper-limit check because only one boundary, quantity ≤ 400, is tested.",
+          "vi": "Dùng upper-limit check vì chỉ test một boundary, quantity ≤ 400."
+        }
+      },
+      {
+        "id": "P1-L39-recognise-2",
+        "title": {
+          "en": "Valid but wrong",
+          "vi": "Valid nhưng wrong"
+        },
+        "setup": {
+          "en": "A learner enters 62 instead of 26; the age range is 0–120.",
+          "vi": "Learner nhập 62 thay vì 26; age range là 0–120."
+        },
+        "prompt": {
+          "en": "State the result and limitation.",
+          "vi": "Nêu result và limitation."
+        },
+        "expectedEvidence": {
+          "en": "62 passes the range check but remains the wrong intended value; validation cannot establish real-world correctness.",
+          "vi": "62 pass range check nhưng vẫn là wrong intended value; validation không establish real-world correctness."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-01-01",
+      "requirementId": "REQ-6.2-01-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how validation and verification can both protect integrity without proving correctness.",
+        "vi": "Giải thích validation và verification cùng bảo vệ integrity mà không chứng minh correctness thế nào."
+      },
+      "hint": {
+        "en": "Contrast rule checking with comparison to a source or transferred result.",
+        "vi": "Contrast rule checking với comparison tới source hoặc transferred result."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Validation tests input against declared rules such as bounds or a pattern. Verification compares entered data with a source or checks whether transferred data changed. Both detect classes of error and reduce integrity risk, but a plausible repeated or source error can still pass, so neither proves the value matches reality.",
+          "vi": "Validation test input theo declared rule như bound hoặc pattern. Verification compare entered data với source hoặc check transferred data có change không. Cả hai detect các class of error và giảm integrity risk, nhưng plausible repeated hoặc source error vẫn có thể pass, nên không cái nào prove value khớp reality."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "validation",
+        "verification",
+        "integrity"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-01",
+      "requirementId": "REQ-6.2-02-01",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "A course accepts ages from 14 to 19 inclusive. Apply a range check to 14, 19 and 20.",
+        "vi": "Course nhận age từ 14 tới 19 inclusive. Apply range check cho 14, 19 và 20."
+      },
+      "hint": {
+        "en": "A range has two inclusive bounds here.",
+        "vi": "Range có hai inclusive bound ở đây."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The rule is 14 ≤ age ≤ 19. Values 14 and 19 pass because the boundaries are inclusive. Value 20 fails because it exceeds the upper bound.",
+          "vi": "Rule là 14 ≤ age ≤ 19. Value 14 và 19 pass vì boundary inclusive. Value 20 fail vì vượt upper bound."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "range-check",
+        "boundary"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-02",
+      "requirementId": "REQ-6.2-02-02",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "A locker code must follow the pattern two uppercase letters, a hyphen and four digits. Apply a format check to ZX-2048 and Z2-2048.",
+        "vi": "Locker code phải theo pattern hai uppercase letter, hyphen và bốn digit. Apply format check cho ZX-2048 và Z2-2048."
+      },
+      "hint": {
+        "en": "Check each character position against the pattern.",
+        "vi": "Check từng character position theo pattern."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "ZX-2048 passes because positions 1–2 are uppercase letters, position 3 is a hyphen and positions 4–7 are digits. Z2-2048 fails because position 2 is a digit where an uppercase letter is required.",
+          "vi": "ZX-2048 pass vì position 1–2 là uppercase letter, position 3 là hyphen và position 4–7 là digit. Z2-2048 fail vì position 2 là digit nơi yêu cầu uppercase letter."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "format-check"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-03",
+      "requirementId": "REQ-6.2-02-03",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "A membership number must contain exactly eight characters. Apply a length check to AB204981 and AB20498.",
+        "vi": "Membership number phải có đúng tám character. Apply length check cho AB204981 và AB20498."
+      },
+      "hint": {
+        "en": "Count characters, including letters and digits.",
+        "vi": "Count character gồm cả letter và digit."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "AB204981 has eight characters and passes. AB20498 has seven characters and fails. Length alone does not check the meaning or pattern of those characters.",
+          "vi": "AB204981 có tám character và pass. AB20498 có bảy character và fail. Length riêng lẻ không check meaning hoặc pattern của các character đó."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "length-check"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-04",
+      "requirementId": "REQ-6.2-02-04",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a presence check should handle a required emergency-contact field containing an empty string.",
+        "vi": "Giải thích presence check xử lý required emergency-contact field chứa empty string thế nào."
+      },
+      "hint": {
+        "en": "Presence checks empty versus non-empty, not correctness.",
+        "vi": "Presence check empty so với non-empty, không check correctness."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The empty field fails because the declared rule requires a value. A non-empty value would pass presence even if it were incorrect or in an unsuitable format, so other checks may also be needed.",
+          "vi": "Empty field fail vì declared rule yêu cầu value. Non-empty value sẽ pass presence dù incorrect hoặc ở unsuitable format, nên có thể cần check khác."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "presence-check"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-05",
+      "requirementId": "REQ-6.2-02-05",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "An event code must occur in the current EVENT table. Explain how an existence check handles E17 when only E11, E14 and E18 are stored.",
+        "vi": "Event code phải có trong EVENT table hiện tại. Giải thích existence check xử lý E17 khi chỉ lưu E11, E14 và E18."
+      },
+      "hint": {
+        "en": "Test membership of the declared data store.",
+        "vi": "Test membership của declared data store."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The system searches the permitted values in EVENT. E17 is absent, so the input fails the existence check. The result only says the code is not in this table; it does not establish any wider real-world fact.",
+          "vi": "System search permitted value trong EVENT. E17 absent nên input fail existence check. Result chỉ nói code không có trong table này; không establish real-world fact rộng hơn."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "existence-check"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-06",
+      "requirementId": "REQ-6.2-02-06",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "A delivery weight must be at least 0 kg and no upper bound is stated. Apply the correct check to −0.5 and 0.",
+        "vi": "Delivery weight phải ít nhất 0 kg và không stated upper bound. Apply check đúng cho −0.5 và 0."
+      },
+      "hint": {
+        "en": "One lower bound means a lower-limit check.",
+        "vi": "Một lower bound nghĩa là lower-limit check."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Use a lower-limit check with weight ≥ 0. Value −0.5 fails and 0 passes. It is not a range check because no upper bound is part of the rule.",
+          "vi": "Dùng lower-limit check với weight ≥ 0. Value −0.5 fail và 0 pass. Đây không phải range check vì không có upper bound trong rule."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "limit-check"
+      ]
+    },
+    {
+      "id": "P1-L39-CHECK-REQ-6.2-02-07",
+      "requirementId": "REQ-6.2-02-07",
+      "kind": "apply",
+      "level": "independent",
+      "prompt": {
+        "en": "A four-digit identifier uses weights 1,3,1,3. Add the weighted products, then choose the digit that makes the total a multiple of 10. Calculate the check digit for 4725 and state one limitation.",
+        "vi": "Identifier bốn digit dùng weight 1,3,1,3. Cộng weighted product rồi chọn digit làm total thành multiple of 10. Tính check digit cho 4725 và nêu một limitation."
+      },
+      "hint": {
+        "en": "The weighted sum is 4×1 + 7×3 + 2×1 + 5×3.",
+        "vi": "Weighted sum là 4×1 + 7×3 + 2×1 + 5×3."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The weighted sum is 42. The appended check digit is 8 because 42 + 8 = 50, a multiple of 10, so the full identifier is 47258. Recalculation can detect many entry errors, but another wrong identifier may produce the same valid result, so it does not prove correctness.",
+          "vi": "Weighted sum là 42. Appended check digit là 8 vì 42 + 8 = 50, một multiple of 10, nên full identifier là 47258. Recalculation có thể detect nhiều entry error, nhưng wrong identifier khác có thể tạo cùng valid result nên không prove correctness."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "check-digit",
+        "validation"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Name the seven validation checks and distinguish range from limit.",
+      "vi": "Nêu bảy validation check và phân biệt range với limit."
+    },
+    "answerPoints": [
+      {
+        "en": "Range, format, length, presence, existence, limit and check digit. A range has lower and upper bounds; a limit has one lower or upper bound.",
+        "vi": "Range, format, length, presence, existence, limit và check digit. Range có lower và upper bound; limit có một lower hoặc upper bound."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "validation",
+      "meaning": {
+        "en": "Checking input against declared rules or criteria.",
+        "vi": "Kiểm input theo declared rule hoặc criterion."
+      }
+    },
+    {
+      "term": "range check",
+      "meaning": {
+        "en": "A validation check with both lower and upper bounds.",
+        "vi": "Validation check có cả lower và upper bound."
+      }
+    },
+    {
+      "term": "limit check",
+      "meaning": {
+        "en": "A validation check with one lower or one upper bound.",
+        "vi": "Validation check có một lower hoặc một upper bound."
+      }
+    },
+    {
+      "term": "existence check",
+      "meaning": {
+        "en": "Testing whether a value or item is present in a specified list or data store.",
+        "vi": "Test value hoặc item có trong specified list hay data store không."
+      }
+    },
+    {
+      "term": "check digit",
+      "meaning": {
+        "en": "A digit calculated from other digits under a declared error-detection rule.",
+        "vi": "Digit được tính từ các digit khác theo declared error-detection rule."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "security-foundations",
+    "verification-transfer"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §6.1–6.2, printed/PDF p. 24",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L39 · Chapter 6 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C06",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 6, printed pp. 169–171 and 176–177; PDF pp. 185–187 and 192–193",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L39",
+  "contractCoverage": {
+    "B01": [
+      "P1-L39-objectives"
+    ],
+    "B02": [
+      "P1-L39-theory-1",
+      "P1-L39-theory-2",
+      "P1-L39-theory-3"
+    ],
+    "B03": [
+      "P1-L39-theory-1",
+      "P1-L39-theory-2",
+      "P1-L39-theory-3"
+    ],
+    "B04": [
+      "P1-L39-recognise-1",
+      "P1-L39-recognise-2"
+    ],
+    "B05": [
+      "P1-L39-worked-1",
+      "P1-L39-worked-2",
+      "P1-L39-worked-3",
+      "P1-L39-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L39"
+    ],
+    "B07": [
+      "P1-L39-CHECK-REQ-6.2-01-01",
+      "P1-L39-CHECK-REQ-6.2-02-01",
+      "P1-L39-CHECK-REQ-6.2-02-02",
+      "P1-L39-CHECK-REQ-6.2-02-03",
+      "P1-L39-CHECK-REQ-6.2-02-04",
+      "P1-L39-CHECK-REQ-6.2-02-05",
+      "P1-L39-CHECK-REQ-6.2-02-06",
+      "P1-L39-CHECK-REQ-6.2-02-07"
+    ],
+    "B08": [
+      "P1-L39-recognise-1",
+      "P1-L39-recognise-2"
+    ],
+    "B09": [
+      "P1-L39-recall"
+    ],
+    "B10": [
+      "P1-L39-glossary"
+    ],
+    "B11": [
+      "P1-L39-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

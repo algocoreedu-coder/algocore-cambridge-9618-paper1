@@ -6,6 +6,7 @@ const loaders: Record<string, () => Promise<{ default: unknown }>> = {
   "3": () => import("@/content/paper1/practice/chapter-3.json"),
   "4": () => import("@/content/paper1/practice/chapter-4.json"),
   "5": () => import("@/content/paper1/practice/chapter-5.json"),
+  "6": () => import("@/content/paper1/practice/chapter-6.json"),
 };
 
 export async function getPaper1ChapterPractice(chapterId = "1"): Promise<Paper1ChapterPractice | undefined> {

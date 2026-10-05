@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "auditId": "P1-C06-ATLAS-AUDIT-2026-10-04",
+  "chapterId": "6",
+  "syllabus": "Cambridge International AS & A Level Computer Science 9618, examination 2026",
+  "authority": {
+    "syllabusLocator": "2026 syllabus, Paper 1 Sections 6.1–6.2, printed/PDF p24",
+    "coursebookLocator": "Coursebook Chapter 6, printed pages 159–177 / PDF pages 175–193",
+    "learnerVisualOrigin": "AlgoCore-original"
+  },
+  "taxonomy": {
+    "allowedDispositions": [
+      "INLINE_UNDERSTAND",
+      "INLINE_OBSERVE_SCENE",
+      "INLINE_WORKED_EXAMPLE",
+      "INLINE_RECOGNISE",
+      "LESSON_REFERENCE_DISCLOSURE",
+      "CHAPTER_ATLAS_ONLY",
+      "DUPLICATE_OR_REMOVE"
+    ],
+    "renderStatuses": [
+      "not-rendered-source-pointer"
+    ],
+    "referenceStatuses": [
+      "mapped-to-original-learner-visual"
+    ]
+  },
+  "copyrightBoundary": {
+    "en": "Every BOOK-C06 ID is a source/audit pointer only. Public actors, records, messages, bit grids, values, labels and transitions are AlgoCore-original and do not reproduce coursebook scans, product screenshots, photographs, activity layouts, data or examination diagrams.",
+    "vi": "Mỗi BOOK-C06 ID chỉ là pointer nguồn/audit. Actor, record, message, bit grid, giá trị, nhãn và transition trên public runtime là sản phẩm gốc AlgoCore; không sao chép scan, screenshot sản phẩm, ảnh, bố cục activity, dữ liệu hoặc exam diagram từ coursebook."
+  },
+  "inventory": {
+    "totalIds": 25,
+    "uniqueIds": 25,
+    "mappingCount": 28,
+    "lessonMappingCounts": {
+      "P1-L37": 1,
+      "P1-L38": 7,
+      "P1-L39": 7,
+      "P1-L40": 13
+    },
+    "dispositionCounts": {
+      "INLINE_UNDERSTAND": 3,
+      "INLINE_OBSERVE_SCENE": 4,
+      "INLINE_WORKED_EXAMPLE": 4,
+      "INLINE_RECOGNISE": 1,
+      "LESSON_REFERENCE_DISCLOSURE": 7,
+      "CHAPTER_ATLAS_ONLY": 3,
+      "DUPLICATE_OR_REMOVE": 3
+    },
+    "zeroAtlasLessonIds": []
+  },
+  "items": [
+    {
+      "atlasId": "BOOK-C06-P161-F6-1",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L37",
+          "replacementVisualId": "VIS-P1-L37"
+        },
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.1, p161",
+      "rationale": {
+        "en": "Login fields anchor authentication and the trust boundary; the public model separates identity checking from authorisation without copying product UI.",
+        "vi": "Trường đăng nhập khóa khái niệm authentication và trust boundary; model public tách kiểm tra danh tính khỏi authorisation mà không sao chép UI sản phẩm."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P162-F6-2",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.2, p162",
+      "rationale": {
+        "en": "The firewall path supports a rule checkpoint; the original trace shows allow/block/log states and retains remaining risk.",
+        "vi": "Luồng firewall hỗ trợ checkpoint theo rule; trace gốc thể hiện allow/block/log và vẫn nêu rủi ro còn lại."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P164-F6-3",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.3, p164",
+      "rationale": {
+        "en": "A fingerprint is optional biometric context, not proof of perfect matching or a separate assessed mechanism.",
+        "vi": "Fingerprint là context biometric tuỳ chọn, không chứng minh matching hoàn hảo hoặc tạo cơ chế thi riêng."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P164-F6-4",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.4, p164",
+      "rationale": {
+        "en": "Retina matching adds optional comparison context; the public lesson uses an abstract original pattern and no biometric photograph.",
+        "vi": "Retina matching bổ sung context so sánh; bài public dùng pattern trừu tượng gốc và không dùng ảnh sinh trắc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P167-F6-5",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.5, p167",
+      "rationale": {
+        "en": "The recovery map is background beyond the named 6.1 threat list and must not displace required threats and controls.",
+        "vi": "Bản đồ recovery là bối cảnh ngoài danh sách threat 6.1 và không được lấn át các threat/control bắt buộc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P168-SAVE-PASSWORD",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, Activity 6A part 3c, p168",
+      "rationale": {
+        "en": "Saving a password requires device and policy context; the source remains optional and no absolute yes/no rule is taught.",
+        "vi": "Lưu password phụ thuộc bối cảnh thiết bị và policy; nguồn chỉ là tham khảo và không dạy quy tắc yes/no tuyệt đối."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P168-PHISHING-MAIL",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L38",
+          "replacementVisualId": "VIS-P1-L38"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 6, Activity 6A part 3d, p168",
+      "rationale": {
+        "en": "Sender, lure and link support a causal phishing path; the runtime uses a new inert message with no live link.",
+        "vi": "Sender, lure và link hỗ trợ phishing path có nhân quả; runtime dùng message mới không hoạt động và không có link thật."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P169-DATE-FORMAT",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, prior-knowledge screenshot, p169",
+      "rationale": {
+        "en": "The source repairs the misconception that display formatting is input validation; no product screenshot is rendered.",
+        "vi": "Nguồn sửa ngộ nhận rằng display formatting là input validation; không render screenshot sản phẩm."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P170-T6-1",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 6, Table 6.1, p170",
+      "rationale": {
+        "en": "The taxonomy is rebuilt to the seven 2026 methods; type, consistency and uniqueness remain enrichment.",
+        "vi": "Taxonomy được dựng lại theo bảy method 2026; type, consistency và uniqueness chỉ là mở rộng."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P171-F6-6",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        }
+      ],
+      "disposition": "INLINE_UNDERSTAND",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.6, p171",
+      "rationale": {
+        "en": "The check-digit structure is reconstructed with an original identifier and an explicitly illustrative rule.",
+        "vi": "Cấu trúc check digit được dựng lại bằng identifier gốc và rule minh hoạ ghi rõ."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P171-MOD11",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 6, unnumbered modulo-11 layout, p171",
+      "rationale": {
+        "en": "The ordered arithmetic supports an original weighted-mod-11 validation trace under the 2026 syllabus classification.",
+        "vi": "Phép tính theo thứ tự hỗ trợ trace validation weighted-mod-11 gốc theo phân loại syllabus 2026."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P177-EXAM-MOD11",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 6, end-of-chapter question 1b, p177",
+      "rationale": {
+        "en": "This repeats the mechanism in an old examination layout; the original fixture replaces it.",
+        "vi": "Pointer lặp cơ chế trong bố cục đề cũ; fixture gốc thay thế nó."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P176-ACT6B-FORM",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        },
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 6, Activity 6B question 2, p176",
+      "rationale": {
+        "en": "The form is shared enrichment for choosing validation and verification methods; no activity layout is copied inline.",
+        "vi": "Form là phần mở rộng dùng chung để chọn validation/verification; không sao chép bố cục activity inline."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P176-ACT6B-RECORD",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L39",
+          "replacementVisualId": "VIS-P1-L39"
+        },
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "CHAPTER_ATLAS_ONLY",
+      "sourceLocator": "Coursebook Chapter 6, Activity 6B question 3, p176",
+      "rationale": {
+        "en": "The record is shared field-by-field enrichment; original lesson fixtures replace the copied task.",
+        "vi": "Record là phần mở rộng dùng chung theo field; fixture bài học gốc thay task sao chép."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P172-F6-7",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.7, p172",
+      "rationale": {
+        "en": "The calculation order supports an original direct-sum modulo-256 checksum trace with a collision limitation.",
+        "vi": "Thứ tự phép tính hỗ trợ trace checksum direct-sum modulo 256 gốc kèm giới hạn collision."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P173-F6-8",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.8, p173",
+      "rationale": {
+        "en": "The parity-bit position is useful orientation but not a mechanism separate from the worked parity trace.",
+        "vi": "Vị trí parity bit hữu ích để định hướng nhưng không phải cơ chế riêng ngoài worked parity trace."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P173-F6-9",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.9, p173",
+      "rationale": {
+        "en": "The public packet uses new bits to generate even/odd parity under an explicit parity-bit convention.",
+        "vi": "Packet public dùng bit mới để sinh even/odd parity theo convention vị trí parity bit rõ ràng."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P173-F6-10",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 6, Figure 6.10, p173",
+      "rationale": {
+        "en": "Sent/received bytes support a causal one-bit detection trace with the changed index exposed.",
+        "vi": "Byte gửi/nhận hỗ trợ trace phát hiện một bit có nhân quả và hiện rõ index thay đổi."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P173-ACT6E",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, extension activity 6E, p173",
+      "rationale": {
+        "en": "The items are optional parity-generation practice and are not reproduced.",
+        "vi": "Các item là bài tập sinh parity tuỳ chọn và không được sao chép."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P174-ACT6F",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "LESSON_REFERENCE_DISCLOSURE",
+      "sourceLocator": "Coursebook Chapter 6, extension activity 6F, p174",
+      "rationale": {
+        "en": "The items optionally reinforce checking but duplicate the core detect/no-detect packet.",
+        "vi": "Các item tuỳ chọn củng cố checking nhưng lặp packet detect/no-detect core."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P174-T6-2",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "INLINE_WORKED_EXAMPLE",
+      "sourceLocator": "Coursebook Chapter 6, Table 6.2, p174",
+      "rationale": {
+        "en": "An original row/column grid locates one flipped bit and declares the single-error assumption.",
+        "vi": "Grid row/column gốc định vị một bit đổi và nêu rõ giả định single error."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P176-ACT6B-BLOCK",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 6, Activity 6B question 1, p176",
+      "rationale": {
+        "en": "This duplicates block parity and is replaced by original detected and undetected fixtures.",
+        "vi": "Pointer lặp block parity và được thay bằng fixture phát hiện/không phát hiện gốc."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P177-EXAM-BLOCK",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "DUPLICATE_OR_REMOVE",
+      "sourceLocator": "Coursebook Chapter 6, end-of-chapter question 3, p177",
+      "rationale": {
+        "en": "The old examination table duplicates block parity and is removed to avoid copying the question layout.",
+        "vi": "Bảng đề cũ lặp block parity và bị loại để tránh sao chép bố cục câu hỏi."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P175-CORRECTED-BYTE",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "INLINE_OBSERVE_SCENE",
+      "sourceLocator": "Coursebook Chapter 6, unnumbered corrected byte, p175",
+      "rationale": {
+        "en": "The final state corrects one bit only after a unique failed-row/failed-column intersection.",
+        "vi": "State cuối chỉ sửa một bit sau khi có giao row/column fail duy nhất."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    },
+    {
+      "atlasId": "BOOK-C06-P175-UNDETECTED",
+      "lessonMappings": [
+        {
+          "lessonId": "P1-L40",
+          "replacementVisualId": "VIS-P1-L40"
+        }
+      ],
+      "disposition": "INLINE_RECOGNISE",
+      "sourceLocator": "Coursebook Chapter 6, unnumbered two-bit-error examples, p175",
+      "rationale": {
+        "en": "An original two-bit/rectangle fixture repairs the misconception that parity pass proves error-free data.",
+        "vi": "Fixture two-bit/rectangle gốc sửa ngộ nhận rằng parity pass chứng minh dữ liệu không lỗi."
+      },
+      "renderStatus": "not-rendered-source-pointer",
+      "referenceStatus": "mapped-to-original-learner-visual"
+    }
+  ]
+}

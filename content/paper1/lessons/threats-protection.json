@@ -1,0 +1,832 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L38",
+  "slug": "threats-protection",
+  "sectionId": "6",
+  "strandId": "6.1",
+  "title": {
+    "en": "Threats and protection",
+    "vi": "Threat và protection"
+  },
+  "question": {
+    "en": "How does a threat reach an asset, and where can a justified control interrupt it?",
+    "vi": "Threat đi tới asset thế nào, và justified control có thể chặn ở đâu?"
+  },
+  "opening": {
+    "en": "Effective security uses layers. First trace the attacker or malware action, then choose a control whose mechanism changes that path and state what risk remains.",
+    "vi": "Security hiệu quả dùng nhiều layer. Trước hết trace attacker hoặc malware action, sau đó chọn control có mechanism làm thay đổi path và nêu risk còn lại."
+  },
+  "objectives": [
+    {
+      "id": "AC26-6.1-03",
+      "text": {
+        "en": "Describe measures that protect stand-alone and networked computer systems.",
+        "vi": "Mô tả measure bảo vệ stand-alone và networked computer system."
+      }
+    },
+    {
+      "id": "AC26-6.1-04",
+      "text": {
+        "en": "Explain threats posed by networks and the internet.",
+        "vi": "Giải thích threat do network và internet gây ra."
+      }
+    },
+    {
+      "id": "AC26-6.1-05",
+      "text": {
+        "en": "Describe methods that restrict the risks posed by threats.",
+        "vi": "Mô tả method hạn chế risk do threat gây ra."
+      }
+    },
+    {
+      "id": "AC26-6.1-06",
+      "text": {
+        "en": "Describe encryption and access rights as methods that protect data.",
+        "vi": "Mô tả encryption và access right như các method bảo vệ data."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-6.1-03-01",
+    "REQ-6.1-03-02",
+    "REQ-6.1-03-03",
+    "REQ-6.1-03-04",
+    "REQ-6.1-04-01",
+    "REQ-6.1-04-02",
+    "REQ-6.1-04-03",
+    "REQ-6.1-04-04",
+    "REQ-6.1-05-01",
+    "REQ-6.1-06-01",
+    "REQ-6.1-06-02"
+  ],
+  "prerequisiteLessonIds": [],
+  "theory": [
+    {
+      "id": "P1-L38-theory-1",
+      "title": {
+        "en": "Identity, authentication and permission",
+        "vi": "Identity, authentication và permission"
+      },
+      "paragraphs": [
+        {
+          "en": "A user account gives an identity within a system. Passwords, biometrics or another authentication technique provide evidence that the claimant controls that identity.",
+          "vi": "User account cung cấp identity trong system. Password, biometric hoặc authentication technique khác cung cấp evidence rằng người yêu cầu kiểm soát identity đó."
+        },
+        {
+          "en": "After authentication, access rights authorise particular data and operations. A digital signature uses cryptographic processing so a receiver can authenticate the source and test message integrity; it is not an image of handwriting and does not hide the message by itself.",
+          "vi": "Sau authentication, access right authorise data và operation cụ thể. Digital signature dùng cryptographic processing để receiver authenticate source và test message integrity; nó không phải ảnh handwriting và không tự ẩn message."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Authentication asks who you are; authorisation asks what that identity may do.",
+          "vi": "Authentication hỏi bạn là ai; authorisation hỏi identity đó được làm gì."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L38-theory-2",
+      "title": {
+        "en": "Controls act at different points",
+        "vi": "Control hoạt động tại các điểm khác nhau"
+      },
+      "paragraphs": [
+        {
+          "en": "A firewall compares incoming and outgoing traffic with configured rules, then allows, blocks or logs it. Anti-virus scans files or behaviour and can block or quarantine suspected malware. Anti-spyware targets hidden monitoring and data collection.",
+          "vi": "Firewall so sánh incoming và outgoing traffic với configured rule rồi allow, block hoặc log. Anti-virus scan file hoặc behaviour và có thể block hay quarantine suspected malware. Anti-spyware nhắm tới hidden monitoring và data collection."
+        },
+        {
+          "en": "Encryption transforms plaintext into ciphertext using a process and key. It can protect data at rest or in transit from being understood after interception or theft, but it does not by itself stop access, copying, deletion or key compromise.",
+          "vi": "Encryption biến plaintext thành ciphertext bằng process và key. Nó có thể bảo vệ data at rest hoặc in transit khỏi bị hiểu sau interception hoặc theft, nhưng không tự ngăn access, copying, deletion hay key compromise."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A named control earns little unless its mechanism fits the stated threat path.",
+          "vi": "Một control name chỉ có ít giá trị nếu mechanism không khớp stated threat path."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L38-theory-3",
+      "title": {
+        "en": "Trace the threat before choosing protection",
+        "vi": "Trace threat trước khi chọn protection"
+      },
+      "paragraphs": [
+        {
+          "en": "Viruses replicate through a host and may alter files or system operation. Spyware secretly monitors activity and sends collected data away. A hacker threat begins with unauthorised access to view, copy, alter, delete or disrupt.",
+          "vi": "Virus replicate qua host và có thể alter file hoặc system operation. Spyware bí mật monitor activity và gửi collected data đi. Hacker threat bắt đầu bằng unauthorised access để view, copy, alter, delete hoặc disrupt."
+        },
+        {
+          "en": "Phishing impersonates a trusted sender and depends on a recipient action. Pharming redirects a user to a fraudulent site, for example through altered name-resolution data, even when the expected address is entered. Mitigation should interrupt the actual path and state remaining risk.",
+          "vi": "Phishing giả mạo trusted sender và phụ thuộc recipient action. Pharming redirect user tới fraudulent site, ví dụ qua altered name-resolution data, ngay cả khi nhập expected address. Mitigation phải interrupt actual path và nêu remaining risk."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Authorised ethical testing is different from the unauthorised hacker threat in the syllabus.",
+          "vi": "Authorised ethical testing khác với unauthorised hacker threat trong syllabus."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Interrupt a credential-theft path",
+      "vi": "Chặn credential-theft path"
+    },
+    "prompt": {
+      "en": "A learner receives a message that imitates the school portal and asks them to sign in through a new link. Trace the attack and choose layered controls.",
+      "vi": "Learner nhận message giả school portal và yêu cầu sign in qua link mới. Trace attack và chọn layered control."
+    },
+    "steps": [
+      {
+        "id": "P1-L38-worked-1",
+        "action": {
+          "en": "Identify the threat.",
+          "vi": "Xác định threat."
+        },
+        "result": {
+          "en": "The deceptive message and required click make this phishing; the message is the entry point.",
+          "vi": "Deceptive message và required click cho thấy đây là phishing; message là entry point."
+        }
+      },
+      {
+        "id": "P1-L38-worked-2",
+        "action": {
+          "en": "Locate the harmful action.",
+          "vi": "Xác định harmful action."
+        },
+        "result": {
+          "en": "The fake page collects the account name and password, allowing later unauthorised authentication attempts.",
+          "vi": "Fake page thu account name và password, cho phép unauthorised authentication attempt sau đó."
+        }
+      },
+      {
+        "id": "P1-L38-worked-3",
+        "action": {
+          "en": "Place controls on the path.",
+          "vi": "Đặt control trên path."
+        },
+        "result": {
+          "en": "Awareness and link inspection reduce the click risk; filtering can block the message; stronger authentication can limit use of a stolen password.",
+          "vi": "Awareness và link inspection giảm click risk; filtering có thể block message; stronger authentication có thể giới hạn việc dùng stolen password."
+        }
+      },
+      {
+        "id": "P1-L38-worked-4",
+        "action": {
+          "en": "State residual risk.",
+          "vi": "Nêu residual risk."
+        },
+        "result": {
+          "en": "A convincing new message or stolen second factor may still succeed, so reporting, account monitoring and rapid credential reset remain necessary.",
+          "vi": "Convincing new message hoặc stolen second factor vẫn có thể thành công, nên reporting, account monitoring và rapid credential reset vẫn cần thiết."
+        }
+      }
+    ],
+    "result": {
+      "en": "The best protection is justified by where it changes the threat path and by what risk remains.",
+      "vi": "Protection tốt nhất được biện minh bởi nơi nó thay đổi threat path và risk nào còn lại."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "Look for the entry point, attacker action, asset, proposed control and remaining risk.",
+        "vi": "Tìm entry point, attacker action, asset, proposed control và remaining risk."
+      },
+      {
+        "en": "For phishing versus pharming, ask whether a deceptive message/action or redirection drives the path.",
+        "vi": "Với phishing và pharming, hỏi path do deceptive message/action hay redirection dẫn dắt."
+      }
+    ],
+    "method": [
+      {
+        "en": "Describe the threat mechanism before naming a control.",
+        "vi": "Mô tả threat mechanism trước khi nêu control."
+      },
+      {
+        "en": "Explain how the control interrupts that mechanism and what it cannot guarantee.",
+        "vi": "Giải thích control chặn mechanism đó thế nào và điều nó không thể guarantee."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Encryption prevents attackers from accessing or deleting data.",
+          "vi": "Encryption ngăn attacker access hoặc delete data."
+        },
+        "correction": {
+          "en": "Encryption limits intelligibility without the key; separate controls restrict access and protect availability.",
+          "vi": "Encryption giới hạn intelligibility nếu thiếu key; control khác giới hạn access và bảo vệ availability."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A firewall or antivirus stops every internet threat.",
+          "vi": "Firewall hoặc antivirus chặn mọi internet threat."
+        },
+        "correction": {
+          "en": "Each control acts at particular points and can be bypassed, misconfigured or unable to correct unsafe user action.",
+          "vi": "Mỗi control hoạt động tại điểm cụ thể và có thể bị bypass, misconfigure hoặc không sửa được unsafe user action."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A digital signature is a scanned signature that keeps a message secret.",
+          "vi": "Digital signature là scanned signature giữ message bí mật."
+        },
+        "correction": {
+          "en": "It is cryptographic evidence for source authentication and integrity; confidentiality needs separate encryption.",
+          "vi": "Đó là cryptographic evidence cho source authentication và integrity; confidentiality cần encryption riêng."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L38-recognise-1",
+        "title": {
+          "en": "Message or redirection?",
+          "vi": "Message hay redirection?"
+        },
+        "setup": {
+          "en": "A user types the correct address but is silently sent to a fake portal.",
+          "vi": "User nhập đúng address nhưng bị silently redirect tới fake portal."
+        },
+        "prompt": {
+          "en": "Name and explain the threat.",
+          "vi": "Nêu và giải thích threat."
+        },
+        "expectedEvidence": {
+          "en": "Pharming: altered redirection/name-resolution information sends the user to a fraudulent site without requiring the phishing-message path.",
+          "vi": "Pharming: altered redirection/name-resolution information đưa user tới fraudulent site mà không cần phishing-message path."
+        }
+      },
+      {
+        "id": "P1-L38-recognise-2",
+        "title": {
+          "en": "Permission after login",
+          "vi": "Permission sau login"
+        },
+        "setup": {
+          "en": "A tutor signs in correctly but tries to delete every learner record.",
+          "vi": "Tutor sign in đúng nhưng cố delete mọi learner record."
+        },
+        "prompt": {
+          "en": "Which control must reject the operation?",
+          "vi": "Control nào phải reject operation?"
+        },
+        "expectedEvidence": {
+          "en": "Access rights/authorisation must deny delete permission even though authentication succeeded.",
+          "vi": "Access right/authorisation phải deny delete permission dù authentication thành công."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-03-01",
+      "requirementId": "REQ-6.1-03-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how accounts, passwords and authentication restrict access to a shared design system.",
+        "vi": "Giải thích accounts, passwords và authentication hạn chế access tới shared design system thế nào."
+      },
+      "hint": {
+        "en": "Separate identity proof from permission.",
+        "vi": "Tách identity proof khỏi permission."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "An account identifies a user. The password or another factor supplies evidence that the claimant controls that account, so the system can accept or reject authentication. After successful authentication, access rights restrict the authenticated identity to permitted data and operations.",
+          "vi": "Account xác định user. Password hoặc factor khác cung cấp evidence rằng claimant kiểm soát account, nên system có thể accept hoặc reject authentication. Sau successful authentication, access right giới hạn authenticated identity vào data và operation được phép."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "account",
+        "password",
+        "authentication"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-03-02",
+      "requirementId": "REQ-6.1-03-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how a digital signature and a fingerprint reader can authenticate in different situations.",
+        "vi": "Mô tả digital signature và fingerprint reader có thể authenticate trong các situation khác nhau thế nào."
+      },
+      "hint": {
+        "en": "Use a cryptographic digest for one and an enrolled template for the other.",
+        "vi": "Dùng cryptographic digest cho một case và enrolled template cho case kia."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A digital signature is created from a digest using the sender's signing process; the receiver verifies it and compares a newly calculated digest to authenticate the source and detect change. A fingerprint reader captures features and compares them with an enrolled template; a threshold decision accepts or rejects, so false results remain possible.",
+          "vi": "Digital signature được tạo từ digest bằng signing process của sender; receiver verify rồi so với digest mới tính để authenticate source và detect change. Fingerprint reader capture feature và compare với enrolled template; threshold decision accept hoặc reject nên false result vẫn có thể xảy ra."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "digital-signature",
+        "biometric"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-03-03",
+      "requirementId": "REQ-6.1-03-03",
+      "kind": "describe",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how firewall, anti-virus and anti-spyware software protect a networked computer.",
+        "vi": "Mô tả firewall, anti-virus và anti-spyware software bảo vệ networked computer thế nào."
+      },
+      "hint": {
+        "en": "Give a distinct mechanism for each control.",
+        "vi": "Nêu mechanism riêng cho mỗi control."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The firewall compares incoming and outgoing traffic with configured rules and allows, blocks or logs it. Anti-virus scans files or behaviour, then blocks, quarantines or removes suspected malware. Anti-spyware looks for unauthorised monitoring or collection such as key logging and blocks or removes it.",
+          "vi": "Firewall so sánh incoming và outgoing traffic với configured rule rồi allow, block hoặc log. Anti-virus scan file hoặc behaviour rồi block, quarantine hoặc remove suspected malware. Anti-spyware tìm unauthorised monitoring hoặc collection như key logging rồi block hoặc remove."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "firewall",
+        "antivirus",
+        "antispyware"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-03-04",
+      "requirementId": "REQ-6.1-03-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how encryption can protect files on a stolen laptop and state one limitation.",
+        "vi": "Giải thích encryption có thể bảo vệ file trên stolen laptop và nêu một limitation."
+      },
+      "hint": {
+        "en": "Use plaintext, ciphertext and a key.",
+        "vi": "Dùng plaintext, ciphertext và key."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Encryption transforms plaintext into ciphertext using an encryption process and key. A thief who reads the storage cannot understand the protected files without suitable decryption and the key. Encryption does not stop the laptop or files being stolen, deleted or copied, and a compromised key removes the protection.",
+          "vi": "Encryption biến plaintext thành ciphertext bằng encryption process và key. Thief đọc storage không thể hiểu protected file nếu thiếu suitable decryption và key. Encryption không ngăn laptop hoặc file bị steal, delete hay copy, và compromised key làm mất protection."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "encryption",
+        "system-protection"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-04-01",
+      "requirementId": "REQ-6.1-04-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how a virus and spyware threaten a classroom computer in different ways.",
+        "vi": "Giải thích virus và spyware threaten classroom computer theo các cách khác nhau."
+      },
+      "hint": {
+        "en": "State the mechanism and consequence of each.",
+        "vi": "Nêu mechanism và consequence của mỗi loại."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "A virus is malicious code that replicates through a host and may alter or delete files or disrupt operation. Spyware secretly monitors activity such as keystrokes and sends collected data to another party, threatening privacy and account security.",
+          "vi": "Virus là malicious code replicate qua host và có thể alter hay delete file hoặc disrupt operation. Spyware bí mật monitor activity như keystroke và gửi collected data tới party khác, đe doạ privacy và account security."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "virus",
+        "spyware"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-04-02",
+      "requirementId": "REQ-6.1-04-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain two threats created when an attacker gains unauthorised access to a booking server.",
+        "vi": "Giải thích hai threat khi attacker gain unauthorised access vào booking server."
+      },
+      "hint": {
+        "en": "Use view/copy/change/delete/disrupt and a consequence.",
+        "vi": "Dùng view/copy/change/delete/disrupt và một consequence."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The attacker can view or copy private customer data for misuse. They can also alter or delete bookings, damaging integrity and availability, or disrupt the service so authorised customers cannot use it. The defining feature is unauthorised access rather than authorised security testing.",
+          "vi": "Attacker có thể view hoặc copy private customer data để misuse. Họ cũng có thể alter hoặc delete booking, làm hỏng integrity và availability, hoặc disrupt service khiến authorised customer không dùng được. Đặc điểm quyết định là unauthorised access chứ không phải authorised security testing."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "hacker",
+        "unauthorised-access"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-04-03",
+      "requirementId": "REQ-6.1-04-03",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain why a message that imitates a parcel company and requests payment through a link is phishing.",
+        "vi": "Giải thích vì sao message giả parcel company và yêu cầu payment qua link là phishing."
+      },
+      "hint": {
+        "en": "Include impersonation and the recipient action.",
+        "vi": "Bao gồm impersonation và recipient action."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The message impersonates a trusted company and creates a reason to act. The link leads to a fraudulent page that asks the recipient to disclose payment or account data. The phishing path depends on the recipient following the link or submitting information.",
+          "vi": "Message impersonate trusted company và tạo lý do để act. Link dẫn tới fraudulent page yêu cầu recipient disclose payment hoặc account data. Phishing path phụ thuộc recipient follow link hoặc submit information."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "phishing"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-04-04",
+      "requirementId": "REQ-6.1-04-04",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how pharming can send a user who typed the expected address to a fraudulent site.",
+        "vi": "Giải thích pharming có thể đưa user đã nhập expected address tới fraudulent site thế nào."
+      },
+      "hint": {
+        "en": "Use redirection or altered name-resolution data.",
+        "vi": "Dùng redirection hoặc altered name-resolution data."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Pharming changes local or network name-resolution/redirection information so the legitimate address resolves to the attacker's site. The user can type the expected address and still reach a convincing fraudulent page, where submitted personal data is captured.",
+          "vi": "Pharming change local hoặc network name-resolution/redirection information để legitimate address resolve tới attacker site. User có thể nhập expected address nhưng vẫn tới convincing fraudulent page, nơi personal data được submit sẽ bị capture."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "pharming"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-05-01",
+      "requirementId": "REQ-6.1-05-01",
+      "kind": "justify",
+      "level": "independent",
+      "prompt": {
+        "en": "A club has seen spyware, phishing messages and repeated login attempts. Justify one control for each and state one remaining risk.",
+        "vi": "Club gặp spyware, phishing message và repeated login attempt. Biện minh một control cho mỗi threat và nêu một remaining risk."
+      },
+      "hint": {
+        "en": "Place each control on its threat path.",
+        "vi": "Đặt mỗi control trên threat path."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "Run updated anti-spyware to detect and remove hidden monitoring; filter messages and train users to inspect senders and links to reduce phishing; use rate limits and stronger multi-factor authentication for repeated logins. No control is absolute: new spyware, convincing messages, misconfiguration or stolen factors can still succeed, so monitoring and reporting remain necessary.",
+          "vi": "Run updated anti-spyware để detect và remove hidden monitoring; filter message và train user inspect sender/link để giảm phishing; dùng rate limit và stronger multi-factor authentication cho repeated login. Không control nào absolute: spyware mới, convincing message, misconfiguration hoặc stolen factor vẫn có thể thành công, nên monitoring và reporting vẫn cần."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "risk-reduction",
+        "residual-risk"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-06-01",
+      "requirementId": "REQ-6.1-06-01",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how encryption protects confidential data sent between two offices.",
+        "vi": "Giải thích encryption bảo vệ confidential data gửi giữa hai office thế nào."
+      },
+      "hint": {
+        "en": "State what an interceptor sees and what legitimate users need.",
+        "vi": "Nêu interceptor thấy gì và legitimate user cần gì."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The sender transforms plaintext into ciphertext with an encryption process and key. An interceptor may obtain the ciphertext but cannot understand the protected content without the appropriate decryption process and key. The authorised receiver uses the required key to recover the plaintext; key protection remains essential.",
+          "vi": "Sender biến plaintext thành ciphertext bằng encryption process và key. Interceptor có thể lấy ciphertext nhưng không hiểu protected content nếu thiếu appropriate decryption process và key. Authorised receiver dùng required key để recover plaintext; key protection vẫn essential."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "encryption",
+        "data-protection"
+      ]
+    },
+    {
+      "id": "P1-L38-CHECK-REQ-6.1-06-02",
+      "requirementId": "REQ-6.1-06-02",
+      "kind": "explain",
+      "level": "independent",
+      "prompt": {
+        "en": "Explain how access rights protect a shared patient-record database after login.",
+        "vi": "Giải thích access right bảo vệ shared patient-record database sau login thế nào."
+      },
+      "hint": {
+        "en": "Use roles and operations, not authentication alone.",
+        "vi": "Dùng role và operation, không chỉ authentication."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "After authentication, the system maps the account to a role and permits only authorised records and operations. A receptionist may view appointment fields but not clinical notes; a clinician may update assigned records; delete or administration rights can be restricted to designated roles. This limits disclosure and unauthorised change.",
+          "vi": "Sau authentication, system map account tới role và chỉ permit authorised record và operation. Receptionist có thể view appointment field nhưng không clinical note; clinician có thể update assigned record; delete hoặc administration right được giới hạn cho designated role. Việc này hạn chế disclosure và unauthorised change."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "access-rights",
+        "authorisation"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Name the four syllabus threats and one control point for each.",
+      "vi": "Nêu bốn syllabus threat và một control point cho mỗi threat."
+    },
+    "answerPoints": [
+      {
+        "en": "Virus/spyware: anti-malware; hacker: authentication/firewall/access rights; phishing: filtering and user link checks; pharming: secure name resolution, browser warnings and anti-malware. Fit the control to the scenario.",
+        "vi": "Virus/spyware: anti-malware; hacker: authentication/firewall/access right; phishing: filtering và user link check; pharming: secure name resolution, browser warning và anti-malware. Phải fit control với scenario."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "authentication",
+      "meaning": {
+        "en": "Checking evidence that a claimant controls an identity.",
+        "vi": "Kiểm tra evidence rằng claimant kiểm soát một identity."
+      }
+    },
+    {
+      "term": "access rights",
+      "meaning": {
+        "en": "Permissions that define which data and operations an authenticated identity may use.",
+        "vi": "Permission xác định data và operation mà authenticated identity được dùng."
+      }
+    },
+    {
+      "term": "firewall",
+      "meaning": {
+        "en": "Hardware or software that filters traffic against configured rules.",
+        "vi": "Hardware hoặc software filter traffic theo configured rule."
+      }
+    },
+    {
+      "term": "malware",
+      "meaning": {
+        "en": "Software or code intended to damage, disrupt or gain unauthorised access.",
+        "vi": "Software hoặc code nhằm damage, disrupt hoặc gain unauthorised access."
+      }
+    },
+    {
+      "term": "phishing",
+      "meaning": {
+        "en": "Deceptive communication that asks a recipient to take an unsafe action.",
+        "vi": "Deceptive communication yêu cầu recipient thực hiện unsafe action."
+      }
+    },
+    {
+      "term": "pharming",
+      "meaning": {
+        "en": "Redirection from an expected address to a fraudulent destination.",
+        "vi": "Redirection từ expected address tới fraudulent destination."
+      }
+    },
+    {
+      "term": "encryption",
+      "meaning": {
+        "en": "Transformation of plaintext into ciphertext using an encryption process and key.",
+        "vi": "Biến plaintext thành ciphertext bằng encryption process và key."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "security-foundations",
+    "validation"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §6.1–6.2, printed/PDF p. 24",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L38 · Chapter 6 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C06",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 6, printed pp. 161–168; PDF pp. 177–184",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L38",
+  "contractCoverage": {
+    "B01": [
+      "P1-L38-objectives"
+    ],
+    "B02": [
+      "P1-L38-theory-1",
+      "P1-L38-theory-2",
+      "P1-L38-theory-3"
+    ],
+    "B03": [
+      "P1-L38-theory-1",
+      "P1-L38-theory-2",
+      "P1-L38-theory-3"
+    ],
+    "B04": [
+      "P1-L38-recognise-1",
+      "P1-L38-recognise-2"
+    ],
+    "B05": [
+      "P1-L38-worked-1",
+      "P1-L38-worked-2",
+      "P1-L38-worked-3",
+      "P1-L38-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L38"
+    ],
+    "B07": [
+      "P1-L38-CHECK-REQ-6.1-03-01",
+      "P1-L38-CHECK-REQ-6.1-03-02",
+      "P1-L38-CHECK-REQ-6.1-03-03",
+      "P1-L38-CHECK-REQ-6.1-03-04",
+      "P1-L38-CHECK-REQ-6.1-04-01",
+      "P1-L38-CHECK-REQ-6.1-04-02",
+      "P1-L38-CHECK-REQ-6.1-04-03",
+      "P1-L38-CHECK-REQ-6.1-04-04",
+      "P1-L38-CHECK-REQ-6.1-05-01",
+      "P1-L38-CHECK-REQ-6.1-06-01",
+      "P1-L38-CHECK-REQ-6.1-06-02"
+    ],
+    "B08": [
+      "P1-L38-recognise-1",
+      "P1-L38-recognise-2"
+    ],
+    "B09": [
+      "P1-L38-recall"
+    ],
+    "B10": [
+      "P1-L38-glossary"
+    ],
+    "B11": [
+      "P1-L38-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}

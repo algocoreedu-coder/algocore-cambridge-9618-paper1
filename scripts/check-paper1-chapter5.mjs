@@ -100,7 +100,8 @@ if (catalog) {
   localized(section?.title, "catalog Section 5 title");
   localized(section?.summary, "catalog Section 5 summary");
   localized(section?.question, "catalog Section 5 question");
-  check(catalog.sections?.filter((entry) => ["6", "7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 6–8 must remain planned");
+  check(catalog.sections?.filter((entry) => ["1", "2", "3", "4", "5"].includes(entry.id)).every((entry) => entry.status === "available"), "catalog: Sections 1–5 must remain available");
+  check(catalog.sections?.filter((entry) => ["6", "7", "8"].includes(entry.id)).every((entry) => ["available", "planned"].includes(entry.status)), "catalog: later sections must retain an explicit available/planned state");
   const strands = catalog.strands?.filter((entry) => entry.sectionId === "5") ?? [];
   check(same(strands.map((entry) => entry.id), ["5.1", "5.2"]), "catalog: Chapter 5 strands/order mismatch");
   strands.forEach((entry) => localized(entry.title, `catalog strand ${entry.id}`));
@@ -124,7 +125,7 @@ if (catalog) {
 }
 
 if (manifest) {
-  check(/chapter-?5/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 5 candidate");
+  check(/^paper1-chapter(?:5|[6-9]|[1-9]\d)-/i.test(manifest.releaseId ?? ""), "release manifest must identify Chapter 5 or a later cumulative candidate");
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lesson IDs");
   for (const item of expected) {
     const released = manifest.lessons?.find((entry) => entry.lessonId === item.lessonId);
@@ -288,7 +289,8 @@ if (atlasAudit) {
 }
 
 if (atlasAudit && visualPlacements) {
-  const sourcePointerLessons = visualPlacements.sourcePointerLessons ?? [];
+  const sourcePointerLessons = (visualPlacements.sourcePointerLessons ?? [])
+    .filter((entry) => lessonIds.has(entry.lessonId));
   const expectedStage = {
     INLINE_UNDERSTAND: "understand",
     INLINE_OBSERVE_SCENE: "observe",

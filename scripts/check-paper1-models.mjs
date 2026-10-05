@@ -4,6 +4,7 @@ import { binaryPlaceValueFixture, bitmapRleFixture, bitmapStorage, characterEnco
 import { bufferOccupancy, circuitRows, controlDecision, evaluateLogicCircuit, logicGateOutput, logicGateRows, memoryEventOutcome, memoryFacts } from "../app/lib/paper1/chapter3-models.ts";
 import { BRANCH_PROGRAM, LOAD_STORE_PROGRAM, PERFORMANCE_CASES, addressModel, addressingFrames, assembleFixture, branchPacketFrames, cpuPacketFrames, cpuTransferFrames, loadStorePacketFrames, mask8, normalizeBoundedInteger, performanceFrames, shift8 } from "../app/lib/paper1/chapter4-models.ts";
 import { DEFRAG_AFTER, DEFRAG_BEFORE, OS_CASES, TRANSLATOR_CASES, UTILITY_CASES, ideFrames, orderedPredictionChoices, osRequestFrames, translatorFrames, utilityFrames } from "../app/lib/paper1/chapter5-models.ts";
+import { SECURITY_INCIDENTS, THREAT_PATHS, VALIDATION_FIXTURES, VERIFICATION_FIXTURES, securityIncidentFrames, threatProtectionFrames, validationFrames, verificationFacts, verificationFrames } from "../app/lib/paper1/chapter6-models.ts";
 
 const checks = [];
 const run = (name, test) => { test(); checks.push(name); };
@@ -291,6 +292,7 @@ run("Chapter 5 IDE authoring and breakpoint execution boundary", () => {
 
 const chapter4Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter4-visual-oracles.json", import.meta.url), "utf8"));
 const chapter5Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter5-visual-oracles.json", import.meta.url), "utf8"));
+const chapter6Oracles = JSON.parse(readFileSync(new URL("../content/paper1/chapter6-visual-oracles.json", import.meta.url), "utf8"));
 const projectDeclared = (actual, declared, path = "fixture") => {
   if (Array.isArray(declared)) {
     assert.ok(Array.isArray(actual), `${path} must be an array`);
@@ -448,4 +450,55 @@ run("Chapter 5 declared visual-oracle parity", () => {
   assertDeclared(debuggingActual, ideOracle.packets.debugging, "P1-L36.debugging");
 });
 
-console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapter 4 and Chapter 5 JSON fixtures compared plus exhaustive shift/mask domains; Chapter 5 finite OS, utility, translator and IDE domains checked)`);
+run("Chapter 6 exhaustive visual-oracle parity", () => {
+  assert.deepEqual(chapter6Oracles.map((entry) => entry.lessonId), ["P1-L37", "P1-L38", "P1-L39", "P1-L40"]);
+  assert.deepEqual(chapter6Oracles.map((entry) => entry.stateCount), [12, 64, 56, 56]);
+  assert.equal(chapter6Oracles.reduce((sum, entry) => sum + entry.stateCount, 0), 188);
+  const selectorCounts = { "P1-L37": 3, "P1-L38": 16, "P1-L39": 14, "P1-L40": 14 };
+  for (const entry of chapter6Oracles) {
+    assert.equal(entry.states.length, entry.stateCount, `${entry.lessonId} oracle state cardinality`);
+    const stateKeys = entry.states.map((state) => `${JSON.stringify(state.selector)}::${state.frameId}`);
+    assert.equal(new Set(stateKeys).size, entry.stateCount, `${entry.lessonId} selector/frame records must be unique`);
+    assert.equal(new Set(entry.states.map((state) => JSON.stringify(state.selector))).size, selectorCounts[entry.lessonId], `${entry.lessonId} selector cardinality`);
+  }
+
+  const oracle = Object.fromEntries(chapter6Oracles.map((entry) => [entry.lessonId, entry]));
+  const compare = (lessonId, entry, frames, path) => {
+    assert.deepEqual(frames.map((frame) => frame.id), oracle[lessonId].frameIds, `${path}.frameIds`);
+    const actual = frames.find((frame) => frame.id === entry.frameId);
+    assert.ok(actual, `${path}.${entry.frameId} missing`);
+    assert.deepEqual({ selector: entry.selector, frameId: actual.id, ticket: actual.ticket, activeIds: actual.activeIds, state: actual.state }, entry, `${path}.${entry.frameId}`);
+    assert.ok(actual.activeIds.length <= 3, `${path}.${entry.frameId} highlights more than three semantic objects`);
+  };
+
+  assert.deepEqual(Object.keys(SECURITY_INCIDENTS), ["stranger-read", "purpose-overshare", "mark-transposition"]);
+  for (const entry of oracle["P1-L37"].states) compare("P1-L37", entry, securityIncidentFrames(entry.selector.incident), `P1-L37.${entry.selector.incident}`);
+  assert.deepEqual(SECURITY_INCIDENTS["stranger-read"].affectedProperties, ["security", "privacy"]);
+  assert.deepEqual(SECURITY_INCIDENTS["mark-transposition"].affectedProperties, ["integrity"]);
+
+  assert.equal(Object.keys(THREAT_PATHS).length, 8);
+  for (const entry of oracle["P1-L38"].states) compare("P1-L38", entry, threatProtectionFrames(entry.selector.path, entry.selector.controlApplied), `P1-L38.${entry.selector.path}.${entry.selector.controlApplied}`);
+  const signed = threatProtectionFrames("changed-signed-message", true).at(-1).state;
+  assert.equal(signed.contentEncrypted, false, "a digital signature must not be presented as encryption");
+  const biometric = threatProtectionFrames("biometric-access", true).at(-1).state;
+  assert.equal(biometric.authenticated, true);
+  assert.equal(biometric.authorised, false, "authentication must remain distinct from authorisation");
+  for (const path of Object.keys(THREAT_PATHS)) assert.notEqual(threatProtectionFrames(path, true).at(-1).state.remainingRisk, "none", `${path} must retain remaining risk`);
+
+  assert.deepEqual(Object.keys(VALIDATION_FIXTURES), ["range", "format", "length", "presence", "existence", "limit", "check-digit"]);
+  for (const entry of oracle["P1-L39"].states) compare("P1-L39", entry, validationFrames(entry.selector.rule, entry.selector.fixture), `P1-L39.${entry.selector.rule}.${entry.selector.fixture}`);
+  assert.notEqual(VALIDATION_FIXTURES.range.passes.condition, VALIDATION_FIXTURES.limit.passes.condition, "range and limit checks must remain distinct");
+  assert.match(VALIDATION_FIXTURES["check-digit"].passes.calculation, /sum=84-remainder=7-check-digit=11-minus-7=4/);
+  for (const fixtures of Object.values(VALIDATION_FIXTURES)) for (const facts of Object.values(fixtures)) assert.equal(facts.factuallyCorrect, false, "validation must not prove factual correctness");
+
+  assert.deepEqual(Object.fromEntries(Object.entries(VERIFICATION_FIXTURES).map(([method, fixtures]) => [method, fixtures.length])), { visual: 2, "double-entry": 3, "byte-parity": 3, "block-parity": 3, checksum: 3 });
+  for (const entry of oracle["P1-L40"].states) compare("P1-L40", entry, verificationFrames(entry.selector.method, entry.selector.fixture), `P1-L40.${entry.selector.method}.${entry.selector.fixture}`);
+  assert.equal(verificationFacts("byte-parity", "two-flips").detected, false, "two flipped bits can preserve byte parity");
+  assert.equal(verificationFacts("block-parity", "rectangle").detected, false, "a four-corner rectangle can preserve row and column parity");
+  assert.equal(verificationFacts("checksum", "compensating").detected, false, "compensating byte changes can preserve the declared modulo-256 checksum");
+  for (const [method, fixtures] of Object.entries(VERIFICATION_FIXTURES)) {
+    for (const fixture of fixtures) assert.ok(Array.isArray(verificationFacts(method, fixture).changedPositions), `${method}.${fixture} must expose changed positions`);
+  }
+});
+
+console.log(`Paper 1 model checks: PASS (${checks.length} named checks; Chapters 4–6 JSON fixtures compared; Chapter 6 covers 188 deterministic security, validation and verification states)`);

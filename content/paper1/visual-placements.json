@@ -2494,6 +2494,997 @@
           "order": 1
         }
       ]
-    }
+    },
+{
+    "lessonId": "P1-L37",
+    "visualId": "VIS-P1-L37",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [
+      {
+        "atlasId": "BOOK-C06-P161-F6-1",
+        "disposition": "INLINE_UNDERSTAND",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.1, p161",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L37",
+        "stage": "understand",
+        "anchor": {
+          "kind": "theory-block",
+          "targetId": "P1-L37-theory-1",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.1-01",
+          "AC26-6.1-02"
+        ],
+        "requirementIds": [
+          "REQ-6.1-01-01",
+          "REQ-6.1-02-01"
+        ],
+        "teachingClaim": {
+          "en": "Login fields anchor authentication and the trust boundary; the public model separates identity checking from authorisation without copying product UI.",
+          "vi": "Trường đăng nhập khóa khái niệm authentication và trust boundary; model public tách kiểm tra danh tính khỏi authorisation mà không sao chép UI sản phẩm."
+        },
+        "learnerAction": {
+          "en": "Read the source-aligned claim, predict the affected rule or control, then locate the same boundary in the original interactive model.",
+          "vi": "Đọc claim đối chiếu nguồn, dự đoán rule hoặc control bị tác động rồi tìm cùng boundary trong interactive model gốc."
+        },
+        "teacherPrompt": {
+          "en": "Which boundary or rule in the model expresses this source-aligned idea?",
+          "vi": "Boundary hoặc rule nào trong model thể hiện ý đối chiếu nguồn này?"
+        },
+        "expectedObservation": {
+          "en": "The learner names the syllabus concept and its protection or validation boundary without an absolute claim.",
+          "vi": "Học sinh nêu đúng khái niệm syllabus và boundary bảo vệ hoặc validation mà không khẳng định tuyệt đối."
+        },
+        "misconceptionOrLimit": {
+          "en": "Login fields anchor authentication and the trust boundary; the public model separates identity checking from authorisation without copying product UI.",
+          "vi": "Trường đăng nhập khóa khái niệm authentication và trust boundary; model public tách kiểm tra danh tính khỏi authorisation mà không sao chép UI sản phẩm."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned understand note for BOOK-C06-P161-F6-1.",
+          "vi": "Ghi chú understand đối chiếu nguồn cho BOOK-C06-P161-F6-1."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.1, p161 is an audit pointer mapped to VIS-P1-L37; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.1, p161 là pointer audit được map tới VIS-P1-L37; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "prepares-dynamic-model",
+        "order": 0
+      }
+    ],
+    "referencePlacements": []
+  },
+  {
+    "lessonId": "P1-L38",
+    "visualId": "VIS-P1-L38",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [
+      {
+        "atlasId": "BOOK-C06-P161-F6-1",
+        "disposition": "INLINE_UNDERSTAND",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.1, p161",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "stage": "understand",
+        "anchor": {
+          "kind": "theory-block",
+          "targetId": "P1-L38-theory-2",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.1-03",
+          "AC26-6.1-04",
+          "AC26-6.1-05",
+          "AC26-6.1-06"
+        ],
+        "requirementIds": [
+          "REQ-6.1-03-01",
+          "REQ-6.1-03-02",
+          "REQ-6.1-03-03",
+          "REQ-6.1-03-04",
+          "REQ-6.1-04-01",
+          "REQ-6.1-04-02",
+          "REQ-6.1-04-03",
+          "REQ-6.1-04-04",
+          "REQ-6.1-05-01",
+          "REQ-6.1-06-01",
+          "REQ-6.1-06-02"
+        ],
+        "teachingClaim": {
+          "en": "Login fields anchor authentication and the trust boundary; the public model separates identity checking from authorisation without copying product UI.",
+          "vi": "Trường đăng nhập khóa khái niệm authentication và trust boundary; model public tách kiểm tra danh tính khỏi authorisation mà không sao chép UI sản phẩm."
+        },
+        "learnerAction": {
+          "en": "Read the source-aligned claim, predict the affected rule or control, then locate the same boundary in the original interactive model.",
+          "vi": "Đọc claim đối chiếu nguồn, dự đoán rule hoặc control bị tác động rồi tìm cùng boundary trong interactive model gốc."
+        },
+        "teacherPrompt": {
+          "en": "Which boundary or rule in the model expresses this source-aligned idea?",
+          "vi": "Boundary hoặc rule nào trong model thể hiện ý đối chiếu nguồn này?"
+        },
+        "expectedObservation": {
+          "en": "The learner names the syllabus concept and its protection or validation boundary without an absolute claim.",
+          "vi": "Học sinh nêu đúng khái niệm syllabus và boundary bảo vệ hoặc validation mà không khẳng định tuyệt đối."
+        },
+        "misconceptionOrLimit": {
+          "en": "Login fields anchor authentication and the trust boundary; the public model separates identity checking from authorisation without copying product UI.",
+          "vi": "Trường đăng nhập khóa khái niệm authentication và trust boundary; model public tách kiểm tra danh tính khỏi authorisation mà không sao chép UI sản phẩm."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned understand note for BOOK-C06-P161-F6-1.",
+          "vi": "Ghi chú understand đối chiếu nguồn cho BOOK-C06-P161-F6-1."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.1, p161 is an audit pointer mapped to VIS-P1-L38; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.1, p161 là pointer audit được map tới VIS-P1-L38; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "prepares-dynamic-model",
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P162-F6-2",
+        "disposition": "INLINE_OBSERVE_SCENE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.2, p162",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "stage": "observe",
+        "anchor": {
+          "kind": "visual-scene",
+          "targetId": "P1-L38-unauthorised-access-applied-checkpoint",
+          "relation": "within"
+        },
+        "objectiveIds": [
+          "AC26-6.1-03",
+          "AC26-6.1-04",
+          "AC26-6.1-05",
+          "AC26-6.1-06"
+        ],
+        "requirementIds": [
+          "REQ-6.1-03-01",
+          "REQ-6.1-03-02",
+          "REQ-6.1-03-03",
+          "REQ-6.1-03-04",
+          "REQ-6.1-04-01",
+          "REQ-6.1-04-02",
+          "REQ-6.1-04-03",
+          "REQ-6.1-04-04",
+          "REQ-6.1-05-01",
+          "REQ-6.1-06-01",
+          "REQ-6.1-06-02"
+        ],
+        "teachingClaim": {
+          "en": "The firewall path supports a rule checkpoint; the original trace shows allow/block/log states and retains remaining risk.",
+          "vi": "Luồng firewall hỗ trợ checkpoint theo rule; trace gốc thể hiện allow/block/log và vẫn nêu rủi ro còn lại."
+        },
+        "learnerAction": {
+          "en": "Commit a prediction, run the mapped scene, then identify the visible state change and the remaining limitation.",
+          "vi": "Chốt dự đoán, chạy scene được map rồi xác định state change quan sát được và limitation còn lại."
+        },
+        "teacherPrompt": {
+          "en": "What changes after the checkpoint, what stays unchanged, and what risk remains?",
+          "vi": "Điều gì thay đổi sau checkpoint, điều gì giữ nguyên và risk nào còn lại?"
+        },
+        "expectedObservation": {
+          "en": "The learner predicts and explains the transition from the displayed before/after evidence, including remaining risk.",
+          "vi": "Học sinh dự đoán và giải thích transition từ evidence trước/sau hiển thị, gồm cả remaining risk."
+        },
+        "misconceptionOrLimit": {
+          "en": "The firewall path supports a rule checkpoint; the original trace shows allow/block/log states and retains remaining risk.",
+          "vi": "Luồng firewall hỗ trợ checkpoint theo rule; trace gốc thể hiện allow/block/log và vẫn nêu rủi ro còn lại."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned observe note for BOOK-C06-P162-F6-2.",
+          "vi": "Ghi chú observe đối chiếu nguồn cho BOOK-C06-P162-F6-2."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.2, p162 is an audit pointer mapped to VIS-P1-L38; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.2, p162 là pointer audit được map tới VIS-P1-L38; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "annotates-dynamic-scene",
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P168-PHISHING-MAIL",
+        "disposition": "INLINE_OBSERVE_SCENE",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6A part 3d, p168",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "stage": "observe",
+        "anchor": {
+          "kind": "visual-scene",
+          "targetId": "P1-L38-phishing-omitted-approach",
+          "relation": "within"
+        },
+        "objectiveIds": [
+          "AC26-6.1-03",
+          "AC26-6.1-04",
+          "AC26-6.1-05",
+          "AC26-6.1-06"
+        ],
+        "requirementIds": [
+          "REQ-6.1-03-01",
+          "REQ-6.1-03-02",
+          "REQ-6.1-03-03",
+          "REQ-6.1-03-04",
+          "REQ-6.1-04-01",
+          "REQ-6.1-04-02",
+          "REQ-6.1-04-03",
+          "REQ-6.1-04-04",
+          "REQ-6.1-05-01",
+          "REQ-6.1-06-01",
+          "REQ-6.1-06-02"
+        ],
+        "teachingClaim": {
+          "en": "Sender, lure and link support a causal phishing path; the runtime uses a new inert message with no live link.",
+          "vi": "Sender, lure và link hỗ trợ phishing path có nhân quả; runtime dùng message mới không hoạt động và không có link thật."
+        },
+        "learnerAction": {
+          "en": "Commit a prediction, run the mapped scene, then identify the visible state change and the remaining limitation.",
+          "vi": "Chốt dự đoán, chạy scene được map rồi xác định state change quan sát được và limitation còn lại."
+        },
+        "teacherPrompt": {
+          "en": "What changes after the checkpoint, what stays unchanged, and what risk remains?",
+          "vi": "Điều gì thay đổi sau checkpoint, điều gì giữ nguyên và risk nào còn lại?"
+        },
+        "expectedObservation": {
+          "en": "The learner predicts and explains the transition from the displayed before/after evidence, including remaining risk.",
+          "vi": "Học sinh dự đoán và giải thích transition từ evidence trước/sau hiển thị, gồm cả remaining risk."
+        },
+        "misconceptionOrLimit": {
+          "en": "Sender, lure and link support a causal phishing path; the runtime uses a new inert message with no live link.",
+          "vi": "Sender, lure và link hỗ trợ phishing path có nhân quả; runtime dùng message mới không hoạt động và không có link thật."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned observe note for BOOK-C06-P168-PHISHING-MAIL.",
+          "vi": "Ghi chú observe đối chiếu nguồn cho BOOK-C06-P168-PHISHING-MAIL."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Activity 6A part 3d, p168 is an audit pointer mapped to VIS-P1-L38; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Activity 6A part 3d, p168 là pointer audit được map tới VIS-P1-L38; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "annotates-dynamic-scene",
+        "order": 1
+      }
+    ],
+    "referencePlacements": [
+      {
+        "atlasId": "BOOK-C06-P164-F6-3",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.3, p164",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "rationale": {
+          "en": "A fingerprint is optional biometric context, not proof of perfect matching or a separate assessed mechanism.",
+          "vi": "Fingerprint là context biometric tuỳ chọn, không chứng minh matching hoàn hảo hoặc tạo cơ chế thi riêng."
+        },
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P164-F6-4",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.4, p164",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "rationale": {
+          "en": "Retina matching adds optional comparison context; the public lesson uses an abstract original pattern and no biometric photograph.",
+          "vi": "Retina matching bổ sung context so sánh; bài public dùng pattern trừu tượng gốc và không dùng ảnh sinh trắc."
+        },
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C06-P167-F6-5",
+        "disposition": "CHAPTER_ATLAS_ONLY",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.5, p167",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "rationale": {
+          "en": "The recovery map is background beyond the named 6.1 threat list and must not displace required threats and controls.",
+          "vi": "Bản đồ recovery là bối cảnh ngoài danh sách threat 6.1 và không được lấn át các threat/control bắt buộc."
+        },
+        "order": 2
+      },
+      {
+        "atlasId": "BOOK-C06-P168-SAVE-PASSWORD",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6A part 3c, p168",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L38",
+        "rationale": {
+          "en": "Saving a password requires device and policy context; the source remains optional and no absolute yes/no rule is taught.",
+          "vi": "Lưu password phụ thuộc bối cảnh thiết bị và policy; nguồn chỉ là tham khảo và không dạy quy tắc yes/no tuyệt đối."
+        },
+        "order": 3
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L39",
+    "visualId": "VIS-P1-L39",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [
+      {
+        "atlasId": "BOOK-C06-P170-T6-1",
+        "disposition": "INLINE_UNDERSTAND",
+        "sourceLocator": "Coursebook Chapter 6, Table 6.1, p170",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "stage": "understand",
+        "anchor": {
+          "kind": "theory-block",
+          "targetId": "P1-L39-theory-1",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-01",
+          "AC26-6.2-02"
+        ],
+        "requirementIds": [
+          "REQ-6.2-01-01",
+          "REQ-6.2-02-01",
+          "REQ-6.2-02-02",
+          "REQ-6.2-02-03",
+          "REQ-6.2-02-04",
+          "REQ-6.2-02-05",
+          "REQ-6.2-02-06",
+          "REQ-6.2-02-07"
+        ],
+        "teachingClaim": {
+          "en": "The taxonomy is rebuilt to the seven 2026 methods; type, consistency and uniqueness remain enrichment.",
+          "vi": "Taxonomy được dựng lại theo bảy method 2026; type, consistency và uniqueness chỉ là mở rộng."
+        },
+        "learnerAction": {
+          "en": "Read the source-aligned claim, predict the affected rule or control, then locate the same boundary in the original interactive model.",
+          "vi": "Đọc claim đối chiếu nguồn, dự đoán rule hoặc control bị tác động rồi tìm cùng boundary trong interactive model gốc."
+        },
+        "teacherPrompt": {
+          "en": "Which boundary or rule in the model expresses this source-aligned idea?",
+          "vi": "Boundary hoặc rule nào trong model thể hiện ý đối chiếu nguồn này?"
+        },
+        "expectedObservation": {
+          "en": "The learner names the syllabus concept and its protection or validation boundary without an absolute claim.",
+          "vi": "Học sinh nêu đúng khái niệm syllabus và boundary bảo vệ hoặc validation mà không khẳng định tuyệt đối."
+        },
+        "misconceptionOrLimit": {
+          "en": "The taxonomy is rebuilt to the seven 2026 methods; type, consistency and uniqueness remain enrichment.",
+          "vi": "Taxonomy được dựng lại theo bảy method 2026; type, consistency và uniqueness chỉ là mở rộng."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned understand note for BOOK-C06-P170-T6-1.",
+          "vi": "Ghi chú understand đối chiếu nguồn cho BOOK-C06-P170-T6-1."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Table 6.1, p170 is an audit pointer mapped to VIS-P1-L39; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Table 6.1, p170 là pointer audit được map tới VIS-P1-L39; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "prepares-dynamic-model",
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P171-F6-6",
+        "disposition": "INLINE_UNDERSTAND",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.6, p171",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "stage": "understand",
+        "anchor": {
+          "kind": "theory-block",
+          "targetId": "P1-L39-theory-3",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-01",
+          "AC26-6.2-02"
+        ],
+        "requirementIds": [
+          "REQ-6.2-01-01",
+          "REQ-6.2-02-01",
+          "REQ-6.2-02-02",
+          "REQ-6.2-02-03",
+          "REQ-6.2-02-04",
+          "REQ-6.2-02-05",
+          "REQ-6.2-02-06",
+          "REQ-6.2-02-07"
+        ],
+        "teachingClaim": {
+          "en": "The check-digit structure is reconstructed with an original identifier and an explicitly illustrative rule.",
+          "vi": "Cấu trúc check digit được dựng lại bằng identifier gốc và rule minh hoạ ghi rõ."
+        },
+        "learnerAction": {
+          "en": "Read the source-aligned claim, predict the affected rule or control, then locate the same boundary in the original interactive model.",
+          "vi": "Đọc claim đối chiếu nguồn, dự đoán rule hoặc control bị tác động rồi tìm cùng boundary trong interactive model gốc."
+        },
+        "teacherPrompt": {
+          "en": "Which boundary or rule in the model expresses this source-aligned idea?",
+          "vi": "Boundary hoặc rule nào trong model thể hiện ý đối chiếu nguồn này?"
+        },
+        "expectedObservation": {
+          "en": "The learner names the syllabus concept and its protection or validation boundary without an absolute claim.",
+          "vi": "Học sinh nêu đúng khái niệm syllabus và boundary bảo vệ hoặc validation mà không khẳng định tuyệt đối."
+        },
+        "misconceptionOrLimit": {
+          "en": "The check-digit structure is reconstructed with an original identifier and an explicitly illustrative rule.",
+          "vi": "Cấu trúc check digit được dựng lại bằng identifier gốc và rule minh hoạ ghi rõ."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned understand note for BOOK-C06-P171-F6-6.",
+          "vi": "Ghi chú understand đối chiếu nguồn cho BOOK-C06-P171-F6-6."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.6, p171 is an audit pointer mapped to VIS-P1-L39; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.6, p171 là pointer audit được map tới VIS-P1-L39; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "prepares-dynamic-model",
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C06-P171-MOD11",
+        "disposition": "INLINE_WORKED_EXAMPLE",
+        "sourceLocator": "Coursebook Chapter 6, unnumbered modulo-11 layout, p171",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "stage": "worked-example",
+        "anchor": {
+          "kind": "worked-step",
+          "targetId": "P1-L39-worked-3",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-01",
+          "AC26-6.2-02"
+        ],
+        "requirementIds": [
+          "REQ-6.2-01-01",
+          "REQ-6.2-02-01",
+          "REQ-6.2-02-02",
+          "REQ-6.2-02-03",
+          "REQ-6.2-02-04",
+          "REQ-6.2-02-05",
+          "REQ-6.2-02-06",
+          "REQ-6.2-02-07"
+        ],
+        "teachingClaim": {
+          "en": "The ordered arithmetic supports an original weighted-mod-11 validation trace under the 2026 syllabus classification.",
+          "vi": "Phép tính theo thứ tự hỗ trợ trace validation weighted-mod-11 gốc theo phân loại syllabus 2026."
+        },
+        "learnerAction": {
+          "en": "Reproduce the ordered calculation or check, compare every intermediate value, then explain the verdict.",
+          "vi": "Tái tạo calculation hoặc check theo thứ tự, so sánh mọi intermediate value rồi giải thích verdict."
+        },
+        "teacherPrompt": {
+          "en": "Which intermediate value proves the final verdict, and under which declared convention?",
+          "vi": "Intermediate value nào chứng minh verdict cuối và theo convention nào đã khai báo?"
+        },
+        "expectedObservation": {
+          "en": "The learner reproduces the declared arithmetic or parity steps and reaches the same deterministic result.",
+          "vi": "Học sinh tái tạo các bước arithmetic hoặc parity đã khai báo và đạt cùng kết quả xác định."
+        },
+        "misconceptionOrLimit": {
+          "en": "The ordered arithmetic supports an original weighted-mod-11 validation trace under the 2026 syllabus classification.",
+          "vi": "Phép tính theo thứ tự hỗ trợ trace validation weighted-mod-11 gốc theo phân loại syllabus 2026."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned worked-example note for BOOK-C06-P171-MOD11.",
+          "vi": "Ghi chú worked-example đối chiếu nguồn cho BOOK-C06-P171-MOD11."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, unnumbered modulo-11 layout, p171 is an audit pointer mapped to VIS-P1-L39; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, unnumbered modulo-11 layout, p171 là pointer audit được map tới VIS-P1-L39; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "transfers-to-worked-example",
+        "order": 0
+      }
+    ],
+    "referencePlacements": [
+      {
+        "atlasId": "BOOK-C06-P169-DATE-FORMAT",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, prior-knowledge screenshot, p169",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "rationale": {
+          "en": "The source repairs the misconception that display formatting is input validation; no product screenshot is rendered.",
+          "vi": "Nguồn sửa ngộ nhận rằng display formatting là input validation; không render screenshot sản phẩm."
+        },
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P177-EXAM-MOD11",
+        "disposition": "DUPLICATE_OR_REMOVE",
+        "sourceLocator": "Coursebook Chapter 6, end-of-chapter question 1b, p177",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "rationale": {
+          "en": "This repeats the mechanism in an old examination layout; the original fixture replaces it.",
+          "vi": "Pointer lặp cơ chế trong bố cục đề cũ; fixture gốc thay thế nó."
+        },
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C06-P176-ACT6B-FORM",
+        "disposition": "CHAPTER_ATLAS_ONLY",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6B question 2, p176",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "rationale": {
+          "en": "The form is shared enrichment for choosing validation and verification methods; no activity layout is copied inline.",
+          "vi": "Form là phần mở rộng dùng chung để chọn validation/verification; không sao chép bố cục activity inline."
+        },
+        "order": 2
+      },
+      {
+        "atlasId": "BOOK-C06-P176-ACT6B-RECORD",
+        "disposition": "CHAPTER_ATLAS_ONLY",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6B question 3, p176",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L39",
+        "rationale": {
+          "en": "The record is shared field-by-field enrichment; original lesson fixtures replace the copied task.",
+          "vi": "Record là phần mở rộng dùng chung theo field; fixture bài học gốc thay task sao chép."
+        },
+        "order": 3
+      }
+    ]
+  },
+  {
+    "lessonId": "P1-L40",
+    "visualId": "VIS-P1-L40",
+    "placementContractVersion": 1,
+    "instructionalPlacements": [
+      {
+        "atlasId": "BOOK-C06-P172-F6-7",
+        "disposition": "INLINE_WORKED_EXAMPLE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.7, p172",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "stage": "worked-example",
+        "anchor": {
+          "kind": "worked-step",
+          "targetId": "P1-L40-worked-2",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-03"
+        ],
+        "requirementIds": [
+          "REQ-6.2-03-01",
+          "REQ-6.2-03-02",
+          "REQ-6.2-03-03",
+          "REQ-6.2-03-04"
+        ],
+        "teachingClaim": {
+          "en": "The calculation order supports an original direct-sum modulo-256 checksum trace with a collision limitation.",
+          "vi": "Thứ tự phép tính hỗ trợ trace checksum direct-sum modulo 256 gốc kèm giới hạn collision."
+        },
+        "learnerAction": {
+          "en": "Reproduce the ordered calculation or check, compare every intermediate value, then explain the verdict.",
+          "vi": "Tái tạo calculation hoặc check theo thứ tự, so sánh mọi intermediate value rồi giải thích verdict."
+        },
+        "teacherPrompt": {
+          "en": "Which intermediate value proves the final verdict, and under which declared convention?",
+          "vi": "Intermediate value nào chứng minh verdict cuối và theo convention nào đã khai báo?"
+        },
+        "expectedObservation": {
+          "en": "The learner reproduces the declared arithmetic or parity steps and reaches the same deterministic result.",
+          "vi": "Học sinh tái tạo các bước arithmetic hoặc parity đã khai báo và đạt cùng kết quả xác định."
+        },
+        "misconceptionOrLimit": {
+          "en": "The calculation order supports an original direct-sum modulo-256 checksum trace with a collision limitation.",
+          "vi": "Thứ tự phép tính hỗ trợ trace checksum direct-sum modulo 256 gốc kèm giới hạn collision."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned worked-example note for BOOK-C06-P172-F6-7.",
+          "vi": "Ghi chú worked-example đối chiếu nguồn cho BOOK-C06-P172-F6-7."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.7, p172 is an audit pointer mapped to VIS-P1-L40; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.7, p172 là pointer audit được map tới VIS-P1-L40; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "transfers-to-worked-example",
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P173-F6-9",
+        "disposition": "INLINE_WORKED_EXAMPLE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.9, p173",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "stage": "worked-example",
+        "anchor": {
+          "kind": "worked-step",
+          "targetId": "P1-L40-worked-3",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-03"
+        ],
+        "requirementIds": [
+          "REQ-6.2-03-01",
+          "REQ-6.2-03-02",
+          "REQ-6.2-03-03",
+          "REQ-6.2-03-04"
+        ],
+        "teachingClaim": {
+          "en": "The public packet uses new bits to generate even/odd parity under an explicit parity-bit convention.",
+          "vi": "Packet public dùng bit mới để sinh even/odd parity theo convention vị trí parity bit rõ ràng."
+        },
+        "learnerAction": {
+          "en": "Reproduce the ordered calculation or check, compare every intermediate value, then explain the verdict.",
+          "vi": "Tái tạo calculation hoặc check theo thứ tự, so sánh mọi intermediate value rồi giải thích verdict."
+        },
+        "teacherPrompt": {
+          "en": "Which intermediate value proves the final verdict, and under which declared convention?",
+          "vi": "Intermediate value nào chứng minh verdict cuối và theo convention nào đã khai báo?"
+        },
+        "expectedObservation": {
+          "en": "The learner reproduces the declared arithmetic or parity steps and reaches the same deterministic result.",
+          "vi": "Học sinh tái tạo các bước arithmetic hoặc parity đã khai báo và đạt cùng kết quả xác định."
+        },
+        "misconceptionOrLimit": {
+          "en": "The public packet uses new bits to generate even/odd parity under an explicit parity-bit convention.",
+          "vi": "Packet public dùng bit mới để sinh even/odd parity theo convention vị trí parity bit rõ ràng."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned worked-example note for BOOK-C06-P173-F6-9.",
+          "vi": "Ghi chú worked-example đối chiếu nguồn cho BOOK-C06-P173-F6-9."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.9, p173 is an audit pointer mapped to VIS-P1-L40; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.9, p173 là pointer audit được map tới VIS-P1-L40; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "transfers-to-worked-example",
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C06-P173-F6-10",
+        "disposition": "INLINE_OBSERVE_SCENE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.10, p173",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "stage": "observe",
+        "anchor": {
+          "kind": "visual-scene",
+          "targetId": "P1-L40-byte-parity-one-flip-verdict",
+          "relation": "within"
+        },
+        "objectiveIds": [
+          "AC26-6.2-03"
+        ],
+        "requirementIds": [
+          "REQ-6.2-03-01",
+          "REQ-6.2-03-02",
+          "REQ-6.2-03-03",
+          "REQ-6.2-03-04"
+        ],
+        "teachingClaim": {
+          "en": "Sent/received bytes support a causal one-bit detection trace with the changed index exposed.",
+          "vi": "Byte gửi/nhận hỗ trợ trace phát hiện một bit có nhân quả và hiện rõ index thay đổi."
+        },
+        "learnerAction": {
+          "en": "Commit a prediction, run the mapped scene, then identify the visible state change and the remaining limitation.",
+          "vi": "Chốt dự đoán, chạy scene được map rồi xác định state change quan sát được và limitation còn lại."
+        },
+        "teacherPrompt": {
+          "en": "What changes after the checkpoint, what stays unchanged, and what risk remains?",
+          "vi": "Điều gì thay đổi sau checkpoint, điều gì giữ nguyên và risk nào còn lại?"
+        },
+        "expectedObservation": {
+          "en": "The learner predicts and explains the transition from the displayed before/after evidence, including remaining risk.",
+          "vi": "Học sinh dự đoán và giải thích transition từ evidence trước/sau hiển thị, gồm cả remaining risk."
+        },
+        "misconceptionOrLimit": {
+          "en": "Sent/received bytes support a causal one-bit detection trace with the changed index exposed.",
+          "vi": "Byte gửi/nhận hỗ trợ trace phát hiện một bit có nhân quả và hiện rõ index thay đổi."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned observe note for BOOK-C06-P173-F6-10.",
+          "vi": "Ghi chú observe đối chiếu nguồn cho BOOK-C06-P173-F6-10."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Figure 6.10, p173 is an audit pointer mapped to VIS-P1-L40; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Figure 6.10, p173 là pointer audit được map tới VIS-P1-L40; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "annotates-dynamic-scene",
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P174-T6-2",
+        "disposition": "INLINE_WORKED_EXAMPLE",
+        "sourceLocator": "Coursebook Chapter 6, Table 6.2, p174",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "stage": "worked-example",
+        "anchor": {
+          "kind": "worked-step",
+          "targetId": "P1-L40-worked-4",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-03"
+        ],
+        "requirementIds": [
+          "REQ-6.2-03-01",
+          "REQ-6.2-03-02",
+          "REQ-6.2-03-03",
+          "REQ-6.2-03-04"
+        ],
+        "teachingClaim": {
+          "en": "An original row/column grid locates one flipped bit and declares the single-error assumption.",
+          "vi": "Grid row/column gốc định vị một bit đổi và nêu rõ giả định single error."
+        },
+        "learnerAction": {
+          "en": "Reproduce the ordered calculation or check, compare every intermediate value, then explain the verdict.",
+          "vi": "Tái tạo calculation hoặc check theo thứ tự, so sánh mọi intermediate value rồi giải thích verdict."
+        },
+        "teacherPrompt": {
+          "en": "Which intermediate value proves the final verdict, and under which declared convention?",
+          "vi": "Intermediate value nào chứng minh verdict cuối và theo convention nào đã khai báo?"
+        },
+        "expectedObservation": {
+          "en": "The learner reproduces the declared arithmetic or parity steps and reaches the same deterministic result.",
+          "vi": "Học sinh tái tạo các bước arithmetic hoặc parity đã khai báo và đạt cùng kết quả xác định."
+        },
+        "misconceptionOrLimit": {
+          "en": "An original row/column grid locates one flipped bit and declares the single-error assumption.",
+          "vi": "Grid row/column gốc định vị một bit đổi và nêu rõ giả định single error."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned worked-example note for BOOK-C06-P174-T6-2.",
+          "vi": "Ghi chú worked-example đối chiếu nguồn cho BOOK-C06-P174-T6-2."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, Table 6.2, p174 is an audit pointer mapped to VIS-P1-L40; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, Table 6.2, p174 là pointer audit được map tới VIS-P1-L40; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "transfers-to-worked-example",
+        "order": 2
+      },
+      {
+        "atlasId": "BOOK-C06-P175-CORRECTED-BYTE",
+        "disposition": "INLINE_OBSERVE_SCENE",
+        "sourceLocator": "Coursebook Chapter 6, unnumbered corrected byte, p175",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "stage": "observe",
+        "anchor": {
+          "kind": "visual-scene",
+          "targetId": "P1-L40-block-parity-one-flip-verdict",
+          "relation": "within"
+        },
+        "objectiveIds": [
+          "AC26-6.2-03"
+        ],
+        "requirementIds": [
+          "REQ-6.2-03-01",
+          "REQ-6.2-03-02",
+          "REQ-6.2-03-03",
+          "REQ-6.2-03-04"
+        ],
+        "teachingClaim": {
+          "en": "The final state corrects one bit only after a unique failed-row/failed-column intersection.",
+          "vi": "State cuối chỉ sửa một bit sau khi có giao row/column fail duy nhất."
+        },
+        "learnerAction": {
+          "en": "Commit a prediction, run the mapped scene, then identify the visible state change and the remaining limitation.",
+          "vi": "Chốt dự đoán, chạy scene được map rồi xác định state change quan sát được và limitation còn lại."
+        },
+        "teacherPrompt": {
+          "en": "What changes after the checkpoint, what stays unchanged, and what risk remains?",
+          "vi": "Điều gì thay đổi sau checkpoint, điều gì giữ nguyên và risk nào còn lại?"
+        },
+        "expectedObservation": {
+          "en": "The learner predicts and explains the transition from the displayed before/after evidence, including remaining risk.",
+          "vi": "Học sinh dự đoán và giải thích transition từ evidence trước/sau hiển thị, gồm cả remaining risk."
+        },
+        "misconceptionOrLimit": {
+          "en": "The final state corrects one bit only after a unique failed-row/failed-column intersection.",
+          "vi": "State cuối chỉ sửa một bit sau khi có giao row/column fail duy nhất."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned observe note for BOOK-C06-P175-CORRECTED-BYTE.",
+          "vi": "Ghi chú observe đối chiếu nguồn cho BOOK-C06-P175-CORRECTED-BYTE."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, unnumbered corrected byte, p175 is an audit pointer mapped to VIS-P1-L40; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, unnumbered corrected byte, p175 là pointer audit được map tới VIS-P1-L40; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "annotates-dynamic-scene",
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C06-P175-UNDETECTED",
+        "disposition": "INLINE_RECOGNISE",
+        "sourceLocator": "Coursebook Chapter 6, unnumbered two-bit-error examples, p175",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "stage": "recognise",
+        "anchor": {
+          "kind": "recognition-item",
+          "targetId": "P1-L40-recognise-1",
+          "relation": "after"
+        },
+        "objectiveIds": [
+          "AC26-6.2-03"
+        ],
+        "requirementIds": [
+          "REQ-6.2-03-01",
+          "REQ-6.2-03-02",
+          "REQ-6.2-03-03",
+          "REQ-6.2-03-04"
+        ],
+        "teachingClaim": {
+          "en": "An original two-bit/rectangle fixture repairs the misconception that parity pass proves error-free data.",
+          "vi": "Fixture two-bit/rectangle gốc sửa ngộ nhận rằng parity pass chứng minh dữ liệu không lỗi."
+        },
+        "learnerAction": {
+          "en": "Classify the trace, cite the evidence that supports the verdict, then reject the named misconception.",
+          "vi": "Phân loại trace, chỉ ra evidence hỗ trợ verdict rồi bác bỏ misconception đã nêu."
+        },
+        "teacherPrompt": {
+          "en": "Which visible evidence distinguishes detection from proof that the data is error-free?",
+          "vi": "Evidence nhìn thấy nào phân biệt detection với việc chứng minh dữ liệu không có lỗi?"
+        },
+        "expectedObservation": {
+          "en": "The learner identifies the detected or undetected case and repairs the documented misconception.",
+          "vi": "Học sinh xác định case detected hoặc undetected và sửa misconception đã ghi."
+        },
+        "misconceptionOrLimit": {
+          "en": "An original two-bit/rectangle fixture repairs the misconception that parity pass proves error-free data.",
+          "vi": "Fixture two-bit/rectangle gốc sửa ngộ nhận rằng parity pass chứng minh dữ liệu không lỗi."
+        },
+        "instructionalCaption": {
+          "en": "Source-aligned recognise note for BOOK-C06-P175-UNDETECTED.",
+          "vi": "Ghi chú recognise đối chiếu nguồn cho BOOK-C06-P175-UNDETECTED."
+        },
+        "textEquivalent": {
+          "en": "Coursebook Chapter 6, unnumbered two-bit-error examples, p175 is an audit pointer mapped to VIS-P1-L40; no coursebook image is rendered.",
+          "vi": "Coursebook Chapter 6, unnumbered two-bit-error examples, p175 là pointer audit được map tới VIS-P1-L40; không hiển thị hình trong sách."
+        },
+        "dynamicRelation": "contrasts-misconception",
+        "order": 0
+      }
+    ],
+    "referencePlacements": [
+      {
+        "atlasId": "BOOK-C06-P176-ACT6B-FORM",
+        "disposition": "CHAPTER_ATLAS_ONLY",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6B question 2, p176",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "The form is shared enrichment for choosing validation and verification methods; no activity layout is copied inline.",
+          "vi": "Form là phần mở rộng dùng chung để chọn validation/verification; không sao chép bố cục activity inline."
+        },
+        "order": 0
+      },
+      {
+        "atlasId": "BOOK-C06-P176-ACT6B-RECORD",
+        "disposition": "CHAPTER_ATLAS_ONLY",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6B question 3, p176",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "The record is shared field-by-field enrichment; original lesson fixtures replace the copied task.",
+          "vi": "Record là phần mở rộng dùng chung theo field; fixture bài học gốc thay task sao chép."
+        },
+        "order": 1
+      },
+      {
+        "atlasId": "BOOK-C06-P173-F6-8",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, Figure 6.8, p173",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "The parity-bit position is useful orientation but not a mechanism separate from the worked parity trace.",
+          "vi": "Vị trí parity bit hữu ích để định hướng nhưng không phải cơ chế riêng ngoài worked parity trace."
+        },
+        "order": 2
+      },
+      {
+        "atlasId": "BOOK-C06-P173-ACT6E",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, extension activity 6E, p173",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "The items are optional parity-generation practice and are not reproduced.",
+          "vi": "Các item là bài tập sinh parity tuỳ chọn và không được sao chép."
+        },
+        "order": 3
+      },
+      {
+        "atlasId": "BOOK-C06-P174-ACT6F",
+        "disposition": "LESSON_REFERENCE_DISCLOSURE",
+        "sourceLocator": "Coursebook Chapter 6, extension activity 6F, p174",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "The items optionally reinforce checking but duplicate the core detect/no-detect packet.",
+          "vi": "Các item tuỳ chọn củng cố checking nhưng lặp packet detect/no-detect core."
+        },
+        "order": 4
+      },
+      {
+        "atlasId": "BOOK-C06-P176-ACT6B-BLOCK",
+        "disposition": "DUPLICATE_OR_REMOVE",
+        "sourceLocator": "Coursebook Chapter 6, Activity 6B question 1, p176",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "This duplicates block parity and is replaced by original detected and undetected fixtures.",
+          "vi": "Pointer lặp block parity và được thay bằng fixture phát hiện/không phát hiện gốc."
+        },
+        "order": 5
+      },
+      {
+        "atlasId": "BOOK-C06-P177-EXAM-BLOCK",
+        "disposition": "DUPLICATE_OR_REMOVE",
+        "sourceLocator": "Coursebook Chapter 6, end-of-chapter question 3, p177",
+        "renderMode": "source-pointer-note",
+        "renderStatus": "not-rendered-source-pointer",
+        "referenceStatus": "mapped-to-original-learner-visual",
+        "replacementVisualId": "VIS-P1-L40",
+        "rationale": {
+          "en": "The old examination table duplicates block parity and is removed to avoid copying the question layout.",
+          "vi": "Bảng đề cũ lặp block parity và bị loại để tránh sao chép bố cục câu hỏi."
+        },
+        "order": 6
+      }
+    ]
+  }
   ]
 }

@@ -5,10 +5,10 @@ const username = process.env.STUDENT_LOGIN_USERNAME ?? process.env.ALGOCORE_STUD
 const password = process.env.STUDENT_LOGIN_PASSWORD ?? process.env.ALGOCORE_STUDENT_PASSWORD;
 if (!username || !password) throw new Error("Paper 1 HTTP check requires local test credentials; values are never printed.");
 const catalog = JSON.parse(fs.readFileSync("content/paper1/catalog.json", "utf8"));
-const chapter5Section = catalog.sections.find((section) => section.id === "5");
-const chapter5Topics = catalog.topics.filter((topic) => topic.sectionId === "5");
-if (chapter5Section?.status !== "available" || chapter5Topics.length !== 4) throw new Error(`Chapter 5 HTTP fixture mismatch: status=${chapter5Section?.status ?? "missing"}, topics=${chapter5Topics.length}`);
-if (!catalog.sections.filter((section) => ["6", "7", "8"].includes(section.id)).every((section) => section.status === "planned")) throw new Error("Sections 6–8 must remain planned during the Chapter 5 release");
+const chapter6Section = catalog.sections.find((section) => section.id === "6");
+const chapter6Topics = catalog.topics.filter((topic) => topic.sectionId === "6");
+if (chapter6Section?.status !== "available" || chapter6Topics.length !== 4) throw new Error(`Chapter 6 HTTP fixture mismatch: status=${chapter6Section?.status ?? "missing"}, topics=${chapter6Topics.length}`);
+if (!catalog.sections.filter((section) => ["7", "8"].includes(section.id)).every((section) => section.status === "planned")) throw new Error("Sections 7–8 must remain planned during the Chapter 6 release");
 const practiceChapters = catalog.sections.filter((section) => section.status === "available").map((section) => {
   const practicePath = `content/paper1/practice/chapter-${section.id}.json`;
   if (!fs.existsSync(practicePath)) throw new Error(`Available Section ${section.id} has no chapter-practice payload`);
@@ -16,6 +16,15 @@ const practiceChapters = catalog.sections.filter((section) => section.status ===
   if (practice.chapterId !== section.id || practice.practiceId !== `P1-CP${section.id.padStart(2, "0")}`) throw new Error(`Section ${section.id} chapter-practice identity mismatch`);
   return practice;
 });
+const unauthenticated = await fetch(`${baseUrl}/paper-1/sections/6?lang=vi`, { redirect: "manual" });
+if (![302, 303, 307, 308].includes(unauthenticated.status)) throw new Error(`Unauthenticated Section 6 request did not redirect: ${unauthenticated.status}`);
+const redirectLocation = unauthenticated.headers.get("location");
+if (!redirectLocation) throw new Error("Unauthenticated Section 6 redirect has no location");
+const redirectTarget = new URL(redirectLocation, baseUrl);
+if (redirectTarget.pathname !== "/login" || redirectTarget.searchParams.get("lang") !== "vi" || redirectTarget.searchParams.get("next") !== "/paper-1/sections/6?lang=vi") {
+  throw new Error(`Unauthenticated redirect did not preserve language/destination: ${redirectTarget.pathname}${redirectTarget.search}`);
+}
+
 const login = await fetch(`${baseUrl}/api/auth/login`, { method: "POST", redirect: "manual", headers: { "content-type": "application/json", origin: baseUrl, "sec-fetch-site": "same-origin" }, body: JSON.stringify({ username, password, next: "/paper-1?lang=en", lang: "en" }) });
 if (login.status !== 200) throw new Error(`Local sign-in failed with ${login.status}`);
 const cookie = (login.headers.get("set-cookie") ?? "").split(";", 1)[0];
@@ -53,5 +62,5 @@ const retired = await fetch(`${baseUrl}/paper-1/atlas?lang=en&visual=BOOK-C03-P0
 if (retired.status !== 404) failures.push(`/paper-1/atlas retired visual: expected 404, got ${retired.status}`);
 if (failures.length) { console.error(`Paper 1 HTTP routes: FAIL (${failures.length})`); failures.forEach((entry) => console.error(`- ${entry}`)); process.exit(1); }
 const explicitLocalizedPages = 2 * (3 + practiceChapters.length + catalog.sections.length + catalog.topics.length);
-if (explicitLocalizedPages !== 104) throw new Error(`Chapter 5 route count mismatch: expected 104 explicit EN/VI pages, got ${explicitLocalizedPages}`);
-console.log(`Paper 1 HTTP routes: PASS (${explicitLocalizedPages} explicit EN/VI pages + English default route; Atlas + legacy practice + ${practiceChapters.length} chapter practice routes; Chapter 5 Section/P1-CP05/4 lesson routes included; ${catalog.topics.length}/${catalog.topics.length} topics with six anchors and visual IDs; unknown topic/practice and retired Atlas item 404)`);
+if (explicitLocalizedPages !== 114) throw new Error(`Chapter 6 route count mismatch: expected 114 explicit EN/VI pages, got ${explicitLocalizedPages}`);
+console.log(`Paper 1 HTTP routes: PASS (${explicitLocalizedPages} explicit EN/VI pages + English default route; Atlas + legacy practice + ${practiceChapters.length} chapter practice routes; Chapter 6 Section/P1-CP06/4 lesson routes included; ${catalog.topics.length}/${catalog.topics.length} topics with six anchors and visual IDs; language-preserving auth redirect; unknown topic/practice and retired Atlas item 404)`);

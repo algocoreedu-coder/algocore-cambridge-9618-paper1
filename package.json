@@ -20,10 +20,11 @@
     "check:paper1:chapter3": "node scripts/check-paper1-chapter3.mjs",
     "check:paper1:chapter4": "node scripts/check-paper1-chapter4.mjs",
     "check:paper1:chapter5": "node scripts/check-paper1-chapter5.mjs",
+    "check:paper1:chapter6": "node scripts/check-paper1-chapter6.mjs",
     "check:paper1:ux": "node --experimental-strip-types scripts/check-paper1-ux-integrity.mjs",
     "check:paper1:models": "node --experimental-strip-types scripts/check-paper1-models.mjs",
     "check:paper1:http": "node scripts/check-paper1-http.mjs",
-    "verify": "npm run check:paper1:chapter1 && npm run check:paper1:chapter2 && npm run check:paper1:chapter3 && npm run check:paper1:chapter4 && npm run check:paper1:chapter5 && npm run check:paper1:ux && npm run check:paper1:models && npm run typecheck && npm run build"
+    "verify": "npm run check:paper1:chapter1 && npm run check:paper1:chapter2 && npm run check:paper1:chapter3 && npm run check:paper1:chapter4 && npm run check:paper1:chapter5 && npm run check:paper1:chapter6 && npm run check:paper1:ux && npm run check:paper1:models && npm run typecheck && npm run build"
   },
   "dependencies": {
     "fumadocs-core": "16.15.11",

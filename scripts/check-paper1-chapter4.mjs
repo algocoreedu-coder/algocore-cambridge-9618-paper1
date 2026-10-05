@@ -66,7 +66,7 @@ if (catalog) {
   const section = catalog.sections?.find((entry) => entry.id === "4");
   check(section?.status === "available", "catalog: Section 4 must be available");
   localized(section?.title, "catalog Section 4 title"); localized(section?.summary, "catalog Section 4 summary"); localized(section?.question, "catalog Section 4 question");
-  check(catalog.sections?.find((entry) => entry.id === "5")?.status === "available" && catalog.sections?.filter((entry) => ["6", "7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Section 5 must be available and Sections 6–8 must remain planned");
+  check(["5", "6"].every((id) => catalog.sections?.find((entry) => entry.id === id)?.status === "available") && catalog.sections?.filter((entry) => ["7", "8"].includes(entry.id)).every((entry) => entry.status === "planned"), "catalog: Sections 5–6 must be available and Sections 7–8 must remain planned");
   const strands = catalog.strands?.filter((entry) => entry.sectionId === "4") ?? [];
   check(same(strands.map((entry) => entry.id), ["4.1", "4.2", "4.3"]), "catalog: Chapter 4 strands/order mismatch");
   strands.forEach((entry) => localized(entry.title, `catalog strand ${entry.id}`));
@@ -88,7 +88,7 @@ if (catalog) {
 }
 
 if (manifest) {
-  check(/chapter-?[45]/i.test(manifest.releaseId ?? ""), "release manifest must identify a cumulative candidate containing Chapter 4");
+  check(/chapter-?[456]/i.test(manifest.releaseId ?? ""), "release manifest must identify a cumulative candidate containing Chapter 4");
   unique(manifest.lessons?.map((entry) => entry.lessonId) ?? [], "release manifest lesson IDs");
   for (const item of expected) {
     const released = manifest.lessons?.find((entry) => entry.lessonId === item.lessonId);

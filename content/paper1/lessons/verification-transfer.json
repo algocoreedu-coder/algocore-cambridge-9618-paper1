@@ -1,0 +1,547 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "1.0.0",
+  "lessonId": "P1-L40",
+  "slug": "verification-transfer",
+  "sectionId": "6",
+  "strandId": "6.2",
+  "title": {
+    "en": "Verification, parity and checksum",
+    "vi": "Verification, parity và checksum"
+  },
+  "question": {
+    "en": "Which errors can each verification method detect, and which can pass unnoticed?",
+    "vi": "Mỗi verification method detect được error nào, và error nào có thể pass unnoticed?"
+  },
+  "opening": {
+    "en": "Verification compares states. The method is only meaningful when the source, parity convention or checksum algorithm is declared and its detection limit remains visible.",
+    "vi": "Verification compare state. Method chỉ có ý nghĩa khi source, parity convention hoặc checksum algorithm được declare và detection limit vẫn rõ ràng."
+  },
+  "objectives": [
+    {
+      "id": "AC26-6.2-03",
+      "text": {
+        "en": "Describe and use verification during data entry and transfer.",
+        "vi": "Mô tả và dùng verification khi data entry và transfer."
+      }
+    }
+  ],
+  "requirementIds": [
+    "REQ-6.2-03-01",
+    "REQ-6.2-03-02",
+    "REQ-6.2-03-03",
+    "REQ-6.2-03-04"
+  ],
+  "prerequisiteLessonIds": [
+    "P1-L39"
+  ],
+  "theory": [
+    {
+      "id": "P1-L40-theory-1",
+      "title": {
+        "en": "Verification during data entry",
+        "vi": "Verification khi data entry"
+      },
+      "paragraphs": [
+        {
+          "en": "A visual check compares displayed or entered data with the original source. A person performs the comparison, so attention and legibility affect the result.",
+          "vi": "Visual check compare displayed hoặc entered data với original source. Một người thực hiện comparison nên attention và legibility ảnh hưởng result."
+        },
+        {
+          "en": "Double entry captures the same source data independently a second time and compares the entries. A mismatch reveals at least one difference; matching entries can still share the same repeated mistake.",
+          "vi": "Double entry capture cùng source data independently lần hai và compare các entry. Mismatch cho thấy ít nhất một difference; matching entry vẫn có thể cùng lặp một mistake."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Verification detects differences; it does not prevent the original error from occurring.",
+          "vi": "Verification detect difference; nó không prevent original error xảy ra."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L40-theory-2",
+      "title": {
+        "en": "Parity for a byte and a block",
+        "vi": "Parity cho byte và block"
+      },
+      "paragraphs": [
+        {
+          "en": "Sender and receiver agree on even or odd parity. A parity bit is set so the transmitted unit has the agreed number category of 1-bits; the receiver recounts and flags a mismatch.",
+          "vi": "Sender và receiver agree even hoặc odd parity. Parity bit được set để transmitted unit có agreed category về số 1-bit; receiver count lại và flag mismatch."
+        },
+        {
+          "en": "A parity block checks rows and columns. Under a single-bit-error model, the row and column with wrong parity intersect at the changed bit. Multiple changes can be ambiguous, preserve parity or defeat location.",
+          "vi": "Parity block check row và column. Trong single-bit-error model, row và column sai parity giao tại changed bit. Multiple change có thể ambiguous, preserve parity hoặc làm location thất bại."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "Always state the parity convention, bit order and parity-bit position used by the fixture.",
+          "vi": "Luôn nêu parity convention, bit order và parity-bit position của fixture."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    },
+    {
+      "id": "P1-L40-theory-3",
+      "title": {
+        "en": "Checksum comparison",
+        "vi": "Checksum comparison"
+      },
+      "paragraphs": [
+        {
+          "en": "The sender applies a declared algorithm to a block and sends the checksum with the data. The receiver applies the same algorithm to the received block and compares the results.",
+          "vi": "Sender apply declared algorithm cho block và gửi checksum cùng data. Receiver apply cùng algorithm cho received block rồi compare result."
+        },
+        {
+          "en": "A mismatch indicates likely corruption and can trigger rejection or retransmission. A match does not prove perfect delivery because a limited checksum can collide: different blocks can produce the same value.",
+          "vi": "Mismatch cho thấy likely corruption và có thể trigger rejection hoặc retransmission. Match không prove perfect delivery vì limited checksum có thể collide: different block có thể tạo cùng value."
+        }
+      ],
+      "bullets": [
+        {
+          "en": "A modulo-256 sum is one transparent teaching algorithm, not the definition of every checksum.",
+          "vi": "Modulo-256 sum là một transparent teaching algorithm, không phải definition của mọi checksum."
+        }
+      ],
+      "sourceIds": [
+        "SYL-2026",
+        "ALG-P1",
+        "BOOK-C06"
+      ]
+    }
+  ],
+  "workedExample": {
+    "title": {
+      "en": "Locate one changed bit",
+      "vi": "Locate một changed bit"
+    },
+    "prompt": {
+      "en": "A 4×4 even-parity block is received. Row 2 and column 3 have odd parity after one bit changed.",
+      "vi": "Một 4×4 even-parity block được nhận. Row 2 và column 3 có odd parity sau khi một bit change."
+    },
+    "steps": [
+      {
+        "id": "P1-L40-worked-1",
+        "action": {
+          "en": "Confirm the convention.",
+          "vi": "Xác nhận convention."
+        },
+        "result": {
+          "en": "Every completed row and column should contain an even number of 1-bits, including parity cells.",
+          "vi": "Mỗi completed row và column phải có even number of 1-bit, gồm parity cell."
+        }
+      },
+      {
+        "id": "P1-L40-worked-2",
+        "action": {
+          "en": "Check rows.",
+          "vi": "Check row."
+        },
+        "result": {
+          "en": "Only row 2 has the wrong parity, so the changed bit is somewhere in row 2 under the single-error model.",
+          "vi": "Chỉ row 2 sai parity, nên changed bit nằm đâu đó trong row 2 theo single-error model."
+        }
+      },
+      {
+        "id": "P1-L40-worked-3",
+        "action": {
+          "en": "Check columns.",
+          "vi": "Check column."
+        },
+        "result": {
+          "en": "Only column 3 has the wrong parity, narrowing the location to column 3.",
+          "vi": "Chỉ column 3 sai parity, thu hẹp location vào column 3."
+        }
+      },
+      {
+        "id": "P1-L40-worked-4",
+        "action": {
+          "en": "Use the intersection and state the limit.",
+          "vi": "Dùng intersection và nêu limit."
+        },
+        "result": {
+          "en": "The candidate bit is row 2, column 3. This conclusion depends on exactly one changed bit; multiple changes may be ambiguous or undetected.",
+          "vi": "Candidate bit là row 2, column 3. Conclusion này phụ thuộc exactly one changed bit; multiple change có thể ambiguous hoặc undetected."
+        }
+      }
+    ],
+    "result": {
+      "en": "Block parity can locate one error in its declared model, but it is not a guarantee of perfect transmission.",
+      "vi": "Block parity có thể locate một error trong declared model, nhưng không guarantee perfect transmission."
+    }
+  },
+  "recognition": {
+    "cues": [
+      {
+        "en": "For data entry, look for comparison with the source or an independent second entry.",
+        "vi": "Với data entry, tìm comparison với source hoặc independent second entry."
+      },
+      {
+        "en": "For transfer, look for agreed parity or a sender/receiver checksum calculation.",
+        "vi": "Với transfer, tìm agreed parity hoặc sender/receiver checksum calculation."
+      }
+    ],
+    "method": [
+      {
+        "en": "Declare the method, convention or algorithm before calculating.",
+        "vi": "Declare method, convention hoặc algorithm trước khi calculate."
+      },
+      {
+        "en": "Show the comparison, state detected or undetected, then give the method's limit.",
+        "vi": "Show comparison, nêu detected hoặc undetected, rồi nêu limit của method."
+      }
+    ],
+    "misconceptions": [
+      {
+        "mistake": {
+          "en": "Parity detects every transfer error.",
+          "vi": "Parity detect mọi transfer error."
+        },
+        "correction": {
+          "en": "Some even-number or multiple-bit changes preserve the agreed parity and remain undetected.",
+          "vi": "Một số even-number hoặc multiple-bit change preserve agreed parity và không bị detect."
+        }
+      },
+      {
+        "mistake": {
+          "en": "Block parity can always correct corrupted data.",
+          "vi": "Block parity luôn correct được corrupted data."
+        },
+        "correction": {
+          "en": "Row/column intersection locates one changed bit under the declared model; arbitrary multiple errors are not reliably located.",
+          "vi": "Row/column intersection locate một changed bit theo declared model; arbitrary multiple error không được locate reliably."
+        }
+      },
+      {
+        "mistake": {
+          "en": "A matching checksum guarantees the data is correct.",
+          "vi": "Matching checksum guarantee data đúng."
+        },
+        "correction": {
+          "en": "A limited checksum can collide, so matching means no error was detected, not that no error exists.",
+          "vi": "Limited checksum có thể collide, nên matching nghĩa là không error nào được detect, không phải không có error."
+        }
+      }
+    ],
+    "items": [
+      {
+        "id": "P1-L40-recognise-1",
+        "title": {
+          "en": "Entry or transfer?",
+          "vi": "Entry hay transfer?"
+        },
+        "setup": {
+          "en": "A clerk compares a displayed account number with a signed source form.",
+          "vi": "Clerk compare displayed account number với signed source form."
+        },
+        "prompt": {
+          "en": "Name the method and action.",
+          "vi": "Nêu method và action."
+        },
+        "expectedEvidence": {
+          "en": "Visual verification: the person compares each entered character with the original form and corrects a mismatch.",
+          "vi": "Visual verification: người dùng compare từng entered character với original form và correct mismatch."
+        }
+      },
+      {
+        "id": "P1-L40-recognise-2",
+        "title": {
+          "en": "Two bits change",
+          "vi": "Hai bit change"
+        },
+        "setup": {
+          "en": "A byte uses even parity; two data bits flip during transfer.",
+          "vi": "Byte dùng even parity; hai data bit flip khi transfer."
+        },
+        "prompt": {
+          "en": "Can byte parity guarantee detection?",
+          "vi": "Byte parity có guarantee detection không?"
+        },
+        "expectedEvidence": {
+          "en": "No. Two flips can preserve an even number of 1-bits, so the received byte can pass parity while corrupted.",
+          "vi": "Không. Hai flip có thể preserve even number of 1-bit nên received byte có thể pass parity dù corrupted."
+        }
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "id": "P1-L40-CHECK-REQ-6.2-03-01",
+      "requirementId": "REQ-6.2-03-01",
+      "kind": "describe",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe how a visual check verifies a manually entered booking reference and state one limitation.",
+        "vi": "Mô tả visual check verify manually entered booking reference và nêu một limitation."
+      },
+      "hint": {
+        "en": "A person compares the display with the source.",
+        "vi": "Một người compare display với source."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The user compares the entered booking reference character by character with the original document and corrects any difference found. The method can miss an error through inattention or poor source legibility, so a match does not guarantee correctness.",
+          "vi": "User compare entered booking reference từng character với original document và correct difference được tìm thấy. Method có thể miss error do inattention hoặc source khó đọc, nên match không guarantee correctness."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "visual-check",
+        "verification"
+      ]
+    },
+    {
+      "id": "P1-L40-CHECK-REQ-6.2-03-02",
+      "requirementId": "REQ-6.2-03-02",
+      "kind": "describe",
+      "level": "independent",
+      "prompt": {
+        "en": "Describe double-entry verification for a customer identifier and state one undetected case.",
+        "vi": "Mô tả double-entry verification cho customer identifier và nêu một undetected case."
+      },
+      "hint": {
+        "en": "Use an independent second entry and automatic comparison.",
+        "vi": "Dùng independent second entry và automatic comparison."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The identifier is entered independently a second time and the system compares the two entries. A mismatch reveals that at least one entry differs and must be checked. If the same wrong value is entered twice, the entries match and the error remains undetected.",
+          "vi": "Identifier được enter independently lần hai và system compare hai entry. Mismatch cho thấy ít nhất một entry khác và phải được check. Nếu cùng wrong value được enter hai lần, entry match và error không bị detect."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "double-entry",
+        "verification"
+      ]
+    },
+    {
+      "id": "P1-L40-CHECK-REQ-6.2-03-03",
+      "requirementId": "REQ-6.2-03-03",
+      "kind": "trace",
+      "level": "independent",
+      "prompt": {
+        "en": "Using even parity, calculate the parity bit for data bits 1011001. Then explain how row and column parity locate one changed bit in a block and state a limitation.",
+        "vi": "Dùng even parity, tính parity bit cho data bit 1011001. Sau đó giải thích row và column parity locate một changed bit trong block và nêu limitation."
+      },
+      "hint": {
+        "en": "Count the four existing 1-bits; use the wrong-parity row and column intersection.",
+        "vi": "Count bốn 1-bit hiện có; dùng intersection của wrong-parity row và column."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The seven data bits contain four 1-bits, already even, so the parity bit is 0. In a block, the receiver checks parity across each row and column; with exactly one changed bit, the only wrong row and wrong column intersect at its position. Multiple bit changes can preserve parity or create ambiguous intersections, so detection and correction are not guaranteed.",
+          "vi": "Bảy data bit có bốn 1-bit, đã even, nên parity bit là 0. Trong block, receiver check parity theo từng row và column; với exactly one changed bit, wrong row và wrong column duy nhất giao tại position của nó. Multiple bit change có thể preserve parity hoặc tạo ambiguous intersection nên detection và correction không guaranteed."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "byte-parity",
+        "block-parity"
+      ]
+    },
+    {
+      "id": "P1-L40-CHECK-REQ-6.2-03-04",
+      "requirementId": "REQ-6.2-03-04",
+      "kind": "trace",
+      "level": "independent",
+      "prompt": {
+        "en": "A sender uses byte-sum modulo 256 as a teaching checksum for data bytes 48, 73 and 126. Calculate the checksum, explain receiver verification and state a limitation.",
+        "vi": "Sender dùng byte-sum modulo 256 làm teaching checksum cho data byte 48, 73 và 126. Tính checksum, giải thích receiver verification và nêu limitation."
+      },
+      "hint": {
+        "en": "48 + 73 + 126 = 247.",
+        "vi": "48 + 73 + 126 = 247."
+      },
+      "solution": {
+        "steps": [],
+        "modelAnswer": {
+          "en": "The checksum is 247 because the sum is 247 modulo 256. The sender transmits the data and 247. The receiver applies the same calculation and compares its result with 247; a mismatch detects likely corruption and can trigger retransmission. A match is not proof of perfect transfer because different changed bytes can produce the same modulo-256 sum.",
+          "vi": "Checksum là 247 vì sum là 247 modulo 256. Sender transmit data và 247. Receiver apply cùng calculation rồi compare result với 247; mismatch detect likely corruption và có thể trigger retransmission. Match không prove perfect transfer vì different changed byte có thể tạo cùng modulo-256 sum."
+        },
+        "rubric": [
+          {
+            "en": "Credit precise technical points that answer the command word. Accept equivalent wording only when the mechanism, comparison, limitation or state remains correct.",
+            "vi": "Chấm các ý kỹ thuật chính xác theo command word. Chỉ chấp nhận diễn đạt tương đương khi mechanism, comparison, limitation hoặc state vẫn đúng."
+          }
+        ],
+        "alternatives": []
+      },
+      "origin": "original",
+      "claim_kind": "algocore_guidance",
+      "semanticTags": [
+        "checksum",
+        "collision"
+      ]
+    }
+  ],
+  "recall": {
+    "prompt": {
+      "en": "Separate the two entry-verification methods from the two transfer-verification families.",
+      "vi": "Tách hai entry-verification method khỏi hai transfer-verification family."
+    },
+    "answerPoints": [
+      {
+        "en": "Entry: visual check and double entry. Transfer: parity check for byte/block and checksum comparison.",
+        "vi": "Entry: visual check và double entry. Transfer: parity check cho byte/block và checksum comparison."
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "verification",
+      "meaning": {
+        "en": "Comparing entered data with a source or checking data after transfer.",
+        "vi": "Compare entered data với source hoặc check data sau transfer."
+      }
+    },
+    {
+      "term": "parity bit",
+      "meaning": {
+        "en": "An added bit that makes the number of 1-bits match the agreed even/odd convention.",
+        "vi": "Bit được thêm để số 1-bit match agreed even/odd convention."
+      }
+    },
+    {
+      "term": "parity block",
+      "meaning": {
+        "en": "Rows and columns protected by parity so a single changed bit can be located under the model.",
+        "vi": "Các row và column được bảo vệ bằng parity để một changed bit có thể được locate theo model."
+      }
+    },
+    {
+      "term": "checksum",
+      "meaning": {
+        "en": "A value calculated from a data block and compared after transfer.",
+        "vi": "Value được calculate từ data block và compare sau transfer."
+      }
+    },
+    {
+      "term": "collision",
+      "meaning": {
+        "en": "Different data producing the same limited error-detection value.",
+        "vi": "Different data tạo cùng limited error-detection value."
+      }
+    }
+  ],
+  "relatedSlugs": [
+    "validation",
+    "security-foundations"
+  ],
+  "sources": [
+    {
+      "id": "SYL-2026",
+      "title": {
+        "en": "Cambridge International AS & A Level Computer Science 9618 syllabus",
+        "vi": "Đề cương Cambridge International AS & A Level Computer Science 9618"
+      },
+      "locator": "2026 syllabus v2 §6.1–6.2, printed/PDF p. 24",
+      "kind": "syllabus"
+    },
+    {
+      "id": "ALG-P1",
+      "title": {
+        "en": "AlgoCore original learning material",
+        "vi": "Học liệu gốc do AlgoCore biên soạn"
+      },
+      "locator": "Paper 1 · P1-L40 · Chapter 6 content 1.0",
+      "kind": "algocore"
+    },
+    {
+      "id": "BOOK-C06",
+      "title": {
+        "en": "A Level Computer Science coursebook",
+        "vi": "Sách A Level Computer Science"
+      },
+      "locator": "Coursebook Chapter 6, printed pp. 170–177; PDF pp. 186–193",
+      "kind": "coursebook"
+    }
+  ],
+  "visualId": "VIS-P1-L40",
+  "contractCoverage": {
+    "B01": [
+      "P1-L40-objectives"
+    ],
+    "B02": [
+      "P1-L40-theory-1",
+      "P1-L40-theory-2",
+      "P1-L40-theory-3"
+    ],
+    "B03": [
+      "P1-L40-theory-1",
+      "P1-L40-theory-2",
+      "P1-L40-theory-3"
+    ],
+    "B04": [
+      "P1-L40-recognise-1",
+      "P1-L40-recognise-2"
+    ],
+    "B05": [
+      "P1-L40-worked-1",
+      "P1-L40-worked-2",
+      "P1-L40-worked-3",
+      "P1-L40-worked-4"
+    ],
+    "B06": [
+      "VIS-P1-L40"
+    ],
+    "B07": [
+      "P1-L40-CHECK-REQ-6.2-03-01",
+      "P1-L40-CHECK-REQ-6.2-03-02",
+      "P1-L40-CHECK-REQ-6.2-03-03",
+      "P1-L40-CHECK-REQ-6.2-03-04"
+    ],
+    "B08": [
+      "P1-L40-recognise-1",
+      "P1-L40-recognise-2"
+    ],
+    "B09": [
+      "P1-L40-recall"
+    ],
+    "B10": [
+      "P1-L40-glossary"
+    ],
+    "B11": [
+      "P1-L40-sources"
+    ]
+  },
+  "assessmentVersion": "1.0.0"
+}
